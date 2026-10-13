@@ -69,7 +69,7 @@
         "Main currency from 36 currencies",
         "History from 30 days to all time"
       ],
-      "alt": "Net worth of a sample profile with its 30-day history and the totals of assets, liabilities and free cash"
+      "alt": "The totals of assets, liabilities and free cash of a sample profile, with the deadlines and reminders coming up next"
     },
     "import": {
       "title": "Statements in, a categorized ledger out",
