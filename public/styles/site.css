@@ -30,6 +30,10 @@
   --fs-site-h2: 30px;
   --fs-site-lead: 18px;
   --fs-site-display: 64px;   /* hero number inside the product frame stays 42px */
+  /* The app's --ink-3 and --ink-4 are 3.4:1 and 2.6:1 on the canvas, fine for a dense desktop UI but below WCAG AA (4.5:1) for the small running text of a web page.
+     Darkened here, not in tokens.css (which is synced from the app): 4.8:1 and 4.7:1 on the canvas, 5.7:1 and 5.5:1 on white; --ink-3 stays above 4.5:1 on the language switch's track (--well-2). */
+  --ink-3: #6a675e;
+  --ink-4: #6c6960;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
