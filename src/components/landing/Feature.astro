@@ -9,7 +9,7 @@ interface Props {
   id?: string;
   /** Screenshot file name (no extension). Without it the block shows its slot content instead. */
   shot?: string;
-  /** A second, smaller screenshot laid over the corner of the first. */
+  /** A second screenshot next to the first (below it on narrow screens); the two never overlap. */
   shot2?: string;
   /** Picture on the left, text on the right. */
   flip?: boolean;
@@ -27,7 +27,7 @@ const { locale, k, id, shot, shot2, flip = false, wide = false, crop = false, ba
 const p = (key: string) => t(locale, `${k}.${key}`);
 const list = bullets ? tList(locale, `${k}.bullets`) : [];
 ---
-<section class:list={['feature', { 'feature--flip': flip, 'feature--wide': wide, 'feature--plain': !shot }]} id={id}>
+<section class:list={['feature', { 'feature--flip': flip, 'feature--wide': wide, 'feature--pair': !!shot2, 'feature--plain': !shot }]} id={id}>
   <div class="wrap feature__grid">
     <div class="feature__copy">
       <div class="feature__head">
@@ -47,7 +47,7 @@ const list = bullets ? tList(locale, `${k}.bullets`) : [];
       {shot ? (
         <>
           <figure class:list={['shot', { 'shot--crop': crop }]}><Shot locale={locale} name={shot} alt={p('alt')} /></figure>
-          {shot2 && <figure class="shot shot--float"><Shot locale={locale} name={shot2} alt={p('alt2')} /></figure>}
+          {shot2 && <figure class="shot"><Shot locale={locale} name={shot2} alt={p('alt2')} /></figure>}
         </>
       ) : <slot />}
     </div>

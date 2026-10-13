@@ -171,7 +171,7 @@
   },
   "download": {
     "title": "Install it. There is no sign-up after.",
-    "meta": "Version {version} · {date}",
+    "meta": "Version {version} · released {date}",
     "changes": "What changed →",
     "mac": {
       "arm": "Apple Silicon",

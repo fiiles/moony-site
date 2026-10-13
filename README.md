@@ -27,6 +27,6 @@ The output lands in `dist/`.
 
 ## Deploying
 
-Deployed on Cloudflare from the main branch; see Task 7 / the Deploying section to come.
+Deployed on Cloudflare from the `main` branch.
 
 Astro's anonymous telemetry is switched off in CI with ASTRO_TELEMETRY_DISABLED=1; run `npx astro telemetry disable` once locally.
