@@ -1,0 +1,21 @@
+{
+  "name": "moony-site",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Website for Moony, the local-first personal finance app",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "npm run tokens:check && astro build && node scripts/check-dist.mjs",
+    "preview": "astro preview",
+    "test": "node --test scripts/",
+    "tokens:sync": "node scripts/sync-tokens.mjs",
+    "tokens:check": "node scripts/sync-tokens.mjs --check",
+    "content:sync": "node scripts/sync-content.mjs"
+  },
+  "dependencies": {
+    "astro": "^5.0.0",
+    "@astrojs/sitemap": "^3.0.0"
+  }
+}
