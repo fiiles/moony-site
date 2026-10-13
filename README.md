@@ -31,7 +31,11 @@ The output lands in `dist/`. `npm run build` also runs the token check before th
 - `_redirects` - holds only a comment. Cloudflare does not support domain-level redirects in this file, so the `www` to apex redirect is a Redirect Rule on the domain's zone (see Deploying, step 3).
 - `robots.txt` - allows everything and names the sitemap (the build rewrites the address to match `SITE_URL` and `BASE_PATH`).
 - `js/os.js` - the only script on the site: it puts the visitor's operating system on the home page download button. It is a file of its own so that no inline script is needed.
-- `screenshots/` - the app pictures, 1440 px wide. To refresh them, replace the files under the same names (`<name>.png` and `<name>-cs.png`), then build.
+- `screenshots/` - the app pictures, 1440 px wide (`<name>.png` and `<name>-cs.png`), each with a 720 px copy (`<name>-720.png`, `<name>-cs-720.png`) that phones download through `srcset`. To refresh them, replace the 1440 px files under the same names, then recreate the copies and build:
+
+  ```bash
+  for f in public/screenshots/*.png; do case "$f" in *-720.png) ;; *) sips -Z 720 "$f" --out "${f%.png}-720.png";; esac; done
+  ```
 
 ## Deploying
 
@@ -137,7 +141,7 @@ npm test && npm run build
 git add -A && git commit -m "chore: sync v0.x.y" && git push
 ```
 
-`content:sync` refreshes the snapshots of the app's Privacy, Security and Changelog and the latest release (version, date, download links and sizes); `tokens:sync` copies the design tokens. Running the build first matters: its checks fail on a broken link or anchor in the new text, and a failed build on Cloudflare leaves the previous version online. Cloudflare rebuilds on the push. If the app's screenshots changed, replace the files in `public/screenshots/` first (1440 px wide, same names).
+`content:sync` refreshes the snapshots of the app's Privacy, Security and Changelog and the latest release (version, date, download links and sizes); `tokens:sync` copies the design tokens. Running the build first matters: its checks fail on a broken link or anchor in the new text, and a failed build on Cloudflare leaves the previous version online. Cloudflare rebuilds on the push. If the app's screenshots changed, replace the files in `public/screenshots/` first (1440 px wide, same names) and recreate the 720 px copies (see "What lives in `public/`").
 
 Roll back a bad deploy from the project's **Deployments** list (**Rollback to this deployment**), or revert the commit and push.
 

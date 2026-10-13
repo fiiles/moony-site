@@ -2,7 +2,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { asset, type Locale } from '../i18n';
 
-/** Screenshots live in public/screenshots/<name>.png (English UI) and <name>-cs.png (Czech UI). Swapping the files is enough: size is read from them at build time. */
+/** Screenshots live in public/screenshots/<name>.png (English UI) and <name>-cs.png (Czech UI), each with a 720 px wide copy <name>-720.png / <name>-cs-720.png. Size is read from the files at build time. */
 const dir = join(process.cwd(), 'public', 'screenshots');
 
 /** The file for a locale; a locale without its own set falls back to the English file. */
@@ -18,7 +18,16 @@ function pngSize(file: string): { width: number; height: number } {
   return { width: head.readUInt32BE(16), height: head.readUInt32BE(20) };
 }
 
-export function shot(name: string, locale: Locale): { src: string; width: number; height: number } {
+/** The 720 px wide copy that phones (and 1x screens showing the picture smaller than that) download: <name>-720.png next to <name>.png. Without it the picture has no srcset. */
+function smallFile(file: string): string | undefined {
+  const small = file.replace(/\.png$/, '-720.png');
+  return existsSync(join(dir, small)) ? small : undefined;
+}
+
+export function shot(name: string, locale: Locale): { src: string; srcset?: string; width: number; height: number } {
   const file = fileFor(name, locale);
-  return { src: asset(`screenshots/${file}`), ...pngSize(file) };
+  const full = pngSize(file);
+  const small = smallFile(file);
+  const srcset = small ? `${asset(`screenshots/${small}`)} ${pngSize(small).width}w, ${asset(`screenshots/${file}`)} ${full.width}w` : undefined;
+  return { src: asset(`screenshots/${file}`), srcset, ...full };
 }

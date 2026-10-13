@@ -46,8 +46,8 @@ const list = bullets ? tList(locale, `${k}.bullets`) : [];
     <div class:list={['feature__media', { 'feature__media--pair': shot2 }]}>
       {shot ? (
         <>
-          <figure class:list={['shot', { 'shot--crop': crop }]}><Shot locale={locale} name={shot} alt={p('alt')} /></figure>
-          {shot2 && <figure class="shot"><Shot locale={locale} name={shot2} alt={p('alt2')} /></figure>}
+          <figure class:list={['shot', { 'shot--crop': crop }]}><Shot locale={locale} name={shot} alt={p('alt')} layout={wide ? 'wide' : shot2 ? 'pair' : 'single'} /></figure>
+          {shot2 && <figure class="shot"><Shot locale={locale} name={shot2} alt={p('alt2')} layout="pair" /></figure>}
         </>
       ) : <slot />}
     </div>

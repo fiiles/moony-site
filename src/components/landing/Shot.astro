@@ -10,13 +10,27 @@ interface Props {
   alt: string;
   /** Above the fold: loaded at once and with priority; everything else is lazy. */
   eager?: boolean;
+  /** Where the picture sits, so the browser can pick the 720 px or the 1440 px file from the width it will be shown at. */
+  layout?: 'hero' | 'single' | 'pair' | 'wide';
 }
 
-const { locale, name, alt, eager = false } = Astro.props;
-const { src, width, height } = shot(name, locale);
+const { locale, name, alt, eager = false, layout = 'single' } = Astro.props;
+const { src, srcset, width, height } = shot(name, locale);
+
+// The displayed width of the picture per layout, in step with the grids in public/styles/site.css (page padding 24 px, 16 px under 760 px, 1120 px wrapper,
+// 1 px border on the frame). A value that drifts only costs bytes or sharpness; nothing breaks.
+const phone = '(max-width: 760px) calc(100vw - 34px), (max-width: 1000px) calc(100vw - 50px)';
+const sizesByLayout = {
+  hero: `${phone}, (max-width: 1119px) calc(100vw - 486px), (max-width: 1279px) 634px, 706px`,
+  single: `${phone}, (max-width: 1119px) calc(100vw - 458px), 662px`,
+  pair: `${phone}, (max-width: 1119px) calc(50vw - 36px), 524px`,
+  wide: '(max-width: 1119px) calc(100vw - 50px), 1070px', // hidden under 1000 px
+};
 ---
 <img
   src={src}
+  srcset={srcset}
+  sizes={srcset ? sizesByLayout[layout] : undefined}
   width={width}
   height={height}
   alt={alt}
