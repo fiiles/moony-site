@@ -28,7 +28,7 @@ const absolute = (p: string) => new URL(p, site).toString();
 const canonical = absolute(href(locale, path));
 const alternates = alternate(site, path, englishOnly ? ['en'] : undefined);
 const isDefaultImage = !ogImage;
-const imageUrl = ogImage ? (/^https?:\/\//.test(ogImage) ? ogImage : absolute(asset(ogImage))) : absolute(asset('og/moony-social-preview.jpg'));
+const imageUrl = ogImage ? (/^https?:\/\//.test(ogImage) ? ogImage : absolute(asset(ogImage))) : absolute(asset('og/moony-link-preview.jpg'));
 const ogLocale = locale === 'en' ? 'en_US' : 'cs_CZ';
 const ogLocaleAlt = locale === 'en' ? 'cs_CZ' : 'en_US';
 // The Latin-extended subset carries the Czech diacritics; English pages never request it, so only preload it for cs.
