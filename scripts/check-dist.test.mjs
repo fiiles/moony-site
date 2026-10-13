@@ -187,6 +187,21 @@ test('canonical-hreflang fires when x-default is missing', () => {
   assertFires('canonical-hreflang', (s) => s.put('index.html', page({ base: s.base }).replace(/<link rel="alternate" hreflang="x-default"[^>]*>/, '')));
 });
 
+test('canonical-hreflang fires on an hreflang that points at the wrong URL', () => {
+  // The right set of languages, but the cs alternate leads to a page that exists (the English download page) and is not the Czech home page.
+  const wrongCs = (s) => s.put('index.html', page({ base: s.base }).replace(/(hreflang="cs" href=")[^"]*/, `$1https://example.test${s.base}download/`));
+  assertFires('canonical-hreflang', wrongCs);
+  assertFires('canonical-hreflang', (s) => s.put('index.html', page({ base: s.base }).replace(/(hreflang="x-default" href=")[^"]*/, `$1https://example.test${s.base}cs/`)));
+  const s = site();
+  try {
+    wrongCs(s);
+    const r = run(s);
+    assert.match(r.out, /index\.html: hreflang cs is https:\/\/example\.test\/download\/, expected https:\/\/example\.test\/cs\//, r.out);
+  } finally {
+    rmSync(s.root, { recursive: true, force: true });
+  }
+});
+
 test('canonical-hreflang fires on a cs alternate for an English-only page', () => {
   // The cs alternate also points at a page that was never built.
   assertFires('canonical-hreflang', (s) => s.put('privacy/index.html', page({ base: s.base, path: 'privacy/', body: '<h1>Privacy</h1>' })), { also: ['local-assets'] });
