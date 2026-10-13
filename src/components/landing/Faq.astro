@@ -1,0 +1,21 @@
+---
+import { t, type Locale } from '../../i18n';
+
+interface Props { locale: Locale }
+
+const { locale } = Astro.props;
+const ids = ['free', 'warning', 'data', 'password', 'devices', 'bank'];
+---
+<section class="block" id="faq">
+  <div class="wrap">
+    <div class="block-head">
+      <div class="eyebrow">{t(locale, 'faq.eyebrow')}</div>
+      <h2 class="title">{t(locale, 'faq.title')}</h2>
+    </div>
+    <div class="faq">
+      {ids.map((id) => (
+        <details><summary>{t(locale, `faq.items.${id}.q`)}</summary><div class="answer">{t(locale, `faq.items.${id}.a`)}</div></details>
+      ))}
+    </div>
+  </div>
+</section>

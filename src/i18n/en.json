@@ -38,14 +38,19 @@
     "provenance": "This page shows the file from the Moony repository as published at the tag below; only the title and relative links are adapted. The source is"
   },
   "hero": {
-    "eyebrow": "Personal wealth manager · local-first",
-    "lead": "Bank accounts, investments, crypto, property, loans and insurance in one encrypted database on your Mac, PC or Linux machine. No account. No cloud. No sync.",
+    "_comment": "remove hero.beta at 1.0.0",
+    "eyebrow": "Personal wealth manager",
+    "lead": "Bank accounts, investments, crypto, property, loans and insurance in one encrypted database on your computer.",
+    "ctaDefault": "Download",
     "ctaMac": "Download for macOS",
     "ctaWin": "Download for Windows",
     "ctaLinux": "Download for Linux",
     "ctaSource": "View the source",
     "noteStrong": "Free and open source",
-    "noteRest": "(AGPL-3.0) · Version {version}, the beta for 1.0 · Apple Silicon and Intel, Windows 10/11, Linux x86_64",
+    "noteRest": "(AGPL-3.0) · Version {version}",
+    "beta": "beta for 1.0",
+    "caption": "Sample profile",
+    "alt": "Dashboard with the net worth, its history and the totals of a sample profile",
     "facts": {
       "noAccount": "No account",
       "noCloud": "No cloud",
@@ -55,239 +60,165 @@
       "languages": "10 languages"
     }
   },
-  "miniature": {
-    "label": "A sample dashboard drawn with the app's styles",
-    "caption": "Sample data, drawn with the app's own styles. Screenshots of the real app are further down.",
-    "brandSub": "Personal wealth manager",
-    "nav": {
-      "overview": "Overview",
-      "money": "Money",
-      "bank": "Bank accounts",
-      "budgets": "Budgets",
-      "cashflow": "Cashflow",
-      "investments": "Investments",
-      "stocks": "Stocks",
-      "crypto": "Crypto",
-      "realEstate": "Real estate",
-      "liabilities": "Liabilities",
-      "loans": "Loans",
-      "insurance": "Insurance"
+  "features": {
+    "overview": {
+      "title": "One number for everything",
+      "text": "Net worth across everything you own and owe.",
+      "bullets": [
+        "Deadline and maturity reminders",
+        "Main currency from 36 currencies",
+        "History from 30 days to all time"
+      ],
+      "alt": "Net worth of a sample profile with its 30-day history and the totals of assets, liabilities and free cash"
     },
-    "crumb": "the whole picture",
-    "status": "Data up to date",
-    "eyebrow": "Your financial picture",
-    "greeting": "Good morning, Alex.",
-    "asOf": "As of 12 October 2026",
-    "periodLabel": "Period",
-    "periods": {
-      "p30": "30D",
-      "p90": "90D",
-      "p365": "1Y",
-      "all": "All"
+    "import": {
+      "title": "Statements in, a categorized ledger out",
+      "text": "Import a bank CSV; 16 bank presets, column detection for the rest.",
+      "bullets": [
+        "Duplicates skipped, imports undoable",
+        "Rules learned from your choices",
+        "Balance history and monthly flows"
+      ],
+      "alt": "Bank account page with the balance, a 12-month chart of incoming and outgoing money and the start of the transaction ledger"
     },
-    "netWorth": "Net worth",
-    "netWorthValue": "€184,310",
-    "assets": {
-      "label": "Total assets",
-      "value": "€231,900",
-      "note": "6 accounts, 14 positions"
+    "cashflow": {
+      "title": "Where the money went, and where it will go",
+      "text": "A report by period and category, and a plan ahead.",
+      "alt": "Cashflow report with income, expenses and savings for a year and a chart by month",
+      "alt2": "Cashflow planning with planned income and expenses grouped by category"
     },
-    "liabilities": {
-      "label": "Liabilities",
-      "value": "−€47,590",
-      "note": "Mortgage at 3.9 %"
+    "investments": {
+      "title": "Investments with honest returns",
+      "text": "Time-weighted and money-weighted return, drawdown, deposits against gains, positions split by tag.",
+      "bullets": [
+        "Stocks and ETFs with live prices",
+        "Crypto with CoinGecko prices",
+        "Broker exports: XTB, Trading 212, Degiro, Interactive Brokers"
+      ],
+      "alt": "Stock analysis with time-weighted and money-weighted return, a return chart split by region and a drawdown panel"
     },
-    "cash": {
-      "label": "Free cash",
-      "value": "€12,430",
-      "note": "In 3 currencies"
-    },
-    "p30": {
-      "delta": "↗ +2.8 %",
-      "note": "+€5,020 over the last 30 days",
-      "insight": "Value is rising. Largest share of the change: stocks.",
-      "labels": [
-        "12 Sep",
-        "19 Sep",
-        "27 Sep",
-        "4 Oct",
-        "Today"
-      ]
-    },
-    "p90": {
-      "delta": "↗ +7.3 %",
-      "note": "+€12,510 over the last 90 days",
-      "insight": "Value is rising. Largest share of the change: stocks.",
-      "labels": [
-        "Jul",
-        "Aug",
-        "Sep",
-        "Today"
-      ]
-    },
-    "p365": {
-      "delta": "↗ +17.5 %",
-      "note": "+€27,400 over the last year",
-      "insight": "Value is rising. Largest share of the change: cash.",
-      "labels": [
-        "Oct 25",
-        "Jan",
-        "Apr",
-        "Jul",
-        "Today"
-      ]
-    },
-    "all": {
-      "delta": "↗ +82 %",
-      "note": "+€83,100 since the first record",
-      "insight": "Value is rising. Largest share of the change: stocks.",
-      "labels": [
-        "2024",
-        "2025",
-        "2026",
-        "Today"
-      ]
+    "balance": {
+      "title": "The other half of the balance sheet",
+      "text": "Property valuations and costs, loan schedules, insurance payment calendar.",
+      "alt": "Real estate page with market value, appreciation, equity, rent and a property value chart"
     }
   },
-  "modules": {
-    "eyebrow": "Everything you own, one number",
-    "title": "A balance sheet, not just a budget.",
-    "intro": "Most apps track spending or investments. Moony holds both sides of your finances in one place, so the number at the top is the real one.",
-    "head": {
-      "module": "Module",
-      "what": "What it does",
-      "detail": "Detail"
-    },
-    "groups": {
-      "money": "Money",
-      "investments": "Investments",
-      "liabilities": "Liabilities and insurance",
-      "tools": "Tools"
-    },
-    "rows": {
+  "tracks": {
+    "title": "What it tracks",
+    "items": {
       "bank": {
         "name": "Bank accounts",
-        "sub": "Any currency, per-account balance",
-        "what": "Import statements as CSV, keep the full transaction history, search and filter.",
-        "badge": "16 bank presets"
+        "line": "Statements, rules"
       },
       "budgets": {
         "name": "Budgets",
-        "sub": "Monthly, quarterly, yearly",
-        "what": "Limits per category with progress, rules that categorize new transactions for you.",
-        "badge": "Rule packs for 40+ countries"
+        "line": "Monthly limits"
       },
       "cashflow": {
         "name": "Cashflow",
-        "sub": "Actual and planned",
-        "what": "Where money came from and went, plus a planning view for the months ahead.",
-        "badge": "Report by period and category"
+        "line": "Report and plan"
       },
       "stocks": {
         "name": "Stocks and ETFs",
-        "sub": "Prices, dividend estimates, tags",
-        "what": "Positions with cost basis, time-weighted and money-weighted return, a watchlist with target prices.",
-        "badge": "Event markers on charts"
+        "line": "Returns, dividends"
       },
       "crypto": {
         "name": "Crypto",
-        "sub": "Holdings and history",
-        "what": "Prices from CoinGecko, transaction log, share of the portfolio.",
-        "badge": "Optional API key"
+        "line": "Holdings, history"
+      },
+      "realEstate": {
+        "name": "Real estate",
+        "line": "Values, rent, costs"
       },
       "assets": {
-        "name": "Real estate, bonds, other assets",
-        "sub": "Valuation log",
-        "what": "Dated valuations, rental income and costs, linked loans and policies, bond coupons, documents.",
-        "badge": "Maturity ladder for bonds"
+        "name": "Bonds and other assets",
+        "line": "Coupons, maturities"
       },
       "loans": {
         "name": "Loans",
-        "sub": "Amortization with events",
-        "what": "Balance as of a date, extra payments and rate changes re-anchor the schedule.",
-        "badge": "Debt trajectory"
+        "line": "Schedules, extra payments"
       },
       "insurance": {
         "name": "Insurance",
-        "sub": "Policies and payments",
-        "what": "Premiums, frequency, payment calendar, attached documents.",
-        "badge": "Payment calendar"
-      },
-      "tools": {
-        "name": "Projection and analysis",
-        "sub": "Scenarios, milestones",
-        "what": "Where you may land in a chosen number of years from your returns and monthly contributions, stock analysis per tag, two calculators.",
-        "badge": "Annuity and real estate calculators"
+        "line": "Payment calendar"
       }
     },
-    "foot": "Figures are shown in the main currency you choose: any of 36 currencies with ECB reference rates; accounts and holdings can use 45.",
-    "footLink": "What it does not do →"
+    "foot": "10 languages · 45 currencies · 16 bank presets"
   },
-  "ledger": {
-    "eyebrow": "What leaves your computer",
-    "title": "The complete list. Written to be checked against the code.",
-    "intro": "Moony makes network requests only for the things below. Apart from the optional AI client you connect yourself, none of them involves your balances, amounts, names or documents.",
-    "head": {
-      "service": "Service",
-      "sent": "What is sent",
-      "when": "When",
-      "off": "Off switch"
-    },
-    "rows": {
-      "yahoo": {
-        "service": "Yahoo Finance",
-        "sent": "Ticker symbols of the stocks you hold or follow, search text you type, symbols and ISINs from a stock CSV you import, and date ranges for price history.",
-        "when": "After unlock, when you add or import stock transactions, open the stock monitor or a position, and when prices are stale.",
-        "off": "Set prices by hand"
+  "trust": {
+    "title": "What leaves your computer",
+    "cards": {
+      "requests": {
+        "title": "No balances, no names",
+        "text": "Only prices, exchange rates and the update check go online, never amounts or names."
       },
-      "coingecko": {
-        "service": "CoinGecko",
-        "sent": "The CoinGecko IDs of your crypto holdings, search text, and date ranges for history. If you add your own API key, it goes in a request header.",
-        "when": "After unlock, when you add a holding and when history is back-filled.",
-        "off": "Set prices by hand"
+      "disk": {
+        "title": "Encrypted on disk",
+        "text": "AES-256 database. Attachments and the JSON export are plain; add full-disk encryption."
       },
-      "ecb": {
-        "service": "European Central Bank",
-        "sent": "Nothing about you. A download of the public daily reference rates.",
-        "when": "When exchange rates are stale.",
-        "off": "Rates go stale"
-      },
-      "frankfurter": {
-        "service": "Frankfurter",
-        "sent": "The date range from your oldest transaction to today and the currencies your transactions use, to fetch historical ECB rates.",
-        "when": "When you add or import transactions in a currency whose history is missing, and on rate refresh.",
-        "off": "Current rates are used"
-      },
-      "github": {
-        "service": "GitHub",
-        "sent": "A plain request for latest.json of the latest release. The updater adds its user agent: app name and version, operating system and CPU architecture. An update you accept is checked against the project's public key.",
-        "when": "Once per app start, after unlock.",
-        "off": "Switch in Settings"
-      },
-      "ai": {
-        "service": "Your AI client (MCP, optional)",
-        "sent": "Whatever your AI client asks for over a local port, potentially your full financial data. Moony itself sends nothing to an AI provider.",
-        "when": "Only while the MCP server is enabled, the app is unlocked and a client connects with your token.",
-        "off": "Off by default"
+      "keys": {
+        "title": "Your keys, your copies",
+        "text": "Recovery key, one-file backup, JSON export."
       }
     },
-    "never": {
-      "telemetry": {
-        "label": "Analytics, crash reports, usage statistics",
-        "value": "None. Moony has no telemetry.",
-        "badge": "Not in the code"
+    "link": "The complete list, written to be checked against the code →",
+    "small": "Every request also reveals your IP address to the service that receives it, as any internet request does."
+  },
+  "assistant": {
+    "title": "Connect an AI assistant to your finances",
+    "text": "Claude or another MCP client can read and change your data through a local server. The client processes it, usually in its provider's cloud.",
+    "badge": "Off by default"
+  },
+  "download": {
+    "title": "Install it. There is no sign-up after.",
+    "meta": "Version {version} · {date}",
+    "changes": "What changed →",
+    "mac": {
+      "arm": "Apple Silicon",
+      "intel": "Intel",
+      "note": "Not signed by Apple yet. If macOS calls the app damaged, run {cmd} once."
+    },
+    "win": {
+      "exe": "Installer",
+      "note": "SmartScreen warns once: More info, Run anyway."
+    },
+    "linux": {
+      "appimage": "AppImage",
+      "deb": "Debian/Ubuntu",
+      "rpm": "Fedora/openSUSE",
+      "note": "x86_64; AppImage may need libfuse2."
+    },
+    "foot": "Updates are verified with the project's signing key.",
+    "all": "All releases and details →"
+  },
+  "faq": {
+    "eyebrow": "Questions",
+    "title": "The honest answers.",
+    "items": {
+      "free": {
+        "q": "Is it really free?",
+        "a": "Yes: Moony is open source under the AGPL-3.0 licence, with no paid tier, no trial and no account."
+      },
+      "warning": {
+        "q": "Why does my computer warn me when I open it?",
+        "a": "The installers are not signed with Apple and Microsoft certificates yet, which is planned; until then macOS and Windows warn once, though the app is not damaged. Updates are signed by the project and verified before they install."
       },
       "data": {
-        "label": "Your balances, transactions, names, documents",
-        "value": "Moony never sends them to any service.",
-        "badge": "By design"
+        "q": "Does Moony collect any data about me?",
+        "a": "No: the app has no analytics, crash reports or usage statistics. Its only requests are for prices, exchange rates and the update check, listed in full on the Privacy page."
+      },
+      "password": {
+        "q": "What if I forget my password?",
+        "a": "Use the 24-character recovery key Moony showed you at setup; it is the only way to reset a password. If you lose both, nobody can open your data, so keep a backup (Settings → Data and backups)."
+      },
+      "devices": {
+        "q": "Can I use it on two computers, or on my phone?",
+        "a": "No: Moony is desktop only and does not sync, because sync means a server. You can move your data to another computer with a backup file."
+      },
+      "bank": {
+        "q": "Does it connect to my bank?",
+        "a": "No: you import the CSV statements you export from your bank, with 16 presets and column detection for other files. A bank connection would put a third party between you and your data."
       }
-    },
-    "foot": "The web view that renders the interface loads nothing from the internet. All requests go through the Rust backend.",
-    "footLink": "Read the full privacy page →",
-    "encryptedTitle": "What is encrypted",
-    "encrypted": "The database: every record you enter or import, AES-256 with SQLCipher. The key is protected by your password and a 24-character recovery key. There is no backdoor.",
-    "plainTitle": "What is not encrypted yet",
-    "plain": "Photos and documents you attach are stored as plain files in the data folder, also inside backup archives, and the JSON export is plain text. Full-disk encryption is the right complement. Encrypting attachments is on the roadmap."
+    }
   }
 }

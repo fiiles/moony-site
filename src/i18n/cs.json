@@ -38,256 +38,187 @@
     "provenance": "Tato stránka zobrazuje soubor z repozitáře Moony tak, jak byl vydán v uvedeném tagu; upraven je jen nadpis a relativní odkazy. Zdroj:"
   },
   "hero": {
-    "eyebrow": "Osobní správce majetku · data jen u vás",
-    "lead": "Bankovní účty, investice, krypto, nemovitosti, úvěry a pojištění v jedné šifrované databázi na vašem Macu, PC nebo počítači s Linuxem. Bez účtu. Bez cloudu. Bez synchronizace.",
+    "_comment": "remove hero.beta at 1.0.0",
+    "eyebrow": "Osobní správce majetku",
+    "lead": "Bankovní účty, investice, krypto, nemovitosti, úvěry a pojištění v jedné šifrované databázi na vašem vlastním počítači.",
+    "ctaDefault": "Stáhnout",
     "ctaMac": "Stáhnout pro macOS",
     "ctaWin": "Stáhnout pro Windows",
     "ctaLinux": "Stáhnout pro Linux",
-    "ctaSource": "Zobrazit zdrojový kód",
-    "noteStrong": "Zdarma a open source",
-    "noteRest": "(AGPL-3.0) · Verze {version}, beta pro 1.0 · Apple Silicon i Intel, Windows 10/11, Linux x86_64",
+    "ctaSource": "Zdrojový kód",
+    "noteStrong": "Zdarma a open source",
+    "noteRest": "(AGPL-3.0) · Verze {version}",
+    "beta": "beta pro 1.0",
+    "caption": "Ukázkový profil",
+    "alt": "Přehled s čistým jměním, jeho vývojem a součty ukázkového profilu",
     "facts": {
       "noAccount": "Bez účtu",
       "noCloud": "Bez cloudu",
       "noTelemetry": "Bez telemetrie",
       "encrypted": "Databáze šifrovaná AES-256",
       "offline": "Funguje offline",
-      "languages": "10 jazyků"
+      "languages": "10 jazyků"
     }
   },
-  "miniature": {
-    "label": "Ukázkový přehled vykreslený styly aplikace",
-    "caption": "Ukázková data vykreslená styly samotné aplikace. Snímky skutečné aplikace jsou níže.",
-    "brandSub": "Osobní správce majetku",
-    "nav": {
-      "overview": "Přehled",
-      "money": "Peníze",
-      "bank": "Bankovní účty",
-      "budgets": "Rozpočty",
-      "cashflow": "Cashflow",
-      "investments": "Investice",
-      "stocks": "Akcie",
-      "crypto": "Krypto",
-      "realEstate": "Nemovitosti",
-      "liabilities": "Závazky",
-      "loans": "Úvěry",
-      "insurance": "Pojištění"
+  "features": {
+    "overview": {
+      "title": "Jedno číslo za všechno",
+      "text": "Čisté jmění ze všeho, co vlastníte i dlužíte.",
+      "bullets": [
+        "Připomínky termínů a splatností",
+        "Hlavní měna z 36 měn",
+        "Vývoj od 30 dnů po celou historii"
+      ],
+      "alt": "Čisté jmění ukázkového profilu s vývojem za 30 dní a součty aktiv, závazků a volných prostředků"
     },
-    "crumb": "celkový obraz",
-    "status": "Data aktuální",
-    "eyebrow": "Váš finanční obraz",
-    "greeting": "Dobré ráno, Alexi.",
-    "asOf": "K 12. říjnu 2026",
-    "periodLabel": "Období",
-    "periods": {
-      "p30": "30 d",
-      "p90": "90 d",
-      "p365": "1 r",
-      "all": "Vše"
+    "import": {
+      "title": "Výpisy dovnitř, kategorizovaný přehled ven",
+      "text": "Importujte CSV z banky; 16 předvoleb bank, detekce sloupců pro ostatní.",
+      "bullets": [
+        "Duplicity se přeskočí, import jde vrátit",
+        "Pravidla naučená z vašich voleb",
+        "Vývoj zůstatku a měsíční toky"
+      ],
+      "alt": "Detail bankovního účtu se zůstatkem, grafem příchozích a odchozích plateb za 12 měsíců a začátkem seznamu transakcí"
     },
-    "netWorth": "Čisté jmění",
-    "netWorthValue": "184 310 €",
-    "assets": {
-      "label": "Celková aktiva",
-      "value": "231 900 €",
-      "note": "6 účtů, 14 pozic"
+    "cashflow": {
+      "title": "Kam peníze šly a kam půjdou",
+      "text": "Přehled podle období a kategorie a plán do budoucna.",
+      "alt": "Přehled cashflow s příjmy, výdaji a úsporami za rok a grafem po měsících",
+      "alt2": "Plánování cashflow s plánovanými příjmy a výdaji seskupenými podle kategorií"
     },
-    "liabilities": {
-      "label": "Závazky",
-      "value": "−47 590 €",
-      "note": "Hypotéka 3,9 %"
+    "investments": {
+      "title": "Investice s poctivými výnosy",
+      "text": "Časově vážený i peněžně vážený výnos, propad od maxima, vklady proti zisku, pozice rozdělené podle štítků.",
+      "bullets": [
+        "Akcie a ETF s aktuálními cenami",
+        "Krypto s cenami z CoinGecka",
+        "Exporty brokerů: XTB, Trading 212, Degiro, Interactive Brokers"
+      ],
+      "alt": "Analýza akcií s časově váženým a peněžně váženým výnosem, grafem výnosu podle regionů a panelem propadu od maxima"
     },
-    "cash": {
-      "label": "Volná hotovost",
-      "value": "12 430 €",
-      "note": "Ve 3 měnách"
-    },
-    "p30": {
-      "delta": "↗ +2,8 %",
-      "note": "+5 020 € za posledních 30 dní",
-      "insight": "Hodnota roste. Největší podíl na změně: akcie.",
-      "labels": [
-        "12. 9.",
-        "19. 9.",
-        "27. 9.",
-        "4. 10.",
-        "Dnes"
-      ]
-    },
-    "p90": {
-      "delta": "↗ +7,3 %",
-      "note": "+12 510 € za posledních 90 dní",
-      "insight": "Hodnota roste. Největší podíl na změně: akcie.",
-      "labels": [
-        "Červenec",
-        "Srpen",
-        "Září",
-        "Dnes"
-      ]
-    },
-    "p365": {
-      "delta": "↗ +17,5 %",
-      "note": "+27 400 € za poslední rok",
-      "insight": "Hodnota roste. Největší podíl na změně: hotovost.",
-      "labels": [
-        "Říjen 2025",
-        "Leden",
-        "Duben",
-        "Červenec",
-        "Dnes"
-      ]
-    },
-    "all": {
-      "delta": "↗ +82 %",
-      "note": "+83 100 € od prvního záznamu",
-      "insight": "Hodnota roste. Největší podíl na změně: akcie.",
-      "labels": [
-        "2024",
-        "2025",
-        "2026",
-        "Dnes"
-      ]
+    "balance": {
+      "title": "Druhá polovina rozvahy",
+      "text": "Ocenění a náklady nemovitostí, splátkové kalendáře úvěrů, kalendář plateb pojištění.",
+      "alt": "Stránka nemovitostí s tržní hodnotou, zhodnocením, vlastním kapitálem, nájmem a grafem hodnoty"
     }
   },
-  "modules": {
-    "eyebrow": "Všechno, co vlastníte, jedno číslo",
-    "title": "Rozvaha, ne jen rozpočet.",
-    "intro": "Většina aplikací sleduje buď výdaje, nebo investice. Moony drží obě strany vašich financí na jednom místě, takže číslo nahoře je to skutečné.",
-    "head": {
-      "module": "Modul",
-      "what": "Co dělá",
-      "detail": "Detail"
-    },
-    "groups": {
-      "money": "Peníze",
-      "investments": "Investice",
-      "liabilities": "Závazky a pojištění",
-      "tools": "Nástroje"
-    },
-    "rows": {
+  "tracks": {
+    "title": "Co sleduje",
+    "items": {
       "bank": {
         "name": "Bankovní účty",
-        "sub": "Libovolná měna, zůstatek po účtech",
-        "what": "Import výpisů ve formátu CSV, celá historie transakcí, hledání a filtrování.",
-        "badge": "16 předvoleb bank"
+        "line": "Výpisy, pravidla"
       },
       "budgets": {
         "name": "Rozpočty",
-        "sub": "Měsíční, čtvrtletní, roční",
-        "what": "Limity po kategoriích s průběhem, pravidla, která nové transakce zařadí za vás.",
-        "badge": "Balíčky pravidel pro 40+ zemí"
+        "line": "Měsíční limity"
       },
       "cashflow": {
         "name": "Cashflow",
-        "sub": "Skutečný a plánovaný",
-        "what": "Odkud peníze přišly a kam odešly, plus plánovací pohled na příští měsíce.",
-        "badge": "Přehled po obdobích a kategoriích"
+        "line": "Přehled a plán"
       },
       "stocks": {
-        "name": "Akcie a ETF",
-        "sub": "Ceny, odhady dividend, štítky",
-        "what": "Pozice s pořizovací cenou, časově vážený i peněžně vážený výnos, sledované akcie s cílovými cenami.",
-        "badge": "Značky událostí v grafech"
+        "name": "Akcie a ETF",
+        "line": "Výnosy, dividendy"
       },
       "crypto": {
         "name": "Krypto",
-        "sub": "Držby a historie",
-        "what": "Ceny z CoinGecka, záznam transakcí, podíl na portfoliu.",
-        "badge": "Volitelný API klíč"
+        "line": "Držby, historie"
+      },
+      "realEstate": {
+        "name": "Nemovitosti",
+        "line": "Hodnoty, nájem, náklady"
       },
       "assets": {
-        "name": "Nemovitosti, dluhopisy, ostatní aktiva",
-        "sub": "Záznam ocenění",
-        "what": "Datovaná ocenění, příjmy z nájmu a náklady, propojené úvěry a pojistky, kupóny dluhopisů, dokumenty.",
-        "badge": "Žebříček splatností dluhopisů"
+        "name": "Dluhopisy a další aktiva",
+        "line": "Kupóny, splatnosti"
       },
       "loans": {
         "name": "Úvěry",
-        "sub": "Splátkový kalendář s událostmi",
-        "what": "Zůstatek k datu, mimořádné splátky a změny sazby přepočítají splátkový kalendář.",
-        "badge": "Vývoj dluhu"
+        "line": "Splátkový kalendář, mimořádné splátky"
       },
       "insurance": {
         "name": "Pojištění",
-        "sub": "Smlouvy a platby",
-        "what": "Pojistné, frekvence, kalendář plateb, přiložené dokumenty.",
-        "badge": "Kalendář plateb"
-      },
-      "tools": {
-        "name": "Projekce a analýza",
-        "sub": "Scénáře, milníky",
-        "what": "Kde můžete skončit za zvolený počet let podle výnosů a měsíčních vkladů, analýza akcií podle štítků, dvě kalkulačky.",
-        "badge": "Anuitní a nemovitostní kalkulačka"
+        "line": "Kalendář plateb"
       }
     },
-    "foot": "Částky se zobrazují v hlavní měně, kterou si zvolíte: kterákoli z 36 měn s referenčními kurzy ECB; účty a držby mohou používat 45 měn.",
-    "footLink": "Co Moony nedělá →"
+    "foot": "10 jazyků · 45 měn · 16 předvoleb bank"
   },
-  "ledger": {
-    "eyebrow": "Co opouští váš počítač",
-    "title": "Úplný seznam. Psaný tak, aby šel ověřit v kódu.",
-    "intro": "Moony posílá síťové požadavky jen kvůli věcem níže. Kromě volitelného AI klienta, kterého si připojíte sami, se žádná z nich netýká vašich zůstatků, částek, jmen ani dokumentů.",
-    "head": {
-      "service": "Služba",
-      "sent": "Co se odesílá",
-      "when": "Kdy",
-      "off": "Vypnutí"
-    },
-    "rows": {
-      "yahoo": {
-        "service": "Yahoo Finance",
-        "sent": "Tickery akcií, které držíte nebo sledujete, hledaný text, symboly a ISIN z importovaného CSV s akciemi a časové rozsahy pro historii cen.",
-        "when": "Po odemknutí, při přidání nebo importu akciových transakcí, při otevření sledování akcií nebo pozice a když jsou ceny zastaralé.",
-        "off": "Ceny zadáte ručně"
+  "trust": {
+    "title": "Co opouští váš počítač",
+    "cards": {
+      "requests": {
+        "title": "Žádné zůstatky ani jména",
+        "text": "Online jdou jen ceny, směnné kurzy a kontrola aktualizací, nikdy částky ani jména."
       },
-      "coingecko": {
-        "service": "CoinGecko",
-        "sent": "ID kryptoměn, které držíte, hledaný text a časové rozsahy pro historii. Pokud přidáte vlastní API klíč, odesílá se v hlavičce požadavku.",
-        "when": "Po odemknutí, při přidání držby a při doplňování historie.",
-        "off": "Ceny zadáte ručně"
+      "disk": {
+        "title": "Šifrováno na disku",
+        "text": "Databáze AES-256. Přílohy a export JSON jsou nešifrované; přidejte šifrování celého disku."
       },
-      "ecb": {
-        "service": "Evropská centrální banka",
-        "sent": "Nic o vás. Stažení veřejných denních referenčních kurzů.",
-        "when": "Když jsou kurzy zastaralé.",
-        "off": "Kurzy zastarají"
-      },
-      "frankfurter": {
-        "service": "Frankfurter",
-        "sent": "Období od vaší nejstarší transakce do dneška a měny, ve kterých transakce vedete, aby se stáhly historické kurzy ECB.",
-        "when": "Když přidáte nebo naimportujete transakce v měně bez historie kurzů a při obnově kurzů.",
-        "off": "Použijí se aktuální kurzy"
-      },
-      "github": {
-        "service": "GitHub",
-        "sent": "Prostý požadavek na soubor latest.json posledního vydání. Aktualizátor přidá svůj user agent: název a verzi aplikace, operační systém a architekturu procesoru. Přijatá aktualizace se ověří veřejným klíčem projektu.",
-        "when": "Jednou při spuštění aplikace, po odemknutí.",
-        "off": "Vypínač v Nastavení"
-      },
-      "ai": {
-        "service": "Váš AI klient (MCP, volitelné)",
-        "sent": "Cokoli si váš AI klient vyžádá přes lokální port, potenciálně všechna vaše finanční data. Moony samo nic poskytovateli AI neposílá.",
-        "when": "Jen když je server MCP zapnutý, aplikace odemčená a klient se připojí s vaším tokenem.",
-        "off": "Ve výchozím stavu vypnuto"
+      "keys": {
+        "title": "Vaše klíče, vaše kopie",
+        "text": "Klíč pro obnovu, záloha do jednoho souboru, export JSON."
       }
     },
-    "never": {
-      "telemetry": {
-        "label": "Analytika, hlášení pádů, statistiky používání",
-        "value": "Žádné. Moony nemá telemetrii.",
-        "badge": "Není v kódu"
+    "link": "Úplný seznam, napsaný tak, aby šel ověřit v kódu →",
+    "small": "Každý požadavek také prozradí vaši IP adresu službě, která ho přijme, stejně jako každý internetový požadavek."
+  },
+  "assistant": {
+    "title": "Připojte AI asistenta ke svým financím",
+    "text": "Claude nebo jiný klient MCP může přes místní server číst i měnit vaše data. Klient je zpracovává, obvykle v cloudu svého poskytovatele.",
+    "badge": "Ve výchozím stavu vypnuto"
+  },
+  "download": {
+    "title": "Nainstalujte si ji. Žádná registrace nenásleduje.",
+    "meta": "Verze {version} · {date}",
+    "changes": "Co se změnilo →",
+    "mac": {
+      "arm": "Apple Silicon",
+      "intel": "Intel",
+      "note": "Zatím nepodepsáno Applem. Pokud macOS hlásí poškozenou aplikaci, jednou spusťte {cmd}."
+    },
+    "win": {
+      "exe": "Instalátor",
+      "note": "SmartScreen varuje jednou: Další informace, Přesto spustit."
+    },
+    "linux": {
+      "appimage": "AppImage",
+      "deb": "Debian/Ubuntu",
+      "rpm": "Fedora/openSUSE",
+      "note": "x86_64; AppImage může potřebovat libfuse2."
+    },
+    "foot": "Aktualizace se ověřují podpisovým klíčem projektu.",
+    "all": "Všechna vydání a podrobnosti →"
+  },
+  "faq": {
+    "eyebrow": "Otázky",
+    "title": "Upřímné odpovědi.",
+    "items": {
+      "free": {
+        "q": "Je to opravdu zdarma?",
+        "a": "Ano: Moony je open source pod licencí AGPL-3.0, bez placené verze, zkušební doby a účtu."
+      },
+      "warning": {
+        "q": "Proč mě počítač při spuštění varuje?",
+        "a": "Instalátory zatím nejsou podepsané certifikáty Applu a Microsoftu, což je v plánu; do té doby macOS a Windows jednou varují, přestože aplikace není poškozená. Aktualizace jsou podepsané projektem a před instalací se ověřují."
       },
       "data": {
-        "label": "Vaše zůstatky, transakce, jména, dokumenty",
-        "value": "Moony je nikdy žádné službě neposílá.",
-        "badge": "Záměrně"
+        "q": "Sbírá Moony o mně nějaká data?",
+        "a": "Ne: aplikace nemá žádnou analytiku, hlášení pádů ani statistiky používání. Posílá jen požadavky na ceny, směnné kurzy a kontrolu aktualizací, jejichž úplný seznam je na stránce Soukromí."
+      },
+      "password": {
+        "q": "Co když zapomenu heslo?",
+        "a": "Použijte 24znakový klíč pro obnovu, který vám Moony ukázal při nastavení; je to jediný způsob, jak heslo obnovit. Pokud ztratíte obojí, data nikdo neotevře, proto si je zálohujte (Nastavení → Data a zálohy)."
+      },
+      "devices": {
+        "q": "Mohu ho používat na dvou počítačích nebo v telefonu?",
+        "a": "Ne: Moony je jen pro počítače a nesynchronizuje, protože synchronizace znamená server. Data na jiný počítač přenesete záložním souborem."
+      },
+      "bank": {
+        "q": "Připojí se k mé bance?",
+        "a": "Ne: importujete CSV výpisy, které si z banky exportujete, s 16 předvolbami a detekcí sloupců pro ostatní soubory. Propojení s bankou by mezi vás a vaše data postavilo třetí stranu."
       }
-    },
-    "foot": "Webové zobrazení, které vykresluje rozhraní, nenačítá nic z internetu. Všechny požadavky jdou přes backend v Rustu.",
-    "footLink": "Celá stránka o soukromí (anglicky) →",
-    "encryptedTitle": "Co je šifrované",
-    "encrypted": "Databáze: každý záznam, který zadáte nebo naimportujete, AES-256 přes SQLCipher. Klíč chrání vaše heslo a 24znakový obnovovací klíč. Žádná zadní vrátka neexistují.",
-    "plainTitle": "Co zatím šifrované není",
-    "plain": "Fotografie a dokumenty, které přiložíte, jsou v datové složce uložené jako obyčejné soubory (i v záložních archivech) a export do JSONu je prostý text. Šifrování celého disku je správný doplněk. Šifrování příloh je v plánu."
+    }
   }
 }

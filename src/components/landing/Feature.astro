@@ -1,0 +1,55 @@
+---
+import Shot from './Shot.astro';
+import { t, tList, type Locale } from '../../i18n';
+
+interface Props {
+  locale: Locale;
+  /** Dictionary prefix: title, text, bullets, alt (and alt2 with `shot2`). */
+  k: string;
+  id?: string;
+  /** Screenshot file name (no extension). Without it the block shows its slot content instead. */
+  shot?: string;
+  /** A second, smaller screenshot laid over the corner of the first. */
+  shot2?: string;
+  /** Picture on the left, text on the right. */
+  flip?: boolean;
+  /** Full-width picture under the text. */
+  wide?: boolean;
+  /** Show only the lower part of the picture (a wide crop of a tall page). */
+  crop?: boolean;
+  /** A small badge next to the title. */
+  badge?: string;
+  /** Optional bullet list (a feature without the key simply has none). */
+  bullets?: boolean;
+}
+
+const { locale, k, id, shot, shot2, flip = false, wide = false, crop = false, badge, bullets = true } = Astro.props;
+const p = (key: string) => t(locale, `${k}.${key}`);
+const list = bullets ? tList(locale, `${k}.bullets`) : [];
+---
+<section class:list={['feature', { 'feature--flip': flip, 'feature--wide': wide, 'feature--plain': !shot }]} id={id}>
+  <div class="wrap feature__grid">
+    <div class="feature__copy">
+      <div class="feature__head">
+        {badge && <div class="feature__tag"><span class="badge badge--outline">{badge}</span></div>}
+        <h2 class="title">{p('title')}</h2>
+      </div>
+      <div class="feature__body">
+        <p>{p('text')}</p>
+        {list.length > 0 && (
+          <ul class="ticks">
+            {list.map((b) => <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>{b}</li>)}
+          </ul>
+        )}
+      </div>
+    </div>
+    <div class:list={['feature__media', { 'feature__media--pair': shot2 }]}>
+      {shot ? (
+        <>
+          <figure class:list={['shot', { 'shot--crop': crop }]}><Shot locale={locale} name={shot} alt={p('alt')} /></figure>
+          {shot2 && <figure class="shot shot--float"><Shot locale={locale} name={shot2} alt={p('alt2')} /></figure>}
+        </>
+      ) : <slot />}
+    </div>
+  </div>
+</section>

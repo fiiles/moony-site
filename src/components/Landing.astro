@@ -1,13 +1,28 @@
 ---
 import Hero from './landing/Hero.astro';
-import Modules from './landing/Modules.astro';
-import PrivacyLedger from './landing/PrivacyLedger.astro';
-import type { Locale } from '../i18n';
+import Feature from './landing/Feature.astro';
+import Tracks from './landing/Tracks.astro';
+import Trust from './landing/Trust.astro';
+import DownloadTeaser from './landing/DownloadTeaser.astro';
+import Faq from './landing/Faq.astro';
+import { t, type Locale } from '../i18n';
 
 interface Props { locale: Locale }
 
 const { locale } = Astro.props;
 ---
 <Hero locale={locale} />
-<Modules locale={locale} />
-<PrivacyLedger locale={locale} />
+<Feature locale={locale} k="features.overview" id="overview" shot="dashboard" wide crop />
+<Feature locale={locale} k="features.import" id="import" shot="account-detail" flip />
+<Feature locale={locale} k="features.cashflow" id="cashflow" shot="cashflow" shot2="planning" bullets={false} />
+<Feature locale={locale} k="features.investments" id="investments" shot="stocks-analysis" flip />
+<Feature locale={locale} k="features.balance" id="balance-sheet" shot="real-estate" bullets={false} />
+<Tracks locale={locale} />
+<Trust locale={locale} />
+<Feature locale={locale} k="assistant" id="assistant" badge={t(locale, 'assistant.badge')} bullets={false} flip>
+  <div class="card card--flat assistant-code">
+    <code class="code">claude mcp add --transport http moony http://127.0.0.1:41414/mcp --header "Authorization: Bearer &lt;token&gt;"</code>
+  </div>
+</Feature>
+<DownloadTeaser locale={locale} />
+<Faq locale={locale} />

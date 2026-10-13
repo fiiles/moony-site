@@ -1,0 +1,35 @@
+---
+import { t, type Locale } from '../../i18n';
+
+interface Props { locale: Locale }
+
+const { locale } = Astro.props;
+// Icon symbols live in Icons.astro; the order follows the app's sidebar.
+const items = [
+  { id: 'bank', icon: 'i-bank' },
+  { id: 'budgets', icon: 'i-pig' },
+  { id: 'cashflow', icon: 'i-chart' },
+  { id: 'stocks', icon: 'i-trend' },
+  { id: 'crypto', icon: 'i-coin' },
+  { id: 'realEstate', icon: 'i-home' },
+  { id: 'assets', icon: 'i-doc' },
+  { id: 'loans', icon: 'i-card' },
+  { id: 'insurance', icon: 'i-shield' },
+];
+---
+<section class="block" id="track">
+  <div class="wrap">
+    <div class="block-head">
+      <h2 class="title">{t(locale, 'tracks.title')}</h2>
+    </div>
+    <ul class="tracks">
+      {items.map((i) => (
+        <li class="track">
+          <span class="logo" aria-hidden="true"><svg class="ic"><use href={`#${i.icon}`}/></svg></span>
+          <div><b>{t(locale, `tracks.items.${i.id}.name`)}</b><small>{t(locale, `tracks.items.${i.id}.line`)}</small></div>
+        </li>
+      ))}
+    </ul>
+    <p class="tracks-foot">{t(locale, 'tracks.foot')}</p>
+  </div>
+</section>

@@ -1,0 +1,45 @@
+---
+import release from '../../data/release.json';
+import { href, t, tf, type Locale } from '../../i18n';
+
+interface Props { locale: Locale }
+
+const { locale } = Astro.props;
+const a = release.assets;
+const size = (bytes: number) => (bytes / 1048576).toFixed(1).replace('.', locale === 'cs' ? ',' : '.') + ' MB';
+const date = new Intl.DateTimeFormat(locale === 'en' ? 'en-GB' : locale, { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(`${release.publishedAt}T00:00:00Z`));
+// The repository documents are published in English only; Czech pages link to the English changelog.
+const changelog = { href: href('en', 'changelog/'), hreflang: locale === 'cs' ? 'en' : undefined };
+// The macOS note carries a command; the translated sentence holds a {cmd} marker where it goes.
+const [macBefore, macAfter] = t(locale, 'download.mac.note').split('{cmd}');
+
+const cards = [
+  { id: 'mac', os: 'macOS', files: [[a.macArm, 'download.mac.arm'], [a.macIntel, 'download.mac.intel']] },
+  { id: 'win', os: 'Windows', files: [[a.windows, 'download.win.exe']] },
+  { id: 'linux', os: 'Linux', files: [[a.appimage, 'download.linux.appimage'], [a.deb, 'download.linux.deb'], [a.rpm, 'download.linux.rpm']] },
+] as const;
+---
+<section class="block" id="download">
+  <div class="wrap">
+    <div class="block-head">
+      <h2 class="title">{t(locale, 'download.title')}</h2>
+      <p>{tf(locale, 'download.meta', { version: release.version, date })} · <a class="link" href={changelog.href} hreflang={changelog.hreflang}>{t(locale, 'download.changes')}</a></p>
+    </div>
+    <div class="dl-grid">
+      {cards.map((c) => (
+        <div class="card dl">
+          <div class="dl__os"><h3>{c.os}</h3></div>
+          <div class="dl__files">
+            {c.files.map(([file, key]) => <a href={file.url}><span>{t(locale, key)}</span><span>{size(file.bytes)}</span></a>)}
+          </div>
+          {c.id === 'mac' && <p class="dl__note">{macBefore}<code>xattr -cr /Applications/Moony.app</code>{macAfter}</p>}
+          {c.id !== 'mac' && <p class="dl__note">{t(locale, `download.${c.id}.note`)}</p>}
+        </div>
+      ))}
+    </div>
+    <div class="dl-foot">
+      <span>{t(locale, 'download.foot')}</span>
+      <a class="link" href={href(locale, 'download/')}>{t(locale, 'download.all')}</a>
+    </div>
+  </div>
+</section>

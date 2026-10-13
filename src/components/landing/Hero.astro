@@ -2,7 +2,7 @@
 import release from '../../data/release.json';
 import { href, t, tf, type Locale } from '../../i18n';
 import { repoUrl } from '../../config';
-import Miniature from './Miniature.astro';
+import Shot from './Shot.astro';
 
 interface Props { locale: Locale }
 
@@ -23,26 +23,35 @@ const facts = ['noAccount', 'noCloud', 'noTelemetry', 'encrypted', 'offline', 'l
           data-mac={t(locale, 'hero.ctaMac')}
           data-win={t(locale, 'hero.ctaWin')}
           data-linux={t(locale, 'hero.ctaLinux')}
-        ><svg class="ic" aria-hidden="true"><use href="#i-download"/></svg><span>{t(locale, 'hero.ctaMac')}</span></a>
+        ><svg class="ic" aria-hidden="true"><use href="#i-download"/></svg><span>{t(locale, 'hero.ctaDefault')}</span></a>
         <a class="btn btn--lg" href={repoUrl}><svg class="ic" aria-hidden="true"><use href="#i-github"/></svg>{t(locale, 'hero.ctaSource')}</a>
       </div>
-      <p class="cta-note"><b>{t(locale, 'hero.noteStrong')}</b> {tf(locale, 'hero.noteRest', { version: release.version })}</p>
+      {/* At 1.0.0 remove hero.beta from both dictionaries and its text and separator on the next line. */}
+      <p class="cta-note"><b>{t(locale, 'hero.noteStrong')}</b> {tf(locale, 'hero.noteRest', { version: release.version })} · {t(locale, 'hero.beta')}</p>
       <div class="facts">
         {facts.map((f) => <span><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>{t(locale, `hero.facts.${f}`)}</span>)}
       </div>
     </div>
-    <Miniature locale={locale} />
+    <div class="hero-visual">
+      <div class="frame"><Shot locale={locale} name="dashboard" alt={t(locale, 'hero.alt')} eager /></div>
+      <p class="frame-caption">{t(locale, 'hero.caption')}</p>
+    </div>
   </div>
 </section>
 
 <script is:inline>
-  // The download button follows the visitor's platform; the labels are translated and carried on the button itself.
+  // The button says "Download" until the platform is recognised; the labels are translated and carried on the button itself.
+  // Phones, tablets and Chromebooks keep the plain label: none of them can run the desktop installers.
   (function () {
     var button = document.getElementById('dl-primary');
     var label = button && button.querySelector('span');
     if (!button || !label) return;
     var platform = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '';
-    var text = /^win/i.test(platform) ? button.dataset.win : /linux/i.test(platform) ? button.dataset.linux : button.dataset.mac;
+    var haystack = platform + ' ' + (navigator.userAgent || '');
+    // iPadOS reports itself as a Mac; a real Mac has no multi-touch screen.
+    var touchMac = /^mac/i.test(platform) && navigator.maxTouchPoints > 1;
+    var other = /android|cros|chrome os|iphone|ipad|ipod/i.test(haystack) || touchMac;
+    var text = other ? '' : /^mac/i.test(platform) ? button.dataset.mac : /^win/i.test(platform) ? button.dataset.win : /linux/i.test(platform) ? button.dataset.linux : '';
     if (text) label.textContent = text;
   })();
 </script>

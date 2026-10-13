@@ -1,0 +1,26 @@
+---
+import { shot } from '../../lib/shots';
+import type { Locale } from '../../i18n';
+
+interface Props {
+  locale: Locale;
+  /** File name without extension, e.g. "dashboard". */
+  name: string;
+  /** Describes what the picture shows. */
+  alt: string;
+  /** Above the fold: loaded at once and with priority; everything else is lazy. */
+  eager?: boolean;
+}
+
+const { locale, name, alt, eager = false } = Astro.props;
+const { src, width, height } = shot(name, locale);
+---
+<img
+  src={src}
+  width={width}
+  height={height}
+  alt={alt}
+  loading={eager ? 'eager' : 'lazy'}
+  decoding={eager ? undefined : 'async'}
+  fetchpriority={eager ? 'high' : undefined}
+/>

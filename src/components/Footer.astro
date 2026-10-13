@@ -38,7 +38,7 @@ const columns = [
       </div>
       {columns.map((c) => (
         <div>
-          <h4>{c.title}</h4>
+          <h3>{c.title}</h3>
           <ul>{c.links.map((l) => <li><a href={l.href} hreflang={l.hreflang}>{l.label}</a></li>)}</ul>
         </div>
       ))}
