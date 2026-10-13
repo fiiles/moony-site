@@ -8,7 +8,7 @@ export const languageNames: Record<Locale, string> = { en: 'English', cs: 'Češ
 const dict: Record<Locale, unknown> = { en, cs };
 
 /** Where the site is published when Astro has no `site` configured. The one place this address lives. */
-const FALLBACK_SITE = 'https://moonyapp.com';
+const FALLBACK_SITE = 'https://moonyfinance.com';
 
 function lookup(locale: Locale, key: string): unknown {
   return key.split('.').reduce<unknown>((o, k) => (o && typeof o === 'object' ? (o as Record<string, unknown>)[k] : undefined), dict[locale]);

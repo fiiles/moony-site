@@ -1,6 +1,6 @@
 # Moony website
 
-The website for Moony, the local-first personal finance app. A static Astro 7 site, bilingual (English and Czech), built to plain HTML and deployed to GitHub Pages.
+The website for Moony, the local-first personal finance app. A static Astro 7 site, bilingual (English and Czech), built to plain HTML.
 
 ## Installing
 
@@ -22,11 +22,11 @@ The output lands in `dist/`.
 
 ## Environment variables
 
-- `SITE_URL` - the public origin of the site (default `https://moonyapp.com`)
-- `BASE_PATH` - the path prefix the site is served under (default `/`), for example `/moony-site/` on GitHub Pages
+- `SITE_URL` - the public origin of the site (default `https://moonyfinance.com`)
+- `BASE_PATH` - the path prefix the site is served under (default `/`)
 
 ## Deploying
 
-See .github/workflows/deploy.yml
+Deployed on Cloudflare from the main branch; see Task 7 / the Deploying section to come.
 
 Astro's anonymous telemetry is switched off in CI with ASTRO_TELEMETRY_DISABLED=1; run `npx astro telemetry disable` once locally.
