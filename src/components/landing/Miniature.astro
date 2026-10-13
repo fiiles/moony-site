@@ -19,7 +19,6 @@ const copy = Object.fromEntries(periods.map(({ p, key }) => [p, {
   note: m(`${key}.note`),
   insight: m(`${key}.insight`),
   labels: tList(locale, `miniature.${key}.labels`),
-  events: tList(locale, `miniature.${key}.events`),
 }]));
 const first = copy['30'];
 
@@ -102,28 +101,16 @@ const stats = [
       }
       return out;
     }
-    // Numbers and marker positions live here; every word (notes, insights, axis labels, marker texts) comes from `text`.
+    // Only numbers live here; every word (notes, insights, axis labels) comes from `text`.
     var DATA = {
-      30:  { pts: series(30, 179290, 0.00095, 1900, 7),   events: [{ i: 9, t: 'buy' }, { i: 21, t: 'sell' }] },
-      90:  { pts: series(90, 171800, 0.00080, 2400, 3),   events: [{ i: 22, t: 'buy' }, { i: 48, t: 'sell' }, { i: 71, t: 'buy' }] },
-      365: { pts: series(365, 156900, 0.00045, 2600, 11), events: [{ i: 60, t: 'buy' }, { i: 150, t: 'sell' }, { i: 300, t: 'buy' }] },
-      all: { pts: series(720, 101200, 0.00085, 2800, 5),  events: [{ i: 120, t: 'buy' }, { i: 420, t: 'sell' }] }
+      30:  { pts: series(30, 179290, 0.00095, 1900, 7) },
+      90:  { pts: series(90, 171800, 0.00080, 2400, 3) },
+      365: { pts: series(365, 156900, 0.00045, 2600, 11) },
+      all: { pts: series(720, 101200, 0.00085, 2800, 5) }
     };
 
     var NS = 'http://www.w3.org/2000/svg';
     function el(n, a) { var e = document.createElementNS(NS, n); for (var k in a) e.setAttribute(k, a[k]); return e; }
-    var tipEl;
-    function hideTip() { if (tipEl) { tipEl.remove(); tipEl = null; } }
-    function tip(label, cx, cy) {
-      hideTip();
-      tipEl = document.createElement('div');
-      tipEl.className = 'tip';
-      tipEl.textContent = label;
-      chart.appendChild(tipEl);
-      tipEl.style.left = Math.max(0, Math.min(cx - 50, chart.clientWidth - 150)) + 'px';
-      tipEl.style.top = (cy - 40) + 'px';
-    }
-
     function draw(key) {
       var d = DATA[key], words = text[key];
       var w = chart.clientWidth || 560, h = chart.clientHeight || 128;
@@ -131,7 +118,7 @@ const stats = [
       var pad = (max - min) * 0.15 || 1; min -= pad; max += pad * 0.4;
       var x = function (i) { return (i / (n - 1)) * w; };
       var y = function (v) { return h - ((v - min) / (max - min)) * h; };
-      var svg = el('svg', { viewBox: '0 0 ' + w + ' ' + h, width: w, height: h });
+      var svg = el('svg', { viewBox: '0 0 ' + w + ' ' + h, width: w, height: h, 'aria-hidden': 'true' });
       var grad = el('linearGradient', { id: 'ga', x1: 0, y1: 0, x2: 0, y2: 1 });
       grad.appendChild(el('stop', { offset: '0', 'stop-color': 'var(--chart-area)', 'stop-opacity': 1 }));
       grad.appendChild(el('stop', { offset: '1', 'stop-color': 'var(--chart-area)', 'stop-opacity': 0 }));
@@ -141,21 +128,7 @@ const stats = [
       for (var i = 0; i < n; i++) path += (i ? ' L' : 'M') + x(i).toFixed(1) + ' ' + y(pts[i]).toFixed(1);
       svg.appendChild(el('path', { d: path + ' L' + w + ' ' + h + ' L0 ' + h + ' Z', fill: 'url(#ga)' }));
       svg.appendChild(el('path', { d: path, fill: 'none', stroke: 'var(--chart-line)', 'stroke-width': 2.25, 'stroke-linejoin': 'round' }));
-      // Event marks follow the app's time-trace: buy is a filled triangle, sell an outlined one.
-      d.events.forEach(function (ev, idx) {
-        var cx = x(ev.i), cy = y(pts[ev.i]), label = words.events[idx];
-        var m;
-        if (ev.t === 'buy') m = el('path', { d: 'M' + cx + ' ' + (cy - 7) + ' l6 11 h-12 z', fill: 'var(--chart-line)', stroke: 'var(--paper)', 'stroke-width': 2 });
-        else m = el('path', { d: 'M' + cx + ' ' + (cy + 7) + ' l6 -11 h-12 z', fill: 'var(--paper)', stroke: 'var(--chart-line)', 'stroke-width': 2 });
-        m.setAttribute('tabindex', '0'); m.setAttribute('role', 'img'); m.setAttribute('aria-label', label);
-        m.addEventListener('mouseenter', function () { tip(label, cx, cy); });
-        m.addEventListener('mouseleave', hideTip);
-        m.addEventListener('focus', function () { tip(label, cx, cy); });
-        m.addEventListener('blur', hideTip);
-        svg.appendChild(m);
-      });
       svg.appendChild(el('circle', { cx: x(n - 1), cy: y(pts[n - 1]), r: 4, fill: 'var(--paper)', stroke: 'var(--chart-line)', 'stroke-width': 2.25 }));
-      hideTip();
       chart.replaceChildren(svg);
       axis.replaceChildren.apply(axis, words.labels.map(function (l) { var s = document.createElement('span'); s.textContent = l; return s; }));
       document.getElementById('nw-delta').firstChild.textContent = words.delta;

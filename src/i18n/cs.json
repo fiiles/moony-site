@@ -56,8 +56,8 @@
     }
   },
   "miniature": {
-    "label": "Živý náhled přehledu Moony s ukázkovými daty",
-    "caption": "Ukázková data. Nainstalovaný dashboard vypadá přesně takto.",
+    "label": "Ukázkový přehled vykreslený styly aplikace",
+    "caption": "Ukázková data vykreslená styly samotné aplikace. Snímky skutečné aplikace jsou níže.",
     "brandSub": "Osobní správce majetku",
     "nav": {
       "overview": "Přehled",
@@ -112,10 +112,6 @@
         "27. 9.",
         "4. 10.",
         "Dnes"
-      ],
-      "events": [
-        "Nákup · 12 × VWCE · 1 380 €",
-        "Prodej · 5 × AAPL · 910 €"
       ]
     },
     "p90": {
@@ -127,11 +123,6 @@
         "Srpen",
         "Září",
         "Dnes"
-      ],
-      "events": [
-        "Nákup · 8 × VWCE · 920 €",
-        "Prodej · 3 × AAPL · 560 €",
-        "Nákup · 12 × VWCE · 1 380 €"
       ]
     },
     "p365": {
@@ -144,11 +135,6 @@
         "Duben",
         "Červenec",
         "Dnes"
-      ],
-      "events": [
-        "Nákup · 20 × VWCE · 2 250 €",
-        "Prodej · 5 × AAPL · 900 €",
-        "Nákup · 15 × VWCE · 1 740 €"
       ]
     },
     "all": {
@@ -160,10 +146,6 @@
         "2025",
         "2026",
         "Dnes"
-      ],
-      "events": [
-        "První nákup ETF",
-        "Prodej · 5 × AAPL · 900 €"
       ]
     }
   },

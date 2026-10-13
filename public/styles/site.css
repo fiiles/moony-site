@@ -210,8 +210,6 @@ p { margin: 0; }
 .mini-stats .stat__label { font-size: 10px; }
 .mini-stats .stat__value { margin-top: 6px; font-size: 16px; }
 .mini-stats .stat__note { margin-top: 4px; font-size: 9.5px; }
-.tip { position: absolute; z-index: 6; padding: 7px 9px; border-radius: 7px; background: var(--dark); color: #fff; font-size: var(--fs-micro); font-weight: 550; line-height: 1.4; pointer-events: none; box-shadow: var(--sh-pop); white-space: nowrap; }
-.tip small { display: block; color: var(--ink-inverse-2); font-weight: 500; }
 
 /* ---- Modules table ---- */
 .modules .table__head, .modules .table__row { grid-template-columns: 220px 1fr minmax(160px, auto); gap: 16px; }

@@ -56,8 +56,8 @@
     }
   },
   "miniature": {
-    "label": "A live preview of the Moony dashboard with sample data",
-    "caption": "Sample data. The dashboard you install renders exactly like this.",
+    "label": "A sample dashboard drawn with the app's styles",
+    "caption": "Sample data, drawn with the app's own styles. Screenshots of the real app are further down.",
     "brandSub": "Personal wealth manager",
     "nav": {
       "overview": "Overview",
@@ -112,10 +112,6 @@
         "27 Sep",
         "4 Oct",
         "Today"
-      ],
-      "events": [
-        "Buy · 12 × VWCE · €1,380",
-        "Sell · 5 × AAPL · €910"
       ]
     },
     "p90": {
@@ -127,11 +123,6 @@
         "Aug",
         "Sep",
         "Today"
-      ],
-      "events": [
-        "Buy · 8 × VWCE · €920",
-        "Sell · 3 × AAPL · €560",
-        "Buy · 12 × VWCE · €1,380"
       ]
     },
     "p365": {
@@ -144,11 +135,6 @@
         "Apr",
         "Jul",
         "Today"
-      ],
-      "events": [
-        "Buy · 20 × VWCE · €2,250",
-        "Sell · 5 × AAPL · €900",
-        "Buy · 15 × VWCE · €1,740"
       ]
     },
     "all": {
@@ -160,10 +146,6 @@
         "2025",
         "2026",
         "Today"
-      ],
-      "events": [
-        "First ETF purchase",
-        "Sell · 5 × AAPL · €900"
       ]
     }
   },
