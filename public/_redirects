@@ -1,0 +1,2 @@
+# The apex domain is the canonical address; www redirects to it. (Needs www.moonyfinance.com added as a custom domain of the project.)
+https://www.moonyfinance.com/* https://moonyfinance.com/:splat 301

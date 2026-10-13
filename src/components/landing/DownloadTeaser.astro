@@ -1,23 +1,15 @@
 ---
 import { href, t, tf, type Locale } from '../../i18n';
-import { formatDate, formatSize, release } from '../../lib/release';
+import { changelogLink, downloadCards, formatDate, formatSize, release } from '../../lib/release';
 
 interface Props { locale: Locale }
 
 const { locale } = Astro.props;
-const a = release.assets;
 const size = (bytes: number) => formatSize(bytes, locale);
 const date = formatDate(locale);
-// The repository documents are published in English only; Czech pages link to the English changelog.
-const changelog = { href: href('en', 'changelog/'), hreflang: locale === 'cs' ? 'en' : undefined };
+const changelog = changelogLink(locale);
 // The macOS note carries a command; the translated sentence holds a {cmd} marker where it goes.
 const [macBefore, macAfter] = t(locale, 'download.mac.note').split('{cmd}');
-
-const cards = [
-  { id: 'mac', os: 'macOS', files: [[a.macArm, 'download.mac.arm'], [a.macIntel, 'download.mac.intel']] },
-  { id: 'win', os: 'Windows', files: [[a.windows, 'download.win.exe']] },
-  { id: 'linux', os: 'Linux', files: [[a.appimage, 'download.linux.appimage'], [a.deb, 'download.linux.deb'], [a.rpm, 'download.linux.rpm']] },
-] as const;
 ---
 <section class="block" id="download">
   <div class="wrap">
@@ -26,7 +18,7 @@ const cards = [
       <p>{tf(locale, 'download.meta', { version: release.version, date })} · <a class="link" href={changelog.href} hreflang={changelog.hreflang}>{t(locale, 'download.changes')}</a></p>
     </div>
     <div class="dl-grid">
-      {cards.map((c) => (
+      {downloadCards.map((c) => (
         <div class="card dl">
           <div class="dl__os"><h3>{c.os}</h3></div>
           <div class="dl__files">

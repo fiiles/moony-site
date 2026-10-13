@@ -1,6 +1,6 @@
 ---
 import { href, t, tf, tList, type Locale } from '../i18n';
-import { allReleasesUrl, formatDate, formatSize, release } from '../lib/release';
+import { allReleasesUrl, changelogLink, downloadCards, formatDate, formatSize, release } from '../lib/release';
 import { rich } from '../lib/rich';
 
 interface Props { locale: Locale }
@@ -9,22 +9,15 @@ const { locale } = Astro.props;
 const a = release.assets;
 const p = (key: string) => t(locale, `downloadPage.${key}`);
 const version = release.version;
-// The repository documents are published in English only; Czech pages link to the English changelog and Privacy page.
-const english = locale === 'cs' ? 'en' : undefined;
-const changelog = { href: href('en', 'changelog/'), hreflang: english };
-const links = { privacy: { href: href('en', 'privacy/'), hreflang: english } };
-
-const cards = [
-  { id: 'mac', os: 'macOS', files: [[a.macArm, 'download.mac.arm'], [a.macIntel, 'download.mac.intel']] },
-  { id: 'win', os: 'Windows', files: [[a.windows, 'download.win.exe']] },
-  { id: 'linux', os: 'Linux', files: [[a.appimage, 'download.linux.appimage'], [a.deb, 'download.linux.deb'], [a.rpm, 'download.linux.rpm']] },
-] as const;
+const changelog = changelogLink(locale);
+// The repository documents are published in English only; Czech pages link to the English Privacy page.
+const links = { privacy: { href: href('en', 'privacy/'), hreflang: changelog.hreflang } };
 
 // The commands name the real files of this release, so they can be pasted as they are.
 const linuxInstall = [
   { label: t(locale, 'download.linux.appimage'), command: `chmod +x ${a.appimage.name} && ./${a.appimage.name}`, note: p('install.linux.fuse') },
   { label: t(locale, 'download.linux.deb'), command: `sudo apt install ./${a.deb.name}` },
-  { label: t(locale, 'download.linux.rpm'), command: `sudo dnf install ./${a.rpm.name}` },
+  { label: 'Fedora', command: `sudo dnf install ./${a.rpm.name}` },
 ];
 ---
 <section class="block">
@@ -33,8 +26,9 @@ const linuxInstall = [
       <h1>{tf(locale, 'downloadPage.title', { version })}</h1>
       <p class="page-meta">{tf(locale, 'downloadPage.released', { date: formatDate(locale) })} · <a class="link" href={changelog.href} hreflang={changelog.hreflang}>{t(locale, 'download.changes')}</a> · <a class="link" href={allReleasesUrl}>{p('allReleases')}</a></p>
     </div>
+    <h2 class="sr-only">{p('filesTitle')}</h2>
     <div class="dl-grid">
-      {cards.map((c) => (
+      {downloadCards.map((c) => (
         <div class="card dl">
           <div class="dl__os"><h3>{c.os}</h3></div>
           <div class="dl__files">
@@ -115,7 +109,7 @@ const linuxInstall = [
       <h2 class="title">{p('requirements.title')}</h2>
     </div>
     <div class="dl-grid">
-      {cards.map((c) => (
+      {downloadCards.map((c) => (
         <div class="card card--flat req">
           <h3>{c.os}</h3>
           <p set:html={rich(p(`requirements.${c.id}`))} />

@@ -1,11 +1,25 @@
 import release from '../data/release.json';
 import { repoUrl } from '../config';
-import type { Locale } from '../i18n';
+import { href, type Locale } from '../i18n';
 
 export { release };
 
 /** The release page on GitHub that lists every version. */
 export const allReleasesUrl = `${repoUrl}/releases`;
+
+const assets = release.assets;
+
+/** The installers grouped by operating system, shared by the landing page and the download page. Each file is `[asset, dictionary key of its label]`. */
+export const downloadCards = [
+  { id: 'mac', os: 'macOS', files: [[assets.macArm, 'download.mac.arm'], [assets.macIntel, 'download.mac.intel']] },
+  { id: 'win', os: 'Windows', files: [[assets.windows, 'download.win.exe']] },
+  { id: 'linux', os: 'Linux', files: [[assets.appimage, 'download.linux.appimage'], [assets.deb, 'download.linux.deb'], [assets.rpm, 'download.linux.rpm']] },
+] as const;
+
+/** Link to the changelog. The repository documents are published in English only, so Czech pages mark the link as English. */
+export function changelogLink(locale: Locale): { href: string; hreflang: 'en' | undefined } {
+  return { href: href('en', 'changelog/'), hreflang: locale === 'cs' ? 'en' : undefined };
+}
 
 /** File size in MB with the locale's decimal separator, e.g. "16.1 MB" or "16,1 MB". */
 export function formatSize(bytes: number, locale: Locale): string {

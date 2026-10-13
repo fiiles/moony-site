@@ -47,6 +47,10 @@ button { cursor: pointer; }
 a:focus-visible { outline: 2px solid var(--focus-border); outline-offset: 2px; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } html { scroll-behavior: auto; } }
 .ic { width: 16px; height: 16px; flex: none; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+/* The icon sprite stays in the page but takes no space. A class, not a style attribute: the Content-Security-Policy allows no inline styles. */
+.sprite { position: absolute; width: 0; height: 0; }
+/* Text for assistive technology only, e.g. a heading that keeps the outline in order without adding a visible one. */
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
 .wrap { max-width: var(--site-max); margin: 0 auto; padding: 0 var(--site-pad); }
 
 /* ---- Reused app components (moony.css, verbatim where possible) ---- */
@@ -71,16 +75,11 @@ a:focus-visible { outline: 2px solid var(--focus-border); outline-offset: 2px; }
 .card { border: 1px solid var(--line); border-radius: var(--r-4); background: linear-gradient(145deg, var(--paper), var(--paper-2)); box-shadow: var(--sh-2); }
 .card--flat { box-shadow: var(--sh-1); }
 
-.gain { color: var(--gain); } .loss { color: var(--loss); } .muted { color: var(--ink-3); } .faint { color: var(--ink-4); }
-
 .logo { display: grid; place-items: center; flex: none; width: 30px; height: 30px; border-radius: 50%; background: var(--s1); box-shadow: inset 0 1px rgba(255,255,255,.13); color: #fff; font-size: var(--fs-micro); font-weight: 750; }
 .logo--soft { background: var(--well-2); color: var(--ink-2); box-shadow: none; }
 
 .badge { display: inline-flex; align-items: center; gap: 5px; height: 20px; padding: 0 7px; border-radius: 6px; background: var(--well-2); color: var(--ink-2); font-size: var(--fs-micro); font-weight: 650; white-space: nowrap; }
-.badge--dark { background: var(--dark); color: #fff; }
 .badge--outline { background: none; border: 1px dashed var(--line-strong); color: var(--ink-3); }
-.chip { display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 9px; border: 1px solid var(--line-strong); border-radius: 13px; background: var(--paper); color: var(--ink-2); font-size: var(--fs-micro); font-weight: 650; white-space: nowrap; }
-.chip.is-active { background: var(--dark); border-color: var(--dark); color: #fff; }
 
 .seg { display: inline-flex; gap: 1px; padding: 3px; border-radius: var(--r-2); background: var(--well-2); }
 .seg__btn { display: inline-flex; align-items: center; padding: 0 10px; height: 26px; border: 0; border-radius: var(--r-1); background: transparent; color: var(--ink-3); font-size: var(--fs-micro); font-weight: 600; transition: background var(--t-fast), color var(--t-fast); }
@@ -142,9 +141,8 @@ p { margin: 0; }
 .dl__os { display: flex; align-items: center; justify-content: space-between; }
 .dl__os h3 { font-size: 18px; }
 .dl__files { display: grid; gap: 6px; }
-.dl__files a { display: flex; justify-content: space-between; gap: 10px; padding: 8px 10px; border: 1px solid var(--line); border-radius: var(--r-2); background: var(--paper); font-size: 12.5px; font-weight: 600; }
+.dl__files a { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; padding: 8px 10px; border: 1px solid var(--line); border-radius: var(--r-2); background: var(--paper); font-size: 12.5px; font-weight: 600; }
 .dl__files a:hover { background: var(--well); }
-.dl__files a { align-items: baseline; }
 .dl__files a span:first-child { color: var(--ink-2); }
 .dl__name { display: block; margin-top: 2px; color: var(--ink-4); font: 500 11px/1.35 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; overflow-wrap: anywhere; }
 .dl__files a span { color: var(--ink-4); font-weight: 500; font-variant-numeric: tabular-nums; }
@@ -247,10 +245,10 @@ footer { padding: 44px 0 40px; border-top: 1px solid var(--line-sidebar); color:
 @media (max-width: 1000px) {
   .hero-grid { grid-template-columns: 1fr; gap: 36px; }
   .hero-copy h1 { font-size: 48px; }
-  /* Every feature stacks with the picture above its text; a block without a picture keeps its text first. */
+  /* Every feature stacks with the picture above its text; a block without a picture, and the pair of cashflow pictures, keep their text first. */
   .feature__grid, .feature--flip .feature__grid { grid-template-columns: 1fr; gap: 28px; }
   .feature--flip .feature__copy { order: 0; }
-  .feature:not(.feature--plain) .feature__media { order: -1; }
+  .feature:not(.feature--plain):not(.feature--pair) .feature__media { order: -1; }
   .feature--wide .feature__copy, .feature--pair .feature__copy { grid-template-columns: 1fr; gap: 14px; }
   .feature__media--pair { grid-template-columns: 1fr; gap: 20px; }
   /* Stacked, the wide crop would sit right under the hero's own picture of the same page; the hero's is enough. */

@@ -158,7 +158,7 @@
       },
       "keys": {
         "title": "Vaše klíče, vaše kopie",
-        "text": "Klíč pro obnovu, záloha do jednoho souboru, export JSON."
+        "text": "Obnovovací klíč, záloha do jednoho souboru, export JSON."
       }
     },
     "link": "Úplný seznam, napsaný tak, aby šel ověřit v kódu →",
@@ -197,6 +197,7 @@
     "title": "Stáhnout Moony {version}",
     "released": "Vydáno {date}",
     "allReleases": "Všechna vydání →",
+    "filesTitle": "Instalační soubory podle systému",
     "macHint": "Apple Silicon znamená čip M1 nebo novější. Nevíte, jaký Mac máte? V nabídce Apple zvolte **O tomto Macu**: řádek Čip nebo Procesor uvádí Apple M… nebo Intel.",
     "install": {
       "title": "Instalace a první spuštění",
@@ -205,7 +206,7 @@
         "open": "Otevřete soubor `.dmg` a přetáhněte **Moony** do složky **Aplikace**.",
         "terminal": "Otevřete **Terminál** (Aplikace → Utility) a jednou spusťte tento příkaz:",
         "why": "Odstraní příznak „staženo z internetu“, kvůli kterému macOS hlásí „Moony je poškozená a nelze ji otevřít“ (Gatekeeper). Potom Moony otevřete jako obvykle.",
-        "alt": "Pokud macOS místo toho hlásí, že nemůže ověřit vývojáře, otevřete **Nastavení systému → Soukromí a zabezpečení**, v části **Zabezpečení** klikněte u Moony na **Přesto otevřít**."
+        "alt": "Pokud macOS místo toho hlásí, že nemůže ověřit vývojáře, otevřete **Nastavení systému → Soukromí a zabezpečení** (v macOS 12 a starším **Systémové předvolby → Zabezpečení a soukromí**), v části **Zabezpečení** klikněte u Moony na **Přesto otevřít**."
       },
       "win": {
         "keep": "Stáhněte instalátor. Pokud prohlížeč hlásí, že se soubor stahuje jen zřídka, ponechte ho (v Edgi: **⋯ → Zachovat → Zobrazit více → Přesto zachovat**).",
@@ -222,7 +223,7 @@
       "steps": [
         "Hlavní měna a země.",
         "Jméno a heslo.",
-        "Váš **klíč pro obnovu**. Uložte si ho: je to jediný způsob, jak zapomenuté heslo obnovit, a funguje jen spolu s klíčovými soubory ve složce s daty, proto si zálohujte i data (**Nastavení → Data a zálohy**).",
+        "Váš **obnovovací klíč**. Uložte si ho: je to jediný způsob, jak zapomenuté heslo obnovit, a funguje jen spolu s klíčovými soubory ve složce s daty, proto si zálohujte i data (**Nastavení → Data a zálohy**).",
         "Co chcete sledovat.",
         "Nabídka přidat první účet a importovat bankovní výpis."
       ],
@@ -251,11 +252,11 @@
       },
       "origin": {
         "title": "Nic od třetích stran",
-        "text": "Písma, styly a obrázky pocházejí z vlastní domény webu a stránky neposílají žádné požadavky třetím stranám. Hlavičky odpovědí i síťové požadavky si může kdokoli ověřit ve vývojářských nástrojích prohlížeče."
+        "text": "Písma, styly a obrázky pocházejí z vlastní domény webu a stránky neposílají žádné požadavky třetím stranám. Prohlížeč to vynucuje přísnou hlavičkou Content-Security-Policy a hlavičky odpovědí i síťové požadavky si může kdokoli ověřit ve vývojářských nástrojích prohlížeče."
       },
       "hosting": {
         "title": "Hosting",
-        "text": "Web běží na Cloudflare. Jeho okrajové servery vidí obvyklé údaje o požadavku, například vaši IP adresu a user agent, podle [zásad ochrany osobních údajů Cloudflare](https://www.cloudflare.com/privacypolicy/)."
+        "text": "Web běží na Cloudflare. Jeho okrajové servery vidí obvyklé údaje o požadavku, například vaši IP adresu a user agent, podle [zásad ochrany osobních údajů Cloudflare](https://www.cloudflare.com/privacypolicy/). Projekt má analytiku Cloudflare i všechny ostatní funkce, které přidávají skripty nebo cookies, vypnuté."
       },
       "downloads": {
         "title": "Stahování",
@@ -285,7 +286,7 @@
       },
       "password": {
         "q": "Co když zapomenu heslo?",
-        "a": "Použijte 24znakový klíč pro obnovu, který vám Moony ukázal při nastavení; je to jediný způsob, jak heslo obnovit. Pokud ztratíte obojí, data nikdo neotevře, proto si je zálohujte (Nastavení → Data a zálohy)."
+        "a": "Použijte 24znakový obnovovací klíč, který vám Moony ukázal při nastavení; je to jediný způsob, jak heslo obnovit. Pokud ztratíte obojí, data nikdo neotevře, proto si je zálohujte (Nastavení → Data a zálohy)."
       },
       "devices": {
         "q": "Mohu ho používat na dvou počítačích nebo v telefonu?",
