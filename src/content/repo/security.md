@@ -1,8 +1,8 @@
 ---
 title: "Security"
-sourceUrl: "https://github.com/fiiles/Moony/blob/v0.10.0/SECURITY.md"
-tag: "v0.10.0"
-fetchedAt: "2026-10-13T08:23:11.643Z"
+sourceUrl: "https://github.com/fiiles/Moony/blob/v0.11.0/SECURITY.md"
+tag: "v0.11.0"
+fetchedAt: "2026-10-13T17:45:09.861Z"
 ---
 
 Moony keeps people's financial records, so security reports are taken seriously. Moony is
@@ -32,7 +32,7 @@ A useful report contains:
 - whether you have shared the details with anyone else.
 
 Please never include real financial data. The demo profile (`cargo run --bin seed_demo`,
-see [CONTRIBUTING.md](https://github.com/fiiles/Moony/blob/v0.10.0/CONTRIBUTING.md#demo-data)) is a safe place to reproduce things.
+see [CONTRIBUTING.md](https://github.com/fiiles/Moony/blob/v0.11.0/CONTRIBUTING.md#demo-data)) is a safe place to reproduce things.
 
 ## What to expect
 
@@ -44,7 +44,7 @@ see [CONTRIBUTING.md](https://github.com/fiiles/Moony/blob/v0.10.0/CONTRIBUTING.
 | Public disclosure | after a fixed release is available, or after 90 days, whichever comes first — earlier or later by agreement with you |
 
 Confirmed vulnerabilities are published as a GitHub security advisory (with a CVE where it
-makes sense) and noted under *Security* in [CHANGELOG.md](https://github.com/fiiles/Moony/blob/v0.10.0/CHANGELOG.md). You are credited
+makes sense) and noted under *Security* in [CHANGELOG.md](https://github.com/fiiles/Moony/blob/v0.11.0/CHANGELOG.md). You are credited
 by name or handle unless you prefer to stay anonymous.
 
 ## Scope
@@ -70,11 +70,12 @@ Out of scope:
   device (malware, a keylogger, someone using the computer while the app is unlocked).
   Lock the app, use full-disk encryption and a strong password.
 - **Attachments are stored unencrypted** (photos and documents in the data folder). This is
-  documented in [PRIVACY.md](https://github.com/fiiles/Moony/blob/v0.10.0/PRIVACY.md) and is a known roadmap item, not a new finding.
+  documented in [PRIVACY.md](https://github.com/fiiles/Moony/blob/v0.11.0/PRIVACY.md) and listed in the [roadmap](https://github.com/fiiles/Moony/blob/v0.11.0/ROADMAP.md), so it is
+  not a new finding.
 - Weak or reused passwords chosen by the user, and loss of both password and recovery key
   (there is deliberately no backdoor).
 - Releases being **unsigned** by Apple and Microsoft for now (see the install notes in
-  [README.md](https://github.com/fiiles/Moony/blob/v0.10.0/README.md#install)); the in-app updater still verifies its own signature.
+  [README.md](https://github.com/fiiles/Moony/blob/v0.11.0/README.md#download-and-install)); the in-app updater still verifies its own signature.
 - What a third-party AI client does with data after you connected it over MCP.
 - Vulnerabilities in dependencies with no demonstrable effect on Moony — please report them
   upstream. Reports that only restate the output of an automated scanner, denial of service of
@@ -89,11 +90,13 @@ reasonable time to fix a problem before you go public.
 ## How we keep dependencies and releases in check
 
 - `cargo audit --deny warnings` runs in CI and blocks the build on any advisory (including
-  unmaintained or yanked crates); see [`.github/workflows/ci.yml`](https://github.com/fiiles/Moony/blob/v0.10.0/.github/workflows/ci.yml).
+  unmaintained or yanked crates) except the few that are listed with a reason in
+  [`.cargo/audit.toml`](https://github.com/fiiles/Moony/blob/v0.11.0/.cargo/audit.toml); see
+  [`.github/workflows/ci.yml`](https://github.com/fiiles/Moony/blob/v0.11.0/.github/workflows/ci.yml).
 - Dependabot opens security-update pull requests for npm, Cargo and GitHub Actions
-  ([`.github/dependabot.yml`](https://github.com/fiiles/Moony/blob/v0.10.0/.github/dependabot.yml)).
+  ([`.github/dependabot.yml`](https://github.com/fiiles/Moony/blob/v0.11.0/.github/dependabot.yml)).
 - Releases are built by GitHub Actions from version tags; the in-app updater only installs
   archives signed with the project's updater key. The release process and what is still
   missing (platform code signing) are described in
-  [`docs/playbooks/release.md`](https://github.com/fiiles/Moony/blob/v0.10.0/docs/playbooks/release.md).
-- A third-party licence inventory is in [THIRD_PARTY_LICENSES.md](https://github.com/fiiles/Moony/blob/v0.10.0/THIRD_PARTY_LICENSES.md).
+  [`docs/playbooks/release.md`](https://github.com/fiiles/Moony/blob/v0.11.0/docs/playbooks/release.md).
+- A third-party license inventory is in [THIRD_PARTY_LICENSES.md](https://github.com/fiiles/Moony/blob/v0.11.0/THIRD_PARTY_LICENSES.md).
