@@ -1,0 +1,43 @@
+---
+import { href, other, t, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+  /** Current page path without the locale prefix; the language switch points at the same page in the other locale. */
+  path: string;
+}
+
+const { locale, path } = Astro.props;
+const home = href(locale, '');
+const switcher: { locale: Locale; label: string; name: string }[] = [
+  { locale: 'en', label: 'EN', name: 'English' },
+  { locale: 'cs', label: 'CS', name: 'Čeština' },
+];
+---
+<header class="site-nav">
+  <div class="wrap">
+    <a class="brand" href={home} aria-label={t(locale, 'nav.home')}><span class="moon"></span><b>{t(locale, 'site.name')}</b></a>
+    <nav class="nav-links" aria-label={t(locale, 'nav.label')}>
+      <a href={home + '#track'}>{t(locale, 'nav.tracks')}</a>
+      <a href={home + '#privacy'}>{t(locale, 'nav.privacy')}</a>
+      <a href={home + '#import'}>{t(locale, 'nav.import')}</a>
+      <a href={home + '#faq'}>{t(locale, 'nav.faq')}</a>
+    </nav>
+    <div class="nav-right">
+      <span class="seg lang" role="group" aria-label={t(locale, 'nav.language')}>
+        {switcher.map((s) => (
+          <a
+            class:list={['seg__btn', { 'is-active': s.locale === locale }]}
+            href={href(s.locale, path)}
+            lang={s.locale}
+            hreflang={s.locale}
+            title={s.name}
+            aria-current={s.locale === locale ? 'true' : undefined}
+          >{s.label}</a>
+        ))}
+      </span>
+      <a class="btn btn--ghost" href="https://github.com/fiiles/Moony"><svg class="ic"><use href="#i-github"/></svg>{t(locale, 'nav.github')}</a>
+      <a class="btn btn--primary" href={href(locale, 'download/')}><svg class="ic"><use href="#i-download"/></svg>{t(locale, 'nav.download')}</a>
+    </div>
+  </div>
+</header>

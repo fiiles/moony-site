@@ -1,0 +1,37 @@
+{
+  "site": {
+    "name": "Moony",
+    "tagline": "Celé vaše jmění. Jen na vašem počítači.",
+    "description": "Moony je bezplatná open-source aplikace pro osobní finance pro macOS, Windows a Linux. Bankovní účty, investice, krypto, nemovitosti, úvěry a pojištění v jedné šifrované databázi na vašem vlastním počítači. Bez účtu, bez cloudu, bez telemetrie."
+  },
+  "nav": {
+    "label": "Hlavní",
+    "tracks": "Co sleduje",
+    "privacy": "Soukromí",
+    "import": "Import",
+    "download": "Stáhnout",
+    "faq": "Otázky",
+    "github": "GitHub",
+    "home": "Moony, úvodní stránka",
+    "language": "Jazyk"
+  },
+  "footer": {
+    "blurb": "Osobní správce majetku, který zůstává ve vašem počítači.",
+    "product": "Produkt",
+    "download": "Stáhnout",
+    "changelog": "Seznam změn",
+    "trust": "Důvěra",
+    "privacy": "Soukromí",
+    "security": "Zabezpečení a hlášení zranitelností",
+    "licence": "Licence",
+    "sitePrivacy": "Tento web",
+    "community": "Komunita",
+    "github": "GitHub",
+    "discussions": "Diskuze",
+    "presets": "Přispět presetem banky",
+    "translate": "Přeložit Moony",
+    "disclaimer": "Moony není finanční, daňové ani investiční poradenství. Čísla závisí na datech třetích stran a mohou být nepřesná.",
+    "nocookies": "Tento web neukládá cookies a nenačítá nic od třetích stran.",
+    "copyright": "© 2026 Filip Král"
+  }
+}

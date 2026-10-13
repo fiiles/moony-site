@@ -1,3 +1,13 @@
 ---
+import Base from '../../layouts/Base.astro';
+import { t } from '../../i18n';
+
+const locale = 'cs';
 ---
-<!doctype html><html lang="cs"><head><meta charset="utf-8"><title>Moony</title></head><body><h1>Moony</h1></body></html>
+<Base locale={locale} title={`${t(locale, 'site.name')} — ${t(locale, 'site.tagline')}`} description={t(locale, 'site.description')} path="">
+  <section class="hero-section">
+    <div class="wrap hero-copy">
+      <h1>{t(locale, 'site.tagline')}</h1>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,49 @@
+---
+import { href, t, type Locale } from '../i18n';
+
+interface Props { locale: Locale }
+
+const { locale } = Astro.props;
+const repo = 'https://github.com/fiiles/Moony';
+const product = [
+  { label: t(locale, 'footer.download'), href: href(locale, 'download/') },
+  { label: t(locale, 'footer.changelog'), href: href(locale, 'changelog/') },
+];
+const trust = [
+  { label: t(locale, 'footer.privacy'), href: href(locale, 'privacy/') },
+  { label: t(locale, 'footer.security'), href: href(locale, 'security/') },
+  { label: t(locale, 'footer.licence'), href: `${repo}/blob/main/LICENSE` },
+  { label: t(locale, 'footer.sitePrivacy'), href: href(locale, 'site-privacy/') },
+];
+const community = [
+  { label: t(locale, 'footer.github'), href: repo },
+  { label: t(locale, 'footer.discussions'), href: `${repo}/discussions` },
+  { label: t(locale, 'footer.presets'), href: `${repo}/blob/main/CONTRIBUTING.md#adding-a-bank-preset` },
+  { label: t(locale, 'footer.translate'), href: `${repo}/blob/main/CONTRIBUTING.md` },
+];
+const columns = [
+  { title: t(locale, 'footer.product'), links: product },
+  { title: t(locale, 'footer.trust'), links: trust },
+  { title: t(locale, 'footer.community'), links: community },
+];
+---
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand"><span class="moon"></span><b>{t(locale, 'site.name')}</b></div>
+        <p style="margin-top:10px; max-width:300px">{t(locale, 'footer.blurb')}</p>
+      </div>
+      {columns.map((c) => (
+        <div>
+          <h4>{c.title}</h4>
+          <ul>{c.links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
+        </div>
+      ))}
+    </div>
+    <div class="foot-note">
+      <span>{t(locale, 'footer.disclaimer')}</span>
+      <span>{t(locale, 'footer.copyright')} · {t(locale, 'footer.nocookies')}</span>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,37 @@
+{
+  "site": {
+    "name": "Moony",
+    "tagline": "Your whole net worth. Only on your computer.",
+    "description": "Moony is a free, open-source personal finance app for macOS, Windows and Linux. Bank accounts, investments, crypto, property, loans and insurance in one encrypted database on your own computer. No account, no cloud, no telemetry."
+  },
+  "nav": {
+    "label": "Main",
+    "tracks": "What it tracks",
+    "privacy": "Privacy",
+    "import": "Import",
+    "download": "Download",
+    "faq": "FAQ",
+    "github": "GitHub",
+    "home": "Moony home",
+    "language": "Language"
+  },
+  "footer": {
+    "blurb": "A personal wealth manager that stays on your computer.",
+    "product": "Product",
+    "download": "Download",
+    "changelog": "Changelog",
+    "trust": "Trust",
+    "privacy": "Privacy",
+    "security": "Security and reporting",
+    "licence": "Licence",
+    "sitePrivacy": "This website",
+    "community": "Community",
+    "github": "GitHub",
+    "discussions": "Discussions",
+    "presets": "Contribute a bank preset",
+    "translate": "Translate Moony",
+    "disclaimer": "Moony is not financial, tax or investment advice. Figures depend on data from third parties and may be inaccurate.",
+    "nocookies": "This site sets no cookies and loads nothing from third parties.",
+    "copyright": "© 2026 Filip Král"
+  }
+}

@@ -18,7 +18,7 @@ The output lands in `dist/`.
 
 - `npm run tokens:sync` - copy the app's design tokens into the site (`npm run tokens:check` fails on drift)
 - `npm run content:sync` - fetch the app's privacy, security and changelog text and the latest release data as snapshots
-- `npm test` - run the script tests (`node --test scripts/`)
+- `npm test` - run the script tests (`node --test "scripts/*.test.mjs"`)
 
 ## Environment variables
 
