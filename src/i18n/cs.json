@@ -6,7 +6,7 @@
   },
   "nav": {
     "label": "Hlavní",
-    "tracks": "Co sleduje",
+    "tracks": "Co eviduje",
     "privacy": "Soukromí",
     "features": "Funkce",
     "download": "Stáhnout",
@@ -104,7 +104,7 @@
     }
   },
   "tracks": {
-    "title": "Co sleduje",
+    "title": "Co všechno Moony eviduje",
     "items": {
       "bank": {
         "name": "Bankovní účty",
