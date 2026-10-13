@@ -95,6 +95,7 @@ not_found_handling = "404-page"
 1. In the project, open **Custom domains**, click **Set up a custom domain**, enter `moonyfinance.com` and continue. Then add `www.moonyfinance.com` the same way (the redirect in `_redirects` only works when the project also answers on `www`).
 2. If the domain is registered at Cloudflare, or its DNS already runs on Cloudflare, the DNS records are created for you. Otherwise Cloudflare shows what to add at your registrar: a `CNAME` for `www` pointing at the project's `*.pages.dev` address, and for the bare domain either the registrar's `ALIAS`/`ANAME` record or moving the domain's name servers to Cloudflare, which the dashboard walks you through.
 3. Wait until both domains show **Active** (the certificate is issued automatically).
+4. The `www` redirect lives in `public/_redirects`. If step 5 below shows no `301` for `www`, create the same redirect in the domain instead: **Rules → Redirect Rules → Create rule**, "Hostname equals `www.moonyfinance.com`", then **Dynamic** redirect to `concat("https://moonyfinance.com", http.request.uri.path)` with status 301 and the query string preserved.
 
 ### 4. Switch off everything that adds to the pages
 
