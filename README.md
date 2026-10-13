@@ -1,6 +1,10 @@
 # Moony website
 
-The website for Moony, the local-first personal finance app. A static Astro 5 site, bilingual (English and Czech), built to plain HTML and deployed to GitHub Pages.
+The website for Moony, the local-first personal finance app. A static Astro 7 site, bilingual (English and Czech), built to plain HTML and deployed to GitHub Pages.
+
+## Installing
+
+The `.npmrc` in this repository pins the npm registry to https://registry.npmjs.org/, so installs never use another registry.
 
 ## Build
 
@@ -24,3 +28,5 @@ The output lands in `dist/`.
 ## Deploying
 
 See .github/workflows/deploy.yml
+
+Astro's anonymous telemetry is switched off in CI with ASTRO_TELEMETRY_DISABLED=1; run `npx astro telemetry disable` once locally.
