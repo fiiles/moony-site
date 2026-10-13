@@ -1,0 +1,12 @@
+---
+import Base from '../../layouts/Base.astro';
+import DownloadPage from '../../components/DownloadPage.astro';
+import { tf } from '../../i18n';
+import { release, softwareApplicationLd } from '../../lib/release';
+
+const locale = 'cs';
+const vars = { version: release.version };
+---
+<Base locale={locale} title={tf(locale, 'downloadPage.metaTitle', vars)} description={tf(locale, 'downloadPage.description', vars)} path="download/" jsonLd={softwareApplicationLd()}>
+  <DownloadPage locale={locale} />
+</Base>

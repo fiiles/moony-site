@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import { href } from '../i18n';
+
+const locale = 'en';
+---
+{/* The error page is English only and never indexed. Its path is the home page so the language switch leads somewhere that exists. */}
+<Base locale={locale} title="Page not found · Moony" description="This page does not exist." path="" englishOnly noindex>
+  <section class="block notfound">
+    <div class="wrap">
+      <div class="eyebrow">404</div>
+      <h1>This page does not exist.</h1>
+      <p class="lead">The address may be mistyped, or the page may have moved.</p>
+      <div class="cta">
+        <a class="btn btn--primary btn--lg" href={href('en', '')}>Moony home</a>
+        <a class="btn btn--lg" href={href('cs', '')} lang="cs" hreflang="cs">Moony česky</a>
+        <a class="btn btn--lg" href={href('en', 'download/')}><svg class="ic" aria-hidden="true"><use href="#i-download"/></svg>Download</a>
+      </div>
+    </div>
+  </section>
+</Base>

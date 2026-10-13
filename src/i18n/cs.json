@@ -191,6 +191,82 @@
     "foot": "Aktualizace se ověřují podpisovým klíčem projektu.",
     "all": "Všechna vydání a podrobnosti →"
   },
+  "downloadPage": {
+    "metaTitle": "Stáhnout Moony {version} pro macOS, Windows a Linux",
+    "description": "Instalátory Moony {version} pro macOS, Windows a Linux, postup prvního spuštění pro každý systém, systémové požadavky a způsob aktualizací.",
+    "title": "Stáhnout Moony {version}",
+    "released": "Vydáno {date}",
+    "allReleases": "Všechna vydání →",
+    "macHint": "Apple Silicon znamená čip M1 nebo novější. Nevíte, jaký Mac máte? V nabídce Apple zvolte **O tomto Macu**: řádek Čip nebo Procesor uvádí Apple M… nebo Intel.",
+    "install": {
+      "title": "Instalace a první spuštění",
+      "unsigned": "Instalátory zatím nejsou podepsané certifikáty Applu a Microsoftu. Podpis vyžaduje členství v Apple Developer Program a certifikát pro podepisování kódu ve Windows, které projekt nemá; je v plánu. Do té doby macOS a Windows při prvním otevření aplikace zobrazí varování. Aplikace není poškozená: stačí jednou projít kroky níže. Aktualizace uvnitř aplikace se ověřují vlastním podpisem projektu v každém případě.",
+      "mac": {
+        "open": "Otevřete soubor `.dmg` a přetáhněte **Moony** do složky **Aplikace**.",
+        "terminal": "Otevřete **Terminál** (Aplikace → Utility) a jednou spusťte tento příkaz:",
+        "why": "Odstraní příznak „staženo z internetu“, kvůli kterému macOS hlásí „Moony je poškozená a nelze ji otevřít“ (Gatekeeper). Potom Moony otevřete jako obvykle.",
+        "alt": "Pokud macOS místo toho hlásí, že nemůže ověřit vývojáře, otevřete **Nastavení systému → Soukromí a zabezpečení**, v části **Zabezpečení** klikněte u Moony na **Přesto otevřít**."
+      },
+      "win": {
+        "keep": "Stáhněte instalátor. Pokud prohlížeč hlásí, že se soubor stahuje jen zřídka, ponechte ho (v Edgi: **⋯ → Zachovat → Zobrazit více → Přesto zachovat**).",
+        "run": "Spusťte ho. Windows SmartScreen může zobrazit „Windows ochránil váš počítač“. Klikněte na **Další informace** a potom na **Přesto spustit**."
+      },
+      "linux": {
+        "arch": "Sestavení jsou k dispozici pro x86_64.",
+        "fuse": "Některé distribuce potřebují pro AppImage balíček `libfuse2`."
+      }
+    },
+    "first": {
+      "title": "První spuštění",
+      "intro": "Krátká přeskočitelná uvítací animace vás zavede do průvodce nastavením. Provede vás těmito kroky:",
+      "steps": [
+        "Hlavní měna a země.",
+        "Jméno a heslo.",
+        "Váš **klíč pro obnovu**. Uložte si ho: je to jediný způsob, jak zapomenuté heslo obnovit, a funguje jen spolu s klíčovými soubory ve složce s daty, proto si zálohujte i data (**Nastavení → Data a zálohy**).",
+        "Co chcete sledovat.",
+        "Nabídka přidat první účet a importovat bankovní výpis."
+      ],
+      "outro": "Přehled pak zobrazí úvodní kontrolní seznam."
+    },
+    "updating": {
+      "title": "Aktualizace",
+      "text": "Po odemknutí se Moony zeptá GitHubu, zda existuje novější verze, a nabídne aktualizaci jedním kliknutím. Stažený soubor se před instalací ověří proti veřejnému klíči projektu. Automatickou kontrolu můžete vypnout v **Nastavení**; co posílá, uvádí [stránka Soukromí](privacy)."
+    },
+    "requirements": {
+      "title": "Systémové požadavky",
+      "mac": "Macy s Apple Silicon i Intel. Toto vydání nedeklaruje minimální verzi macOS; pokud se Moony na starším systému neotevře, [napište nám do diskuzí na GitHubu](https://github.com/fiiles/Moony/discussions).",
+      "win": "Windows 10 a 11, 64bitové. Moony potřebuje běhové prostředí Microsoft Edge WebView2, které je v obou předinstalované; instalátor ho stáhne, pokud chybí.",
+      "linux": "Pouze x86_64: AppImage, balíček `.deb` pro Debian a Ubuntu a `.rpm` pro Fedoru a openSUSE."
+    }
+  },
+  "sitePrivacy": {
+    "metaTitle": "Soukromí tohoto webu · Moony",
+    "description": "Co web Moony dělá a nedělá: žádné cookies, žádná analytika, nic načítaného od třetích stran, hostování u Cloudflare.",
+    "title": "Soukromí tohoto webu",
+    "intro": "Tato stránka se týká webu moonyfinance.com. Co aplikace Moony ukládá a odesílá, popisuje [stránka Soukromí](privacy).",
+    "items": {
+      "cookies": {
+        "title": "Žádné cookies, žádná analytika",
+        "text": "Tento web neukládá cookies a nemá žádnou analytiku, počítadla ani sledovací pixely."
+      },
+      "origin": {
+        "title": "Nic od třetích stran",
+        "text": "Písma, styly a obrázky pocházejí z vlastní domény webu a stránky neposílají žádné požadavky třetím stranám. Hlavičky odpovědí i síťové požadavky si může kdokoli ověřit ve vývojářských nástrojích prohlížeče."
+      },
+      "hosting": {
+        "title": "Hosting",
+        "text": "Web běží na Cloudflare. Jeho okrajové servery vidí obvyklé údaje o požadavku, například vaši IP adresu a user agent, podle [zásad ochrany osobních údajů Cloudflare](https://www.cloudflare.com/privacypolicy/)."
+      },
+      "downloads": {
+        "title": "Stahování",
+        "text": "Odkazy ke stažení vedou na vydání na GitHubu, který soubory poskytuje."
+      },
+      "operator": {
+        "title": "Provozovatel a kontakt",
+        "text": "Provozovatelem je Filip Král. Dotazy patří do [diskuzí na GitHubu](https://github.com/fiiles/Moony/discussions)."
+      }
+    }
+  },
   "faq": {
     "eyebrow": "Otázky",
     "title": "Upřímné odpovědi.",

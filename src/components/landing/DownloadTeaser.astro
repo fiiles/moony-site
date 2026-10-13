@@ -1,13 +1,13 @@
 ---
-import release from '../../data/release.json';
 import { href, t, tf, type Locale } from '../../i18n';
+import { formatDate, formatSize, release } from '../../lib/release';
 
 interface Props { locale: Locale }
 
 const { locale } = Astro.props;
 const a = release.assets;
-const size = (bytes: number) => (bytes / 1048576).toFixed(1).replace('.', locale === 'cs' ? ',' : '.') + ' MB';
-const date = new Intl.DateTimeFormat(locale === 'en' ? 'en-GB' : locale, { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(`${release.publishedAt}T00:00:00Z`));
+const size = (bytes: number) => formatSize(bytes, locale);
+const date = formatDate(locale);
 // The repository documents are published in English only; Czech pages link to the English changelog.
 const changelog = { href: href('en', 'changelog/'), hreflang: locale === 'cs' ? 'en' : undefined };
 // The macOS note carries a command; the translated sentence holds a {cmd} marker where it goes.

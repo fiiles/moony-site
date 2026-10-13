@@ -1,0 +1,126 @@
+---
+import { href, t, tf, tList, type Locale } from '../i18n';
+import { allReleasesUrl, formatDate, formatSize, release } from '../lib/release';
+import { rich } from '../lib/rich';
+
+interface Props { locale: Locale }
+
+const { locale } = Astro.props;
+const a = release.assets;
+const p = (key: string) => t(locale, `downloadPage.${key}`);
+const version = release.version;
+// The repository documents are published in English only; Czech pages link to the English changelog and Privacy page.
+const english = locale === 'cs' ? 'en' : undefined;
+const changelog = { href: href('en', 'changelog/'), hreflang: english };
+const links = { privacy: { href: href('en', 'privacy/'), hreflang: english } };
+
+const cards = [
+  { id: 'mac', os: 'macOS', files: [[a.macArm, 'download.mac.arm'], [a.macIntel, 'download.mac.intel']] },
+  { id: 'win', os: 'Windows', files: [[a.windows, 'download.win.exe']] },
+  { id: 'linux', os: 'Linux', files: [[a.appimage, 'download.linux.appimage'], [a.deb, 'download.linux.deb'], [a.rpm, 'download.linux.rpm']] },
+] as const;
+
+// The commands name the real files of this release, so they can be pasted as they are.
+const linuxInstall = [
+  { label: t(locale, 'download.linux.appimage'), command: `chmod +x ${a.appimage.name} && ./${a.appimage.name}`, note: p('install.linux.fuse') },
+  { label: t(locale, 'download.linux.deb'), command: `sudo apt install ./${a.deb.name}` },
+  { label: t(locale, 'download.linux.rpm'), command: `sudo dnf install ./${a.rpm.name}` },
+];
+---
+<section class="block">
+  <div class="wrap">
+    <div class="page-head">
+      <h1>{tf(locale, 'downloadPage.title', { version })}</h1>
+      <p class="page-meta">{tf(locale, 'downloadPage.released', { date: formatDate(locale) })} · <a class="link" href={changelog.href} hreflang={changelog.hreflang}>{t(locale, 'download.changes')}</a> · <a class="link" href={allReleasesUrl}>{p('allReleases')}</a></p>
+    </div>
+    <div class="dl-grid">
+      {cards.map((c) => (
+        <div class="card dl">
+          <div class="dl__os"><h3>{c.os}</h3></div>
+          <div class="dl__files">
+            {c.files.map(([file, key]) => (
+              <a href={file.url}><span>{t(locale, key)}<small class="dl__name">{file.name}</small></span><span>{formatSize(file.bytes, locale)}</span></a>
+            ))}
+          </div>
+          {c.id === 'mac' && <p class="dl__note" set:html={rich(p('macHint'))} />}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="block" id="install">
+  <div class="wrap">
+    <div class="block-head">
+      <h2 class="title">{p('install.title')}</h2>
+      <p>{p('install.unsigned')}</p>
+    </div>
+    <div class="install">
+      <div class="card card--flat install__card">
+        <h3>macOS</h3>
+        <ol class="steps">
+          <li><span set:html={rich(p('install.mac.open'))} /></li>
+          <li>
+            <span set:html={rich(p('install.mac.terminal'))} />
+            <pre class="code"><code>xattr -cr /Applications/Moony.app</code></pre>
+            <span class="steps__note" set:html={rich(p('install.mac.why'))} />
+          </li>
+        </ol>
+        <p class="install__alt" set:html={rich(p('install.mac.alt'))} />
+      </div>
+      <div class="card card--flat install__card">
+        <h3>Windows</h3>
+        <ol class="steps">
+          <li><span set:html={rich(p('install.win.keep'))} /></li>
+          <li><span set:html={rich(p('install.win.run'))} /></li>
+        </ol>
+      </div>
+      <div class="card card--flat install__card">
+        <h3>Linux</h3>
+        <p class="install__alt install__alt--first">{p('install.linux.arch')}</p>
+        <div class="cmds">
+          {linuxInstall.map((c) => (
+            <div>
+              <b>{c.label}</b>
+              <pre class="code"><code>{c.command}</code></pre>
+              {c.note && <p class="steps__note" set:html={rich(c.note)} />}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap pair">
+    <div class="pair__col" id="first-run">
+      <h2 class="title title--sm">{p('first.title')}</h2>
+      <p>{p('first.intro')}</p>
+      <ol class="steps">
+        {tList(locale, 'downloadPage.first.steps').map((s) => <li><span set:html={rich(s)} /></li>)}
+      </ol>
+      <p>{p('first.outro')}</p>
+    </div>
+    <div class="pair__col" id="updating">
+      <h2 class="title title--sm">{p('updating.title')}</h2>
+      <p set:html={rich(p('updating.text'), links)} />
+    </div>
+  </div>
+</section>
+
+<section class="block" id="requirements">
+  <div class="wrap">
+    <div class="block-head">
+      <h2 class="title">{p('requirements.title')}</h2>
+    </div>
+    <div class="dl-grid">
+      {cards.map((c) => (
+        <div class="card card--flat req">
+          <h3>{c.os}</h3>
+          <p set:html={rich(p(`requirements.${c.id}`))} />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

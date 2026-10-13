@@ -1,0 +1,10 @@
+---
+import Base from '../layouts/Base.astro';
+import SitePrivacyPage from '../components/SitePrivacyPage.astro';
+import { t } from '../i18n';
+
+const locale = 'en';
+---
+<Base locale={locale} title={t(locale, 'sitePrivacy.metaTitle')} description={t(locale, 'sitePrivacy.description')} path="site-privacy/">
+  <SitePrivacyPage locale={locale} />
+</Base>
