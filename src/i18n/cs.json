@@ -235,7 +235,7 @@
     },
     "requirements": {
       "title": "Systémové požadavky",
-      "mac": "Macy s Apple Silicon i Intel. Toto vydání nedeklaruje minimální verzi macOS; pokud se Moony na starším systému neotevře, [napište nám do diskuzí na GitHubu](https://github.com/fiiles/Moony/discussions).",
+      "mac": "Macy s Apple Silicon i Intel. Vydání neuvádí minimální verzi macOS; předpokládá se, že funguje na aktuálních i nedávných verzích. Pokud se Moony na starším systému neotevře, [napište nám do diskuzí na GitHubu](https://github.com/fiiles/Moony/discussions).",
       "win": "Windows 10 a 11, 64bitové. Moony potřebuje běhové prostředí Microsoft Edge WebView2, které je v obou předinstalované; instalátor ho stáhne, pokud chybí.",
       "linux": "Pouze x86_64: AppImage, balíček `.deb` pro Debian a Ubuntu a `.rpm` pro Fedoru a openSUSE."
     }

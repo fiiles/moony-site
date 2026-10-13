@@ -235,7 +235,7 @@
     },
     "requirements": {
       "title": "System requirements",
-      "mac": "Apple Silicon and Intel Macs. This release does not declare a minimum macOS version; if Moony does not open on an older one, [tell us in GitHub Discussions](https://github.com/fiiles/Moony/discussions).",
+      "mac": "Apple Silicon and Intel Macs. The release does not state a minimum macOS version; current and recent versions are expected to work. If Moony does not open on an older one, [tell us in GitHub Discussions](https://github.com/fiiles/Moony/discussions).",
       "win": "Windows 10 and 11, 64-bit. Moony needs the Microsoft Edge WebView2 runtime, which is preinstalled on both; the installer fetches it if it is missing.",
       "linux": "x86_64 only: an AppImage, a `.deb` for Debian and Ubuntu and an `.rpm` for Fedora and openSUSE."
     }
