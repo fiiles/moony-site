@@ -150,7 +150,7 @@
     "cards": {
       "requests": {
         "title": "No balances, no names",
-        "text": "Only prices, exchange rates and the update check go online, never amounts or names."
+        "text": "Only prices, exchange rates and the update check go online; the price services see the ticker symbols and coin IDs you track, never amounts or names."
       },
       "disk": {
         "title": "Encrypted on disk",

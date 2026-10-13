@@ -150,7 +150,7 @@
     "cards": {
       "requests": {
         "title": "Žádné zůstatky ani jména",
-        "text": "Online jdou jen ceny, směnné kurzy a kontrola aktualizací, nikdy částky ani jména."
+        "text": "Online jdou jen ceny, směnné kurzy a kontrola aktualizací; cenové služby vidí tickery a ID kryptoměn, které sledujete, nikdy částky ani jména."
       },
       "disk": {
         "title": "Šifrováno na disku",
