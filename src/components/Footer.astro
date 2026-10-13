@@ -1,25 +1,27 @@
 ---
 import { href, t, type Locale } from '../i18n';
+import { repoUrl } from '../config';
 
 interface Props { locale: Locale }
 
 const { locale } = Astro.props;
-const repo = 'https://github.com/fiiles/Moony';
+// The repository documents are published in English only; Czech pages link to the English ones.
+const docs = (path: string) => ({ href: href('en', path), hreflang: locale === 'cs' ? 'en' : undefined });
 const product = [
   { label: t(locale, 'footer.download'), href: href(locale, 'download/') },
-  { label: t(locale, 'footer.changelog'), href: href(locale, 'changelog/') },
+  { label: t(locale, 'footer.changelog'), ...docs('changelog/') },
 ];
 const trust = [
-  { label: t(locale, 'footer.privacy'), href: href(locale, 'privacy/') },
-  { label: t(locale, 'footer.security'), href: href(locale, 'security/') },
-  { label: t(locale, 'footer.licence'), href: `${repo}/blob/main/LICENSE` },
+  { label: t(locale, 'footer.privacy'), ...docs('privacy/') },
+  { label: t(locale, 'footer.security'), ...docs('security/') },
+  { label: t(locale, 'footer.licence'), href: `${repoUrl}/blob/main/LICENSE` },
   { label: t(locale, 'footer.sitePrivacy'), href: href(locale, 'site-privacy/') },
 ];
 const community = [
-  { label: t(locale, 'footer.github'), href: repo },
-  { label: t(locale, 'footer.discussions'), href: `${repo}/discussions` },
-  { label: t(locale, 'footer.presets'), href: `${repo}/blob/main/CONTRIBUTING.md#adding-a-bank-preset` },
-  { label: t(locale, 'footer.translate'), href: `${repo}/blob/main/CONTRIBUTING.md` },
+  { label: t(locale, 'footer.github'), href: repoUrl },
+  { label: t(locale, 'footer.discussions'), href: `${repoUrl}/discussions` },
+  { label: t(locale, 'footer.presets'), href: `${repoUrl}/blob/main/CONTRIBUTING.md#adding-a-bank-preset` },
+  { label: t(locale, 'footer.translate'), href: `${repoUrl}/blob/main/CONTRIBUTING.md` },
 ];
 const columns = [
   { title: t(locale, 'footer.product'), links: product },
@@ -37,7 +39,7 @@ const columns = [
       {columns.map((c) => (
         <div>
           <h4>{c.title}</h4>
-          <ul>{c.links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
+          <ul>{c.links.map((l) => <li><a href={l.href} hreflang={l.hreflang}>{l.label}</a></li>)}</ul>
         </div>
       ))}
     </div>

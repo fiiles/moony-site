@@ -1,0 +1,21 @@
+---
+import { getEntry, render } from 'astro:content';
+import { t, type Locale } from '../i18n';
+
+interface Props {
+  slug: 'privacy' | 'security' | 'changelog';
+  locale: Locale;
+}
+
+const { slug, locale } = Astro.props;
+const entry = await getEntry('repo', slug);
+if (!entry) throw new Error(`content: repo entry "${slug}" is missing; run npm run content:sync`);
+const { Content } = await render(entry);
+---
+<section class="block">
+  <div class="wrap prose">
+    <h1>{entry.data.title}</h1>
+    <p class="provenance">{t(locale, 'repoPage.provenance')} <a class="link" href={entry.data.sourceUrl}>{entry.data.sourceUrl.replace('https://github.com/', '')}</a> ({entry.data.tag}).</p>
+    <Content />
+  </div>
+</section>

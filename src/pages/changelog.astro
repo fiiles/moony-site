@@ -1,0 +1,9 @@
+---
+import Base from '../layouts/Base.astro';
+import MarkdownPage from '../components/MarkdownPage.astro';
+
+const locale = 'en';
+---
+<Base locale={locale} title="Changelog · Moony" description="What changed in each Moony release, taken from the project's own CHANGELOG.md." path="changelog/" englishOnly>
+  <MarkdownPage slug="changelog" locale={locale} />
+</Base>

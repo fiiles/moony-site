@@ -1,0 +1,9 @@
+---
+import Base from '../layouts/Base.astro';
+import MarkdownPage from '../components/MarkdownPage.astro';
+
+const locale = 'en';
+---
+<Base locale={locale} title="Security · Moony" description="How Moony protects your data and how to report a vulnerability, taken from the project's own SECURITY.md." path="security/" englishOnly>
+  <MarkdownPage slug="security" locale={locale} />
+</Base>

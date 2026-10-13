@@ -19,13 +19,12 @@ export function href(locale: Locale, path: string): string {
   return locale === 'en' ? base + clean : base + 'cs/' + clean;
 }
 
-/** The hreflang set (en, cs, x-default) as absolute URLs. */
-export function alternate(site: URL | undefined, path: string): { lang: string; href: string }[] {
+/** The hreflang set (one entry per available locale, plus x-default) as absolute URLs. A page that exists in only some locales passes just those. */
+export function alternate(site: URL | undefined, path: string, available: Locale[] = locales): { lang: string; href: string }[] {
   const abs = (l: Locale) => new URL(href(l, path), site ?? 'https://moonyapp.com').toString();
   return [
-    { lang: 'en', href: abs('en') },
-    { lang: 'cs', href: abs('cs') },
-    { lang: 'x-default', href: abs('en') },
+    ...available.map((l) => ({ lang: l, href: abs(l) })),
+    { lang: 'x-default', href: abs(available.includes('en') ? 'en' : available[0]) },
   ];
 }
 

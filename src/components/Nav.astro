@@ -1,13 +1,16 @@
 ---
-import { href, other, t, type Locale } from '../i18n';
+import { href, t, type Locale } from '../i18n';
+import { repoUrl } from '../config';
 
 interface Props {
   locale: Locale;
   /** Current page path without the locale prefix; the language switch points at the same page in the other locale. */
   path: string;
+  /** The current page has no Czech counterpart; the switch then leads to the Czech home page instead of a missing page. */
+  englishOnly?: boolean;
 }
 
-const { locale, path } = Astro.props;
+const { locale, path, englishOnly = false } = Astro.props;
 const home = href(locale, '');
 const switcher: { locale: Locale; label: string; name: string }[] = [
   { locale: 'en', label: 'EN', name: 'English' },
@@ -28,7 +31,7 @@ const switcher: { locale: Locale; label: string; name: string }[] = [
         {switcher.map((s) => (
           <a
             class:list={['seg__btn', { 'is-active': s.locale === locale }]}
-            href={href(s.locale, path)}
+            href={href(s.locale, englishOnly && s.locale !== 'en' ? '' : path)}
             lang={s.locale}
             hreflang={s.locale}
             title={s.name}
@@ -36,7 +39,7 @@ const switcher: { locale: Locale; label: string; name: string }[] = [
           >{s.label}</a>
         ))}
       </span>
-      <a class="btn btn--ghost" href="https://github.com/fiiles/Moony"><svg class="ic"><use href="#i-github"/></svg>{t(locale, 'nav.github')}</a>
+      <a class="btn btn--ghost" href={repoUrl}><svg class="ic"><use href="#i-github"/></svg>{t(locale, 'nav.github')}</a>
       <a class="btn btn--primary" href={href(locale, 'download/')}><svg class="ic"><use href="#i-download"/></svg>{t(locale, 'nav.download')}</a>
     </div>
   </div>

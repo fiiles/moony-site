@@ -33,5 +33,8 @@
     "disclaimer": "Moony is not financial, tax or investment advice. Figures depend on data from third parties and may be inaccurate.",
     "nocookies": "This site sets no cookies and loads nothing from third parties.",
     "copyright": "© 2026 Filip Král"
+  },
+  "repoPage": {
+    "provenance": "This page shows the file from the Moony repository, rendered unchanged. The source is"
   }
 }
