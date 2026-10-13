@@ -2,7 +2,7 @@
 title: "Changelog"
 sourceUrl: "https://github.com/fiiles/Moony/blob/v0.10.0/CHANGELOG.md"
 tag: "v0.10.0"
-fetchedAt: "2026-10-13T08:15:43.860Z"
+fetchedAt: "2026-10-13T08:23:11.643Z"
 ---
 
 All notable changes to Moony are documented in this file. The format follows

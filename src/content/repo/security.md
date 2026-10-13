@@ -2,7 +2,7 @@
 title: "Security"
 sourceUrl: "https://github.com/fiiles/Moony/blob/v0.10.0/SECURITY.md"
 tag: "v0.10.0"
-fetchedAt: "2026-10-13T08:15:43.619Z"
+fetchedAt: "2026-10-13T08:23:11.643Z"
 ---
 
 Moony keeps people's financial records, so security reports are taken seriously. Moony is

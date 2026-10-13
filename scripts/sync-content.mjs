@@ -15,6 +15,7 @@ const pick = (test) => {
   const a = latest.assets.find((x) => test(x.name));
   return a ? { name: a.name, url: a.browser_download_url, bytes: a.size } : null;
 };
+const fetchedAt = new Date().toISOString();
 const release = {
   tag: latest.tag_name,
   version: latest.tag_name.replace(/^v/, ''),
@@ -28,28 +29,47 @@ const release = {
     deb: pick((n) => n.endsWith('.deb')),
     rpm: pick((n) => n.endsWith('.rpm')),
   },
-  fetchedAt: new Date().toISOString(),
+  fetchedAt,
 };
 for (const [k, v] of Object.entries(release.assets)) if (!v) throw new Error('asset missing: ' + k);
-mkdirSync(resolve(here, '../src/data'), { recursive: true });
-writeFileSync(resolve(here, '../src/data/release.json'), JSON.stringify(release, null, 2) + '\n');
-console.log('release:', release.tag, release.publishedAt);
 
 const docs = [
   ['PRIVACY.md', 'privacy', 'Privacy'],
   ['SECURITY.md', 'security', 'Security'],
   ['CHANGELOG.md', 'changelog', 'Changelog'],
 ];
-mkdirSync(resolve(here, '../src/content/repo'), { recursive: true });
+
+// A line starting with "# " outside a fenced code block is a top-level heading.
+const hasH1 = (md) => {
+  let fence = null;
+  for (const line of md.split('\n')) {
+    const f = line.match(/^ {0,3}(```|~~~)/);
+    if (f) fence = fence === null ? f[1] : fence === f[1] ? null : fence;
+    else if (fence === null && /^# /.test(line)) return true;
+  }
+  return false;
+};
+
+// Fetch and transform everything first; nothing is written unless every document succeeded.
+const snapshots = [];
 for (const [file, slug, title] of docs) {
   const url = `https://raw.githubusercontent.com/${repo}/${tag}/${file}`;
   const res = await fetch(url, { headers: { 'User-Agent': 'moony-site-sync' } });
   if (!res.ok) throw new Error(`${url}: ${res.status}`);
   let md = await res.text();
   md = md.replace(/^# .*\n/, ''); // the page renders its own H1
+  if (hasH1(md)) throw new Error(`${file}: a top-level "# " heading remains after stripping the title`);
   // relative links to repo files → GitHub blob links
   md = md.replace(/\]\(\.\/([^)]+)\)/g, `](https://github.com/${repo}/blob/${tag}/$1)`);
-  const fm = `---\ntitle: "${title}"\nsourceUrl: "https://github.com/${repo}/blob/${tag}/${file}"\ntag: "${tag}"\nfetchedAt: "${new Date().toISOString()}"\n---\n`;
-  writeFileSync(resolve(here, `../src/content/repo/${slug}.md`), fm + md);
+  const fm = `---\ntitle: "${title}"\nsourceUrl: "https://github.com/${repo}/blob/${tag}/${file}"\ntag: "${tag}"\nfetchedAt: "${fetchedAt}"\n---\n`;
+  snapshots.push({ slug, text: fm + md });
+}
+
+mkdirSync(resolve(here, '../src/data'), { recursive: true });
+mkdirSync(resolve(here, '../src/content/repo'), { recursive: true });
+writeFileSync(resolve(here, '../src/data/release.json'), JSON.stringify(release, null, 2) + '\n');
+console.log('release:', release.tag, release.publishedAt);
+for (const { slug, text } of snapshots) {
+  writeFileSync(resolve(here, `../src/content/repo/${slug}.md`), text);
   console.log('doc:', slug, 'from', tag);
 }

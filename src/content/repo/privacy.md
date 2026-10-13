@@ -2,7 +2,7 @@
 title: "Privacy"
 sourceUrl: "https://github.com/fiiles/Moony/blob/v0.10.0/PRIVACY.md"
 tag: "v0.10.0"
-fetchedAt: "2026-10-13T08:15:43.374Z"
+fetchedAt: "2026-10-13T08:23:11.643Z"
 ---
 
 Moony is a local-first app: **there is no account, no cloud and no sync.** Your financial
