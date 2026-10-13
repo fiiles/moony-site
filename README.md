@@ -28,7 +28,7 @@ The output lands in `dist/`. `npm run build` also runs the token check before th
 ## What lives in `public/`
 
 - `_headers` - the response headers Cloudflare adds: a strict Content-Security-Policy (`script-src 'self'`, `style-src 'self'`, `connect-src 'none'`, no exceptions), HSTS, `nosniff`, referrer and permissions policies, and the cache rules for fonts, screenshots and `_astro/`. Change it only to something equally strict; `check-dist` fails the build otherwise.
-- `_redirects` - sends `www.moonyfinance.com` to the apex domain.
+- `_redirects` - holds only a comment. Cloudflare does not support domain-level redirects in this file, so the `www` to apex redirect is a Redirect Rule on the domain's zone (see Deploying, step 3).
 - `robots.txt` - allows everything and names the sitemap (the build rewrites the address to match `SITE_URL` and `BASE_PATH`).
 - `js/os.js` - the only script on the site: it puts the visitor's operating system on the home page download button. It is a file of its own so that no inline script is needed.
 - `screenshots/` - the app pictures, 1440 px wide. To refresh them, replace the files under the same names (`<name>.png` and `<name>-cs.png`), then build.
@@ -88,18 +88,20 @@ directory = "./dist"
 not_found_handling = "404-page"
 ```
 
-`not_found_handling = "404-page"` makes unknown addresses answer with `dist/404.html` and a 404 status. Pages does that on its own, so it has no such setting. `_headers` and `_redirects` work the same on both paths.
+`not_found_handling = "404-page"` makes unknown addresses answer with `dist/404.html` and a 404 status. Pages does that on its own, so it has no such setting. `_headers` works the same on both paths. The Worker's name in the Cloudflare dashboard must equal `name` in `wrangler.toml` (`moony-site`).
 
 ### 3. Connect the domain
 
-1. In the project, open **Custom domains**, click **Set up a custom domain**, enter `moonyfinance.com` and continue. Then add `www.moonyfinance.com` the same way (the redirect in `_redirects` only works when the project also answers on `www`).
-2. If the domain is registered at Cloudflare, or its DNS already runs on Cloudflare, the DNS records are created for you. Otherwise Cloudflare shows what to add at your registrar: a `CNAME` for `www` pointing at the project's `*.pages.dev` address, and for the bare domain either the registrar's `ALIAS`/`ANAME` record or moving the domain's name servers to Cloudflare, which the dashboard walks you through.
-3. Wait until both domains show **Active** (the certificate is issued automatically).
-4. The `www` redirect lives in `public/_redirects`. If step 5 below shows no `301` for `www`, create the same redirect in the domain instead: **Rules → Redirect Rules → Create rule**, "Hostname equals `www.moonyfinance.com`", then **Dynamic** redirect to `concat("https://moonyfinance.com", http.request.uri.path)` with status 301 and the query string preserved.
+1. In the project, open **Custom domains**, click **Set up a custom domain**, enter `moonyfinance.com` and continue. Then add `www.moonyfinance.com` the same way, so that the name exists and the redirect in item 3 below has a request to act on. The domain is registered at Cloudflare, so its DNS records are created automatically when the custom domain is added to the Pages project; there is nothing to enter at a registrar. (The bare domain only works when the domain's DNS zone is on Cloudflare, which a Cloudflare registration provides.)
+2. Wait until both domains show **Active** (the certificate is issued automatically). Leave the `www` record **proxied** (orange cloud); a redirect rule never sees requests to an unproxied record.
+3. Create the `www` redirect as a zone **Redirect Rule**. This step is required: `public/_redirects` cannot do it, because Cloudflare does not support domain-level sources there. In the Cloudflare dashboard open the zone `moonyfinance.com`, then **Rules → Redirect Rules** (in the 2025 dashboard it may sit under **Rules → Overview → Create rule → Redirect Rule**; names vary by dashboard version). If a "Redirect from WWW to Root" template is offered, use it and check that it ends up as described below. Otherwise create a custom rule:
+   - When incoming requests match: custom filter expression `http.host eq "www.moonyfinance.com"`
+   - Then: **Dynamic** redirect, expression `concat("https://moonyfinance.com", http.request.uri.path)`, status code **301**, **Preserve query string** switched on
+4. Deploy the rule, then run the `www` check in section 5 below.
 
 ### 4. Switch off everything that adds to the pages
 
-Cloudflare has optional features that inject scripts into HTML or set cookies. They would break the site's promise of no third parties and no cookies (and the Content-Security-Policy would block them anyway, leaving the console full of errors). Open the domain `moonyfinance.com` in the dashboard and make sure each of these is **off**:
+Cloudflare has optional features that inject scripts into HTML or set cookies. They would break the site's promise of no third parties and no cookies (and the Content-Security-Policy would block them anyway, leaving the console full of errors). Open the domain `moonyfinance.com` in the dashboard and make sure each of these is **off**. Menu names vary by dashboard version: if a path below does not exist, search the dashboard for the setting's name and check that it is off.
 
 | Where | Setting | Why |
 |---|---|---|
@@ -125,7 +127,7 @@ curl -sI https://www.moonyfinance.com/download/ | grep -iE '^HTTP|^location'
 curl -s https://moonyfinance.com/robots.txt
 ```
 
-The first command must print `identical` (any difference means something between the repository and the visitor changed the HTML; look at the diff). The second must list the six headers from `public/_headers`. The third must show a `301` to `https://moonyfinance.com/download/`. The fourth must name `https://moonyfinance.com/sitemap-index.xml`. In a browser, open the developer tools on the home page: the Network tab lists only `moonyfinance.com` and the Console shows no errors. The `Strict-Transport-Security` header carries `includeSubDomains; preload`, so every future subdomain of `moonyfinance.com` must also answer over HTTPS; only submit the domain to https://hstspreload.org when you are sure of that.
+The first command must print `identical` (any difference means something between the repository and the visitor changed the HTML; look at the diff). The second must list the six headers from `public/_headers`. The third must show a `301` to `https://moonyfinance.com/download/` (it only does once the Redirect Rule from section 3 is deployed). The fourth must name `https://moonyfinance.com/sitemap-index.xml`. In a browser, open the developer tools on the home page: the Network tab lists only `moonyfinance.com` and the Console shows no errors. The `Strict-Transport-Security` header carries `includeSubDomains; preload`, so every future subdomain of `moonyfinance.com` must also answer over HTTPS; only submit the domain to https://hstspreload.org when you are sure of that.
 
 ### 6. After each app release
 

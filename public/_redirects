@@ -1,2 +1,2 @@
-# The apex domain is the canonical address; www redirects to it. (Needs www.moonyfinance.com added as a custom domain of the project.)
-https://www.moonyfinance.com/* https://moonyfinance.com/:splat 301
+# Intentionally no rules. Cloudflare does not support domain-level sources in _redirects (a source is a file path), so a www.moonyfinance.com line here would be ignored.
+# The www to apex redirect is a Redirect Rule on the moonyfinance.com zone instead; see "Deploying", step 3, in README.md.
