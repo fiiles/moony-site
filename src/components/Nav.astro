@@ -1,5 +1,5 @@
 ---
-import { href, t, type Locale } from '../i18n';
+import { href, languageNames, locales, t, type Locale } from '../i18n';
 import { repoUrl } from '../config';
 
 interface Props {
@@ -12,10 +12,7 @@ interface Props {
 
 const { locale, path, englishOnly = false } = Astro.props;
 const home = href(locale, '');
-const switcher: { locale: Locale; label: string; name: string }[] = [
-  { locale: 'en', label: 'EN', name: 'English' },
-  { locale: 'cs', label: 'CS', name: 'Čeština' },
-];
+const switcher = locales.map((l) => ({ locale: l, label: l.toUpperCase(), name: languageNames[l] }));
 ---
 <header class="site-nav">
   <div class="wrap">
@@ -39,8 +36,8 @@ const switcher: { locale: Locale; label: string; name: string }[] = [
           >{s.label}</a>
         ))}
       </span>
-      <a class="btn btn--ghost" href={repoUrl}><svg class="ic"><use href="#i-github"/></svg>{t(locale, 'nav.github')}</a>
-      <a class="btn btn--primary" href={href(locale, 'download/')}><svg class="ic"><use href="#i-download"/></svg>{t(locale, 'nav.download')}</a>
+      <a class="btn btn--ghost" href={repoUrl}><svg class="ic" aria-hidden="true"><use href="#i-github"/></svg>{t(locale, 'nav.github')}</a>
+      <a class="btn btn--primary" href={href(locale, 'download/')}><svg class="ic" aria-hidden="true"><use href="#i-download"/></svg>{t(locale, 'nav.download')}</a>
     </div>
   </div>
 </header>

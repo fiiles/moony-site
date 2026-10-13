@@ -2,7 +2,7 @@
 import Icons from '../components/Icons.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import { alternate, href, t, type Locale } from '../i18n';
+import { alternate, asset, href, siteUrl, t, type Locale } from '../i18n';
 
 interface Props {
   locale: Locale;
@@ -21,16 +21,13 @@ interface Props {
 
 const { locale, title, description, path, ogImage, jsonLd, noindex = false, englishOnly = false } = Astro.props;
 
-const site = Astro.site ?? new URL('https://moonyapp.com');
-const rawBase = import.meta.env.BASE_URL;
-const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
-const asset = (p: string) => base + p;
+const site = siteUrl(Astro.site);
 const absolute = (p: string) => new URL(p, site).toString();
 
 const canonical = absolute(href(locale, path));
-const alternates = alternate(Astro.site, path, englishOnly ? ['en'] : undefined);
+const alternates = alternate(site, path, englishOnly ? ['en'] : undefined);
 const isDefaultImage = !ogImage;
-const imageUrl = ogImage ? (/^https?:\/\//.test(ogImage) ? ogImage : absolute(asset(ogImage.replace(/^\/+/, '')))) : absolute(asset('og/moony-social-preview.png'));
+const imageUrl = ogImage ? (/^https?:\/\//.test(ogImage) ? ogImage : absolute(asset(ogImage))) : absolute(asset('og/moony-social-preview.png'));
 const ogLocale = locale === 'en' ? 'en_US' : 'cs_CZ';
 const ogLocaleAlt = locale === 'en' ? 'cs_CZ' : 'en_US';
 // The Latin-extended subset carries the Czech diacritics; English pages never request it, so only preload it for cs.

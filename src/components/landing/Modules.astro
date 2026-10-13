@@ -1,0 +1,43 @@
+---
+import { t, type Locale } from '../../i18n';
+
+interface Props { locale: Locale }
+
+const { locale } = Astro.props;
+const m = (key: string) => t(locale, `modules.${key}`);
+
+// The logo letters and tone only decorate the row; the words all come from the dictionary.
+const groups = [
+  { key: 'money', rows: [{ id: 'bank', logo: 'BA', tone: '' }, { id: 'budgets', logo: 'BU', tone: 'logo--2' }, { id: 'cashflow', logo: 'CF', tone: 'logo--3' }] },
+  { key: 'investments', rows: [{ id: 'stocks', logo: 'ST', tone: '' }, { id: 'crypto', logo: 'CR', tone: 'logo--2' }, { id: 'assets', logo: 'RE', tone: 'logo--3' }] },
+  { key: 'liabilities', rows: [{ id: 'loans', logo: 'LO', tone: 'logo--4' }, { id: 'insurance', logo: 'IN', tone: 'logo--soft' }] },
+  { key: 'tools', rows: [{ id: 'tools', logo: 'PR', tone: 'logo--2' }] },
+];
+---
+<section class="block" id="track">
+  <div class="wrap">
+    <div class="block-head">
+      <div class="eyebrow">{m('eyebrow')}</div>
+      <h2 class="title">{m('title')}</h2>
+      <p>{m('intro')}</p>
+    </div>
+    <div class="card card--table modules">
+      <div class="table">
+        <div class="table__head"><span>{m('head.module')}</span><span>{m('head.what')}</span><span class="th-how">{m('head.detail')}</span></div>
+        {groups.map((g) => (
+          <>
+            <div class="table__group">{m(`groups.${g.key}`)}</div>
+            {g.rows.map((r) => (
+              <div class="table__row">
+                <div class="entity"><span class:list={['logo', r.tone]} aria-hidden="true">{r.logo}</span><div><b>{m(`rows.${r.id}.name`)}</b><small>{m(`rows.${r.id}.sub`)}</small></div></div>
+                <div class="what">{m(`rows.${r.id}.what`)}</div>
+                <div class="how"><span class="badge">{m(`rows.${r.id}.badge`)}</span></div>
+              </div>
+            ))}
+          </>
+        ))}
+      </div>
+      <div class="table__foot"><span>{m('foot')}</span><a class="link" href="#faq">{m('footLink')}</a></div>
+    </div>
+  </div>
+</section>

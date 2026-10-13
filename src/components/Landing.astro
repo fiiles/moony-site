@@ -1,0 +1,13 @@
+---
+import Hero from './landing/Hero.astro';
+import Modules from './landing/Modules.astro';
+import PrivacyLedger from './landing/PrivacyLedger.astro';
+import type { Locale } from '../i18n';
+
+interface Props { locale: Locale }
+
+const { locale } = Astro.props;
+---
+<Hero locale={locale} />
+<Modules locale={locale} />
+<PrivacyLedger locale={locale} />

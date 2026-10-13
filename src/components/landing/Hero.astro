@@ -1,0 +1,48 @@
+---
+import release from '../../data/release.json';
+import { href, t, tf, type Locale } from '../../i18n';
+import { repoUrl } from '../../config';
+import Miniature from './Miniature.astro';
+
+interface Props { locale: Locale }
+
+const { locale } = Astro.props;
+const facts = ['noAccount', 'noCloud', 'noTelemetry', 'encrypted', 'offline', 'languages'];
+---
+<section class="hero-section">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="eyebrow">{t(locale, 'hero.eyebrow')}</div>
+      <h1>{t(locale, 'site.tagline')}</h1>
+      <p class="lead">{t(locale, 'hero.lead')}</p>
+      <div class="cta">
+        <a
+          class="btn btn--primary btn--lg"
+          href={href(locale, 'download/')}
+          id="dl-primary"
+          data-mac={t(locale, 'hero.ctaMac')}
+          data-win={t(locale, 'hero.ctaWin')}
+          data-linux={t(locale, 'hero.ctaLinux')}
+        ><svg class="ic" aria-hidden="true"><use href="#i-download"/></svg><span>{t(locale, 'hero.ctaMac')}</span></a>
+        <a class="btn btn--lg" href={repoUrl}><svg class="ic" aria-hidden="true"><use href="#i-github"/></svg>{t(locale, 'hero.ctaSource')}</a>
+      </div>
+      <p class="cta-note"><b>{t(locale, 'hero.noteStrong')}</b> {tf(locale, 'hero.noteRest', { version: release.version })}</p>
+      <div class="facts">
+        {facts.map((f) => <span><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>{t(locale, `hero.facts.${f}`)}</span>)}
+      </div>
+    </div>
+    <Miniature locale={locale} />
+  </div>
+</section>
+
+<script is:inline>
+  // The download button follows the visitor's platform; the labels are translated and carried on the button itself.
+  (function () {
+    var button = document.getElementById('dl-primary');
+    var label = button && button.querySelector('span');
+    if (!button || !label) return;
+    var platform = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '';
+    var text = /^win/i.test(platform) ? button.dataset.win : /linux/i.test(platform) ? button.dataset.linux : button.dataset.mac;
+    if (text) label.textContent = text;
+  })();
+</script>

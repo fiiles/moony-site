@@ -36,5 +36,276 @@
   },
   "repoPage": {
     "provenance": "This page shows the file from the Moony repository as published at the tag below; only the title and relative links are adapted. The source is"
+  },
+  "hero": {
+    "eyebrow": "Personal wealth manager · local-first",
+    "lead": "Bank accounts, investments, crypto, property, loans and insurance in one encrypted database on your Mac, PC or Linux machine. No account. No cloud. No sync.",
+    "ctaMac": "Download for macOS",
+    "ctaWin": "Download for Windows",
+    "ctaLinux": "Download for Linux",
+    "ctaSource": "View the source",
+    "noteStrong": "Free and open source",
+    "noteRest": "(AGPL-3.0) · Version {version}, the beta for 1.0 · Apple Silicon and Intel, Windows 10/11, Linux x86_64",
+    "facts": {
+      "noAccount": "No account",
+      "noCloud": "No cloud",
+      "noTelemetry": "No telemetry",
+      "encrypted": "AES-256 encrypted database",
+      "offline": "Works offline",
+      "languages": "10 languages"
+    }
+  },
+  "miniature": {
+    "label": "A live preview of the Moony dashboard with sample data",
+    "caption": "Sample data. The dashboard you install renders exactly like this.",
+    "brandSub": "Personal wealth manager",
+    "nav": {
+      "overview": "Overview",
+      "money": "Money",
+      "bank": "Bank accounts",
+      "budgets": "Budgets",
+      "cashflow": "Cashflow",
+      "investments": "Investments",
+      "stocks": "Stocks",
+      "crypto": "Crypto",
+      "realEstate": "Real estate",
+      "liabilities": "Liabilities",
+      "loans": "Loans",
+      "insurance": "Insurance"
+    },
+    "crumb": "the whole picture",
+    "status": "Data up to date",
+    "eyebrow": "Your financial picture",
+    "greeting": "Good morning, Alex.",
+    "asOf": "As of 12 October 2026",
+    "periodLabel": "Period",
+    "periods": {
+      "p30": "30D",
+      "p90": "90D",
+      "p365": "1Y",
+      "all": "All"
+    },
+    "netWorth": "Net worth",
+    "netWorthValue": "€184,310",
+    "assets": {
+      "label": "Total assets",
+      "value": "€231,900",
+      "note": "6 accounts, 14 positions"
+    },
+    "liabilities": {
+      "label": "Liabilities",
+      "value": "−€47,590",
+      "note": "Mortgage at 3.9 %"
+    },
+    "cash": {
+      "label": "Free cash",
+      "value": "€12,430",
+      "note": "In 3 currencies"
+    },
+    "p30": {
+      "delta": "↗ +2.8 %",
+      "note": "+€5,020 over the last 30 days",
+      "insight": "Value is rising. Largest share of the change: stocks.",
+      "labels": [
+        "12 Sep",
+        "19 Sep",
+        "27 Sep",
+        "4 Oct",
+        "Today"
+      ],
+      "events": [
+        "Buy · 12 × VWCE · €1,380",
+        "Sell · 5 × AAPL · €910"
+      ]
+    },
+    "p90": {
+      "delta": "↗ +7.3 %",
+      "note": "+€12,510 over the last 90 days",
+      "insight": "Value is rising. Largest share of the change: stocks.",
+      "labels": [
+        "Jul",
+        "Aug",
+        "Sep",
+        "Today"
+      ],
+      "events": [
+        "Buy · 8 × VWCE · €920",
+        "Sell · 3 × AAPL · €560",
+        "Buy · 12 × VWCE · €1,380"
+      ]
+    },
+    "p365": {
+      "delta": "↗ +17.5 %",
+      "note": "+€27,400 over the last year",
+      "insight": "Value is rising. Largest share of the change: cash.",
+      "labels": [
+        "Oct 25",
+        "Jan",
+        "Apr",
+        "Jul",
+        "Today"
+      ],
+      "events": [
+        "Buy · 20 × VWCE · €2,250",
+        "Sell · 5 × AAPL · €900",
+        "Buy · 15 × VWCE · €1,740"
+      ]
+    },
+    "all": {
+      "delta": "↗ +82 %",
+      "note": "+€83,100 since the first record",
+      "insight": "Value is rising. Largest share of the change: stocks.",
+      "labels": [
+        "2024",
+        "2025",
+        "2026",
+        "Today"
+      ],
+      "events": [
+        "First ETF purchase",
+        "Sell · 5 × AAPL · €900"
+      ]
+    }
+  },
+  "modules": {
+    "eyebrow": "Everything you own, one number",
+    "title": "A balance sheet, not just a budget.",
+    "intro": "Most apps track spending or investments. Moony holds both sides of your finances in one place, so the number at the top is the real one.",
+    "head": {
+      "module": "Module",
+      "what": "What it does",
+      "detail": "Detail"
+    },
+    "groups": {
+      "money": "Money",
+      "investments": "Investments",
+      "liabilities": "Liabilities and insurance",
+      "tools": "Tools"
+    },
+    "rows": {
+      "bank": {
+        "name": "Bank accounts",
+        "sub": "Any currency, per-account balance",
+        "what": "Import statements as CSV, keep the full transaction history, search and filter.",
+        "badge": "16 bank presets"
+      },
+      "budgets": {
+        "name": "Budgets",
+        "sub": "Monthly, quarterly, yearly",
+        "what": "Limits per category with progress, rules that categorize new transactions for you.",
+        "badge": "Rule packs for 40+ countries"
+      },
+      "cashflow": {
+        "name": "Cashflow",
+        "sub": "Actual and planned",
+        "what": "Where money came from and went, plus a planning view for the months ahead.",
+        "badge": "Report by period and category"
+      },
+      "stocks": {
+        "name": "Stocks and ETFs",
+        "sub": "Prices, dividend estimates, tags",
+        "what": "Positions with cost basis, time-weighted and money-weighted return, a watchlist with target prices.",
+        "badge": "Event markers on charts"
+      },
+      "crypto": {
+        "name": "Crypto",
+        "sub": "Holdings and history",
+        "what": "Prices from CoinGecko, transaction log, share of the portfolio.",
+        "badge": "Optional API key"
+      },
+      "assets": {
+        "name": "Real estate, bonds, other assets",
+        "sub": "Valuation log",
+        "what": "Dated valuations, rental income and costs, linked loans and policies, bond coupons, documents.",
+        "badge": "Maturity ladder for bonds"
+      },
+      "loans": {
+        "name": "Loans",
+        "sub": "Amortization with events",
+        "what": "Balance as of a date, extra payments and rate changes re-anchor the schedule.",
+        "badge": "Debt trajectory"
+      },
+      "insurance": {
+        "name": "Insurance",
+        "sub": "Policies and payments",
+        "what": "Premiums, frequency, payment calendar, attached documents.",
+        "badge": "Payment calendar"
+      },
+      "tools": {
+        "name": "Projection and analysis",
+        "sub": "Scenarios, milestones",
+        "what": "Where you may land in a chosen number of years from your returns and monthly contributions, stock analysis per tag, two calculators.",
+        "badge": "Annuity and real estate calculators"
+      }
+    },
+    "foot": "Figures are shown in the main currency you choose: any of 36 currencies with ECB reference rates; accounts and holdings can use 45.",
+    "footLink": "What it does not do →"
+  },
+  "ledger": {
+    "eyebrow": "What leaves your computer",
+    "title": "The complete list. Written to be checked against the code.",
+    "intro": "Moony makes network requests only for the things below. Apart from the optional AI client you connect yourself, none of them involves your balances, amounts, names or documents.",
+    "head": {
+      "service": "Service",
+      "sent": "What is sent",
+      "when": "When",
+      "off": "Off switch"
+    },
+    "rows": {
+      "yahoo": {
+        "service": "Yahoo Finance",
+        "sent": "Ticker symbols of the stocks you hold or follow, search text you type, symbols and ISINs from a stock CSV you import, and date ranges for price history.",
+        "when": "After unlock, when you add or import stock transactions, open the stock monitor or a position, and when prices are stale.",
+        "off": "Set prices by hand"
+      },
+      "coingecko": {
+        "service": "CoinGecko",
+        "sent": "The CoinGecko IDs of your crypto holdings, search text, and date ranges for history. If you add your own API key, it goes in a request header.",
+        "when": "After unlock, when you add a holding and when history is back-filled.",
+        "off": "Set prices by hand"
+      },
+      "ecb": {
+        "service": "European Central Bank",
+        "sent": "Nothing about you. A download of the public daily reference rates.",
+        "when": "When exchange rates are stale.",
+        "off": "Rates go stale"
+      },
+      "frankfurter": {
+        "service": "Frankfurter",
+        "sent": "The date range from your oldest transaction to today and the currencies your transactions use, to fetch historical ECB rates.",
+        "when": "When you add or import transactions in a currency whose history is missing, and on rate refresh.",
+        "off": "Current rates are used"
+      },
+      "github": {
+        "service": "GitHub",
+        "sent": "A plain request for latest.json of the latest release. The updater adds its user agent: app name and version, operating system and CPU architecture. An update you accept is checked against the project's public key.",
+        "when": "Once per app start, after unlock.",
+        "off": "Switch in Settings"
+      },
+      "ai": {
+        "service": "Your AI client (MCP, optional)",
+        "sent": "Whatever your AI client asks for over a local port, potentially your full financial data. Moony itself sends nothing to an AI provider.",
+        "when": "Only while the MCP server is enabled, the app is unlocked and a client connects with your token.",
+        "off": "Off by default"
+      }
+    },
+    "never": {
+      "telemetry": {
+        "label": "Analytics, crash reports, usage statistics",
+        "value": "None. Moony has no telemetry.",
+        "badge": "Not in the code"
+      },
+      "data": {
+        "label": "Your balances, transactions, names, documents",
+        "value": "Moony never sends them to any service.",
+        "badge": "By design"
+      }
+    },
+    "foot": "The web view that renders the interface loads nothing from the internet. All requests go through the Rust backend.",
+    "footLink": "Read the full privacy page →",
+    "encryptedTitle": "What is encrypted",
+    "encrypted": "The database: every record you enter or import, AES-256 with SQLCipher. The key is protected by your password and a 24-character recovery key. There is no backdoor.",
+    "plainTitle": "What is not encrypted yet",
+    "plain": "Photos and documents you attach are stored as plain files in the data folder, also inside backup archives, and the JSON export is plain text. Full-disk encryption is the right complement. Encrypting attachments is on the roadmap."
   }
 }
