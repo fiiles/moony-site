@@ -1,8 +1,8 @@
 ---
 title: "Privacy"
-sourceUrl: "https://github.com/fiiles/Moony/blob/v0.11.0/PRIVACY.md"
-tag: "v0.11.0"
-fetchedAt: "2026-10-13T17:45:09.861Z"
+sourceUrl: "https://github.com/fiiles/Moony/blob/v0.12.0/PRIVACY.md"
+tag: "v0.12.0"
+fetchedAt: "2026-10-14T05:52:32.469Z"
 ---
 
 Moony is a local-first app: **there is no account, no cloud and no sync.** Your financial
@@ -36,7 +36,7 @@ Be aware of these, because the "encrypted database" claim does not cover them:
 
 | What | Where | Notes |
 | --- | --- | --- |
-| Photos and documents you attach (real-estate photos and documents, insurance documents) | `real_estate_photos/`, `real_estate_documents/`, `insurance_documents/` in the data folder | Stored as ordinary files. Encrypting attachments is listed in the [roadmap](https://github.com/fiiles/Moony/blob/v0.11.0/ROADMAP.md). Anyone who can read your user profile can open them. |
+| Photos and documents you attach (real-estate photos and documents, insurance documents) | `real_estate_photos/`, `real_estate_documents/`, `insurance_documents/` in the data folder | Stored as ordinary files. Encrypting attachments is listed in the [roadmap](https://github.com/fiiles/Moony/blob/v0.12.0/ROADMAP.md). Anyone who can read your user profile can open them. |
 | Backups you create | The `.zip` you choose in Settings → Data and backups | The database inside is still encrypted and the key files need your password or recovery key, but **the attachments inside the archive are plain files**. |
 | "Export all data (JSON)" | The file you choose | A plain-text JSON dump of your data (API keys and the MCP token are left out). Handle it like a bank statement. |
 | Device settings | The operating system's WebView profile (`localStorage`) | The interface language, auto-lock minutes, the update-check switch, which sidebar groups are open, dismissed tips, the period, split and custom date range chosen in the stocks analysis, which cashflow-planning rows are expanded, the time the app was last locked, and your **first name** (it is shown in the greeting on the lock screen, which is displayed before the database is unlocked). No balances, amounts or account data. Delete Account clears them. |
@@ -184,6 +184,6 @@ server because Moony has none.
 ## Questions and changes
 
 Questions about privacy: open a GitHub Discussion or issue. Vulnerabilities: please follow
-[SECURITY.md](https://github.com/fiiles/Moony/blob/v0.11.0/SECURITY.md) instead of filing a public issue. This document changes together
+[SECURITY.md](https://github.com/fiiles/Moony/blob/v0.12.0/SECURITY.md) instead of filing a public issue. This document changes together
 with the code; its history is in git, and notable changes are listed in
-[CHANGELOG.md](https://github.com/fiiles/Moony/blob/v0.11.0/CHANGELOG.md).
+[CHANGELOG.md](https://github.com/fiiles/Moony/blob/v0.12.0/CHANGELOG.md).
