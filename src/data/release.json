@@ -1,39 +1,39 @@
 {
-  "tag": "v0.12.0",
-  "version": "0.12.0",
+  "tag": "v0.12.1",
+  "version": "0.12.1",
   "publishedAt": "2026-10-14",
-  "htmlUrl": "https://github.com/fiiles/Moony/releases/tag/v0.12.0",
+  "htmlUrl": "https://github.com/fiiles/Moony/releases/tag/v0.12.1",
   "assets": {
     "macArm": {
-      "name": "Moony_0.12.0_aarch64.dmg",
-      "url": "https://github.com/fiiles/Moony/releases/download/v0.12.0/Moony_0.12.0_aarch64.dmg",
-      "bytes": 16981773
+      "name": "Moony_0.12.1_aarch64.dmg",
+      "url": "https://github.com/fiiles/Moony/releases/download/v0.12.1/Moony_0.12.1_aarch64.dmg",
+      "bytes": 17021252
     },
     "macIntel": {
-      "name": "Moony_0.12.0_x64.dmg",
-      "url": "https://github.com/fiiles/Moony/releases/download/v0.12.0/Moony_0.12.0_x64.dmg",
-      "bytes": 18238286
+      "name": "Moony_0.12.1_x64.dmg",
+      "url": "https://github.com/fiiles/Moony/releases/download/v0.12.1/Moony_0.12.1_x64.dmg",
+      "bytes": 18288146
     },
     "windows": {
-      "name": "Moony_0.12.0_x64-setup.exe",
-      "url": "https://github.com/fiiles/Moony/releases/download/v0.12.0/Moony_0.12.0_x64-setup.exe",
-      "bytes": 15793156
+      "name": "Moony_0.12.1_x64-setup.exe",
+      "url": "https://github.com/fiiles/Moony/releases/download/v0.12.1/Moony_0.12.1_x64-setup.exe",
+      "bytes": 15821606
     },
     "appimage": {
-      "name": "Moony_0.12.0_amd64.AppImage",
-      "url": "https://github.com/fiiles/Moony/releases/download/v0.12.0/Moony_0.12.0_amd64.AppImage",
-      "bytes": 95857144
+      "name": "Moony_0.12.1_amd64.AppImage",
+      "url": "https://github.com/fiiles/Moony/releases/download/v0.12.1/Moony_0.12.1_amd64.AppImage",
+      "bytes": 95881720
     },
     "deb": {
-      "name": "Moony_0.12.0_amd64.deb",
-      "url": "https://github.com/fiiles/Moony/releases/download/v0.12.0/Moony_0.12.0_amd64.deb",
-      "bytes": 18746248
+      "name": "Moony_0.12.1_amd64.deb",
+      "url": "https://github.com/fiiles/Moony/releases/download/v0.12.1/Moony_0.12.1_amd64.deb",
+      "bytes": 18794716
     },
     "rpm": {
-      "name": "Moony-0.12.0-1.x86_64.rpm",
-      "url": "https://github.com/fiiles/Moony/releases/download/v0.12.0/Moony-0.12.0-1.x86_64.rpm",
-      "bytes": 18746578
+      "name": "Moony-0.12.1-1.x86_64.rpm",
+      "url": "https://github.com/fiiles/Moony/releases/download/v0.12.1/Moony-0.12.1-1.x86_64.rpm",
+      "bytes": 18794468
     }
   },
-  "fetchedAt": "2026-10-14T05:52:32.469Z"
+  "fetchedAt": "2026-10-14T08:22:12.573Z"
 }

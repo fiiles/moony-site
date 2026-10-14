@@ -1,8 +1,8 @@
 ---
 title: "Privacy"
-sourceUrl: "https://github.com/fiiles/Moony/blob/v0.12.0/PRIVACY.md"
-tag: "v0.12.0"
-fetchedAt: "2026-10-14T05:52:32.469Z"
+sourceUrl: "https://github.com/fiiles/Moony/blob/v0.12.1/PRIVACY.md"
+tag: "v0.12.1"
+fetchedAt: "2026-10-14T08:22:12.573Z"
 ---
 
 Moony is a local-first app: **there is no account, no cloud and no sync.** Your financial
@@ -36,7 +36,7 @@ Be aware of these, because the "encrypted database" claim does not cover them:
 
 | What | Where | Notes |
 | --- | --- | --- |
-| Photos and documents you attach (real-estate photos and documents, insurance documents) | `real_estate_photos/`, `real_estate_documents/`, `insurance_documents/` in the data folder | Stored as ordinary files. Encrypting attachments is listed in the [roadmap](https://github.com/fiiles/Moony/blob/v0.12.0/ROADMAP.md). Anyone who can read your user profile can open them. |
+| Photos and documents you attach (real-estate photos and documents, insurance documents) | `real_estate_photos/`, `real_estate_documents/`, `insurance_documents/` in the data folder | Stored as ordinary files. Encrypting attachments is listed in the [roadmap](https://github.com/fiiles/Moony/blob/v0.12.1/ROADMAP.md). Anyone who can read your user profile can open them. |
 | Backups you create | The `.zip` you choose in Settings → Data and backups | The database inside is still encrypted and the key files need your password or recovery key, but **the attachments inside the archive are plain files**. |
 | "Export all data (JSON)" | The file you choose | A plain-text JSON dump of your data (API keys and the MCP token are left out). Handle it like a bank statement. |
 | Device settings | The operating system's WebView profile (`localStorage`) | The interface language, auto-lock minutes, the update-check switch, which sidebar groups are open, dismissed tips, the period, split and custom date range chosen in the stocks analysis, which cashflow-planning rows are expanded, the time the app was last locked, and your **first name** (it is shown in the greeting on the lock screen, which is displayed before the database is unlocked). No balances, amounts or account data. Delete Account clears them. |
@@ -57,7 +57,7 @@ updater plugin's own user agent, described in the GitHub row.
 
 | Service | What is sent | When | Can you avoid it? |
 | --- | --- | --- | --- |
-| **Yahoo Finance** (`query1.finance.yahoo.com`, `query2.finance.yahoo.com` and `fc.yahoo.com`) | The ticker symbols of your stock positions and of the stocks you follow in Stock Monitor, search text you type, the symbols and ISINs of the securities in a stock CSV file you import (to find their Yahoo tickers), and the date ranges needed for price history (which can reveal roughly when you started investing). Before company data is requested, the price library also fetches a session cookie from `fc.yahoo.com` and a one-time token ("crumb") from `query1.finance.yahoo.com`, and sends both back with that request. They are held in memory only while the refresh runs; Moony does not store them. | After unlocking, when you add or import stock transactions (the review step of a stock CSV import looks the file's securities up as it opens), when you open Stock Monitor or a stock position's detail (company data such as sector and P/E, at most once a day per ticker once Yahoo has answered; this is the only request that needs the cookie and token), and when you refresh stale prices. | Yes — Moony works offline; prices can be set manually per position. Without refreshes the prices simply go stale. |
+| **Yahoo Finance** (`query1.finance.yahoo.com`, `query2.finance.yahoo.com` and `fc.yahoo.com`) | The ticker symbols of your stock positions and of the stocks you follow in Stock Monitor, search text you type, the symbols and ISINs of the securities in a stock CSV file you import (to find their Yahoo tickers), the symbols of your crypto holdings as `<TICKER>-USD` (for crypto price history older than the year CoinGecko serves), and the date ranges needed for price history (which can reveal roughly when you started investing). Before company data is requested, the price library also fetches a session cookie from `fc.yahoo.com` and a one-time token ("crumb") from `query1.finance.yahoo.com`, and sends both back with that request. They are held in memory only while the refresh runs; Moony does not store them. | After unlocking, when you add or import stock transactions (the review step of a stock CSV import looks the file's securities up as it opens), when you open Stock Monitor or a stock position's detail (company data such as sector and P/E, at most once a day per ticker once Yahoo has answered; this is the only request that needs the cookie and token), when the history of a crypto holding older than a year is rebuilt, and when you refresh stale prices. | Yes — Moony works offline; prices can be set manually per position. Without refreshes the prices simply go stale. |
 | **CoinGecko** (`api.coingecko.com`) | The CoinGecko IDs of your crypto holdings (that is, the composition of your crypto portfolio), search text, and date ranges for history. If you enter your own optional CoinGecko API key in Settings → Integrations, it is sent as a request header. | After unlocking, when you add a holding, when history is back-filled. | Yes — same as above. |
 | **European Central Bank** (`www.ecb.europa.eu`) | Nothing from your data; it is a download of the public daily reference rates. The ECB sees your IP address and the `Moony/<version>` user agent. | When exchange rates are stale. | Yes — rates then simply go stale. Currencies the ECB does not publish never get an automatic rate (Settings → General → Currency explains this). |
 | **Frankfurter** (`api.frankfurter.dev`, serves ECB historical rates) | The ISO codes of the currencies found in your data (accounts, transactions, stock and crypto positions and their quotes, properties, loans, bonds, insurance, budgets, your profile; the euro itself and currencies without a rate source are left out) and the date range still missing, which can reach back to your earliest dated record (a transaction, a purchase date, a loan start) minus ten days. | When you enter or import transactions in a currency whose history is missing, and on rate refresh. Best effort: failures are ignored. | Yes — without it historical conversions fall back to current rates. |
@@ -184,6 +184,6 @@ server because Moony has none.
 ## Questions and changes
 
 Questions about privacy: open a GitHub Discussion or issue. Vulnerabilities: please follow
-[SECURITY.md](https://github.com/fiiles/Moony/blob/v0.12.0/SECURITY.md) instead of filing a public issue. This document changes together
+[SECURITY.md](https://github.com/fiiles/Moony/blob/v0.12.1/SECURITY.md) instead of filing a public issue. This document changes together
 with the code; its history is in git, and notable changes are listed in
-[CHANGELOG.md](https://github.com/fiiles/Moony/blob/v0.12.0/CHANGELOG.md).
+[CHANGELOG.md](https://github.com/fiiles/Moony/blob/v0.12.1/CHANGELOG.md).
