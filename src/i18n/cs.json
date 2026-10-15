@@ -274,7 +274,7 @@
     "items": {
       "free": {
         "q": "Je to opravdu zdarma?",
-        "a": "Ano: Moony je open source pod licencí AGPL-3.0, bez placené verze, zkušební doby a účtu."
+        "a": "Ano: Moony je open source pod licencí AGPL-3.0, bez zkušební doby a bez účtu."
       },
       "warning": {
         "q": "Proč mě počítač při spuštění varuje?",
@@ -290,11 +290,11 @@
       },
       "devices": {
         "q": "Mohu ho používat na dvou počítačích nebo v telefonu?",
-        "a": "Ne: Moony je jen pro počítače a nesynchronizuje, protože synchronizace znamená server. Data na jiný počítač přenesete záložním souborem."
+        "a": "Moony dnes běží na macOS, Windows a Linuxu, jeden profil na jednom počítači a bez synchronizace. Data na jiný počítač přenesete záložním souborem."
       },
       "bank": {
         "q": "Připojí se k mé bance?",
-        "a": "Ne: importujete CSV výpisy, které si z banky exportujete, s 16 předvolbami a detekcí sloupců pro ostatní soubory. Propojení s bankou by mezi vás a vaše data postavilo třetí stranu."
+        "a": "Přímo ne: importujete CSV výpisy, které si z banky exportujete, s 16 předvolbami a detekcí sloupců pro ostatní soubory."
       }
     }
   }

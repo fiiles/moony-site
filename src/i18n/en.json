@@ -274,7 +274,7 @@
     "items": {
       "free": {
         "q": "Is it really free?",
-        "a": "Yes: Moony is open source under the AGPL-3.0 licence, with no paid tier, no trial and no account."
+        "a": "Yes: Moony is open source under the AGPL-3.0 licence, with no trial and no account."
       },
       "warning": {
         "q": "Why does my computer warn me when I open it?",
@@ -290,11 +290,11 @@
       },
       "devices": {
         "q": "Can I use it on two computers, or on my phone?",
-        "a": "No: Moony is desktop only and does not sync, because sync means a server. You can move your data to another computer with a backup file."
+        "a": "Moony runs on macOS, Windows and Linux today, with one profile per computer and no sync. You can move your data to another computer with a backup file."
       },
       "bank": {
         "q": "Does it connect to my bank?",
-        "a": "No: you import the CSV statements you export from your bank, with 16 presets and column detection for other files. A bank connection would put a third party between you and your data."
+        "a": "Not directly: you import the CSV statements you export from your bank, with 16 presets and column detection for other files."
       }
     }
   }
