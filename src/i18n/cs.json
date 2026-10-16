@@ -73,7 +73,7 @@
     },
     "import": {
       "title": "Výpisy dovnitř, kategorizovaný přehled ven",
-      "text": "Importujte CSV z banky; 16 předvoleb bank, detekce sloupců pro ostatní.",
+      "text": "Importujte CSV z banky (16 předvoleb, detekce sloupců pro ostatní) nebo výpis CAMT.053, MT940, OFX či QIF.",
       "bullets": [
         "Duplicity se přeskočí, import jde vrátit",
         "Pravidla naučená z vašich voleb",
@@ -154,7 +154,7 @@
       },
       "disk": {
         "title": "Šifrováno na disku",
-        "text": "Databáze AES-256. Přílohy a export JSON jsou nešifrované; přidejte šifrování celého disku."
+        "text": "Záznamy i přílohy v databázích AES-256. Exporty a uložené kopie jsou nešifrované; přidejte šifrování celého disku."
       },
       "keys": {
         "title": "Vaše klíče, vaše kopie",
@@ -294,7 +294,7 @@
       },
       "bank": {
         "q": "Připojí se k mé bance?",
-        "a": "Přímo ne: importujete CSV výpisy, které si z banky exportujete, s 16 předvolbami a detekcí sloupců pro ostatní soubory."
+        "a": "Přímo ne: importujete výpisy, které si z banky exportujete, jako CSV (16 předvoleb a detekce sloupců pro ostatní soubory) nebo jako CAMT.053, MT940, OFX/QFX či QIF."
       }
     }
   }

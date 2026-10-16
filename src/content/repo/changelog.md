@@ -1,8 +1,8 @@
 ---
 title: "Changelog"
-sourceUrl: "https://github.com/fiiles/Moony/blob/v0.12.2/CHANGELOG.md"
-tag: "v0.12.2"
-fetchedAt: "2026-10-15T03:49:25.774Z"
+sourceUrl: "https://github.com/fiiles/Moony/blob/v0.13.0/CHANGELOG.md"
+tag: "v0.13.0"
+fetchedAt: "2026-10-16T08:59:04.850Z"
 ---
 
 All notable changes to Moony are documented in this file. The format follows
@@ -10,6 +10,72 @@ All notable changes to Moony are documented in this file. The format follows
 [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
+
+## [0.13.0] - 2026-10-16
+
+### Added
+
+- **Encrypted attachments.** Photos and documents you attach are stored in a second encrypted
+  database, `attachments.db`, under the same key as your records; nothing readable is written to
+  the data folder any more. Images and PDFs open in an in-app viewer. Any other type opens in its
+  own app through a temporary copy that Moony deletes when you lock or quit it, after a one-time
+  warning. "Save a copy…" writes a readable file where you choose.
+- On the first unlock after the update, attachments from earlier versions move into the
+  encrypted store in the background. The originals are deleted at the next unlock, once the
+  encrypted copies check out, together with plain files earlier versions left behind when a
+  property or a policy was deleted. Originals outside the data folder (from before an identifier
+  change) are never deleted: Settings → Data and backups lists them so you can remove them
+  yourself, and shows how many attachments are stored encrypted.
+- **CAMT.053 statements.** The bank import reads ISO 20022 CAMT.053 XML statements: it recognizes
+  the account, checks that the payments add up to the closing balance, offers that balance,
+  imports pending payments as pending, and warns when new payments fall in a period an earlier
+  import already covers (CSV too). The dialog and the buttons that open it are now called "Import
+  statement" instead of "Import CSV". CSV files import as before.
+- **MT940 statements**, including the common German, Dutch and free-text payment details.
+- **OFX and QFX statements** (bank and credit card), from banks and from other finance apps.
+- **QIF files** from Quicken, GnuCash and other apps: categories are matched to yours by name in
+  the preview, and the opening balance record is recognized.
+- **Import history for stocks.** Once a stock import is recorded, an "Import history" button on
+  the Stocks page lists every import, from CSV files and through MCP, with its file, source and
+  the trades still there. Deleting an import deletes the trades it brought in.
+
+### Changed
+
+- **Backups are fully encrypted.** A backup holds encrypted snapshots of both databases and the
+  key files; backups of earlier versions still restore. An older Moony cannot restore a backup
+  made by this version.
+- Losing both the password and the recovery key now also means losing your attached photos and
+  documents. The recovery-key screen says so.
+- After the update an earlier version cannot open the profile any more (as after every update that
+  changes the database). To go back, restore a backup made with the earlier version.
+- Delete Account also removes the pre-migration copies of the databases.
+- **HEIC photos are no longer accepted.** Their conversion never finished in the installed app (the
+  upload stayed on "Converting HEIC files…"). The gallery now names such files and suggests saving
+  them as JPG; on an iPhone, Settings → Camera → Formats → Most Compatible.
+- **A shorter update dialog.** It names the new and the current version, says what the update
+  does (download, restart, unlock again) and links "What's new" to the release page, which now
+  starts with that version's changelog. The raw release text with download instructions is gone.
+
+### Fixed
+
+- Deleting a property or an insurance policy left its photos and documents on disk.
+- The import history dialog of a bank account is wide enough for its undo button.
+- The evaluation order in the categorization settings matches what Moony does: transfers between
+  your own accounts come first, and every enabled rule pack is listed.
+
+### Security
+
+- **Stronger password protection for older profiles.** A profile whose password was set before
+  0.9.0 still had its key file protected with the old, weaker key derivation (scrypt N = 2¹⁴)
+  until the password was changed. The first unlock after the update now re-protects it at the
+  current cost (N = 2¹⁷) under the same password, so it takes a moment longer once. Backups made
+  afterwards carry the stronger key file. The key files are now replaced atomically: a crash or
+  a power cut while one is being rewritten leaves the old or the new file, never a damaged one.
+- **No readable photo copies in the temp folder.** Uploading a property photo no longer leaves a
+  copy of it in the system temp folder, and the copies earlier versions left there are deleted
+  once at startup (macOS clears that folder after a few days, Windows never does).
+- The master key generated during first-run setup stays in the app's backend; only the recovery
+  key is passed to the window that shows it.
 
 ## [0.12.2] - 2026-10-14
 
@@ -565,7 +631,8 @@ local tool). Everything below is new to the public.
 - The updater only offers versions higher than the installed one, so a machine running an
   older 1.x build from the previous private repository must install 0.9.0 by hand.
 
-[Unreleased]: https://github.com/fiiles/Moony/compare/v0.12.2...HEAD
+[Unreleased]: https://github.com/fiiles/Moony/compare/v0.13.0...HEAD
+[0.13.0]: https://github.com/fiiles/Moony/compare/v0.12.2...v0.13.0
 [0.12.2]: https://github.com/fiiles/Moony/compare/v0.12.1...v0.12.2
 [0.12.1]: https://github.com/fiiles/Moony/compare/v0.12.0...v0.12.1
 [0.12.0]: https://github.com/fiiles/Moony/compare/v0.11.0...v0.12.0

@@ -73,7 +73,7 @@
     },
     "import": {
       "title": "Statements in, a categorized ledger out",
-      "text": "Import a bank CSV; 16 bank presets, column detection for the rest.",
+      "text": "Import a bank CSV (16 presets, column detection for the rest) or a CAMT.053, MT940, OFX or QIF statement.",
       "bullets": [
         "Duplicates skipped, imports undoable",
         "Rules learned from your choices",
@@ -154,7 +154,7 @@
       },
       "disk": {
         "title": "Encrypted on disk",
-        "text": "AES-256 database. Attachments and the JSON export are plain; add full-disk encryption."
+        "text": "Records and attachments in AES-256 databases. Exports and saved copies are plain; add full-disk encryption."
       },
       "keys": {
         "title": "Your keys, your copies",
@@ -294,7 +294,7 @@
       },
       "bank": {
         "q": "Does it connect to my bank?",
-        "a": "Not directly: you import the CSV statements you export from your bank, with 16 presets and column detection for other files."
+        "a": "Not directly: you import the statements you export from your bank, as CSV (16 presets and column detection for other files) or as CAMT.053, MT940, OFX/QFX or QIF."
       }
     }
   }
