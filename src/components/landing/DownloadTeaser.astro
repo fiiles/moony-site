@@ -1,37 +1,19 @@
 ---
 import { href, t, tf, type Locale } from '../../i18n';
-import { changelogLink, downloadCards, formatDate, formatSize, release } from '../../lib/release';
-
+import { changelogLink, formatDate, release } from '../../lib/release';
 interface Props { locale: Locale }
-
 const { locale } = Astro.props;
-const size = (bytes: number) => formatSize(bytes, locale);
-const date = formatDate(locale);
 const changelog = changelogLink(locale);
-// The macOS note carries a command; the translated sentence holds a {cmd} marker where it goes.
-const [macBefore, macAfter] = t(locale, 'download.mac.note').split('{cmd}');
 ---
-<section class="block" id="download">
-  <div class="wrap">
-    <div class="block-head">
-      <h2 class="title">{t(locale, 'download.title')}</h2>
-      <p>{tf(locale, 'download.meta', { version: release.version, date })} · <a class="link" href={changelog.href} hreflang={changelog.hreflang}>{t(locale, 'download.changes')}</a></p>
+<section class="block download-invite" id="download">
+  <div class="wrap download-invite__inner">
+    <div><h2 class="title">{t(locale, 'download.title')}</h2><p class="download-invite__intro">{t(locale, 'download.intro')}</p>
+      <p class="download-invite__meta">{tf(locale, 'download.meta', { version: release.version, date: formatDate(locale) })} · <a class="link" href={changelog.href} hreflang={changelog.hreflang}>{t(locale, 'download.changes')}</a></p>
     </div>
-    <div class="dl-grid">
-      {downloadCards.map((c) => (
-        <div class="card dl">
-          <div class="dl__os"><h3>{c.os}</h3></div>
-          <div class="dl__files">
-            {c.files.map(([file, key]) => <a href={file.url}><span>{t(locale, key)}</span><span>{size(file.bytes)}</span></a>)}
-          </div>
-          {c.id === 'mac' && <p class="dl__note">{macBefore}<code>xattr -cr /Applications/Moony.app</code>{macAfter}</p>}
-          {c.id !== 'mac' && <p class="dl__note">{t(locale, `download.${c.id}.note`)}</p>}
-        </div>
-      ))}
-    </div>
-    <div class="dl-foot">
-      <span>{t(locale, 'download.foot')}</span>
+    <div class="download-invite__action">
+      <a class="btn btn--primary btn--lg" href={href(locale, 'download/')} data-platform-link data-mac={t(locale, 'hero.ctaMac')} data-win={t(locale, 'hero.ctaWin')} data-linux={t(locale, 'hero.ctaLinux')}><svg class="ic" aria-hidden="true"><use href="#i-download"/></svg><span>{t(locale, 'hero.ctaDefault')}</span></a>
       <a class="link" href={href(locale, 'download/')}>{t(locale, 'download.all')}</a>
     </div>
+    <p class="download-invite__notice">{t(locale, 'download.notice')}</p>
   </div>
 </section>

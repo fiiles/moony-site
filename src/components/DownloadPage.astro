@@ -26,14 +26,16 @@ const linuxInstall = [
       <h1>{tf(locale, 'downloadPage.title', { version })}</h1>
       <p class="page-meta">{tf(locale, 'downloadPage.released', { date: formatDate(locale) })} · <a class="link" href={changelog.href} hreflang={changelog.hreflang}>{t(locale, 'download.changes')}</a> · <a class="link" href={allReleasesUrl}>{p('allReleases')}</a></p>
     </div>
+    <p class="download-intro">{p('intro')}</p>
     <h2 class="sr-only">{p('filesTitle')}</h2>
     <div class="dl-grid">
       {downloadCards.map((c) => (
-        <div class="card dl">
-          <div class="dl__os"><h3>{c.os}</h3></div>
+        <div class="card dl" id={c.id} data-os={c.id}>
+          <div class="dl__os"><h3>{c.os}</h3><span class="badge" data-current hidden>{p('recommended')}</span></div>
+          <p class="dl__warning">{t(locale, `download.${c.id}.note`)} {c.id !== 'linux' && <a href={`#install-${c.id}`} class="link">{p('installLink')}</a>}</p>
           <div class="dl__files">
             {c.files.map(([file, key]) => (
-              <a href={file.url}><span>{t(locale, key)}<small class="dl__name">{file.name}</small></span><span>{formatSize(file.bytes, locale)}</span></a>
+              <a href={file.url}><span>{t(locale, key)}</span><span>{formatSize(file.bytes, locale)}</span></a>
             ))}
           </div>
           {c.id === 'mac' && <p class="dl__note" set:html={rich(p('macHint'))} />}
@@ -50,7 +52,7 @@ const linuxInstall = [
       <p>{p('install.unsigned')}</p>
     </div>
     <div class="install">
-      <div class="card card--flat install__card">
+      <div class="card card--flat install__card" id="install-mac">
         <h3>macOS</h3>
         <ol class="steps">
           <li><span set:html={rich(p('install.mac.open'))} /></li>
@@ -62,7 +64,7 @@ const linuxInstall = [
         </ol>
         <p class="install__alt" set:html={rich(p('install.mac.alt'))} />
       </div>
-      <div class="card card--flat install__card">
+      <div class="card card--flat install__card" id="install-win">
         <h3>Windows</h3>
         <ol class="steps">
           <li><span set:html={rich(p('install.win.keep'))} /></li>

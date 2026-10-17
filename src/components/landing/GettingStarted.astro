@@ -1,0 +1,13 @@
+---
+import { t, type Locale } from '../../i18n';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+---
+<section class="block getting-started" id="start">
+  <div class="wrap">
+    <div class="block-head"><h2 class="title">{t(locale, 'gettingStarted.title')}</h2><p>{t(locale, 'gettingStarted.text')}</p></div>
+    <ol class="start-steps">
+      {[0, 1, 2].map(i => <li><h3>{t(locale, `gettingStarted.steps.${i}.title`)}</h3><p>{t(locale, `gettingStarted.steps.${i}.text`)}</p></li>)}
+    </ol>
+  </div>
+</section>

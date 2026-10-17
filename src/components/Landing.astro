@@ -3,26 +3,41 @@ import Hero from './landing/Hero.astro';
 import Feature from './landing/Feature.astro';
 import Tracks from './landing/Tracks.astro';
 import Trust from './landing/Trust.astro';
+import GettingStarted from './landing/GettingStarted.astro';
 import DownloadTeaser from './landing/DownloadTeaser.astro';
 import Faq from './landing/Faq.astro';
-import { t, type Locale } from '../i18n';
-
+import { t, tList, type Locale } from '../i18n';
+import { repoUrl } from '../config';
 interface Props { locale: Locale }
-
 const { locale } = Astro.props;
 ---
 <Hero locale={locale} />
-<Feature locale={locale} k="features.overview" id="overview" shot="dashboard" wide crop />
-<Feature locale={locale} k="features.import" id="import" shot="account-detail" flip />
-<Feature locale={locale} k="features.cashflow" id="cashflow" shot="cashflow" shot2="planning" bullets={false} />
-<Feature locale={locale} k="features.investments" id="investments" shot="stocks-analysis" flip />
-<Feature locale={locale} k="features.balance" id="balance-sheet" shot="loans" bullets={false} />
+<section class="overview block" id="overview">
+  <div class="wrap">
+    <div class="overview__intro">
+      <h2 class="title">{t(locale, 'features.overview.title')}</h2>
+      <p>{t(locale, 'features.overview.text')}</p>
+    </div>
+    <ul class="overview__benefits">
+      {tList(locale, 'features.overview.bullets').map(b => <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>{b}</li>)}
+    </ul>
+  </div>
+</section>
+<Feature locale={locale} k="features.import" id="import" shot="account-detail" flip>
+  <details class="feature-details">
+    <summary>{t(locale, 'features.import.formatsTitle')}</summary>
+    <p>{t(locale, 'features.import.formats')}</p>
+  </details>
+</Feature>
+<Feature locale={locale} k="features.investments" id="investments" shot="stocks-analysis" />
+<GettingStarted locale={locale} />
 <Tracks locale={locale} />
 <Trust locale={locale} />
-<Feature locale={locale} k="assistant" id="assistant" badge={t(locale, 'assistant.badge')} bullets={false} flip>
-  <div class="card card--flat assistant-code">
-    <code class="code">claude mcp add --transport http moony http://127.0.0.1:41414/mcp --header "Authorization: Bearer &lt;token&gt;"</code>
+<aside class="maker">
+  <div class="wrap maker__inner">
+    <span class="maker__initials" aria-hidden="true">FK</span>
+    <div><h2>{t(locale, 'about.title')}</h2><p>{t(locale, 'about.text')}</p><a class="link" href={`${repoUrl}/discussions`}>{t(locale, 'about.link')}</a></div>
   </div>
-</Feature>
+</aside>
 <DownloadTeaser locale={locale} />
 <Faq locale={locale} />

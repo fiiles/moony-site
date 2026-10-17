@@ -1,0 +1,9 @@
+---
+import Base from '../layouts/Base.astro';
+import AssistantPage from '../components/AssistantPage.astro';
+import { t } from '../i18n';
+const locale = 'en';
+---
+<Base locale={locale} title={t(locale, 'assistant.metaTitle')} description={t(locale, 'assistant.detail')} path="ai-integration/">
+  <AssistantPage locale={locale} />
+</Base>

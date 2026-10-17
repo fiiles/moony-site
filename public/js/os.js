@@ -1,14 +1,21 @@
-// The download button says "Download" until the platform is recognised; the labels are translated and carried on the button itself (data-mac, data-win, data-linux).
-// Phones, tablets and Chromebooks keep the plain label: none of them can run the desktop installers.
+// Enhance download links without hiding alternatives or making any network requests.
+// Phones, tablets and Chromebooks keep the generic desktop download choices.
 (function () {
-  var button = document.getElementById('dl-primary');
-  var label = button && button.querySelector('span');
-  if (!button || !label) return;
   var platform = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '';
   var haystack = platform + ' ' + (navigator.userAgent || '');
-  // iPadOS reports itself as a Mac; a real Mac has no multi-touch screen.
   var touchMac = /^mac/i.test(platform) && navigator.maxTouchPoints > 1;
-  var other = /android|cros|chrome os|iphone|ipad|ipod/i.test(haystack) || touchMac;
-  var text = other ? '' : /^mac/i.test(platform) ? button.dataset.mac : /^win/i.test(platform) ? button.dataset.win : /linux/i.test(platform) ? button.dataset.linux : '';
-  if (text) label.textContent = text;
+  if (/android|cros|chrome os|iphone|ipad|ipod/i.test(haystack) || touchMac) return;
+  var os = /^mac/i.test(platform) ? 'mac' : /^win/i.test(platform) ? 'win' : /linux/i.test(platform) ? 'linux' : '';
+  if (!os) return;
+  document.querySelectorAll('[data-platform-link]').forEach(function (button) {
+    var label = button.querySelector('span');
+    if (label && button.dataset[os]) label.textContent = button.dataset[os];
+    button.setAttribute('href', button.getAttribute('href').split('#')[0] + '#' + os);
+  });
+  document.querySelectorAll('[data-os]').forEach(function (card) {
+    if (card.dataset.os !== os) return;
+    card.classList.add('is-current');
+    var badge = card.querySelector('[data-current]');
+    if (badge) badge.hidden = false;
+  });
 })();

@@ -1,13 +1,10 @@
 ---
 import release from '../../data/release.json';
-import { asset, href, t, tf, type Locale } from '../../i18n';
-import { repoUrl } from '../../config';
+import { href, t, tf, type Locale } from '../../i18n';
 import Shot from './Shot.astro';
-
 interface Props { locale: Locale }
-
 const { locale } = Astro.props;
-const facts = ['noAccount', 'noCloud', 'noTelemetry', 'encrypted', 'offline', 'languages'];
+const facts = ['noAccount', 'local', 'offline'];
 ---
 <section class="hero-section">
   <div class="wrap hero-grid">
@@ -16,28 +13,17 @@ const facts = ['noAccount', 'noCloud', 'noTelemetry', 'encrypted', 'offline', 'l
       <h1>{t(locale, 'site.tagline')}</h1>
       <p class="lead">{t(locale, 'hero.lead')}</p>
       <div class="cta">
-        <a
-          class="btn btn--primary btn--lg"
-          href={href(locale, 'download/')}
-          id="dl-primary"
-          data-mac={t(locale, 'hero.ctaMac')}
-          data-win={t(locale, 'hero.ctaWin')}
-          data-linux={t(locale, 'hero.ctaLinux')}
-        ><svg class="ic" aria-hidden="true"><use href="#i-download"/></svg><span>{t(locale, 'hero.ctaDefault')}</span></a>
-        <a class="btn btn--lg" href={repoUrl}><svg class="ic" aria-hidden="true"><use href="#i-github"/></svg>{t(locale, 'hero.ctaSource')}</a>
+        <a class="btn btn--primary btn--lg" href={href(locale, 'download/')} id="dl-primary" data-platform-link data-mac={t(locale, 'hero.ctaMac')} data-win={t(locale, 'hero.ctaWin')} data-linux={t(locale, 'hero.ctaLinux')}><svg class="ic" aria-hidden="true"><use href="#i-download"/></svg><span>{t(locale, 'hero.ctaDefault')}</span></a>
+        <a class="hero-preview link" href="#overview">{t(locale, 'hero.ctaPreview')} <span aria-hidden="true">↓</span></a>
       </div>
-      {/* At 1.0.0 remove hero.beta from both dictionaries and its text and separator on the next line. */}
-      <p class="cta-note"><b>{t(locale, 'hero.noteStrong')}</b> {tf(locale, 'hero.noteRest', { version: release.version })} · {t(locale, 'hero.beta')}</p>
-      <div class="facts">
-        {facts.map((f) => <span><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>{t(locale, `hero.facts.${f}`)}</span>)}
-      </div>
+      <p class="cta-note">{t(locale, 'hero.noteStrong')} · {tf(locale, 'hero.noteRest', { version: release.version })} ({t(locale, 'hero.beta')})</p>
+      <ul class="facts">
+        {facts.map(f => <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>{t(locale, `hero.facts.${f}`)}</li>)}
+      </ul>
     </div>
-    <div class="hero-visual">
+    <figure class="hero-visual">
       <div class="frame"><Shot locale={locale} name="dashboard" alt={t(locale, 'hero.alt')} eager layout="hero" /></div>
-      <p class="frame-caption">{t(locale, 'hero.caption')}</p>
-    </div>
+      <figcaption class="frame-caption">{t(locale, 'hero.caption')}</figcaption>
+    </figure>
   </div>
 </section>
-
-{/* The platform detection lives in a file of its own so the Content-Security-Policy can stay script-src 'self'. */}
-<script is:inline src={asset('js/os.js')} defer></script>

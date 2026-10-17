@@ -30,12 +30,15 @@ The output lands in `dist/`. `npm run build` also runs the token check before th
 - `_headers` - the response headers Cloudflare adds: a strict Content-Security-Policy (`script-src 'self'`, `style-src 'self'`, `connect-src 'none'`, no exceptions), HSTS, `nosniff`, referrer and permissions policies, and the cache rules for fonts, screenshots and `_astro/`. Change it only to something equally strict; `check-dist` fails the build otherwise.
 - `_redirects` - holds only a comment. Cloudflare does not support domain-level redirects in this file, so the `www` to apex redirect is a Redirect Rule on the domain's zone (see Deploying, section 3).
 - `robots.txt` - allows everything and names the sitemap (the build rewrites the address to match `SITE_URL` and `BASE_PATH`).
-- `js/os.js` - the only script on the site: it puts the visitor's operating system on the home page download button. It is a file of its own so that no inline script is needed.
-- `screenshots/` - the app pictures, 1440 px wide (`<name>.png` and `<name>-cs.png`), each with a 720 px copy (`<name>-720.png`, `<name>-cs-720.png`) that phones download through `srcset`. To refresh them, replace the 1440 px files under the same names, then recreate the copies and build:
+- `js/os.js` - the only script on the site: it labels the home page download links for the visitor’s operating system, links to the matching installer section and highlights that system on the download page. All systems stay available, and phones keep the generic choices. It is a file of its own so that no inline script is needed.
+- `screenshots/` - the app pictures, 1440 px wide (`<name>.png` and `<name>-cs.png`), each with a 720 px copy (`<name>-720.png`, `<name>-cs-720.png`) that phones download through `srcset`. To refresh them, replace the 1440 px files under the same names, then recreate the copies, regenerate WebP variants and build:
 
   ```bash
   for f in public/screenshots/*.png; do case "$f" in *-720.png) ;; *) sips -Z 720 "$f" --out "${f%.png}-720.png";; esac; done
+  npm run shots:optimize # requires cwebp (WebP tools); not needed for a normal build
   ```
+
+The landing page uses three screenshots: dashboard, account detail and investment analysis. Each has same-origin WebP sources with PNG fallback; the dashboard also has a 740 × 520 close-up for screens up to 600 px wide. Recheck the crop in `scripts/optimize-shots.mjs` if the app layout changes. The AI integration lives at `/ai-integration/` and `/cs/ai-integration/`, linked from the footer.
 
 ## Deploying
 
@@ -130,7 +133,7 @@ npm test && npm run build
 git add -A && git commit -m "chore: sync v0.x.y" && git push
 ```
 
-`content:sync` refreshes the snapshots of the app's Privacy, Security and Changelog and the latest release (version, date, download links and sizes); `tokens:sync` copies the design tokens. Running the build first matters: its checks fail on a broken link or anchor in the new text, and a failed build on Cloudflare leaves the previous version online. Cloudflare rebuilds on the push. If the app's screenshots changed, replace the files in `public/screenshots/` first (1440 px wide, same names) and recreate the 720 px copies (see "What lives in `public/`").
+`content:sync` refreshes the snapshots of the app's Privacy, Security and Changelog and the latest release (version, date, download links and sizes); `tokens:sync` copies the design tokens. Running the build first matters: its checks fail on a broken link or anchor in the new text, and a failed build on Cloudflare leaves the previous version online. Cloudflare rebuilds on the push. If the app's screenshots changed, replace the files in `public/screenshots/` first (1440 px wide, same names) and recreate the 720 px copies and WebP variants (see "What lives in `public/`").
 
 Roll back a bad deploy from the Worker's **Deployments** (roll back to an earlier version there; names vary by dashboard version), or revert the commit and push.
 

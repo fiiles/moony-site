@@ -17,11 +17,10 @@ const items = [
   { id: 'insurance', icon: 'i-shield' },
 ];
 ---
-<section class="block" id="track">
+<section class="track-section" id="track">
   <div class="wrap">
-    <div class="block-head">
-      <h2 class="title">{t(locale, 'tracks.title')}</h2>
-    </div>
+    <details class="track-details">
+      <summary>{t(locale, 'tracks.title')}</summary>
     <ul class="tracks">
       {items.map((i) => (
         <li class="track">
@@ -31,5 +30,6 @@ const items = [
       ))}
     </ul>
     <p class="tracks-foot">{t(locale, 'tracks.foot')}</p>
+    </details>
   </div>
 </section>

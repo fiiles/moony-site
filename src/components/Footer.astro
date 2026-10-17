@@ -10,6 +10,7 @@ const docs = (path: string) => ({ href: href('en', path), hreflang: locale === '
 const product = [
   { label: t(locale, 'footer.download'), href: href(locale, 'download/') },
   { label: t(locale, 'footer.changelog'), ...docs('changelog/') },
+  { label: t(locale, 'assistant.link'), href: href(locale, 'ai-integration/') },
 ];
 const trust = [
   { label: t(locale, 'footer.privacy'), ...docs('privacy/') },

@@ -75,5 +75,6 @@ const jsonLdText = jsonLd ? JSON.stringify(jsonLd).replace(/</g, '\\u003c') : un
     <Nav locale={locale} path={path} englishOnly={englishOnly} />
     <main id="top"><slot /></main>
     <Footer locale={locale} />
+    <script is:inline src={asset('js/os.js')} defer></script>
   </body>
 </html>

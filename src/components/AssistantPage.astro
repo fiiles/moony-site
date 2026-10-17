@@ -1,0 +1,19 @@
+---
+import { t, tList, href, type Locale } from '../i18n';
+import { repoUrl } from '../config';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+---
+<section class="block">
+  <div class="wrap assistant-page">
+    <a class="link" href={href(locale, '')}>← {t(locale, 'assistant.back')}</a>
+    <div class="page-head"><p class="eyebrow">{t(locale, 'assistant.badge')}</p><h1>{t(locale, 'assistant.title')}</h1></div>
+    <p>{t(locale, 'assistant.detail')}</p>
+    <p>{t(locale, 'assistant.text')}</p>
+    <h2 class="title title--sm">{t(locale, 'assistant.setupTitle')}</h2>
+    <ol class="steps">{tList(locale, 'assistant.setupSteps').map(step => <li>{step}</li>)}</ol>
+    <a class="link" href={`${repoUrl}/blob/main/docs/mcp.md`} hreflang="en">{t(locale, 'assistant.guide')}</a>
+    <pre class="code"><code>claude mcp add --transport http moony http://127.0.0.1:41414/mcp --header "Authorization: Bearer &lt;token&gt;"</code></pre>
+    <a class="link" href={href('en', 'privacy/')} hreflang={locale === 'cs' ? 'en' : undefined}>{t(locale, 'trust.link')}</a>
+  </div>
+</section>
