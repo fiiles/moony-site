@@ -336,7 +336,7 @@
   },
   "assistantPreview": {
     "title": "Proberte své finance s AI agentem",
-    "text": "Přes MCP můžete Moony propojit s Claudem nebo jiným AI agentem. Agent pak může pracovat s vašimi účty, investicemi i nemovitostmi v souvislostech.",
+    "text": "Své finance máte v Moony pohromadě. Přes MCP k nim může přistupovat vámi vybraný AI agent a připravit analýzy i doporučení podle vaší konkrétní situace.",
     "examplesTitle": "Můžete se třeba zeptat",
     "examples": [
       "Jak velkou část mého portfolia tvoří tři největší investice? Ukaž mi, kde je hodně koncentrované.",
@@ -344,6 +344,17 @@
     ],
     "marketNote": "Pro odhad ceny nemovitosti potřebuje připojený agent také přístup k aktuálním tržním podkladům.",
     "privacyNote": "Propojení je ve výchozím stavu vypnuté. Zapnutím zpřístupníte data vybranému AI klientovi, který je může zpracovávat v cloudu svého poskytovatele.",
-    "link": "Jak propojení nastavit →"
+    "link": "Jak propojení nastavit →",
+    "diagram": {
+      "caption": "Finance uložené v Moony zpřístupníte přes MCP svému AI agentovi. Ten je může využít pro osobní analýzy a doporučení.",
+      "dataTitle": "Vaše finance v Moony",
+      "dataText": "Účty a investice, nemovitosti, úvěry i pojistky. V jednom přehledu u vás v počítači.",
+      "agentTitle": "Váš AI agent",
+      "agentText": "Claude nebo jiný MCP klient, kterého si sami vyberete a připojíte.",
+      "agentNote": "Zpracování dat závisí na zvoleném klientovi.",
+      "resultTitle": "Doporučení pro vaši situaci",
+      "resultText": "Souvislosti v portfoliu, rozbor výdajů nebo odhady a scénáře podle vašich dat.",
+      "analysis": "Analýza"
+    }
   }
 }

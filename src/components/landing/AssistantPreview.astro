@@ -1,19 +1,21 @@
 ---
+import McpDiagram from './McpDiagram.astro';
 import { href, t, tList, type Locale } from '../../i18n';
 interface Props { locale: Locale }
 const { locale } = Astro.props;
 ---
 <section class="block assistant-preview" id="assistant">
   <div class="wrap assistant-preview__grid">
-    <div>
+    <div class="assistant-preview__intro">
       <span class="badge">{t(locale, 'assistant.badge')}</span>
       <h2 class="title">{t(locale, 'assistantPreview.title')}</h2>
       <p class="assistant-preview__text">{t(locale, 'assistantPreview.text')}</p>
       <a class="link" href={href(locale, 'ai-integration/')}>{t(locale, 'assistantPreview.link')}</a>
     </div>
+    <McpDiagram locale={locale} />
     <div class="assistant-preview__examples">
       <h3>{t(locale, 'assistantPreview.examplesTitle')}</h3>
-      {tList(locale, 'assistantPreview.examples').map(example => <blockquote><p>{example}</p></blockquote>)}
+      <div class="assistant-preview__prompts">{tList(locale, 'assistantPreview.examples').map(example => <blockquote><p>{example}</p></blockquote>)}</div>
       <p class="assistant-preview__note">{t(locale, 'assistantPreview.marketNote')}</p>
     </div>
     <p class="assistant-preview__privacy">{t(locale, 'assistantPreview.privacyNote')}</p>

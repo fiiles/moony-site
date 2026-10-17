@@ -1,0 +1,29 @@
+---
+import { t, type Locale } from '../../i18n';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const p = (key: string) => t(locale, `assistantPreview.diagram.${key}`);
+---
+<figure class="mcp-flow">
+  <div class="mcp-flow__body">
+    <div class="mcp-flow__node mcp-flow__node--data">
+      <span class="moon" aria-hidden="true"></span>
+      <h3>{p('dataTitle')}</h3>
+      <p>{p('dataText')}</p>
+    </div>
+    <div class="mcp-flow__connector" aria-hidden="true"><span>MCP</span><svg viewBox="0 0 48 24"><path d="M2 12h42M36 4l8 8-8 8" /></svg></div>
+    <div class="mcp-flow__node">
+      <svg class="ic mcp-flow__icon" aria-hidden="true"><use href="#i-grid"/></svg>
+      <h3>{p('agentTitle')}</h3>
+      <p>{p('agentText')}</p>
+      <small>{p('agentNote')}</small>
+    </div>
+    <div class="mcp-flow__connector" aria-hidden="true"><span>{p('analysis')}</span><svg viewBox="0 0 48 24"><path d="M2 12h42M36 4l8 8-8 8" /></svg></div>
+    <div class="mcp-flow__node">
+      <svg class="ic mcp-flow__icon" aria-hidden="true"><use href="#i-chart"/></svg>
+      <h3>{p('resultTitle')}</h3>
+      <p>{p('resultText')}</p>
+    </div>
+  </div>
+  <figcaption class="sr-only">{p('caption')}</figcaption>
+</figure>

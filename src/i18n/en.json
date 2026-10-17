@@ -336,7 +336,7 @@
   },
   "assistantPreview": {
     "title": "Ask an AI agent about your finances",
-    "text": "Connect Moony to Claude or another AI agent through MCP. Your agent can then work with your accounts, investments and property together.",
+    "text": "Your finances are together in Moony. Through MCP, your chosen AI agent can access that context and offer analysis and suggestions based on your own situation.",
     "examplesTitle": "For example, you could ask",
     "examples": [
       "What share of my portfolio is in my three largest investments? Show me where it is concentrated.",
@@ -344,6 +344,17 @@
     ],
     "marketNote": "For a property estimate, the connected agent also needs access to current market information.",
     "privacyNote": "The integration is off by default. Enabling it gives your chosen AI client access to your data, which it may process in its provider’s cloud.",
-    "link": "How to set it up →"
+    "link": "How to set it up →",
+    "diagram": {
+      "caption": "Connect the finances stored in Moony to your AI agent through MCP, giving it context for personal analysis and suggestions.",
+      "dataTitle": "Your finances in Moony",
+      "dataText": "Accounts and investments, property, loans and insurance. Together on your computer.",
+      "agentTitle": "Your AI agent",
+      "agentText": "Claude or another MCP client you choose and connect.",
+      "agentNote": "Data processing depends on your chosen client.",
+      "resultTitle": "Suggestions for your situation",
+      "resultText": "Portfolio insights, spending analysis, or estimates and scenarios based on your data.",
+      "analysis": "Analysis"
+    }
   }
 }
