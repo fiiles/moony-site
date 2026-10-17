@@ -263,8 +263,7 @@ section.overview { padding: 38px 0 32px; }
 .trust__card { background: none; border: 0; border-left: 1px solid var(--line); border-radius: 0; box-shadow: none; }
 .trust__card:first-child { border-left: 0; padding-left: 0; }
 .maker { padding: 0 0 64px; }
-.maker__inner { display: flex; align-items: flex-start; gap: 18px; }
-.maker__initials { display: grid; place-items: center; flex: none; width: 46px; height: 46px; background: var(--well-2); border-radius: 50%; font-size: 14px; font-weight: 600; }
+.maker__inner { display: block; }
 .maker h2 { margin: 0 0 8px; font-size: 18px; font-weight: 600; letter-spacing: -0.02em; }
 .maker p { max-width: 650px; margin-bottom: 12px; color: var(--ink-2); font-size: 14px; }
 .maker .link { font-size: 14px; }
@@ -320,6 +319,17 @@ section.overview { padding: 38px 0 32px; }
   .nav-right .btn { padding-inline: 10px; }
   .seg__btn { padding-inline: 7px; }
 }
+
+/* Optional AI help: examples of questions, with the data-sharing context alongside. */
+.assistant-preview__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px 56px; }
+.assistant-preview .badge { margin-bottom: 16px; }
+.assistant-preview__text { margin: 16px 0; color: var(--ink-2); font-size: 16px; }
+.assistant-preview__examples h3 { margin-bottom: 14px; color: var(--ink-3); font-size: 13px; font-weight: 600; }
+.assistant-preview blockquote { margin: 0 0 14px; padding: 16px 18px; border: 1px solid var(--line); border-radius: var(--r-3); background: var(--paper); color: var(--ink-2); font-size: 15px; line-height: 1.6; }
+.assistant-preview__note, .assistant-preview__privacy { color: var(--ink-3); font-size: 13px; line-height: 1.6; }
+.assistant-preview__privacy { grid-column: 1 / -1; max-width: 800px; padding-top: 18px; border-top: 1px solid var(--line); }
+.link-language { white-space: nowrap; font-size: .9em; font-weight: 500; }
+@media (max-width: 760px) { .assistant-preview__grid { grid-template-columns: minmax(0, 1fr); gap: 24px; } }
 
 /* ---- Responsive (the app has none; the site must) ---- */
 @media (max-width: 1000px) {

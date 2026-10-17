@@ -1,4 +1,5 @@
 ---
+import LanguageLink from './LanguageLink.astro';
 import { href, t, type Locale } from '../i18n';
 import { repoUrl } from '../config';
 
@@ -15,14 +16,14 @@ const product = [
 const trust = [
   { label: t(locale, 'footer.privacy'), ...docs('privacy/') },
   { label: t(locale, 'footer.security'), ...docs('security/') },
-  { label: t(locale, 'footer.licence'), href: `${repoUrl}/blob/main/LICENSE` },
+  { label: t(locale, 'footer.licence'), href: `${repoUrl}/blob/main/LICENSE`, hreflang: 'en' },
   { label: t(locale, 'footer.sitePrivacy'), href: href(locale, 'site-privacy/') },
 ];
 const community = [
-  { label: t(locale, 'footer.github'), href: repoUrl },
-  { label: t(locale, 'footer.discussions'), href: `${repoUrl}/discussions` },
-  { label: t(locale, 'footer.presets'), href: `${repoUrl}/blob/main/CONTRIBUTING.md#adding-a-bank-preset` },
-  { label: t(locale, 'footer.translate'), href: `${repoUrl}/blob/main/CONTRIBUTING.md` },
+  { label: t(locale, 'footer.github'), href: repoUrl, hreflang: 'en' },
+  { label: t(locale, 'footer.discussions'), href: `${repoUrl}/discussions`, hreflang: 'en' },
+  { label: t(locale, 'footer.presets'), href: `${repoUrl}/blob/main/CONTRIBUTING.md#adding-a-bank-preset`, hreflang: 'en' },
+  { label: t(locale, 'footer.translate'), href: `${repoUrl}/blob/main/CONTRIBUTING.md`, hreflang: 'en' },
 ];
 const columns = [
   { title: t(locale, 'footer.product'), links: product },
@@ -40,7 +41,7 @@ const columns = [
       {columns.map((c) => (
         <div>
           <h3>{c.title}</h3>
-          <ul>{c.links.map((l) => <li><a href={l.href} hreflang={l.hreflang}>{l.label}</a></li>)}</ul>
+          <ul>{c.links.map((l) => <li><LanguageLink locale={locale} class="" href={l.href} hreflang={l.hreflang}>{l.label}</LanguageLink></li>)}</ul>
         </div>
       ))}
     </div>

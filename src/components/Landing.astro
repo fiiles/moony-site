@@ -6,6 +6,8 @@ import Trust from './landing/Trust.astro';
 import GettingStarted from './landing/GettingStarted.astro';
 import DownloadTeaser from './landing/DownloadTeaser.astro';
 import Faq from './landing/Faq.astro';
+import AssistantPreview from './landing/AssistantPreview.astro';
+import LanguageLink from './LanguageLink.astro';
 import { t, tList, type Locale } from '../i18n';
 import { repoUrl } from '../config';
 interface Props { locale: Locale }
@@ -30,13 +32,14 @@ const { locale } = Astro.props;
   </details>
 </Feature>
 <Feature locale={locale} k="features.investments" id="investments" shot="stocks-analysis" />
+<Feature locale={locale} k="features.otherInstruments" id="other-instruments" shot="loans" flip />
 <GettingStarted locale={locale} />
 <Tracks locale={locale} />
 <Trust locale={locale} />
+<AssistantPreview locale={locale} />
 <aside class="maker">
   <div class="wrap maker__inner">
-    <span class="maker__initials" aria-hidden="true">FK</span>
-    <div><h2>{t(locale, 'about.title')}</h2><p>{t(locale, 'about.text')}</p><a class="link" href={`${repoUrl}/discussions`}>{t(locale, 'about.link')}</a></div>
+    <div><h2>{t(locale, 'about.title')}</h2><p>{t(locale, 'about.text')}</p><LanguageLink locale={locale} href={`${repoUrl}/discussions`} hreflang="en">{t(locale, 'about.link')}</LanguageLink></div>
   </div>
 </aside>
 <DownloadTeaser locale={locale} />

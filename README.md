@@ -38,7 +38,7 @@ The output lands in `dist/`. `npm run build` also runs the token check before th
   npm run shots:optimize # requires cwebp (WebP tools); not needed for a normal build
   ```
 
-The landing page uses three screenshots: dashboard, account detail and investment analysis. Each has same-origin WebP sources with PNG fallback; the dashboard also has a 740 × 520 close-up for screens up to 600 px wide. Recheck the crop in `scripts/optimize-shots.mjs` if the app layout changes. The AI integration lives at `/ai-integration/` and `/cs/ai-integration/`, linked from the footer.
+The landing page uses four screenshots: dashboard, account detail, investment analysis and loans. Each has same-origin WebP sources with PNG fallback; the dashboard also has a 740 × 520 close-up for screens up to 600 px wide. Recheck the crop in `scripts/optimize-shots.mjs` if the app layout changes. A short AI integration section on the home page shows example questions and explains the optional data sharing. Full setup instructions live at `/ai-integration/` and `/cs/ai-integration/`, linked from the footer.
 
 ## Deploying
 

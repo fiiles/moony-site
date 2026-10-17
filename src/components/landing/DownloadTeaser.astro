@@ -1,4 +1,5 @@
 ---
+import LanguageLink from '../LanguageLink.astro';
 import { href, t, tf, type Locale } from '../../i18n';
 import { changelogLink, formatDate, release } from '../../lib/release';
 interface Props { locale: Locale }
@@ -8,7 +9,7 @@ const changelog = changelogLink(locale);
 <section class="block download-invite" id="download">
   <div class="wrap download-invite__inner">
     <div><h2 class="title">{t(locale, 'download.title')}</h2><p class="download-invite__intro">{t(locale, 'download.intro')}</p>
-      <p class="download-invite__meta">{tf(locale, 'download.meta', { version: release.version, date: formatDate(locale) })} · <a class="link" href={changelog.href} hreflang={changelog.hreflang}>{t(locale, 'download.changes')}</a></p>
+      <p class="download-invite__meta">{tf(locale, 'download.meta', { version: release.version, date: formatDate(locale) })} · <LanguageLink locale={locale} href={changelog.href} hreflang="en">{t(locale, 'download.changes')}</LanguageLink></p>
     </div>
     <div class="download-invite__action">
       <a class="btn btn--primary btn--lg" href={href(locale, 'download/')} data-platform-link data-mac={t(locale, 'hero.ctaMac')} data-win={t(locale, 'hero.ctaWin')} data-linux={t(locale, 'hero.ctaLinux')}><svg class="ic" aria-hidden="true"><use href="#i-download"/></svg><span>{t(locale, 'hero.ctaDefault')}</span></a>

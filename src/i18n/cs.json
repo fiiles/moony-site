@@ -81,7 +81,7 @@
       "formats": "16 bankovních předvoleb pro CSV a detekce sloupců u dalších souborů. Také CAMT.053, MT940, OFX/QFX a QIF. Přímé propojení s bankou zatím není k dispozici."
     },
     "investments": {
-      "title": "Sledujte, jak se investicím daří.",
+      "title": "Sledujte, jak se daří investicím",
       "text": "Rozlište vlastní vklady od výnosu. Sledujte akcie, ETF i krypto a podívejte se, jak se mění hodnota vašeho portfolia.",
       "bullets": [
         "Výnosy i přijaté dividendy",
@@ -89,10 +89,20 @@
         "Import z XTB, Trading 212, Degiro a IBKR"
       ],
       "alt": "Analýza akcií s časově váženým a peněžně váženým výnosem, grafem výnosu podle regionů a panelem propadu od maxima"
+    },
+    "otherInstruments": {
+      "title": "Nemovitosti, pojištění i úvěry",
+      "text": "Přidejte do svého přehledu nemovitosti, pojistné smlouvy a půjčky. Mějte po ruce jejich hodnotu, platby i důležité termíny.",
+      "bullets": [
+        "Nemovitosti: ocenění, nájem a náklady",
+        "Pojištění: platby, termíny a dokumenty",
+        "Úvěry: splátky a zbývající dluh"
+      ],
+      "alt": "Přehled úvěrů se zůstatky, úrokovými sazbami a vývojem dluhu v čase"
     }
   },
   "tracks": {
-    "title": "A co dalšího?",
+    "title": "A dalšího lze sledovat?",
     "items": {
       "bank": {
         "name": "Bankovní účty",
@@ -165,7 +175,7 @@
       "Zkopírujte připojovací příkaz z nastavení. Obsahuje váš osobní přístupový token, který nesdílejte.",
       "Moony musí při používání propojení běžet a být odemčené."
     ],
-    "guide": "Úplný návod na GitHubu (anglicky) →"
+    "guide": "Úplný návod na GitHubu →"
   },
   "download": {
     "title": "Stáhněte si Moony zdarma.",
@@ -231,11 +241,11 @@
     },
     "updating": {
       "title": "Aktualizace",
-      "text": "Po odemknutí se Moony zeptá GitHubu, zda existuje novější verze, a nabídne aktualizaci jedním kliknutím. Stažený soubor se před instalací ověří proti veřejnému klíči projektu. Automatickou kontrolu můžete vypnout v **Nastavení**; co posílá, uvádí [stránka Soukromí](privacy)."
+      "text": "Po odemknutí se Moony zeptá GitHubu, zda existuje novější verze, a nabídne aktualizaci jedním kliknutím. Stažený soubor se před instalací ověří proti veřejnému klíči projektu. Automatickou kontrolu můžete vypnout v **Nastavení**; co posílá, uvádí [stránka Soukromí (EN)](privacy)."
     },
     "requirements": {
       "title": "Systémové požadavky",
-      "mac": "Macy s Apple Silicon i Intel. Vydání neuvádí minimální verzi macOS; předpokládá se, že funguje na aktuálních i nedávných verzích. Pokud se Moony na starším systému neotevře, [napište nám do diskuzí na GitHubu](https://github.com/fiiles/Moony/discussions).",
+      "mac": "Macy s Apple Silicon i Intel. Vydání neuvádí minimální verzi macOS; předpokládá se, že funguje na aktuálních i nedávných verzích. Pokud se Moony na starším systému neotevře, [napište nám do diskuzí na GitHubu (EN)](https://github.com/fiiles/Moony/discussions).",
       "win": "Windows 10 a 11, 64bitové. Moony potřebuje běhové prostředí Microsoft Edge WebView2, které je v obou předinstalované; instalátor ho stáhne, pokud chybí.",
       "linux": "Pouze x86_64: AppImage, balíček `.deb` pro Debian a Ubuntu a `.rpm` pro Fedoru a openSUSE."
     },
@@ -247,7 +257,7 @@
     "metaTitle": "Soukromí tohoto webu · Moony",
     "description": "Co web Moony dělá a nedělá: žádné cookies, žádná analytika, nic načítaného od třetích stran, hostování u Cloudflare.",
     "title": "Soukromí tohoto webu",
-    "intro": "Tato stránka se týká webu moonyfinance.com. Co aplikace Moony ukládá a odesílá, popisuje [stránka Soukromí](privacy).",
+    "intro": "Tato stránka se týká webu moonyfinance.com. Co aplikace Moony ukládá a odesílá, popisuje [stránka Soukromí (EN)](privacy).",
     "items": {
       "cookies": {
         "title": "Žádné cookies, žádná analytika",
@@ -259,7 +269,7 @@
       },
       "hosting": {
         "title": "Hosting",
-        "text": "Web běží na Cloudflare. Jeho okrajové servery vidí obvyklé údaje o požadavku, například vaši IP adresu a user agent, podle [zásad ochrany osobních údajů Cloudflare](https://www.cloudflare.com/privacypolicy/). Projekt má analytiku Cloudflare i všechny ostatní funkce, které přidávají skripty nebo cookies, vypnuté."
+        "text": "Web běží na Cloudflare. Jeho okrajové servery vidí obvyklé údaje o požadavku, například vaši IP adresu a user agent, podle [zásad ochrany osobních údajů Cloudflare (EN)](https://www.cloudflare.com/privacypolicy/). Projekt má analytiku Cloudflare i všechny ostatní funkce, které přidávají skripty nebo cookies, vypnuté."
       },
       "downloads": {
         "title": "Stahování",
@@ -267,7 +277,7 @@
       },
       "operator": {
         "title": "Provozovatel a kontakt",
-        "text": "Provozovatelem je Filip Král. Dotazy patří do [diskuzí na GitHubu](https://github.com/fiiles/Moony/discussions)."
+        "text": "Provozovatelem je Filip Král. Dotazy patří do [diskuzí na GitHubu (EN)](https://github.com/fiiles/Moony/discussions)."
       }
     }
   },
@@ -302,7 +312,7 @@
     }
   },
   "gettingStarted": {
-    "title": "Začít můžete jedním účtem.",
+    "title": "Můžete začít s jedním účtem",
     "text": "Nemusíte zadávat všechno najednou. Další účty a investice přidáte, až budete chtít.",
     "steps": [
       {
@@ -320,8 +330,20 @@
     ]
   },
   "about": {
-    "title": "Za Moony stojí Filip Král.",
-    "text": "Moony je nezávislý open source projekt. Chybí vám nějaká funkce nebo jste narazili na problém? Napište do diskuzí na GitHubu.",
+    "title": "Nezávislý open source projekt",
+    "text": "Chybí vám nějaká funkce nebo jste narazili na problém? Napište do diskuzí na GitHubu a pomozte Moony vylepšit.",
     "link": "Napsat zpětnou vazbu →"
+  },
+  "assistantPreview": {
+    "title": "Proberte své finance s AI agentem",
+    "text": "Přes MCP můžete Moony propojit s Claudem nebo jiným AI agentem. Agent pak může pracovat s vašimi účty, investicemi i nemovitostmi v souvislostech.",
+    "examplesTitle": "Můžete se třeba zeptat",
+    "examples": [
+      "Jak velkou část mého portfolia tvoří tři největší investice? Ukaž mi, kde je hodně koncentrované.",
+      "Jaká by mohla být současná cena mého bytu? Použij údaje z Moony a srovnej je s aktuálními nabídkami."
+    ],
+    "marketNote": "Pro odhad ceny nemovitosti potřebuje připojený agent také přístup k aktuálním tržním podkladům.",
+    "privacyNote": "Propojení je ve výchozím stavu vypnuté. Zapnutím zpřístupníte data vybranému AI klientovi, který je může zpracovávat v cloudu svého poskytovatele.",
+    "link": "Jak propojení nastavit →"
   }
 }

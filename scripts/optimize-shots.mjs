@@ -1,12 +1,14 @@
 // Run after replacing a screenshot or its 720 px PNG copy. Requires cwebp on PATH.
 // PNG originals stay as fallbacks. Only screenshots used on the landing page need WebP.
+import { existsSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 const dir = fileURLToPath(new URL('../public/screenshots/', import.meta.url));
-for (const name of ['dashboard', 'account-detail', 'stocks-analysis']) {
+for (const name of ['dashboard', 'account-detail', 'stocks-analysis', 'loans']) {
   for (const locale of ['', '-cs']) {
     for (const size of ['', '-720']) {
       const stem = dir + name + locale + size;
+      if (!existsSync(stem + '.png')) continue; // Some screens have no separate Czech image.
       execFileSync('cwebp', ['-quiet', '-q', '88', '-m', '6', stem + '.png', '-o', stem + '.webp']);
     }
   }

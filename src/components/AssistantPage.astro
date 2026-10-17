@@ -1,4 +1,5 @@
 ---
+import LanguageLink from './LanguageLink.astro';
 import { t, tList, href, type Locale } from '../i18n';
 import { repoUrl } from '../config';
 interface Props { locale: Locale }
@@ -12,8 +13,8 @@ const { locale } = Astro.props;
     <p>{t(locale, 'assistant.text')}</p>
     <h2 class="title title--sm">{t(locale, 'assistant.setupTitle')}</h2>
     <ol class="steps">{tList(locale, 'assistant.setupSteps').map(step => <li>{step}</li>)}</ol>
-    <a class="link" href={`${repoUrl}/blob/main/docs/mcp.md`} hreflang="en">{t(locale, 'assistant.guide')}</a>
+    <LanguageLink locale={locale} href={`${repoUrl}/blob/main/docs/mcp.md`} hreflang="en">{t(locale, 'assistant.guide')}</LanguageLink>
     <pre class="code"><code>claude mcp add --transport http moony http://127.0.0.1:41414/mcp --header "Authorization: Bearer &lt;token&gt;"</code></pre>
-    <a class="link" href={href('en', 'privacy/')} hreflang={locale === 'cs' ? 'en' : undefined}>{t(locale, 'trust.link')}</a>
+    <LanguageLink locale={locale} href={href('en', 'privacy/')} hreflang="en">{t(locale, 'trust.link')}</LanguageLink>
   </div>
 </section>

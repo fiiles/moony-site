@@ -1,4 +1,5 @@
 ---
+import LanguageLink from './LanguageLink.astro';
 import { href, t, tf, tList, type Locale } from '../i18n';
 import { allReleasesUrl, changelogLink, downloadCards, formatDate, formatSize, release } from '../lib/release';
 import { rich } from '../lib/rich';
@@ -24,7 +25,7 @@ const linuxInstall = [
   <div class="wrap">
     <div class="page-head">
       <h1>{tf(locale, 'downloadPage.title', { version })}</h1>
-      <p class="page-meta">{tf(locale, 'downloadPage.released', { date: formatDate(locale) })} · <a class="link" href={changelog.href} hreflang={changelog.hreflang}>{t(locale, 'download.changes')}</a> · <a class="link" href={allReleasesUrl}>{p('allReleases')}</a></p>
+      <p class="page-meta">{tf(locale, 'downloadPage.released', { date: formatDate(locale) })} · <LanguageLink locale={locale} href={changelog.href} hreflang="en">{t(locale, 'download.changes')}</LanguageLink> · <LanguageLink locale={locale} href={allReleasesUrl} hreflang="en">{p('allReleases')}</LanguageLink></p>
     </div>
     <p class="download-intro">{p('intro')}</p>
     <h2 class="sr-only">{p('filesTitle')}</h2>

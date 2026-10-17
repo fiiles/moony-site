@@ -89,6 +89,16 @@
         "Import from XTB, Trading 212, Degiro and IBKR"
       ],
       "alt": "Stock analysis with time-weighted and money-weighted return, a return chart split by region and a drawdown panel"
+    },
+    "otherInstruments": {
+      "title": "Property, insurance and loans, too",
+      "text": "Bring property, insurance policies and loans into your overview. Keep their values, payments and important dates together.",
+      "bullets": [
+        "Property: valuations, rent and costs",
+        "Insurance: payments, dates and documents",
+        "Loans: repayments and outstanding debt"
+      ],
+      "alt": "Loan overview with outstanding balances, interest rates and a chart of debt over time"
     }
   },
   "tracks": {
@@ -320,8 +330,20 @@
     ]
   },
   "about": {
-    "title": "Moony is built by Filip Král.",
-    "text": "Moony is an independent open-source project. Missing a feature or found something that could work better? Join the conversation on GitHub.",
+    "title": "An independent open-source project",
+    "text": "Missing a feature or found something that could work better? Join the conversation on GitHub and help improve Moony.",
     "link": "Share your feedback →"
+  },
+  "assistantPreview": {
+    "title": "Ask an AI agent about your finances",
+    "text": "Connect Moony to Claude or another AI agent through MCP. Your agent can then work with your accounts, investments and property together.",
+    "examplesTitle": "For example, you could ask",
+    "examples": [
+      "What share of my portfolio is in my three largest investments? Show me where it is concentrated.",
+      "What might my apartment be worth today? Use its details in Moony and compare them with current listings."
+    ],
+    "marketNote": "For a property estimate, the connected agent also needs access to current market information.",
+    "privacyNote": "The integration is off by default. Enabling it gives your chosen AI client access to your data, which it may process in its provider’s cloud.",
+    "link": "How to set it up →"
   }
 }

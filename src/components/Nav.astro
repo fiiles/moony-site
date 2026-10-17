@@ -1,4 +1,5 @@
 ---
+import LanguageLink from './LanguageLink.astro';
 import { href, languageNames, locales, t, type Locale } from '../i18n';
 import { repoUrl } from '../config';
 
@@ -36,7 +37,7 @@ const switcher = locales.map((l) => ({ locale: l, label: l.toUpperCase(), name: 
           >{s.label}</a>
         ))}
       </span>
-      <a class="btn btn--ghost" href={repoUrl}><svg class="ic" aria-hidden="true"><use href="#i-github"/></svg>{t(locale, 'nav.github')}</a>
+      <LanguageLink locale={locale} class="btn btn--ghost" href={repoUrl} hreflang="en"><svg class="ic" aria-hidden="true"><use href="#i-github"/></svg>{t(locale, 'nav.github')}</LanguageLink>
       <a class="btn btn--primary" href={href(locale, 'download/')}><svg class="ic" aria-hidden="true"><use href="#i-download"/></svg>{t(locale, 'nav.download')}</a>
     </div>
   </div>

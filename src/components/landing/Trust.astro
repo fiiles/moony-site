@@ -1,4 +1,5 @@
 ---
+import LanguageLink from '../LanguageLink.astro';
 import { href, t, type Locale } from '../../i18n';
 
 interface Props { locale: Locale }
@@ -25,7 +26,7 @@ const cards = [
         </div>
       ))}
     </div>
-    <p class="trust__link"><a class="link" href={href('en', 'privacy/')} hreflang={locale === 'cs' ? 'en' : undefined}>{t(locale, 'trust.link')}</a></p>
+    <p class="trust__link"><LanguageLink locale={locale} href={href('en', 'privacy/')} hreflang="en">{t(locale, 'trust.link')}</LanguageLink></p>
 
   </div>
 </section>
