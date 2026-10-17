@@ -28,10 +28,9 @@
     "community": "Community",
     "github": "GitHub",
     "discussions": "Discussions",
-    "presets": "Contribute a bank preset",
     "translate": "Translate Moony",
     "disclaimer": "Moony is not financial, tax or investment advice. Figures depend on data from third parties and may be inaccurate.",
-    "nocookies": "This site sets no cookies and loads nothing from third parties.",
+    "nocookies": "This site sets no cookies and uses no analytics.",
     "copyright": "© 2026 Filip Král"
   },
   "repoPage": {
@@ -77,8 +76,8 @@
         "Undo an import if you need to"
       ],
       "alt": "Bank account page with the balance, a 12-month chart of incoming and outgoing money and the start of the transaction ledger",
-      "formatsTitle": "Supported banks and formats",
-      "formats": "16 bank presets for CSV, with column detection for other files. Also CAMT.053, MT940, OFX/QFX and QIF. Direct bank connections are not available yet."
+      "formatsTitle": "Supported formats",
+      "formats": "CSV with column detection, CAMT.053, MT940, OFX/QFX and QIF. Direct bank connections are not available yet."
     },
     "investments": {
       "title": "Follow your investments over time.",
@@ -255,7 +254,7 @@
   },
   "sitePrivacy": {
     "metaTitle": "Privacy of this website · Moony",
-    "description": "What the Moony website does and does not do: no cookies, no analytics, nothing loaded from third parties, hosted on Cloudflare.",
+    "description": "The Moony website uses no cookies or analytics. Learn about its content, Cloudflare hosting and app downloads.",
     "title": "Privacy of this website",
     "intro": "This page is about moonyfinance.com. What the Moony app stores and sends is described on the [Privacy page](privacy).",
     "items": {
@@ -264,12 +263,12 @@
         "text": "This website sets no cookies and has no analytics, counters or tracking pixels."
       },
       "origin": {
-        "title": "Nothing from third parties",
-        "text": "Fonts, styles and images come from this site's own origin, and the pages make no requests to third parties. A strict Content-Security-Policy header enforces this in the browser, and anyone can check the response headers and network requests in the browser's developer tools."
+        "title": "Content from our own domain",
+        "text": "Fonts, styles, scripts and images load from this site’s own domain. A strict Content-Security-Policy header restricts page content. The hosting provider may separately use the network diagnostics described below."
       },
       "hosting": {
         "title": "Hosting",
-        "text": "The site is hosted on Cloudflare. Its edge servers see the usual request data, such as your IP address and user agent, under [Cloudflare's privacy policy](https://www.cloudflare.com/privacypolicy/). The project keeps Cloudflare's analytics and every other feature that adds scripts or cookies switched off."
+        "text": "Cloudflare hosts this website. When serving pages, it processes standard request data, such as your IP address and user agent, under its [privacy policy](https://www.cloudflare.com/privacypolicy/). Its [Network Error Logging service](https://developers.cloudflare.com/network-error-logging/) may receive network error reports from your browser. Cloudflare visitor analytics are not enabled on this site."
       },
       "downloads": {
         "title": "Downloads",
@@ -307,7 +306,7 @@
       },
       "bank": {
         "q": "Does it connect to my bank?",
-        "a": "Not directly: you import the statements you export from your bank, as CSV (16 presets and column detection for other files) or as CAMT.053, MT940, OFX/QFX or QIF."
+        "a": "Not directly: import statements exported from your bank as CSV, CAMT.053, MT940, OFX/QFX or QIF."
       }
     }
   },
@@ -336,24 +335,23 @@
   },
   "assistantPreview": {
     "title": "Ask an AI agent about your finances",
-    "text": "Your finances are together in Moony. Through MCP, your chosen AI agent can access that context and offer analysis and suggestions based on your own situation.",
+    "text": "Connect Moony to your AI agent through MCP. Give it context for analysis and suggestions based on your situation.",
     "examplesTitle": "For example, you could ask",
     "examples": [
-      "What share of my portfolio is in my three largest investments? Show me where it is concentrated.",
-      "What might my apartment be worth today? Use its details in Moony and compare them with current listings."
+      "What share of my portfolio is in my three largest investments?",
+      "Estimate my apartment’s value using its details in Moony and current listings."
     ],
-    "marketNote": "For a property estimate, the connected agent also needs access to current market information.",
+    "marketNote": "For a property estimate, the agent also needs current market information.",
     "privacyNote": "The integration is off by default. Enabling it gives your chosen AI client access to your data, which it may process in its provider’s cloud.",
     "link": "How to set it up →",
     "diagram": {
       "caption": "Connect the finances stored in Moony to your AI agent through MCP, giving it context for personal analysis and suggestions.",
       "dataTitle": "Your finances in Moony",
-      "dataText": "Accounts and investments, property, loans and insurance. Together on your computer.",
+      "dataText": "Accounts, investments, property and debts.",
       "agentTitle": "Your AI agent",
-      "agentText": "Claude or another MCP client you choose and connect.",
-      "agentNote": "Data processing depends on your chosen client.",
-      "resultTitle": "Suggestions for your situation",
-      "resultText": "Portfolio insights, spending analysis, or estimates and scenarios based on your data.",
+      "agentText": "Claude or another client that supports MCP.",
+      "resultTitle": "Analysis and suggestions",
+      "resultText": "Based on your data and your situation.",
       "analysis": "Analysis"
     }
   }

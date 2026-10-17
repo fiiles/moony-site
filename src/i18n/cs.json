@@ -28,10 +28,9 @@
     "community": "Komunita",
     "github": "GitHub",
     "discussions": "Diskuze",
-    "presets": "Přispět předvolbou banky",
     "translate": "Přeložit Moony",
     "disclaimer": "Moony není finanční, daňové ani investiční poradenství. Čísla závisí na datech třetích stran a mohou být nepřesná.",
-    "nocookies": "Tento web neukládá cookies a nenačítá nic od třetích stran.",
+    "nocookies": "Tento web neukládá cookies a nepoužívá analytiku.",
     "copyright": "© 2026 Filip Král"
   },
   "repoPage": {
@@ -77,8 +76,8 @@
         "Nepovedený import můžete vrátit"
       ],
       "alt": "Detail bankovního účtu se zůstatkem, grafem příchozích a odchozích plateb za 12 měsíců a začátkem seznamu transakcí",
-      "formatsTitle": "Podporované banky a formáty",
-      "formats": "16 bankovních předvoleb pro CSV a detekce sloupců u dalších souborů. Také CAMT.053, MT940, OFX/QFX a QIF. Přímé propojení s bankou zatím není k dispozici."
+      "formatsTitle": "Podporované formáty",
+      "formats": "CSV s detekcí sloupců, CAMT.053, MT940, OFX/QFX a QIF. Přímé propojení s bankou zatím není k dispozici."
     },
     "investments": {
       "title": "Sledujte, jak se daří investicím",
@@ -102,7 +101,7 @@
     }
   },
   "tracks": {
-    "title": "A dalšího lze sledovat?",
+    "title": "Co dalšího lze sledovat?",
     "items": {
       "bank": {
         "name": "Bankovní účty",
@@ -255,7 +254,7 @@
   },
   "sitePrivacy": {
     "metaTitle": "Soukromí tohoto webu · Moony",
-    "description": "Co web Moony dělá a nedělá: žádné cookies, žádná analytika, nic načítaného od třetích stran, hostování u Cloudflare.",
+    "description": "Web Moony nepoužívá cookies ani analytiku. Zde najdete informace o načítání obsahu, hostování u Cloudflare a stahování aplikace.",
     "title": "Soukromí tohoto webu",
     "intro": "Tato stránka se týká webu moonyfinance.com. Co aplikace Moony ukládá a odesílá, popisuje [stránka Soukromí (EN)](privacy).",
     "items": {
@@ -264,12 +263,12 @@
         "text": "Tento web neukládá cookies a nemá žádnou analytiku, počítadla ani sledovací pixely."
       },
       "origin": {
-        "title": "Nic od třetích stran",
-        "text": "Písma, styly a obrázky pocházejí z vlastní domény webu a stránky neposílají žádné požadavky třetím stranám. Prohlížeč to vynucuje přísnou hlavičkou Content-Security-Policy a hlavičky odpovědí i síťové požadavky si může kdokoli ověřit ve vývojářských nástrojích prohlížeče."
+        "title": "Obsah z vlastní domény",
+        "text": "Písma, styly, skripty a obrázky se načítají z vlastní domény webu. Obsah stránky omezuje přísná hlavička Content-Security-Policy. Hosting může samostatně využívat síťovou diagnostiku popsanou níže."
       },
       "hosting": {
         "title": "Hosting",
-        "text": "Web běží na Cloudflare. Jeho okrajové servery vidí obvyklé údaje o požadavku, například vaši IP adresu a user agent, podle [zásad ochrany osobních údajů Cloudflare (EN)](https://www.cloudflare.com/privacypolicy/). Projekt má analytiku Cloudflare i všechny ostatní funkce, které přidávají skripty nebo cookies, vypnuté."
+        "text": "Web hostuje Cloudflare. Při poskytování stránek zpracovává běžné údaje o požadavku, například IP adresu a user agent, podle svých [zásad ochrany osobních údajů (EN)](https://www.cloudflare.com/privacypolicy/). Služba [Network Error Logging (EN)](https://developers.cloudflare.com/network-error-logging/) může od prohlížeče přijímat hlášení síťových chyb. Na webu není zapnutá návštěvnická analytika Cloudflare."
       },
       "downloads": {
         "title": "Stahování",
@@ -307,7 +306,7 @@
       },
       "bank": {
         "q": "Připojí se k mé bance?",
-        "a": "Přímo ne: importujete výpisy, které si z banky exportujete, jako CSV (16 předvoleb a detekce sloupců pro ostatní soubory) nebo jako CAMT.053, MT940, OFX/QFX či QIF."
+        "a": "Přímo ne: importujete výpisy, které si z banky exportujete, ve formátu CSV, CAMT.053, MT940, OFX/QFX nebo QIF."
       }
     }
   },
@@ -336,24 +335,23 @@
   },
   "assistantPreview": {
     "title": "Proberte své finance s AI agentem",
-    "text": "Své finance máte v Moony pohromadě. Přes MCP k nim může přistupovat vámi vybraný AI agent a připravit analýzy i doporučení podle vaší konkrétní situace.",
+    "text": "Propojte Moony přes MCP se svým AI agentem. Získá kontext pro analýzy a doporučení podle vaší situace.",
     "examplesTitle": "Můžete se třeba zeptat",
     "examples": [
-      "Jak velkou část mého portfolia tvoří tři největší investice? Ukaž mi, kde je hodně koncentrované.",
-      "Jaká by mohla být současná cena mého bytu? Použij údaje z Moony a srovnej je s aktuálními nabídkami."
+      "Jakou část mého portfolia tvoří tři největší investice?",
+      "Odhadni cenu mého bytu podle údajů v Moony a aktuálních nabídek."
     ],
-    "marketNote": "Pro odhad ceny nemovitosti potřebuje připojený agent také přístup k aktuálním tržním podkladům.",
+    "marketNote": "Pro odhad ceny nemovitosti potřebuje agent také aktuální tržní podklady.",
     "privacyNote": "Propojení je ve výchozím stavu vypnuté. Zapnutím zpřístupníte data vybranému AI klientovi, který je může zpracovávat v cloudu svého poskytovatele.",
     "link": "Jak propojení nastavit →",
     "diagram": {
       "caption": "Finance uložené v Moony zpřístupníte přes MCP svému AI agentovi. Ten je může využít pro osobní analýzy a doporučení.",
       "dataTitle": "Vaše finance v Moony",
-      "dataText": "Účty a investice, nemovitosti, úvěry i pojistky. V jednom přehledu u vás v počítači.",
+      "dataText": "Účty, investice, nemovitosti i závazky.",
       "agentTitle": "Váš AI agent",
-      "agentText": "Claude nebo jiný MCP klient, kterého si sami vyberete a připojíte.",
-      "agentNote": "Zpracování dat závisí na zvoleném klientovi.",
-      "resultTitle": "Doporučení pro vaši situaci",
-      "resultText": "Souvislosti v portfoliu, rozbor výdajů nebo odhady a scénáře podle vašich dat.",
+      "agentText": "Claude nebo jiný klient s podporou MCP.",
+      "resultTitle": "Analýzy a doporučení",
+      "resultText": "Podle vašich dat a vaší situace.",
       "analysis": "Analýza"
     }
   }

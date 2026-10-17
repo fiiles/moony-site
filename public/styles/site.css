@@ -251,7 +251,7 @@ section.overview { padding: 38px 0 32px; }
 .getting-started { background: var(--sidebar); }
 .start-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; margin: 0; padding: 0; list-style: none; counter-reset: start; }
 .start-steps li { counter-increment: start; position: relative; padding-top: 42px; }
-.start-steps li::before { content: counter(start); position: absolute; top: 0; display: grid; place-items: center; width: 28px; height: 28px; border: 1px solid var(--line-strong); border-radius: 50%; color: var(--ink-2); font-size: 13px; }
+.start-steps li::before { content: counter(start); position: absolute; top: 0; inset-inline-start: 0; display: grid; place-items: center; width: 28px; height: 28px; border: 1px solid var(--line-strong); border-radius: 50%; color: var(--ink-2); font-size: 13px; }
 .start-steps h3 { font-size: 17px; letter-spacing: -0.02em; }
 .start-steps p { margin-top: 8px; max-width: 290px; color: var(--ink-2); font-size: 14px; }
 .track-section { padding: 0 0 36px; background: var(--sidebar); }
@@ -340,14 +340,18 @@ section.overview { padding: 38px 0 32px; }
 .mcp-flow__icon { width: 28px; height: 31px; color: var(--ink-3); stroke-width: 1.5; }
 .mcp-flow__node h3 { margin: 18px 0 10px; font-size: 18px; line-height: 1.25; letter-spacing: -.025em; }
 .mcp-flow__node p { color: var(--ink-2); font-size: 14px; line-height: 1.6; }
-.mcp-flow__node small { display: block; margin-top: 12px; color: var(--ink-3); font-size: 12px; }
 .mcp-flow__connector { display: grid; justify-items: center; gap: 6px; padding: 5px; color: var(--ink-3); font-size: 10px; }
 .mcp-flow__connector svg { width: 40px; height: 24px; stroke: currentColor; stroke-width: 1.5; fill: none; }
 @media (max-width: 760px) {
-  .assistant-preview__grid { gap: 24px; }
+  .assistant-preview__grid { gap: 22px; }
   .assistant-preview__prompts { grid-template-columns: minmax(0, 1fr); }
   .mcp-flow__body { grid-template-columns: minmax(0, 1fr); }
-  .mcp-flow__connector { display: flex; justify-content: center; gap: 8px; height: 54px; }
+  .mcp-flow__node { display: grid; grid-template-columns: 28px minmax(0, 1fr); column-gap: 14px; padding: 16px; }
+  .mcp-flow__node .moon, .mcp-flow__icon { grid-column: 1; grid-row: 1 / 3; width: 28px; height: 28px; }
+  .mcp-flow__node h3 { grid-column: 2; margin: 0 0 5px; font-size: 16px; }
+  .mcp-flow__node p { grid-column: 2; font-size: 13px; line-height: 1.5; }
+  .mcp-flow__connector { display: flex; justify-content: center; gap: 8px; height: 34px; }
+  .assistant-preview blockquote { padding: 12px 14px; font-size: 14px; line-height: 1.5; }
   .mcp-flow__connector svg { width: 34px; transform: rotate(90deg); }
 }
 
