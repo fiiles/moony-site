@@ -19,6 +19,7 @@
     "blurb": "A clearer picture of your finances. Right on your computer.",
     "product": "Product",
     "download": "Download",
+    "help": "Help",
     "changelog": "Changelog",
     "trust": "Trust",
     "privacy": "Privacy",
@@ -233,7 +234,8 @@
         "What to track.",
         "An offer to add your first account and import a bank statement."
       ],
-      "outro": "The dashboard then shows a Getting started checklist. Moving to a new computer? Choose Restore from a backup on the first screen of the wizard instead of creating a new profile."
+      "outro": "The dashboard then shows a Getting started checklist. Moving to a new computer? Choose Restore from a backup on the first screen of the wizard instead of creating a new profile.",
+      "help": "New to Moony? The [Help](help) explains [what to do if you forget your password](recovery), [how to back up and restore your data](backup) and [how to import statements](import)."
     },
     "updating": {
       "title": "Updating",
@@ -350,6 +352,175 @@
       "resultTitle": "Analysis and suggestions",
       "resultText": "Based on your data and your situation.",
       "analysis": "Analysis"
+    }
+  },
+  "help": {
+    "metaTitle": "Help · Moony",
+    "description": "Getting started, forgotten passwords, importing statements, backups, updates and uninstalling Moony.",
+    "title": "Help with Moony",
+    "intro": "Short answers to the questions people ask first. Everything here describes how Moony works today; menu names are those of the English interface.",
+    "tocLabel": "In this help",
+    "first": {
+      "title": "First start",
+      "lead": "Moony needs no account. Install it, open it, and the setup wizard creates your encrypted database on this computer.",
+      "installTitle": "Installing",
+      "install": "The installers are not signed yet, so macOS and Windows warn you the first time; the app is not damaged. Steps for each system are on the Download page: [macOS](dlMac), [Windows](dlWin), [Linux](dlLinux).",
+      "keysTitle": "Password and recovery key",
+      "keys": [
+        "**Password.** Opens Moony every time. At least 8 characters; a longer passphrase is better. Moony cannot show it to you.",
+        "**Recovery key.** 24 characters in six groups of four, shown once during setup. It is for emergencies: it lets you choose a new password if you forget this one ([how](recovery)). Save it away from this computer, in a password manager or on paper. **Save to file…** writes a plain text file, `moony-recovery-key.txt`; keep it on an external drive, not next to your data."
+      ],
+      "wizardTitle": "The setup wizard",
+      "wizardIntro": "A welcome you can skip leads into five steps:",
+      "wizardSteps": [
+        "**Privacy:** your main currency and banking country (the country picks categorization rules and lists its banks first when you import). Already use Moony elsewhere? Choose **Restore from a backup** here instead ([how](backup)).",
+        "**Account:** your name, an email for your own reference (never sent anywhere) and the password, twice.",
+        "**Key:** your recovery key. Save it, type the two groups Moony asks for, then click **Create the encrypted database**.",
+        "**What to track:** accounts, investments, real estate, loans and insurance. Change it later in **Settings → General → Menu visibility**; hidden pages keep working.",
+        "**First account:** a name, a currency and the current balance, then import a statement or click **Skip for now**. Balances are entered by hand; imports do not change them."
+      ],
+      "wizardOutro": "The Overview then shows a **Getting started** checklist."
+    },
+    "recovery": {
+      "title": "Forgotten password and the recovery key",
+      "warning": "**There is no backdoor.** Moony has no account and no server, so nobody can reset your password for you, the author included. The password and the recovery key are two separate ways into the same encrypted data. If you have neither, nothing can be opened: not your records and not your attached photos and documents.",
+      "tableHead": [
+        "If you…",
+        "Then…"
+      ],
+      "situations": [
+        "know your password",
+        "forgot your password but have the recovery key",
+        "know your password but lost the recovery key",
+        "have neither the password nor the recovery key"
+      ],
+      "results": [
+        "Unlock as usual. You do not need the key.",
+        "You get in and set a new password. Your data stays as it is (steps below).",
+        "You can still unlock. Moony shows the key only once, but changing your password creates a new one: **Settings → Security → Change Password**. The old key stops working.",
+        "Nothing can open your data, neither you nor anyone else. Only a backup whose password or recovery key you still know can bring data back."
+      ],
+      "resetTitle": "Reset a forgotten password",
+      "resetSteps": [
+        "On the lock screen click **Forgot your password?**",
+        "Enter the 24-character recovery key. Capitals, spaces and dashes do not matter.",
+        "Choose a new password of at least 8 characters. Checking the key takes a few seconds.",
+        "Moony shows a new recovery key. Save it before you continue: the old one no longer works. Then click **Continue to the app**."
+      ],
+      "cannotTitle": "What the recovery key does not do",
+      "cannot": [
+        "It does not reveal the old password, only lets you set a new one.",
+        "It works only with the key files `salt` and `recovery.enc` that belong to your data, which are in the data folder and in every backup ZIP. Copying `moony.db` alone saves nothing you can open; make a backup instead ([how](backup)).",
+        "A backup holds the key files of the day it was made. If you changed or reset your password later, it opens with the password or recovery key that was valid that day."
+      ],
+      "keepTitle": "Keep both safe",
+      "keep": "Keep the recovery key in a password manager or on paper, and a recent backup ZIP on an external drive or in your own cloud storage. Treat the key like a password: anyone who has it together with your backup ZIP can open your data.",
+      "lockedTitle": "If you are locked out for good",
+      "locked": "With no password, no recovery key and no usable backup, the old data is lost. To start over, quit Moony and rename the data folder ([where](data)) instead of deleting it, in case the password turns up. At the next start Moony shows the setup wizard and creates an empty profile."
+    },
+    "import": {
+      "title": "Importing statements",
+      "lead": "Nothing is written until you confirm: you see a preview first, rows that already exist are skipped as duplicates, and every import can be undone.",
+      "bankTitle": "Bank statements",
+      "bankSteps": [
+        "Open **Bank accounts** (group **Money**) and click **Import statement**, on the account list or on an account's page.",
+        "**File:** drop the statement in or choose it. Pick your bank in the **Bank** list or leave **Auto-detect**.",
+        "**Columns:** for a CSV file, check which column is which (a recognized bank is filled in). Other formats skip this step.",
+        "**Preview and categories:** check dates, amounts and categories, and categorize rows the rules left open.",
+        "**Done:** the summary shows what was imported. To undo it, open the account's **Import history** and click **Undo import**."
+      ],
+      "balanceNote": "Importing never changes an account's balance. If the statement states a closing balance, the last step offers **Set account balance to …**.",
+      "formatsTitle": "Which files work",
+      "formats": [
+        "**CSV and TXT** with 16 bank presets, recognized from the header row: Revolut, Wise, N26, Sparkasse, DKB, ING (Germany), UK banks (Debit / Credit columns), Chase (US) and, in the Czech Republic, Fio banka, Česká spořitelna, Komerční banka, Air Bank, ČSOB, MONETA Money Bank, mBank and Raiffeisenbank (their Czech export formats). The presets for DKB, ING, Komerční banka, Air Bank, ČSOB, MONETA, mBank and Raiffeisenbank are not yet confirmed with a real export: if one maps wrongly, fix the mapping by hand.",
+        "**CAMT.053** (XML), **MT940**, **OFX/QFX** and **QIF** from any bank, with no column mapping. Moony shows which account the statement belongs to and, when the file states both balances, checks that the payments add up."
+      ],
+      "csvTitle": "A CSV from another bank",
+      "csvIntro": "Any CSV with a date and an amount works. In the **Columns** step:",
+      "csv": [
+        "Pick the date column and the amount column, or a debit and a credit column if your bank splits the amount. Optionally add the description, counterparty, its account number or IBAN, currency, balance and transaction ID.",
+        "Moony detects the delimiter, text encoding, decimal separator and date order. Change them if the **Parsed preview** looks wrong: broken accents mean the wrong encoding, swapped days and months the wrong date order. **Header row** is the line with the column names; lines above it are ignored.",
+        "Expenses must come out negative and income positive. Check a few rows you know before you import."
+      ],
+      "missingTitle": "If your bank is not listed",
+      "missing": [
+        "Look in your online banking for CAMT.053, MT940, OFX, QFX or QIF: they need no mapping.",
+        "Otherwise map the CSV columns as above; it takes a minute.",
+        "Or add transactions by hand (**Add transaction** on the account's page), or let the optional AI assistant read a statement for you and check what it read before it saves anything ([AI assistant](ai)).",
+        "Want a preset for your bank? [Open an issue](issues) with the header row only, never real transactions. A preset is one small JSON file; the [contributing guide](contributing) shows how."
+      ],
+      "brokerTitle": "Broker trades",
+      "brokerIntro": "Moony does not import trades from a bank statement; use the broker import. Open **Stocks** (group **Investments**) and click **Import CSV**, then choose where the export comes from. Each source shows how to get the file and offers a sample:",
+      "brokers": [
+        "**XTB:** Account history → Cash operations → Export as CSV, for a period from your first trade. Only purchases and sales of stocks and ETFs are imported, not deposits, dividends or fees.",
+        "**Trading 212:** History → export icon, tick Orders. One export covers at most 12 months, so upload several files; duplicates are recognized.",
+        "**Degiro:** Activity → Transactions → Export → CSV. Not the account statement.",
+        "**Interactive Brokers:** a Flex Query (Client Portal → Performance & Reports → Flex Queries) of type Activity with the Trades section and the fields Symbol, ISIN, TradeDate, Buy/Sell, Quantity, TradePrice, CurrencyPrimary, AssetClass and TradeID, as CSV.",
+        "**Your own table or another broker:** download the Moony template or assign the columns yourself (date, buy or sell, symbol or ISIN, quantity, price per share, currency). Moony can remember the mapping for next time. Save Excel files as CSV first."
+      ],
+      "brokerOutro": "The Review step lists what will be imported and which rows are duplicates, skipped or wrong. It also checks the securities on Yahoo Finance; that lookup sends the file's symbols and ISINs and nothing else ([Privacy](privacy)). To take an import back, use **Undo** under Recent imports or **Import history** on the Stocks page."
+    },
+    "backup": {
+      "title": "Backup, restore and a new computer",
+      "makeTitle": "Make a backup",
+      "make": [
+        "Open **Settings → Data and backups** and click **Back up now**. Choose where to save the ZIP (Moony suggests `moony-backup-YYYY-MM-DD.zip`).",
+        "It holds encrypted copies of your records and attachments plus the key files `salt`, `key.enc` and `recovery.enc`, and stays encrypted: only the password that was valid when it was made, or the recovery key from that time, opens it.",
+        "Keep a copy away from this computer, on an external drive or in your own cloud storage. Moony never uploads anything; the Overview reminds you when your last backup is old. Back up before an update and after a large import."
+      ],
+      "restoreTitle": "Restore a backup",
+      "restoreIntro": "Start from **Settings → Data and backups → Restore from backup…**, from the lock screen (**Have a backup? Restore from backup…**) or from the first step of the setup wizard (**Restore from a backup**). Then:",
+      "restoreSteps": [
+        "Choose the ZIP. Moony shows its date, Moony version, number of attachments and size.",
+        "Confirm. Existing data is not deleted: Moony moves it to a `pre-restore-<time>` folder inside the data folder first.",
+        "Moony locks. Unlock with the password that was in use when the backup was made, or click **Forgot your password?** and use the recovery key from that time."
+      ],
+      "restoreNote": "A backup made by a newer Moony cannot be restored by an older one, so update first. Backups from older versions restore fine.",
+      "moveTitle": "Move to a new computer",
+      "moveSteps": [
+        "On the old computer click **Back up now** and copy the ZIP to the new one (USB drive or your own cloud storage).",
+        "Install the same or a newer Moony on the new computer ([Download](download)).",
+        "On the first step of the wizard choose **Restore from a backup**, pick the ZIP and confirm.",
+        "Unlock with the password from the time of the backup."
+      ],
+      "moveOutro": "Moony does not sync between computers, so the old and the new copy drift apart as soon as you use both, and changes made after the backup are not in it. When the new computer works, remove the data from the old one ([how](uninstall)).",
+      "notBackup": "**Export JSON** on the same page writes every table to an unencrypted JSON file without attachments. It is not a backup; handle it like a bank statement. **Verify database** checks the integrity of your database."
+    },
+    "updates": {
+      "title": "Updates, data folder and uninstalling",
+      "updatesTitle": "Updates",
+      "updates": [
+        "After you unlock Moony, it asks GitHub whether a newer version exists and offers **Update and restart**. The download is verified against the project's public key; Moony restarts and you unlock it again. Your data stays where it is, and the request sends none of it.",
+        "Check by hand or switch the automatic check off in **Settings → Security → Updates** (it applies to this computer only).",
+        "Before an update that changes the database, Moony copies it next to itself (`moony.db.bak-<time>`; the newest three are kept). That is a safeguard, not a guarantee: an earlier version cannot open a database a newer one has migrated, so make a backup first. To go back, restore a backup made with the earlier version.",
+        "Coming from 0.10.0 or older? The data folder was renamed in 0.11.0: read [Where your data lives](privacyData) before the first start."
+      ],
+      "dataTitle": "Where your data lives",
+      "dataIntro": "Everything is in one folder per user:",
+      "dataHead": [
+        "System",
+        "Folder"
+      ],
+      "dataWinAlt": "usually `C:\\Users\\<you>\\AppData\\Roaming\\com.moonyfinance.desktop\\`",
+      "dataLinuxAlt": "or `$XDG_DATA_HOME/com.moonyfinance.desktop/` if you have set that variable",
+      "dataNote": "**Settings → Data and backups** shows the exact path and an **Open folder** button.",
+      "dataFiles": "It holds `moony.db` and `attachments.db` (your records and your photos and documents, encrypted), the key files `salt`, `key.enc` and `recovery.enc`, `.bak-<time>` copies made before a database update and `pre-restore-<time>` folders from restores.",
+      "dataOutro": "Use **Back up now** rather than copying files by hand; Moony never moves the folder itself. What is and is not encrypted is on the [Privacy page](privacy).",
+      "uninstallTitle": "Uninstalling",
+      "uninstall": [
+        "Uninstalling removes the app but, by default, not your data, which stays in the data folder. macOS: quit Moony and drag it to the Trash. Windows: uninstall it in Settings → Apps. Linux: delete the AppImage or remove the `.deb` or `.rpm` package with your package manager.",
+        "To remove your data too, do it before you uninstall: **Settings → Account → Delete data…**, then type `DELETE`. This removes the databases, key files and attachments and cannot be undone, so make a backup first if you might want them back.",
+        "It leaves `pre-restore-<time>` folders, backups and exports you saved, and the logs; delete those by hand, or delete the whole data folder. There is nothing to delete on a server, because Moony has none."
+      ]
+    },
+    "ai": {
+      "title": "AI assistant (MCP)",
+      "text": "Moony can serve your data to an AI assistant such as Claude through a small server built into the app. It is off by default, listens on `127.0.0.1` only and needs Moony unlocked and a personal access token. The assistant can read your data and, with some tools, change it, and it processes what it reads, usually in its provider's cloud: enable it only for clients you trust. You do not need it to use Moony.",
+      "text2": "Turn it on under **Settings → Integrations → AI Assistant (MCP Server)**. The connection command, the client setups and the details are on the [AI integration](aiPage) page."
+    },
+    "more": {
+      "title": "Still stuck?",
+      "text": "Ask in [GitHub Discussions](discussions) or, for a bug, [open an issue](issues). Never paste balances or statements there. Security problems go through the [security policy](security), not a public issue."
     }
   }
 }

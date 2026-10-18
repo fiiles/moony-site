@@ -19,6 +19,7 @@
     "blurb": "Přehled o financích. Přímo ve vašem počítači.",
     "product": "Produkt",
     "download": "Stáhnout",
+    "help": "Nápověda",
     "changelog": "Seznam změn",
     "trust": "Důvěra",
     "privacy": "Soukromí",
@@ -233,7 +234,8 @@
         "Co chcete sledovat.",
         "Nabídka přidat první účet a importovat bankovní výpis."
       ],
-      "outro": "Přehled pak zobrazí úvodní kontrolní seznam. Přecházíte na nový počítač? Na první obrazovce průvodce zvolte Obnovit ze zálohy místo vytvoření nového profilu."
+      "outro": "Přehled pak zobrazí úvodní kontrolní seznam. Přecházíte na nový počítač? Na první obrazovce průvodce zvolte Obnovit ze zálohy místo vytvoření nového profilu.",
+      "help": "Jste v Moony noví? [Nápověda](help) vysvětluje, [co dělat při zapomenutém hesle](recovery), [jak zálohovat a obnovit data](backup) a [jak importovat výpisy](import)."
     },
     "updating": {
       "title": "Aktualizace",
@@ -350,6 +352,175 @@
       "resultTitle": "Analýzy a doporučení",
       "resultText": "Podle vašich dat a vaší situace.",
       "analysis": "Analýza"
+    }
+  },
+  "help": {
+    "metaTitle": "Nápověda · Moony",
+    "description": "První spuštění, zapomenuté heslo, import výpisů, zálohy, aktualizace a odinstalace Moony.",
+    "title": "Nápověda k Moony",
+    "intro": "Stručné odpovědi na otázky, které lidé kladou jako první. Vše zde popisuje, jak Moony funguje dnes; názvy nabídek jsou z českého rozhraní.",
+    "tocLabel": "Obsah nápovědy",
+    "first": {
+      "title": "První spuštění",
+      "lead": "Moony nepotřebuje účet. Nainstalujte ho, otevřete a průvodce nastavením vytvoří šifrovanou databázi v tomto počítači.",
+      "installTitle": "Instalace",
+      "install": "Instalátory zatím nejsou podepsané, takže macOS a Windows při prvním spuštění zobrazí upozornění; aplikace není poškozená. Postup pro každý systém je na stránce Stáhnout: [macOS](dlMac), [Windows](dlWin), [Linux](dlLinux).",
+      "keysTitle": "Heslo a obnovovací klíč",
+      "keys": [
+        "**Heslo.** Odemyká Moony pokaždé. Alespoň 8 znaků, delší fráze je lepší. Moony vám ho nedokáže zobrazit.",
+        "**Obnovovací klíč.** 24 znaků v šesti skupinách po čtyřech, zobrazí se jednou při nastavení. Je pro krajní případ: když zapomenete heslo, umožní vám zvolit nové ([jak](recovery)). Uložte si ho mimo tento počítač, do správce hesel nebo na papír. **Uložit do souboru…** vytvoří prostý textový soubor `moony-recovery-key.txt`; uschovejte ho na externím disku, ne vedle svých dat."
+      ],
+      "wizardTitle": "Průvodce nastavením",
+      "wizardIntro": "Přivítání, které můžete přeskočit, vede do pěti kroků:",
+      "wizardSteps": [
+        "**Soukromí:** hlavní měna a země bankovnictví (země určuje kategorizační pravidla a při importu řadí její banky na začátek). Už Moony používáte jinde? Zvolte tady raději **Obnovit ze zálohy** ([jak](backup)).",
+        "**Účet:** jméno, e-mail pro vaši potřebu (nikam se neposílá) a heslo dvakrát.",
+        "**Klíč:** váš obnovovací klíč. Uložte si ho, opište dvě skupiny, které Moony požaduje, a klikněte na **Vytvořit šifrovanou databázi**.",
+        "**Co sledovat:** účty, investice, nemovitosti, úvěry a pojištění. Později to změníte v **Nastavení → Obecné → Viditelnost v menu**; skryté stránky dál fungují.",
+        "**První účet:** název, měna a aktuální zůstatek, potom importujte výpis nebo klikněte na **Zatím přeskočit**. Zůstatky se zadávají ručně; importy je nemění."
+      ],
+      "wizardOutro": "Přehled potom zobrazí kontrolní seznam **Začínáme**."
+    },
+    "recovery": {
+      "title": "Zapomenuté heslo a obnovovací klíč",
+      "warning": "**Zadní vrátka neexistují.** Moony nemá účet ani server, takže vám heslo nemůže obnovit nikdo, ani autor. Heslo a obnovovací klíč jsou dvě samostatné cesty ke stejným šifrovaným datům. Když nemáte ani jedno z nich, nedá se otevřít nic: ani záznamy, ani připojené fotografie a dokumenty.",
+      "tableHead": [
+        "Pokud…",
+        "Pak…"
+      ],
+      "situations": [
+        "znáte heslo",
+        "jste zapomněli heslo, ale máte obnovovací klíč",
+        "znáte heslo, ale ztratili jste obnovovací klíč",
+        "nemáte ani heslo, ani obnovovací klíč"
+      ],
+      "results": [
+        "Odemknete Moony jako obvykle. Klíč nepotřebujete.",
+        "Dostanete se dovnitř a nastavíte nové heslo. Data zůstanou, jak jsou (postup níže).",
+        "Odemykat můžete dál. Moony klíč ukazuje jen jednou, ale změnou hesla vznikne nový: **Nastavení → Zabezpečení → Změna hesla**. Starý klíč přestane fungovat.",
+        "Data nemůže otevřít nikdo, ani vy. Vrátit je může jen záloha, jejíž heslo nebo obnovovací klíč ještě znáte."
+      ],
+      "resetTitle": "Obnovení zapomenutého hesla",
+      "resetSteps": [
+        "Na zamykací obrazovce klikněte na **Zapomenuté heslo?**",
+        "Zadejte 24znakový obnovovací klíč. Na velikosti písmen, mezerách a pomlčkách nezáleží.",
+        "Zvolte nové heslo dlouhé alespoň 8 znaků. Ověření klíče trvá několik sekund.",
+        "Moony zobrazí nový obnovovací klíč. Než budete pokračovat, uložte si ho: starý už nefunguje. Potom klikněte na **Pokračovat do aplikace**."
+      ],
+      "cannotTitle": "Co obnovovací klíč nedělá",
+      "cannot": [
+        "Neprozradí staré heslo, jen umožní nastavit nové.",
+        "Funguje jen s klíčovými soubory `salt` a `recovery.enc`, které patří k vašim datům a jsou ve složce s daty i v každé záloze ZIP. Samotné zkopírování `moony.db` nezachrání nic, co by šlo otevřít; vytvořte raději zálohu ([jak](backup)).",
+        "Záloha obsahuje klíčové soubory z doby, kdy vznikla. Pokud jste heslo později změnili nebo obnovili, otevře se heslem nebo obnovovacím klíčem, které platily v ten den."
+      ],
+      "keepTitle": "Uschovejte obojí",
+      "keep": "Obnovovací klíč mějte ve správci hesel nebo na papíře a čerstvou zálohu ZIP na externím disku nebo ve vlastním cloudovém úložišti. S klíčem zacházejte jako s heslem: kdo má klíč i váš zálohový ZIP, může otevřít vaše data.",
+      "lockedTitle": "Když se dovnitř nedostanete nadobro",
+      "locked": "Bez hesla, obnovovacího klíče a použitelné zálohy jsou stará data ztracená. Chcete-li začít znovu, ukončete Moony a složku s daty ([kde je](data)) místo mazání přejmenujte, kdyby se heslo našlo. Při dalším spuštění Moony zobrazí průvodce nastavením a vytvoří prázdný profil."
+    },
+    "import": {
+      "title": "Import výpisů",
+      "lead": "Nic se nezapíše, dokud to nepotvrdíte: nejdřív uvidíte náhled, řádky, které už existují, se přeskočí jako duplicity a každý import lze vrátit.",
+      "bankTitle": "Bankovní výpisy",
+      "bankSteps": [
+        "Otevřete **Bankovní účty** (skupina **Peníze**) a klikněte na **Importovat výpis**, v seznamu účtů nebo na stránce účtu.",
+        "**Soubor:** přetáhněte výpis nebo ho vyberte. V seznamu **Banka** zvolte svou banku, nebo nechte **Rozpoznat automaticky**.",
+        "**Sloupce:** u CSV zkontrolujte, který sloupec je který (rozpoznaná banka se vyplní). Ostatní formáty tento krok přeskočí.",
+        "**Náhled a kategorie:** zkontrolujte data, částky a kategorie a řádkům, které pravidla nechala bez kategorie, jednu přiřaďte.",
+        "**Hotovo:** souhrn ukáže, co se naimportovalo. Vrátíte to v **Historii importů** účtu tlačítkem **Vrátit import**."
+      ],
+      "balanceNote": "Import nikdy nemění zůstatek účtu. Pokud výpis uvádí konečný zůstatek, poslední krok nabídne **Nastavit zůstatek účtu na …**.",
+      "formatsTitle": "Které soubory fungují",
+      "formats": [
+        "**CSV a TXT** se 16 předvolbami bank, rozpoznanými podle řádku záhlaví: Revolut, Wise, N26, Sparkasse, DKB, ING (Germany), UK banks (Debit / Credit columns), Chase (US) a v České republice Fio banka, Česká spořitelna, Komerční banka, Air Bank, ČSOB, MONETA Money Bank, mBank a Raiffeisenbank (v jejich českých exportních formátech). Předvolby pro DKB, ING, Komerční banku, Air Bank, ČSOB, MONETA, mBank a Raiffeisenbank zatím nejsou potvrzené skutečným exportem: pokud některá přiřadí sloupce špatně, opravte mapování ručně.",
+        "**CAMT.053** (XML), **MT940**, **OFX/QFX** a **QIF** z jakékoli banky, bez přiřazování sloupců. Moony ukáže, ke kterému účtu výpis patří, a pokud soubor uvádí oba zůstatky, zkontroluje, že platby sedí."
+      ],
+      "csvTitle": "CSV z jiné banky",
+      "csvIntro": "Funguje jakékoli CSV s datem a částkou. V kroku **Sloupce**:",
+      "csv": [
+        "Zvolte sloupec s datem a s částkou, nebo sloupec debet a kredit, pokud banka částku dělí. Volitelně přidejte popis, protistranu, její číslo účtu nebo IBAN, měnu, zůstatek a ID transakce.",
+        "Moony zjistí oddělovač, kódování textu, desetinný oddělovač a pořadí data. Pokud **Náhled po zpracování** vypadá špatně, změňte je: rozbitá diakritika znamená špatné kódování, prohozené dny a měsíce špatné pořadí data. **Řádek záhlaví** je řádek s názvy sloupců; řádky nad ním se ignorují.",
+        "Výdaje musí vyjít záporné a příjmy kladné. Před importem zkontrolujte pár řádků, které znáte."
+      ],
+      "missingTitle": "Když vaše banka v seznamu není",
+      "missing": [
+        "V internetovém bankovnictví hledejte CAMT.053, MT940, OFX, QFX nebo QIF: přiřazování sloupců nepotřebují.",
+        "Jinak sloupce CSV přiřaďte, jak je popsáno výše; zabere to minutu.",
+        "Nebo transakce přidejte ručně (**Přidat transakci** na stránce účtu), případně nechte výpis přečíst volitelného AI asistenta a zkontrolujte, co přečetl, než cokoli uloží ([AI asistent](ai)).",
+        "Chcete předvolbu pro svou banku? [Otevřete issue na GitHubu (EN)](issues) jen s řádkem záhlaví, nikdy se skutečnými transakcemi. Předvolba je jeden malý soubor JSON; [návod pro přispěvatele (EN)](contributing) ukazuje, jak na to."
+      ],
+      "brokerTitle": "Obchody z brokerů",
+      "brokerIntro": "Obchody z bankovního výpisu se neimportují; použijte import z brokera. Otevřete **Akcie** (skupina **Investice**), klikněte na **Importovat CSV** a zvolte, odkud export pochází. Každý zdroj ukáže, jak soubor získat, a nabídne vzorek:",
+      "brokers": [
+        "**XTB:** Historie účtu → Peněžní operace → Exportovat jako CSV, za období od prvního obchodu. Importují se jen nákupy a prodeje akcií a ETF, ne vklady, dividendy ani poplatky.",
+        "**Trading 212:** Historie → ikona exportu, zaškrtněte Objednávky. Jeden export pokryje nejvýš 12 měsíců, nahrajte tedy více souborů; duplicity se poznají.",
+        "**Degiro:** Aktivita → Transakce → Export → CSV. Ne výpis z účtu.",
+        "**Interactive Brokers:** Flex Query (Client Portal → Performance & Reports → Flex Queries) typu Activity se sekcí Trades a poli Symbol, ISIN, TradeDate, Buy/Sell, Quantity, TradePrice, CurrencyPrimary, AssetClass a TradeID, ve formátu CSV.",
+        "**Vlastní tabulka nebo jiný broker:** stáhněte si vzor Moony, nebo sloupce přiřaďte sami (datum, nákup nebo prodej, symbol nebo ISIN, počet kusů, cena za kus, měna). Moony si mapování může pro příště zapamatovat. Soubory z Excelu nejdřív uložte jako CSV."
+      ],
+      "brokerOutro": "Krok Kontrola vypíše, co se naimportuje a které řádky jsou duplicity, přeskočené nebo chybné. Ověří také cenné papíry na Yahoo Finance; toto vyhledání posílá symboly a ISIN ze souboru a nic jiného ([Soukromí (EN)](privacy)). Import vrátíte tlačítkem **Vrátit** v části Poslední importy nebo přes **Historii importů** na stránce Akcie."
+    },
+    "backup": {
+      "title": "Záloha, obnovení a nový počítač",
+      "makeTitle": "Vytvoření zálohy",
+      "make": [
+        "Otevřete **Nastavení → Data a zálohy** a klikněte na **Zálohovat nyní**. Vyberte, kam ZIP uložit (Moony navrhne `moony-backup-RRRR-MM-DD.zip`).",
+        "Obsahuje šifrované kopie vašich záznamů a příloh a klíčové soubory `salt`, `key.enc` a `recovery.enc` a zůstává šifrovaný: otevře ho jen heslo platné v době zálohy nebo obnovovací klíč z té doby.",
+        "Jednu kopii mějte mimo tento počítač, na externím disku nebo ve vlastním cloudovém úložišti. Moony nic nenahrává; Přehled připomene, že je poslední záloha stará. Zálohujte před aktualizací a po velkém importu."
+      ],
+      "restoreTitle": "Obnovení ze zálohy",
+      "restoreIntro": "Začněte v **Nastavení → Data a zálohy → Obnovit ze zálohy…**, na zamykací obrazovce (**Máte zálohu? Obnovit ze zálohy…**) nebo v prvním kroku průvodce nastavením (**Obnovit ze zálohy**). Potom:",
+      "restoreSteps": [
+        "Vyberte ZIP. Moony ukáže jeho datum, verzi Moony, počet příloh a velikost.",
+        "Potvrďte. Stávající data se nemažou: Moony je nejdřív přesune do složky `pre-restore-<čas>` ve složce s daty.",
+        "Moony se zamkne. Odemkněte ho heslem, které platilo při vytvoření zálohy, nebo klikněte na **Zapomenuté heslo?** a použijte obnovovací klíč z té doby."
+      ],
+      "restoreNote": "Zálohu vytvořenou novější verzí Moony starší verze obnovit neumí, takže nejdřív aktualizujte. Zálohy ze starších verzí se obnovují bez potíží.",
+      "moveTitle": "Přechod na nový počítač",
+      "moveSteps": [
+        "Na starém počítači klikněte na **Zálohovat nyní** a ZIP zkopírujte na nový (USB disk nebo vlastní cloudové úložiště).",
+        "Na novém počítači nainstalujte stejnou nebo novější verzi Moony ([Stáhnout](download)).",
+        "V prvním kroku průvodce zvolte **Obnovit ze zálohy**, vyberte ZIP a potvrďte.",
+        "Odemkněte heslem z doby zálohy."
+      ],
+      "moveOutro": "Moony mezi počítači nesynchronizuje, takže se stará a nová kopie rozejdou, jakmile používáte obě, a změny po záloze v ní nejsou. Až nový počítač funguje, data ze starého odstraňte ([jak](uninstall)).",
+      "notBackup": "**Exportovat JSON** na stejné stránce zapíše všechny tabulky do nešifrovaného souboru JSON bez příloh. Není to záloha; zacházejte s ním jako s bankovním výpisem. **Ověřit databázi** zkontroluje integritu databáze."
+    },
+    "updates": {
+      "title": "Aktualizace, složka s daty a odinstalace",
+      "updatesTitle": "Aktualizace",
+      "updates": [
+        "Po odemknutí se Moony zeptá GitHubu, zda existuje novější verze, a nabídne **Aktualizovat a restartovat**. Stažený soubor se ověří proti veřejnému klíči projektu; Moony se restartuje a vy ho znovu odemknete. Data zůstanou, kde jsou, a požadavek žádná neposílá.",
+        "Ručně zkontrolovat nebo automatickou kontrolu vypnout můžete v **Nastavení → Zabezpečení → Aktualizace** (platí jen pro tento počítač).",
+        "Před aktualizací, která mění databázi, ji Moony zkopíruje vedle sebe (`moony.db.bak-<čas>`; uchovávají se nejnovější tři). To je pojistka, ne záruka: starší verze databázi, kterou novější převedla, neotevře, proto nejdřív vytvořte zálohu. Návrat na starší verzi znamená obnovit zálohu vytvořenou touto verzí.",
+        "Přecházíte z verze 0.10.0 nebo starší? Složka s daty se ve verzi 0.11.0 přejmenovala: před prvním spuštěním si přečtěte část [Where your data lives na stránce Soukromí (EN)](privacyData)."
+      ],
+      "dataTitle": "Kde jsou vaše data",
+      "dataIntro": "Všechno je v jedné složce pro každého uživatele:",
+      "dataHead": [
+        "Systém",
+        "Složka"
+      ],
+      "dataWinAlt": "obvykle `C:\\Users\\<uživatel>\\AppData\\Roaming\\com.moonyfinance.desktop\\`",
+      "dataLinuxAlt": "nebo `$XDG_DATA_HOME/com.moonyfinance.desktop/`, pokud jste tu proměnnou nastavili",
+      "dataNote": "**Nastavení → Data a zálohy** ukazuje přesnou cestu a tlačítko **Otevřít složku**.",
+      "dataFiles": "Obsahuje `moony.db` a `attachments.db` (vaše záznamy a fotografie a dokumenty, šifrované), klíčové soubory `salt`, `key.enc` a `recovery.enc`, kopie `.bak-<čas>` vytvořené před aktualizací databáze a složky `pre-restore-<čas>` po obnovení ze zálohy.",
+      "dataOutro": "Místo ručního kopírování souborů použijte **Zálohovat nyní**; Moony složku sám nikdy nepřesouvá. Co je a co není šifrované, uvádí [stránka Soukromí (EN)](privacy).",
+      "uninstallTitle": "Odinstalace",
+      "uninstall": [
+        "Odinstalace odstraní aplikaci, ale ve výchozím stavu ne vaše data, která zůstanou ve složce s daty. macOS: ukončete Moony a přetáhněte ho do Koše. Windows: odinstalujte ho v Nastavení → Aplikace. Linux: smažte soubor AppImage nebo odeberte balíček `.deb` či `.rpm` správcem balíčků.",
+        "Chcete-li odstranit i data, udělejte to před odinstalací: **Nastavení → Účet → Smazat data…** a napište `DELETE`. Odstraní se databáze, klíčové soubory a přílohy a nelze to vrátit, takže pokud je možná budete chtít zpět, nejdřív vytvořte zálohu.",
+        "Zůstanou složky `pre-restore-<čas>`, zálohy a exporty, které jste uložili, a logy; smažte je ručně, nebo smažte celou složku s daty. Na žádném serveru není co mazat, protože Moony žádný nemá."
+      ]
+    },
+    "ai": {
+      "title": "AI asistent (MCP)",
+      "text": "Moony může přes malý server zabudovaný v aplikaci poskytovat vaše data AI asistentovi, například Claudovi. Ve výchozím stavu je vypnuto, naslouchá jen na `127.0.0.1` a vyžaduje odemčené Moony a osobní přístupový token. Asistent může vaše data číst a některými nástroji i měnit a zpracovává, co přečte, obvykle v cloudu svého poskytovatele: zapínejte ho jen pro klienty, kterým důvěřujete. K používání Moony ho nepotřebujete.",
+      "text2": "Zapnete ho v **Nastavení → Integrace → AI Asistent (MCP Server)**. Připojovací příkaz, nastavení klientů a podrobnosti jsou na stránce [AI propojení](aiPage)."
+    },
+    "more": {
+      "title": "Nenašli jste odpověď?",
+      "text": "Zeptejte se v [diskuzích na GitHubu (EN)](discussions) nebo u chyby [otevřete issue (EN)](issues). Nikdy tam nevkládejte zůstatky ani výpisy. Bezpečnostní problémy hlaste podle [zásad zabezpečení (EN)](security), ne veřejným issue."
     }
   }
 }
