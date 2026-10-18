@@ -16,7 +16,7 @@ const facts = ['noAccount', 'local', 'offline'];
         <a class="btn btn--primary btn--lg" href={href(locale, 'download/')} id="dl-primary" data-platform-link data-mac={t(locale, 'hero.ctaMac')} data-win={t(locale, 'hero.ctaWin')} data-linux={t(locale, 'hero.ctaLinux')}><svg class="ic" aria-hidden="true"><use href="#i-download"/></svg><span>{t(locale, 'hero.ctaDefault')}</span></a>
         <a class="hero-preview link" href="#overview">{t(locale, 'hero.ctaPreview')} <span aria-hidden="true">↓</span></a>
       </div>
-      <p class="cta-note">{t(locale, 'hero.noteStrong')} · {tf(locale, 'hero.noteRest', { version: release.version })} ({t(locale, 'hero.beta')})</p>
+      <p class="cta-note">{t(locale, 'hero.noteStrong')} · {tf(locale, 'hero.noteRest', { version: release.version })}</p>
       <ul class="facts">
         {facts.map(f => <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>{t(locale, `hero.facts.${f}`)}</li>)}
       </ul>

@@ -37,7 +37,6 @@
     "provenance": "This page shows the file from the Moony repository as published at the tag below; only the title and relative links are adapted. The source is"
   },
   "hero": {
-    "_comment": "remove hero.beta at 1.0.0",
     "eyebrow": "Personal finance for your desktop",
     "lead": "Keep track of your accounts, investments and loans. Moony keeps your financial data right on your computer.",
     "ctaDefault": "Download",
@@ -46,7 +45,6 @@
     "ctaLinux": "Download for Linux",
     "noteStrong": "Free and open source",
     "noteRest": "Version {version}",
-    "beta": "beta",
     "caption": "The real app, with sample data",
     "alt": "Dashboard with the net worth, its history and the totals of a sample profile",
     "facts": {
@@ -198,7 +196,7 @@
     "foot": "Updates are verified with the project's signing key.",
     "all": "Choose another system →",
     "intro": "Free for macOS, Windows and Linux. No sign-up or trial period.",
-    "notice": "Beta release. macOS and Windows may show a security warning on first launch. Read the installation notes before downloading."
+    "notice": "macOS and Windows may show a security warning on first launch because the installers are not signed yet. Read the installation notes before downloading."
   },
   "downloadPage": {
     "metaTitle": "Download Moony {version} for macOS, Windows and Linux",
@@ -210,7 +208,7 @@
     "macHint": "Apple Silicon means an M1 or newer chip. Not sure which Mac you have? Apple menu → **About This Mac**: the Chip or Processor line says Apple M… or Intel.",
     "install": {
       "title": "Install and first launch",
-      "unsigned": "Moony is in beta. The installers do not yet have macOS and Windows code-signing certificates, so your system may show a security warning on first launch. Follow the instructions for your system below. In-app updates are verified with the project’s signing key.",
+      "unsigned": "The installers do not yet have macOS and Windows code-signing certificates, so your system may show a security warning on first launch. Follow the instructions for your system below. In-app updates are verified with the project’s signing key.",
       "mac": {
         "open": "Open the `.dmg` and drag **Moony** into **Applications**.",
         "terminal": "Open **Terminal** (Applications → Utilities) and run this once:",
@@ -290,7 +288,7 @@
       },
       "warning": {
         "q": "Why does my computer warn me when I open it?",
-        "a": "Moony is in beta and the installers do not yet have macOS and Windows code-signing certificates. Your system may show a security warning on first launch. You can find the steps on the download page. In-app updates are verified with the project’s signing key."
+        "a": "The installers do not yet have macOS and Windows code-signing certificates, so your system may show a security warning on first launch. You can find the steps on the download page. In-app updates are verified with the project’s signing key."
       },
       "data": {
         "q": "Does Moony collect any data about me?",

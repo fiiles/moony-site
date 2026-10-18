@@ -37,7 +37,6 @@
     "provenance": "Tato stránka zobrazuje soubor z repozitáře Moony tak, jak byl vydán v uvedeném tagu; upraven je jen nadpis a relativní odkazy. Zdroj:"
   },
   "hero": {
-    "_comment": "remove hero.beta at 1.0.0",
     "eyebrow": "Osobní finance pro váš počítač",
     "lead": "Mějte přehled o účtech, investicích i půjčkách. Moony ukládá vaše finanční data přímo do vašeho počítače.",
     "ctaDefault": "Stáhnout",
@@ -46,7 +45,6 @@
     "ctaLinux": "Stáhnout pro Linux",
     "noteStrong": "Zdarma a open source",
     "noteRest": "Verze {version}",
-    "beta": "beta",
     "caption": "Skutečná aplikace, ukázková data",
     "alt": "Přehled s čistým jměním, jeho vývojem a součty ukázkového profilu",
     "facts": {
@@ -198,7 +196,7 @@
     "foot": "Aktualizace se ověřují podpisovým klíčem projektu.",
     "all": "Vybrat jiný systém →",
     "intro": "Pro macOS, Windows a Linux. Bez registrace a bez zkušební doby.",
-    "notice": "Verze beta. macOS a Windows mohou při prvním spuštění zobrazit bezpečnostní upozornění. Postup najdete před stažením."
+    "notice": "macOS a Windows mohou při prvním spuštění zobrazit bezpečnostní upozornění, protože instalátory zatím nejsou podepsané. Před stažením si přečtěte postup instalace."
   },
   "downloadPage": {
     "metaTitle": "Stáhnout Moony {version} pro macOS, Windows a Linux",
@@ -210,7 +208,7 @@
     "macHint": "Apple Silicon znamená čip M1 nebo novější. Nevíte, jaký Mac máte? V nabídce Apple zvolte **O tomto Macu**: řádek Čip nebo Procesor uvádí Apple M… nebo Intel.",
     "install": {
       "title": "Instalace a první spuštění",
-      "unsigned": "Moony je ve verzi beta. Instalátory zatím nemají certifikáty pro macOS a Windows, proto se při prvním spuštění může objevit bezpečnostní upozornění. Níže najdete postup pro každý systém. Aktualizace uvnitř aplikace se ověřují podpisovým klíčem projektu.",
+      "unsigned": "Instalátory zatím nemají certifikáty pro macOS a Windows, proto se při prvním spuštění může objevit bezpečnostní upozornění. Níže najdete postup pro každý systém. Aktualizace uvnitř aplikace se ověřují podpisovým klíčem projektu.",
       "mac": {
         "open": "Otevřete soubor `.dmg` a přetáhněte **Moony** do složky **Aplikace**.",
         "terminal": "Otevřete **Terminál** (Aplikace → Utility) a jednou spusťte tento příkaz:",
@@ -290,7 +288,7 @@
       },
       "warning": {
         "q": "Proč mě počítač při spuštění varuje?",
-        "a": "Moony je ve verzi beta a instalátory zatím nemají certifikáty pro macOS a Windows. Proto může systém při prvním spuštění zobrazit bezpečnostní upozornění. Podrobný postup je na stránce ke stažení. Aktualizace se ověřují podpisovým klíčem projektu."
+        "a": "Instalátory zatím nemají certifikáty pro macOS a Windows, proto může systém při prvním spuštění zobrazit bezpečnostní upozornění. Podrobný postup je na stránce ke stažení. Aktualizace se ověřují podpisovým klíčem projektu."
       },
       "data": {
         "q": "Sbírá Moony o mně nějaká data?",
