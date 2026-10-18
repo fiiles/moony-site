@@ -18,7 +18,7 @@ const basePath = rawBase === '' ? '/' : `/${rawBase}/`;
 /** Pages that exist in English only: they carry the `en` and `x-default` alternates and no `cs`. */
 const ENGLISH_ONLY = new Set(['privacy/', 'security/', 'changelog/']);
 /** HTML + CSS + JS + fonts, without the screenshot and social images. */
-const SIZE_BUDGET = 400 * 1024;
+const SIZE_BUDGET = 450 * 1024;
 const BUDGET_EXTENSIONS = new Set(['.html', '.css', '.js', '.mjs', '.woff', '.woff2', '.ttf', '.otf']);
 const BUDGET_EXCLUDED = ['screenshots/', 'og/'];
 

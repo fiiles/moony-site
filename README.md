@@ -12,7 +12,7 @@ The `.npmrc` in this repository pins the npm registry to https://registry.npmjs.
 npm ci && npm run build
 ```
 
-The output lands in `dist/`. `npm run build` also runs the token check before the build and `scripts/check-dist.mjs` after it. The checks fail the build when a page would break the site's promises: a request to another host, an inline script or style (the Content-Security-Policy allows none), a missing canonical or hreflang link, a broken internal link or asset, an exclamation mark in an h1 to h3, more than 400 KB of HTML, CSS, JS and fonts (screenshots and social images excluded), or a weakened `_headers` file. It also writes the right `Sitemap:` line into `dist/robots.txt`.
+The output lands in `dist/`. `npm run build` also runs the token check before the build and `scripts/check-dist.mjs` after it. The checks fail the build when a page would break the site's promises: a request to another host, an inline script or style (the Content-Security-Policy allows none), a missing canonical or hreflang link, a broken internal link or asset, an exclamation mark in an h1 to h3, more than 450 KB of HTML, CSS, JS and fonts (screenshots and social images excluded), or a weakened `_headers` file. It also writes the right `Sitemap:` line into `dist/robots.txt`.
 
 ## Scripts
 
