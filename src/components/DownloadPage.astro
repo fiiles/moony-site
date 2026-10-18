@@ -13,6 +13,13 @@ const version = release.version;
 const changelog = changelogLink(locale);
 // The repository documents are published in English only; Czech pages link to the English Privacy page.
 const links = { privacy: { href: href('en', 'privacy/'), hreflang: changelog.hreflang } };
+// The Help is translated, so its links stay in the visitor's language.
+const helpLinks = {
+  help: { href: href(locale, 'help/') },
+  recovery: { href: href(locale, 'help/#forgotten-password') },
+  backup: { href: href(locale, 'help/#backup') },
+  import: { href: href(locale, 'help/#import') },
+};
 
 // The commands name the real files of this release, so they can be pasted as they are.
 const linuxInstall = [
@@ -98,6 +105,7 @@ const linuxInstall = [
         {tList(locale, 'downloadPage.first.steps').map((s) => <li><span set:html={rich(s)} /></li>)}
       </ol>
       <p>{p('first.outro')}</p>
+      <p set:html={rich(p('first.help'), helpLinks)} />
     </div>
     <div class="pair__col" id="updating">
       <h2 class="title title--sm">{p('updating.title')}</h2>
