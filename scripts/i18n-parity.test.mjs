@@ -24,3 +24,9 @@ test('no empty strings, no exclamation marks in either locale', () => {
     }
   }
 });
+
+test('cs strings keep one-letter words (k, s, v, z, o, u, a, i) tied to the next word with a no-break space', () => {
+  const orphan = /(?<![\p{L}\p{N}])[ksvzouaiKSVZOUAI] \S/u;
+  const offending = flatten(load('cs')).filter(([, v]) => orphan.test(v)).map(([k]) => k);
+  assert.deepEqual(offending, [], `cs strings with a plain space after a one-letter word (use U+00A0 so the line never ends on it): ${offending.join(', ')}`);
+});

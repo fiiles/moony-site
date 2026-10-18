@@ -2,7 +2,7 @@
   "site": {
     "name": "Moony",
     "tagline": "Vaše finance na jednom místě.",
-    "description": "Moony je bezplatná aplikace pro přehled o účtech, investicích a půjčkách. Vaše finanční data zůstávají ve vašem počítači. Pro macOS, Windows a Linux."
+    "description": "Moony je bezplatná aplikace pro přehled o účtech, investicích a půjčkách. Vaše finanční data zůstávají ve vašem počítači. Pro macOS, Windows a Linux."
   },
   "nav": {
     "label": "Hlavní",
@@ -16,40 +16,40 @@
     "language": "Jazyk"
   },
   "footer": {
-    "blurb": "Přehled o financích. Přímo ve vašem počítači.",
+    "blurb": "Přehled o financích. Přímo ve vašem počítači.",
     "product": "Produkt",
     "download": "Stáhnout",
     "changelog": "Seznam změn",
     "trust": "Důvěra",
     "privacy": "Soukromí",
-    "security": "Zabezpečení a hlášení zranitelností",
+    "security": "Zabezpečení a hlášení zranitelností",
     "licence": "Licence",
     "sitePrivacy": "Tento web",
     "community": "Komunita",
     "github": "GitHub",
     "discussions": "Diskuze",
     "translate": "Přeložit Moony",
-    "disclaimer": "Moony není finanční, daňové ani investiční poradenství. Čísla závisí na datech třetích stran a mohou být nepřesná.",
-    "nocookies": "Tento web neukládá cookies a nepoužívá analytiku.",
+    "disclaimer": "Moony není finanční, daňové ani investiční poradenství. Čísla závisí na datech třetích stran a mohou být nepřesná.",
+    "nocookies": "Tento web neukládá cookies a nepoužívá analytiku.",
     "copyright": "© 2026 Filip Král"
   },
   "repoPage": {
-    "provenance": "Tato stránka zobrazuje soubor z repozitáře Moony tak, jak byl vydán v uvedeném tagu; upraven je jen nadpis a relativní odkazy. Zdroj:"
+    "provenance": "Tato stránka zobrazuje soubor z repozitáře Moony tak, jak byl vydán v uvedeném tagu; upraven je jen nadpis a relativní odkazy. Zdroj:"
   },
   "hero": {
     "eyebrow": "Osobní finance pro váš počítač",
-    "lead": "Mějte přehled o účtech, investicích i půjčkách. Moony ukládá vaše finanční data přímo do vašeho počítače.",
+    "lead": "Mějte přehled o účtech, investicích i půjčkách. Moony ukládá vaše finanční data přímo do vašeho počítače.",
     "ctaDefault": "Stáhnout",
     "ctaMac": "Stáhnout pro macOS",
     "ctaWin": "Stáhnout pro Windows",
     "ctaLinux": "Stáhnout pro Linux",
-    "noteStrong": "Zdarma a open source",
+    "noteStrong": "Zdarma a open source",
     "noteRest": "Verze {version}",
     "caption": "Skutečná aplikace, ukázková data",
     "alt": "Přehled s čistým jměním, jeho vývojem a součty ukázkového profilu",
     "facts": {
       "noAccount": "Bez registrace",
-      "local": "Data u vás",
+      "local": "Data u vás",
       "offline": "Funguje offline"
     },
     "ctaPreview": "Prohlédnout aplikaci"
@@ -57,45 +57,45 @@
   "features": {
     "overview": {
       "title": "Víte, jak na tom jste.",
-      "text": "Zůstatky na účtech, hodnota investic i zbývající dluh. V jednom přehledu, který si sestavíte podle sebe.",
+      "text": "Zůstatky na účtech, hodnota investic i zbývající dluh. V jednom přehledu, který si sestavíte podle sebe.",
       "bullets": [
-        "Majetek a dluhy pohromadě",
-        "Příjmy a výdaje v souvislostech",
-        "Vývoj investic v čase"
+        "Majetek a dluhy pohromadě",
+        "Příjmy a výdaje v souvislostech",
+        "Vývoj investic v čase"
       ],
       "alt": "Součty aktiv, závazků a volných prostředků ukázkového profilu a nejbližší termíny a připomínky"
     },
     "import": {
-      "title": "Začněte výpisem z banky.",
-      "text": "Importujte výpis a uvidíte, za co utrácíte a kolik vám zbývá. Transakce můžete třídit do kategorií a nastavit pravidla pro příště.",
+      "title": "Začněte výpisem z banky.",
+      "text": "Importujte výpis a uvidíte, za co utrácíte a kolik vám zbývá. Transakce můžete třídit do kategorií a nastavit pravidla pro příště.",
       "bullets": [
-        "Přehled příjmů a výdajů po měsících",
+        "Přehled příjmů a výdajů po měsících",
         "Duplicitní platby se při importu přeskočí",
         "Nepovedený import můžete vrátit"
       ],
       "alt": "Detail bankovního účtu se zůstatkem, grafem příchozích a odchozích plateb za 12 měsíců a začátkem seznamu transakcí",
       "formatsTitle": "Podporované formáty",
-      "formats": "CSV s detekcí sloupců, CAMT.053, MT940, OFX/QFX a QIF. Přímé propojení s bankou zatím není k dispozici."
+      "formats": "CSV s detekcí sloupců, CAMT.053, MT940, OFX/QFX a QIF. Přímé propojení s bankou zatím není k dispozici."
     },
     "investments": {
       "title": "Sledujte, jak se daří investicím.",
-      "text": "Rozlište vlastní vklady od výnosu. Sledujte akcie, ETF i krypto a podívejte se, jak se mění hodnota vašeho portfolia.",
+      "text": "Rozlište vlastní vklady od výnosu. Sledujte akcie, ETF i krypto a podívejte se, jak se mění hodnota vašeho portfolia.",
       "bullets": [
-        "Výnosy i přijaté dividendy",
-        "Aktuální ceny akcií a kryptoměn",
-        "Import z XTB, Trading 212, Degiro a IBKR"
+        "Výnosy i přijaté dividendy",
+        "Aktuální ceny akcií a kryptoměn",
+        "Import z XTB, Trading 212, Degiro a IBKR"
       ],
       "alt": "Analýza akcií s časově váženým a peněžně váženým výnosem, grafem výnosu podle regionů a panelem propadu od maxima"
     },
     "otherInstruments": {
-      "title": "Nemovitosti, pojištění i úvěry",
-      "text": "Přidejte do svého přehledu nemovitosti, pojistné smlouvy a půjčky. Mějte po ruce jejich hodnotu, platby i důležité termíny.",
+      "title": "Nemovitosti, pojištění i úvěry",
+      "text": "Přidejte do svého přehledu nemovitosti, pojistné smlouvy a půjčky. Mějte po ruce jejich hodnotu, platby i důležité termíny.",
       "bullets": [
-        "Nemovitosti: ocenění, nájem a náklady",
-        "Pojištění: platby, termíny a dokumenty",
-        "Úvěry: splátky a zbývající dluh"
+        "Nemovitosti: ocenění, nájem a náklady",
+        "Pojištění: platby, termíny a dokumenty",
+        "Úvěry: splátky a zbývající dluh"
       ],
-      "alt": "Přehled úvěrů se zůstatky, úrokovými sazbami a vývojem dluhu v čase"
+      "alt": "Přehled úvěrů se zůstatky, úrokovými sazbami a vývojem dluhu v čase"
     }
   },
   "tracks": {
@@ -138,25 +138,25 @@
         "line": "Kalendář plateb"
       }
     },
-    "foot": "10 jazyků · 45 podporovaných měn · Světlý i tmavý režim"
+    "foot": "10 jazyků · 45 podporovaných měn · Světlý i tmavý režim"
   },
   "trust": {
     "title": "Vaše finance zůstávají vaše.",
     "cards": {
       "requests": {
         "title": "Bez sledování",
-        "text": "Žádná analytika ani statistiky používání. Online se načítají ceny, kurzy a aktualizace. Cenové služby vidí sledované symboly, ne vaše zůstatky."
+        "text": "Žádná analytika ani statistiky používání. Online se načítají ceny, kurzy a aktualizace. Cenové služby vidí sledované symboly, ne vaše zůstatky."
       },
       "disk": {
         "title": "Šifrovaná data",
-        "text": "Záznamy i přílohy jsou v počítači šifrované. Exportované soubory a uložené kopie jsou nešifrované, proto je ukládejte na bezpečné místo."
+        "text": "Záznamy i přílohy jsou v počítači šifrované. Exportované soubory a uložené kopie jsou nešifrované, proto je ukládejte na bezpečné místo."
       },
       "keys": {
         "title": "Zálohy pod kontrolou",
         "text": "Data si můžete zálohovat do souboru nebo exportovat. Obnovovací klíč si uložte při prvním spuštění, pomůže při ztrátě hesla."
       }
     },
-    "link": "Podrobnosti o soukromí →"
+    "link": "Podrobnosti o soukromí →"
   },
   "assistant": {
     "title": "Připojte AI asistenta ke svým financím",
@@ -165,12 +165,12 @@
     "link": "AI propojení",
     "metaTitle": "AI propojení · Moony",
     "back": "Zpět na Moony",
-    "detail": "Volitelná funkce pro pokročilé uživatele. Než propojení zapnete, seznamte se s tím, jak vybraný AI klient nakládá s daty. Moony pro běžné používání AI asistenta nepotřebuje.",
+    "detail": "Volitelná funkce pro pokročilé uživatele. Než propojení zapnete, seznamte se s tím, jak vybraný AI klient nakládá s daty. Moony pro běžné používání AI asistenta nepotřebuje.",
     "setupTitle": "Jak propojení nastavit",
     "setupSteps": [
-      "V Moony otevřete Nastavení → Integrace a zapněte AI asistenta (MCP server).",
-      "Zkopírujte připojovací příkaz z nastavení. Obsahuje váš osobní přístupový token, který nesdílejte.",
-      "Moony musí při používání propojení běžet a být odemčené."
+      "V Moony otevřete Nastavení → Integrace a zapněte AI asistenta (MCP server).",
+      "Zkopírujte připojovací příkaz z nastavení. Obsahuje váš osobní přístupový token, který nesdílejte.",
+      "Moony musí při používání propojení běžet a být odemčené."
     ],
     "guide": "Úplný návod na GitHubu →"
   },
@@ -194,56 +194,56 @@
       "note": "x86_64; AppImage může potřebovat libfuse2."
     },
     "all": "Vybrat jiný systém →",
-    "intro": "Pro macOS, Windows a Linux. Bez registrace a bez zkušební doby.",
-    "notice": "macOS a Windows mohou při prvním spuštění zobrazit bezpečnostní upozornění, protože instalátory zatím nejsou podepsané. Před stažením si přečtěte postup instalace."
+    "intro": "Pro macOS, Windows a Linux. Bez registrace a bez zkušební doby.",
+    "notice": "macOS a Windows mohou při prvním spuštění zobrazit bezpečnostní upozornění, protože instalátory zatím nejsou podepsané. Před stažením si přečtěte postup instalace."
   },
   "downloadPage": {
-    "metaTitle": "Stáhnout Moony {version} pro macOS, Windows a Linux",
-    "description": "Instalátory Moony {version} pro macOS, Windows a Linux, postup prvního spuštění pro každý systém, systémové požadavky a způsob aktualizací.",
+    "metaTitle": "Stáhnout Moony {version} pro macOS, Windows a Linux",
+    "description": "Instalátory Moony {version} pro macOS, Windows a Linux, postup prvního spuštění pro každý systém, systémové požadavky a způsob aktualizací.",
     "title": "Stáhnout Moony {version}",
     "released": "Vydáno {date}",
     "allReleases": "Všechna vydání →",
     "filesTitle": "Instalační soubory podle systému",
-    "macHint": "Apple Silicon znamená čip M1 nebo novější. Nevíte, jaký Mac máte? V nabídce Apple zvolte **O tomto Macu**: řádek Čip nebo Procesor uvádí Apple M… nebo Intel.",
+    "macHint": "Apple Silicon znamená čip M1 nebo novější. Nevíte, jaký Mac máte? V nabídce Apple zvolte **O tomto Macu**: řádek Čip nebo Procesor uvádí Apple M… nebo Intel.",
     "install": {
-      "title": "Instalace a první spuštění",
-      "unsigned": "Instalátory zatím nemají certifikáty pro macOS a Windows, proto se při prvním spuštění může objevit bezpečnostní upozornění. Níže najdete postup pro každý systém. Aktualizace uvnitř aplikace se ověřují podpisovým klíčem projektu.",
+      "title": "Instalace a první spuštění",
+      "unsigned": "Instalátory zatím nemají certifikáty pro macOS a Windows, proto se při prvním spuštění může objevit bezpečnostní upozornění. Níže najdete postup pro každý systém. Aktualizace uvnitř aplikace se ověřují podpisovým klíčem projektu.",
       "mac": {
-        "open": "Otevřete soubor `.dmg` a přetáhněte **Moony** do složky **Aplikace**.",
-        "terminal": "Otevřete **Terminál** (Aplikace → Utility) a jednou spusťte tento příkaz:",
-        "why": "Odstraní příznak „staženo z internetu“, kvůli kterému macOS hlásí „Moony je poškozená a nelze ji otevřít“ (Gatekeeper). Potom Moony otevřete jako obvykle.",
-        "alt": "Pokud macOS místo toho hlásí, že nemůže ověřit vývojáře, otevřete **Nastavení systému → Soukromí a zabezpečení** (v macOS 12 a starším **Systémové předvolby → Zabezpečení a soukromí**), v části **Zabezpečení** klikněte u Moony na **Přesto otevřít**."
+        "open": "Otevřete soubor `.dmg` a přetáhněte **Moony** do složky **Aplikace**.",
+        "terminal": "Otevřete **Terminál** (Aplikace → Utility) a jednou spusťte tento příkaz:",
+        "why": "Odstraní příznak „staženo z internetu“, kvůli kterému macOS hlásí „Moony je poškozená a nelze ji otevřít“ (Gatekeeper). Potom Moony otevřete jako obvykle.",
+        "alt": "Pokud macOS místo toho hlásí, že nemůže ověřit vývojáře, otevřete **Nastavení systému → Soukromí a zabezpečení** (v macOS 12 a starším **Systémové předvolby → Zabezpečení a soukromí**), v části **Zabezpečení** klikněte u Moony na **Přesto otevřít**."
       },
       "win": {
-        "keep": "Stáhněte instalátor. Pokud prohlížeč hlásí, že se soubor stahuje jen zřídka, ponechte ho (v Edgi: **⋯ → Zachovat → Zobrazit více → Přesto zachovat**).",
-        "run": "Spusťte ho. Windows SmartScreen může zobrazit „Windows ochránil váš počítač“. Klikněte na **Další informace** a potom na **Přesto spustit**."
+        "keep": "Stáhněte instalátor. Pokud prohlížeč hlásí, že se soubor stahuje jen zřídka, ponechte ho (v Edgi: **⋯ → Zachovat → Zobrazit více → Přesto zachovat**).",
+        "run": "Spusťte ho. Windows SmartScreen může zobrazit „Windows ochránil váš počítač“. Klikněte na **Další informace** a potom na **Přesto spustit**."
       },
       "linux": {
-        "arch": "Sestavení jsou k dispozici pro x86_64.",
+        "arch": "Sestavení jsou k dispozici pro x86_64.",
         "fuse": "Některé distribuce potřebují pro AppImage balíček `libfuse2`."
       }
     },
     "first": {
       "title": "První spuštění",
-      "intro": "Průvodce vám pomůže s prvním nastavením:",
+      "intro": "Průvodce vám pomůže s prvním nastavením:",
       "steps": [
-        "Hlavní měna a země.",
-        "Jméno a heslo.",
-        "Váš **obnovovací klíč**. Uložte si ho: je to jediný způsob, jak zapomenuté heslo obnovit, a funguje jen spolu s klíčovými soubory ve složce s daty, proto si zálohujte i data (**Nastavení → Data a zálohy**).",
+        "Hlavní měna a země.",
+        "Jméno a heslo.",
+        "Váš **obnovovací klíč**. Uložte si ho: je to jediný způsob, jak zapomenuté heslo obnovit, a funguje jen spolu s klíčovými soubory ve složce s daty, proto si zálohujte i data (**Nastavení → Data a zálohy**).",
         "Co chcete sledovat.",
-        "Nabídka přidat první účet a importovat bankovní výpis."
+        "Nabídka přidat první účet a importovat bankovní výpis."
       ],
       "outro": "Přehled pak zobrazí úvodní kontrolní seznam. Přecházíte na nový počítač? Na první obrazovce průvodce zvolte Obnovit ze zálohy místo vytvoření nového profilu."
     },
     "updating": {
       "title": "Aktualizace",
-      "text": "Po odemknutí se Moony zeptá GitHubu, zda existuje novější verze, a nabídne aktualizaci jedním kliknutím. Stažený soubor se před instalací ověří proti veřejnému klíči projektu. Automatickou kontrolu můžete vypnout v **Nastavení**; co posílá, uvádí [stránka Soukromí (EN)](privacy)."
+      "text": "Po odemknutí se Moony zeptá GitHubu, zda existuje novější verze, a nabídne aktualizaci jedním kliknutím. Stažený soubor se před instalací ověří proti veřejnému klíči projektu. Automatickou kontrolu můžete vypnout v **Nastavení**; co posílá, uvádí [stránka Soukromí (EN)](privacy)."
     },
     "requirements": {
       "title": "Systémové požadavky",
-      "mac": "Macy s Apple Silicon i Intel. Vydání neuvádí minimální verzi macOS; předpokládá se, že funguje na aktuálních i nedávných verzích. Pokud se Moony na starším systému neotevře, [napište nám do diskuzí na GitHubu (EN)](https://github.com/fiiles/Moony/discussions).",
-      "win": "Windows 10 a 11, 64bitové. Moony potřebuje běhové prostředí Microsoft Edge WebView2, které je v obou předinstalované; instalátor ho stáhne, pokud chybí.",
-      "linux": "Pouze x86_64: AppImage, balíček `.deb` pro Debian a Ubuntu a `.rpm` pro Fedoru a openSUSE. Sestaveno na Ubuntu 24.04; na starších distribucích může chybět systémová knihovna."
+      "mac": "Macy s Apple Silicon i Intel. Vydání neuvádí minimální verzi macOS; předpokládá se, že funguje na aktuálních i nedávných verzích. Pokud se Moony na starším systému neotevře, [napište nám do diskuzí na GitHubu (EN)](https://github.com/fiiles/Moony/discussions).",
+      "win": "Windows 10 a 11, 64bitové. Moony potřebuje běhové prostředí Microsoft Edge WebView2, které je v obou předinstalované; instalátor ho stáhne, pokud chybí.",
+      "linux": "Pouze x86_64: AppImage, balíček `.deb` pro Debian a Ubuntu a `.rpm` pro Fedoru a openSUSE. Sestaveno na Ubuntu 24.04; na starších distribucích může chybět systémová knihovna."
     },
     "intro": "Vyberte svůj systém. Moony si nastavíte po instalaci, bez online účtu.",
     "recommended": "Váš systém",
@@ -251,28 +251,28 @@
   },
   "sitePrivacy": {
     "metaTitle": "Soukromí tohoto webu · Moony",
-    "description": "Web Moony nepoužívá cookies ani analytiku. Zde najdete informace o načítání obsahu, hostování u Cloudflare a stahování aplikace.",
+    "description": "Web Moony nepoužívá cookies ani analytiku. Zde najdete informace o načítání obsahu, hostování u Cloudflare a stahování aplikace.",
     "title": "Soukromí tohoto webu",
-    "intro": "Tato stránka se týká webu moonyfinance.com. Co aplikace Moony ukládá a odesílá, popisuje [stránka Soukromí (EN)](privacy).",
+    "intro": "Tato stránka se týká webu moonyfinance.com. Co aplikace Moony ukládá a odesílá, popisuje [stránka Soukromí (EN)](privacy).",
     "items": {
       "cookies": {
         "title": "Žádné cookies, žádná analytika",
-        "text": "Tento web neukládá cookies a nemá žádnou analytiku, počítadla ani sledovací pixely."
+        "text": "Tento web neukládá cookies a nemá žádnou analytiku, počítadla ani sledovací pixely."
       },
       "origin": {
-        "title": "Obsah z vlastní domény",
-        "text": "Písma, styly, skripty a obrázky se načítají z vlastní domény webu. Obsah stránky omezuje přísná hlavička Content-Security-Policy. Hosting může samostatně využívat síťovou diagnostiku popsanou níže."
+        "title": "Obsah z vlastní domény",
+        "text": "Písma, styly, skripty a obrázky se načítají z vlastní domény webu. Obsah stránky omezuje přísná hlavička Content-Security-Policy. Hosting může samostatně využívat síťovou diagnostiku popsanou níže."
       },
       "hosting": {
         "title": "Hosting",
-        "text": "Web hostuje Cloudflare. Při poskytování stránek zpracovává běžné údaje o požadavku, například IP adresu a user agent, podle svých [zásad ochrany osobních údajů (EN)](https://www.cloudflare.com/privacypolicy/). Služba [Network Error Logging (EN)](https://developers.cloudflare.com/network-error-logging/) může od prohlížeče přijímat hlášení síťových chyb. Na webu není zapnutá návštěvnická analytika Cloudflare."
+        "text": "Web hostuje Cloudflare. Při poskytování stránek zpracovává běžné údaje o požadavku, například IP adresu a user agent, podle svých [zásad ochrany osobních údajů (EN)](https://www.cloudflare.com/privacypolicy/). Služba [Network Error Logging (EN)](https://developers.cloudflare.com/network-error-logging/) může od prohlížeče přijímat hlášení síťových chyb. Na webu není zapnutá návštěvnická analytika Cloudflare."
       },
       "downloads": {
         "title": "Stahování",
         "text": "Odkazy ke stažení vedou na vydání na GitHubu, který soubory poskytuje."
       },
       "operator": {
-        "title": "Provozovatel a kontakt",
+        "title": "Provozovatel a kontakt",
         "text": "Provozovatelem je Filip Král. Dotazy patří do [diskuzí na GitHubu (EN)](https://github.com/fiiles/Moony/discussions)."
       }
     }
@@ -287,7 +287,7 @@
       },
       "warning": {
         "q": "Proč mě počítač při spuštění varuje?",
-        "a": "Instalátory zatím nemají certifikáty pro macOS a Windows, proto může systém při prvním spuštění zobrazit bezpečnostní upozornění. Podrobný postup je na stránce ke stažení. Aktualizace se ověřují podpisovým klíčem projektu."
+        "a": "Instalátory zatím nemají certifikáty pro macOS a Windows, proto může systém při prvním spuštění zobrazit bezpečnostní upozornění. Podrobný postup je na stránce ke stažení. Aktualizace se ověřují podpisovým klíčem projektu."
       },
       "data": {
         "q": "Sbírá Moony o mně nějaká data?",
@@ -298,26 +298,26 @@
         "a": "Použijte 24znakový obnovovací klíč, který vám Moony ukázal při nastavení; je to jediný způsob, jak heslo obnovit. Pokud ztratíte obojí, data nikdo neotevře, proto si je zálohujte (Nastavení → Data a zálohy)."
       },
       "devices": {
-        "q": "Funguje Moony i na telefonu nebo více počítačích?",
+        "q": "Funguje Moony i na telefonu nebo více počítačích?",
         "a": "Moony dnes běží na macOS, Windows a Linuxu, jeden profil na jednom počítači a bez synchronizace. Data na jiný počítač přenesete záložním souborem."
       },
       "bank": {
         "q": "Připojí se k mé bance?",
-        "a": "Přímo ne: importujete výpisy, které si z banky exportujete, ve formátu CSV, CAMT.053, MT940, OFX/QFX nebo QIF."
+        "a": "Přímo ne: importujete výpisy, které si z banky exportujete, ve formátu CSV, CAMT.053, MT940, OFX/QFX nebo QIF."
       }
     }
   },
   "gettingStarted": {
-    "title": "Můžete začít s jedním účtem.",
-    "text": "Nemusíte zadávat všechno najednou. Další účty a investice přidáte, až budete chtít.",
+    "title": "Můžete začít s jedním účtem.",
+    "text": "Nemusíte zadávat všechno najednou. Další účty a investice přidáte, až budete chtít.",
     "steps": [
       {
         "title": "Vytvořte si profil",
-        "text": "Zvolte měnu a heslo. Uložte si obnovovací klíč."
+        "text": "Zvolte měnu a heslo. Uložte si obnovovací klíč."
       },
       {
         "title": "Přidejte první účet",
-        "text": "Zadejte zůstatek nebo importujte výpis z banky."
+        "text": "Zadejte zůstatek nebo importujte výpis z banky."
       },
       {
         "title": "Přizpůsobte si Moony",
@@ -327,28 +327,28 @@
   },
   "about": {
     "title": "Nezávislý open source projekt",
-    "text": "Chybí vám nějaká funkce nebo jste narazili na problém? Napište do diskuzí na GitHubu a pomozte Moony vylepšit.",
+    "text": "Chybí vám nějaká funkce nebo jste narazili na problém? Napište do diskuzí na GitHubu a pomozte Moony vylepšit.",
     "link": "Napsat zpětnou vazbu →"
   },
   "assistantPreview": {
-    "title": "Proberte své finance s AI agentem",
-    "text": "Propojte Moony přes MCP se svým AI agentem. Získá kontext pro analýzy a doporučení podle vaší situace.",
+    "title": "Proberte své finance s AI agentem",
+    "text": "Propojte Moony přes MCP se svým AI agentem. Získá kontext pro analýzy a doporučení podle vaší situace.",
     "examplesTitle": "Můžete se třeba zeptat",
     "examples": [
       "Jakou část mého portfolia tvoří tři největší investice?",
-      "Odhadni cenu mého bytu podle údajů v Moony a aktuálních nabídek."
+      "Odhadni cenu mého bytu podle údajů v Moony a aktuálních nabídek."
     ],
     "marketNote": "Pro odhad ceny nemovitosti potřebuje agent také aktuální tržní podklady.",
-    "privacyNote": "Propojení je ve výchozím stavu vypnuté. Zapnutím zpřístupníte data vybranému AI klientovi, který je může zpracovávat v cloudu svého poskytovatele.",
+    "privacyNote": "Propojení je ve výchozím stavu vypnuté. Zapnutím zpřístupníte data vybranému AI klientovi, který je může zpracovávat v cloudu svého poskytovatele.",
     "link": "Jak propojení nastavit →",
     "diagram": {
-      "caption": "Finance uložené v Moony zpřístupníte přes MCP svému AI agentovi. Ten je může využít pro osobní analýzy a doporučení.",
-      "dataTitle": "Vaše finance v Moony",
-      "dataText": "Účty, investice, nemovitosti i závazky.",
+      "caption": "Finance uložené v Moony zpřístupníte přes MCP svému AI agentovi. Ten je může využít pro osobní analýzy a doporučení.",
+      "dataTitle": "Vaše finance v Moony",
+      "dataText": "Účty, investice, nemovitosti i závazky.",
       "agentTitle": "Váš AI agent",
-      "agentText": "Claude nebo jiný klient s podporou MCP.",
-      "resultTitle": "Analýzy a doporučení",
-      "resultText": "Podle vašich dat a vaší situace.",
+      "agentText": "Claude nebo jiný klient s podporou MCP.",
+      "resultTitle": "Analýzy a doporučení",
+      "resultText": "Podle vašich dat a vaší situace.",
       "analysis": "Analýza"
     }
   }
