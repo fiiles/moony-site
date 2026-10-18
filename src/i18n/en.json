@@ -115,7 +115,7 @@
       },
       "stocks": {
         "name": "Stocks and ETFs",
-        "line": "Returns, dividends"
+        "line": "Returns, dividends, watchlist"
       },
       "crypto": {
         "name": "Crypto",
@@ -138,7 +138,7 @@
         "line": "Payment calendar"
       }
     },
-    "foot": "10 languages · 45 supported currencies"
+    "foot": "10 languages · 45 supported currencies · Light and dark mode"
   },
   "trust": {
     "title": "Your finances stay yours.",
@@ -234,7 +234,7 @@
         "What to track.",
         "An offer to add your first account and import a bank statement."
       ],
-      "outro": "The dashboard then shows a Getting started checklist."
+      "outro": "The dashboard then shows a Getting started checklist. Moving to a new computer? Choose Restore from a backup on the first screen of the wizard instead of creating a new profile."
     },
     "updating": {
       "title": "Updating",

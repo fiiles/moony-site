@@ -115,7 +115,7 @@
       },
       "stocks": {
         "name": "Akcie a ETF",
-        "line": "Výnosy, dividendy"
+        "line": "Výnosy, dividendy, sledované akcie"
       },
       "crypto": {
         "name": "Krypto",
@@ -138,7 +138,7 @@
         "line": "Kalendář plateb"
       }
     },
-    "foot": "10 jazyků · 45 podporovaných měn"
+    "foot": "10 jazyků · 45 podporovaných měn · Světlý i tmavý režim"
   },
   "trust": {
     "title": "Vaše finance zůstávají vaše.",
@@ -234,7 +234,7 @@
         "Co chcete sledovat.",
         "Nabídka přidat první účet a importovat bankovní výpis."
       ],
-      "outro": "Přehled pak zobrazí úvodní kontrolní seznam."
+      "outro": "Přehled pak zobrazí úvodní kontrolní seznam. Přecházíte na nový počítač? Na první obrazovce průvodce zvolte Obnovit ze zálohy místo vytvoření nového profilu."
     },
     "updating": {
       "title": "Aktualizace",
