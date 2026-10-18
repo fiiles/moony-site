@@ -416,3 +416,15 @@ section.overview { padding: 38px 0 32px; }
 .prose hr { margin: 28px 0; border: 0; border-top: 1px solid var(--line); }
 .provenance { font-size: 13px; color: var(--ink-3); border-left: 3px solid var(--line-strong); padding: 8px 12px; margin: 0 0 28px; }
 .prose .provenance { margin: 0 0 28px; }
+
+/* ---- Help page ---- */
+/* Built on .prose; these rules add the contents grid, the section rhythm and the warning box. */
+.prose .help-toc { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 20px 0 0; padding: 0; list-style: none; }
+.prose .help-toc li { margin: 0; }
+.prose .help-toc a { display: block; height: 100%; padding: 12px 16px; color: var(--ink); font-weight: 600; text-decoration: none; }
+.prose .help-toc a:hover { border-color: var(--line-hover); }
+.help-sec { margin-top: 44px; border-top: 1px solid var(--line); }
+.prose .help-sec > h2 { margin-top: 26px; }
+.prose .help-callout { padding: 14px 16px; border: 1px solid var(--loss-line); border-radius: var(--r-3); background: var(--loss-soft); color: var(--ink); }
+.prose .help th[scope="row"] { font-weight: 600; }
+@media (max-width: 760px) { .prose .help-toc { grid-template-columns: 1fr; } }

@@ -1,0 +1,157 @@
+---
+import { href, t, tList, type Locale } from '../i18n';
+import { rich, type RichLink } from '../lib/rich';
+
+interface Props { locale: Locale }
+
+const { locale } = Astro.props;
+const h = (key: string) => t(locale, `help.${key}`);
+// The repository documents are published in English only; Czech pages link to the English ones and say so in the link text.
+const enOnly = (path: string): RichLink => ({ href: href('en', path), hreflang: locale === 'cs' ? 'en' : undefined });
+// Link targets used in the help.* strings. Page addresses depend on the locale, so strings name a key instead of an address.
+const links: Record<string, RichLink> = {
+  dlMac: { href: href(locale, 'download/#install-mac') },
+  dlWin: { href: href(locale, 'download/#install-win') },
+  dlLinux: { href: href(locale, 'download/#install') },
+  download: { href: href(locale, 'download/') },
+  aiPage: { href: href(locale, 'ai-integration/') },
+  privacy: enOnly('privacy/'),
+  privacyData: enOnly('privacy/#where-your-data-lives'),
+  security: enOnly('security/'),
+  first: { href: '#first-start' },
+  recovery: { href: '#forgotten-password' },
+  import: { href: '#import' },
+  backup: { href: '#backup' },
+  updates: { href: '#updates' },
+  data: { href: '#data-folder' },
+  uninstall: { href: '#uninstall' },
+  ai: { href: '#ai-assistant' },
+  discussions: { href: 'https://github.com/fiiles/Moony/discussions' },
+  issues: { href: 'https://github.com/fiiles/Moony/issues/new/choose' },
+  contributing: { href: 'https://github.com/fiiles/Moony/blob/main/CONTRIBUTING.md#adding-a-bank-preset' },
+};
+const text = (key: string) => rich(h(key), links);
+const items = (key: string) => tList(locale, `help.${key}`).map((s) => rich(s, links));
+
+const sections = [
+  { id: 'first-start', key: 'first' },
+  { id: 'forgotten-password', key: 'recovery' },
+  { id: 'import', key: 'import' },
+  { id: 'backup', key: 'backup' },
+  { id: 'updates-data', key: 'updates' },
+  { id: 'ai-assistant', key: 'ai' },
+];
+const [situationHead, resultHead] = tList(locale, 'help.recovery.tableHead');
+const situations = tList(locale, 'help.recovery.situations');
+const results = items('recovery.results');
+const [systemHead, folderHead] = tList(locale, 'help.updates.dataHead');
+const folders = [
+  { os: 'macOS', path: '~/Library/Application Support/com.moonyfinance.desktop/', alt: undefined },
+  { os: 'Windows', path: '%APPDATA%\\com.moonyfinance.desktop\\', alt: text('updates.dataWinAlt') },
+  { os: 'Linux', path: '~/.local/share/com.moonyfinance.desktop/', alt: text('updates.dataLinuxAlt') },
+];
+---
+<section class="block">
+  <div class="wrap prose help">
+    <h1>{h('title')}</h1>
+    <p>{h('intro')}</p>
+    <nav aria-label={h('tocLabel')}>
+      <ol class="help-toc">
+        {sections.map((s, i) => (
+          <li><a class="card" href={`#${s.id}`}>{i + 1}. {h(`${s.key}.title`)}</a></li>
+        ))}
+      </ol>
+    </nav>
+
+    <section class="help-sec" aria-labelledby="first-start">
+      <h2 id="first-start">{h('first.title')}</h2>
+      <p>{h('first.lead')}</p>
+      <h3>{h('first.installTitle')}</h3>
+      <p set:html={text('first.install')} />
+      <h3>{h('first.keysTitle')}</h3>
+      <ul>{items('first.keys').map((s) => <li set:html={s} />)}</ul>
+      <h3>{h('first.wizardTitle')}</h3>
+      <p>{h('first.wizardIntro')}</p>
+      <ol>{items('first.wizardSteps').map((s) => <li set:html={s} />)}</ol>
+      <p set:html={text('first.wizardOutro')} />
+    </section>
+
+    <section class="help-sec" aria-labelledby="forgotten-password">
+      <h2 id="forgotten-password">{h('recovery.title')}</h2>
+      <p class="help-callout" set:html={text('recovery.warning')} />
+      <table>
+        <thead><tr><th scope="col">{situationHead}</th><th scope="col">{resultHead}</th></tr></thead>
+        <tbody>{situations.map((s, i) => <tr><th scope="row">{s}</th><td set:html={results[i]} /></tr>)}</tbody>
+      </table>
+      <h3>{h('recovery.resetTitle')}</h3>
+      <ol>{items('recovery.resetSteps').map((s) => <li set:html={s} />)}</ol>
+      <h3>{h('recovery.cannotTitle')}</h3>
+      <ul>{items('recovery.cannot').map((s) => <li set:html={s} />)}</ul>
+      <h3>{h('recovery.keepTitle')}</h3>
+      <p set:html={text('recovery.keep')} />
+      <h3>{h('recovery.lockedTitle')}</h3>
+      <p set:html={text('recovery.locked')} />
+    </section>
+
+    <section class="help-sec" aria-labelledby="import">
+      <h2 id="import">{h('import.title')}</h2>
+      <p>{h('import.lead')}</p>
+      <h3>{h('import.bankTitle')}</h3>
+      <ol>{items('import.bankSteps').map((s) => <li set:html={s} />)}</ol>
+      <p set:html={text('import.balanceNote')} />
+      <h3>{h('import.formatsTitle')}</h3>
+      <ul>{items('import.formats').map((s) => <li set:html={s} />)}</ul>
+      <h3>{h('import.csvTitle')}</h3>
+      <p set:html={text('import.csvIntro')} />
+      <ul>{items('import.csv').map((s) => <li set:html={s} />)}</ul>
+      <h3>{h('import.missingTitle')}</h3>
+      <ol>{items('import.missing').map((s) => <li set:html={s} />)}</ol>
+      <h3>{h('import.brokerTitle')}</h3>
+      <p set:html={text('import.brokerIntro')} />
+      <ul>{items('import.brokers').map((s) => <li set:html={s} />)}</ul>
+      <p set:html={text('import.brokerOutro')} />
+    </section>
+
+    <section class="help-sec" aria-labelledby="backup">
+      <h2 id="backup">{h('backup.title')}</h2>
+      <h3>{h('backup.makeTitle')}</h3>
+      {items('backup.make').map((s) => <p set:html={s} />)}
+      <h3 id="restore">{h('backup.restoreTitle')}</h3>
+      <p set:html={text('backup.restoreIntro')} />
+      <ol>{items('backup.restoreSteps').map((s) => <li set:html={s} />)}</ol>
+      <p set:html={text('backup.restoreNote')} />
+      <h3 id="new-computer">{h('backup.moveTitle')}</h3>
+      <ol>{items('backup.moveSteps').map((s) => <li set:html={s} />)}</ol>
+      <p set:html={text('backup.moveOutro')} />
+      <p set:html={text('backup.notBackup')} />
+    </section>
+
+    <section class="help-sec" aria-labelledby="updates-data">
+      <h2 id="updates-data">{h('updates.title')}</h2>
+      <h3 id="updates">{h('updates.updatesTitle')}</h3>
+      {items('updates.updates').map((s) => <p set:html={s} />)}
+      <h3 id="data-folder">{h('updates.dataTitle')}</h3>
+      <p set:html={text('updates.dataIntro')} />
+      <table>
+        <thead><tr><th scope="col">{systemHead}</th><th scope="col">{folderHead}</th></tr></thead>
+        <tbody>{folders.map((f) => <tr><th scope="row">{f.os}</th><td><code>{f.path}</code>{f.alt && <> <span set:html={f.alt} /></>}</td></tr>)}</tbody>
+      </table>
+      <p set:html={text('updates.dataNote')} />
+      <p set:html={text('updates.dataFiles')} />
+      <p set:html={text('updates.dataOutro')} />
+      <h3 id="uninstall">{h('updates.uninstallTitle')}</h3>
+      {items('updates.uninstall').map((s) => <p set:html={s} />)}
+    </section>
+
+    <section class="help-sec" aria-labelledby="ai-assistant">
+      <h2 id="ai-assistant">{h('ai.title')}</h2>
+      <p set:html={text('ai.text')} />
+      <p set:html={text('ai.text2')} />
+    </section>
+
+    <section class="help-sec" aria-labelledby="more-help">
+      <h2 id="more-help">{h('more.title')}</h2>
+      <p set:html={text('more.text')} />
+    </section>
+  </div>
+</section>
