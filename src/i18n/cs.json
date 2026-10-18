@@ -78,7 +78,7 @@
       "formats": "CSV s detekcí sloupců, CAMT.053, MT940, OFX/QFX a QIF. Přímé propojení s bankou zatím není k dispozici."
     },
     "investments": {
-      "title": "Sledujte, jak se daří investicím",
+      "title": "Sledujte, jak se daří investicím.",
       "text": "Rozlište vlastní vklady od výnosu. Sledujte akcie, ETF i krypto a podívejte se, jak se mění hodnota vašeho portfolia.",
       "bullets": [
         "Výnosy i přijaté dividendy",
@@ -193,7 +193,6 @@
       "rpm": "Fedora/openSUSE",
       "note": "x86_64; AppImage může potřebovat libfuse2."
     },
-    "foot": "Aktualizace se ověřují podpisovým klíčem projektu.",
     "all": "Vybrat jiný systém →",
     "intro": "Pro macOS, Windows a Linux. Bez registrace a bez zkušební doby.",
     "notice": "macOS a Windows mohou při prvním spuštění zobrazit bezpečnostní upozornění, protože instalátory zatím nejsou podepsané. Před stažením si přečtěte postup instalace."
@@ -244,7 +243,7 @@
       "title": "Systémové požadavky",
       "mac": "Macy s Apple Silicon i Intel. Vydání neuvádí minimální verzi macOS; předpokládá se, že funguje na aktuálních i nedávných verzích. Pokud se Moony na starším systému neotevře, [napište nám do diskuzí na GitHubu (EN)](https://github.com/fiiles/Moony/discussions).",
       "win": "Windows 10 a 11, 64bitové. Moony potřebuje běhové prostředí Microsoft Edge WebView2, které je v obou předinstalované; instalátor ho stáhne, pokud chybí.",
-      "linux": "Pouze x86_64: AppImage, balíček `.deb` pro Debian a Ubuntu a `.rpm` pro Fedoru a openSUSE."
+      "linux": "Pouze x86_64: AppImage, balíček `.deb` pro Debian a Ubuntu a `.rpm` pro Fedoru a openSUSE. Sestaveno na Ubuntu 24.04; na starších distribucích může chybět systémová knihovna."
     },
     "intro": "Vyberte svůj systém. Moony si nastavíte po instalaci, bez online účtu.",
     "recommended": "Váš systém",
@@ -309,7 +308,7 @@
     }
   },
   "gettingStarted": {
-    "title": "Můžete začít s jedním účtem",
+    "title": "Můžete začít s jedním účtem.",
     "text": "Nemusíte zadávat všechno najednou. Další účty a investice přidáte, až budete chtít.",
     "steps": [
       {
@@ -321,7 +320,7 @@
         "text": "Zadejte zůstatek nebo importujte výpis z banky."
       },
       {
-        "title": "Podívejte se na přehled",
+        "title": "Přizpůsobte si Moony",
         "text": "Postupně přidejte to, co chcete sledovat."
       }
     ]
