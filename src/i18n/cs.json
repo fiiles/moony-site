@@ -182,7 +182,7 @@
     "mac": {
       "arm": "Apple Silicon",
       "intel": "Intel",
-      "note": "Instalátor zatím není podepsaný ani notarizovaný Applem."
+      "note": "Podepsaná a notarizovaná společností Apple."
     },
     "win": {
       "exe": "Instalátor",
@@ -196,7 +196,7 @@
     },
     "all": "Vybrat jiný systém →",
     "intro": "Pro macOS, Windows a Linux. Bez registrace a bez zkušební doby.",
-    "notice": "macOS a Windows mohou při prvním spuštění zobrazit bezpečnostní upozornění, protože instalátory zatím nejsou podepsané. Před stažením si přečtěte postup instalace."
+    "notice": "Windows může při prvním spuštění zobrazit bezpečnostní upozornění, protože instalátor zatím není podepsaný. Před stažením si přečtěte postup instalace."
   },
   "downloadPage": {
     "metaTitle": "Stáhnout Moony {version} pro macOS, Windows a Linux",
@@ -208,12 +208,10 @@
     "macHint": "Apple Silicon znamená čip M1 nebo novější. Nevíte, jaký Mac máte? V nabídce Apple zvolte **O tomto Macu**: řádek Čip nebo Procesor uvádí Apple M… nebo Intel.",
     "install": {
       "title": "Instalace a první spuštění",
-      "unsigned": "Instalátory zatím nemají certifikáty pro macOS a Windows, proto se při prvním spuštění může objevit bezpečnostní upozornění. Níže najdete postup pro každý systém. Aktualizace uvnitř aplikace se ověřují podpisovým klíčem projektu.",
+      "unsigned": "Aplikace pro Mac je podepsaná a notarizovaná společností Apple a otevře se jako každá jiná. Instalátor pro Windows zatím certifikát nemá, proto Windows může při prvním spuštění zobrazit bezpečnostní upozornění; postup najdete níže. Aktualizace uvnitř aplikace se ověřují podpisovým klíčem projektu.",
       "mac": {
         "open": "Otevřete soubor `.dmg` a přetáhněte **Moony** do složky **Aplikace**.",
-        "terminal": "Otevřete **Terminál** (Aplikace → Utility) a jednou spusťte tento příkaz:",
-        "why": "Odstraní příznak „staženo z internetu“, kvůli kterému macOS hlásí „Moony je poškozená a nelze ji otevřít“ (Gatekeeper). Potom Moony otevřete jako obvykle.",
-        "alt": "Pokud macOS místo toho hlásí, že nemůže ověřit vývojáře, otevřete **Nastavení systému → Soukromí a zabezpečení** (v macOS 12 a starším **Systémové předvolby → Zabezpečení a soukromí**), v části **Zabezpečení** klikněte u Moony na **Přesto otevřít**."
+        "launch": "Otevřete Moony ze složky **Aplikace**. macOS ověří notarizaci od Applu a aplikaci otevře bez upozornění."
       },
       "win": {
         "keep": "Stáhněte instalátor. Pokud prohlížeč hlásí, že se soubor stahuje jen zřídka, ponechte ho (v Edgi: **⋯ → Zachovat → Zobrazit více → Přesto zachovat**).",
@@ -288,8 +286,8 @@
         "a": "Ano: Moony je open source pod licencí AGPL-3.0, bez zkušební doby a bez účtu."
       },
       "warning": {
-        "q": "Proč mě počítač při spuštění varuje?",
-        "a": "Instalátory zatím nemají certifikáty pro macOS a Windows, proto může systém při prvním spuštění zobrazit bezpečnostní upozornění. Podrobný postup je na stránce ke stažení. Aktualizace se ověřují podpisovým klíčem projektu."
+        "q": "Proč mě Windows při spuštění varují?",
+        "a": "Instalátor pro Windows zatím certifikát nemá, proto Windows může při prvním spuštění zobrazit bezpečnostní upozornění; postup je na stránce ke stažení. Aplikace pro Mac je podepsaná a notarizovaná společností Apple a otevře se bez upozornění. Aktualizace se ověřují podpisovým klíčem projektu."
       },
       "data": {
         "q": "Sbírá Moony o mně nějaká data?",
@@ -364,7 +362,7 @@
       "title": "První spuštění",
       "lead": "Moony nepotřebuje účet. Nainstalujte ho, otevřete a průvodce nastavením vytvoří šifrovanou databázi v tomto počítači.",
       "installTitle": "Instalace",
-      "install": "Instalátory zatím nejsou podepsané, takže macOS a Windows při prvním spuštění zobrazí upozornění; aplikace není poškozená. Postup pro každý systém je na stránce Stáhnout: [macOS](dlMac), [Windows](dlWin), [Linux](dlLinux).",
+      "install": "Aplikace pro Mac je podepsaná a notarizovaná společností Apple a otevře se normálně. Instalátor pro Windows zatím podepsaný není, takže Windows při prvním spuštění zobrazí upozornění; aplikace není poškozená. Postup pro každý systém je na stránce Stáhnout: [macOS](dlMac), [Windows](dlWin), [Linux](dlLinux).",
       "keysTitle": "Heslo a obnovovací klíč",
       "keys": [
         "**Heslo.** Odemyká Moony pokaždé. Alespoň 8 znaků, delší fráze je lepší. Moony vám ho nedokáže zobrazit.",

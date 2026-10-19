@@ -64,13 +64,8 @@ const linuxInstall = [
         <h3>macOS</h3>
         <ol class="steps">
           <li><span set:html={rich(p('install.mac.open'))} /></li>
-          <li>
-            <span set:html={rich(p('install.mac.terminal'))} />
-            <pre class="code"><code>xattr -cr /Applications/Moony.app</code></pre>
-            <span class="steps__note" set:html={rich(p('install.mac.why'))} />
-          </li>
+          <li><span set:html={rich(p('install.mac.launch'))} /></li>
         </ol>
-        <p class="install__alt" set:html={rich(p('install.mac.alt'))} />
       </div>
       <div class="card card--flat install__card" id="install-win">
         <h3>Windows</h3>
