@@ -267,9 +267,9 @@ test('an exclamation mark in a paragraph or an h4 is fine (the good site has one
   } finally { rmSync(s.root, { recursive: true, force: true }); }
 });
 
-test('size-budget fires over 450 KB of HTML, CSS, JS and fonts, but ignores screenshots and social images', () => {
-  assertFires('size-budget', (s) => s.put('styles/big.css', '/* ' + 'x'.repeat(460 * 1024) + ' */'));
-  assertFires('size-budget', (s) => s.put('fonts/big.woff2', 'x'.repeat(460 * 1024)));
+test('size-budget fires over 512 KB of HTML, CSS, JS and fonts, but ignores screenshots and social images', () => {
+  assertFires('size-budget', (s) => s.put('styles/big.css', '/* ' + 'x'.repeat(520 * 1024) + ' */'));
+  assertFires('size-budget', (s) => s.put('fonts/big.woff2', 'x'.repeat(520 * 1024)));
   const s = site();
   try {
     s.put('og/social.png', 'x'.repeat(2 * 1024 * 1024));
