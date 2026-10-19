@@ -189,10 +189,15 @@
       "note": "Instalátor zatím není podepsaný certifikátem pro Windows."
     },
     "linux": {
-      "appimage": "AppImage",
-      "deb": "Debian/Ubuntu",
-      "rpm": "Fedora/openSUSE",
-      "note": "x86_64; AppImage může potřebovat libfuse2."
+      "appimage": "AppImage (x86_64)",
+      "deb": "Debian/Ubuntu (x86_64)",
+      "rpm": "Fedora/openSUSE (x86_64)",
+      "appimageArm": "AppImage (ARM64)",
+      "debArm": "Debian/Ubuntu (ARM64)",
+      "rpmArm": "Fedora/openSUSE (ARM64)",
+      "note": "{archs}; AppImage může potřebovat libfuse2.",
+      "archs": "x86_64",
+      "archsArm": "x86_64 a ARM64"
     },
     "all": "Vybrat jiný systém →",
     "intro": "Pro macOS, Windows a Linux. Bez registrace a bez zkušební doby.",
@@ -218,8 +223,9 @@
         "run": "Spusťte ho. Windows SmartScreen může zobrazit „Windows ochránil váš počítač“. Klikněte na **Další informace** a potom na **Přesto spustit**."
       },
       "linux": {
-        "arch": "Sestavení jsou k dispozici pro x86_64.",
-        "fuse": "Některé distribuce potřebují pro AppImage balíček `libfuse2`."
+        "arch": "Sestavení jsou k dispozici pro {archs}. Příkazy níže používají soubory pro x86_64.",
+        "fuse": "Některé distribuce potřebují pro AppImage balíček `libfuse2`.",
+        "armFiles": "Na ARM (`uname -m` vypíše `aarch64`) použijte místo nich `{appimage}`, `{deb}` nebo `{rpm}`."
       }
     },
     "first": {
@@ -243,7 +249,7 @@
       "title": "Systémové požadavky",
       "mac": "Macy s Apple Silicon i Intel. Vydání neuvádí minimální verzi macOS; předpokládá se, že funguje na aktuálních i nedávných verzích. Pokud se Moony na starším systému neotevře, [napište nám do diskuzí na GitHubu (EN)](https://github.com/fiiles/Moony/discussions).",
       "win": "Windows 10 a 11, 64bitové. Moony potřebuje běhové prostředí Microsoft Edge WebView2, které je v obou předinstalované; instalátor ho stáhne, pokud chybí.",
-      "linux": "Pouze x86_64: AppImage, balíček `.deb` pro Debian a Ubuntu a `.rpm` pro Fedoru a openSUSE. Sestaveno na Ubuntu 24.04; na starších distribucích může chybět systémová knihovna."
+      "linux": "{archs}: AppImage, balíček `.deb` pro Debian a Ubuntu a `.rpm` pro Fedoru a openSUSE. Sestaveno na Ubuntu 24.04; na starších distribucích může chybět systémová knihovna."
     },
     "intro": "Vyberte svůj systém. Moony si nastavíte po instalaci, bez online účtu.",
     "recommended": "Váš systém",

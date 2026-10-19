@@ -7,13 +7,33 @@ export { release };
 /** The release page on GitHub that lists every version. */
 export const allReleasesUrl = `${repoUrl}/releases`;
 
-const assets = release.assets;
+type Asset = { name: string; url: string; bytes: number };
+
+// Linux ARM64 builds exist from 1.0.1 on; release.json of an older release has none.
+const assets = release.assets as typeof release.assets & Partial<Record<'appimageArm' | 'debArm' | 'rpmArm', Asset>>;
+
+/** The Linux ARM64 (aarch64) files of this release, or null when it has none. */
+export const linuxArm = assets.appimageArm && assets.debArm && assets.rpmArm
+  ? { appimage: assets.appimageArm, deb: assets.debArm, rpm: assets.rpmArm }
+  : null;
+
+/** Dictionary key naming the Linux architectures this release is built for, e.g. "x86_64 and ARM64". */
+export const linuxArchsKey = linuxArm ? 'download.linux.archsArm' : 'download.linux.archs';
+
+const linuxFiles: (readonly [Asset, string])[] = [
+  [assets.appimage, 'download.linux.appimage'],
+  [assets.deb, 'download.linux.deb'],
+  [assets.rpm, 'download.linux.rpm'],
+  ...(linuxArm
+    ? ([[linuxArm.appimage, 'download.linux.appimageArm'], [linuxArm.deb, 'download.linux.debArm'], [linuxArm.rpm, 'download.linux.rpmArm']] as const)
+    : []),
+];
 
 /** The installers grouped by operating system, shared by the landing page and the download page. Each file is `[asset, dictionary key of its label]`. */
 export const downloadCards = [
   { id: 'mac', os: 'macOS', files: [[assets.macArm, 'download.mac.arm'], [assets.macIntel, 'download.mac.intel']] },
   { id: 'win', os: 'Windows', files: [[assets.windows, 'download.win.exe']] },
-  { id: 'linux', os: 'Linux', files: [[assets.appimage, 'download.linux.appimage'], [assets.deb, 'download.linux.deb'], [assets.rpm, 'download.linux.rpm']] },
+  { id: 'linux', os: 'Linux', files: linuxFiles },
 ] as const;
 
 /** Link to the changelog. The repository documents are published in English only, so Czech pages mark the link as English. */

@@ -2,6 +2,7 @@
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { pickAssets } from './release-assets.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const repo = 'fiiles/Moony';
@@ -11,27 +12,17 @@ const headers = { 'User-Agent': 'moony-site-sync', Accept: 'application/vnd.gith
 const latest = await (await fetch(api + '/releases/latest', { headers })).json();
 if (!latest.tag_name) throw new Error('no latest release: ' + JSON.stringify(latest).slice(0, 200));
 const tag = process.argv[2] || latest.tag_name;
-const pick = (test) => {
-  const a = latest.assets.find((x) => test(x.name));
-  return a ? { name: a.name, url: a.browser_download_url, bytes: a.size } : null;
-};
 const fetchedAt = new Date().toISOString();
+const version = latest.tag_name.replace(/^v/, '');
 const release = {
   tag: latest.tag_name,
-  version: latest.tag_name.replace(/^v/, ''),
+  version,
   publishedAt: latest.published_at.slice(0, 10),
   htmlUrl: latest.html_url,
-  assets: {
-    macArm: pick((n) => n.endsWith('_aarch64.dmg')),
-    macIntel: pick((n) => n.endsWith('_x64.dmg')),
-    windows: pick((n) => n.endsWith('_x64-setup.exe')),
-    appimage: pick((n) => n.endsWith('.AppImage')),
-    deb: pick((n) => n.endsWith('.deb')),
-    rpm: pick((n) => n.endsWith('.rpm')),
-  },
+  // Throws when an installer the release must carry is missing (Linux ARM64 from 1.0.1 on).
+  assets: pickAssets(latest.assets, version),
   fetchedAt,
 };
-for (const [k, v] of Object.entries(release.assets)) if (!v) throw new Error('asset missing: ' + k);
 
 const docs = [
   ['PRIVACY.md', 'privacy', 'Privacy'],

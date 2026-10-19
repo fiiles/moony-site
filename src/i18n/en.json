@@ -189,10 +189,15 @@
       "note": "The installer does not yet have a Windows code-signing certificate."
     },
     "linux": {
-      "appimage": "AppImage",
-      "deb": "Debian/Ubuntu",
-      "rpm": "Fedora/openSUSE",
-      "note": "x86_64; AppImage may need libfuse2."
+      "appimage": "AppImage (x86_64)",
+      "deb": "Debian/Ubuntu (x86_64)",
+      "rpm": "Fedora/openSUSE (x86_64)",
+      "appimageArm": "AppImage (ARM64)",
+      "debArm": "Debian/Ubuntu (ARM64)",
+      "rpmArm": "Fedora/openSUSE (ARM64)",
+      "note": "{archs}; AppImage may need libfuse2.",
+      "archs": "x86_64",
+      "archsArm": "x86_64 and ARM64"
     },
     "all": "Choose another system →",
     "intro": "Free for macOS, Windows and Linux. No sign-up or trial period.",
@@ -218,8 +223,9 @@
         "run": "Run it. Windows SmartScreen may show “Windows protected your PC”. Click **More info**, then **Run anyway**."
       },
       "linux": {
-        "arch": "Builds are provided for x86_64.",
-        "fuse": "Some distributions need the `libfuse2` package for AppImages."
+        "arch": "Builds are provided for {archs}. The commands below use the x86_64 files.",
+        "fuse": "Some distributions need the `libfuse2` package for AppImages.",
+        "armFiles": "On ARM (`uname -m` prints `aarch64`), use `{appimage}`, `{deb}` or `{rpm}` instead."
       }
     },
     "first": {
@@ -243,7 +249,7 @@
       "title": "System requirements",
       "mac": "Apple Silicon and Intel Macs. The release does not state a minimum macOS version; current and recent versions are expected to work. If Moony does not open on an older one, [tell us in GitHub Discussions](https://github.com/fiiles/Moony/discussions).",
       "win": "Windows 10 and 11, 64-bit. Moony needs the Microsoft Edge WebView2 runtime, which is preinstalled on both; the installer fetches it if it is missing.",
-      "linux": "x86_64 only: an AppImage, a `.deb` for Debian and Ubuntu and an `.rpm` for Fedora and openSUSE. Built on Ubuntu 24.04; older distributions may lack a system library."
+      "linux": "{archs}: an AppImage, a `.deb` for Debian and Ubuntu and an `.rpm` for Fedora and openSUSE. Built on Ubuntu 24.04; older distributions may lack a system library."
     },
     "intro": "Choose your system. Set up Moony after installing, without an online account.",
     "recommended": "Your system",

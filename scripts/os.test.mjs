@@ -28,6 +28,7 @@ for (const [os, navigator] of [
   ['mac', { platform: 'MacIntel', userAgent: 'Macintosh', maxTouchPoints: 0 }],
   ['win', { userAgentData: { platform: 'Windows' }, platform: 'Win32', userAgent: 'Windows NT 10.0' }],
   ['linux', { platform: 'Linux x86_64', userAgent: 'X11; Linux x86_64' }],
+  ['linux', { platform: 'Linux aarch64', userAgent: 'X11; Linux aarch64' }],
 ]) {
   test(`${os}: both download links lead to the right installer section`, () => {
     const { buttons } = visit(navigator);

@@ -1,7 +1,7 @@
 ---
 import LanguageLink from './LanguageLink.astro';
 import { href, t, tf, tList, type Locale } from '../i18n';
-import { allReleasesUrl, changelogLink, downloadCards, formatDate, formatSize, release } from '../lib/release';
+import { allReleasesUrl, changelogLink, downloadCards, formatDate, formatSize, linuxArchsKey, linuxArm, release } from '../lib/release';
 import { rich } from '../lib/rich';
 
 interface Props { locale: Locale }
@@ -10,6 +10,7 @@ const { locale } = Astro.props;
 const a = release.assets;
 const p = (key: string) => t(locale, `downloadPage.${key}`);
 const version = release.version;
+const archs = { archs: t(locale, linuxArchsKey) };
 const changelog = changelogLink(locale);
 // The repository documents are published in English only; Czech pages link to the English Privacy page.
 const links = { privacy: { href: href('en', 'privacy/'), hreflang: changelog.hreflang } };
@@ -27,6 +28,7 @@ const linuxInstall = [
   { label: t(locale, 'download.linux.deb'), command: `sudo apt install ./${a.deb.name}` },
   { label: 'Fedora', command: `sudo dnf install ./${a.rpm.name}` },
 ];
+const linuxArmNote = linuxArm && tf(locale, 'downloadPage.install.linux.armFiles', { appimage: linuxArm.appimage.name, deb: linuxArm.deb.name, rpm: linuxArm.rpm.name });
 ---
 <section class="block">
   <div class="wrap">
@@ -40,7 +42,7 @@ const linuxInstall = [
       {downloadCards.map((c) => (
         <div class="card dl" id={c.id} data-os={c.id}>
           <div class="dl__os"><h3>{c.os}</h3><span class="badge" data-current hidden>{p('recommended')}</span></div>
-          <p class="dl__warning">{t(locale, `download.${c.id}.note`)} {c.id !== 'linux' && <a href={`#install-${c.id}`} class="link">{p('installLink')}</a>}</p>
+          <p class="dl__warning">{tf(locale, `download.${c.id}.note`, archs)} {c.id !== 'linux' && <a href={`#install-${c.id}`} class="link">{p('installLink')}</a>}</p>
           <div class="dl__files">
             {c.files.map(([file, key]) => (
               <a href={file.url}><span>{t(locale, key)}</span><span>{formatSize(file.bytes, locale)}</span></a>
@@ -76,7 +78,7 @@ const linuxInstall = [
       </div>
       <div class="card card--flat install__card">
         <h3>Linux</h3>
-        <p class="install__alt install__alt--first">{p('install.linux.arch')}</p>
+        <p class="install__alt install__alt--first">{tf(locale, 'downloadPage.install.linux.arch', archs)}</p>
         <div class="cmds">
           {linuxInstall.map((c) => (
             <div>
@@ -86,6 +88,7 @@ const linuxInstall = [
             </div>
           ))}
         </div>
+        {linuxArmNote && <p class="steps__note" set:html={rich(linuxArmNote)} />}
       </div>
     </div>
   </div>
@@ -118,7 +121,7 @@ const linuxInstall = [
       {downloadCards.map((c) => (
         <div class="card card--flat req">
           <h3>{c.os}</h3>
-          <p set:html={rich(p(`requirements.${c.id}`))} />
+          <p set:html={rich(tf(locale, `downloadPage.requirements.${c.id}`, archs))} />
         </div>
       ))}
     </div>
