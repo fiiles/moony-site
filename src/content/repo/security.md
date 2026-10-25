@@ -1,8 +1,8 @@
 ---
 title: "Security"
-sourceUrl: "https://github.com/fiiles/Moony/blob/v1.0.0/SECURITY.md"
-tag: "v1.0.0"
-fetchedAt: "2026-10-19T13:56:29.440Z"
+sourceUrl: "https://github.com/fiiles/Moony/blob/v1.1.0/SECURITY.md"
+tag: "v1.1.0"
+fetchedAt: "2026-10-25T19:20:23.225Z"
 ---
 
 Moony keeps people's financial records, so security reports are taken seriously. Moony is
@@ -32,7 +32,7 @@ A useful report contains:
 - whether you have shared the details with anyone else.
 
 Please never include real financial data. The demo profile (`cargo run --bin seed_demo`,
-see [CONTRIBUTING.md](https://github.com/fiiles/Moony/blob/v1.0.0/CONTRIBUTING.md#demo-data)) is a safe place to reproduce things.
+see [CONTRIBUTING.md](https://github.com/fiiles/Moony/blob/v1.1.0/CONTRIBUTING.md#demo-data)) is a safe place to reproduce things.
 
 ## What to expect
 
@@ -44,7 +44,7 @@ see [CONTRIBUTING.md](https://github.com/fiiles/Moony/blob/v1.0.0/CONTRIBUTING.m
 | Public disclosure | after a fixed release is available, or after 90 days, whichever comes first — earlier or later by agreement with you |
 
 Confirmed vulnerabilities are published as a GitHub security advisory (with a CVE where it
-makes sense) and noted under *Security* in [CHANGELOG.md](https://github.com/fiiles/Moony/blob/v1.0.0/CHANGELOG.md). You are credited
+makes sense) and noted under *Security* in [CHANGELOG.md](https://github.com/fiiles/Moony/blob/v1.1.0/CHANGELOG.md). You are credited
 by name or handle unless you prefer to stay anonymous.
 
 ## Scope
@@ -72,14 +72,14 @@ Out of scope:
 - An attacker who already controls an **unlocked** Moony session, or the user's account or
   device (malware, a keylogger, someone using the computer while the app is unlocked).
   Lock the app, use full-disk encryption and a strong password.
-- The readable copies listed in [PRIVACY.md](https://github.com/fiiles/Moony/blob/v1.0.0/PRIVACY.md) under *What is not encrypted*
+- The readable copies listed in [PRIVACY.md](https://github.com/fiiles/Moony/blob/v1.1.0/PRIVACY.md) under *What is not encrypted*
   (copies you save or open in another app, exports, 0.12-era plain files until their
   conversion, operating-system backups and snapshots). They are documented, so they are not
   new findings.
 - Weak or reused passwords chosen by the user, and loss of both password and recovery key
   (there is deliberately no backdoor).
 - The Windows installer not being **signed by Microsoft** yet (see the install notes in
-  [README.md](https://github.com/fiiles/Moony/blob/v1.0.0/README.md#download-and-install)); macOS builds are signed and notarized, and
+  [README.md](https://github.com/fiiles/Moony/blob/v1.1.0/README.md#download-and-install)); macOS builds are signed and notarized, and
   the in-app updater verifies its own signature on every platform.
 - What a third-party AI client does with data after you connected it over MCP.
 - Vulnerabilities in dependencies with no demonstrable effect on Moony — please report them
@@ -94,15 +94,15 @@ reasonable time to fix a problem before you go public.
 
 ## How we keep dependencies and releases in check
 
-- `cargo audit --deny warnings` runs in CI ([`scripts/cargo-audit.sh`](https://github.com/fiiles/Moony/blob/v1.0.0/scripts/cargo-audit.sh))
+- `cargo audit --deny warnings` runs in CI ([`scripts/cargo-audit.sh`](https://github.com/fiiles/Moony/blob/v1.1.0/scripts/cargo-audit.sh))
   and blocks the build on any advisory (including unmaintained or yanked crates) except the few
-  that are listed with a reason in [`.cargo/audit.toml`](https://github.com/fiiles/Moony/blob/v1.0.0/.cargo/audit.toml) or, for yanked
-  crates that cannot be updated yet, in [`.cargo/audit-yanked.txt`](https://github.com/fiiles/Moony/blob/v1.0.0/.cargo/audit-yanked.txt);
-  see [`.github/workflows/ci.yml`](https://github.com/fiiles/Moony/blob/v1.0.0/.github/workflows/ci.yml).
+  that are listed with a reason in [`.cargo/audit.toml`](https://github.com/fiiles/Moony/blob/v1.1.0/.cargo/audit.toml) or, for yanked
+  crates that cannot be updated yet, in [`.cargo/audit-yanked.txt`](https://github.com/fiiles/Moony/blob/v1.1.0/.cargo/audit-yanked.txt);
+  see [`.github/workflows/ci.yml`](https://github.com/fiiles/Moony/blob/v1.1.0/.github/workflows/ci.yml).
 - Dependabot opens security-update pull requests for npm, Cargo and GitHub Actions
-  ([`.github/dependabot.yml`](https://github.com/fiiles/Moony/blob/v1.0.0/.github/dependabot.yml)).
+  ([`.github/dependabot.yml`](https://github.com/fiiles/Moony/blob/v1.1.0/.github/dependabot.yml)).
 - Releases are built by GitHub Actions from version tags; the in-app updater only installs
   archives signed with the project's updater key. The release process and what is still
   missing (platform code signing) are described in
-  [`docs/playbooks/release.md`](https://github.com/fiiles/Moony/blob/v1.0.0/docs/playbooks/release.md).
-- A third-party license inventory is in [THIRD_PARTY_LICENSES.md](https://github.com/fiiles/Moony/blob/v1.0.0/THIRD_PARTY_LICENSES.md).
+  [`docs/playbooks/release.md`](https://github.com/fiiles/Moony/blob/v1.1.0/docs/playbooks/release.md).
+- A third-party license inventory is in [THIRD_PARTY_LICENSES.md](https://github.com/fiiles/Moony/blob/v1.1.0/THIRD_PARTY_LICENSES.md).

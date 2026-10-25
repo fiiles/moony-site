@@ -1,8 +1,8 @@
 ---
 title: "Changelog"
-sourceUrl: "https://github.com/fiiles/Moony/blob/v1.0.0/CHANGELOG.md"
-tag: "v1.0.0"
-fetchedAt: "2026-10-19T13:56:29.440Z"
+sourceUrl: "https://github.com/fiiles/Moony/blob/v1.1.0/CHANGELOG.md"
+tag: "v1.1.0"
+fetchedAt: "2026-10-25T19:20:23.225Z"
 ---
 
 All notable changes to Moony are documented in this file. The format follows
@@ -10,6 +10,51 @@ All notable changes to Moony are documented in this file. The format follows
 [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
+
+## [1.1.0] - 2026-10-25
+
+### Added
+
+- **Stock splits.** Moony finds stock splits in the Yahoo Finance history of your positions and
+  shows a banner on the stock and in the overview agenda. Nothing changes until you confirm: you
+  can apply a split (the earlier trades are rewritten to today's share count and price), revert
+  it, dismiss it or enter one by hand. The broker CSV import checks the file's prices against the
+  splits Yahoo reports and offers to convert rows dated before a split or keep them as they are.
+- **Linux on ARM.** Every release now also ships ARM64 (aarch64) builds for Linux: an AppImage,
+  a `.deb` and an `.rpm`, updated through the built-in updater like the x86_64 builds.
+
+### Changed
+
+- **Crypto prices come from Yahoo Finance.** Rates, the coin search and the price history of your
+  crypto holdings now come from Yahoo Finance, the same source as stock prices. Your existing
+  holdings are matched to their Yahoo listing by name and ticker the first time prices refresh;
+  where Moony cannot tell which coin is meant (for example two listings with the same name), it
+  never guesses: the crypto page asks you to pick the listing ("Rate source…", "Zdroj kurzu…" in
+  Czech). Every coin whose listing is set or matched this way has its price history rebuilt from
+  its first transaction on Yahoo's daily closes; only a coin that stays unmatched keeps the
+  history already stored.
+- **MCP:** `crypto_transactions_create` takes an optional `yahooSymbol` (the Yahoo symbol of the
+  coin's USD pair, for example `BTC-USD`) instead of `coingeckoId`. A new coin no longer needs an
+  identifier; when the symbol is omitted Moony looks it up from the ticker and name. A client that
+  still sends `coingeckoId` has it ignored.
+- **Cashflow planning moved to Tools.** It now opens from the top of the Tools menu instead of
+  Money. Stock analysis and Stock monitor follow the Stocks switch in Settings, so hiding Stocks
+  hides them too.
+- **"AI assistant" in Settings.** The section that sets up the MCP connection was called
+  Integrations; it is now named for what it does.
+
+### Fixed
+
+- **CSV lines wrapped in quotes.** A CSV that a spreadsheet re-saved with each line packed into one
+  quoted cell imported no rows; the bank and the broker import now split such lines into their
+  columns.
+- **Security updates** of the TLS certificate checks (`rustls-webpki`, `webpki-root-certs`) and a
+  constant-time helper (`ctutils`) used by the app's network and crypto libraries.
+
+### Removed
+
+- **CoinGecko.** The service, its optional API key, the CoinGecko card in Settings → Integrations
+  and the banner that asked for a key are gone; Moony makes no request to CoinGecko any more.
 
 ## [1.0.0] - 2026-10-19
 
@@ -691,7 +736,8 @@ local tool). Everything below is new to the public.
 - The updater only offers versions higher than the installed one, so a machine running an
   older 1.x build from the previous private repository must install 0.9.0 by hand.
 
-[Unreleased]: https://github.com/fiiles/Moony/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/fiiles/Moony/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/fiiles/Moony/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/fiiles/Moony/compare/v0.13.0...v1.0.0
 [0.13.0]: https://github.com/fiiles/Moony/compare/v0.12.2...v0.13.0
 [0.12.2]: https://github.com/fiiles/Moony/compare/v0.12.1...v0.12.2
