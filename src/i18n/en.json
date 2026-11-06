@@ -106,13 +106,13 @@
         "name": "Bank accounts",
         "line": "Statements, rules"
       },
-      "budgets": {
-        "name": "Budgets",
-        "line": "Monthly limits"
-      },
       "cashflow": {
         "name": "Cashflow",
-        "line": "Report and plan"
+        "line": "Report, plan, limits"
+      },
+      "spendingPlans": {
+        "name": "Spending plans",
+        "line": "Holidays, renovations, gifts"
       },
       "stocks": {
         "name": "Stocks and ETFs",
@@ -247,7 +247,7 @@
     },
     "requirements": {
       "title": "System requirements",
-      "mac": "Apple Silicon and Intel Macs. The release does not state a minimum macOS version; current and recent versions are expected to work. If Moony does not open on an older one, [tell us in GitHub Discussions](https://github.com/fiiles/Moony/discussions).",
+      "mac": "macOS 10.15 (Catalina) or newer, on Apple Silicon and Intel Macs.",
       "win": "Windows 10 and 11, 64-bit. Moony needs the Microsoft Edge WebView2 runtime, which is preinstalled on both; the installer fetches it if it is missing.",
       "linux": "{archs}: an AppImage, a `.deb` for Debian and Ubuntu and an `.rpm` for Fedora and openSUSE. Built on Ubuntu 24.04; older distributions may lack a system library."
     },
@@ -372,7 +372,8 @@
       "keysTitle": "Password and recovery key",
       "keys": [
         "**Password.** Opens Moony every time. At least 8 characters; a longer passphrase is better. Moony cannot show it to you.",
-        "**Recovery key.** 24 characters in six groups of four, shown once during setup. It is for emergencies: it lets you choose a new password if you forget this one ([how](recovery)). Save it away from this computer, in a password manager or on paper. **Save to file…** writes a plain text file, `moony-recovery-key.txt`; keep it on an external drive, not next to your data."
+        "**Recovery key.** 24 characters in six groups of four, shown once during setup. It is for emergencies: it lets you choose a new password if you forget this one ([how](recovery)). Save it away from this computer, in a password manager or on paper. **Save to file…** writes a plain text file, `moony-recovery-key.txt`; keep it on an external drive, not next to your data.",
+        "**Touch ID or Windows Hello (optional).** On a Mac or a Windows PC, Moony offers fingerprint unlock once after you unlock with your password (Windows Hello also accepts its PIN). Switch it on or off in **Settings → Security**. The password keeps working, and a forgotten password is still reset only with the recovery key."
       ],
       "wizardTitle": "The setup wizard",
       "wizardIntro": "A welcome you can skip leads into five steps:",
@@ -457,10 +458,10 @@
       "brokerIntro": "Moony does not import trades from a bank statement; use the broker import. Open **Stocks** (group **Investments**) and click **Import CSV**, then choose where the export comes from. Each source shows how to get the file and offers a sample:",
       "brokers": [
         "**XTB:** Account history → Cash operations → Export as CSV, for a period from your first trade. Only purchases and sales of stocks and ETFs are imported, not deposits, dividends or fees.",
-        "**Trading 212:** History → export icon, tick Orders. One export covers at most 12 months, so upload several files; duplicates are recognized.",
-        "**Degiro:** Activity → Transactions → Export → CSV. Not the account statement.",
+        "**Trading 212:** History → export icon, tick Orders. One export covers at most 12 months, so upload several files; duplicates are recognized. Fees are imported too.",
+        "**Degiro:** Activity → Transactions → Export → CSV. Not the account statement. Fees are imported too.",
         "**Interactive Brokers:** a Flex Query (Client Portal → Performance & Reports → Flex Queries) of type Activity with the Trades section and the fields Symbol, ISIN, TradeDate, Buy/Sell, Quantity, TradePrice, CurrencyPrimary, AssetClass and TradeID, as CSV.",
-        "**Your own table or another broker:** download the Moony template or assign the columns yourself (date, buy or sell, symbol or ISIN, quantity, price per share, currency). Moony can remember the mapping for next time. Save Excel files as CSV first."
+        "**Your own table or another broker:** download the Moony template or assign the columns yourself (date, buy or sell, symbol or ISIN, quantity, price per share, currency, and optionally a fee). Moony can remember the mapping for next time. Save Excel files as CSV first."
       ],
       "brokerOutro": "The Review step lists what will be imported and which rows are duplicates, skipped or wrong. It also checks the securities on Yahoo Finance; that lookup sends the file's symbols and ISINs and nothing else ([Privacy](privacy)). To take an import back, use **Undo** under Recent imports or **Import history** on the Stocks page."
     },

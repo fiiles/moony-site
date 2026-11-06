@@ -106,13 +106,13 @@
         "name": "Bankovní účty",
         "line": "Výpisy, pravidla"
       },
-      "budgets": {
-        "name": "Rozpočty",
-        "line": "Měsíční limity"
-      },
       "cashflow": {
         "name": "Cashflow",
-        "line": "Přehled a plán"
+        "line": "Přehled, plán, limity"
+      },
+      "spendingPlans": {
+        "name": "Výdajové plány",
+        "line": "Dovolená, rekonstrukce, dárky"
       },
       "stocks": {
         "name": "Akcie a ETF",
@@ -247,7 +247,7 @@
     },
     "requirements": {
       "title": "Systémové požadavky",
-      "mac": "Macy s Apple Silicon i Intel. Vydání neuvádí minimální verzi macOS; předpokládá se, že funguje na aktuálních i nedávných verzích. Pokud se Moony na starším systému neotevře, [napište nám do diskuzí na GitHubu (EN)](https://github.com/fiiles/Moony/discussions).",
+      "mac": "macOS 10.15 (Catalina) nebo novější, Macy s Apple Silicon i Intel.",
       "win": "Windows 10 a 11, 64bitové. Moony potřebuje běhové prostředí Microsoft Edge WebView2, které je v obou předinstalované; instalátor ho stáhne, pokud chybí.",
       "linux": "{archs}: AppImage, balíček `.deb` pro Debian a Ubuntu a `.rpm` pro Fedoru a openSUSE. Sestaveno na Ubuntu 24.04; na starších distribucích může chybět systémová knihovna."
     },
@@ -372,7 +372,8 @@
       "keysTitle": "Heslo a obnovovací klíč",
       "keys": [
         "**Heslo.** Odemyká Moony pokaždé. Alespoň 8 znaků, delší fráze je lepší. Moony vám ho nedokáže zobrazit.",
-        "**Obnovovací klíč.** 24 znaků v šesti skupinách po čtyřech, zobrazí se jednou při nastavení. Je pro krajní případ: když zapomenete heslo, umožní vám zvolit nové ([jak](recovery)). Uložte si ho mimo tento počítač, do správce hesel nebo na papír. **Uložit do souboru…** vytvoří prostý textový soubor `moony-recovery-key.txt`; uschovejte ho na externím disku, ne vedle svých dat."
+        "**Obnovovací klíč.** 24 znaků v šesti skupinách po čtyřech, zobrazí se jednou při nastavení. Je pro krajní případ: když zapomenete heslo, umožní vám zvolit nové ([jak](recovery)). Uložte si ho mimo tento počítač, do správce hesel nebo na papír. **Uložit do souboru…** vytvoří prostý textový soubor `moony-recovery-key.txt`; uschovejte ho na externím disku, ne vedle svých dat.",
+        "**Touch ID nebo Windows Hello (volitelné).** Na Macu a ve Windows vám Moony jednou po odemknutí heslem nabídne odemykání otiskem prstu (Windows Hello přijme i svůj PIN). Zapnete i vypnete ho v **Nastavení → Zabezpečení**. Heslo dál funguje a zapomenuté heslo dál obnovíte jen obnovovacím klíčem."
       ],
       "wizardTitle": "Průvodce nastavením",
       "wizardIntro": "Přivítání, které můžete přeskočit, vede do pěti kroků:",
@@ -457,10 +458,10 @@
       "brokerIntro": "Obchody z bankovního výpisu se neimportují; použijte import z brokera. Otevřete **Akcie** (skupina **Investice**), klikněte na **Importovat CSV** a zvolte, odkud export pochází. Každý zdroj ukáže, jak soubor získat, a nabídne vzorek:",
       "brokers": [
         "**XTB:** Historie účtu → Peněžní operace → Exportovat jako CSV, za období od prvního obchodu. Importují se jen nákupy a prodeje akcií a ETF, ne vklady, dividendy ani poplatky.",
-        "**Trading 212:** Historie → ikona exportu, zaškrtněte Objednávky. Jeden export pokryje nejvýš 12 měsíců, nahrajte tedy více souborů; duplicity se poznají.",
-        "**Degiro:** Aktivita → Transakce → Export → CSV. Ne výpis z účtu.",
+        "**Trading 212:** Historie → ikona exportu, zaškrtněte Objednávky. Jeden export pokryje nejvýš 12 měsíců, nahrajte tedy více souborů; duplicity se poznají. Poplatky se importují také.",
+        "**Degiro:** Aktivita → Transakce → Export → CSV. Ne výpis z účtu. Poplatky se importují také.",
         "**Interactive Brokers:** Flex Query (Client Portal → Performance & Reports → Flex Queries) typu Activity se sekcí Trades a poli Symbol, ISIN, TradeDate, Buy/Sell, Quantity, TradePrice, CurrencyPrimary, AssetClass a TradeID, ve formátu CSV.",
-        "**Vlastní tabulka nebo jiný broker:** stáhněte si vzor Moony, nebo sloupce přiřaďte sami (datum, nákup nebo prodej, symbol nebo ISIN, počet kusů, cena za kus, měna). Moony si mapování může pro příště zapamatovat. Soubory z Excelu nejdřív uložte jako CSV."
+        "**Vlastní tabulka nebo jiný broker:** stáhněte si vzor Moony, nebo sloupce přiřaďte sami (datum, nákup nebo prodej, symbol nebo ISIN, počet kusů, cena za kus, měna a případně poplatek). Moony si mapování může pro příště zapamatovat. Soubory z Excelu nejdřív uložte jako CSV."
       ],
       "brokerOutro": "Krok Kontrola vypíše, co se naimportuje a které řádky jsou duplicity, přeskočené nebo chybné. Ověří také cenné papíry na Yahoo Finance; toto vyhledání posílá symboly a ISIN ze souboru a nic jiného ([Soukromí (EN)](privacy)). Import vrátíte tlačítkem **Vrátit** v části Poslední importy nebo přes **Historii importů** na stránce Akcie."
     },

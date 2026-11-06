@@ -1,8 +1,8 @@
 ---
 title: "Changelog"
-sourceUrl: "https://github.com/fiiles/Moony/blob/v1.1.0/CHANGELOG.md"
-tag: "v1.1.0"
-fetchedAt: "2026-10-25T19:20:23.225Z"
+sourceUrl: "https://github.com/fiiles/Moony/blob/v1.3.0/CHANGELOG.md"
+tag: "v1.3.0"
+fetchedAt: "2026-11-06T20:27:13.197Z"
 ---
 
 All notable changes to Moony are documented in this file. The format follows
@@ -10,6 +10,87 @@ All notable changes to Moony are documented in this file. The format follows
 [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
+
+## [1.3.0] - 2026-11-06
+
+### Added
+
+- **Stock dividends.** Moony loads the dividends of your stocks from Yahoo Finance and counts each
+  payout as the dividend per share times the shares you held the day before its ex-date, gross
+  (before any withholding tax). A position's page lists its dividends with their source. You can
+  record a dividend by hand only for a ticker Yahoo Finance has no dividends for.
+- **Trading fees.** Buy, sell, add and edit forms have an optional fee, and the stock import maps
+  a fee column (and a fee currency column; Degiro and Trading 212 are pre-filled). A fee in
+  another currency is converted at the trade date.
+- **Explanations of both returns.** An info button next to the time-weighted and the
+  money-weighted return shows a short summary on hover and, on click, what the figure shows, how
+  it is computed and what to keep in mind.
+- **Your trades on the watched stock's chart.** On a Stock Monitor detail, the "Buys and sells"
+  chip draws each buy (▲) and sell (▽) of the position on the price line at its date, with
+  quantity, price and total in the tooltip.
+- **MCP:** a new `stock_dividends` tool lists the dividends of your positions, and
+  `investment_detail` includes the position's dividends.
+
+### Changed
+
+- **Stock performance follows the GIPS method.** The time-weighted return now counts positions
+  you have sold for the days you held them, values each trade at its own price plus fee instead of
+  the day's close, and includes gross dividends. Sold positions appear in the analysis with a
+  value of 0.
+- **The money-weighted return is an IRR.** It shows the rate for the chosen period, with the
+  yearly rate under it for a period longer than a year (the same way as the time-weighted return),
+  and the gap between the two compares the same basis.
+- **The change of value** on the analysis page gains a "dividends paid" line.
+- **Realized gain** of a stock position now includes the gross dividends it has received, in
+  the app and in the MCP tools.
+- **Quality notes** under the performance figures name tickers valued at trade prices (no
+  market price), tickers whose dividends are not loaded yet, and tickers with a trade priced more
+  than 50 % away from that day's close (often a price in pence recorded as pounds, or in the wrong
+  currency), which can distort the return.
+
+## [1.2.0] - 2026-10-29
+
+### Added
+
+- **Spending plans.** A yearly plan for one purpose (a holiday, a renovation, gifts) with its own
+  planned amount, currency, icon and color, under Money → Spending plans. Tag payments from any
+  account to a plan in the account ledger, one by one or several at once (with undo), or pick
+  them in the plan's "Add payments" dialog. A plan sits next to the payment's category and never
+  changes it. The overview lists every plan of the year by risk with what is spent and left, and
+  shows where the plan money goes; a plan's detail shows spending by month and by category
+  against the planned amount. Plans can be closed and reopened, and next year's plans can be
+  taken over from this year's. What is left at the end of a year is not carried over.
+- **Quarterly cashflow planning.** Cashflow planning shows quarterly totals next to monthly and
+  yearly ones, and a planned item can recur every quarter.
+- **Eight new category icons**, and one icon and color picker shared by categories and plans.
+- **Touch ID and Windows Hello unlock.** On a Mac or a Windows PC you can open Moony with your
+  fingerprint instead of typing the password, at start and after auto-lock. Moony offers it once
+  after a password unlock and never asks again; the switch lives in Settings → Security. The
+  password always keeps working. The key is kept in a file that only this computer's Secure
+  Enclave (Mac) or Windows Hello can open, and it is not part of backups or exports. Windows Hello
+  also accepts your Hello PIN. A changed fingerprint set on a Mac switches Touch ID unlock off
+  until you turn it on again. Linux has no biometric unlock.
+
+### Changed
+
+- **Budgets are part of Cashflow.** The separate Budgets page is gone: the "Expenses by
+  category" card in Cashflow shows each category's limit for the period with spent, usage and
+  what is left, filters for over-limit and categories without a limit, and "Manage limits" and
+  category management in its head. Old links to the Budgets page open Cashflow. The budget export
+  was removed with the page.
+- **MCP:** `cashflow_report` accepts `quarterly` as its `viewType`.
+- **macOS 10.15 or newer is required.** Touch ID unlock uses system features that older macOS
+  versions lack, so macOS 10.13 and 10.14 are no longer supported.
+- While Moony is unlocked on macOS and Windows, the encryption key now stays in memory for the whole
+  session (the open database already needed it there), so switching on biometric unlock does not
+  ask for the password again.
+
+### Fixed
+
+- **Password change and recovery** write the new recovery key before the new password, so an
+  interruption between the two (a crash, a dead battery) can no longer leave a new password next
+  to a recovery key that opens nothing.
+- **Partly selected checkboxes** show a dash instead of a check mark.
 
 ## [1.1.0] - 2026-10-25
 
@@ -736,7 +817,9 @@ local tool). Everything below is new to the public.
 - The updater only offers versions higher than the installed one, so a machine running an
   older 1.x build from the previous private repository must install 0.9.0 by hand.
 
-[Unreleased]: https://github.com/fiiles/Moony/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/fiiles/Moony/compare/v1.3.0...HEAD
+[1.3.0]: https://github.com/fiiles/Moony/compare/v1.2.0...v1.3.0
+[1.2.0]: https://github.com/fiiles/Moony/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/fiiles/Moony/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/fiiles/Moony/compare/v0.13.0...v1.0.0
 [0.13.0]: https://github.com/fiiles/Moony/compare/v0.12.2...v0.13.0
