@@ -23,13 +23,16 @@ const HEADERS = `/*
 `;
 const REDIRECTS = 'https://www.example.test/* https://example.test/:splat 301\n';
 
+/** The language menu every page carries: one link per registry locale, in registry order. */
+const langMenu = (base) => `<details class="lang-menu"><summary>EN</summary>${registry.map((l) => `<a data-lang-choice="${l.code}" href="#">${l.native}</a>`).join('')}</details>`;
+
 /** A page that follows every rule. `extra` goes into the head, `body` replaces the default body. */
 function page({ base, locale = 'en', path = '', englishOnly = false, extra = '', body, lang = locale, withMenu = true }) {
   const url = (p) => `https://example.test${base}${p}`;
   const own = url(locale === 'en' ? path : `${locale}/${path}`);
   const languages = englishOnly ? [registry[0]] : registry;
   const alternates = [...languages.map((l) => `<link rel="alternate" hreflang="${l.htmlLang}" href="${url(l.code === 'en' ? path : `${l.code}/${path}`)}">`), `<link rel="alternate" hreflang="x-default" href="${url(path)}">`].join('');
-  const menu = `<details class="lang-menu"><summary>EN</summary>${registry.map((l) => `<a data-lang-choice="${l.code}" href="#">${l.native}</a>`).join('')}</details>`;
+  const menu = langMenu(base);
   return `<!doctype html><html${lang === null ? '' : ` lang="${lang === locale ? htmlLangOf(locale) : lang}"`}><head><meta charset="utf-8"><title>Page</title>
 <link rel="canonical" href="${own}">${alternates}
 <link rel="stylesheet" href="${base}styles/site.css"><script type="application/ld+json">{"@context":"https://schema.org","url":"https://github.com/x/y"}</script>
@@ -51,7 +54,7 @@ function site(base = '/') {
     for (const path of LOCALE_PAGES) put(`${code}/${path}index.html`, page({ base, locale: code, path, body: path === 'download/' ? downloadBody : '<h1>Page</h1>' }));
   }
   put('privacy/index.html', page({ base, path: 'privacy/', englishOnly: true, body: '<h1>Privacy</h1>' }));
-  put('404.html', `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex"><title>404</title></head><body><h1>Gone</h1></body></html>`);
+  put('404.html', `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex"><title>404</title></head><body>${langMenu(base)}<h1>Gone</h1></body></html>`);
   put('styles/site.css', '@font-face { src: url(../fonts/f.woff2) format("woff2"); } .a { background: url(data:image/png;base64,AAAA); }');
   put('fonts/f.woff2', 'font');
   put('js/os.js', '(function () { document.title = "x"; })();');
@@ -117,6 +120,10 @@ test('a good site under a base path passes, and robots.txt names the base path',
 
 test('language-menu fires on a page without the menu', () => {
   assertFires('language-menu', (s) => s.put('download/index.html', page({ base: s.base, path: 'download/', body: downloadPageBody(s.base), withMenu: false })));
+});
+
+test('language-menu fires on a 404 page without the menu', () => {
+  assertFires('language-menu', (s) => s.put('404.html', '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex"><title>404</title></head><body><h1>Gone</h1></body></html>'));
 });
 
 test('language-menu fires on a menu that misses a language or breaks the order', () => {
@@ -252,8 +259,8 @@ test('canonical-hreflang fires on a normal page that carries only en and x-defau
 });
 
 test('canonical-hreflang fires when 404.html carries a canonical link or lacks noindex, or is missing', () => {
-  assertFires('canonical-hreflang', (s) => s.put('404.html', '<!doctype html><html lang="en"><head><link rel="canonical" href="https://example.test/"><meta name="robots" content="noindex"></head><body><h1>x</h1></body></html>'));
-  assertFires('canonical-hreflang', (s) => s.put('404.html', '<!doctype html><html lang="en"><head><title>404</title></head><body><h1>x</h1></body></html>'));
+  assertFires('canonical-hreflang', (s) => s.put('404.html', `<!doctype html><html lang="en"><head><link rel="canonical" href="https://example.test/"><meta name="robots" content="noindex"></head><body>${langMenu(s.base)}<h1>x</h1></body></html>`));
+  assertFires('canonical-hreflang', (s) => s.put('404.html', `<!doctype html><html lang="en"><head><title>404</title></head><body>${langMenu(s.base)}<h1>x</h1></body></html>`));
   assertFires('canonical-hreflang', (s) => rmSync(join(s.dist, '404.html')));
 });
 

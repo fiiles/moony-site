@@ -27,7 +27,7 @@ const current = localeInfo(locale);
     </nav>
     <div class="nav-right">
       <details class="lang-menu">
-        <summary title={t(locale, 'nav.language')} lang={current.htmlLang}>
+        <summary title={t(locale, 'nav.language')} aria-label={`${t(locale, 'nav.language')}: ${current.native}`}>
           <svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg>
           <span class="lang-menu__name">{current.native}</span><span class="lang-menu__code">{current.code.toUpperCase()}</span>
           <svg class="ic lang-menu__chevron" aria-hidden="true"><use href="#i-chevron"/></svg>

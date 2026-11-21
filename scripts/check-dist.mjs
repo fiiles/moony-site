@@ -211,11 +211,11 @@ check('canonical-hreflang', () => {
 });
 
 check('language-menu', () => {
-  // Every page except the bare 404 page has one language menu with a link per registry locale, in registry order.
+  // Every page, the 404 page included, has one language menu with a link per registry locale, in registry order.
   const problems = [];
   const expected = registry.map((l) => l.code);
   const MENU = /<details\b[^>]*\bclass\s*=\s*["'][^"']*\blang-menu\b[^"']*["'][^>]*>([\s\S]*?)<\/details\s*>/gi;
-  const checked = pages.filter((p) => p.rel !== '404.html');
+  const checked = pages;
   for (const p of checked) {
     const menus = [...p.html.matchAll(MENU)];
     if (menus.length !== 1) { problems.push(`${p.rel}: ${menus.length} details.lang-menu elements, expected 1`); continue; }
