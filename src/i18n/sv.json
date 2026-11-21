@@ -164,7 +164,7 @@
     "cards": {
       "requests": {
         "title": "Ingen spårning",
-        "text": "Ingen analys och ingen användningsstatistik. Kurser, växelkurser och uppdateringar hämtas eller kontrolleras online. Kurstjänsterna ser vilka symboler du följer, inte dina saldon."
+        "text": "Ingen analys och ingen användningsstatistik. Kurser, växelkurser och uppdateringar hämtas eller kontrolleras online, och synkroniseringen, om du ställer in den, pratar med din egen synkroniseringsserver. Kurstjänsterna ser vilka symboler du följer, inte dina saldon."
       },
       "disk": {
         "title": "Krypterade data",
@@ -258,7 +258,7 @@
         "title": "Android",
         "text": "Kommer snart."
       },
-      "sync": "Synkronisering mellan dina enheter är experimentell och går via en server som du driver själv. Servern och installationsguiden finns på [GitHub (EN)](syncRepo)."
+      "sync": "Synkronisering mellan dina enheter är experimentell och går via en server som du själv, eller någon du litar på, driver. Servern och installationsguiden finns på [GitHub (EN)](syncRepo)."
     },
     "install": {
       "title": "Installation och första start",
@@ -395,7 +395,7 @@
       },
       "cloud": {
         "q": "Vad är Moony Cloud?",
-        "a": "En synkroniseringsserver som drivs av projektet, för dem som hellre slipper driva en egen. Den är inte tillgänglig än. I dag fungerar synkroniseringen med en server som du driver själv."
+        "a": "En synkroniseringsserver som drivs av projektet, för dem som hellre slipper driva en egen. Den är inte tillgänglig än. I dag fungerar synkroniseringen med en server som du själv, eller någon du litar på, driver."
       },
       "bank": {
         "q": "Kopplas Moony till min bank?",
@@ -478,7 +478,7 @@
     },
     "recovery": {
       "title": "Glömt lösenord och återställningsnyckel",
-      "warning": "**Det finns ingen bakdörr.** Moony har inget konto och ingen server, så ingen kan återställa ditt lösenord åt dig, inte heller upphovspersonen. Lösenordet och återställningsnyckeln är två skilda vägar in till samma krypterade data. Om du inte har någon av dem går ingenting att öppna: varken dina poster eller dina bifogade foton och dokument.",
+      "warning": "**Det finns ingen bakdörr.** Moony har inget konto, och ingen annan håller en nyckel till dina data, så ingen kan återställa ditt lösenord åt dig, inte heller upphovspersonen. Lösenordet och återställningsnyckeln är två skilda vägar in till samma krypterade data. Om du inte har någon av dem går ingenting på den här enheten att öppna: varken dina poster eller dina bifogade foton och dokument. Om du använder synkronisering är återställningskitet en separat väg till de synkroniserade data.",
       "tableHead": [
         "Om du …",
         "Då …"
@@ -561,7 +561,7 @@
       "make": [
         "Öppna **Inställningar → Data och säkerhetskopior** och klicka på **Säkerhetskopiera nu**. Välj var ZIP-filen ska sparas (Moony föreslår `moony-backup-YYYY-MM-DD.zip`).",
         "Den innehåller krypterade kopior av dina poster och bilagor plus nyckelfilerna `salt`, `key.enc` och `recovery.enc`, och förblir krypterad: bara det lösenord som gällde när den gjordes, eller återställningsnyckeln från den tiden, öppnar den.",
-        "Förvara en kopia på ett annat ställe än den här datorn, på en extern disk eller i din egen molnlagring. Moony laddar aldrig upp något; Översikten påminner dig när din senaste säkerhetskopia är gammal. Säkerhetskopiera före en uppdatering och efter en stor import."
+        "Förvara en kopia på ett annat ställe än den här datorn, på en extern disk eller i din egen molnlagring. Moony laddar inte upp dina säkerhetskopior; Översikten påminner dig när din senaste säkerhetskopia är gammal. Säkerhetskopiera före en uppdatering och efter en stor import."
       ],
       "restoreTitle": "Återställ en säkerhetskopia",
       "restoreIntro": "Börja i **Inställningar → Data och säkerhetskopior → Återställ från säkerhetskopia…**, på låsskärmen (**Har du en säkerhetskopia? Återställ från säkerhetskopia…**) eller i det första steget i installationsguiden (**Återställ från en säkerhetskopia**). Sedan:",
@@ -622,7 +622,7 @@
       "uninstall": [
         "Avinstallationen tar bort appen men som standard inte dina data, som ligger kvar i datamappen. macOS: avsluta Moony och dra appen till papperskorgen. Windows: avinstallera den under Inställningar → Appar. Linux: ta bort AppImage-filen eller paketet `.deb` eller `.rpm` med pakethanteraren.",
         "Om du vill ta bort även dina data gör du det före avinstallationen: **Inställningar → Konto → Radera data…**, och skriv sedan `RADERA`. Det tar bort databaserna, nyckelfilerna och bilagorna och går inte att ångra, så gör en säkerhetskopia först om du kan tänkas vilja ha tillbaka dem.",
-        "Det lämnar kvar mappar `pre-restore-<time>`, säkerhetskopior och exporter som du sparat samt loggarna; ta bort dem för hand, eller ta bort hela datamappen. Det finns inget att ta bort på någon server, eftersom Moony inte har någon."
+        "Det lämnar kvar mappar `pre-restore-<time>`, säkerhetskopior och exporter som du sparat samt loggarna; ta bort dem för hand, eller ta bort hela datamappen. Om du använder synkronisering finns också en krypterad kopia av dina data på din synkroniseringsserver. Ta bort den under **Inställningar → Synkronisering** (**Radera synkroniserade data på servern**) innan du tar bort lokala data. Det här raderar de synkroniserade uppgifterna på synkroniseringsservern för alla enheter. De lokala data på varje enhet finns kvar."
       ]
     },
     "ai": {
