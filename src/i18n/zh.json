@@ -2,7 +2,7 @@
   "site": {
     "name": "Moony",
     "tagline": "您的财务，尽在一处。",
-    "description": "Moony is a free app for keeping track of your accounts, investments and loans. Your financial data stays on your own devices. For macOS, Windows, Linux and iPhone."
+    "description": "Moony 是一款免费应用，帮您掌握账户、投资和贷款的情况。您的财务数据保留在您自己的设备上。支持 macOS、Windows、Linux 和 iPhone。"
   },
   "nav": {
     "label": "主导航",
@@ -16,7 +16,7 @@
     "language": "语言"
   },
   "footer": {
-    "blurb": "A clearer picture of your finances. On your own devices.",
+    "blurb": "让财务一目了然，数据留在您自己的设备上。",
     "product": "产品",
     "download": "下载",
     "help": "帮助",
@@ -39,13 +39,13 @@
     "provenance": "本页显示的是 Moony 代码仓库中的文件，对应下方标签所发布的版本；仅调整了标题和相对链接。来源是"
   },
   "hero": {
-    "eyebrow": "Personal finance for your computer and iPhone",
-    "lead": "Keep track of your accounts, investments and loans. Moony keeps your financial data on your own devices.",
+    "eyebrow": "适用于电脑和 iPhone 的个人理财应用",
+    "lead": "掌握您的账户、投资和贷款。Moony 把您的财务数据保存在您自己的设备上。",
     "ctaDefault": "下载",
     "ctaMac": "下载 macOS 版",
     "ctaWin": "下载 Windows 版",
     "ctaLinux": "下载 Linux 版",
-    "ctaIos": "Download on the App Store",
+    "ctaIos": "在 App Store 下载",
     "noteStrong": "免费且开源",
     "noteRest": "版本 {version}",
     "caption": "真实的应用，使用示例数据",
@@ -56,7 +56,7 @@
       "offline": "离线可用"
     },
     "ctaPreview": "进去看看",
-    "ctaPhone": "Also for iPhone"
+    "ctaPhone": "也适用于 iPhone"
   },
   "features": {
     "overview": {
@@ -103,19 +103,19 @@
     }
   },
   "phone": {
-    "title": "Moony on your iPhone.",
-    "text": "The iPhone app works on its own, with its own encrypted data. Check your net worth, import a statement from the share sheet and photograph a contract, wherever you are.",
+    "title": "Moony 就在您的 iPhone 上。",
+    "text": "iPhone 版独立运行，拥有自己的加密数据。无论身在何处，都可以查看净资产、从共享菜单导入对账单，以及为合同拍照。",
     "bullets": [
-      "Net worth, cashflow and budgets",
-      "Statement import from the share sheet",
-      "Unlock with Face ID"
+      "净资产、现金流和预算",
+      "从共享菜单导入对账单",
+      "使用 Face ID 解锁"
     ],
-    "cta": "Download on the App Store",
-    "note": "Free. For iPhone with iOS 15 or newer.",
-    "transfer": "Already use Moony on a computer? Restore a backup on the phone, or keep both in step with sync.",
+    "cta": "在 App Store 下载",
+    "note": "免费。适用于 iOS 15 或更高版本的 iPhone。",
+    "transfer": "已经在电脑上使用 Moony？可以在手机上恢复备份，也可以通过同步让两者保持一致。",
     "android": "Android",
-    "soon": "Coming soon",
-    "alt": "The overview of a sample profile in Moony on an iPhone"
+    "soon": "即将推出",
+    "alt": "iPhone 上 Moony 中示例资料的概览"
   },
   "tracks": {
     "title": "还能记录什么？",
@@ -168,7 +168,7 @@
       },
       "disk": {
         "title": "数据加密",
-        "text": "Records and attachments are encrypted on your device. Exported files and saved copies are unencrypted, so keep them somewhere safe."
+        "text": "记录和附件在您的设备上经过加密。导出的文件和另存的副本不加密，请妥善保管。"
       },
       "keys": {
         "title": "备份由您掌控",
@@ -178,22 +178,22 @@
     "link": "阅读隐私详情 →"
   },
   "sync": {
-    "title": "Keep your devices in step.",
-    "badge": "Experimental",
-    "text": "Sync keeps the same data on your computers and your iPhone. It is optional and stays off until you set it up. Your data is encrypted on your device before it leaves, and the server that passes it on has no key to read it.",
+    "title": "让您的设备保持一致。",
+    "badge": "实验性",
+    "text": "同步让您的电脑和 iPhone 上的数据保持一致。它是可选的，在您设置之前一直处于关闭状态。数据在离开您的设备之前就已加密，负责转发数据的服务器没有可以读取它的密钥。",
     "own": {
-      "title": "Your own server",
-      "text": "Sync runs through a small server that you, or someone you trust, run: at home, on a NAS or on a rented machine. It is open source.",
-      "link": "Moony sync server on GitHub →"
+      "title": "自己的服务器",
+      "text": "同步通过一台小型服务器进行，由您或您信任的人运行：放在家里、NAS 上或租用的机器上。它是开源的。",
+      "link": "GitHub 上的 Moony 同步服务器 →"
     },
     "cloud": {
       "title": "Moony Cloud",
-      "badge": "Coming soon",
-      "text": "A hosted server run by the project, for people who would rather not run their own."
+      "badge": "即将推出",
+      "text": "由项目方运行的托管服务器，适合不想自己运行服务器的人。"
     },
-    "note": "Sync is new and experimental. Keep making backups: sync carries every change, deletions included, to your other devices.",
-    "seen": "The server stores only encrypted data. Whoever runs it can see when and how much you sync, not what.",
-    "link": "How to set it up →"
+    "note": "同步是新功能，仍处于实验阶段。请继续备份：同步会把每一项更改（包括删除）带到您的其他设备上。",
+    "seen": "服务器只存储加密数据。运行服务器的人能看到您何时同步、同步了多少，但看不到内容。",
+    "link": "如何设置 →"
   },
   "assistant": {
     "title": "把 AI 助手连接到您的财务数据",
@@ -236,29 +236,29 @@
       "archsArm": "x86_64 和 ARM64"
     },
     "all": "选择其他系统 →",
-    "intro": "Free for macOS, Windows, Linux and iPhone. No sign-up or trial period.",
+    "intro": "免费，适用于 macOS、Windows、Linux 和 iPhone。无需注册，没有试用期。",
     "notice": "首次启动时，Windows 可能会显示安全警告，因为安装程序尚未签名。下载前请先阅读安装说明。"
   },
   "downloadPage": {
     "metaTitle": "下载适用于 macOS、Windows 和 Linux 的 Moony {version}",
-    "description": "Moony {version} installers for macOS, Windows and Linux, where to get the iPhone app, the first-launch steps for each system, system requirements and how updates work.",
+    "description": "Moony {version} 的 macOS、Windows 和 Linux 安装程序，获取 iPhone 版的方式，各系统的首次启动步骤，系统要求以及更新方式。",
     "title": "下载 Moony {version}",
     "released": "发布于 {date}",
     "allReleases": "所有版本 →",
     "filesTitle": "按操作系统划分的安装程序",
     "macHint": "Apple 芯片指 M1 或更新的芯片。不确定自己用的是哪种 Mac？打开苹果菜单 → **关于本机**：“芯片”或“处理器”一行显示的是 Apple M… 还是 Intel。",
     "phone": {
-      "title": "iPhone and Android",
+      "title": "iPhone 和 Android",
       "iphone": {
         "title": "iPhone",
-        "text": "Free on the App Store. Needs iOS 15 or newer.",
-        "cta": "Download on the App Store"
+        "text": "在 App Store 免费下载。需要 iOS 15 或更高版本。",
+        "cta": "在 App Store 下载"
       },
       "android": {
         "title": "Android",
-        "text": "Coming soon."
+        "text": "即将推出。"
       },
-      "sync": "Sync between your devices is experimental and runs through a server you run yourself. The server and its setup guide are on [GitHub (EN)](syncRepo)."
+      "sync": "设备之间的同步处于实验阶段，通过您自己运行的服务器进行。服务器及其设置指南见 [GitHub (EN)](syncRepo)。"
     },
     "install": {
       "title": "安装与首次启动",
@@ -299,7 +299,7 @@
       "mac": "macOS 10.15（Catalina） 或更新版本，支持 Apple 芯片和 Intel Mac。",
       "win": "Windows 10 和 11，64 位。Moony 需要 Microsoft Edge WebView2 运行时，两个系统都已预装；如果缺失，安装程序会自动获取。",
       "linux": "{archs}：提供 AppImage、适用于 Debian 和 Ubuntu 的 `.deb`，以及适用于 Fedora 和 openSUSE 的 `.rpm`。在 Ubuntu 24.04 上构建；较旧的发行版可能缺少某个系统库。",
-      "iphone": "iPhone with iOS 15.0 or newer."
+      "iphone": "iOS 15.0 或更高版本的 iPhone。"
     },
     "intro": "请选择您的系统。安装后即可设置 Moony，无需在线账户。",
     "recommended": "您的系统",
@@ -329,7 +329,7 @@
       },
       "downloads": {
         "title": "下载",
-        "text": "The download links lead to releases on GitHub, which serves the files. The iPhone app link leads to Apple’s App Store."
+        "text": "下载链接指向 GitHub 上的发布页，文件由 GitHub 提供。iPhone 版的链接指向 Apple 的 App Store。"
       },
       "operator": {
         "title": "运营者与联系方式",
@@ -349,11 +349,11 @@
       },
       "help": {
         "title": "查找答案",
-        "text": "The [Help](help) covers the first start, [a forgotten password](recovery), [backups and moving to another computer](backup), [importing statements](import) and [sync](sync)."
+        "text": "[帮助](help)涵盖首次启动、[忘记密码](recovery)、[备份和迁移到另一台电脑](backup)、[导入对账单](import)以及[同步](sync)。"
       },
       "bug": {
         "title": "报告错误",
-        "text": "Bugs are tracked in the open on GitHub: [open an issue (EN)](issues). Leave out anything personal; a screenshot with sample data is enough. The sync server has [its own tracker (EN)](syncIssues)."
+        "text": "错误在 GitHub 上公开跟踪：[提交 issue (EN)](issues)。请勿包含任何个人信息；附上使用示例数据的截图即可。同步服务器有[自己的跟踪页面(EN)](syncIssues)。"
       },
       "security": {
         "title": "报告安全问题",
@@ -379,7 +379,7 @@
       },
       "data": {
         "q": "Moony 会收集我的数据吗？",
-        "a": "No: the app has no analytics, crash reports or usage statistics. Its requests are for prices and exchange rates, the update check on a computer and, if you set up sync, your own sync server. All are listed on the Privacy page."
+        "a": "没有：应用没有分析工具、崩溃报告或使用统计。它发出的请求只有价格和汇率、电脑版的更新检查，以及（如果您设置了同步）连接您自己的同步服务器。所有请求都列在隐私页面上。"
       },
       "password": {
         "q": "忘记密码怎么办？",
@@ -387,15 +387,15 @@
       },
       "devices": {
         "q": "可以在手机或另一台电脑上使用 Moony 吗？",
-        "a": "Yes. Moony runs on macOS, Windows, Linux and iPhone, and each device works on its own. To have the same data everywhere, set up sync, which is experimental, or move your data with a backup file. An Android app is coming soon."
+        "a": "可以。Moony 可在 macOS、Windows、Linux 和 iPhone 上运行，每台设备都独立工作。若想在各处拥有相同的数据，可以设置同步（目前为实验性功能），或用备份文件迁移数据。Android 版即将推出。"
       },
       "sync": {
-        "q": "How does sync work, and who can read my data?",
-        "a": "Sync is optional and experimental. Your devices encrypt everything before sending it to a sync server that you or someone you trust runs; the server has no key and stores only encrypted data. Whoever runs it can see when and how much you sync. Keep making backups."
+        "q": "同步是如何工作的？谁能读取我的数据？",
+        "a": "同步是可选的，目前为实验性功能。您的设备会先加密所有内容，再发送到由您或您信任的人运行的同步服务器；服务器没有密钥，只存储加密数据。运行服务器的人能看到您何时同步、同步了多少。请继续备份。"
       },
       "cloud": {
-        "q": "What is Moony Cloud?",
-        "a": "A hosted sync server run by the project, for people who would rather not run their own. It is not available yet. Today sync works with a server you run yourself."
+        "q": "什么是 Moony Cloud？",
+        "a": "由项目方运行的托管同步服务器，适合不想自己运行服务器的人。目前尚未推出。现在，同步通过您自己运行的服务器进行。"
       },
       "bank": {
         "q": "它会连接我的银行吗？",
@@ -578,25 +578,25 @@
         "在向导的第一步选择**从备份恢复**，选择 ZIP 并确认。",
         "使用创建备份时的密码解锁。"
       ],
-      "moveOutro": "A backup is a one-time copy: the old and the new computer drift apart as soon as you use both, and changes made after the backup are not in it. To keep several devices in step, use [sync](sync), which is experimental. Otherwise, when the new computer works, remove the data from the old one ([how](uninstall)).",
+      "moveOutro": "备份只是一次性的副本：只要您同时使用新旧两台电脑，两边的数据就会逐渐不一致，备份之后所做的更改也不会包含在内。若要让多台设备保持一致，请使用[同步](sync)（目前为实验性功能）。否则，等新电脑可以正常使用后，请从旧电脑上移除数据（[方法](uninstall)）。",
       "notBackup": "同一页面上的**导出 JSON**会把每张表写入一个不含附件的未加密 JSON 文件。它不是备份；请像对待银行账单一样对待它。**检查数据库**会检查您数据库的完整性。"
     },
     "phone": {
-      "title": "Moony on the iPhone",
-      "text": "The iPhone app is an app of its own: it keeps its own encrypted data and needs no computer. Get it from the [App Store](appStore). To start with the data from your computer, save a backup there and restore it on the phone (**Settings → Backup and transfer**), or connect the phone to [sync](sync).",
-      "differences": "The phone app has no AI integration and no update check of its own; updates come through the App Store."
+      "title": "iPhone 上的 Moony",
+      "text": "iPhone 版是一款独立的应用：它保存自己的加密数据，不需要电脑。请从 [App Store](appStore) 获取。若要从电脑上的数据开始，请在电脑上保存一份备份，然后在手机上恢复（**设置 → 备份与迁移**），或把手机连接到[同步](sync)。",
+      "differences": "手机版没有 AI 集成，也没有自己的更新检查；更新通过 App Store 提供。"
     },
     "sync": {
-      "title": "Sync between devices (experimental)",
-      "intro": "Sync keeps the same data on your computers and your iPhone. It is optional, off until you set it up, and still experimental: make a backup before you start and keep making them.",
+      "title": "设备间同步（实验性）",
+      "intro": "同步让您的电脑和 iPhone 上的数据保持一致。它是可选的，在您设置之前一直处于关闭状态，而且仍是实验性功能：开始之前请先做一份备份，并持续备份。",
       "steps": [
-        "You need a sync server. Run your own with the [Moony sync server (EN)](syncRepo), or ask whoever runs one for you for a **connection code**.",
-        "On the first device open **Settings → Sync**, start the setup, choose **Own server** and enter the connection code.",
-        "Save the **recovery kit** Moony shows you, away from your devices. If you lose every device at once, it is the only way back to your synced data.",
-        "To add another device, choose **Add a device** on one that already syncs and follow the steps on the new one under **Settings → Sync**. A device that joins takes over the synced data; Moony first saves a backup of what it had."
+        "您需要一台同步服务器。可以用 [Moony 同步服务器(EN)](syncRepo)自己运行一台，也可以向为您运行服务器的人索取**连接码**。",
+        "在第一台设备上打开**设置 → 同步**，开始设置，选择**自己的服务器**，然后输入连接码。",
+        "请把 Moony 显示的**恢复包**保存在您的设备之外。如果您同时丢失所有设备，它是找回已同步数据的唯一途径。",
+        "若要添加另一台设备，请在已经同步的设备上选择**添加设备**，然后在新设备的**设置 → 同步**中按步骤操作。加入的设备会接管已同步的数据；Moony 会先保存它原有数据的备份。"
       ],
-      "seen": "The server stores only encrypted data and has no key. Whoever runs it can see when and how much you sync. What is sent and stored is listed on the [Privacy page (EN)](privacy).",
-      "cloud": "Moony Cloud, a hosted server run by the project, is not available yet."
+      "seen": "服务器只存储加密数据，并且没有密钥。运行服务器的人能看到您何时同步、同步了多少。发送和存储的内容列在[隐私页面(EN)](privacy)上。",
+      "cloud": "Moony Cloud 是由项目方运行的托管服务器，目前尚未推出。"
     },
     "updates": {
       "title": "更新、数据文件夹和卸载",
