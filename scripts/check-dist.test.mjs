@@ -76,8 +76,10 @@ function site(base = '/') {
 }
 
 function run(s, { base = s.base, origin = 'https://example.test', env = {} } = {}) {
+  // The release-day switch is not inherited: a developer's shell may have MOONY_PRERELEASE set, and a default run must behave like the plain build.
+  const { MOONY_PRERELEASE: _inherited, ...inherited } = process.env;
   const result = spawnSync(process.execPath, [script], {
-    env: { ...process.env, DIST_DIR: s.dist, PUBLIC_DIR: s.publicDir, SITE_URL: origin, BASE_PATH: base, ...env },
+    env: { ...inherited, DIST_DIR: s.dist, PUBLIC_DIR: s.publicDir, SITE_URL: origin, BASE_PATH: base, ...env },
     encoding: 'utf8',
   });
   return { status: result.status, out: result.stdout + result.stderr };
@@ -416,7 +418,58 @@ test('release-links passes with MOONY_PRERELEASE=1', () => {
     pageWith(s, '', '<h1>Home</h1><a href="https://apps.apple.com/app/APP_STORE_ID_PLACEHOLDER">App Store</a>');
     const r = run(s, { env: { MOONY_PRERELEASE: '1' } });
     assert.equal(r.status, 0, r.out);
-    assert.match(r.out, /PASS release-links: pre-release: the App Store placeholder is allowed \(\d+ pages\)/, r.out);
+    assert.match(r.out, /PASS release-links: PRE-RELEASE MODE: pre-release: the App Store placeholder is allowed \(\d+ pages\)/, r.out);
+  } finally { rmSync(s.root, { recursive: true, force: true }); }
+});
+
+test('release-links still fails in a default run when MOONY_PRERELEASE=1 is set in the parent environment', () => {
+  const before = process.env.MOONY_PRERELEASE;
+  process.env.MOONY_PRERELEASE = '1';
+  try {
+    assertFires('release-links', (s) => pageWith(s, '', '<h1>Home</h1><a href="https://apps.apple.com/app/APP_STORE_ID_PLACEHOLDER">App Store</a>'));
+  } finally {
+    if (before === undefined) delete process.env.MOONY_PRERELEASE; else process.env.MOONY_PRERELEASE = before;
+  }
+});
+
+test('release-links accepts a real App Store address and rejects any other apps.apple.com link, naming page and address', () => {
+  for (const good of ['https://apps.apple.com/app/moony/id1234567890', 'https://apps.apple.com/us/app/moony-finance/id1234567890?l=cs', 'https://apps.apple.com/app/id1234567890']) {
+    const s = site();
+    try {
+      pageWith(s, '', `<h1>Home</h1><a href="${good}">App Store</a>`);
+      const r = run(s);
+      assert.equal(r.status, 0, `${good}\n${r.out}`);
+    } finally { rmSync(s.root, { recursive: true, force: true }); }
+  }
+  for (const bad of ['https://apps.apple.com/app/moony', 'https://apps.apple.com/app/moony/idabc', 'https://apps.apple.com/', 'https://apps.apple.com/us/developer/moony/id1234567890']) {
+    const s = site();
+    try {
+      s.put('cs/download/index.html', page({ base: s.base, locale: first, path: 'download/', body: `<h1>Page</h1><a href="${bad}">App Store</a>` }));
+      const r = run(s);
+      assert.equal(r.status, 1, `${bad}\n${r.out}`);
+      assert.match(r.out, /FAIL release-links/, r.out);
+      assert.ok(r.out.includes(`${first}/download/index.html`) && r.out.includes(bad), r.out);
+    } finally { rmSync(s.root, { recursive: true, force: true }); }
+  }
+});
+
+test('release-links fails when the Privacy page says "no sync" while the landing page has a sync section', () => {
+  assertFires('release-links', (s) => {
+    s.put('privacy/index.html', page({ base: s.base, path: 'privacy/', englishOnly: true, body: '<h1>Privacy</h1><p>Moony has No Sync and no account.</p>' }));
+    pageWith(s, '', '<h1>Home</h1><section id="sync"><h2>Sync</h2></section>');
+  });
+  const s = site();
+  try {
+    const message = 'the Privacy page still says "no sync": run content:sync against the app release that ships sync';
+    s.put('privacy/index.html', page({ base: s.base, path: 'privacy/', englishOnly: true, body: '<h1>Privacy</h1><p>no sync</p>' }));
+    pageWith(s, '', '<h1>Home</h1><section id="sync"><h2>Sync</h2></section>');
+    assert.ok(run(s).out.includes(message), run(s).out);
+    // Without a sync section on the landing page, or once the Privacy page no longer says it, the check is quiet.
+    pageWith(s, '', '<h1>Home</h1>');
+    assert.equal(run(s).status, 0, run(s).out);
+    pageWith(s, '', '<h1>Home</h1><section id="sync"><h2>Sync</h2></section>');
+    s.put('privacy/index.html', page({ base: s.base, path: 'privacy/', englishOnly: true, body: '<h1>Privacy</h1><p>Sync is optional and experimental.</p>' }));
+    assert.equal(run(s).status, 0, run(s).out);
   } finally { rmSync(s.root, { recursive: true, force: true }); }
 });
 

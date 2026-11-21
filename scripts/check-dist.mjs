@@ -350,9 +350,24 @@ check('release-links', () => {
   const placeholder = 'APP_STORE_ID_PLACEHOLDER';
   // The page source is searched, not its text, so the placeholder is found in an attribute as well.
   const carrying = files.filter((f) => f.endsWith('.html') && readFileSync(f, 'utf8').includes(placeholder)).map(posixRel);
-  if (process.env.MOONY_PRERELEASE === '1') return { problems: [], summary: `pre-release: the App Store placeholder is allowed (${carrying.length} pages)` };
+  if (process.env.MOONY_PRERELEASE === '1') return { problems: [], summary: `PRE-RELEASE MODE: pre-release: the App Store placeholder is allowed (${carrying.length} pages)` };
   const problems = carrying.length === 0 ? [] : [`the App Store placeholder is still on ${carrying.length} page(s): ${carrying.slice(0, 5).join(', ')}${carrying.length > 5 ? ', ...' : ''}`];
-  return { problems, summary: 'no page carries the App Store placeholder' };
+  // Any link to the App Store must be a real app address (an optional country code, an optional app name, and the numeric id).
+  const appStore = /^https:\/\/apps\.apple\.com\/([a-z]{2}\/)?app\/([^/]+\/)?id\d+/;
+  for (const p of pages) {
+    for (const tag of p.tags) {
+      const href = (tag.name === 'a' ? tag.attrs.href : undefined)?.trim();
+      if (href === undefined || !/^(?:https?:)?\/\/apps\.apple\.com(?:[/?#:]|$)/i.test(href)) continue;
+      if (!appStore.test(href) && !href.includes(placeholder)) problems.push(`${p.rel}: ${href} is not a real App Store address`);
+    }
+  }
+  // Once the landing page presents sync, the Privacy page copied from the app must no longer deny it.
+  const privacy = pages.find((p) => p.rel === 'privacy/index.html');
+  const landing = pages.find((p) => p.rel === 'index.html');
+  if (privacy && landing && landing.tags.some((t) => t.attrs.id === 'sync') && /no sync/i.test(decode(privacy.html.replace(/<[^>]*>/g, ' ')).replace(/\s+/g, ' '))) {
+    problems.push('the Privacy page still says "no sync": run content:sync against the app release that ships sync');
+  }
+  return { problems, summary: 'no page carries the App Store placeholder, every App Store link is a real address, the Privacy page matches the sync section' };
 });
 
 check('robots-sitemap', () => {

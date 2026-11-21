@@ -12,17 +12,20 @@ The `.npmrc` in this repository pins the npm registry to https://registry.npmjs.
 npm ci && npm run build
 ```
 
-The output lands in `dist/`. `npm run build` also runs the token check before the build and `scripts/check-dist.mjs` after it. The checks fail the build when a page would break the site's promises: a request to another host, an inline script or style (the Content-Security-Policy allows none), a missing canonical or hreflang link, a broken internal link or asset, an exclamation mark in an h1 to h3, an over-budget group of files (English root HTML over 320 KB, the HTML of one locale folder over 160 KB, or shared CSS, JS and fonts over 192 KB; screenshots and social images excluded), a locale without its five pages, the App Store placeholder on a page (see below), or a weakened `_headers` file. It also writes the right `Sitemap:` line into `dist/robots.txt`.
+The output lands in `dist/`. `npm run build` also runs the token check before the build and `scripts/check-dist.mjs` after it. The checks fail the build when a page would break the site's promises: a request to another host, an inline script or style (the Content-Security-Policy allows none), a missing canonical or hreflang link, a broken internal link or asset, an exclamation mark in an h1 to h3, an over-budget group of files (English root HTML over 320 KB, the HTML of one locale folder over 160 KB, or shared CSS, JS and fonts over 192 KB; screenshots and social images excluded), a locale without its six pages, the App Store placeholder on a page (see below), or a weakened `_headers` file. It also writes the right `Sitemap:` line into `dist/robots.txt`.
 
 ### Before this branch is published
 
-The `mobile-sync` branch announces the iPhone app and device sync, so the plain build refuses to pass while the App Store address is a placeholder (the `release-links` check). `npm run build:prerelease` (sets `MOONY_PRERELEASE=1`) lets the placeholder through for previews. Before publishing:
+The `mobile-sync` branch announces the iPhone app and device sync, so the plain build refuses to pass until the steps below are done (the `release-links` check). `npm run build:prerelease` (sets `MOONY_PRERELEASE=1`) lets the placeholder through for previews only. Before publishing, in this order:
 
-1. Replace `APP_STORE_ID_PLACEHOLDER` in `src/config.ts` with the real App Store address.
-2. Confirm that `https://github.com/fiiles/moony-sync` is public.
-3. Run `npm run content:sync` against the app release that ships sync.
-4. Add the phone screenshot (the plan for the pages says where it goes).
-5. `npm test && npm run build` (the plain build) must pass.
+1. The desktop release that ships sync is published on GitHub (the site takes its version and download links from it).
+2. The iPhone app is live in the App Store. Put its address into `appStoreUrl` in `src/config.ts`, in the form `https://apps.apple.com/app/<name>/id<digits>`. The check fails on any `apps.apple.com` link that does not look like that.
+3. `https://github.com/fiiles/moony-sync` is public.
+4. Run `npm run content:sync` against that release. The Privacy, Security and Changelog pages are copied from the app repository; the guard fails while the Privacy page still says "no sync".
+5. Phone screenshot: add `public/screenshots/phone-overview.png` (sample data only, English interface, portrait), run `npm run shots:optimize` (it writes the 720 px copy and the WebP files), and check the iPhone section on the landing page.
+6. Check the menu names quoted in the Help against the released app, in English and in Czech: "Settings → Sync", "Own server", "Add a device", "Delete synced data on the server", "Settings → Backup and transfer".
+7. `env -u MOONY_PRERELEASE npm test && env -u MOONY_PRERELEASE npm run build` must pass (the plain build, with the variable unset).
+8. Cloudflare: the build command stays `npm run build`. A preview deployment of this branch fails by design until the steps above are done.
 
 ## Scripts
 
@@ -51,7 +54,7 @@ The `mobile-sync` branch announces the iPhone app and device sync, so the plain 
 
 The landing page uses four screenshots: dashboard, account detail, investment analysis and loans. Each has same-origin WebP sources with PNG fallback; the dashboard also has a 740 × 520 close-up for screens up to 600 px wide. Recheck the crop in `scripts/optimize-shots.mjs` if the app layout changes. A short AI integration section on the home page shows example questions and explains the optional data sharing. Full setup instructions live at `/ai-integration/` and `/<code>/ai-integration/`, linked from the footer.
 
-The Help lives at `/help/` and `/<code>/help/`, linked from the footer and the download page. It is one page per language with six anchored sections (first start, forgotten password, importing statements, backup and a new computer, updates and uninstalling, AI assistant), built by `src/components/HelpPage.astro` from the `help.*` strings of the dictionaries. It is one page rather than six because every page costs about 8 KB of layout against the size budget. Every menu name in it comes from the app's own interface strings for that language (each dictionary uses the app's translation); recheck them when the app renames a setting.
+The Help lives at `/help/` and `/<code>/help/`, linked from the footer and the download page. It is one page per language with nine anchored sections (first start, forgotten password, importing statements, backup and a new computer, iPhone, sync, updates and uninstalling, AI assistant, more help), built by `src/components/HelpPage.astro` from the `help.*` strings of the dictionaries. It is one page rather than six because every page costs about 8 KB of layout against the size budget. Every menu name in it comes from the app's own interface strings for that language (each dictionary uses the app's translation); recheck them when the app renames a setting.
 
 ## Adding a language
 
