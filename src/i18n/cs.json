@@ -164,7 +164,7 @@
     "cards": {
       "requests": {
         "title": "Bez sledování",
-        "text": "Žádná analytika ani statistiky používání. Online se načítají ceny, kurzy a aktualizace. Cenové služby vidí sledované symboly, ne vaše zůstatky."
+        "text": "Žádná analytika ani statistiky používání. Online se načítají ceny, kurzy a aktualizace a synchronizace, pokud ji nastavíte, komunikuje s vaším vlastním synchronizačním serverem. Cenové služby vidí sledované symboly, ne vaše zůstatky."
       },
       "disk": {
         "title": "Šifrovaná data",
@@ -258,7 +258,7 @@
         "title": "Android",
         "text": "Připravujeme."
       },
-      "sync": "Synchronizace mezi zařízeními je experimentální a běží přes server, který provozujete sami. Server a návod k nastavení jsou na [GitHubu (EN)](syncRepo)."
+      "sync": "Synchronizace mezi zařízeními je experimentální a běží přes server, který provozujete vy nebo někdo, komu důvěřujete. Server a návod k nastavení jsou na [GitHubu (EN)](syncRepo)."
     },
     "install": {
       "title": "Instalace a první spuštění",
@@ -395,7 +395,7 @@
       },
       "cloud": {
         "q": "Co je Moony Cloud?",
-        "a": "Hostovaný synchronizační server provozovaný projektem pro ty, kdo nechtějí provozovat vlastní. Zatím není k dispozici. Dnes synchronizace funguje se serverem, který provozujete sami."
+        "a": "Hostovaný synchronizační server provozovaný projektem pro ty, kdo nechtějí provozovat vlastní. Zatím není k dispozici. Dnes synchronizace funguje se serverem, který provozujete vy nebo někdo, komu důvěřujete."
       },
       "bank": {
         "q": "Připojí se k mé bance?",
@@ -478,7 +478,7 @@
     },
     "recovery": {
       "title": "Zapomenuté heslo a obnovovací klíč",
-      "warning": "**Zadní vrátka neexistují.** Moony nemá účet ani server, takže vám heslo nemůže obnovit nikdo, ani autor. Heslo a obnovovací klíč jsou dvě samostatné cesty ke stejným šifrovaným datům. Když nemáte ani jedno z nich, nedá se otevřít nic: ani záznamy, ani připojené fotografie a dokumenty.",
+      "warning": "**Zadní vrátka neexistují.** Moony nemá účet a nikdo jiný nedrží klíč k vašim datům, takže vám heslo nemůže obnovit nikdo, ani autor. Heslo a obnovovací klíč jsou dvě samostatné cesty ke stejným šifrovaným datům. Když nemáte ani jedno z nich, nedá se v tomto zařízení otevřít nic: ani záznamy, ani připojené fotografie a dokumenty. Pokud používáte synchronizaci, záchranná sada je samostatná cesta k synchronizovaným datům.",
       "tableHead": [
         "Pokud…",
         "Pak…"
@@ -561,7 +561,7 @@
       "make": [
         "Otevřete **Nastavení → Data a zálohy** a klikněte na **Zálohovat nyní**. Vyberte, kam ZIP uložit (Moony navrhne `moony-backup-RRRR-MM-DD.zip`).",
         "Obsahuje šifrované kopie vašich záznamů a příloh a klíčové soubory `salt`, `key.enc` a `recovery.enc` a zůstává šifrovaný: otevře ho jen heslo platné v době zálohy nebo obnovovací klíč z té doby.",
-        "Jednu kopii mějte mimo tento počítač, na externím disku nebo ve vlastním cloudovém úložišti. Moony nic nenahrává; Přehled připomene, že je poslední záloha stará. Zálohujte před aktualizací a po velkém importu."
+        "Jednu kopii mějte mimo tento počítač, na externím disku nebo ve vlastním cloudovém úložišti. Moony vaše zálohy nenahrává; Přehled připomene, že je poslední záloha stará. Zálohujte před aktualizací a po velkém importu."
       ],
       "restoreTitle": "Obnovení ze zálohy",
       "restoreIntro": "Začněte v **Nastavení → Data a zálohy → Obnovit ze zálohy…**, na zamykací obrazovce (**Máte zálohu? Obnovit ze zálohy…**) nebo v prvním kroku průvodce nastavením (**Obnovit ze zálohy**). Potom:",
@@ -622,7 +622,7 @@
       "uninstall": [
         "Odinstalace odstraní aplikaci, ale ve výchozím stavu ne vaše data, která zůstanou ve složce s daty. macOS: ukončete Moony a přetáhněte ho do Koše. Windows: odinstalujte ho v Nastavení → Aplikace. Linux: smažte soubor AppImage nebo odeberte balíček `.deb` či `.rpm` správcem balíčků.",
         "Chcete-li odstranit i data, udělejte to před odinstalací: **Nastavení → Účet → Smazat data…** a napište `SMAZAT`. Odstraní se databáze, klíčové soubory a přílohy a nelze to vrátit, takže pokud je možná budete chtít zpět, nejdřív vytvořte zálohu.",
-        "Zůstanou složky `pre-restore-<čas>`, zálohy a exporty, které jste uložili, a logy; smažte je ručně, nebo smažte celou složku s daty. Na žádném serveru není co mazat, protože Moony žádný nemá."
+        "Zůstanou složky `pre-restore-<čas>`, zálohy a exporty, které jste uložili, a logy; smažte je ručně, nebo smažte celou složku s daty. Pokud používáte synchronizaci, je šifrovaná kopie vašich dat také na vašem synchronizačním serveru. Smažte ji v **Nastavení → Synchronizace** (**Smazat synchronizovaná data na serveru**) dřív, než smažete místní data; smaže se tím pro všechna zařízení."
       ]
     },
     "ai": {

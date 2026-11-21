@@ -164,7 +164,7 @@
     "cards": {
       "requests": {
         "title": "No tracking",
-        "text": "No analytics or usage statistics. Prices, exchange rates and updates are checked online. Price services see the symbols you track, not your balances."
+        "text": "No analytics or usage statistics. Prices, exchange rates and updates are checked online, and sync, if you set it up, talks to your own sync server. Price services see the symbols you track, not your balances."
       },
       "disk": {
         "title": "Encrypted data",
@@ -258,7 +258,7 @@
         "title": "Android",
         "text": "Coming soon."
       },
-      "sync": "Sync between your devices is experimental and runs through a server you run yourself. The server and its setup guide are on [GitHub](syncRepo)."
+      "sync": "Sync between your devices is experimental and runs through a server that you, or someone you trust, run. The server and its setup guide are on [GitHub](syncRepo)."
     },
     "install": {
       "title": "Install and first launch",
@@ -395,7 +395,7 @@
       },
       "cloud": {
         "q": "What is Moony Cloud?",
-        "a": "A hosted sync server run by the project, for people who would rather not run their own. It is not available yet. Today sync works with a server you run yourself."
+        "a": "A hosted sync server run by the project, for people who would rather not run their own. It is not available yet. Today sync works with a server that you, or someone you trust, run."
       },
       "bank": {
         "q": "Does it connect to my bank?",
@@ -478,7 +478,7 @@
     },
     "recovery": {
       "title": "Forgotten password and the recovery key",
-      "warning": "**There is no backdoor.** Moony has no account and no server, so nobody can reset your password for you, the author included. The password and the recovery key are two separate ways into the same encrypted data. If you have neither, nothing can be opened: not your records and not your attached photos and documents.",
+      "warning": "**There is no backdoor.** Moony has no account, and nobody else holds a key to your data, so nobody can reset your password for you, the author included. The password and the recovery key are two separate ways into the same encrypted data. If you have neither, nothing on this device can be opened: not your records and not your attached photos and documents. If you use sync, the recovery kit is a separate way to the synced data.",
       "tableHead": [
         "If you…",
         "Then…"
@@ -561,7 +561,7 @@
       "make": [
         "Open **Settings → Data and backups** and click **Back up now**. Choose where to save the ZIP (Moony suggests `moony-backup-YYYY-MM-DD.zip`).",
         "It holds encrypted copies of your records and attachments plus the key files `salt`, `key.enc` and `recovery.enc`, and stays encrypted: only the password that was valid when it was made, or the recovery key from that time, opens it.",
-        "Keep a copy away from this computer, on an external drive or in your own cloud storage. Moony never uploads anything; the Overview reminds you when your last backup is old. Back up before an update and after a large import."
+        "Keep a copy away from this computer, on an external drive or in your own cloud storage. Moony does not upload your backups; the Overview reminds you when your last backup is old. Back up before an update and after a large import."
       ],
       "restoreTitle": "Restore a backup",
       "restoreIntro": "Start from **Settings → Data and backups → Restore from backup…**, from the lock screen (**Have a backup? Restore from backup…**) or from the first step of the setup wizard (**Restore from a backup**). Then:",
@@ -622,7 +622,7 @@
       "uninstall": [
         "Uninstalling removes the app but, by default, not your data, which stays in the data folder. macOS: quit Moony and drag it to the Trash. Windows: uninstall it in Settings → Apps. Linux: delete the AppImage or remove the `.deb` or `.rpm` package with your package manager.",
         "To remove your data too, do it before you uninstall: **Settings → Account → Delete data…**, then type `DELETE`. This removes the databases, key files and attachments and cannot be undone, so make a backup first if you might want them back.",
-        "It leaves `pre-restore-<time>` folders, backups and exports you saved, and the logs; delete those by hand, or delete the whole data folder. There is nothing to delete on a server, because Moony has none."
+        "It leaves `pre-restore-<time>` folders, backups and exports you saved, and the logs; delete those by hand, or delete the whole data folder. If you use sync, an encrypted copy of your data is also on your sync server. Delete it under **Settings → Sync** (**Delete synced data on the server**) before you delete the local data; that removes it for every device."
       ]
     },
     "ai": {
