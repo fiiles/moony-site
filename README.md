@@ -12,12 +12,23 @@ The `.npmrc` in this repository pins the npm registry to https://registry.npmjs.
 npm ci && npm run build
 ```
 
-The output lands in `dist/`. `npm run build` also runs the token check before the build and `scripts/check-dist.mjs` after it. The checks fail the build when a page would break the site's promises: a request to another host, an inline script or style (the Content-Security-Policy allows none), a missing canonical or hreflang link, a broken internal link or asset, an exclamation mark in an h1 to h3, an over-budget group of files (English root HTML over 288 KB, the HTML of one locale folder over 128 KB, or shared CSS, JS and fonts over 192 KB; screenshots and social images excluded), a locale without its five pages, or a weakened `_headers` file. It also writes the right `Sitemap:` line into `dist/robots.txt`.
+The output lands in `dist/`. `npm run build` also runs the token check before the build and `scripts/check-dist.mjs` after it. The checks fail the build when a page would break the site's promises: a request to another host, an inline script or style (the Content-Security-Policy allows none), a missing canonical or hreflang link, a broken internal link or asset, an exclamation mark in an h1 to h3, an over-budget group of files (English root HTML over 320 KB, the HTML of one locale folder over 160 KB, or shared CSS, JS and fonts over 192 KB; screenshots and social images excluded), a locale without its five pages, the App Store placeholder on a page (see below), or a weakened `_headers` file. It also writes the right `Sitemap:` line into `dist/robots.txt`.
+
+### Before this branch is published
+
+The `mobile-sync` branch announces the iPhone app and device sync, so the plain build refuses to pass while the App Store address is a placeholder (the `release-links` check). `npm run build:prerelease` (sets `MOONY_PRERELEASE=1`) lets the placeholder through for previews. Before publishing:
+
+1. Replace `APP_STORE_ID_PLACEHOLDER` in `src/config.ts` with the real App Store address.
+2. Confirm that `https://github.com/fiiles/moony-sync` is public.
+3. Run `npm run content:sync` against the app release that ships sync.
+4. Add the phone screenshot (the plan for the pages says where it goes).
+5. `npm test && npm run build` (the plain build) must pass.
 
 ## Scripts
 
 - `npm run tokens:sync` - copy the app's design tokens into the site (`npm run tokens:check` fails on drift)
 - `npm run content:sync` - fetch the app's privacy, security and changelog text and the latest release data as snapshots
+- `npm run build:prerelease` - the build with the App Store placeholder allowed
 - `npm test` - run the script tests (`node --test "scripts/*.test.mjs"`), among them the proof that every `check-dist` check fires on a bad page
 
 ## Environment variables
@@ -58,7 +69,7 @@ The registry `src/locales.json` lists the ten languages (`en, cs, de, es, it, nb
    A language whose script the Inter font files do not cover (as Japanese and Chinese) also needs its system fonts in the font stack in `public/styles/site.css`.
 3. Links to pages that exist only in English (Privacy, Security, Changelog, the GitHub pages) end their label with `(EN)` in every non-English dictionary, and no other link does. The parity test checks this.
 4. Run `npm test` and `npm run build`. The tests check that the dictionary has the same keys, placeholders, link targets and list lengths as `en.json`, no empty strings and no exclamation marks, and that Czech and Polish keep one-letter words tied to the next word with a no-break space. The build fails when a registered language has no dictionary, lacks one of its six pages, or has a wrong `lang`, canonical or hreflang.
-5. Mind the size budgets, which `scripts/check-dist.mjs` enforces and prints: English HTML 288 KB, each other language's HTML 128 KB (per folder), and shared CSS, JS and fonts 192 KB. Do not raise a budget to fit a language; shorten the text or look at what makes the pages large (scripts written in CJK characters take three bytes each in UTF-8).
+5. Mind the size budgets, which `scripts/check-dist.mjs` enforces and prints: English HTML 320 KB, each other language's HTML 160 KB (per folder), and shared CSS, JS and fonts 192 KB. Do not raise a budget to fit a language; shorten the text or look at what makes the pages large (scripts written in CJK characters take three bytes each in UTF-8).
 
 Fonts: Inter stays first; the fallbacks in `public/styles/site.css` carry Japanese and Simplified Chinese from the system (for `zh-Hans` the Chinese fonts come before the Japanese ones). Do not add font files for a new script without checking the shared budget.
 

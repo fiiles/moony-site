@@ -10,6 +10,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "npm run tokens:check && astro build && node scripts/check-dist.mjs",
+    "build:prerelease": "MOONY_PRERELEASE=1 npm run build",
     "preview": "astro preview",
     "test": "node --test \"scripts/*.test.mjs\"",
     "tokens:sync": "node scripts/sync-tokens.mjs",

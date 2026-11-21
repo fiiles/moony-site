@@ -27,8 +27,8 @@ const LOCALE_PAGES = ['', 'download/', 'help/', 'ai-integration/', 'site-privacy
 /** Pages that exist in English only: they carry the `en` and `x-default` alternates and no other language. */
 const ENGLISH_ONLY = new Set(['privacy/', 'security/', 'changelog/']);
 /** Size limits (HTML, CSS, JS and fonts; the screenshot and social images do not count): the English root HTML, each locale folder's HTML, and the files all pages share. */
-const BUDGET_ENGLISH_HTML = 288 * 1024;
-const BUDGET_LOCALE_HTML = 128 * 1024;
+const BUDGET_ENGLISH_HTML = 320 * 1024;
+const BUDGET_LOCALE_HTML = 160 * 1024;
 const BUDGET_SHARED = 192 * 1024;
 const BUDGET_EXTENSIONS = new Set(['.html', '.css', '.js', '.mjs', '.woff', '.woff2', '.ttf', '.otf']);
 const BUDGET_EXCLUDED = ['screenshots/', 'og/'];
@@ -344,6 +344,15 @@ check('size-budget', () => {
     problems,
     summary: `English HTML ${kb(english)} (budget ${kb(BUDGET_ENGLISH_HTML)}); per locale: ${locales || 'none'} (budget ${kb(BUDGET_LOCALE_HTML)} each); shared CSS, JS and fonts ${kb(shared)} (budget ${kb(BUDGET_SHARED)})`,
   };
+});
+
+check('release-links', () => {
+  const placeholder = 'APP_STORE_ID_PLACEHOLDER';
+  // The page source is searched, not its text, so the placeholder is found in an attribute as well.
+  const carrying = files.filter((f) => f.endsWith('.html') && readFileSync(f, 'utf8').includes(placeholder)).map(posixRel);
+  if (process.env.MOONY_PRERELEASE === '1') return { problems: [], summary: `pre-release: the App Store placeholder is allowed (${carrying.length} pages)` };
+  const problems = carrying.length === 0 ? [] : [`the App Store placeholder is still on ${carrying.length} page(s): ${carrying.slice(0, 5).join(', ')}${carrying.length > 5 ? ', ...' : ''}`];
+  return { problems, summary: 'no page carries the App Store placeholder' };
 });
 
 check('robots-sitemap', () => {

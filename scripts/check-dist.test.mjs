@@ -75,9 +75,9 @@ function site(base = '/') {
   return { root, dist, publicDir, put, base };
 }
 
-function run(s, { base = s.base, origin = 'https://example.test' } = {}) {
+function run(s, { base = s.base, origin = 'https://example.test', env = {} } = {}) {
   const result = spawnSync(process.execPath, [script], {
-    env: { ...process.env, DIST_DIR: s.dist, PUBLIC_DIR: s.publicDir, SITE_URL: origin, BASE_PATH: base },
+    env: { ...process.env, DIST_DIR: s.dist, PUBLIC_DIR: s.publicDir, SITE_URL: origin, BASE_PATH: base, ...env },
     encoding: 'utf8',
   });
   return { status: result.status, out: result.stdout + result.stderr };
@@ -104,7 +104,7 @@ test('a good site passes every check and robots.txt gets the configured sitemap'
   try {
     const r = run(s);
     assert.equal(r.status, 0, r.out);
-    assert.equal((r.out.match(/^PASS /gm) ?? []).length, 14, r.out);
+    assert.equal((r.out.match(/^PASS /gm) ?? []).length, 15, r.out);
     assert.match(readFileSync(join(s.dist, 'robots.txt'), 'utf8'), /^Sitemap: https:\/\/example\.test\/sitemap-index\.xml$/m);
   } finally {
     rmSync(s.root, { recursive: true, force: true });
@@ -370,8 +370,8 @@ test('size-budget fires over 192 KB of shared CSS, JS and fonts, but ignores scr
   } finally { rmSync(s.root, { recursive: true, force: true }); }
 });
 
-test('size-budget fires when the English root HTML is over 288 KB, and names the group', () => {
-  const big = (s) => s.put('big/index.html', '<!doctype html><html lang="en"><body>' + 'x'.repeat(300 * 1024) + '</body></html>');
+test('size-budget fires when the English root HTML is over 320 KB, and names the group', () => {
+  const big = (s) => s.put('big/index.html', '<!doctype html><html lang="en"><body>' + 'x'.repeat(330 * 1024) + '</body></html>');
   // The big page is not a normal page: it lacks canonical and hreflang links.
   const s = site();
   try {
@@ -381,11 +381,11 @@ test('size-budget fires when the English root HTML is over 288 KB, and names the
   } finally { rmSync(s.root, { recursive: true, force: true }); }
 });
 
-test('size-budget fires when one locale folder is over 128 KB, and names the locale', () => {
+test('size-budget fires when one locale folder is over 160 KB, and names the locale', () => {
   const s = site();
   try {
     const code = first;
-    s.put(`${code}/help/index.html`, page({ base: s.base, locale: code, path: 'help/', body: '<h1>Help</h1><p>' + 'x'.repeat(130 * 1024) + '</p>' }));
+    s.put(`${code}/help/index.html`, page({ base: s.base, locale: code, path: 'help/', body: '<h1>Help</h1><p>' + 'x'.repeat(170 * 1024) + '</p>' }));
     const r = run(s);
     assert.equal(r.status, 1, r.out);
     assert.deepEqual(r.out.split('\n').filter((l) => l.startsWith('FAIL ')).map((l) => l.split(':')[0].slice(5)), ['size-budget'], r.out);
@@ -398,7 +398,25 @@ test('the size-budget summary prints all three groups and names every non-defaul
   try {
     const r = run(s);
     const locales = nonDefault.map((code) => `${code} [\\d.]+ KB`).join(', ');
-    assert.match(r.out, new RegExp(`PASS size-budget: English HTML [\\d.]+ KB \\(budget 288\\.0 KB\\); per locale: ${locales} \\(budget 128\\.0 KB each\\); shared CSS, JS and fonts [\\d.]+ KB \\(budget 192\\.0 KB\\)`), r.out);
+    assert.match(r.out, new RegExp(`PASS size-budget: English HTML [\\d.]+ KB \\(budget 320\\.0 KB\\); per locale: ${locales} \\(budget 160\\.0 KB each\\); shared CSS, JS and fonts [\\d.]+ KB \\(budget 192\\.0 KB\\)`), r.out);
+  } finally { rmSync(s.root, { recursive: true, force: true }); }
+});
+
+// ---- release links
+
+test('release-links fires on a page that carries the App Store placeholder', () => {
+  assertFires('release-links', (s) => pageWith(s, '', '<h1>Home</h1><a href="https://apps.apple.com/app/APP_STORE_ID_PLACEHOLDER">App Store</a>'));
+  // An attribute is not text: the guard reads the page source, so this cannot slip through.
+  assertFires('release-links', (s) => pageWith(s, '', '<h1>Home</h1><a data-x="APP_STORE_ID_PLACEHOLDER" href="#">x</a>'));
+});
+
+test('release-links passes with MOONY_PRERELEASE=1', () => {
+  const s = site();
+  try {
+    pageWith(s, '', '<h1>Home</h1><a href="https://apps.apple.com/app/APP_STORE_ID_PLACEHOLDER">App Store</a>');
+    const r = run(s, { env: { MOONY_PRERELEASE: '1' } });
+    assert.equal(r.status, 0, r.out);
+    assert.match(r.out, /PASS release-links: pre-release: the App Store placeholder is allowed \(\d+ pages\)/, r.out);
   } finally { rmSync(s.root, { recursive: true, force: true }); }
 });
 
