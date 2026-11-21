@@ -2,7 +2,7 @@
   "site": {
     "name": "Moony",
     "tagline": "Ihre Finanzen, an einem Ort.",
-    "description": "Moony ist eine kostenlose Desktop-App, mit der Sie Konten, Geldanlagen und Kredite im Blick behalten. Ihre Finanzdaten bleiben auf Ihrem Computer. Für macOS, Windows und Linux."
+    "description": "Moony is a free app for keeping track of your accounts, investments and loans. Your financial data stays on your own devices. For macOS, Windows, Linux and iPhone."
   },
   "nav": {
     "label": "Hauptnavigation",
@@ -16,7 +16,7 @@
     "language": "Sprache"
   },
   "footer": {
-    "blurb": "Ein klarerer Blick auf Ihre Finanzen. Direkt auf Ihrem Computer.",
+    "blurb": "A clearer picture of your finances. On your own devices.",
     "product": "Produkt",
     "download": "Download",
     "help": "Hilfe",
@@ -39,12 +39,13 @@
     "provenance": "Diese Seite zeigt die Datei aus dem Moony-Repository in der Fassung des unten genannten Tags; nur der Titel und relative Links sind angepasst. Die Quelle ist"
   },
   "hero": {
-    "eyebrow": "Persönliche Finanzen für Ihren Desktop",
-    "lead": "Behalten Sie Konten, Geldanlagen und Kredite im Blick. Moony bewahrt Ihre Finanzdaten direkt auf Ihrem Computer auf.",
+    "eyebrow": "Personal finance for your computer and iPhone",
+    "lead": "Keep track of your accounts, investments and loans. Moony keeps your financial data on your own devices.",
     "ctaDefault": "Herunterladen",
     "ctaMac": "Für macOS herunterladen",
     "ctaWin": "Für Windows herunterladen",
     "ctaLinux": "Für Linux herunterladen",
+    "ctaIos": "Download on the App Store",
     "noteStrong": "Kostenlos und Open Source",
     "noteRest": "Version {version}",
     "caption": "Die echte App, mit Beispieldaten",
@@ -54,7 +55,8 @@
       "local": "Daten bleiben bei Ihnen",
       "offline": "Funktioniert offline"
     },
-    "ctaPreview": "Einen Blick hineinwerfen"
+    "ctaPreview": "Einen Blick hineinwerfen",
+    "ctaPhone": "Also for iPhone"
   },
   "features": {
     "overview": {
@@ -99,6 +101,21 @@
       ],
       "alt": "Kreditübersicht mit offenen Restschulden, Zinssätzen und einem Diagramm der Schulden im Zeitverlauf"
     }
+  },
+  "phone": {
+    "title": "Moony on your iPhone.",
+    "text": "The iPhone app works on its own, with its own encrypted data. Check your net worth, import a statement from the share sheet and photograph a contract, wherever you are.",
+    "bullets": [
+      "Net worth, cashflow and budgets",
+      "Statement import from the share sheet",
+      "Unlock with Face ID"
+    ],
+    "cta": "Download on the App Store",
+    "note": "Free. For iPhone with iOS 15 or newer.",
+    "transfer": "Already use Moony on a computer? Restore a backup on the phone, or keep both in step with sync.",
+    "android": "Android",
+    "soon": "Coming soon",
+    "alt": "The overview of a sample profile in Moony on an iPhone"
   },
   "tracks": {
     "title": "Was lässt sich noch verfolgen?",
@@ -151,7 +168,7 @@
       },
       "disk": {
         "title": "Verschlüsselte Daten",
-        "text": "Datensätze und Anhänge sind auf Ihrem Computer verschlüsselt. Exportierte Dateien und gespeicherte Kopien sind unverschlüsselt. Bewahren Sie sie deshalb sicher auf."
+        "text": "Records and attachments are encrypted on your device. Exported files and saved copies are unencrypted, so keep them somewhere safe."
       },
       "keys": {
         "title": "Backups in Ihrer Hand",
@@ -159,6 +176,24 @@
       }
     },
     "link": "Die Datenschutzdetails lesen →"
+  },
+  "sync": {
+    "title": "Keep your devices in step.",
+    "badge": "Experimental",
+    "text": "Sync keeps the same data on your computers and your iPhone. It is optional and stays off until you set it up. Your data is encrypted on your device before it leaves, and the server that passes it on has no key to read it.",
+    "own": {
+      "title": "Your own server",
+      "text": "Sync runs through a small server that you, or someone you trust, run: at home, on a NAS or on a rented machine. It is open source.",
+      "link": "Moony sync server on GitHub →"
+    },
+    "cloud": {
+      "title": "Moony Cloud",
+      "badge": "Coming soon",
+      "text": "A hosted server run by the project, for people who would rather not run their own."
+    },
+    "note": "Sync is new and experimental. Keep making backups: sync carries every change, deletions included, to your other devices.",
+    "seen": "The server stores only encrypted data. Whoever runs it can see when and how much you sync, not what.",
+    "link": "How to set it up →"
   },
   "assistant": {
     "title": "Verbinden Sie einen KI-Assistenten mit Ihren Finanzen",
@@ -201,17 +236,30 @@
       "archsArm": "x86_64 und ARM64"
     },
     "all": "Anderes System wählen →",
-    "intro": "Kostenlos für macOS, Windows und Linux. Ohne Anmeldung, ohne Testzeitraum.",
+    "intro": "Free for macOS, Windows, Linux and iPhone. No sign-up or trial period.",
     "notice": "Windows zeigt beim ersten Start möglicherweise eine Sicherheitswarnung an, weil der Installer noch nicht signiert ist. Lesen Sie die Installationshinweise, bevor Sie ihn herunterladen."
   },
   "downloadPage": {
     "metaTitle": "Moony {version} für macOS, Windows und Linux herunterladen",
-    "description": "Installer von Moony {version} für macOS, Windows und Linux, die Schritte beim ersten Start für jedes System, Systemanforderungen und wie Updates funktionieren.",
+    "description": "Moony {version} installers for macOS, Windows and Linux, where to get the iPhone app, the first-launch steps for each system, system requirements and how updates work.",
     "title": "Moony {version} herunterladen",
     "released": "Veröffentlicht am {date}",
     "allReleases": "Alle Releases →",
     "filesTitle": "Installer nach Betriebssystem",
     "macHint": "Apple Silicon steht für einen M1-Chip oder neuer. Sie wissen nicht, welchen Mac Sie haben? Apple-Menü → **Über diesen Mac**: In der Zeile „Chip“ oder „Prozessor“ steht Apple M… oder Intel.",
+    "phone": {
+      "title": "iPhone and Android",
+      "iphone": {
+        "title": "iPhone",
+        "text": "Free on the App Store. Needs iOS 15 or newer.",
+        "cta": "Download on the App Store"
+      },
+      "android": {
+        "title": "Android",
+        "text": "Coming soon."
+      },
+      "sync": "Sync between your devices is experimental and runs through a server you run yourself. The server and its setup guide are on [GitHub (EN)](syncRepo)."
+    },
     "install": {
       "title": "Installation und erster Start",
       "unsigned": "Die Mac-App ist von Apple signiert und notarisiert und lässt sich wie jede andere App öffnen. Für den Windows-Installer gibt es noch kein Codesignatur-Zertifikat, daher zeigt Windows beim ersten Start möglicherweise eine Sicherheitswarnung an; die Schritte stehen unten. In-App-Updates werden mit dem Signaturschlüssel des Projekts geprüft.",
@@ -250,7 +298,8 @@
       "title": "Systemanforderungen",
       "mac": "macOS 10.15 (Catalina) oder neuer, auf Macs mit Apple Silicon und Intel.",
       "win": "Windows 10 und 11, 64 Bit. Moony benötigt die Microsoft Edge WebView2-Runtime, die auf beiden vorinstalliert ist; der Installer lädt sie nach, falls sie fehlt.",
-      "linux": "{archs}: ein AppImage, eine `.deb` für Debian und Ubuntu und eine `.rpm` für Fedora und openSUSE. Auf Ubuntu 24.04 gebaut; älteren Distributionen fehlt unter Umständen eine Systembibliothek."
+      "linux": "{archs}: ein AppImage, eine `.deb` für Debian und Ubuntu und eine `.rpm` für Fedora und openSUSE. Auf Ubuntu 24.04 gebaut; älteren Distributionen fehlt unter Umständen eine Systembibliothek.",
+      "iphone": "iPhone with iOS 15.0 or newer."
     },
     "intro": "Wählen Sie Ihr System. Richten Sie Moony nach der Installation ein, ohne Online-Konto.",
     "recommended": "Ihr System",
@@ -280,7 +329,7 @@
       },
       "downloads": {
         "title": "Downloads",
-        "text": "Die Download-Links führen zu Releases auf GitHub, das die Dateien bereitstellt."
+        "text": "The download links lead to releases on GitHub, which serves the files. The iPhone app link leads to Apple’s App Store."
       },
       "operator": {
         "title": "Betreiber und Kontakt",
@@ -300,11 +349,11 @@
       },
       "help": {
         "title": "Eine Antwort finden",
-        "text": "Die [Hilfe](help) behandelt den ersten Start, [ein vergessenes Passwort](recovery), [Backups und den Umzug auf einen anderen Computer](backup) und den [Import von Kontoauszügen](import)."
+        "text": "The [Help](help) covers the first start, [a forgotten password](recovery), [backups and moving to another computer](backup), [importing statements](import) and [sync](sync)."
       },
       "bug": {
         "title": "Einen Fehler melden",
-        "text": "Fehler werden offen auf GitHub verfolgt: [Issue eröffnen (EN)](issues). Lassen Sie alles Persönliche weg; ein Screenshot mit Beispieldaten genügt."
+        "text": "Bugs are tracked in the open on GitHub: [open an issue (EN)](issues). Leave out anything personal; a screenshot with sample data is enough. The sync server has [its own tracker (EN)](syncIssues)."
       },
       "security": {
         "title": "Ein Sicherheitsproblem melden",
@@ -330,7 +379,7 @@
       },
       "data": {
         "q": "Sammelt Moony Daten über mich?",
-        "a": "Nein: Die App hat keine Analyse-Tools, keine Absturzberichte und keine Nutzungsstatistiken. Die einzigen Anfragen der App betreffen Kurse, Wechselkurse und die Update-Prüfung; sie sind auf der Datenschutzseite vollständig aufgeführt."
+        "a": "No: the app has no analytics, crash reports or usage statistics. Its requests are for prices and exchange rates, the update check on a computer and, if you set up sync, your own sync server. All are listed on the Privacy page."
       },
       "password": {
         "q": "Was, wenn ich mein Passwort vergesse?",
@@ -338,7 +387,15 @@
       },
       "devices": {
         "q": "Kann ich Moony auf meinem Smartphone oder einem anderen Computer nutzen?",
-        "a": "Moony läuft heute unter macOS, Windows und Linux, mit einem Profil pro Computer und ohne Synchronisierung. Ihre Daten können Sie mit einer Backup-Datei auf einen anderen Computer übertragen."
+        "a": "Yes. Moony runs on macOS, Windows, Linux and iPhone, and each device works on its own. To have the same data everywhere, set up sync, which is experimental, or move your data with a backup file. An Android app is coming soon."
+      },
+      "sync": {
+        "q": "How does sync work, and who can read my data?",
+        "a": "Sync is optional and experimental. Your devices encrypt everything before sending it to a sync server that you or someone you trust runs; the server has no key and stores only encrypted data. Whoever runs it can see when and how much you sync. Keep making backups."
+      },
+      "cloud": {
+        "q": "What is Moony Cloud?",
+        "a": "A hosted sync server run by the project, for people who would rather not run their own. It is not available yet. Today sync works with a server you run yourself."
       },
       "bank": {
         "q": "Verbindet es sich mit meiner Bank?",
@@ -521,8 +578,25 @@
         "Wählen Sie im ersten Schritt des Assistenten **Aus einem Backup wiederherstellen**, wählen Sie das ZIP und bestätigen Sie.",
         "Entsperren Sie mit dem Passwort aus der Zeit des Backups."
       ],
-      "moveOutro": "Moony synchronisiert nicht zwischen Computern, daher laufen die alte und die neue Kopie auseinander, sobald Sie beide nutzen, und Änderungen nach dem Backup sind darin nicht enthalten. Wenn der neue Computer funktioniert, entfernen Sie die Daten vom alten Computer ([so geht es](uninstall)).",
+      "moveOutro": "A backup is a one-time copy: the old and the new computer drift apart as soon as you use both, and changes made after the backup are not in it. To keep several devices in step, use [sync](sync), which is experimental. Otherwise, when the new computer works, remove the data from the old one ([how](uninstall)).",
       "notBackup": "**JSON exportieren** auf derselben Seite schreibt jede Tabelle ohne Anhänge in eine unverschlüsselte JSON-Datei. Das ist kein Backup; behandeln Sie die Datei wie einen Kontoauszug. **Datenbank prüfen** kontrolliert die Integrität Ihrer Datenbank."
+    },
+    "phone": {
+      "title": "Moony on the iPhone",
+      "text": "The iPhone app is an app of its own: it keeps its own encrypted data and needs no computer. Get it from the [App Store](appStore). To start with the data from your computer, save a backup there and restore it on the phone (**Settings → Backup and transfer**), or connect the phone to [sync](sync).",
+      "differences": "The phone app has no AI integration and no update check of its own; updates come through the App Store."
+    },
+    "sync": {
+      "title": "Sync between devices (experimental)",
+      "intro": "Sync keeps the same data on your computers and your iPhone. It is optional, off until you set it up, and still experimental: make a backup before you start and keep making them.",
+      "steps": [
+        "You need a sync server. Run your own with the [Moony sync server (EN)](syncRepo), or ask whoever runs one for you for a **connection code**.",
+        "On the first device open **Settings → Sync**, start the setup, choose **Own server** and enter the connection code.",
+        "Save the **recovery kit** Moony shows you, away from your devices. If you lose every device at once, it is the only way back to your synced data.",
+        "To add another device, choose **Add a device** on one that already syncs and follow the steps on the new one under **Settings → Sync**. A device that joins takes over the synced data; Moony first saves a backup of what it had."
+      ],
+      "seen": "The server stores only encrypted data and has no key. Whoever runs it can see when and how much you sync. What is sent and stored is listed on the [Privacy page (EN)](privacy).",
+      "cloud": "Moony Cloud, a hosted server run by the project, is not available yet."
     },
     "updates": {
       "title": "Updates, Datenordner und Deinstallation",

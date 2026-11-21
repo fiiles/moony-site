@@ -1,7 +1,7 @@
 ---
 import { enOnlyLink, href, t, tf, type Locale } from '../i18n';
 import { rich, type RichLink } from '../lib/rich';
-import { repoUrl, supportEmail } from '../config';
+import { repoUrl, supportEmail, syncIssuesUrl } from '../config';
 
 interface Props { locale: Locale }
 
@@ -13,6 +13,8 @@ const links: Record<string, RichLink> = {
   recovery: { href: href(locale, 'help/#forgotten-password') },
   backup: { href: href(locale, 'help/#backup') },
   import: { href: href(locale, 'help/#import') },
+  sync: { href: href(locale, 'help/#sync') },
+  syncIssues: { href: syncIssuesUrl, hreflang: 'en' },
   issues: { href: `${repoUrl}/issues/new/choose`, hreflang: 'en' },
   security: enOnlyLink(locale, 'security/'),
   discussions: { href: `${repoUrl}/discussions`, hreflang: 'en' },

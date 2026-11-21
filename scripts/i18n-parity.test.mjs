@@ -83,7 +83,7 @@ test('cs and pl keep one-letter words tied to the next word with a no-break spac
 });
 
 test('links to English-only pages are marked (EN) in every non-English dictionary, and nothing else is', () => {
-  const englishOnly = new Set(['privacy', 'privacyData', 'security', 'issues', 'contributing', 'discussions']);
+  const englishOnly = new Set(['privacy', 'privacyData', 'security', 'issues', 'contributing', 'discussions', 'syncRepo', 'syncIssues']);
   const links = (v) => [...String(v).matchAll(/\[([^\]]*)\]\(([^)]*)\)/g)].map((m) => ({ label: m[1], target: m[2] }));
   const problems = [];
   for (const code of others) {

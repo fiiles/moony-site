@@ -1,0 +1,34 @@
+---
+import LanguageLink from '../LanguageLink.astro';
+import { href, t, type Locale } from '../../i18n';
+import { syncRepoUrl } from '../../config';
+
+interface Props { locale: Locale }
+
+const { locale } = Astro.props;
+---
+<section class="block sync" id="sync">
+  <div class="wrap">
+    <div class="block-head">
+      <span class="badge">{t(locale, 'sync.badge')}</span>
+      <h2 class="title">{t(locale, 'sync.title')}</h2>
+      <p>{t(locale, 'sync.text')}</p>
+    </div>
+    <div class="trust trust--two">
+      <div class="card card--flat trust__card">
+        <span class="logo logo--soft" aria-hidden="true"><svg class="ic"><use href="#i-home"/></svg></span>
+        <h3>{t(locale, 'sync.own.title')}</h3>
+        <p>{t(locale, 'sync.own.text')}</p>
+        <p><LanguageLink locale={locale} href={syncRepoUrl} hreflang="en">{t(locale, 'sync.own.link')}</LanguageLink></p>
+      </div>
+      <div class="card card--flat trust__card">
+        <span class="logo logo--soft" aria-hidden="true"><svg class="ic"><use href="#i-globe"/></svg></span>
+        <h3>{t(locale, 'sync.cloud.title')} <span class="badge">{t(locale, 'sync.cloud.badge')}</span></h3>
+        <p>{t(locale, 'sync.cloud.text')}</p>
+      </div>
+    </div>
+    <p class="sync__note">{t(locale, 'sync.note')}</p>
+    <p class="sync__note">{t(locale, 'sync.seen')}</p>
+    <p class="trust__link"><a class="link" href={href(locale, 'help/#sync')}>{t(locale, 'sync.link')}</a></p>
+  </div>
+</section>

@@ -1,6 +1,7 @@
 ---
 import LanguageLink from '../LanguageLink.astro';
 import { href, t, tf, type Locale } from '../../i18n';
+import { appStoreUrl } from '../../config';
 import { changelogLink, formatDate, release } from '../../lib/release';
 interface Props { locale: Locale }
 const { locale } = Astro.props;
@@ -12,7 +13,7 @@ const changelog = changelogLink(locale);
       <p class="download-invite__meta">{tf(locale, 'download.meta', { version: release.version, date: formatDate(locale) })} · <LanguageLink locale={locale} href={changelog.href} hreflang="en">{t(locale, 'download.changes')}</LanguageLink></p>
     </div>
     <div class="download-invite__action">
-      <a class="btn btn--primary btn--lg" href={href(locale, 'download/')} data-platform-link data-mac={t(locale, 'hero.ctaMac')} data-win={t(locale, 'hero.ctaWin')} data-linux={t(locale, 'hero.ctaLinux')}><svg class="ic" aria-hidden="true"><use href="#i-download"/></svg><span>{t(locale, 'hero.ctaDefault')}</span></a>
+      <a class="btn btn--primary btn--lg" href={href(locale, 'download/')} data-platform-link data-mac={t(locale, 'hero.ctaMac')} data-win={t(locale, 'hero.ctaWin')} data-linux={t(locale, 'hero.ctaLinux')} data-ios={t(locale, 'hero.ctaIos')} data-ios-href={appStoreUrl}><svg class="ic" aria-hidden="true"><use href="#i-download"/></svg><span>{t(locale, 'hero.ctaDefault')}</span></a>
       <a class="link" href={href(locale, 'download/')}>{t(locale, 'download.all')}</a>
     </div>
     <p class="download-invite__notice">{t(locale, 'download.notice')}</p>
