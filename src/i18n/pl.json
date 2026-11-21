@@ -164,7 +164,7 @@
     "cards": {
       "requests": {
         "title": "Bez śledzenia",
-        "text": "Bez analityki i statystyk użycia. Ceny, kursy walut i aktualizacje są sprawdzane online. Serwisy z cenami widzą symbole, które śledzisz, ale nie twoje salda."
+        "text": "Bez analityki i statystyk użycia. Ceny, kursy walut i aktualizacje są sprawdzane online, a synchronizacja, jeśli ją skonfigurujesz, łączy się z twoim własnym serwerem synchronizacji. Serwisy z cenami widzą symbole, które śledzisz, ale nie twoje salda."
       },
       "disk": {
         "title": "Zaszyfrowane dane",
@@ -258,7 +258,7 @@
         "title": "Android",
         "text": "Wkrótce."
       },
-      "sync": "Synchronizacja między urządzeniami jest eksperymentalna i działa przez serwer, który prowadzisz samodzielnie. Serwer i instrukcja konfiguracji są na [GitHubie (EN)](syncRepo)."
+      "sync": "Synchronizacja między urządzeniami jest eksperymentalna i działa przez serwer, który prowadzisz ty albo ktoś, komu ufasz. Serwer i instrukcja konfiguracji są na [GitHubie (EN)](syncRepo)."
     },
     "install": {
       "title": "Instalacja i pierwsze uruchomienie",
@@ -395,7 +395,7 @@
       },
       "cloud": {
         "q": "Czym jest Moony Cloud?",
-        "a": "Hostowany serwer synchronizacji prowadzony przez projekt, dla osób, które wolałyby nie prowadzić własnego. Nie jest jeszcze dostępny. Dziś synchronizacja działa z serwerem, który prowadzisz samodzielnie."
+        "a": "Hostowany serwer synchronizacji prowadzony przez projekt, dla osób, które wolałyby nie prowadzić własnego. Nie jest jeszcze dostępny. Dziś synchronizacja działa z serwerem, który prowadzisz ty albo ktoś, komu ufasz."
       },
       "bank": {
         "q": "Czy łączy się z moim bankiem?",
@@ -478,7 +478,7 @@
     },
     "recovery": {
       "title": "Zapomniane hasło i klucz odzyskiwania",
-      "warning": "**Nie ma tylnych drzwi.** Moony nie ma konta ani serwera, więc nikt nie zresetuje za ciebie hasła, łącznie z autorem. Hasło i klucz odzyskiwania to dwie osobne drogi do tych samych zaszyfrowanych danych. Jeśli nie masz żadnego z nich, nic nie da się otworzyć: ani twoich wpisów, ani dołączonych zdjęć i dokumentów.",
+      "warning": "**Nie ma tylnych drzwi.** Moony nie ma konta ani serwera, który mógłby ci pomóc, więc nikt nie zresetuje za ciebie hasła, łącznie z autorem. Hasło i klucz odzyskiwania to dwie osobne drogi do tych samych zaszyfrowanych danych. Jeśli nie masz żadnego z nich, nic na tym urządzeniu nie da się otworzyć: ani twoich wpisów, ani dołączonych zdjęć i dokumentów. Jeśli korzystasz z synchronizacji, zestaw odzyskiwania to osobna droga do zsynchronizowanych danych.",
       "tableHead": [
         "Jeśli…",
         "To…"
@@ -561,7 +561,7 @@
       "make": [
         "Otwórz **Ustawienia → Dane i kopie zapasowe** i kliknij **Zrób kopię teraz**. Wybierz, gdzie zapisać plik ZIP (Moony proponuje `moony-backup-YYYY-MM-DD.zip`).",
         "Zawiera zaszyfrowane kopie twoich wpisów i załączników oraz pliki kluczy `salt`, `key.enc` i `recovery.enc` i pozostaje zaszyfrowany: otworzy go tylko hasło, które obowiązywało w chwili jego utworzenia, albo klucz odzyskiwania z tamtego czasu.",
-        "Trzymaj kopię poza tym komputerem, na dysku zewnętrznym lub we własnej chmurze. Moony niczego nie wysyła; Przegląd przypomina, gdy ostatnia kopia jest stara. Rób kopię przed aktualizacją i po dużym imporcie."
+        "Trzymaj kopię poza tym komputerem, na dysku zewnętrznym lub we własnej chmurze. Moony nie wysyła twoich kopii zapasowych; Przegląd przypomina, gdy ostatnia kopia jest stara. Rób kopię przed aktualizacją i po dużym imporcie."
       ],
       "restoreTitle": "Przywróć kopię zapasową",
       "restoreIntro": "Zacznij od **Ustawienia → Dane i kopie zapasowe → Przywróć z kopii zapasowej…**, z ekranu blokady (**Masz kopię zapasową? Przywróć z kopii zapasowej…**) albo z pierwszego kroku kreatora konfiguracji (**Przywróć z kopii zapasowej**). Potem:",
@@ -622,7 +622,7 @@
       "uninstall": [
         "Odinstalowanie usuwa aplikację, ale domyślnie nie twoje dane, które zostają w folderze danych. macOS: zamknij Moony i przeciągnij go do Kosza. Windows: odinstaluj go w Ustawienia → Aplikacje. Linux: usuń plik AppImage albo usuń pakiet `.deb` lub `.rpm` menedżerem pakietów.",
         "Aby usunąć także dane, zrób to przed odinstalowaniem: **Ustawienia → Konto → Usuń dane…**, a potem wpisz `USUŃ`. To usuwa bazy danych, pliki kluczy i załączniki i nie można tego cofnąć, więc jeśli możesz ich jeszcze potrzebować, najpierw zrób kopię zapasową.",
-        "Zostają foldery `pre-restore-<time>`, zapisane przez ciebie kopie zapasowe i eksporty oraz logi; usuń je ręcznie albo usuń cały folder danych. Na serwerze nie ma niczego do usunięcia, bo Moony go nie ma."
+        "Zostają foldery `pre-restore-<time>`, zapisane przez ciebie kopie zapasowe i eksporty oraz logi; usuń je ręcznie albo usuń cały folder danych. Jeśli korzystasz z synchronizacji, zaszyfrowana kopia twoich danych jest też na serwerze synchronizacji. Usuń ją w **Ustawienia → Synchronizacja** (**Usuń zsynchronizowane dane na serwerze**), zanim usuniesz dane lokalne. To usuwa zsynchronizowane dane z serwera synchronizacji dla wszystkich urządzeń. Dane lokalne na każdym urządzeniu zostają."
       ]
     },
     "ai": {
