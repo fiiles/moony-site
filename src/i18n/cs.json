@@ -114,7 +114,7 @@
     "note": "Zdarma. Pro iPhone s iOS 15 nebo novějším.",
     "transfer": "Už používáte Moony v počítači? Obnovte zálohu v telefonu, nebo obě zařízení udržujte ve shodě pomocí synchronizace.",
     "android": "Android",
-    "soon": "Již brzy",
+    "soon": "Připravujeme",
     "alt": "Přehled ukázkového profilu v Moony na iPhonu"
   },
   "tracks": {
@@ -188,7 +188,7 @@
     },
     "cloud": {
       "title": "Moony Cloud",
-      "badge": "Již brzy",
+      "badge": "Připravujeme",
       "text": "Hostovaný server provozovaný projektem pro ty, kdo nechtějí provozovat vlastní."
     },
     "note": "Synchronizace je nová a experimentální. Zálohujte dál: synchronizace přenáší každou změnu, včetně smazání, i do ostatních zařízení.",
@@ -256,7 +256,7 @@
       },
       "android": {
         "title": "Android",
-        "text": "Již brzy."
+        "text": "Připravujeme."
       },
       "sync": "Synchronizace mezi zařízeními je experimentální a běží přes server, který provozujete sami. Server a návod k nastavení jsou na [GitHubu (EN)](syncRepo)."
     },
@@ -379,7 +379,7 @@
       },
       "data": {
         "q": "Sbírá Moony o mně nějaká data?",
-        "a": "Ne: aplikace nemá žádnou analytiku, hlášení pádů ani statistiky používání. Posílá jen požadavky na ceny a směnné kurzy, v počítači kontrolu aktualizací a, pokud nastavíte synchronizaci, váš vlastní synchronizační server. Úplný seznam je na stránce Soukromí."
+        "a": "Ne: aplikace nemá žádnou analytiku, hlášení pádů ani statistiky používání. Připojuje se jen kvůli cenám a směnným kurzům, v počítači kvůli kontrole aktualizací a, pokud nastavíte synchronizaci, k vašemu vlastnímu synchronizačnímu serveru. Úplný seznam je na stránce Soukromí."
       },
       "password": {
         "q": "Co když zapomenu heslo?",
@@ -387,10 +387,10 @@
       },
       "devices": {
         "q": "Funguje Moony i na telefonu nebo více počítačích?",
-        "a": "Ano. Moony běží na macOS, Windows, Linuxu a iPhonu a každé zařízení funguje samostatně. Chcete-li mít všude stejná data, nastavte synchronizaci, která je experimentální, nebo data přeneste záložním souborem. Aplikace pro Android brzy přibude."
+        "a": "Ano. Moony běží na macOS, Windows, Linuxu a iPhonu a každé zařízení funguje samostatně. Chcete-li mít všude stejná data, nastavte synchronizaci, která je experimentální, nebo data přeneste záložním souborem. Aplikace pro Android se připravuje."
       },
       "sync": {
-        "q": "Jak funguje synchronizace a kdo může číst má data?",
+        "q": "Jak funguje synchronizace a kdo může číst moje data?",
         "a": "Synchronizace je volitelná a experimentální. Vaše zařízení vše před odesláním zašifrují a pošlou na synchronizační server, který provozujete vy nebo někdo, komu důvěřujete; server nemá klíč a ukládá jen šifrovaná data. Ten, kdo ho provozuje, vidí, kdy a kolik synchronizujete. Zálohujte dál."
       },
       "cloud": {
@@ -578,7 +578,7 @@
         "V prvním kroku průvodce zvolte **Obnovit ze zálohy**, vyberte ZIP a potvrďte.",
         "Odemkněte heslem z doby zálohy."
       ],
-      "moveOutro": "Záloha je jednorázová kopie: stará a nová kopie se rozejdou, jakmile používáte obě, a změny po záloze v ní nejsou. Chcete-li několik zařízení udržet ve shodě, použijte [synchronizaci](sync), která je experimentální. Jinak až nový počítač funguje, data ze starého odstraňte ([jak](uninstall)).",
+      "moveOutro": "Záloha je jednorázová kopie: starý a nový počítač se rozejdou, jakmile používáte obě, a změny po záloze v ní nejsou. Chcete-li několik zařízení udržet ve shodě, použijte [synchronizaci](sync), která je experimentální. Jinak až nový počítač funguje, data ze starého odstraňte ([jak](uninstall)).",
       "notBackup": "**Exportovat JSON** na stejné stránce zapíše všechny tabulky do nešifrovaného souboru JSON bez příloh. Není to záloha; zacházejte s ním jako s bankovním výpisem. **Ověřit databázi** zkontroluje integritu databáze."
     },
     "phone": {
