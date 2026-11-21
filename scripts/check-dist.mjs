@@ -15,10 +15,21 @@ const origin = new URL(siteUrl).origin;
 const rawBase = (process.env.BASE_PATH || '/').replace(/^\/+|\/+$/g, '');
 const basePath = rawBase === '' ? '/' : `/${rawBase}/`;
 
-/** Pages that exist in English only: they carry the `en` and `x-default` alternates and no `cs`. */
+/** The locale registry shared with the site: the first entry is the default (English, at the root). */
+const registry = JSON.parse(readFileSync(resolve(here, '../src/locales.json'), 'utf8'));
+const defaultLocale = registry[0];
+const nonDefault = registry.slice(1);
+/** The first URL segment when it is a non-default locale code ("cs/help/" gives "cs"), else undefined. */
+const localeOf = (rel) => nonDefault.find((l) => rel.startsWith(`${l.code}/`));
+/** The five pages every non-default locale has under its folder. */
+const LOCALE_PAGES = ['', 'download/', 'help/', 'ai-integration/', 'site-privacy/'];
+
+/** Pages that exist in English only: they carry the `en` and `x-default` alternates and no other language. */
 const ENGLISH_ONLY = new Set(['privacy/', 'security/', 'changelog/']);
-/** HTML + CSS + JS + fonts, without the screenshot and social images. */
-const SIZE_BUDGET = 512 * 1024;
+/** Size limits (HTML, CSS, JS and fonts; the screenshot and social images do not count): the English root HTML, each locale folder's HTML, and the files all pages share. */
+const BUDGET_ENGLISH_HTML = 288 * 1024;
+const BUDGET_LOCALE_HTML = 128 * 1024;
+const BUDGET_SHARED = 192 * 1024;
 const BUDGET_EXTENSIONS = new Set(['.html', '.css', '.js', '.mjs', '.woff', '.woff2', '.ttf', '.otf']);
 const BUDGET_EXCLUDED = ['screenshots/', 'og/'];
 
@@ -162,7 +173,7 @@ check('html-lang', () => {
   for (const p of pages) {
     const open = /<html\b([^>]*)>/i.exec(p.html);
     const lang = open ? parseAttrs(open[1]).lang : undefined;
-    const expected = p.rel.startsWith('cs/') ? 'cs' : 'en';
+    const expected = (localeOf(p.rel) ?? defaultLocale).htmlLang;
     if (!lang) problems.push(`${p.rel}: <html> has no lang`);
     else if (lang !== expected) problems.push(`${p.rel}: lang="${lang}", the URL says ${expected}`);
   }
@@ -181,13 +192,14 @@ check('canonical-hreflang', () => {
       if (!p.tags.some((t) => t.name === 'meta' && t.attrs.name === 'robots' && /noindex/i.test(t.attrs.content ?? ''))) problems.push('404.html: missing <meta name="robots" content="noindex">');
       continue;
     }
-    const path = pageUrlPath(p.rel).replace(/^cs\//, '');
     const own = url(pageUrlPath(p.rel));
+    const pageLocale = localeOf(p.rel);
+    const path = pageLocale ? pageUrlPath(p.rel).slice(pageLocale.code.length + 1) : pageUrlPath(p.rel);
     if (canonicals.length !== 1) problems.push(`${p.rel}: ${canonicals.length} canonical links, expected exactly 1`);
     else if (canonicals[0].attrs.href !== own) problems.push(`${p.rel}: canonical is ${canonicals[0].attrs.href}, expected ${own}`);
     const expected = ENGLISH_ONLY.has(path)
-      ? { en: url(path), 'x-default': url(path) }
-      : { en: url(path), cs: url(`cs/${path}`), 'x-default': url(path) };
+      ? { [defaultLocale.htmlLang]: url(path), 'x-default': url(path) }
+      : { ...Object.fromEntries(registry.map((l, i) => [l.htmlLang, url(i === 0 ? path : `${l.code}/${path}`)])), 'x-default': url(path) };
     const found = Object.fromEntries(alternates.map((l) => [l.attrs.hreflang, l.attrs.href]));
     if (alternates.length !== Object.keys(expected).length || Object.keys(found).length !== alternates.length || Object.keys(expected).some((l) => !(l in found))) {
       problems.push(`${p.rel}: hreflang set is [${alternates.map((l) => l.attrs.hreflang).join(', ')}], expected exactly [${Object.keys(expected).join(', ')}]`);
@@ -248,17 +260,42 @@ check('headings', () => {
   return { problems, summary: 'no exclamation mark in an h1, h2 or h3' };
 });
 
+check('locale-pages', () => {
+  const problems = [];
+  for (const l of nonDefault) {
+    for (const path of LOCALE_PAGES) {
+      const file = `${l.code}/${path}index.html`;
+      if (!existsSync(join(dist, file))) problems.push(`${file} is missing (${l.code} needs the page /${l.code}/${path})`);
+    }
+  }
+  return { problems, summary: `${nonDefault.length} non-default locale(s) have all ${LOCALE_PAGES.length} pages` };
+});
+
 check('size-budget', () => {
-  let total = 0;
+  let english = 0;
+  let shared = 0;
+  const perLocale = new Map(nonDefault.map((l) => [l.code, 0]));
   for (const f of files) {
     const rel = posixRel(f);
     if (BUDGET_EXCLUDED.some((d) => rel.startsWith(d))) continue;
-    if (BUDGET_EXTENSIONS.has(extname(rel).toLowerCase())) total += statSync(f).size;
+    const ext = extname(rel).toLowerCase();
+    if (!BUDGET_EXTENSIONS.has(ext)) continue;
+    const size = statSync(f).size;
+    const locale = localeOf(rel);
+    if (ext === '.html') {
+      if (locale) perLocale.set(locale.code, perLocale.get(locale.code) + size);
+      else english += size;
+    } else shared += size;
   }
   const kb = (n) => `${(n / 1024).toFixed(1)} KB`;
+  const problems = [];
+  if (english > BUDGET_ENGLISH_HTML) problems.push(`English HTML totals ${kb(english)}, over the ${kb(BUDGET_ENGLISH_HTML)} budget`);
+  for (const [code, size] of perLocale) if (size > BUDGET_LOCALE_HTML) problems.push(`${code} HTML totals ${kb(size)}, over the ${kb(BUDGET_LOCALE_HTML)} budget per locale`);
+  if (shared > BUDGET_SHARED) problems.push(`shared CSS, JS and fonts total ${kb(shared)}, over the ${kb(BUDGET_SHARED)} budget`);
+  const locales = [...perLocale].map(([code, size]) => `${code} ${kb(size)}`).join(', ');
   return {
-    problems: total > SIZE_BUDGET ? [`HTML, CSS, JS and fonts total ${kb(total)}, over the ${kb(SIZE_BUDGET)} budget`] : [],
-    summary: `${kb(total)} of HTML, CSS, JS and fonts (budget ${kb(SIZE_BUDGET)})`,
+    problems,
+    summary: `English HTML ${kb(english)} (budget ${kb(BUDGET_ENGLISH_HTML)}); per locale: ${locales || 'none'} (budget ${kb(BUDGET_LOCALE_HTML)} each); shared CSS, JS and fonts ${kb(shared)} (budget ${kb(BUDGET_SHARED)})`,
   };
 });
 

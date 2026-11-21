@@ -1,0 +1,4 @@
+[
+  { "code": "en", "native": "English", "intl": "en-GB", "og": "en_US", "htmlLang": "en", "latinExt": false },
+  { "code": "cs", "native": "Čeština", "intl": "cs-CZ", "og": "cs_CZ", "htmlLang": "cs", "latinExt": true }
+]

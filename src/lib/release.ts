@@ -1,6 +1,6 @@
 import release from '../data/release.json';
 import { repoUrl } from '../config';
-import { href, type Locale } from '../i18n';
+import { enOnlyLink, localeInfo, type Locale } from '../i18n';
 
 export { release };
 
@@ -36,19 +36,20 @@ export const downloadCards = [
   { id: 'linux', os: 'Linux', files: linuxFiles },
 ] as const;
 
-/** Link to the changelog. The repository documents are published in English only, so Czech pages mark the link as English. */
+/** Link to the changelog. The repository documents are published in English only, so pages in other languages mark the link as English. */
 export function changelogLink(locale: Locale): { href: string; hreflang: 'en' | undefined } {
-  return { href: href('en', 'changelog/'), hreflang: locale === 'cs' ? 'en' : undefined };
+  return enOnlyLink(locale, 'changelog/');
 }
 
 /** File size in MB with the locale's decimal separator, e.g. "16.1 MB" or "16,1 MB". */
 export function formatSize(bytes: number, locale: Locale): string {
-  return (bytes / 1048576).toFixed(1).replace('.', locale === 'cs' ? ',' : '.') + ' MB';
+  const number = new Intl.NumberFormat(localeInfo(locale).intl, { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+  return number.format(bytes / 1048576) + ' MB';
 }
 
 /** The release date written out in the locale, e.g. "12 October 2026". */
 export function formatDate(locale: Locale): string {
-  return new Intl.DateTimeFormat(locale === 'en' ? 'en-GB' : locale, { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(`${release.publishedAt}T00:00:00Z`));
+  return new Intl.DateTimeFormat(localeInfo(locale).intl, { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(`${release.publishedAt}T00:00:00Z`));
 }
 
 /** schema.org description of the app for the download page. Every value comes from release.json or a fixed fact about the project. */

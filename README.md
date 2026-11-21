@@ -1,6 +1,6 @@
 # Moony website
 
-The website for Moony, the local-first personal finance app. A static Astro 7 site, bilingual (English and Czech), built to plain HTML. Hosted on Cloudflare from the public GitHub repository `fiiles/moony-site`, served at https://moonyfinance.com.
+The website for Moony, the local-first personal finance app. A static Astro 7 site, multilingual (English at the root, every other language under `/<code>/`), built to plain HTML. Hosted on Cloudflare from the public GitHub repository `fiiles/moony-site`, served at https://moonyfinance.com.
 
 ## Installing
 
@@ -12,7 +12,7 @@ The `.npmrc` in this repository pins the npm registry to https://registry.npmjs.
 npm ci && npm run build
 ```
 
-The output lands in `dist/`. `npm run build` also runs the token check before the build and `scripts/check-dist.mjs` after it. The checks fail the build when a page would break the site's promises: a request to another host, an inline script or style (the Content-Security-Policy allows none), a missing canonical or hreflang link, a broken internal link or asset, an exclamation mark in an h1 to h3, more than 512 KB of HTML, CSS, JS and fonts (screenshots and social images excluded), or a weakened `_headers` file. It also writes the right `Sitemap:` line into `dist/robots.txt`.
+The output lands in `dist/`. `npm run build` also runs the token check before the build and `scripts/check-dist.mjs` after it. The checks fail the build when a page would break the site's promises: a request to another host, an inline script or style (the Content-Security-Policy allows none), a missing canonical or hreflang link, a broken internal link or asset, an exclamation mark in an h1 to h3, an over-budget group of files (English root HTML over 288 KB, the HTML of one locale folder over 128 KB, or shared CSS, JS and fonts over 192 KB; screenshots and social images excluded), a locale without its five pages, or a weakened `_headers` file. It also writes the right `Sitemap:` line into `dist/robots.txt`.
 
 ## Scripts
 
@@ -38,9 +38,19 @@ The output lands in `dist/`. `npm run build` also runs the token check before th
   npm run shots:optimize # requires cwebp (WebP tools); not needed for a normal build
   ```
 
-The landing page uses four screenshots: dashboard, account detail, investment analysis and loans. Each has same-origin WebP sources with PNG fallback; the dashboard also has a 740 × 520 close-up for screens up to 600 px wide. Recheck the crop in `scripts/optimize-shots.mjs` if the app layout changes. A short AI integration section on the home page shows example questions and explains the optional data sharing. Full setup instructions live at `/ai-integration/` and `/cs/ai-integration/`, linked from the footer.
+The landing page uses four screenshots: dashboard, account detail, investment analysis and loans. Each has same-origin WebP sources with PNG fallback; the dashboard also has a 740 × 520 close-up for screens up to 600 px wide. Recheck the crop in `scripts/optimize-shots.mjs` if the app layout changes. A short AI integration section on the home page shows example questions and explains the optional data sharing. Full setup instructions live at `/ai-integration/` and `/<code>/ai-integration/`, linked from the footer.
 
-The Help lives at `/help/` and `/cs/help/`, linked from the footer and the download page. It is one page per language with six anchored sections (first start, forgotten password, importing statements, backup and a new computer, updates and uninstalling, AI assistant), built by `src/components/HelpPage.astro` from the `help.*` strings of the dictionaries. It is one page rather than six because every page costs about 8 KB of layout against the size budget. Every menu name in it comes from the app's English or Czech interface strings; recheck them when the app renames a setting.
+The Help lives at `/help/` and `/<code>/help/`, linked from the footer and the download page. It is one page per language with six anchored sections (first start, forgotten password, importing statements, backup and a new computer, updates and uninstalling, AI assistant), built by `src/components/HelpPage.astro` from the `help.*` strings of the dictionaries. It is one page rather than six because every page costs about 8 KB of layout against the size budget. Every menu name in it comes from the app's English or Czech interface strings; recheck them when the app renames a setting.
+
+## Adding a language
+
+The registry `src/locales.json` lists the languages; the first entry (English) is the default and lives at the root, every other one is served under `/<code>/` by the pages in `src/pages/[locale]/`. To add one:
+
+1. Create `src/i18n/<code>.json` with every key of `en.json` (the tests compare key sets, placeholders, link targets and list lengths).
+2. Add an entry to `src/locales.json`: `code`, `native` (the language written in itself), `intl` (BCP 47 tag for dates and numbers), `og` (the `og:locale` value), `htmlLang` (the `lang` attribute and hreflang value) and `latinExt` (true if the language needs the Latin-extended font subset).
+3. Run `npm test` and `npm run build`. A registered language without a dictionary fails the build, and the build checks that its five pages exist.
+
+Screenshots for a language are optional: `<name>-<code>.png` is used when present.
 
 ## Deploying
 

@@ -1,13 +1,13 @@
 ---
-import { href, t, tList, type Locale } from '../i18n';
+import { enOnlyLink, href, t, tList, type Locale } from '../i18n';
 import { rich, type RichLink } from '../lib/rich';
 
 interface Props { locale: Locale }
 
 const { locale } = Astro.props;
 const h = (key: string) => t(locale, `help.${key}`);
-// The repository documents are published in English only; Czech pages link to the English ones and say so in the link text.
-const enOnly = (path: string): RichLink => ({ href: href('en', path), hreflang: locale === 'cs' ? 'en' : undefined });
+// The repository documents are published in English only; pages in other languages link to the English ones and say so in the link text.
+const enOnly = (path: string): RichLink => enOnlyLink(locale, path);
 // Link targets used in the help.* strings. Page addresses depend on the locale, so strings name a key instead of an address.
 const links: Record<string, RichLink> = {
   dlMac: { href: href(locale, 'download/#install-mac') },

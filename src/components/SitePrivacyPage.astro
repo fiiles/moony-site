@@ -1,12 +1,12 @@
 ---
-import { href, t, type Locale } from '../i18n';
+import { enOnlyLink, t, type Locale } from '../i18n';
 import { rich } from '../lib/rich';
 
 interface Props { locale: Locale }
 
 const { locale } = Astro.props;
-// The app's Privacy page is published in English only; Czech pages link to the English one.
-const links = { privacy: { href: href('en', 'privacy/'), hreflang: locale === 'cs' ? 'en' : undefined } };
+// The app's Privacy page is published in English only; pages in other languages link to the English one.
+const links = { privacy: enOnlyLink(locale, 'privacy/') };
 const items = ['cookies', 'origin', 'hosting', 'downloads', 'operator'];
 ---
 <section class="block">

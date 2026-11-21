@@ -1,9 +1,10 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Landing from '../../components/Landing.astro';
-import { t } from '../../i18n';
+import { localizedPaths, t } from '../../i18n';
 
-const locale = 'cs';
+export const getStaticPaths = localizedPaths;
+const { locale } = Astro.params;
 ---
 <Base locale={locale} title={`${t(locale, 'site.name')} — ${t(locale, 'site.tagline')}`} description={t(locale, 'site.description')} path="">
   <Landing locale={locale} />
