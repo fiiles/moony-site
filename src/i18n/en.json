@@ -622,7 +622,7 @@
       "uninstall": [
         "Uninstalling removes the app but, by default, not your data, which stays in the data folder. macOS: quit Moony and drag it to the Trash. Windows: uninstall it in Settings → Apps. Linux: delete the AppImage or remove the `.deb` or `.rpm` package with your package manager.",
         "To remove your data too, do it before you uninstall: **Settings → Account → Delete data…**, then type `DELETE`. This removes the databases, key files and attachments and cannot be undone, so make a backup first if you might want them back.",
-        "It leaves `pre-restore-<time>` folders, backups and exports you saved, and the logs; delete those by hand, or delete the whole data folder. If you use sync, an encrypted copy of your data is also on your sync server. Delete it under **Settings → Sync** (**Delete synced data on the server**) before you delete the local data; that removes it for every device."
+        "It leaves `pre-restore-<time>` folders, backups and exports you saved, and the logs; delete those by hand, or delete the whole data folder. If you use sync, an encrypted copy of your data is also on your sync server. Delete it under **Settings → Sync** (**Delete synced data on the server**) before you delete the local data. This deletes the synced data on the sync server for every device. The local data on every device stays."
       ]
     },
     "ai": {

@@ -622,7 +622,7 @@
       "uninstall": [
         "Odinstalace odstraní aplikaci, ale ve výchozím stavu ne vaše data, která zůstanou ve složce s daty. macOS: ukončete Moony a přetáhněte ho do Koše. Windows: odinstalujte ho v Nastavení → Aplikace. Linux: smažte soubor AppImage nebo odeberte balíček `.deb` či `.rpm` správcem balíčků.",
         "Chcete-li odstranit i data, udělejte to před odinstalací: **Nastavení → Účet → Smazat data…** a napište `SMAZAT`. Odstraní se databáze, klíčové soubory a přílohy a nelze to vrátit, takže pokud je možná budete chtít zpět, nejdřív vytvořte zálohu.",
-        "Zůstanou složky `pre-restore-<čas>`, zálohy a exporty, které jste uložili, a logy; smažte je ručně, nebo smažte celou složku s daty. Pokud používáte synchronizaci, je šifrovaná kopie vašich dat také na vašem synchronizačním serveru. Smažte ji v **Nastavení → Synchronizace** (**Smazat synchronizovaná data na serveru**) dřív, než smažete místní data; smaže se tím pro všechna zařízení."
+        "Zůstanou složky `pre-restore-<čas>`, zálohy a exporty, které jste uložili, a logy; smažte je ručně, nebo smažte celou složku s daty. Pokud používáte synchronizaci, je šifrovaná kopie vašich dat také na vašem synchronizačním serveru. Smažte ji v **Nastavení → Synchronizace** (**Smazat synchronizovaná data na serveru**) dřív, než smažete místní data. Tím se na synchronizačním serveru smažou synchronizovaná data pro všechna zařízení. Místní data na každém zařízení zůstanou."
       ]
     },
     "ai": {
