@@ -269,6 +269,10 @@
         "title": "Content from our own domain",
         "text": "Fonts, styles, scripts and images load from this site’s own domain. A strict Content-Security-Policy header restricts page content. The hosting provider may separately use the network diagnostics described below."
       },
+      "language": {
+        "title": "Language",
+        "text": "The site opens in the first language of your browser’s language list that it is available in, and in English otherwise. The choice is made in your browser. When you pick a language yourself, your browser remembers it in its local storage under the name moony-lang; it is not a cookie and it is never sent anywhere."
+      },
       "hosting": {
         "title": "Hosting",
         "text": "Cloudflare hosts this website. When serving pages, it processes standard request data, such as your IP address and user agent, under its [privacy policy](https://www.cloudflare.com/privacypolicy/). Its [Network Error Logging service](https://developers.cloudflare.com/network-error-logging/) may receive network error reports from your browser. Cloudflare visitor analytics are not enabled on this site."

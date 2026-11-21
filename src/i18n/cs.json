@@ -269,6 +269,10 @@
         "title": "Obsah z vlastní domény",
         "text": "Písma, styly, skripty a obrázky se načítají z vlastní domény webu. Obsah stránky omezuje přísná hlavička Content-Security-Policy. Hosting může samostatně využívat síťovou diagnostiku popsanou níže."
       },
+      "language": {
+        "title": "Jazyk",
+        "text": "Web se otevře v prvním jazyce ze seznamu jazyků vašeho prohlížeče, ve kterém je k dispozici, a jinak anglicky. Výběr se provádí ve vašem prohlížeči. Když si jazyk zvolíte sami, prohlížeč si ho pamatuje v místním úložišti pod názvem moony-lang; není to cookie a nikam se neodesílá."
+      },
       "hosting": {
         "title": "Hosting",
         "text": "Web hostuje Cloudflare. Při poskytování stránek zpracovává běžné údaje o požadavku, například IP adresu a user agent, podle svých [zásad ochrany osobních údajů (EN)](https://www.cloudflare.com/privacypolicy/). Služba [Network Error Logging (EN)](https://developers.cloudflare.com/network-error-logging/) může od prohlížeče přijímat hlášení síťových chyb. Na webu není zapnutá návštěvnická analytika Cloudflare."

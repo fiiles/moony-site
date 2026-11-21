@@ -50,6 +50,8 @@ The registry `src/locales.json` lists the languages; the first entry (English) i
 2. Add an entry to `src/locales.json`: `code`, `native` (the language written in itself), `intl` (BCP 47 tag for dates and numbers), `og` (the `og:locale` value), `htmlLang` (the `lang` attribute and hreflang value) and `latinExt` (true if the language needs the Latin-extended font subset).
 3. Run `npm test` and `npm run build`. A registered language without a dictionary fails the build, and the build checks that its five pages exist.
 
+The site opens in the visitor's language. `public/js/lang.js` is a classic blocking script in the `<head>` of every page, ahead of the stylesheets. On an indexed English page that exists in every language (`data-auto`), it sends the visitor to the same page in the language they picked earlier (kept in `localStorage` under `moony-lang`, set when they click a language in the menu), or else in the first language of `navigator.languages` the site has (`no` and `nn` map to `nb`; English stays). Pages of other languages, English-only pages and the 404 page never redirect. If storage is blocked and the visitor comes from another page of the site, the script does nothing. `lang.js` must stay free of network APIs and of inline code: `scripts/check-dist.mjs` scans it, and its `language-script` check verifies the tag on every built page.
+
 Screenshots for a language are optional: `<name>-<code>.png` is used when present.
 
 ## Deploying

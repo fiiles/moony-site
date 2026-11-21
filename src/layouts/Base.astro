@@ -2,7 +2,7 @@
 import Icons from '../components/Icons.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import { alternate, asset, href, locales, localeInfo, siteUrl, t, type Locale } from '../i18n';
+import { alternate, asset, base, defaultLocale, href, locales, localeInfo, siteUrl, t, type Locale } from '../i18n';
 
 interface Props {
   locale: Locale;
@@ -33,6 +33,9 @@ const { htmlLang, og: ogLocale, latinExt } = localeInfo(locale);
 const ogLocaleAlt = locales.filter((l) => l !== locale).map((l) => localeInfo(l).og);
 // The Latin-extended subset carries the diacritics of the languages that need it; English pages never request it.
 const fontPreloads = latinExt ? ['inter-latin-wght-normal.woff2', 'inter-latin-ext-wght-normal.woff2'] : ['inter-latin-wght-normal.woff2'];
+// js/lang.js moves an English page to the visitor's language; only a default-locale page that is indexed and exists in every language may move.
+const otherLocales = locales.filter((l) => l !== defaultLocale).join(',');
+const autoLanguage = locale === defaultLocale && !englishOnly && !noindex;
 // "<" is escaped so the JSON can never close the script element early.
 const jsonLdText = jsonLd ? JSON.stringify(jsonLd).replace(/</g, '\\u003c') : undefined;
 ---
@@ -41,6 +44,8 @@ const jsonLdText = jsonLd ? JSON.stringify(jsonLd).replace(/</g, '\\u003c') : un
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {/* A classic blocking script, ahead of every stylesheet, so a redirect happens before first paint. */}
+    <script is:inline src={asset('js/lang.js')} data-locales={otherLocales} data-default={defaultLocale} data-base={base()} data-auto={autoLanguage ? '' : undefined}></script>
     <meta name="color-scheme" content="light" />
     <title>{title}</title>
     <meta name="description" content={description} />

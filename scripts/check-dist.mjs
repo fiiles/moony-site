@@ -52,7 +52,8 @@ function parseAttrs(source) {
 
 const TAG = /<([a-zA-Z][\w:-]*)((?:\s+[^\s"'<>\/=]+(?:\s*=\s*(?:"[^"]*"|'[^']*'|[^\s"'=<>`]+))?)*)\s*\/?>/g;
 function parseHtml(file) {
-  let html = readFileSync(file, 'utf8').replace(/<!--[\s\S]*?-->/g, '');
+  const raw = readFileSync(file, 'utf8').replace(/<!--[\s\S]*?-->/g, '');
+  let html = raw;
   const scripts = [];
   const styles = [];
   html = html.replace(/<script\b([^>]*)>([\s\S]*?)<\/script\s*>/gi, (_, a, body) => (scripts.push({ attrs: parseAttrs(a), body }), ''));
@@ -61,7 +62,7 @@ function parseHtml(file) {
   // Scripts and styles were cut out above; their opening tags still count as tags.
   for (const s of scripts) tags.push({ name: 'script', attrs: s.attrs });
   for (const s of styles) tags.push({ name: 'style', attrs: s.attrs });
-  return { file, rel: posixRel(file), html, tags, scripts, styles };
+  return { file, rel: posixRel(file), html, raw, tags, scripts, styles };
 }
 
 /** URL path of a built page as the browser sees it: "" for the home page, "cs/download/" for cs/download/index.html, "404.html" as it is. */
@@ -223,6 +224,37 @@ check('language-menu', () => {
     if (choices.join(',') !== expected.join(',')) problems.push(`${p.rel}: language menu links are [${choices.join(', ')}], expected [${expected.join(', ')}]`);
   }
   return { problems, summary: `${checked.length} pages carry one language menu with ${expected.length} languages in registry order` };
+});
+
+check('language-script', () => {
+  // js/lang.js picks the visitor's language before first paint, so every page loads it once, as a plain blocking script ahead of the first stylesheet.
+  // Only an indexed page of the default locale that exists in every language may redirect (data-auto); it can never start on any other page.
+  const problems = [];
+  const expectedLocales = nonDefault.map((l) => l.code).join(',');
+  const lang = `${basePath}js/lang.js`;
+  for (const p of pages) {
+    const found = [];
+    let firstStylesheet = -1;
+    let order = 0;
+    for (const m of p.raw.matchAll(/<(script|link)\b([^>]*)>/gi)) {
+      const attrs = parseAttrs(m[2]);
+      if (m[1].toLowerCase() === 'script' && attrs.src === lang) found.push({ attrs, order });
+      if (m[1].toLowerCase() === 'link' && /\bstylesheet\b/i.test(attrs.rel ?? '') && firstStylesheet < 0) firstStylesheet = order;
+      order++;
+    }
+    if (found.length !== 1) { problems.push(`${p.rel}: ${found.length} <script src="${lang}"> tags, expected 1`); continue; }
+    const { attrs, order: at } = found[0];
+    if (firstStylesheet >= 0 && at > firstStylesheet) problems.push(`${p.rel}: js/lang.js is loaded after a stylesheet`);
+    for (const bad of ['defer', 'async']) if (bad in attrs) problems.push(`${p.rel}: js/lang.js has ${bad}, it must block`);
+    if (attrs.type !== undefined) problems.push(`${p.rel}: js/lang.js has type="${attrs.type}", it must be a classic script`);
+    if (attrs['data-locales'] !== expectedLocales) problems.push(`${p.rel}: data-locales is "${attrs['data-locales']}", expected "${expectedLocales}"`);
+    if (attrs['data-default'] !== defaultLocale.code) problems.push(`${p.rel}: data-default is "${attrs['data-default']}", expected "${defaultLocale.code}"`);
+    if (attrs['data-base'] !== basePath) problems.push(`${p.rel}: data-base is "${attrs['data-base']}", expected "${basePath}"`);
+    const noindex = p.tags.some((t) => t.name === 'meta' && t.attrs.name === 'robots' && /noindex/i.test(t.attrs.content ?? ''));
+    const auto = !localeOf(p.rel) && !ENGLISH_ONLY.has(pageUrlPath(p.rel)) && !noindex;
+    if (('data-auto' in attrs) !== auto) problems.push(`${p.rel}: data-auto is ${'data-auto' in attrs ? 'present' : 'missing'}, expected ${auto ? 'present' : 'absent'}`);
+  }
+  return { problems, summary: `${pages.length} pages load js/lang.js once, before the first stylesheet; data-auto only on indexed default-locale pages` };
 });
 
 check('internal-links', () => {

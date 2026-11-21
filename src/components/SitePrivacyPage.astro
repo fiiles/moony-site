@@ -7,7 +7,7 @@ interface Props { locale: Locale }
 const { locale } = Astro.props;
 // The app's Privacy page is published in English only; pages in other languages link to the English one.
 const links = { privacy: enOnlyLink(locale, 'privacy/') };
-const items = ['cookies', 'origin', 'hosting', 'downloads', 'operator'];
+const items = ['cookies', 'origin', 'language', 'hosting', 'downloads', 'operator'];
 ---
 <section class="block">
   <div class="wrap prose">

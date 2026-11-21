@@ -26,14 +26,17 @@ const REDIRECTS = 'https://www.example.test/* https://example.test/:splat 301\n'
 /** The language menu every page carries: one link per registry locale, in registry order. */
 const langMenu = (base) => `<details class="lang-menu"><summary>EN</summary>${registry.map((l) => `<a data-lang-choice="${l.code}" href="#">${l.native}</a>`).join('')}</details>`;
 
+/** The script every page loads first. `auto` is set on indexed pages of the default locale that exist in every language. */
+const langScript = (base, auto = false) => `<script src="${base}js/lang.js" data-locales="${nonDefault.join(',')}" data-default="en" data-base="${base}"${auto ? ' data-auto' : ''}></script>`;
+
 /** A page that follows every rule. `extra` goes into the head, `body` replaces the default body. */
-function page({ base, locale = 'en', path = '', englishOnly = false, extra = '', body, lang = locale, withMenu = true }) {
+function page({ base, locale = 'en', path = '', englishOnly = false, extra = '', body, lang = locale, withMenu = true, script = langScript(base, locale === 'en' && !englishOnly) }) {
   const url = (p) => `https://example.test${base}${p}`;
   const own = url(locale === 'en' ? path : `${locale}/${path}`);
   const languages = englishOnly ? [registry[0]] : registry;
   const alternates = [...languages.map((l) => `<link rel="alternate" hreflang="${l.htmlLang}" href="${url(l.code === 'en' ? path : `${l.code}/${path}`)}">`), `<link rel="alternate" hreflang="x-default" href="${url(path)}">`].join('');
   const menu = langMenu(base);
-  return `<!doctype html><html${lang === null ? '' : ` lang="${lang === locale ? htmlLangOf(locale) : lang}"`}><head><meta charset="utf-8"><title>Page</title>
+  return `<!doctype html><html${lang === null ? '' : ` lang="${lang === locale ? htmlLangOf(locale) : lang}"`}><head><meta charset="utf-8">${script}<title>Page</title>
 <link rel="canonical" href="${own}">${alternates}
 <link rel="stylesheet" href="${base}styles/site.css"><script type="application/ld+json">{"@context":"https://schema.org","url":"https://github.com/x/y"}</script>
 ${extra}</head><body>${withMenu ? menu : ''}${body ?? `<h1>Plain heading</h1><p>Surprise!</p><a href="${base}download/#install">Download</a> <a href="https://github.com/x/y">Source</a> <a href="mailto:a@b.test">Mail</a> <a href="#top">Top</a><main id="top"><h2 id="x">Section</h2></main><img src="${base}screenshots/a.png" alt=""><script src="${base}js/os.js" defer></script>`}</body></html>`;
@@ -54,9 +57,10 @@ function site(base = '/') {
     for (const path of LOCALE_PAGES) put(`${code}/${path}index.html`, page({ base, locale: code, path, body: path === 'download/' ? downloadBody : '<h1>Page</h1>' }));
   }
   put('privacy/index.html', page({ base, path: 'privacy/', englishOnly: true, body: '<h1>Privacy</h1>' }));
-  put('404.html', `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex"><title>404</title></head><body>${langMenu(base)}<h1>Gone</h1></body></html>`);
+  put('404.html', `<!doctype html><html lang="en"><head><meta charset="utf-8">${langScript(base)}<meta name="robots" content="noindex"><title>404</title></head><body>${langMenu(base)}<h1>Gone</h1></body></html>`);
   put('styles/site.css', '@font-face { src: url(../fonts/f.woff2) format("woff2"); } .a { background: url(data:image/png;base64,AAAA); }');
   put('fonts/f.woff2', 'font');
+  put('js/lang.js', '(function () { document.title = "y"; })();');
   put('js/os.js', '(function () { document.title = "x"; })();');
   put('screenshots/a.png', 'x'.repeat(900 * 1024)); // images are outside the size budget
   put('robots.txt', 'User-agent: *\nAllow: /\nSitemap: https://moonyfinance.com/sitemap-index.xml\n');
@@ -98,7 +102,7 @@ test('a good site passes every check and robots.txt gets the configured sitemap'
   try {
     const r = run(s);
     assert.equal(r.status, 0, r.out);
-    assert.equal((r.out.match(/^PASS /gm) ?? []).length, 13, r.out);
+    assert.equal((r.out.match(/^PASS /gm) ?? []).length, 14, r.out);
     assert.match(readFileSync(join(s.dist, 'robots.txt'), 'utf8'), /^Sitemap: https:\/\/example\.test\/sitemap-index\.xml$/m);
   } finally {
     rmSync(s.root, { recursive: true, force: true });
@@ -116,6 +120,46 @@ test('a good site under a base path passes, and robots.txt names the base path',
   }
 });
 
+// ---- language script
+
+const withoutScript = (s, file, options) => s.put(file, page({ base: s.base, script: '', ...options }));
+
+test('language-script fires on a page that does not load the script', () => {
+  assertFires('language-script', (s) => withoutScript(s, 'download/index.html', { path: 'download/', body: downloadPageBody(s.base) }));
+  assertFires('language-script', (s) => withoutScript(s, `${nonDefault[0]}/index.html`, { locale: nonDefault[0] }));
+});
+
+test('language-script fires on a page that loads the script twice', () => {
+  assertFires('language-script', (s) => s.put('index.html', page({ base: s.base, script: langScript(s.base, true) + langScript(s.base, true) })));
+});
+
+test('language-script fires when the script comes after a stylesheet', () => {
+  assertFires('language-script', (s) => s.put('index.html', page({ base: s.base, script: '<link rel="stylesheet" href="' + s.base + 'styles/site.css">' + langScript(s.base, true) })));
+  assertFires('language-script', (s) => s.put('index.html', page({ base: s.base, script: '', extra: '', body: undefined }).replace('</head>', `${langScript(s.base, true)}</head>`)));
+});
+
+test('language-script fires on a deferred, async or module script', () => {
+  for (const attr of ['defer', 'async', 'type="module"']) {
+    assertFires('language-script', (s) => s.put('index.html', page({ base: s.base, script: langScript(s.base, true).replace('<script ', `<script ${attr} `) })));
+  }
+});
+
+test('language-script fires on a wrong data-locales, data-default or data-base', () => {
+  assertFires('language-script', (s) => s.put('index.html', page({ base: s.base, script: langScript(s.base, true).replace(/data-locales="[^"]*"/, 'data-locales="cs,xx"') })));
+  assertFires('language-script', (s) => s.put('index.html', page({ base: s.base, script: langScript(s.base, true).replace('data-default="en"', 'data-default="cs"') })));
+  assertFires('language-script', (s) => s.put('index.html', page({ base: s.base, script: langScript(s.base, true).replace(/data-base="[^"]*"/, 'data-base="/x/"') })));
+});
+
+test('language-script fires when data-auto is missing from an indexed default-locale page', () => {
+  assertFires('language-script', (s) => s.put('index.html', page({ base: s.base, script: langScript(s.base, false) })));
+});
+
+test('language-script fires when data-auto is set on a locale page, an English-only page or the 404 page', () => {
+  assertFires('language-script', (s) => s.put(`${nonDefault[0]}/index.html`, page({ base: s.base, locale: nonDefault[0], script: langScript(s.base, true) })));
+  assertFires('language-script', (s) => s.put('privacy/index.html', page({ base: s.base, path: 'privacy/', englishOnly: true, body: '<h1>Privacy</h1>', script: langScript(s.base, true) })));
+  assertFires('language-script', (s) => s.put('404.html', `<!doctype html><html lang="en"><head><meta charset="utf-8">${langScript(s.base, true)}<meta name="robots" content="noindex"><title>404</title></head><body>${langMenu(s.base)}<h1>Gone</h1></body></html>`));
+});
+
 // ---- language menu
 
 test('language-menu fires on a page without the menu', () => {
@@ -123,7 +167,7 @@ test('language-menu fires on a page without the menu', () => {
 });
 
 test('language-menu fires on a 404 page without the menu', () => {
-  assertFires('language-menu', (s) => s.put('404.html', '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex"><title>404</title></head><body><h1>Gone</h1></body></html>'));
+  assertFires('language-menu', (s) => s.put('404.html', `<!doctype html><html lang="en"><head><meta charset="utf-8">${langScript(s.base)}<meta name="robots" content="noindex"><title>404</title></head><body><h1>Gone</h1></body></html>`));
 });
 
 test('language-menu fires on a menu that misses a language or breaks the order', () => {
@@ -251,16 +295,16 @@ test('canonical-hreflang fires on an hreflang for a language that is not in the 
 
 test('canonical-hreflang fires on a cs alternate for an English-only page', () => {
   // The cs alternate also points at a page that was never built.
-  assertFires('canonical-hreflang', (s) => s.put('privacy/index.html', page({ base: s.base, path: 'privacy/', body: '<h1>Privacy</h1>' })), { also: ['local-assets'] });
+  assertFires('canonical-hreflang', (s) => s.put('privacy/index.html', page({ base: s.base, path: 'privacy/', body: '<h1>Privacy</h1>', script: langScript(s.base) })), { also: ['local-assets'] });
 });
 
 test('canonical-hreflang fires on a normal page that carries only en and x-default', () => {
-  assertFires('canonical-hreflang', (s) => s.put('download/index.html', page({ base: s.base, path: 'download/', englishOnly: true, body: downloadPageBody(s.base) })));
+  assertFires('canonical-hreflang', (s) => s.put('download/index.html', page({ base: s.base, path: 'download/', englishOnly: true, body: downloadPageBody(s.base), script: langScript(s.base, true) })));
 });
 
 test('canonical-hreflang fires when 404.html carries a canonical link or lacks noindex, or is missing', () => {
-  assertFires('canonical-hreflang', (s) => s.put('404.html', `<!doctype html><html lang="en"><head><link rel="canonical" href="https://example.test/"><meta name="robots" content="noindex"></head><body>${langMenu(s.base)}<h1>x</h1></body></html>`));
-  assertFires('canonical-hreflang', (s) => s.put('404.html', `<!doctype html><html lang="en"><head><title>404</title></head><body>${langMenu(s.base)}<h1>x</h1></body></html>`));
+  assertFires('canonical-hreflang', (s) => s.put('404.html', `<!doctype html><html lang="en"><head>${langScript(s.base)}<link rel="canonical" href="https://example.test/"><meta name="robots" content="noindex"></head><body>${langMenu(s.base)}<h1>x</h1></body></html>`));
+  assertFires('canonical-hreflang', (s) => s.put('404.html', `<!doctype html><html lang="en"><head>${langScript(s.base, true)}<title>404</title></head><body>${langMenu(s.base)}<h1>x</h1></body></html>`));
   assertFires('canonical-hreflang', (s) => rmSync(join(s.dist, '404.html')));
 });
 
