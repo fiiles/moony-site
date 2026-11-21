@@ -146,7 +146,7 @@
     "cards": {
       "requests": {
         "title": "No tracking",
-        "text": "No analytics or usage statistics. Prices, exchange rates and updates are checked online. Price services see the symbols you track, not your balances."
+        "text": "No analytics or usage statistics. Prices, exchange rates, company logos and updates are fetched online. Price and logo services see the symbols you track, not your balances."
       },
       "disk": {
         "title": "Encrypted data",
@@ -297,7 +297,7 @@
       },
       "data": {
         "q": "Does Moony collect any data about me?",
-        "a": "No: the app has no analytics, crash reports or usage statistics. Its only requests are for prices, exchange rates and the update check, listed in full on the Privacy page."
+        "a": "No: the app has no analytics, crash reports or usage statistics. Its only requests are for prices, exchange rates, company logos and the update check, listed in full on the Privacy page."
       },
       "password": {
         "q": "What if I forget my password?",

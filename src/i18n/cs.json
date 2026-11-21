@@ -146,7 +146,7 @@
     "cards": {
       "requests": {
         "title": "Bez sledování",
-        "text": "Žádná analytika ani statistiky používání. Online se načítají ceny, kurzy a aktualizace. Cenové služby vidí sledované symboly, ne vaše zůstatky."
+        "text": "Žádná analytika ani statistiky používání. Online se načítají ceny, kurzy, loga firem a aktualizace. Cenové služby a služby s logy vidí sledované symboly, ne vaše zůstatky."
       },
       "disk": {
         "title": "Šifrovaná data",
@@ -297,7 +297,7 @@
       },
       "data": {
         "q": "Sbírá Moony o mně nějaká data?",
-        "a": "Ne: aplikace nemá žádnou analytiku, hlášení pádů ani statistiky používání. Posílá jen požadavky na ceny, směnné kurzy a kontrolu aktualizací, jejichž úplný seznam je na stránce Soukromí."
+        "a": "Ne: aplikace nemá žádnou analytiku, hlášení pádů ani statistiky používání. Posílá jen požadavky na ceny, směnné kurzy, loga firem a kontrolu aktualizací, jejichž úplný seznam je na stránce Soukromí."
       },
       "password": {
         "q": "Co když zapomenu heslo?",
