@@ -164,7 +164,7 @@
     "cards": {
       "requests": {
         "title": "Sin rastreo",
-        "text": "Sin analítica ni estadísticas de uso. Los precios, los tipos de cambio y las actualizaciones se consultan por internet. Los servicios de precios ven los símbolos que sigues, no tus saldos."
+        "text": "Sin analítica ni estadísticas de uso. Los precios, los tipos de cambio y las actualizaciones se consultan por internet, y la sincronización, si la configuras, se comunica con tu propio servidor de sincronización. Los servicios de precios ven los símbolos que sigues, no tus saldos."
       },
       "disk": {
         "title": "Datos cifrados",
@@ -258,7 +258,7 @@
         "title": "Android",
         "text": "Próximamente."
       },
-      "sync": "La sincronización entre tus dispositivos es experimental y funciona a través de un servidor que gestionas tú. El servidor y su guía de configuración están en [GitHub (EN)](syncRepo)."
+      "sync": "La sincronización entre tus dispositivos es experimental y funciona a través de un servidor que gestionas tú o alguien de tu confianza. El servidor y su guía de configuración están en [GitHub (EN)](syncRepo)."
     },
     "install": {
       "title": "Instalación y primer inicio",
@@ -395,7 +395,7 @@
       },
       "cloud": {
         "q": "¿Qué es Moony Cloud?",
-        "a": "Un servidor de sincronización alojado y gestionado por el proyecto, para quienes prefieren no gestionar el suyo. Todavía no está disponible. Hoy la sincronización funciona con un servidor que gestionas tú."
+        "a": "Un servidor de sincronización alojado y gestionado por el proyecto, para quienes prefieren no gestionar el suyo. Todavía no está disponible. Hoy la sincronización funciona con un servidor que gestionas tú o alguien de tu confianza."
       },
       "bank": {
         "q": "¿Se conecta con mi banco?",
@@ -478,7 +478,7 @@
     },
     "recovery": {
       "title": "Contraseña olvidada y clave de recuperación",
-      "warning": "**No hay puerta trasera.** Moony no tiene cuenta ni servidor, así que nadie puede restablecer tu contraseña por ti, tampoco el autor. La contraseña y la clave de recuperación son dos vías distintas de acceso a los mismos datos cifrados. Si no tienes ninguna de las dos, no se puede abrir nada: ni tus registros ni las fotos y documentos adjuntos.",
+      "warning": "**No hay puerta trasera.** Moony no tiene cuenta y nadie más guarda una llave de tus datos, así que nadie puede restablecer tu contraseña por ti, tampoco el autor. La contraseña y la clave de recuperación son dos vías distintas de acceso a los mismos datos cifrados. Si no tienes ninguna de las dos, no se puede abrir nada de este dispositivo: ni tus registros ni las fotos y documentos adjuntos. Si usas la sincronización, el kit de recuperación es otra vía distinta para acceder a los datos sincronizados.",
       "tableHead": [
         "Si…",
         "Entonces…"
@@ -561,7 +561,7 @@
       "make": [
         "Abre **Ajustes → Datos y copias de seguridad** y haz clic en **Copiar ahora**. Elige dónde guardar el ZIP (Moony sugiere `moony-backup-YYYY-MM-DD.zip`).",
         "Contiene copias cifradas de tus registros y archivos adjuntos, más los archivos de clave `salt`, `key.enc` y `recovery.enc`, y sigue cifrado: solo lo abre la contraseña que era válida cuando se hizo o la clave de recuperación de esa fecha.",
-        "Guarda una copia lejos de este ordenador, en una unidad externa o en tu propio almacenamiento en la nube. Moony nunca sube nada; el Resumen te avisa cuando tu última copia es antigua. Haz una copia antes de una actualización y después de una importación grande."
+        "Guarda una copia lejos de este ordenador, en una unidad externa o en tu propio almacenamiento en la nube. Moony no sube tus copias de seguridad; el Resumen te avisa cuando tu última copia es antigua. Haz una copia antes de una actualización y después de una importación grande."
       ],
       "restoreTitle": "Restaurar una copia de seguridad",
       "restoreIntro": "Empieza desde **Ajustes → Datos y copias de seguridad → Restaurar desde una copia…**, desde la pantalla de bloqueo (**¿Tiene una copia de seguridad? Restaurar desde copia de seguridad…**) o desde el primer paso del asistente de configuración (**Restaurar desde una copia de seguridad**). Después:",
@@ -622,7 +622,7 @@
       "uninstall": [
         "Al desinstalar se elimina la app, pero por defecto no tus datos, que se quedan en la carpeta de datos. macOS: cierra Moony y arrástrala a la Papelera. Windows: desinstálala en Configuración → Aplicaciones. Linux: borra la AppImage o elimina el paquete `.deb` o `.rpm` con tu gestor de paquetes.",
         "Para eliminar también tus datos, hazlo antes de desinstalar: **Ajustes → Cuenta → Eliminar datos…** y escribe `ELIMINAR`. Esto elimina las bases de datos, los archivos de clave y los archivos adjuntos y no se puede deshacer, así que haz antes una copia de seguridad si quizá quieras recuperarlos.",
-        "Deja las carpetas `pre-restore-<time>`, las copias de seguridad y las exportaciones que hayas guardado, y los archivos de registro (logs); bórralos a mano o borra toda la carpeta de datos. No hay nada que borrar en un servidor, porque Moony no tiene ninguno."
+        "Deja las carpetas `pre-restore-<time>`, las copias de seguridad y las exportaciones que hayas guardado, y los archivos de registro (logs); bórralos a mano o borra toda la carpeta de datos. Si usas la sincronización, también hay una copia cifrada de tus datos en tu servidor de sincronización. Elimínala en **Ajustes → Sincronización** (**Eliminar los datos sincronizados del servidor**) antes de borrar los datos locales. Esto elimina los datos sincronizados del servidor de sincronización para todos los dispositivos. Los datos locales de cada dispositivo se conservan."
       ]
     },
     "ai": {
