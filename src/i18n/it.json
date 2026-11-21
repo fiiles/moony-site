@@ -1,0 +1,564 @@
+{
+  "site": {
+    "name": "Moony",
+    "tagline": "Le tue finanze, tutte insieme.",
+    "description": "Moony è un’app gratuita per desktop per tenere sotto controllo conti, investimenti e prestiti. I tuoi dati finanziari restano sul tuo computer. Per macOS, Windows e Linux."
+  },
+  "nav": {
+    "label": "Principale",
+    "tracks": "Primi passi",
+    "privacy": "Privacy",
+    "features": "Funzioni",
+    "download": "Scarica",
+    "faq": "FAQ",
+    "github": "GitHub",
+    "home": "Home di Moony",
+    "language": "Lingua"
+  },
+  "footer": {
+    "blurb": "Un quadro più chiaro delle tue finanze. Direttamente sul tuo computer.",
+    "product": "Prodotto",
+    "download": "Scarica",
+    "help": "Aiuto",
+    "support": "Assistenza",
+    "changelog": "Changelog",
+    "trust": "Fiducia",
+    "privacy": "Privacy",
+    "security": "Sicurezza e segnalazioni",
+    "licence": "Licenza",
+    "sitePrivacy": "Questo sito",
+    "community": "Community",
+    "github": "GitHub",
+    "discussions": "Discussioni",
+    "translate": "Traduci Moony",
+    "disclaimer": "Moony non offre consulenza finanziaria, fiscale o di investimento. Le cifre dipendono da dati di terze parti e possono essere inesatte.",
+    "nocookies": "Questo sito non imposta cookie e non usa strumenti di analisi.",
+    "copyright": "© 2026 Filip Král"
+  },
+  "repoPage": {
+    "provenance": "Questa pagina mostra il file del repository di Moony così come è pubblicato nel tag qui sotto; sono adattati solo il titolo e i link relativi. La fonte è"
+  },
+  "hero": {
+    "eyebrow": "Finanza personale per il tuo desktop",
+    "lead": "Tieni traccia di conti, investimenti e prestiti. Moony conserva i tuoi dati finanziari direttamente sul tuo computer.",
+    "ctaDefault": "Scarica",
+    "ctaMac": "Scarica per macOS",
+    "ctaWin": "Scarica per Windows",
+    "ctaLinux": "Scarica per Linux",
+    "noteStrong": "Gratuito e open source",
+    "noteRest": "Versione {version}",
+    "caption": "L’app vera, con dati di esempio",
+    "alt": "Panoramica con il patrimonio netto, il suo andamento e i totali di un profilo di esempio",
+    "facts": {
+      "noAccount": "Senza registrazione",
+      "local": "I dati restano con te",
+      "offline": "Funziona offline"
+    },
+    "ctaPreview": "Dai un’occhiata dentro"
+  },
+  "features": {
+    "overview": {
+      "title": "Scopri a che punto sei.",
+      "text": "Saldi dei conti, investimenti e debiti ancora da restituire. Un’unica panoramica, costruita su ciò che vuoi seguire.",
+      "bullets": [
+        "Beni e debiti insieme",
+        "Entrate e spese nel loro contesto",
+        "Investimenti nel tempo"
+      ],
+      "alt": "I totali di beni, passività e liquidità disponibile di un profilo di esempio, con le scadenze e i promemoria in arrivo"
+    },
+    "import": {
+      "title": "Parti da un estratto conto.",
+      "text": "Importa un estratto conto per vedere dove vanno i tuoi soldi e quanto ti resta. Organizza i movimenti in categorie e imposta regole per la volta successiva.",
+      "bullets": [
+        "Entrate e spese, mese per mese",
+        "I movimenti duplicati vengono saltati",
+        "Se serve, puoi annullare un import"
+      ],
+      "alt": "Pagina di un conto bancario con il saldo, un grafico a 12 mesi di entrate e uscite e l’inizio dell’elenco dei movimenti",
+      "formatsTitle": "Formati supportati",
+      "formats": "CSV con rilevamento delle colonne, CAMT.053, MT940, OFX/QFX e QIF. I collegamenti diretti alle banche non sono ancora disponibili."
+    },
+    "investments": {
+      "title": "Segui i tuoi investimenti nel tempo.",
+      "text": "Vedi quanto hai versato e quanto hanno reso i tuoi investimenti. Segui azioni, ETF e cripto e controlla il valore del portafoglio.",
+      "bullets": [
+        "Rendimenti e dividendi incassati",
+        "Prezzi aggiornati di azioni e cripto",
+        "Import da XTB, Trading 212, Degiro e IBKR"
+      ],
+      "alt": "Analisi azioni con rendimento ponderato per il tempo e per il capitale, un grafico dei rendimenti suddiviso per area geografica e un pannello dei drawdown"
+    },
+    "otherInstruments": {
+      "title": "Anche immobili, assicurazioni e prestiti",
+      "text": "Porta nella tua panoramica immobili, polizze assicurative e prestiti. Tieni insieme valori, pagamenti e scadenze importanti.",
+      "bullets": [
+        "Immobili: valutazioni, affitti e costi",
+        "Assicurazioni: pagamenti, scadenze e documenti",
+        "Prestiti: rate e debito residuo"
+      ],
+      "alt": "Panoramica dei prestiti con saldi residui, tassi d’interesse e un grafico del debito nel tempo"
+    }
+  },
+  "tracks": {
+    "title": "Cos’altro puoi seguire?",
+    "items": {
+      "bank": {
+        "name": "Conti bancari",
+        "line": "Estratti conto, regole"
+      },
+      "cashflow": {
+        "name": "Flusso di cassa",
+        "line": "Report, piano, limiti"
+      },
+      "spendingPlans": {
+        "name": "Piani di spesa",
+        "line": "Vacanze, ristrutturazioni, regali"
+      },
+      "stocks": {
+        "name": "Azioni ed ETF",
+        "line": "Rendimenti, dividendi, watchlist"
+      },
+      "crypto": {
+        "name": "Cripto",
+        "line": "Posizioni, storico"
+      },
+      "realEstate": {
+        "name": "Immobili",
+        "line": "Valori, affitti, costi"
+      },
+      "assets": {
+        "name": "Obbligazioni e altri beni",
+        "line": "Cedole, scadenze"
+      },
+      "loans": {
+        "name": "Prestiti",
+        "line": "Piani di rimborso, rate extra"
+      },
+      "insurance": {
+        "name": "Assicurazioni",
+        "line": "Calendario dei pagamenti"
+      }
+    },
+    "foot": "10 lingue · 45 valute supportate · Tema chiaro e scuro"
+  },
+  "trust": {
+    "title": "Le tue finanze restano tue.",
+    "cards": {
+      "requests": {
+        "title": "Nessun tracciamento",
+        "text": "Nessuna analisi e nessuna statistica d’uso. Prezzi, tassi di cambio e aggiornamenti vengono controllati online. I servizi dei prezzi vedono i simboli che segui, non i tuoi saldi."
+      },
+      "disk": {
+        "title": "Dati cifrati",
+        "text": "Registrazioni e allegati sono cifrati sul tuo computer. I file esportati e le copie salvate non sono cifrati: conservali in un posto sicuro."
+      },
+      "keys": {
+        "title": "Backup sotto il tuo controllo",
+        "text": "Salva i dati in un file di backup o esportali. Durante la configurazione salva la chiave di recupero, così potrai reimpostare una password dimenticata."
+      }
+    },
+    "link": "Leggi i dettagli sulla privacy →"
+  },
+  "assistant": {
+    "title": "Collega un assistente AI alle tue finanze",
+    "text": "Claude o un altro client MCP può leggere e modificare i tuoi dati tramite un server locale. Il client li elabora, di solito nel cloud del suo fornitore.",
+    "badge": "Disattivato di default",
+    "link": "Integrazione AI",
+    "metaTitle": "Integrazione AI · Moony",
+    "back": "Torna a Moony",
+    "detail": "Una funzione facoltativa per utenti esperti. Prima di attivarla, verifica come il client AI che hai scelto tratta i dati. Per usare Moony non ti serve un assistente AI.",
+    "setupTitle": "Configura l’integrazione",
+    "setupSteps": [
+      "In Moony apri Impostazioni → Assistente IA e attiva Assistente AI (server MCP).",
+      "Copia dalle impostazioni il comando di connessione. Include il tuo token di accesso personale: tienilo riservato.",
+      "Tieni Moony aperto e sbloccato mentre usi l’integrazione."
+    ],
+    "guide": "Guida completa alla configurazione su GitHub →"
+  },
+  "download": {
+    "title": "Scarica Moony gratis.",
+    "meta": "Versione {version} · rilasciata il {date}",
+    "changes": "Cosa è cambiato →",
+    "mac": {
+      "arm": "Apple Silicon",
+      "intel": "Intel",
+      "note": "Firmata e notarizzata da Apple."
+    },
+    "win": {
+      "exe": "Installer",
+      "note": "L’installer non ha ancora un certificato di firma del codice per Windows."
+    },
+    "linux": {
+      "appimage": "AppImage (x86_64)",
+      "deb": "Debian/Ubuntu (x86_64)",
+      "rpm": "Fedora/openSUSE (x86_64)",
+      "appimageArm": "AppImage (ARM64)",
+      "debArm": "Debian/Ubuntu (ARM64)",
+      "rpmArm": "Fedora/openSUSE (ARM64)",
+      "note": "{archs}; AppImage può richiedere libfuse2.",
+      "archs": "x86_64",
+      "archsArm": "x86_64 e ARM64"
+    },
+    "all": "Scegli un altro sistema →",
+    "intro": "Gratuito per macOS, Windows e Linux. Senza registrazione né periodo di prova.",
+    "notice": "Al primo avvio Windows può mostrare un avviso di sicurezza, perché l’installer non è ancora firmato. Leggi le note di installazione prima di scaricare."
+  },
+  "downloadPage": {
+    "metaTitle": "Scarica Moony {version} per macOS, Windows e Linux",
+    "description": "Gli installer di Moony {version} per macOS, Windows e Linux, i passaggi del primo avvio per ogni sistema, i requisiti di sistema e come funzionano gli aggiornamenti.",
+    "title": "Scarica Moony {version}",
+    "released": "Rilasciata il {date}",
+    "allReleases": "Tutte le versioni →",
+    "filesTitle": "Installer per sistema operativo",
+    "macHint": "Apple Silicon indica un chip M1 o successivo. Non sai che Mac hai? Menu Apple → **Informazioni su questo Mac**: la riga Chip o Processore indica Apple M… oppure Intel.",
+    "install": {
+      "title": "Installazione e primo avvio",
+      "unsigned": "L’app per Mac è firmata e notarizzata da Apple e si apre come qualsiasi altra app. L’installer per Windows non ha ancora un certificato di firma del codice, quindi al primo avvio Windows può mostrare un avviso di sicurezza; i passaggi sono qui sotto. Gli aggiornamenti dall’interno dell’app vengono verificati con la chiave di firma del progetto.",
+      "mac": {
+        "open": "Apri il file `.dmg` e trascina **Moony** in **Applicazioni**.",
+        "launch": "Apri Moony da **Applicazioni**. macOS controlla la notarizzazione di Apple e lo apre senza alcun avviso."
+      },
+      "win": {
+        "keep": "Scarica l’installer. Se il browser dice che il file non viene scaricato comunemente, mantienilo (in Edge: **⋯ → Keep → Show more → Keep anyway**).",
+        "run": "Eseguilo. Windows SmartScreen può mostrare «Windows ha protetto il PC». Clicca **Ulteriori informazioni**, poi **Esegui comunque**."
+      },
+      "linux": {
+        "arch": "Le build sono disponibili per {archs}. I comandi qui sotto usano i file x86_64.",
+        "fuse": "Alcune distribuzioni richiedono il pacchetto `libfuse2` per gli AppImage.",
+        "armFiles": "Su ARM (`uname -m` restituisce `aarch64`) usa invece `{appimage}`, `{deb}` o `{rpm}`."
+      }
+    },
+    "first": {
+      "title": "Primo avvio",
+      "intro": "La procedura guidata di configurazione ti accompagna attraverso questi passaggi:",
+      "steps": [
+        "La tua valuta principale e il tuo paese.",
+        "Un nome e una password.",
+        "La tua **chiave di recupero**. Salvala: è l’unico modo per reimpostare una password dimenticata e funziona solo insieme ai file delle chiavi nella cartella dei dati, quindi fai anche il backup dei dati (**Impostazioni → Dati e backup**).",
+        "Cosa seguire.",
+        "La proposta di aggiungere il tuo primo conto e di importare un estratto conto."
+      ],
+      "outro": "La panoramica mostra poi una checklist Primi passi. Stai passando a un nuovo computer? Nella prima schermata della procedura guidata scegli Ripristina da un backup, invece di creare un nuovo profilo.",
+      "help": "Non conosci ancora Moony? L’[Aiuto](help) spiega [cosa fare se dimentichi la password](recovery), [come fare il backup e ripristinare i dati](backup) e [come importare gli estratti conto](import)."
+    },
+    "updating": {
+      "title": "Aggiornamenti",
+      "text": "Dopo che hai sbloccato Moony, l’app chiede a GitHub se esiste una versione più recente e offre un aggiornamento con un clic. Il download viene verificato con la chiave pubblica del progetto prima dell’installazione. Puoi disattivare il controllo automatico in **Impostazioni**; cosa invia è elencato nella [pagina Privacy (EN)](privacy)."
+    },
+    "requirements": {
+      "title": "Requisiti di sistema",
+      "mac": "macOS 10.15 (Catalina) o successivo, su Mac con Apple Silicon e Intel.",
+      "win": "Windows 10 e 11, a 64 bit. Moony richiede il runtime Microsoft Edge WebView2, già preinstallato su entrambi; l’installer lo scarica se manca.",
+      "linux": "{archs}: un AppImage, un `.deb` per Debian e Ubuntu e un `.rpm` per Fedora e openSUSE. Compilato su Ubuntu 24.04; le distribuzioni più vecchie potrebbero non avere una libreria di sistema."
+    },
+    "intro": "Scegli il tuo sistema. Configura Moony dopo l’installazione, senza un account online.",
+    "recommended": "Il tuo sistema",
+    "installLink": "Istruzioni di installazione →"
+  },
+  "sitePrivacy": {
+    "metaTitle": "Privacy di questo sito · Moony",
+    "description": "Il sito di Moony non usa cookie né strumenti di analisi. Scopri cosa contiene, come è ospitato su Cloudflare e come funzionano i download dell’app.",
+    "title": "Privacy di questo sito",
+    "intro": "Questa pagina riguarda moonyfinance.com. Cosa l’app Moony conserva e invia è descritto nella [pagina Privacy (EN)](privacy).",
+    "items": {
+      "cookies": {
+        "title": "Nessun cookie, nessuna analisi",
+        "text": "Questo sito non imposta cookie e non ha strumenti di analisi, contatori o pixel di tracciamento."
+      },
+      "origin": {
+        "title": "Contenuti dal nostro dominio",
+        "text": "Font, stili, script e immagini vengono caricati dal dominio del sito stesso. Un’intestazione Content-Security-Policy restrittiva limita il contenuto delle pagine. Il fornitore di hosting può usare separatamente la diagnostica di rete descritta più sotto."
+      },
+      "language": {
+        "title": "Lingua",
+        "text": "Il sito si apre nella prima lingua dell’elenco del tuo browser che il sito supporta, altrimenti in inglese. La scelta viene fatta nel tuo browser. Quando scegli tu una lingua, il browser la ricorda nel proprio archivio locale con il nome moony-lang; non è un cookie e non viene mai inviata da nessuna parte."
+      },
+      "hosting": {
+        "title": "Hosting",
+        "text": "Questo sito è ospitato da Cloudflare. Quando serve le pagine, elabora i dati standard della richiesta, come il tuo indirizzo IP e lo user agent, secondo la propria [informativa sulla privacy (EN)](https://www.cloudflare.com/privacypolicy/). Il suo [servizio Network Error Logging (EN)](https://developers.cloudflare.com/network-error-logging/) può ricevere dal tuo browser segnalazioni di errori di rete. Le statistiche sui visitatori di Cloudflare non sono attive su questo sito."
+      },
+      "downloads": {
+        "title": "Download",
+        "text": "I link di download portano alle versioni su GitHub, che fornisce i file."
+      },
+      "operator": {
+        "title": "Titolare e contatti",
+        "text": "Il titolare è Filip Král. Scrivi a [{email}](email) o chiedi nelle [Discussioni di GitHub (EN)](https://github.com/fiiles/Moony/discussions)."
+      }
+    }
+  },
+  "support": {
+    "metaTitle": "Assistenza · Moony",
+    "description": "Come ottenere aiuto con Moony: le pagine di aiuto, un indirizzo e-mail di contatto e dove segnalare un bug o un problema di sicurezza.",
+    "title": "Assistenza",
+    "intro": "Moony è un progetto open source indipendente. Ecco dove trovare una risposta e come contattare il suo autore.",
+    "items": {
+      "email": {
+        "title": "Scrivici",
+        "text": "Invia un’e-mail a [{email}](email). Aiuta indicare quale versione di Moony usi, su quale sistema e cosa è successo. Non inviare la tua password, la tua chiave di recupero né il tuo file di dati."
+      },
+      "help": {
+        "title": "Trova una risposta",
+        "text": "L’[Aiuto](help) copre il primo avvio, [la password dimenticata](recovery), [i backup e il passaggio a un altro computer](backup) e [l’importazione degli estratti conto](import)."
+      },
+      "bug": {
+        "title": "Segnala un bug",
+        "text": "I bug vengono tracciati in modo pubblico su GitHub: [apri una issue (EN)](issues). Non includere nulla di personale; basta uno screenshot con dati di esempio."
+      },
+      "security": {
+        "title": "Segnala un problema di sicurezza",
+        "text": "Non segnalare una vulnerabilità in una issue pubblica. Il canale privato è descritto nella [pagina Sicurezza (EN)](security)."
+      },
+      "ideas": {
+        "title": "Idee e domande",
+        "text": "Idee per nuove funzioni e domande generali sono benvenute nelle [Discussioni di GitHub (EN)](discussions)."
+      }
+    }
+  },
+  "faq": {
+    "eyebrow": "Prima di iniziare",
+    "title": "Domande frequenti",
+    "items": {
+      "free": {
+        "q": "È davvero gratuito?",
+        "a": "Sì: Moony è open source con licenza AGPL-3.0, senza periodo di prova e senza account."
+      },
+      "warning": {
+        "q": "Perché Windows mi avvisa quando lo apro?",
+        "a": "L’installer per Windows non ha ancora un certificato di firma del codice, quindi al primo avvio Windows può mostrare un avviso di sicurezza; i passaggi sono nella pagina di download. L’app per Mac è firmata e notarizzata da Apple e si apre senza avvisi. Gli aggiornamenti dall’interno dell’app vengono verificati con la chiave di firma del progetto."
+      },
+      "data": {
+        "q": "Moony raccoglie dati su di me?",
+        "a": "No: l’app non ha analisi, segnalazioni di arresti anomali né statistiche d’uso. Le sue uniche richieste riguardano prezzi, tassi di cambio e il controllo degli aggiornamenti, elencati per intero nella pagina Privacy."
+      },
+      "password": {
+        "q": "E se dimentico la password?",
+        "a": "Usa la chiave di recupero di 24 caratteri che Moony ti ha mostrato durante la configurazione; è l’unico modo per reimpostare una password. Se perdi entrambe, nessuno può aprire i tuoi dati, quindi tieni un backup (Impostazioni → Dati e backup)."
+      },
+      "devices": {
+        "q": "Posso usare Moony sul telefono o su un altro computer?",
+        "a": "Oggi Moony funziona su macOS, Windows e Linux, con un profilo per ogni computer e senza sincronizzazione. Puoi trasferire i tuoi dati su un altro computer con un file di backup."
+      },
+      "bank": {
+        "q": "Si collega alla mia banca?",
+        "a": "Non direttamente: importa gli estratti conto esportati dalla tua banca in formato CSV, CAMT.053, MT940, OFX/QFX o QIF."
+      }
+    }
+  },
+  "gettingStarted": {
+    "title": "Puoi iniziare con un solo conto.",
+    "text": "Non serve aggiungere tutto subito. Aggiungi altri conti e investimenti quando sei pronto.",
+    "steps": [
+      {
+        "title": "Crea il tuo profilo",
+        "text": "Scegli la valuta e la password. Salva la chiave di recupero."
+      },
+      {
+        "title": "Aggiungi il tuo primo conto",
+        "text": "Inserisci un saldo o importa un estratto conto."
+      },
+      {
+        "title": "Rendilo tuo",
+        "text": "Aggiungi di volta in volta ciò che vuoi seguire."
+      }
+    ]
+  },
+  "about": {
+    "title": "Un progetto open source indipendente",
+    "text": "Ti manca una funzione o hai trovato qualcosa che potrebbe funzionare meglio? Partecipa alla discussione su GitHub e aiuta a migliorare Moony.",
+    "link": "Condividi il tuo parere →"
+  },
+  "assistantPreview": {
+    "title": "Chiedi a un agente AI delle tue finanze",
+    "text": "Collega Moony al tuo agente AI tramite MCP. Dagli il contesto per analisi e suggerimenti basati sulla tua situazione.",
+    "examplesTitle": "Per esempio, potresti chiedere",
+    "examples": [
+      "Quanta parte del mio portafoglio è nei miei tre investimenti più grandi?",
+      "Stima il valore del mio appartamento usando i suoi dati in Moony e gli annunci attuali."
+    ],
+    "marketNote": "Per la stima di un immobile, l’agente ha bisogno anche di informazioni di mercato aggiornate.",
+    "privacyNote": "L’integrazione è disattivata di default. Attivarla dà al client AI che hai scelto l’accesso ai tuoi dati, che può elaborare nel cloud del suo fornitore.",
+    "link": "Come configurarla →",
+    "diagram": {
+      "caption": "Collega le finanze conservate in Moony al tuo agente AI tramite MCP, dandogli il contesto per analisi e suggerimenti personali.",
+      "dataTitle": "Le tue finanze in Moony",
+      "dataText": "Conti, investimenti, immobili e debiti.",
+      "agentTitle": "Il tuo agente AI",
+      "agentText": "Claude o un altro client che supporta MCP.",
+      "resultTitle": "Analisi e suggerimenti",
+      "resultText": "In base ai tuoi dati e alla tua situazione.",
+      "analysis": "Analisi"
+    }
+  },
+  "help": {
+    "metaTitle": "Aiuto · Moony",
+    "description": "Primi passi, password dimenticata, importazione degli estratti conto, backup, aggiornamenti e disinstallazione di Moony.",
+    "title": "Aiuto con Moony",
+    "intro": "Risposte brevi alle domande che le persone fanno per prime. Tutto qui descrive come funziona Moony oggi; i nomi dei menu sono quelli dell’interfaccia italiana.",
+    "tocLabel": "In questa guida",
+    "first": {
+      "title": "Primo avvio",
+      "lead": "Moony non richiede un account. Installalo, aprilo e la procedura guidata di configurazione crea il tuo database cifrato su questo computer.",
+      "installTitle": "Installazione",
+      "install": "L’app per Mac è firmata e notarizzata da Apple e si apre normalmente. L’installer per Windows non è ancora firmato, quindi la prima volta Windows ti avvisa; l’app non è danneggiata. I passaggi per ogni sistema sono nella pagina di download: [macOS](dlMac), [Windows](dlWin), [Linux](dlLinux).",
+      "keysTitle": "Password e chiave di recupero",
+      "keys": [
+        "**Password.** Apre Moony ogni volta. Almeno 8 caratteri; è meglio una passphrase più lunga. Moony non può mostrartela.",
+        "**Chiave di recupero.** 24 caratteri in sei gruppi di quattro, mostrata una sola volta durante la configurazione. Serve per le emergenze: ti permette di scegliere una nuova password se dimentichi questa ([come](recovery)). Salvala lontano da questo computer, in un gestore di password o su carta. **Salva su file…** scrive un file di testo semplice, `moony-recovery-key.txt`; tienilo su un disco esterno, non accanto ai tuoi dati.",
+        "**Touch ID o Windows Hello (facoltativo).** Su un Mac o su un PC Windows, Moony propone lo sblocco con l’impronta una sola volta, dopo che hai sbloccato con la password (Windows Hello accetta anche il suo PIN). Attivalo o disattivalo in **Impostazioni → Sicurezza**. La password continua a funzionare e una password dimenticata si reimposta comunque solo con la chiave di recupero."
+      ],
+      "wizardTitle": "La procedura guidata di configurazione",
+      "wizardIntro": "Una schermata di benvenuto, che puoi saltare, introduce cinque passaggi:",
+      "wizardSteps": [
+        "**Privacy:** la tua valuta principale e il paese della tua banca (il paese determina le regole di categorizzazione e, quando importi, mostra per prime le sue banche). Usi già Moony altrove? Scegli invece qui **Ripristina da un backup** ([come](backup)).",
+        "**Account:** il tuo nome, un’e-mail solo come tuo riferimento (non viene mai inviata da nessuna parte) e la password, due volte.",
+        "**Chiave:** la tua chiave di recupero. Salvala, scrivi i due gruppi che Moony chiede, poi clicca **Crea il database cifrato**.",
+        "**Cosa seguire:** conti, investimenti, immobili, prestiti e assicurazioni. Puoi cambiarlo più tardi in **Impostazioni → Generali → Visibilità del menu**; le pagine nascoste continuano a funzionare.",
+        "**Primo conto:** un nome, una valuta e il saldo attuale, poi importa un estratto conto oppure clicca **Salta per ora**. I saldi si inseriscono a mano; gli import non li modificano."
+      ],
+      "wizardOutro": "La Panoramica mostra poi una checklist **Primi passi**."
+    },
+    "recovery": {
+      "title": "Password dimenticata e chiave di recupero",
+      "warning": "**Non esiste una porta di servizio.** Moony non ha né un account né un server, quindi nessuno può reimpostare la tua password al posto tuo, nemmeno l’autore. La password e la chiave di recupero sono due vie distinte verso gli stessi dati cifrati. Se non hai né l’una né l’altra, non si può aprire nulla: né le tue registrazioni né le foto e i documenti allegati.",
+      "tableHead": [
+        "Se…",
+        "Allora…"
+      ],
+      "situations": [
+        "conosci la tua password",
+        "hai dimenticato la password ma hai la chiave di recupero",
+        "conosci la password ma hai perso la chiave di recupero",
+        "non hai né la password né la chiave di recupero"
+      ],
+      "results": [
+        "Sblocca come al solito. Non ti serve la chiave.",
+        "Entri e imposti una nuova password. I tuoi dati restano come sono (passaggi qui sotto).",
+        "Puoi ancora sbloccare. Moony mostra la chiave una sola volta, ma cambiando la password ne viene creata una nuova: **Impostazioni → Sicurezza → Cambia password**. La vecchia chiave smette di funzionare.",
+        "Nulla può aprire i tuoi dati, né tu né nessun altro. Solo un backup di cui conosci ancora la password o la chiave di recupero può riportare indietro i dati."
+      ],
+      "resetTitle": "Reimpostare una password dimenticata",
+      "resetSteps": [
+        "Nella schermata di blocco clicca **Hai dimenticato la password?**",
+        "Inserisci la chiave di recupero di 24 caratteri. Maiuscole, spazi e trattini non contano.",
+        "Scegli una nuova password di almeno 8 caratteri. Il controllo della chiave richiede qualche secondo.",
+        "Moony mostra una nuova chiave di recupero. Salvala prima di continuare: la vecchia non funziona più. Poi clicca **Continua nell’app**."
+      ],
+      "cannotTitle": "Cosa non fa la chiave di recupero",
+      "cannot": [
+        "Non rivela la vecchia password, ti permette soltanto di impostarne una nuova.",
+        "Funziona solo con i file delle chiavi `salt` e `recovery.enc` che appartengono ai tuoi dati, che si trovano nella cartella dei dati e in ogni ZIP di backup. Copiare il solo `moony.db` non salva nulla che tu possa aprire; fai invece un backup ([come](backup)).",
+        "Un backup contiene i file delle chiavi del giorno in cui è stato creato. Se in seguito hai cambiato o reimpostato la password, si apre con la password o la chiave di recupero valide quel giorno."
+      ],
+      "keepTitle": "Conserva entrambe al sicuro",
+      "keep": "Conserva la chiave di recupero in un gestore di password o su carta, e un ZIP di backup recente su un disco esterno o nel tuo spazio cloud. Tratta la chiave come una password: chiunque la abbia insieme al tuo ZIP di backup può aprire i tuoi dati.",
+      "lockedTitle": "Se non riesci più ad accedere",
+      "locked": "Senza password, senza chiave di recupero e senza un backup utilizzabile, i vecchi dati sono persi. Per ricominciare, chiudi Moony e rinomina la cartella dei dati ([dove](data)) invece di eliminarla, nel caso ritrovassi la password. Al prossimo avvio Moony mostra la procedura guidata di configurazione e crea un profilo vuoto."
+    },
+    "import": {
+      "title": "Importare gli estratti conto",
+      "lead": "Non viene scritto nulla finché non confermi: prima vedi un’anteprima, le righe già presenti vengono saltate come duplicati e ogni import si può annullare.",
+      "bankTitle": "Estratti conto bancari",
+      "bankSteps": [
+        "Apri **Conti bancari** (gruppo **Denaro**) e clicca **Importa estratto conto**, nell’elenco dei conti o nella pagina di un conto.",
+        "**File:** trascina l’estratto conto o scegline il file. Scegli la tua banca nell’elenco **Banca** oppure lascia **Rilevamento automatico**.",
+        "**Colonne:** per un file CSV controlla quale colonna è quale (una banca riconosciuta viene compilata da sola). Gli altri formati saltano questo passaggio.",
+        "**Anteprima e categorie:** controlla date, importi e categorie e categorizza le righe che le regole hanno lasciato aperte.",
+        "**Fatto:** il riepilogo mostra cosa è stato importato. Per annullarlo, apri lo **Storico degli import** del conto e clicca **Annulla import**."
+      ],
+      "balanceNote": "L’import non modifica mai il saldo di un conto. Se l’estratto conto indica un saldo finale, l’ultimo passaggio propone **Imposta il saldo del conto a …**.",
+      "formatsTitle": "Quali file funzionano",
+      "formats": [
+        "**CSV e TXT** con 16 preset di banche, riconosciuti dalla riga di intestazione: Revolut, Wise, N26, Sparkasse, DKB, ING (Germania), banche del Regno Unito (colonne Debit / Credit), Chase (USA) e, nella Repubblica Ceca, Fio banka, Česká spořitelna, Komerční banka, Air Bank, ČSOB, MONETA Money Bank, mBank e Raiffeisenbank (nei loro formati di esportazione cechi). I preset per DKB, ING, Komerční banka, Air Bank, ČSOB, MONETA, mBank e Raiffeisenbank non sono ancora confermati con un’esportazione reale: se uno associa le colonne in modo errato, correggi l’associazione a mano.",
+        "**CAMT.053** (XML), **MT940**, **OFX/QFX** e **QIF** di qualsiasi banca, senza associazione delle colonne. Moony mostra a quale conto appartiene l’estratto conto e, quando il file indica entrambi i saldi, verifica che i movimenti quadrino."
+      ],
+      "csvTitle": "Un CSV di un’altra banca",
+      "csvIntro": "Va bene qualsiasi CSV con una data e un importo. Nel passaggio **Colonne**:",
+      "csv": [
+        "Scegli la colonna della data e quella dell’importo, oppure una colonna di addebiti e una di accrediti se la tua banca divide l’importo. Se vuoi, aggiungi descrizione, controparte, il suo numero di conto o IBAN, valuta, saldo e ID del movimento.",
+        "Moony rileva il delimitatore, la codifica del testo, il separatore decimale e l’ordine della data. Modificali se l’**Anteprima elaborata** sembra sbagliata: accenti rovinati indicano una codifica sbagliata, giorni e mesi invertiti un ordine della data sbagliato. La **Riga di intestazione** è la riga con i nomi delle colonne; quelle sopra vengono ignorate.",
+        "Le uscite devono risultare negative e le entrate positive. Controlla alcune righe che conosci prima di importare."
+      ],
+      "missingTitle": "Se la tua banca non è nell’elenco",
+      "missing": [
+        "Cerca nel tuo home banking CAMT.053, MT940, OFX, QFX o QIF: non richiedono alcuna associazione.",
+        "Altrimenti associa le colonne del CSV come sopra; ci vuole un minuto.",
+        "Oppure aggiungi i movimenti a mano (**Aggiungi movimento** nella pagina del conto), o lascia che l’assistente AI facoltativo legga un estratto conto per te e controlla cosa ha letto prima che salvi qualcosa ([assistente AI](ai)).",
+        "Vuoi un preset per la tua banca? [Apri una issue (EN)](issues) con la sola riga di intestazione, mai con movimenti reali. Un preset è un piccolo file JSON; la [guida per contribuire (EN)](contributing) mostra come fare."
+      ],
+      "brokerTitle": "Operazioni dei broker",
+      "brokerIntro": "Moony non importa le operazioni da un estratto conto bancario; usa l’import dei broker. Apri **Azioni** (gruppo **Investimenti**), clicca **Importa CSV** e scegli da dove proviene l’esportazione. Ogni fonte mostra come ottenere il file e offre un esempio:",
+      "brokers": [
+        "**XTB:** Account history → Cash operations → Export as CSV, per un periodo che parta dalla tua prima operazione. Vengono importati solo acquisti e vendite di azioni ed ETF, non depositi, dividendi o commissioni.",
+        "**Trading 212:** History → icona di esportazione, spunta Orders. Un’esportazione copre al massimo 12 mesi, quindi carica più file; i duplicati vengono riconosciuti. Vengono importate anche le commissioni.",
+        "**Degiro:** Activity → Transactions → Export → CSV. Non l’estratto conto. Vengono importate anche le commissioni.",
+        "**Interactive Brokers:** una Flex Query (Client Portal → Performance & Reports → Flex Queries) di tipo Activity con la sezione Trades e i campi Symbol, ISIN, TradeDate, Buy/Sell, Quantity, TradePrice, CurrencyPrimary, AssetClass e TradeID, in formato CSV.",
+        "**Una tua tabella o un altro broker:** scarica il modello di Moony oppure associa tu le colonne (data, acquisto o vendita, simbolo o ISIN, quantità, prezzo per azione, valuta e, se vuoi, una commissione). Moony può ricordare l’associazione per la volta successiva. Salva prima i file Excel come CSV."
+      ],
+      "brokerOutro": "Il passaggio Verifica elenca cosa verrà importato e quali righe sono duplicate, saltate o errate. Controlla inoltre i titoli su Yahoo Finance; questa ricerca invia i simboli e gli ISIN del file e nient’altro ([Privacy (EN)](privacy)). Per annullare un import, usa **Annulla** sotto Import recenti oppure **Cronologia import** nella pagina Azioni."
+    },
+    "backup": {
+      "title": "Backup, ripristino e nuovo computer",
+      "makeTitle": "Fare un backup",
+      "make": [
+        "Apri **Impostazioni → Dati e backup** e clicca **Fai il backup ora**. Scegli dove salvare lo ZIP (Moony propone `moony-backup-YYYY-MM-DD.zip`).",
+        "Contiene copie cifrate delle tue registrazioni e dei tuoi allegati, più i file delle chiavi `salt`, `key.enc` e `recovery.enc`, e resta cifrato: lo apre solo la password valida quando è stato creato, oppure la chiave di recupero di quel momento.",
+        "Tieni una copia lontano da questo computer, su un disco esterno o nel tuo spazio cloud. Moony non carica mai nulla; la Panoramica ti avvisa quando l’ultimo backup è vecchio. Fai un backup prima di un aggiornamento e dopo un grande import."
+      ],
+      "restoreTitle": "Ripristinare un backup",
+      "restoreIntro": "Parti da **Impostazioni → Dati e backup → Ripristina da backup…**, dalla schermata di blocco (**Hai un backup? Ripristina da backup…**) oppure dal primo passaggio della procedura guidata di configurazione (**Ripristina da un backup**). Poi:",
+      "restoreSteps": [
+        "Scegli lo ZIP. Moony mostra la sua data, la versione di Moony, il numero di allegati e la dimensione.",
+        "Conferma. I dati esistenti non vengono eliminati: Moony prima li sposta in una cartella `pre-restore-<time>` dentro la cartella dei dati.",
+        "Moony si blocca. Sblocca con la password in uso quando è stato creato il backup, oppure clicca **Hai dimenticato la password?** e usa la chiave di recupero di quel momento."
+      ],
+      "restoreNote": "Un backup creato da una versione più recente di Moony non può essere ripristinato da una più vecchia, quindi aggiorna prima. I backup di versioni più vecchie si ripristinano senza problemi.",
+      "moveTitle": "Passare a un nuovo computer",
+      "moveSteps": [
+        "Sul vecchio computer clicca **Fai il backup ora** e copia lo ZIP sul nuovo (con una chiavetta USB o il tuo spazio cloud).",
+        "Installa sul nuovo computer la stessa versione di Moony o una più recente ([Scarica](download)).",
+        "Nel primo passaggio della procedura guidata scegli **Ripristina da un backup**, seleziona lo ZIP e conferma.",
+        "Sblocca con la password del momento del backup."
+      ],
+      "moveOutro": "Moony non sincronizza tra computer, quindi la copia vecchia e quella nuova divergono non appena usi entrambe, e le modifiche fatte dopo il backup non ci sono. Quando il nuovo computer funziona, rimuovi i dati dal vecchio ([come](uninstall)).",
+      "notBackup": "**Esporta JSON**, nella stessa pagina, scrive ogni tabella in un file JSON non cifrato, senza allegati. Non è un backup; trattalo come un estratto conto. **Verifica database** controlla l’integrità del tuo database."
+    },
+    "updates": {
+      "title": "Aggiornamenti, cartella dei dati e disinstallazione",
+      "updatesTitle": "Aggiornamenti",
+      "updates": [
+        "Dopo che hai sbloccato Moony, l’app chiede a GitHub se esiste una versione più recente e offre **Aggiorna e riavvia**. Il download viene verificato con la chiave pubblica del progetto; Moony si riavvia e lo sblocchi di nuovo. I tuoi dati restano dove sono e la richiesta non ne invia nessuno.",
+        "Controlla a mano oppure disattiva il controllo automatico in **Impostazioni → Sicurezza → Aggiornamenti** (vale solo per questo computer).",
+        "Prima di un aggiornamento che modifica il database, Moony ne fa una copia accanto a sé (`moony.db.bak-<time>`; le ultime tre vengono conservate). È una precauzione, non una garanzia: una versione precedente non può aprire un database che una più recente ha migrato, quindi fai prima un backup. Per tornare indietro, ripristina un backup fatto con la versione precedente.",
+        "Arrivi dalla 0.10.0 o da una versione precedente? La cartella dei dati è stata rinominata nella 0.11.0: leggi [Dove si trovano i tuoi dati (EN)](privacyData) prima del primo avvio."
+      ],
+      "dataTitle": "Dove si trovano i tuoi dati",
+      "dataIntro": "Tutto si trova in una cartella per utente:",
+      "dataHead": [
+        "Sistema",
+        "Cartella"
+      ],
+      "dataWinAlt": "di solito `C:\\Users\\<you>\\AppData\\Roaming\\com.moonyfinance.desktop\\`",
+      "dataLinuxAlt": "oppure `$XDG_DATA_HOME/com.moonyfinance.desktop/` se hai impostato quella variabile",
+      "dataNote": "**Impostazioni → Dati e backup** mostra il percorso esatto e un pulsante **Apri cartella**.",
+      "dataFiles": "Contiene `moony.db` e `attachments.db` (le tue registrazioni e le tue foto e documenti, cifrati), i file delle chiavi `salt`, `key.enc` e `recovery.enc`, le copie `.bak-<time>` fatte prima di un aggiornamento del database e le cartelle `pre-restore-<time>` dei ripristini.",
+      "dataOutro": "Usa **Fai il backup ora** invece di copiare i file a mano; Moony non sposta mai la cartella da solo. Cosa è cifrato e cosa no è spiegato nella [pagina Privacy (EN)](privacy).",
+      "uninstallTitle": "Disinstallazione",
+      "uninstall": [
+        "Disinstallare rimuove l’app ma, di default, non i tuoi dati, che restano nella cartella dei dati. macOS: chiudi Moony e trascinalo nel Cestino. Windows: disinstallalo da Impostazioni → App. Linux: elimina l’AppImage oppure rimuovi il pacchetto `.deb` o `.rpm` con il tuo gestore di pacchetti.",
+        "Per rimuovere anche i tuoi dati, fallo prima di disinstallare: **Impostazioni → Account → Elimina i dati…**, poi digita `ELIMINA`. Questo rimuove i database, i file delle chiavi e gli allegati e non si può annullare, quindi fai prima un backup se pensi di volerli riavere.",
+        "Restano le cartelle `pre-restore-<time>`, i backup e le esportazioni che hai salvato e i log; eliminali a mano, oppure elimina l’intera cartella dei dati. Su un server non c’è nulla da eliminare, perché Moony non ne ha uno."
+      ]
+    },
+    "ai": {
+      "title": "Assistente AI (MCP)",
+      "text": "Moony può servire i tuoi dati a un assistente AI come Claude tramite un piccolo server integrato nell’app. È disattivato di default, è in ascolto solo su `127.0.0.1` e richiede Moony sbloccato e un token di accesso personale. L’assistente può leggere i tuoi dati e, con alcuni strumenti, modificarli, ed elabora ciò che legge, di solito nel cloud del suo fornitore: attivalo solo per client di cui ti fidi. Non ti serve per usare Moony.",
+      "text2": "Attivalo in **Impostazioni → Assistente IA → Assistente AI (server MCP)**. Il comando di connessione, la configurazione dei client e i dettagli sono nella pagina [Integrazione AI](aiPage)."
+    },
+    "more": {
+      "title": "Ti serve ancora aiuto?",
+      "text": "Chiedi nelle [Discussioni di GitHub (EN)](discussions) oppure, per un bug, [apri una issue (EN)](issues). Non incollare mai lì saldi o estratti conto. I problemi di sicurezza vanno segnalati tramite la [politica di sicurezza (EN)](security), non in una issue pubblica."
+    }
+  }
+}

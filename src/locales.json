@@ -2,5 +2,6 @@
   {"code": "en", "native": "English", "intl": "en-GB", "og": "en_US", "htmlLang": "en", "latinExt": false},
   {"code": "cs", "native": "Čeština", "intl": "cs-CZ", "og": "cs_CZ", "htmlLang": "cs", "latinExt": true},
   {"code": "de", "native": "Deutsch", "intl": "de-DE", "og": "de_DE", "htmlLang": "de", "latinExt": false},
-  {"code": "es", "native": "Español", "intl": "es-ES", "og": "es_ES", "htmlLang": "es", "latinExt": false}
+  {"code": "es", "native": "Español", "intl": "es-ES", "og": "es_ES", "htmlLang": "es", "latinExt": false},
+  {"code": "it", "native": "Italiano", "intl": "it-IT", "og": "it_IT", "htmlLang": "it", "latinExt": false}
 ]
