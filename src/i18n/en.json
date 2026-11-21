@@ -20,6 +20,7 @@
     "product": "Product",
     "download": "Download",
     "help": "Help",
+    "support": "Support",
     "changelog": "Changelog",
     "trust": "Trust",
     "privacy": "Privacy",
@@ -283,7 +284,35 @@
       },
       "operator": {
         "title": "Operator and contact",
-        "text": "The operator is Filip Král. Questions go to [GitHub Discussions](https://github.com/fiiles/Moony/discussions)."
+        "text": "The operator is Filip Král. Write to [{email}](email) or ask in [GitHub Discussions](https://github.com/fiiles/Moony/discussions)."
+      }
+    }
+  },
+  "support": {
+    "metaTitle": "Support · Moony",
+    "description": "How to get help with Moony: the Help pages, a contact e-mail, and where to report a bug or a security problem.",
+    "title": "Support",
+    "intro": "Moony is an independent open-source project. Here is where to find an answer and how to reach its author.",
+    "items": {
+      "email": {
+        "title": "Write to us",
+        "text": "Send an e-mail to [{email}](email). It helps to say which version of Moony you use, on which system, and what happened. Do not send your password, your recovery key or your data file."
+      },
+      "help": {
+        "title": "Find an answer",
+        "text": "The [Help](help) covers the first start, [a forgotten password](recovery), [backups and moving to another computer](backup) and [importing statements](import)."
+      },
+      "bug": {
+        "title": "Report a bug",
+        "text": "Bugs are tracked in the open on GitHub: [open an issue](issues). Leave out anything personal; a screenshot with sample data is enough."
+      },
+      "security": {
+        "title": "Report a security problem",
+        "text": "Please do not report a vulnerability in a public issue. The private channel is described on the [Security page](security)."
+      },
+      "ideas": {
+        "title": "Ideas and questions",
+        "text": "Feature ideas and general questions are welcome in [GitHub Discussions](discussions)."
       }
     }
   },

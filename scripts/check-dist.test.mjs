@@ -13,7 +13,7 @@ const script = resolve(dirname(fileURLToPath(import.meta.url)), 'check-dist.mjs'
 const registry = JSON.parse(readFileSync(resolve(dirname(fileURLToPath(import.meta.url)), '../src/locales.json'), 'utf8'));
 const htmlLangOf = (code) => registry.find((l) => l.code === code).htmlLang;
 const nonDefault = registry.slice(1).map((l) => l.code);
-const LOCALE_PAGES = ['', 'download/', 'help/', 'ai-integration/', 'site-privacy/'];
+const LOCALE_PAGES = ['', 'download/', 'help/', 'ai-integration/', 'site-privacy/', 'support/'];
 
 const HEADERS = `/*
   Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'none'
@@ -399,7 +399,7 @@ test('the size-budget summary prints all three groups', () => {
   } finally { rmSync(s.root, { recursive: true, force: true }); }
 });
 
-test('locale-pages fires when a locale lacks one of its five pages', () => {
+test('locale-pages fires when a locale lacks one of its six pages', () => {
   for (const path of LOCALE_PAGES) {
     const code = nonDefault[0];
     // The English page's alternate link now points at a file that is gone, so local-assets fires too.

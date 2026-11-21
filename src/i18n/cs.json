@@ -20,6 +20,7 @@
     "product": "Produkt",
     "download": "Stáhnout",
     "help": "Nápověda",
+    "support": "Podpora",
     "changelog": "Seznam změn",
     "trust": "Důvěra",
     "privacy": "Soukromí",
@@ -283,7 +284,35 @@
       },
       "operator": {
         "title": "Provozovatel a kontakt",
-        "text": "Provozovatelem je Filip Král. Dotazy patří do [diskuzí na GitHubu (EN)](https://github.com/fiiles/Moony/discussions)."
+        "text": "Provozovatelem je Filip Král. Napište na [{email}](email) nebo se zeptejte v [diskuzích na GitHubu (EN)](https://github.com/fiiles/Moony/discussions)."
+      }
+    }
+  },
+  "support": {
+    "metaTitle": "Podpora · Moony",
+    "description": "Jak získat pomoc s Moony: stránky nápovědy, kontaktní e-mail a kam nahlásit chybu nebo bezpečnostní problém.",
+    "title": "Podpora",
+    "intro": "Moony je nezávislý open-source projekt. Tady najdete, kde hledat odpověď a jak se spojit s jeho autorem.",
+    "items": {
+      "email": {
+        "title": "Napište nám",
+        "text": "Pošlete e-mail na [{email}](email). Pomůže, když uvedete, kterou verzi Moony používáte, na jakém systému a co se stalo. Neposílejte své heslo, obnovovací klíč ani datový soubor."
+      },
+      "help": {
+        "title": "Najděte odpověď",
+        "text": "[Nápověda](help) popisuje první spuštění, [zapomenuté heslo](recovery), [zálohy a přesun na jiný počítač](backup) a [import výpisů](import)."
+      },
+      "bug": {
+        "title": "Nahlaste chybu",
+        "text": "Chyby se evidují veřejně na GitHubu: [otevřete issue (EN)](issues). Nevkládejte nic osobního; stačí snímek obrazovky s ukázkovými daty."
+      },
+      "security": {
+        "title": "Nahlaste bezpečnostní problém",
+        "text": "Zranitelnost prosím nehlaste ve veřejném issue. Soukromý kanál popisuje [stránka Zabezpečení (EN)](security)."
+      },
+      "ideas": {
+        "title": "Nápady a dotazy",
+        "text": "Nápady na funkce a obecné dotazy uvítáme v [diskuzích na GitHubu (EN)](discussions)."
       }
     }
   },

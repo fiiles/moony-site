@@ -81,3 +81,20 @@ test('cs and pl keep one-letter words tied to the next word with a no-break spac
     assert.deepEqual(offending, [], `${code} strings with a plain space after a one-letter word (use U+00A0 so the line never ends on it): ${offending.join(', ')}`);
   }
 });
+
+test('links to English-only pages are marked (EN) in every non-English dictionary, and nothing else is', () => {
+  const englishOnly = new Set(['privacy', 'privacyData', 'security', 'issues', 'contributing', 'discussions']);
+  const links = (v) => [...String(v).matchAll(/\[([^\]]*)\]\(([^)]*)\)/g)].map((m) => ({ label: m[1], target: m[2] }));
+  const problems = [];
+  for (const code of others) {
+    for (const [k, v] of entries(code)) {
+      for (const { label, target } of links(v)) {
+        const marked = label.endsWith('(EN)');
+        const shouldBe = englishOnly.has(target) || target.startsWith('https://');
+        if (shouldBe && !marked) problems.push(`${code}:${k} [${label}](${target}) needs (EN) at the end of the label`);
+        if (!shouldBe && marked) problems.push(`${code}:${k} [${label}](${target}) is marked (EN) but the target is not English-only`);
+      }
+    }
+  }
+  assert.deepEqual(problems, []);
+});

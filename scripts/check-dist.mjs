@@ -21,8 +21,8 @@ const defaultLocale = registry[0];
 const nonDefault = registry.slice(1);
 /** The first URL segment when it is a non-default locale code ("cs/help/" gives "cs"), else undefined. */
 const localeOf = (rel) => nonDefault.find((l) => rel.startsWith(`${l.code}/`));
-/** The five pages every non-default locale has under its folder. */
-const LOCALE_PAGES = ['', 'download/', 'help/', 'ai-integration/', 'site-privacy/'];
+/** The six pages every non-default locale has under its folder. */
+const LOCALE_PAGES = ['', 'download/', 'help/', 'ai-integration/', 'site-privacy/', 'support/'];
 
 /** Pages that exist in English only: they carry the `en` and `x-default` alternates and no other language. */
 const ENGLISH_ONLY = new Set(['privacy/', 'security/', 'changelog/']);
