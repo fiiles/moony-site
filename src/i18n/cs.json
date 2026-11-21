@@ -170,7 +170,7 @@
     "detail": "Volitelná funkce pro pokročilé uživatele. Než propojení zapnete, seznamte se s tím, jak vybraný AI klient nakládá s daty. Moony pro běžné používání AI asistenta nepotřebuje.",
     "setupTitle": "Jak propojení nastavit",
     "setupSteps": [
-      "V Moony otevřete Nastavení → Integrace a zapněte AI asistenta (MCP server).",
+      "V Moony otevřete Nastavení → AI asistent a zapněte AI Asistent (MCP Server).",
       "Zkopírujte připojovací příkaz z nastavení. Obsahuje váš osobní přístupový token, který nesdílejte.",
       "Moony musí při používání propojení běžet a být odemčené."
     ],
@@ -547,14 +547,14 @@
       "uninstallTitle": "Odinstalace",
       "uninstall": [
         "Odinstalace odstraní aplikaci, ale ve výchozím stavu ne vaše data, která zůstanou ve složce s daty. macOS: ukončete Moony a přetáhněte ho do Koše. Windows: odinstalujte ho v Nastavení → Aplikace. Linux: smažte soubor AppImage nebo odeberte balíček `.deb` či `.rpm` správcem balíčků.",
-        "Chcete-li odstranit i data, udělejte to před odinstalací: **Nastavení → Účet → Smazat data…** a napište `DELETE`. Odstraní se databáze, klíčové soubory a přílohy a nelze to vrátit, takže pokud je možná budete chtít zpět, nejdřív vytvořte zálohu.",
+        "Chcete-li odstranit i data, udělejte to před odinstalací: **Nastavení → Účet → Smazat data…** a napište `SMAZAT`. Odstraní se databáze, klíčové soubory a přílohy a nelze to vrátit, takže pokud je možná budete chtít zpět, nejdřív vytvořte zálohu.",
         "Zůstanou složky `pre-restore-<čas>`, zálohy a exporty, které jste uložili, a logy; smažte je ručně, nebo smažte celou složku s daty. Na žádném serveru není co mazat, protože Moony žádný nemá."
       ]
     },
     "ai": {
       "title": "AI asistent (MCP)",
       "text": "Moony může přes malý server zabudovaný v aplikaci poskytovat vaše data AI asistentovi, například Claudovi. Ve výchozím stavu je vypnuto, naslouchá jen na `127.0.0.1` a vyžaduje odemčené Moony a osobní přístupový token. Asistent může vaše data číst a některými nástroji i měnit a zpracovává, co přečte, obvykle v cloudu svého poskytovatele: zapínejte ho jen pro klienty, kterým důvěřujete. K používání Moony ho nepotřebujete.",
-      "text2": "Zapnete ho v **Nastavení → Integrace → AI Asistent (MCP Server)**. Připojovací příkaz, nastavení klientů a podrobnosti jsou na stránce [AI propojení](aiPage)."
+      "text2": "Zapnete ho v **Nastavení → AI asistent → AI Asistent (MCP Server)**. Připojovací příkaz, nastavení klientů a podrobnosti jsou na stránce [AI propojení](aiPage)."
     },
     "more": {
       "title": "Nenašli jste odpověď?",

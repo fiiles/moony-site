@@ -170,7 +170,7 @@
     "detail": "An optional feature for advanced users. Before enabling it, check how your chosen AI client handles data. You do not need an AI assistant to use Moony.",
     "setupTitle": "Set up the integration",
     "setupSteps": [
-      "In Moony, open Settings → Integrations and enable AI Assistant (MCP Server).",
+      "In Moony, open Settings → AI assistant and enable AI Assistant (MCP Server).",
       "Copy the connection command from settings. It includes your personal access token; keep it private.",
       "Keep Moony running and unlocked while using the integration."
     ],
@@ -554,7 +554,7 @@
     "ai": {
       "title": "AI assistant (MCP)",
       "text": "Moony can serve your data to an AI assistant such as Claude through a small server built into the app. It is off by default, listens on `127.0.0.1` only and needs Moony unlocked and a personal access token. The assistant can read your data and, with some tools, change it, and it processes what it reads, usually in its provider's cloud: enable it only for clients you trust. You do not need it to use Moony.",
-      "text2": "Turn it on under **Settings → Integrations → AI Assistant (MCP Server)**. The connection command, the client setups and the details are on the [AI integration](aiPage) page."
+      "text2": "Turn it on under **Settings → AI assistant → AI Assistant (MCP Server)**. The connection command, the client setups and the details are on the [AI integration](aiPage) page."
     },
     "more": {
       "title": "Still stuck?",
