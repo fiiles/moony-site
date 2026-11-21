@@ -6,7 +6,9 @@ import { readFileSync } from 'node:fs';
 import vm from 'node:vm';
 
 const source = readFileSync(new URL('../public/js/lang.js', import.meta.url), 'utf8');
-const LOCALES = 'cs,de,es,it,nb,pl,sv,ja,zh';
+// The script is given the registry's non-English codes, as the build gives them to it. Cases below name codes (de, pl, ...) that the registry must hold.
+const registry = JSON.parse(readFileSync(new URL('../src/locales.json', import.meta.url), 'utf8'));
+const LOCALES = registry.slice(1).map((l) => l.code).join(',');
 
 /** Runs the script once. `languages` / `language` feed navigator; `stored` is the saved choice (undefined: none, 'throws': storage is unusable). */
 function visit({ languages, language, stored, auto = true, base = '/', pathname = '/', search = '', hash = '', referrer = '', noStorage = false, noCurrentScript = false } = {}) {

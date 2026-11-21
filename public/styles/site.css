@@ -33,6 +33,9 @@
   /* --ink-3 and --ink-4 are the app's own again: since 2026-11-15 the app's tokens hold 4.5:1 on the canvas for both (5.6:1 and 4.5:1; 6.7:1 and 5.3:1 on white), so the site no longer darkens them here. */
 }
 
+/* tokens.css (synced from the app) stops at Latin fallbacks. These stacks add system fonts that carry Japanese and Simplified Chinese; Inter stays first and no font file is added. */
+:root { --font: "Inter Variable", Inter, system-ui, -apple-system, "Segoe UI", "Hiragino Sans", "Noto Sans CJK JP", "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; }
+:root:lang(zh-Hans) { --font: "Inter Variable", Inter, system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Hiragino Sans", "Noto Sans CJK JP", sans-serif; }
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: auto; }
 body {

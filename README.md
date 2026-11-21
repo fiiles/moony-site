@@ -44,11 +44,21 @@ The Help lives at `/help/` and `/<code>/help/`, linked from the footer and the d
 
 ## Adding a language
 
-The registry `src/locales.json` lists the languages; the first entry (English) is the default and lives at the root, every other one is served under `/<code>/` by the pages in `src/pages/[locale]/`. To add one:
+The registry `src/locales.json` lists the ten languages (`en, cs, de, es, it, nb, pl, sv, ja, zh`, the codes of the app's `languages.ts`); the first entry (English) is the default and lives at the root, every other one is served under `/<code>/` by the pages in `src/pages/[locale]/`. To add one:
 
-1. Create `src/i18n/<code>.json` with every key of `en.json` (the tests compare key sets, placeholders, link targets and list lengths).
-2. Add an entry to `src/locales.json`: `code`, `native` (the language written in itself), `intl` (BCP 47 tag for dates and numbers), `og` (the `og:locale` value), `htmlLang` (the `lang` attribute and hreflang value) and `latinExt` (true if the language needs the Latin-extended font subset).
-3. Run `npm test` and `npm run build`. A registered language without a dictionary fails the build, and the build checks that its five pages exist.
+1. Create `src/i18n/<code>.json` with every key of `en.json`. A missing key fails the build. Interface terms (menu names, settings, buttons) must match the app's own translation of that language, so a reader finds the same word in the app.
+2. Add an entry at the end of `src/locales.json`, with these fields:
+   - `code`: the folder and URL segment (`/<code>/`), the same code as in the app.
+   - `native`: the language written in itself, shown in the language menu.
+   - `intl`: BCP 47 tag for dates and numbers (`de-DE`, `ja-JP`).
+   - `og`: the `og:locale` value (`de_DE`).
+   - `htmlLang`: the `lang` attribute and the hreflang value; equal to `code` except Simplified Chinese (`zh` is `zh-Hans`).
+   - `latinExt`: true if the language needs the Latin-extended font subset (Czech and Polish).
+3. Links to pages that exist only in English (Privacy, Security, Changelog, the GitHub pages) end their label with `(EN)` in every non-English dictionary, and no other link does. The parity test checks this.
+4. Run `npm test` and `npm run build`. The tests check that the dictionary has the same keys, placeholders, link targets and list lengths as `en.json`, no empty strings and no exclamation marks, and that Czech and Polish keep one-letter words tied to the next word with a no-break space. The build fails when a registered language has no dictionary, lacks one of its six pages, or has a wrong `lang`, canonical or hreflang.
+5. Mind the size budgets, which `scripts/check-dist.mjs` enforces and prints: English HTML 288 KB, each other language's HTML 128 KB (per folder), and shared CSS, JS and fonts 192 KB. Do not raise a budget to fit a language; shorten the text or look at what makes the pages large (scripts written in CJK characters take three bytes each in UTF-8).
+
+Fonts: Inter stays first; the fallbacks in `public/styles/site.css` carry Japanese and Simplified Chinese from the system (for `zh-Hans` the Chinese fonts come before the Japanese ones). Do not add font files for a new script without checking the shared budget.
 
 The site opens in the visitor's language. `public/js/lang.js` is a classic blocking script in the `<head>` of every page, ahead of the stylesheets. On an indexed English page that exists in every language (`data-auto`), it sends the visitor to the same page in the language they picked earlier (kept in `localStorage` under `moony-lang`, set when they click a language in the menu), or else in the first language of `navigator.languages` the site has (`no` and `nn` map to `nb`; English stays). Pages of other languages, English-only pages and the 404 page never redirect. If storage is blocked and the visitor comes from another page of the site, the script does nothing. `lang.js` must stay free of network APIs and of inline code: `scripts/check-dist.mjs` scans it, and its `language-script` check verifies the tag on every built page.
 

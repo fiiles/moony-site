@@ -13,6 +13,8 @@ const script = resolve(dirname(fileURLToPath(import.meta.url)), 'check-dist.mjs'
 const registry = JSON.parse(readFileSync(resolve(dirname(fileURLToPath(import.meta.url)), '../src/locales.json'), 'utf8'));
 const htmlLangOf = (code) => registry.find((l) => l.code === code).htmlLang;
 const nonDefault = registry.slice(1).map((l) => l.code);
+// Tests that need one locale folder take the first registered one; none of them depends on its code.
+const first = nonDefault[0];
 const LOCALE_PAGES = ['', 'download/', 'help/', 'ai-integration/', 'site-privacy/', 'support/'];
 
 const HEADERS = `/*
@@ -145,8 +147,8 @@ test('language-script fires on a deferred, async or module script', () => {
 });
 
 test('language-script fires on a wrong data-locales, data-default or data-base', () => {
-  assertFires('language-script', (s) => s.put('index.html', page({ base: s.base, script: langScript(s.base, true).replace(/data-locales="[^"]*"/, 'data-locales="cs,xx"') })));
-  assertFires('language-script', (s) => s.put('index.html', page({ base: s.base, script: langScript(s.base, true).replace('data-default="en"', 'data-default="cs"') })));
+  assertFires('language-script', (s) => s.put('index.html', page({ base: s.base, script: langScript(s.base, true).replace(/data-locales="[^"]*"/, `data-locales="${first},xx"`) })));
+  assertFires('language-script', (s) => s.put('index.html', page({ base: s.base, script: langScript(s.base, true).replace('data-default="en"', `data-default="${first}"`) })));
   assertFires('language-script', (s) => s.put('index.html', page({ base: s.base, script: langScript(s.base, true).replace(/data-base="[^"]*"/, 'data-base="/x/"') })));
 });
 
@@ -245,16 +247,16 @@ test('network-apis fires on fetch in a script file and on a foreign host named i
 
 test('html-lang fires on an <html> without lang and on a lang that contradicts the URL', () => {
   assertFires('html-lang', (s) => s.put('index.html', page({ base: s.base, lang: null })));
-  assertFires('html-lang', (s) => s.put('cs/index.html', page({ base: s.base, locale: 'cs', lang: 'en' })));
+  assertFires('html-lang', (s) => s.put(`${first}/index.html`, page({ base: s.base, locale: first, lang: 'en' })));
 });
 
 test('html-lang expects the registry htmlLang for a locale folder', () => {
   const s = site();
   try {
-    s.put('cs/index.html', page({ base: s.base, locale: 'cs' }).replace(/<html lang="[^"]*"/, '<html lang="cs-CZ"'));
+    s.put(`${first}/index.html`, page({ base: s.base, locale: first }).replace(/<html lang="[^"]*"/, `<html lang="${first}-XX"`));
     const r = run(s);
     assert.equal(r.status, 1, r.out);
-    assert.match(r.out, /cs\/index\.html: lang="cs-CZ", the URL says cs/, r.out);
+    assert.match(r.out, new RegExp(`${first}/index\\.html: lang="${first}-XX", the URL says ${first}`), r.out);
   } finally { rmSync(s.root, { recursive: true, force: true }); }
 });
 
@@ -275,15 +277,15 @@ test('canonical-hreflang fires when x-default is missing', () => {
 });
 
 test('canonical-hreflang fires on an hreflang that points at the wrong URL', () => {
-  // The right set of languages, but the cs alternate leads to a page that exists (the English download page) and is not the Czech home page.
-  const wrongCs = (s) => s.put('index.html', page({ base: s.base }).replace(/(hreflang="cs" href=")[^"]*/, `$1https://example.test${s.base}download/`));
+  // The right set of languages, but the first non-English alternate leads to a page that exists (the English download page) and is not that locale's home page.
+  const wrongCs = (s) => s.put('index.html', page({ base: s.base }).replace(new RegExp(`(hreflang="${htmlLangOf(first)}" href=")[^"]*`), `$1https://example.test${s.base}download/`));
   assertFires('canonical-hreflang', wrongCs);
-  assertFires('canonical-hreflang', (s) => s.put('index.html', page({ base: s.base }).replace(/(hreflang="x-default" href=")[^"]*/, `$1https://example.test${s.base}cs/`)));
+  assertFires('canonical-hreflang', (s) => s.put('index.html', page({ base: s.base }).replace(/(hreflang="x-default" href=")[^"]*/, `$1https://example.test${s.base}${first}/`)));
   const s = site();
   try {
     wrongCs(s);
     const r = run(s);
-    assert.match(r.out, /index\.html: hreflang cs is https:\/\/example\.test\/download\/, expected https:\/\/example\.test\/cs\//, r.out);
+    assert.match(r.out, new RegExp(`index\\.html: hreflang ${htmlLangOf(first)} is https://example\\.test/download/, expected https://example\\.test/${first}/`), r.out);
   } finally {
     rmSync(s.root, { recursive: true, force: true });
   }
@@ -293,8 +295,8 @@ test('canonical-hreflang fires on an hreflang for a language that is not in the 
   assertFires('canonical-hreflang', (s) => s.put('index.html', page({ base: s.base }).replace('<link rel="alternate" hreflang="x-default"', `<link rel="alternate" hreflang="xx" href="https://example.test${s.base}download/"><link rel="alternate" hreflang="x-default"`)));
 });
 
-test('canonical-hreflang fires on a cs alternate for an English-only page', () => {
-  // The cs alternate also points at a page that was never built.
+test('canonical-hreflang fires on a locale alternate for an English-only page', () => {
+  // The locale alternate also points at a page that was never built.
   assertFires('canonical-hreflang', (s) => s.put('privacy/index.html', page({ base: s.base, path: 'privacy/', body: '<h1>Privacy</h1>', script: langScript(s.base) })), { also: ['local-assets'] });
 });
 
@@ -327,8 +329,8 @@ test('internal-links fires on a link that leaves the base path', () => {
 test('internal-links accepts a relative link and a link with the full site address', () => {
   const s = site();
   try {
-    pageWith(s, '', '<h1>Plain</h1><a href="download/">x</a> <a href="https://example.test/cs/download/?a=1#install">y</a>');
-    s.put('cs/download/index.html', page({ base: '/', locale: 'cs', path: 'download/', body: '<h1>D</h1><h2 id="install">I</h2><a href="../">up</a>' }));
+    pageWith(s, '', `<h1>Plain</h1><a href="download/">x</a> <a href="https://example.test/${first}/download/?a=1#install">y</a>`);
+    s.put(`${first}/download/index.html`, page({ base: '/', locale: first, path: 'download/', body: '<h1>D</h1><h2 id="install">I</h2><a href="../">up</a>' }));
     assert.equal(run(s).status, 0, run(s).out);
   } finally { rmSync(s.root, { recursive: true, force: true }); }
 });
@@ -382,7 +384,7 @@ test('size-budget fires when the English root HTML is over 288 KB, and names the
 test('size-budget fires when one locale folder is over 128 KB, and names the locale', () => {
   const s = site();
   try {
-    const code = nonDefault[0];
+    const code = first;
     s.put(`${code}/help/index.html`, page({ base: s.base, locale: code, path: 'help/', body: '<h1>Help</h1><p>' + 'x'.repeat(130 * 1024) + '</p>' }));
     const r = run(s);
     assert.equal(r.status, 1, r.out);
@@ -391,11 +393,12 @@ test('size-budget fires when one locale folder is over 128 KB, and names the loc
   } finally { rmSync(s.root, { recursive: true, force: true }); }
 });
 
-test('the size-budget summary prints all three groups', () => {
+test('the size-budget summary prints all three groups and names every non-default locale with a size', () => {
   const s = site();
   try {
     const r = run(s);
-    assert.match(r.out, /PASS size-budget: English HTML [\d.]+ KB \(budget 288\.0 KB\); per locale: cs [\d.]+ KB \(budget 128\.0 KB each\); shared CSS, JS and fonts [\d.]+ KB \(budget 192\.0 KB\)/, r.out);
+    const locales = nonDefault.map((code) => `${code} [\\d.]+ KB`).join(', ');
+    assert.match(r.out, new RegExp(`PASS size-budget: English HTML [\\d.]+ KB \\(budget 288\\.0 KB\\); per locale: ${locales} \\(budget 128\\.0 KB each\\); shared CSS, JS and fonts [\\d.]+ KB \\(budget 192\\.0 KB\\)`), r.out);
   } finally { rmSync(s.root, { recursive: true, force: true }); }
 });
 
