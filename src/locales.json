@@ -5,5 +5,6 @@
   {"code": "es", "native": "Español", "intl": "es-ES", "og": "es_ES", "htmlLang": "es", "latinExt": false},
   {"code": "it", "native": "Italiano", "intl": "it-IT", "og": "it_IT", "htmlLang": "it", "latinExt": false},
   {"code": "nb", "native": "Norsk bokmål", "intl": "nb-NO", "og": "nb_NO", "htmlLang": "nb", "latinExt": false},
-  {"code": "pl", "native": "Polski", "intl": "pl-PL", "og": "pl_PL", "htmlLang": "pl", "latinExt": true}
+  {"code": "pl", "native": "Polski", "intl": "pl-PL", "og": "pl_PL", "htmlLang": "pl", "latinExt": true},
+  {"code": "sv", "native": "Svenska", "intl": "sv-SE", "og": "sv_SE", "htmlLang": "sv", "latinExt": false}
 ]
