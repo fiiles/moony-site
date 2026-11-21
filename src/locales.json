@@ -3,5 +3,6 @@
   {"code": "cs", "native": "Čeština", "intl": "cs-CZ", "og": "cs_CZ", "htmlLang": "cs", "latinExt": true},
   {"code": "de", "native": "Deutsch", "intl": "de-DE", "og": "de_DE", "htmlLang": "de", "latinExt": false},
   {"code": "es", "native": "Español", "intl": "es-ES", "og": "es_ES", "htmlLang": "es", "latinExt": false},
-  {"code": "it", "native": "Italiano", "intl": "it-IT", "og": "it_IT", "htmlLang": "it", "latinExt": false}
+  {"code": "it", "native": "Italiano", "intl": "it-IT", "og": "it_IT", "htmlLang": "it", "latinExt": false},
+  {"code": "nb", "native": "Norsk bokmål", "intl": "nb-NO", "og": "nb_NO", "htmlLang": "nb", "latinExt": false}
 ]
