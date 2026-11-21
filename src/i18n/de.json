@@ -164,7 +164,7 @@
     "cards": {
       "requests": {
         "title": "Kein Tracking",
-        "text": "Keine Analyse-Tools und keine Nutzungsstatistiken. Kurse, Wechselkurse und Updates werden online abgefragt. Kursdienste sehen die Symbole, die Sie verfolgen, nicht Ihre Kontostände."
+        "text": "Keine Analyse-Tools und keine Nutzungsstatistiken. Kurse, Wechselkurse und Updates werden online abgefragt, und die Synchronisierung, falls Sie sie einrichten, kommuniziert mit Ihrem eigenen Synchronisierungsserver. Kursdienste sehen die Symbole, die Sie verfolgen, nicht Ihre Kontostände."
       },
       "disk": {
         "title": "Verschlüsselte Daten",
@@ -258,7 +258,7 @@
         "title": "Android",
         "text": "Demnächst."
       },
-      "sync": "Die Synchronisierung zwischen Ihren Geräten ist experimentell und läuft über einen Server, den Sie selbst betreiben. Der Server und seine Einrichtungsanleitung liegen auf [GitHub (EN)](syncRepo)."
+      "sync": "Die Synchronisierung zwischen Ihren Geräten ist experimentell und läuft über einen Server, den Sie selbst oder jemand, dem Sie vertrauen, betreiben. Der Server und seine Einrichtungsanleitung liegen auf [GitHub (EN)](syncRepo)."
     },
     "install": {
       "title": "Installation und erster Start",
@@ -395,7 +395,7 @@
       },
       "cloud": {
         "q": "Was ist Moony Cloud?",
-        "a": "Ein gehosteter Synchronisierungsserver, der vom Projekt betrieben wird, für alle, die lieber keinen eigenen betreiben möchten. Er ist noch nicht verfügbar. Heute funktioniert die Synchronisierung mit einem Server, den Sie selbst betreiben."
+        "a": "Ein gehosteter Synchronisierungsserver, der vom Projekt betrieben wird, für alle, die lieber keinen eigenen betreiben möchten. Er ist noch nicht verfügbar. Heute funktioniert die Synchronisierung mit einem Server, den Sie selbst oder jemand, dem Sie vertrauen, betreiben."
       },
       "bank": {
         "q": "Verbindet es sich mit meiner Bank?",
@@ -478,7 +478,7 @@
     },
     "recovery": {
       "title": "Vergessenes Passwort und Wiederherstellungsschlüssel",
-      "warning": "**Es gibt keine Hintertür.** Moony hat kein Konto und keinen Server, daher kann niemand Ihr Passwort für Sie zurücksetzen, auch der Autor nicht. Das Passwort und der Wiederherstellungsschlüssel sind zwei getrennte Wege zu denselben verschlüsselten Daten. Haben Sie keines von beiden, lässt sich nichts öffnen: weder Ihre Datensätze noch Ihre angehängten Fotos und Dokumente.",
+      "warning": "**Es gibt keine Hintertür.** Moony hat kein Konto, und niemand sonst besitzt einen Schlüssel zu Ihren Daten, daher kann niemand Ihr Passwort für Sie zurücksetzen, auch der Autor nicht. Das Passwort und der Wiederherstellungsschlüssel sind zwei getrennte Wege zu denselben verschlüsselten Daten. Haben Sie keines von beiden, lässt sich auf diesem Gerät nichts öffnen: weder Ihre Datensätze noch Ihre angehängten Fotos und Dokumente. Wenn Sie die Synchronisierung nutzen, ist das Wiederherstellungs-Kit ein separater Weg zu den synchronisierten Daten.",
       "tableHead": [
         "Wenn Sie …",
         "Dann …"
@@ -561,7 +561,7 @@
       "make": [
         "Öffnen Sie **Einstellungen → Daten und Sicherungen** und klicken Sie auf **Jetzt sichern**. Wählen Sie, wo das ZIP gespeichert wird (Moony schlägt `moony-backup-YYYY-MM-DD.zip` vor).",
         "Es enthält verschlüsselte Kopien Ihrer Datensätze und Anhänge sowie die Schlüsseldateien `salt`, `key.enc` und `recovery.enc` und bleibt verschlüsselt: Nur das Passwort, das bei der Erstellung galt, oder der Wiederherstellungsschlüssel von damals öffnet es.",
-        "Bewahren Sie eine Kopie getrennt von diesem Computer auf, auf einem externen Laufwerk oder in Ihrem eigenen Cloud-Speicher. Moony lädt nie etwas hoch; die Übersicht erinnert Sie, wenn Ihr letztes Backup alt ist. Erstellen Sie vor einem Update und nach einem großen Import ein Backup."
+        "Bewahren Sie eine Kopie getrennt von diesem Computer auf, auf einem externen Laufwerk oder in Ihrem eigenen Cloud-Speicher. Moony lädt Ihre Backups nicht hoch; die Übersicht erinnert Sie, wenn Ihr letztes Backup alt ist. Erstellen Sie vor einem Update und nach einem großen Import ein Backup."
       ],
       "restoreTitle": "Ein Backup wiederherstellen",
       "restoreIntro": "Beginnen Sie bei **Einstellungen → Daten und Sicherungen → Aus Sicherung wiederherstellen…**, auf dem Sperrbildschirm (**Haben Sie ein Backup? Aus Backup wiederherstellen…**) oder im ersten Schritt des Einrichtungsassistenten (**Aus einem Backup wiederherstellen**). Dann:",
@@ -622,7 +622,7 @@
       "uninstall": [
         "Beim Deinstallieren wird die App entfernt, Ihre Daten aber standardmäßig nicht; sie bleiben im Datenordner. macOS: Beenden Sie Moony und ziehen Sie es in den Papierkorb. Windows: Deinstallieren Sie es unter Einstellungen → Apps. Linux: Löschen Sie das AppImage oder entfernen Sie das Paket `.deb` oder `.rpm` mit Ihrer Paketverwaltung.",
         "Um auch Ihre Daten zu entfernen, tun Sie das vor der Deinstallation: **Einstellungen → Konto → Daten löschen…**, dann geben Sie `LÖSCHEN` ein. Das entfernt die Datenbanken, Schlüsseldateien und Anhänge und lässt sich nicht rückgängig machen; erstellen Sie also zuerst ein Backup, falls Sie die Daten vielleicht zurückhaben möchten.",
-        "Übrig bleiben `pre-restore-<time>`-Ordner, von Ihnen gespeicherte Backups und Exporte sowie die Protokolle; löschen Sie diese von Hand oder löschen Sie den ganzen Datenordner. Auf einem Server gibt es nichts zu löschen, denn Moony hat keinen."
+        "Übrig bleiben `pre-restore-<time>`-Ordner, von Ihnen gespeicherte Backups und Exporte sowie die Protokolle; löschen Sie diese von Hand oder löschen Sie den ganzen Datenordner. Wenn Sie die Synchronisierung nutzen, liegt außerdem eine verschlüsselte Kopie Ihrer Daten auf Ihrem Synchronisierungsserver. Löschen Sie sie unter **Einstellungen → Synchronisierung** (**Synchronisierte Daten auf dem Server löschen**), bevor Sie die lokalen Daten löschen. Dadurch werden die synchronisierten Daten auf dem Synchronisierungsserver für alle Geräte gelöscht. Die lokalen Daten auf jedem Gerät bleiben erhalten."
       ]
     },
     "ai": {
