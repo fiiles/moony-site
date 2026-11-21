@@ -24,15 +24,16 @@ const HEADERS = `/*
 const REDIRECTS = 'https://www.example.test/* https://example.test/:splat 301\n';
 
 /** A page that follows every rule. `extra` goes into the head, `body` replaces the default body. */
-function page({ base, locale = 'en', path = '', englishOnly = false, extra = '', body, lang = locale }) {
+function page({ base, locale = 'en', path = '', englishOnly = false, extra = '', body, lang = locale, withMenu = true }) {
   const url = (p) => `https://example.test${base}${p}`;
   const own = url(locale === 'en' ? path : `${locale}/${path}`);
   const languages = englishOnly ? [registry[0]] : registry;
   const alternates = [...languages.map((l) => `<link rel="alternate" hreflang="${l.htmlLang}" href="${url(l.code === 'en' ? path : `${l.code}/${path}`)}">`), `<link rel="alternate" hreflang="x-default" href="${url(path)}">`].join('');
+  const menu = `<details class="lang-menu"><summary>EN</summary>${registry.map((l) => `<a data-lang-choice="${l.code}" href="#">${l.native}</a>`).join('')}</details>`;
   return `<!doctype html><html${lang === null ? '' : ` lang="${lang === locale ? htmlLangOf(locale) : lang}"`}><head><meta charset="utf-8"><title>Page</title>
 <link rel="canonical" href="${own}">${alternates}
 <link rel="stylesheet" href="${base}styles/site.css"><script type="application/ld+json">{"@context":"https://schema.org","url":"https://github.com/x/y"}</script>
-${extra}</head><body>${body ?? `<h1>Plain heading</h1><p>Surprise!</p><a href="${base}download/#install">Download</a> <a href="https://github.com/x/y">Source</a> <a href="mailto:a@b.test">Mail</a> <a href="#top">Top</a><main id="top"><h2 id="x">Section</h2></main><img src="${base}screenshots/a.png" alt=""><script src="${base}js/os.js" defer></script>`}</body></html>`;
+${extra}</head><body>${withMenu ? menu : ''}${body ?? `<h1>Plain heading</h1><p>Surprise!</p><a href="${base}download/#install">Download</a> <a href="https://github.com/x/y">Source</a> <a href="mailto:a@b.test">Mail</a> <a href="#top">Top</a><main id="top"><h2 id="x">Section</h2></main><img src="${base}screenshots/a.png" alt=""><script src="${base}js/os.js" defer></script>`}</body></html>`;
 }
 
 const downloadPageBody = (base) => `<h1>Download</h1><h2 id="install">Install</h2><a href="${base}">Home</a>`;
@@ -94,7 +95,7 @@ test('a good site passes every check and robots.txt gets the configured sitemap'
   try {
     const r = run(s);
     assert.equal(r.status, 0, r.out);
-    assert.equal((r.out.match(/^PASS /gm) ?? []).length, 12, r.out);
+    assert.equal((r.out.match(/^PASS /gm) ?? []).length, 13, r.out);
     assert.match(readFileSync(join(s.dist, 'robots.txt'), 'utf8'), /^Sitemap: https:\/\/example\.test\/sitemap-index\.xml$/m);
   } finally {
     rmSync(s.root, { recursive: true, force: true });
@@ -110,6 +111,26 @@ test('a good site under a base path passes, and robots.txt names the base path',
   } finally {
     rmSync(s.root, { recursive: true, force: true });
   }
+});
+
+// ---- language menu
+
+test('language-menu fires on a page without the menu', () => {
+  assertFires('language-menu', (s) => s.put('download/index.html', page({ base: s.base, path: 'download/', body: downloadPageBody(s.base), withMenu: false })));
+});
+
+test('language-menu fires on a menu that misses a language or breaks the order', () => {
+  const menu = (codes) => `<details class="lang-menu"><summary>EN</summary>${codes.map((c) => `<a data-lang-choice="${c}" href="/">x</a>`).join('')}</details>`;
+  assertFires('language-menu', (s) => pageWith(s, '', `${menu(registry.slice(1).map((l) => l.code))}<h1>Home</h1>`));
+  assertFires('language-menu', (s) => pageWith(s, '', `${menu(registry.map((l) => l.code).reverse())}<h1>Home</h1>`));
+});
+
+test('language-menu fires on a page with two menus', () => {
+  assertFires('language-menu', (s) => {
+    const codes = registry.map((l) => l.code);
+    const menu = `<details class="lang-menu">${codes.map((c) => `<a data-lang-choice="${c}" href="/">x</a>`).join('')}</details>`;
+    pageWith(s, '', `${menu}${menu}<h1>Home</h1>`);
+  });
 });
 
 test('a missing dist folder fails', () => {

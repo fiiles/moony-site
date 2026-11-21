@@ -210,6 +210,21 @@ check('canonical-hreflang', () => {
   return { problems, summary: `${pages.length} pages carry one canonical link and the right hreflang set (404 is noindex)` };
 });
 
+check('language-menu', () => {
+  // Every page except the bare 404 page has one language menu with a link per registry locale, in registry order.
+  const problems = [];
+  const expected = registry.map((l) => l.code);
+  const MENU = /<details\b[^>]*\bclass\s*=\s*["'][^"']*\blang-menu\b[^"']*["'][^>]*>([\s\S]*?)<\/details\s*>/gi;
+  const checked = pages.filter((p) => p.rel !== '404.html');
+  for (const p of checked) {
+    const menus = [...p.html.matchAll(MENU)];
+    if (menus.length !== 1) { problems.push(`${p.rel}: ${menus.length} details.lang-menu elements, expected 1`); continue; }
+    const choices = [...menus[0][1].matchAll(TAG)].filter((m) => m[1].toLowerCase() === 'a').map((m) => parseAttrs(m[2])['data-lang-choice']).filter((c) => c !== undefined);
+    if (choices.join(',') !== expected.join(',')) problems.push(`${p.rel}: language menu links are [${choices.join(', ')}], expected [${expected.join(', ')}]`);
+  }
+  return { problems, summary: `${checked.length} pages carry one language menu with ${expected.length} languages in registry order` };
+});
+
 check('internal-links', () => {
   const problems = [];
   const ids = new Map();

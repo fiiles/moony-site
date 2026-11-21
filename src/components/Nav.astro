@@ -1,19 +1,20 @@
 ---
 import LanguageLink from './LanguageLink.astro';
-import { href, languageNames, locales, t, type Locale } from '../i18n';
+import { href, locales, localeInfo, t, type Locale } from '../i18n';
 import { repoUrl } from '../config';
 
 interface Props {
   locale: Locale;
   /** Current page path without the locale prefix; the language switch points at the same page in the other locale. */
   path: string;
-  /** The current page has no Czech counterpart; the switch then leads to the Czech home page instead of a missing page. */
+  /** The current page exists in English only; the other languages then lead to their home page instead of a missing page. */
   englishOnly?: boolean;
 }
 
 const { locale, path, englishOnly = false } = Astro.props;
 const home = href(locale, '');
-const switcher = locales.map((l) => ({ locale: l, label: l.toUpperCase(), name: languageNames[l] }));
+const choices = locales.map((l) => ({ ...localeInfo(l), href: href(l, englishOnly && l !== 'en' ? '' : path) }));
+const current = localeInfo(locale);
 ---
 <header class="site-nav">
   <div class="wrap">
@@ -25,18 +26,18 @@ const switcher = locales.map((l) => ({ locale: l, label: l.toUpperCase(), name: 
       <a href={home + '#faq'}>{t(locale, 'nav.faq')}</a>
     </nav>
     <div class="nav-right">
-      <span class="seg lang" role="group" aria-label={t(locale, 'nav.language')}>
-        {switcher.map((s) => (
-          <a
-            class:list={['seg__btn', { 'is-active': s.locale === locale }]}
-            href={href(s.locale, englishOnly && s.locale !== 'en' ? '' : path)}
-            lang={s.locale}
-            hreflang={s.locale}
-            title={s.name}
-            aria-current={s.locale === locale ? 'true' : undefined}
-          >{s.label}</a>
-        ))}
-      </span>
+      <details class="lang-menu">
+        <summary title={t(locale, 'nav.language')} lang={current.htmlLang}>
+          <svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg>
+          <span class="lang-menu__name">{current.native}</span><span class="lang-menu__code">{current.code.toUpperCase()}</span>
+          <svg class="ic lang-menu__chevron" aria-hidden="true"><use href="#i-chevron"/></svg>
+        </summary>
+        <ul>
+          {choices.map((c) => (
+            <li><a href={c.href} lang={c.htmlLang} hreflang={c.htmlLang} data-lang-choice={c.code} aria-current={c.code === locale ? 'true' : undefined}>{c.native}</a></li>
+          ))}
+        </ul>
+      </details>
       <LanguageLink locale={locale} class="btn btn--ghost" href={repoUrl} hreflang="en"><svg class="ic" aria-hidden="true"><use href="#i-github"/></svg>{t(locale, 'nav.github')}</LanguageLink>
       <a class="btn btn--primary" href={href(locale, 'download/')}><svg class="ic" aria-hidden="true"><use href="#i-download"/></svg>{t(locale, 'nav.download')}</a>
     </div>
