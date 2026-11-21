@@ -164,7 +164,7 @@
     "cards": {
       "requests": {
         "title": "Ingen sporing",
-        "text": "Ingen analyseverktøy eller bruksstatistikk. Kurser, valutakurser og oppdateringer sjekkes på nett. Kurstjenestene ser symbolene du følger, ikke saldoene dine."
+        "text": "Ingen analyseverktøy eller bruksstatistikk. Kurser, valutakurser og oppdateringer sjekkes på nett, og synkronisering, hvis du setter den opp, snakker med din egen synkroniseringsserver. Kurstjenestene ser symbolene du følger, ikke saldoene dine."
       },
       "disk": {
         "title": "Kryptert data",
@@ -258,7 +258,7 @@
         "title": "Android",
         "text": "Kommer snart."
       },
-      "sync": "Synkronisering mellom enhetene dine er eksperimentell og går via en server du driver selv. Serveren og oppsettsveiledningen finnes på [GitHub (EN)](syncRepo)."
+      "sync": "Synkronisering mellom enhetene dine er eksperimentell og går via en server som du, eller noen du stoler på, driver. Serveren og oppsettsveiledningen finnes på [GitHub (EN)](syncRepo)."
     },
     "install": {
       "title": "Installer og start første gang",
@@ -395,7 +395,7 @@
       },
       "cloud": {
         "q": "Hva er Moony Cloud?",
-        "a": "En vertsbasert synkroniseringsserver drevet av prosjektet, for dem som helst ikke vil drive sin egen. Den er ikke tilgjengelig ennå. I dag fungerer synkronisering med en server du driver selv."
+        "a": "En vertsbasert synkroniseringsserver drevet av prosjektet, for dem som helst ikke vil drive sin egen. Den er ikke tilgjengelig ennå. I dag fungerer synkronisering med en server som du, eller noen du stoler på, driver."
       },
       "bank": {
         "q": "Kobler den seg til banken min?",
@@ -478,7 +478,7 @@
     },
     "recovery": {
       "title": "Glemt passord og gjenopprettingsnøkkelen",
-      "warning": "**Det finnes ingen bakdør.** Moony har ingen konto og ingen server, så ingen kan tilbakestille passordet ditt for deg, heller ikke utvikleren. Passordet og gjenopprettingsnøkkelen er to adskilte veier inn til de samme krypterte dataene. Hvis du ikke har noen av dem, kan ingenting åpnes: verken postene dine eller de vedlagte bildene og dokumentene.",
+      "warning": "**Det finnes ingen bakdør.** Moony har ingen konto, og ingen andre har en nøkkel til dataene dine, så ingen kan tilbakestille passordet ditt for deg, heller ikke utvikleren. Passordet og gjenopprettingsnøkkelen er to adskilte veier inn til de samme krypterte dataene. Hvis du ikke har noen av dem, kan ingenting på denne enheten åpnes: verken postene dine eller de vedlagte bildene og dokumentene. Hvis du bruker synkronisering, er gjenopprettingssettet en egen vei inn til de synkroniserte dataene.",
       "tableHead": [
         "Hvis du …",
         "Da …"
@@ -561,7 +561,7 @@
       "make": [
         "Åpne **Innstillinger → Data og sikkerhetskopier** og klikk **Ta sikkerhetskopi nå**. Velg hvor ZIP-filen skal lagres (Moony foreslår `moony-backup-YYYY-MM-DD.zip`).",
         "Den inneholder krypterte kopier av postene og vedleggene dine pluss nøkkelfilene `salt`, `key.enc` og `recovery.enc`, og forblir kryptert: bare passordet som gjaldt da den ble laget, eller gjenopprettingsnøkkelen fra den tiden, åpner den.",
-        "Oppbevar en kopi borte fra denne datamaskinen, på en ekstern disk eller i din egen skylagring. Moony laster aldri opp noe; Oversikten minner deg på det når siste sikkerhetskopi er gammel. Ta sikkerhetskopi før en oppdatering og etter en stor import."
+        "Oppbevar en kopi borte fra denne datamaskinen, på en ekstern disk eller i din egen skylagring. Moony laster ikke opp sikkerhetskopiene dine; Oversikten minner deg på det når siste sikkerhetskopi er gammel. Ta sikkerhetskopi før en oppdatering og etter en stor import."
       ],
       "restoreTitle": "Gjenopprett en sikkerhetskopi",
       "restoreIntro": "Begynn i **Innstillinger → Data og sikkerhetskopier → Gjenopprett fra sikkerhetskopi…**, på låseskjermen (**Har du en sikkerhetskopi? Gjenopprett fra sikkerhetskopi…**) eller i første trinn av oppsettsveiviseren (**Gjenopprett fra en sikkerhetskopi**). Deretter:",
@@ -622,7 +622,7 @@
       "uninstall": [
         "Avinstallering fjerner appen, men som standard ikke dataene dine, som blir liggende i datamappen. macOS: avslutt Moony og dra appen til papirkurven. Windows: avinstaller den i Innstillinger → Apper. Linux: slett AppImage-filen eller fjern pakken `.deb` eller `.rpm` med pakkebehandleren.",
         "For å fjerne dataene også må du gjøre det før du avinstallerer: **Innstillinger → Konto → Slett data…**, og skriv deretter `SLETT`. Dette fjerner databasene, nøkkelfilene og vedleggene og kan ikke angres, så ta en sikkerhetskopi først hvis du kan ønske dem tilbake.",
-        "Mapper som `pre-restore-<time>`, sikkerhetskopier og eksporter du har lagret, og loggene blir liggende; slett dem for hånd, eller slett hele datamappen. Det er ingenting å slette på en server, for Moony har ingen."
+        "Mapper som `pre-restore-<time>`, sikkerhetskopier og eksporter du har lagret, og loggene blir liggende; slett dem for hånd, eller slett hele datamappen. Hvis du bruker synkronisering, ligger det også en kryptert kopi av dataene dine på synkroniseringsserveren. Slett den under **Innstillinger → Synkronisering** (**Slett synkroniserte data på serveren**) før du sletter de lokale dataene. Dette sletter de synkroniserte dataene på synkroniseringsserveren for alle enheter. De lokale dataene på hver enhet blir værende."
       ]
     },
     "ai": {
