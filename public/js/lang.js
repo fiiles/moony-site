@@ -66,9 +66,9 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    document.addEventListener('click', function (event) {
+    function remember(event) {
       var node = event.target;
-      if (!node || !node.closest) return;
+      if (!node || !node.closest) return null;
       var choice = node.closest('a[data-lang-choice]');
       if (choice) {
         var value = choice.getAttribute('data-lang-choice');
@@ -78,8 +78,14 @@
           } catch (e) {}
         }
       }
-      if (!node.closest('details.lang-menu')) closeMenus();
+      return node;
+    }
+    document.addEventListener('click', function (event) {
+      var node = remember(event);
+      if (node && !node.closest('details.lang-menu')) closeMenus();
     });
+    // A middle-click opens the link in a new tab and fires auxclick, not click.
+    document.addEventListener('auxclick', remember);
     document.addEventListener('keydown', function (event) {
       if (event.key === 'Escape') closeMenus();
     });

@@ -40,7 +40,7 @@ The output lands in `dist/`. `npm run build` also runs the token check before th
 
 The landing page uses four screenshots: dashboard, account detail, investment analysis and loans. Each has same-origin WebP sources with PNG fallback; the dashboard also has a 740 × 520 close-up for screens up to 600 px wide. Recheck the crop in `scripts/optimize-shots.mjs` if the app layout changes. A short AI integration section on the home page shows example questions and explains the optional data sharing. Full setup instructions live at `/ai-integration/` and `/<code>/ai-integration/`, linked from the footer.
 
-The Help lives at `/help/` and `/<code>/help/`, linked from the footer and the download page. It is one page per language with six anchored sections (first start, forgotten password, importing statements, backup and a new computer, updates and uninstalling, AI assistant), built by `src/components/HelpPage.astro` from the `help.*` strings of the dictionaries. It is one page rather than six because every page costs about 8 KB of layout against the size budget. Every menu name in it comes from the app's English or Czech interface strings; recheck them when the app renames a setting.
+The Help lives at `/help/` and `/<code>/help/`, linked from the footer and the download page. It is one page per language with six anchored sections (first start, forgotten password, importing statements, backup and a new computer, updates and uninstalling, AI assistant), built by `src/components/HelpPage.astro` from the `help.*` strings of the dictionaries. It is one page rather than six because every page costs about 8 KB of layout against the size budget. Every menu name in it comes from the app's own interface strings for that language (each dictionary uses the app's translation); recheck them when the app renames a setting.
 
 ## Adding a language
 
@@ -54,6 +54,8 @@ The registry `src/locales.json` lists the ten languages (`en, cs, de, es, it, nb
    - `og`: the `og:locale` value (`de_DE`).
    - `htmlLang`: the `lang` attribute and the hreflang value; equal to `code` except Simplified Chinese (`zh` is `zh-Hans`).
    - `latinExt`: true if the language needs the Latin-extended font subset (Czech and Polish).
+
+   A language whose script the Inter font files do not cover (as Japanese and Chinese) also needs its system fonts in the font stack in `public/styles/site.css`.
 3. Links to pages that exist only in English (Privacy, Security, Changelog, the GitHub pages) end their label with `(EN)` in every non-English dictionary, and no other link does. The parity test checks this.
 4. Run `npm test` and `npm run build`. The tests check that the dictionary has the same keys, placeholders, link targets and list lengths as `en.json`, no empty strings and no exclamation marks, and that Czech and Polish keep one-letter words tied to the next word with a no-break space. The build fails when a registered language has no dictionary, lacks one of its six pages, or has a wrong `lang`, canonical or hreflang.
 5. Mind the size budgets, which `scripts/check-dist.mjs` enforces and prints: English HTML 288 KB, each other language's HTML 128 KB (per folder), and shared CSS, JS and fonts 192 KB. Do not raise a budget to fit a language; shorten the text or look at what makes the pages large (scripts written in CJK characters take three bytes each in UTF-8).

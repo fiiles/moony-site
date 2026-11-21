@@ -41,15 +41,24 @@ export function changelogLink(locale: Locale): { href: string; hreflang: 'en' | 
   return enOnlyLink(locale, 'changelog/');
 }
 
+/** Build-time guard: without full ICU data Node would silently format with English, so fail naming the locale. */
+function intlTag(locale: Locale): string {
+  const intl = localeInfo(locale).intl;
+  if (Intl.DateTimeFormat.supportedLocalesOf([intl]).length === 0 || Intl.NumberFormat.supportedLocalesOf([intl]).length === 0) {
+    throw new Error(`Node has no Intl (ICU) data for "${intl}" (locale ${locale}); build with full-icu Node.`);
+  }
+  return intl;
+}
+
 /** File size in MB with the locale's decimal separator, e.g. "16.1 MB" or "16,1 MB". */
 export function formatSize(bytes: number, locale: Locale): string {
-  const number = new Intl.NumberFormat(localeInfo(locale).intl, { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+  const number = new Intl.NumberFormat(intlTag(locale), { minimumFractionDigits: 1, maximumFractionDigits: 1 });
   return number.format(bytes / 1048576) + ' MB';
 }
 
 /** The release date written out in the locale, e.g. "12 October 2026". */
 export function formatDate(locale: Locale): string {
-  return new Intl.DateTimeFormat(localeInfo(locale).intl, { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(`${release.publishedAt}T00:00:00Z`));
+  return new Intl.DateTimeFormat(intlTag(locale), { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(`${release.publishedAt}T00:00:00Z`));
 }
 
 /** schema.org description of the app for the download page. Every value comes from release.json or a fixed fact about the project. */

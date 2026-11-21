@@ -111,6 +111,19 @@ test('a click on a language link does not throw when storage throws', () => {
   assert.doesNotThrow(() => v.fire('click', click(link('de'))));
 });
 
+test('a middle-click (auxclick) on a language link stores the choice', () => {
+  const v = visit({ languages: ['cs'] });
+  v.fire('DOMContentLoaded');
+  v.fire('auxclick', click(link('en')));
+  assert.equal(v.saved['moony-lang'], 'en');
+});
+
+test('an auxclick on a language link does not throw when storage throws', () => {
+  const v = visit({ languages: ['en'], stored: 'throws' });
+  v.fire('DOMContentLoaded');
+  assert.doesNotThrow(() => v.fire('auxclick', click(link('en'))));
+});
+
 test('a click outside the language menu closes it; a click inside does not', () => {
   const v = visit({ languages: ['en'] });
   v.fire('DOMContentLoaded');
