@@ -1,0 +1,10 @@
+---
+import Base from '../layouts/Base.astro';
+import SupportPage from '../components/SupportPage.astro';
+import { t } from '../i18n';
+
+const locale = 'en';
+---
+<Base locale={locale} title={t(locale, 'support.metaTitle')} description={t(locale, 'support.description')} path="support/">
+  <SupportPage locale={locale} />
+</Base>

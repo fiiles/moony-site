@@ -1,6 +1,6 @@
 # Moony website
 
-The website for Moony, the local-first personal finance app. A static Astro 7 site, bilingual (English and Czech), built to plain HTML. Hosted on Cloudflare from the public GitHub repository `fiiles/moony-site`, served at https://moonyfinance.com.
+The website for Moony, the local-first personal finance app. A static Astro 7 site, multilingual (English at the root, every other language under `/<code>/`), built to plain HTML. Hosted on Cloudflare from the public GitHub repository `fiiles/moony-site`, served at https://moonyfinance.com.
 
 ## Installing
 
@@ -12,7 +12,7 @@ The `.npmrc` in this repository pins the npm registry to https://registry.npmjs.
 npm ci && npm run build
 ```
 
-The output lands in `dist/`. `npm run build` also runs the token check before the build and `scripts/check-dist.mjs` after it. The checks fail the build when a page would break the site's promises: a request to another host, an inline script or style (the Content-Security-Policy allows none), a missing canonical or hreflang link, a broken internal link or asset, an exclamation mark in an h1 to h3, more than 512 KB of HTML, CSS, JS and fonts (screenshots and social images excluded), or a weakened `_headers` file. It also writes the right `Sitemap:` line into `dist/robots.txt`.
+The output lands in `dist/`. `npm run build` also runs the token check before the build and `scripts/check-dist.mjs` after it. The checks fail the build when a page would break the site's promises: a request to another host, an inline script or style (the Content-Security-Policy allows none), a missing canonical or hreflang link, a broken internal link or asset, an exclamation mark in an h1 to h3, an over-budget group of files (English root HTML over 288 KB, the HTML of one locale folder over 128 KB, or shared CSS, JS and fonts over 192 KB; screenshots and social images excluded), a locale without its five pages, or a weakened `_headers` file. It also writes the right `Sitemap:` line into `dist/robots.txt`.
 
 ## Scripts
 
@@ -38,9 +38,33 @@ The output lands in `dist/`. `npm run build` also runs the token check before th
   npm run shots:optimize # requires cwebp (WebP tools); not needed for a normal build
   ```
 
-The landing page uses four screenshots: dashboard, account detail, investment analysis and loans. Each has same-origin WebP sources with PNG fallback; the dashboard also has a 740 × 520 close-up for screens up to 600 px wide. Recheck the crop in `scripts/optimize-shots.mjs` if the app layout changes. A short AI integration section on the home page shows example questions and explains the optional data sharing. Full setup instructions live at `/ai-integration/` and `/cs/ai-integration/`, linked from the footer.
+The landing page uses four screenshots: dashboard, account detail, investment analysis and loans. Each has same-origin WebP sources with PNG fallback; the dashboard also has a 740 × 520 close-up for screens up to 600 px wide. Recheck the crop in `scripts/optimize-shots.mjs` if the app layout changes. A short AI integration section on the home page shows example questions and explains the optional data sharing. Full setup instructions live at `/ai-integration/` and `/<code>/ai-integration/`, linked from the footer.
 
-The Help lives at `/help/` and `/cs/help/`, linked from the footer and the download page. It is one page per language with six anchored sections (first start, forgotten password, importing statements, backup and a new computer, updates and uninstalling, AI assistant), built by `src/components/HelpPage.astro` from the `help.*` strings of the dictionaries. It is one page rather than six because every page costs about 8 KB of layout against the size budget. Every menu name in it comes from the app's English or Czech interface strings; recheck them when the app renames a setting.
+The Help lives at `/help/` and `/<code>/help/`, linked from the footer and the download page. It is one page per language with six anchored sections (first start, forgotten password, importing statements, backup and a new computer, updates and uninstalling, AI assistant), built by `src/components/HelpPage.astro` from the `help.*` strings of the dictionaries. It is one page rather than six because every page costs about 8 KB of layout against the size budget. Every menu name in it comes from the app's own interface strings for that language (each dictionary uses the app's translation); recheck them when the app renames a setting.
+
+## Adding a language
+
+The registry `src/locales.json` lists the ten languages (`en, cs, de, es, it, nb, pl, sv, ja, zh`, the codes of the app's `languages.ts`); the first entry (English) is the default and lives at the root, every other one is served under `/<code>/` by the pages in `src/pages/[locale]/`. To add one:
+
+1. Create `src/i18n/<code>.json` with every key of `en.json`. A missing key fails the build. Interface terms (menu names, settings, buttons) must match the app's own translation of that language, so a reader finds the same word in the app.
+2. Add an entry at the end of `src/locales.json`, with these fields:
+   - `code`: the folder and URL segment (`/<code>/`), the same code as in the app.
+   - `native`: the language written in itself, shown in the language menu.
+   - `intl`: BCP 47 tag for dates and numbers (`de-DE`, `ja-JP`).
+   - `og`: the `og:locale` value (`de_DE`).
+   - `htmlLang`: the `lang` attribute and the hreflang value; equal to `code` except Simplified Chinese (`zh` is `zh-Hans`).
+   - `latinExt`: true if the language needs the Latin-extended font subset (Czech and Polish).
+
+   A language whose script the Inter font files do not cover (as Japanese and Chinese) also needs its system fonts in the font stack in `public/styles/site.css`.
+3. Links to pages that exist only in English (Privacy, Security, Changelog, the GitHub pages) end their label with `(EN)` in every non-English dictionary, and no other link does. The parity test checks this.
+4. Run `npm test` and `npm run build`. The tests check that the dictionary has the same keys, placeholders, link targets and list lengths as `en.json`, no empty strings and no exclamation marks, and that Czech and Polish keep one-letter words tied to the next word with a no-break space. The build fails when a registered language has no dictionary, lacks one of its six pages, or has a wrong `lang`, canonical or hreflang.
+5. Mind the size budgets, which `scripts/check-dist.mjs` enforces and prints: English HTML 288 KB, each other language's HTML 128 KB (per folder), and shared CSS, JS and fonts 192 KB. Do not raise a budget to fit a language; shorten the text or look at what makes the pages large (scripts written in CJK characters take three bytes each in UTF-8).
+
+Fonts: Inter stays first; the fallbacks in `public/styles/site.css` carry Japanese and Simplified Chinese from the system (for `zh-Hans` the Chinese fonts come before the Japanese ones). Do not add font files for a new script without checking the shared budget.
+
+The site opens in the visitor's language. `public/js/lang.js` is a classic blocking script in the `<head>` of every page, ahead of the stylesheets. On an indexed English page that exists in every language (`data-auto`), it sends the visitor to the same page in the language they picked earlier (kept in `localStorage` under `moony-lang`, set when they click a language in the menu), or else in the first language of `navigator.languages` the site has (`no` and `nn` map to `nb`; English stays). Pages of other languages, English-only pages and the 404 page never redirect. If storage is blocked and the visitor comes from another page of the site, the script does nothing. `lang.js` must stay free of network APIs and of inline code: `scripts/check-dist.mjs` scans it, and its `language-script` check verifies the tag on every built page.
+
+Screenshots for a language are optional: `<name>-<code>.png` is used when present.
 
 ## Deploying
 

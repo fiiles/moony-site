@@ -2,7 +2,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { asset, type Locale } from '../i18n';
 
-/** Screenshots live in public/screenshots/<name>.png (English UI) and <name>-cs.png (Czech UI), each with a 720 px wide copy <name>-720.png / <name>-cs-720.png. Size is read from the files at build time. */
+/** Screenshots live in public/screenshots/<name>.png (English UI) and <name>-<code>.png (other UI languages, e.g. -cs for Czech), each with a 720 px wide copy <name>-720.png / <name>-<code>-720.png. Size is read from the files at build time. */
 const dir = join(process.cwd(), 'public', 'screenshots');
 
 /** The file for a locale; a locale without its own set falls back to the English file. */

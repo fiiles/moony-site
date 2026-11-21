@@ -1,0 +1,564 @@
+{
+  "site": {
+    "name": "Moony",
+    "tagline": "Økonomien din, samlet på ett sted.",
+    "description": "Moony er en gratis skrivebordsapp for å holde oversikt over kontoer, investeringer og lån. Økonomidataene dine blir på datamaskinen din. For macOS, Windows og Linux."
+  },
+  "nav": {
+    "label": "Hovedmeny",
+    "tracks": "Kom i gang",
+    "privacy": "Personvern",
+    "features": "Funksjoner",
+    "download": "Last ned",
+    "faq": "FAQ",
+    "github": "GitHub",
+    "home": "Moony-forsiden",
+    "language": "Språk"
+  },
+  "footer": {
+    "blurb": "Et klarere bilde av økonomien din. Rett på datamaskinen din.",
+    "product": "Produkt",
+    "download": "Last ned",
+    "help": "Hjelp",
+    "support": "Brukerstøtte",
+    "changelog": "Endringslogg",
+    "trust": "Tillit",
+    "privacy": "Personvern",
+    "security": "Sikkerhet og varsling",
+    "licence": "Lisens",
+    "sitePrivacy": "Dette nettstedet",
+    "community": "Fellesskap",
+    "github": "GitHub",
+    "discussions": "Diskusjoner",
+    "translate": "Oversett Moony",
+    "disclaimer": "Moony gir ikke økonomisk rådgivning, skatteråd eller investeringsråd. Tallene bygger på data fra tredjeparter og kan være unøyaktige.",
+    "nocookies": "Dette nettstedet setter ingen informasjonskapsler og bruker ingen analyseverktøy.",
+    "copyright": "© 2026 Filip Král"
+  },
+  "repoPage": {
+    "provenance": "Denne siden viser filen fra Moony-repoet slik den er publisert ved taggen nedenfor; bare tittelen og de relative lenkene er tilpasset. Kilden er"
+  },
+  "hero": {
+    "eyebrow": "Privatøkonomi for skrivebordet",
+    "lead": "Hold oversikt over kontoer, investeringer og lån. Moony lagrer økonomidataene dine rett på datamaskinen din.",
+    "ctaDefault": "Last ned",
+    "ctaMac": "Last ned for macOS",
+    "ctaWin": "Last ned for Windows",
+    "ctaLinux": "Last ned for Linux",
+    "noteStrong": "Gratis og åpen kildekode",
+    "noteRest": "Versjon {version}",
+    "caption": "Den ekte appen, med eksempeldata",
+    "alt": "Oversikt med nettoformuen, utviklingen over tid og summene for en eksempelprofil",
+    "facts": {
+      "noAccount": "Uten registrering",
+      "local": "Dataene blir hos deg",
+      "offline": "Fungerer uten nett"
+    },
+    "ctaPreview": "Ta en titt inni appen"
+  },
+  "features": {
+    "overview": {
+      "title": "Se hvor du står.",
+      "text": "Kontosaldoer, investeringer og gjelden du fortsatt har. Én oversikt, bygget rundt det du vil følge med på.",
+      "bullets": [
+        "Eiendeler og gjeld samlet",
+        "Inntekter og utgifter i sammenheng",
+        "Investeringer over tid"
+      ],
+      "alt": "Summene for eiendeler, gjeld og ledige midler i en eksempelprofil, med kommende frister og påminnelser"
+    },
+    "import": {
+      "title": "Begynn med en kontoutskrift.",
+      "text": "Importer en kontoutskrift for å se hvor pengene går og hvor mye som er igjen. Sorter transaksjoner i kategorier og lag regler for neste gang.",
+      "bullets": [
+        "Inntekter og utgifter, måned for måned",
+        "Dupliserte transaksjoner hoppes over",
+        "Angre en import om du trenger det"
+      ],
+      "alt": "Bankkontoside med saldoen, et 12-måneders diagram over inngående og utgående penger og begynnelsen av transaksjonslisten",
+      "formatsTitle": "Støttede formater",
+      "formats": "CSV med kolonnegjenkjenning, CAMT.053, MT940, OFX/QFX og QIF. Direkte bankforbindelser er ikke tilgjengelige ennå."
+    },
+    "investments": {
+      "title": "Følg investeringene dine over tid.",
+      "text": "Se hva du har satt inn og hva investeringene dine har gitt. Følg aksjer, ETF-er og krypto, og hold øye med porteføljens verdi.",
+      "bullets": [
+        "Avkastning og mottatt utbytte",
+        "Oppdaterte aksje- og kryptokurser",
+        "Import fra XTB, Trading 212, Degiro og IBKR"
+      ],
+      "alt": "Aksjeanalyse med tidsvektet og pengevektet avkastning, et avkastningsdiagram fordelt på region og et panel for største fall"
+    },
+    "otherInstruments": {
+      "title": "Også eiendom, forsikringer og lån",
+      "text": "Ta eiendom, forsikringer og lån med i oversikten. Hold verdier, betalinger og viktige datoer samlet.",
+      "bullets": [
+        "Eiendom: verdsettelser, leie og kostnader",
+        "Forsikringer: betalinger, datoer og dokumenter",
+        "Lån: avdrag og restgjeld"
+      ],
+      "alt": "Lånoversikt med restgjeld, renter og et diagram over gjelden over tid"
+    }
+  },
+  "tracks": {
+    "title": "Hva mer kan du følge?",
+    "items": {
+      "bank": {
+        "name": "Bankkontoer",
+        "line": "Kontoutskrifter, regler"
+      },
+      "cashflow": {
+        "name": "Kontantstrøm",
+        "line": "Rapport, plan, grenser"
+      },
+      "spendingPlans": {
+        "name": "Utgiftsplaner",
+        "line": "Ferier, oppussing, gaver"
+      },
+      "stocks": {
+        "name": "Aksjer og ETF-er",
+        "line": "Avkastning, utbytte, følgeliste"
+      },
+      "crypto": {
+        "name": "Krypto",
+        "line": "Beholdning, historikk"
+      },
+      "realEstate": {
+        "name": "Eiendom",
+        "line": "Verdier, leie, kostnader"
+      },
+      "assets": {
+        "name": "Obligasjoner og andre eiendeler",
+        "line": "Kuponger, forfall"
+      },
+      "loans": {
+        "name": "Lån",
+        "line": "Nedbetalingsplaner, ekstra avdrag"
+      },
+      "insurance": {
+        "name": "Forsikringer",
+        "line": "Betalingskalender"
+      }
+    },
+    "foot": "10 språk · 45 støttede valutaer · Lys og mørk modus"
+  },
+  "trust": {
+    "title": "Økonomien din forblir din.",
+    "cards": {
+      "requests": {
+        "title": "Ingen sporing",
+        "text": "Ingen analyseverktøy eller bruksstatistikk. Kurser, valutakurser og oppdateringer sjekkes på nett. Kurstjenestene ser symbolene du følger, ikke saldoene dine."
+      },
+      "disk": {
+        "title": "Kryptert data",
+        "text": "Poster og vedlegg er kryptert på datamaskinen din. Eksporterte filer og lagrede kopier er ikke kryptert, så oppbevar dem et trygt sted."
+      },
+      "keys": {
+        "title": "Sikkerhetskopier du styrer selv",
+        "text": "Sikkerhetskopier dataene til en fil eller eksporter dem. Lagre gjenopprettingsnøkkelen under oppsettet, så du kan tilbakestille et glemt passord."
+      }
+    },
+    "link": "Les om personvernet i detalj →"
+  },
+  "assistant": {
+    "title": "Koble en AI-assistent til økonomien din",
+    "text": "Claude eller en annen MCP-klient kan lese og endre dataene dine gjennom en lokal server. Klienten behandler dem, vanligvis i leverandørens sky.",
+    "badge": "Av som standard",
+    "link": "AI-integrasjon",
+    "metaTitle": "AI-integrasjon · Moony",
+    "back": "Tilbake til Moony",
+    "detail": "En valgfri funksjon for avanserte brukere. Før du slår den på, bør du sjekke hvordan AI-klienten du velger håndterer data. Du trenger ikke en AI-assistent for å bruke Moony.",
+    "setupTitle": "Sett opp integrasjonen",
+    "setupSteps": [
+      "Åpne Innstillinger → AI-assistent i Moony og slå på AI-assistent (MCP-server).",
+      "Kopier tilkoblingskommandoen fra innstillingene. Den inneholder ditt personlige tilgangstoken; hold den privat.",
+      "La Moony kjøre og være opplåst mens du bruker integrasjonen."
+    ],
+    "guide": "Full oppsettsveiledning på GitHub →"
+  },
+  "download": {
+    "title": "Last ned Moony gratis.",
+    "meta": "Versjon {version} · utgitt {date}",
+    "changes": "Hva er endret →",
+    "mac": {
+      "arm": "Apple Silicon",
+      "intel": "Intel",
+      "note": "Signert og notarisert av Apple."
+    },
+    "win": {
+      "exe": "Installasjonsprogram",
+      "note": "Installasjonsprogrammet har ennå ikke noe kodesigneringssertifikat for Windows."
+    },
+    "linux": {
+      "appimage": "AppImage (x86_64)",
+      "deb": "Debian/Ubuntu (x86_64)",
+      "rpm": "Fedora/openSUSE (x86_64)",
+      "appimageArm": "AppImage (ARM64)",
+      "debArm": "Debian/Ubuntu (ARM64)",
+      "rpmArm": "Fedora/openSUSE (ARM64)",
+      "note": "{archs}; AppImage kan trenge libfuse2.",
+      "archs": "x86_64",
+      "archsArm": "x86_64 og ARM64"
+    },
+    "all": "Velg et annet system →",
+    "intro": "Gratis for macOS, Windows og Linux. Ingen registrering eller prøveperiode.",
+    "notice": "Windows kan vise en sikkerhetsadvarsel ved første start fordi installasjonsprogrammet ennå ikke er signert. Les installasjonsmerknadene før du laster ned."
+  },
+  "downloadPage": {
+    "metaTitle": "Last ned Moony {version} for macOS, Windows og Linux",
+    "description": "Installasjonsprogrammer for Moony {version} til macOS, Windows og Linux, trinnene ved første start for hvert system, systemkrav og hvordan oppdateringer fungerer.",
+    "title": "Last ned Moony {version}",
+    "released": "Utgitt {date}",
+    "allReleases": "Alle utgivelser →",
+    "filesTitle": "Installasjonsfiler etter operativsystem",
+    "macHint": "Apple Silicon betyr en M1-brikke eller nyere. Usikker på hvilken Mac du har? Apple-menyen → **Om denne Macen**: linjen Brikke eller Prosessor viser Apple M… eller Intel.",
+    "install": {
+      "title": "Installer og start første gang",
+      "unsigned": "Mac-appen er signert og notarisert av Apple og åpnes som alle andre apper. Installasjonsprogrammet for Windows har ennå ikke noe kodesigneringssertifikat, så Windows kan vise en sikkerhetsadvarsel ved første start; trinnene står nedenfor. Oppdateringer i appen verifiseres med prosjektets signeringsnøkkel.",
+      "mac": {
+        "open": "Åpne `.dmg`-filen og dra **Moony** inn i **Programmer**.",
+        "launch": "Åpne Moony fra **Programmer**. macOS sjekker Apples notarisering og åpner appen uten advarsel."
+      },
+      "win": {
+        "keep": "Last ned installasjonsprogrammet. Hvis nettleseren sier at filen ikke lastes ned ofte, behold den (i Edge: **⋯ → Keep → Show more → Keep anyway**).",
+        "run": "Kjør det. Windows SmartScreen kan vise «Windows protected your PC». Klikk **More info**, deretter **Run anyway**."
+      },
+      "linux": {
+        "arch": "Det finnes bygg for {archs}. Kommandoene nedenfor bruker x86_64-filene.",
+        "fuse": "Noen distribusjoner trenger pakken `libfuse2` for AppImage.",
+        "armFiles": "På ARM (`uname -m` skriver `aarch64`) bruker du `{appimage}`, `{deb}` eller `{rpm}` i stedet."
+      }
+    },
+    "first": {
+      "title": "Første gangs bruk",
+      "intro": "Oppsettsveiviseren tar deg gjennom:",
+      "steps": [
+        "Hovedvalutaen og landet ditt.",
+        "Et navn og et passord.",
+        "**Gjenopprettingsnøkkelen** din. Lagre den: den er den eneste måten å tilbakestille et glemt passord på, og den virker bare sammen med nøkkelfilene i datamappen, så ta også sikkerhetskopi av dataene (**Innstillinger → Data og sikkerhetskopier**).",
+        "Hva du vil følge.",
+        "Et tilbud om å legge til den første kontoen din og importere en kontoutskrift."
+      ],
+      "outro": "Oversikten viser deretter en sjekkliste for Kom i gang. Skal du flytte til en ny datamaskin? Velg Gjenopprett fra en sikkerhetskopi på første skjermbilde i veiviseren i stedet for å opprette en ny profil.",
+      "help": "Ny i Moony? [Hjelp](help) forklarer [hva du gjør hvis du glemmer passordet](recovery), [hvordan du tar sikkerhetskopi og gjenoppretter dataene](backup) og [hvordan du importerer kontoutskrifter](import)."
+    },
+    "updating": {
+      "title": "Oppdatering",
+      "text": "Når du har låst opp Moony, spør appen GitHub om det finnes en nyere versjon og tilbyr en oppdatering med ett klikk. Nedlastingen verifiseres mot prosjektets offentlige nøkkel før den installeres. Du kan slå av den automatiske sjekken i **Innstillinger**; hva den sender, står på [personvernsiden (EN)](privacy)."
+    },
+    "requirements": {
+      "title": "Systemkrav",
+      "mac": "macOS 10.15 (Catalina) eller nyere, på Mac med Apple Silicon og Intel.",
+      "win": "Windows 10 og 11, 64-bit. Moony trenger kjøretidsmiljøet Microsoft Edge WebView2, som er forhåndsinstallert på begge; installasjonsprogrammet henter det hvis det mangler.",
+      "linux": "{archs}: en AppImage, en `.deb` for Debian og Ubuntu og en `.rpm` for Fedora og openSUSE. Bygget på Ubuntu 24.04; eldre distribusjoner kan mangle et systembibliotek."
+    },
+    "intro": "Velg systemet ditt. Sett opp Moony etter installasjonen, uten en nettkonto.",
+    "recommended": "Ditt system",
+    "installLink": "Installasjonsinstruksjoner →"
+  },
+  "sitePrivacy": {
+    "metaTitle": "Personvern på dette nettstedet · Moony",
+    "description": "Moony-nettstedet bruker ingen informasjonskapsler eller analyseverktøy. Les om innholdet, Cloudflare-driften og nedlastinger av appen.",
+    "title": "Personvern på dette nettstedet",
+    "intro": "Denne siden handler om moonyfinance.com. Hva Moony-appen lagrer og sender, står på [personvernsiden (EN)](privacy).",
+    "items": {
+      "cookies": {
+        "title": "Ingen informasjonskapsler, ingen analyse",
+        "text": "Dette nettstedet setter ingen informasjonskapsler og har ingen analyseverktøy, tellere eller sporingspiksler."
+      },
+      "origin": {
+        "title": "Innhold fra vårt eget domene",
+        "text": "Skrifter, stiler, skript og bilder lastes fra nettstedets eget domene. En streng Content-Security-Policy-header begrenser innholdet på sidene. Vertsleverandøren kan i tillegg bruke nettverksdiagnostikken som er beskrevet nedenfor."
+      },
+      "language": {
+        "title": "Språk",
+        "text": "Nettstedet åpnes på det første språket i nettleserens språkliste som finnes her, og ellers på engelsk. Valget gjøres i nettleseren din. Når du selv velger et språk, husker nettleseren det i sin lokale lagring under navnet moony-lang; det er ikke en informasjonskapsel, og det sendes aldri noe sted."
+      },
+      "hosting": {
+        "title": "Drift",
+        "text": "Cloudflare driver dette nettstedet. Når Cloudflare leverer sidene, behandler selskapet vanlige forespørselsdata, som IP-adressen og brukeragenten din, i henhold til sin [personvernerklæring (EN)](https://www.cloudflare.com/privacypolicy/). Selskapets [Network Error Logging-tjeneste (EN)](https://developers.cloudflare.com/network-error-logging/) kan motta nettverksfeilrapporter fra nettleseren din. Cloudflares besøksanalyse er ikke aktivert på dette nettstedet."
+      },
+      "downloads": {
+        "title": "Nedlastinger",
+        "text": "Nedlastingslenkene fører til utgivelser på GitHub, som leverer filene."
+      },
+      "operator": {
+        "title": "Ansvarlig og kontakt",
+        "text": "Ansvarlig er Filip Král. Skriv til [{email}](email) eller spør i [GitHub Discussions (EN)](https://github.com/fiiles/Moony/discussions)."
+      }
+    }
+  },
+  "support": {
+    "metaTitle": "Brukerstøtte · Moony",
+    "description": "Slik får du hjelp med Moony: hjelpesidene, en kontakt-e-post og hvor du melder fra om en feil eller et sikkerhetsproblem.",
+    "title": "Brukerstøtte",
+    "intro": "Moony er et uavhengig prosjekt med åpen kildekode. Her finner du svar og får kontakt med utvikleren.",
+    "items": {
+      "email": {
+        "title": "Skriv til oss",
+        "text": "Send en e-post til [{email}](email). Det hjelper om du oppgir hvilken versjon av Moony du bruker, på hvilket system, og hva som skjedde. Send ikke passordet, gjenopprettingsnøkkelen eller datafilen din."
+      },
+      "help": {
+        "title": "Finn et svar",
+        "text": "[Hjelp](help) dekker første oppstart, [et glemt passord](recovery), [sikkerhetskopier og flytting til en annen datamaskin](backup) og [import av kontoutskrifter](import)."
+      },
+      "bug": {
+        "title": "Meld fra om en feil",
+        "text": "Feil følges opp åpent på GitHub: [opprett en sak (EN)](issues). Utelat alt personlig; et skjermbilde med eksempeldata er nok."
+      },
+      "security": {
+        "title": "Meld fra om et sikkerhetsproblem",
+        "text": "Ikke meld fra om en sårbarhet i en offentlig sak. Den private kanalen er beskrevet på [sikkerhetssiden (EN)](security)."
+      },
+      "ideas": {
+        "title": "Ideer og spørsmål",
+        "text": "Ideer til funksjoner og generelle spørsmål er velkomne i [GitHub Discussions (EN)](discussions)."
+      }
+    }
+  },
+  "faq": {
+    "eyebrow": "Før du begynner",
+    "title": "Vanlige spørsmål",
+    "items": {
+      "free": {
+        "q": "Er det virkelig gratis?",
+        "a": "Ja: Moony har åpen kildekode under AGPL-3.0-lisensen, uten prøveperiode og uten konto."
+      },
+      "warning": {
+        "q": "Hvorfor advarer Windows meg når jeg åpner appen?",
+        "a": "Installasjonsprogrammet for Windows har ennå ikke noe kodesigneringssertifikat, så Windows kan vise en sikkerhetsadvarsel ved første start; trinnene står på nedlastingssiden. Mac-appen er signert og notarisert av Apple og åpnes uten advarsel. Oppdateringer i appen verifiseres med prosjektets signeringsnøkkel."
+      },
+      "data": {
+        "q": "Samler Moony inn data om meg?",
+        "a": "Nei: appen har ingen analyseverktøy, feilrapporter eller bruksstatistikk. De eneste forespørslene den sender, gjelder kurser, valutakurser og oppdateringssjekken, og de er oppført i sin helhet på personvernsiden."
+      },
+      "password": {
+        "q": "Hva om jeg glemmer passordet?",
+        "a": "Bruk gjenopprettingsnøkkelen på 24 tegn som Moony viste deg under oppsettet; den er den eneste måten å tilbakestille et passord på. Hvis du mister begge, kan ingen åpne dataene dine, så ta sikkerhetskopi (Innstillinger → Data og sikkerhetskopier)."
+      },
+      "devices": {
+        "q": "Kan jeg bruke Moony på telefonen eller en annen datamaskin?",
+        "a": "Moony kjører på macOS, Windows og Linux i dag, med én profil per datamaskin og uten synkronisering. Du kan flytte dataene til en annen datamaskin med en sikkerhetskopifil."
+      },
+      "bank": {
+        "q": "Kobler den seg til banken min?",
+        "a": "Ikke direkte: importer kontoutskrifter som er eksportert fra banken din som CSV, CAMT.053, MT940, OFX/QFX eller QIF."
+      }
+    }
+  },
+  "gettingStarted": {
+    "title": "Du kan begynne med én konto.",
+    "text": "Du trenger ikke legge inn alt på en gang. Ta med andre kontoer og investeringer når du er klar.",
+    "steps": [
+      {
+        "title": "Opprett profilen din",
+        "text": "Velg valuta og passord. Lagre gjenopprettingsnøkkelen."
+      },
+      {
+        "title": "Legg til den første kontoen din",
+        "text": "Skriv inn en saldo eller importer en kontoutskrift."
+      },
+      {
+        "title": "Gjør den til din egen",
+        "text": "Legg til mer av det du vil følge, etter hvert."
+      }
+    ]
+  },
+  "about": {
+    "title": "Et uavhengig prosjekt med åpen kildekode",
+    "text": "Savner du en funksjon, eller har du funnet noe som kunne fungert bedre? Bli med i samtalen på GitHub og hjelp til å gjøre Moony bedre.",
+    "link": "Del tilbakemeldingen din →"
+  },
+  "assistantPreview": {
+    "title": "Spør en AI-agent om økonomien din",
+    "text": "Koble Moony til AI-agenten din gjennom MCP. Gi den bakgrunn for analyser og forslag som bygger på situasjonen din.",
+    "examplesTitle": "Du kan for eksempel spørre",
+    "examples": [
+      "Hvor stor andel av porteføljen min ligger i de tre største investeringene mine?",
+      "Anslå verdien av leiligheten min ut fra opplysningene i Moony og gjeldende annonser."
+    ],
+    "marketNote": "For et verdianslag på eiendom trenger agenten også aktuell markedsinformasjon.",
+    "privacyNote": "Integrasjonen er av som standard. Når du slår den på, får AI-klienten du velger tilgang til dataene dine, og den kan behandle dem i leverandørens sky.",
+    "link": "Slik setter du den opp →",
+    "diagram": {
+      "caption": "Koble økonomien som er lagret i Moony, til AI-agenten din gjennom MCP, så den får bakgrunn for personlige analyser og forslag.",
+      "dataTitle": "Økonomien din i Moony",
+      "dataText": "Kontoer, investeringer, eiendom og gjeld.",
+      "agentTitle": "AI-agenten din",
+      "agentText": "Claude eller en annen klient som støtter MCP.",
+      "resultTitle": "Analyser og forslag",
+      "resultText": "Basert på dataene og situasjonen din.",
+      "analysis": "Analyse"
+    }
+  },
+  "help": {
+    "metaTitle": "Hjelp · Moony",
+    "description": "Kom i gang, glemte passord, import av kontoutskrifter, sikkerhetskopier, oppdateringer og avinstallering av Moony.",
+    "title": "Hjelp med Moony",
+    "intro": "Korte svar på spørsmålene folk stiller først. Alt her beskriver hvordan Moony fungerer i dag; menynavnene er de i det norske grensesnittet.",
+    "tocLabel": "I denne hjelpen",
+    "first": {
+      "title": "Første oppstart",
+      "lead": "Moony trenger ingen konto. Installer og åpne appen, så oppretter oppsettsveiviseren den krypterte databasen din på denne datamaskinen.",
+      "installTitle": "Installasjon",
+      "install": "Mac-appen er signert og notarisert av Apple og åpnes som vanlig. Installasjonsprogrammet for Windows er ikke signert ennå, så Windows advarer deg første gang; appen er ikke skadet. Trinnene for hvert system står på nedlastingssiden: [macOS](dlMac), [Windows](dlWin), [Linux](dlLinux).",
+      "keysTitle": "Passord og gjenopprettingsnøkkel",
+      "keys": [
+        "**Passord.** Åpner Moony hver gang. Minst 8 tegn; en lengre passfrase er bedre. Moony kan ikke vise det til deg.",
+        "**Gjenopprettingsnøkkel.** 24 tegn i seks grupper på fire, vist én gang under oppsettet. Den er til nødsfall: den lar deg velge et nytt passord hvis du glemmer det gamle ([slik](recovery)). Lagre den borte fra denne datamaskinen, i en passordbehandler eller på papir. **Lagre til fil…** skriver en ren tekstfil, `moony-recovery-key.txt`; oppbevar den på en ekstern disk, ikke ved siden av dataene dine.",
+        "**Touch ID eller Windows Hello (valgfritt).** På en Mac eller en Windows-PC tilbyr Moony opplåsing med fingeravtrykk én gang etter at du har låst opp med passordet (Windows Hello godtar også PIN-koden). Slå det på eller av i **Innstillinger → Sikkerhet**. Passordet fungerer fortsatt, og et glemt passord tilbakestilles fortsatt bare med gjenopprettingsnøkkelen."
+      ],
+      "wizardTitle": "Oppsettsveiviseren",
+      "wizardIntro": "En velkomst du kan hoppe over, fører inn i fem trinn:",
+      "wizardSteps": [
+        "**Personvern:** hovedvalutaen og banklandet ditt (landet bestemmer kategoriseringsreglene, og bankene fra landet står først i listen ved import). Bruker du allerede Moony et annet sted? Velg **Gjenopprett fra en sikkerhetskopi** her i stedet ([slik](backup)).",
+        "**Konto:** navnet ditt, en e-postadresse til eget bruk (sendes aldri noe sted) og passordet, to ganger.",
+        "**Nøkkel:** gjenopprettingsnøkkelen din. Lagre den, skriv inn de to gruppene Moony ber om, og klikk **Opprett den krypterte databasen**.",
+        "**Hva vil du følge:** kontoer, investeringer, eiendom, lån og forsikringer. Endre det senere i **Innstillinger → Generelt → Synlighet i menyen**; skjulte sider fortsetter å fungere.",
+        "**Første konto:** et navn, en valuta og dagens saldo, og deretter importerer du en kontoutskrift eller klikker **Hopp over nå**. Saldoer legges inn for hånd; importer endrer dem ikke."
+      ],
+      "wizardOutro": "Oversikten viser deretter en sjekkliste for **Kom i gang**."
+    },
+    "recovery": {
+      "title": "Glemt passord og gjenopprettingsnøkkelen",
+      "warning": "**Det finnes ingen bakdør.** Moony har ingen konto og ingen server, så ingen kan tilbakestille passordet ditt for deg, heller ikke utvikleren. Passordet og gjenopprettingsnøkkelen er to adskilte veier inn til de samme krypterte dataene. Hvis du ikke har noen av dem, kan ingenting åpnes: verken postene dine eller de vedlagte bildene og dokumentene.",
+      "tableHead": [
+        "Hvis du …",
+        "Da …"
+      ],
+      "situations": [
+        "kjenner passordet ditt",
+        "har glemt passordet, men har gjenopprettingsnøkkelen",
+        "kjenner passordet, men har mistet gjenopprettingsnøkkelen",
+        "verken har passordet eller gjenopprettingsnøkkelen"
+      ],
+      "results": [
+        "Lås opp som vanlig. Du trenger ikke nøkkelen.",
+        "Du kommer inn og setter et nytt passord. Dataene dine forblir som de er (trinn nedenfor).",
+        "Du kan fortsatt låse opp. Moony viser nøkkelen bare én gang, men når du endrer passordet, lages det en ny: **Innstillinger → Sikkerhet → Endre passord**. Den gamle nøkkelen slutter å virke.",
+        "Ingenting kan åpne dataene dine, verken du eller noen andre. Bare en sikkerhetskopi du fortsatt kjenner passordet eller gjenopprettingsnøkkelen til, kan få data tilbake."
+      ],
+      "resetTitle": "Tilbakestill et glemt passord",
+      "resetSteps": [
+        "Klikk **Glemt passordet?** på låseskjermen.",
+        "Skriv inn gjenopprettingsnøkkelen på 24 tegn. Store og små bokstaver, mellomrom og bindestreker spiller ingen rolle.",
+        "Velg et nytt passord på minst 8 tegn. Det tar noen sekunder å kontrollere nøkkelen.",
+        "Moony viser en ny gjenopprettingsnøkkel. Lagre den før du fortsetter: den gamle virker ikke lenger. Klikk deretter **Fortsett til appen**."
+      ],
+      "cannotTitle": "Hva gjenopprettingsnøkkelen ikke gjør",
+      "cannot": [
+        "Den viser ikke det gamle passordet; den lar deg bare sette et nytt.",
+        "Den virker bare sammen med nøkkelfilene `salt` og `recovery.enc` som hører til dataene dine, og som ligger i datamappen og i hver sikkerhetskopi-ZIP. Å kopiere bare `moony.db` redder ingenting du kan åpne; ta heller en sikkerhetskopi ([slik](backup)).",
+        "En sikkerhetskopi inneholder nøkkelfilene fra dagen den ble laget. Hvis du har endret eller tilbakestilt passordet etterpå, åpnes den med passordet eller gjenopprettingsnøkkelen som gjaldt den dagen."
+      ],
+      "keepTitle": "Oppbevar begge trygt",
+      "keep": "Oppbevar gjenopprettingsnøkkelen i en passordbehandler eller på papir, og en nylig sikkerhetskopi-ZIP på en ekstern disk eller i din egen skylagring. Behandle nøkkelen som et passord: alle som har den sammen med sikkerhetskopi-ZIP-en din, kan åpne dataene dine.",
+      "lockedTitle": "Hvis du er låst ute for godt",
+      "locked": "Uten passord, uten gjenopprettingsnøkkel og uten en brukbar sikkerhetskopi er de gamle dataene tapt. For å begynne på nytt avslutter du Moony og gir datamappen nytt navn ([hvor](data)) i stedet for å slette den, i tilfelle passordet dukker opp. Ved neste oppstart viser Moony oppsettsveiviseren og oppretter en tom profil."
+    },
+    "import": {
+      "title": "Importere kontoutskrifter",
+      "lead": "Ingenting skrives før du bekrefter: du ser først en forhåndsvisning, rader som allerede finnes, hoppes over som duplikater, og hver import kan angres.",
+      "bankTitle": "Kontoutskrifter fra banken",
+      "bankSteps": [
+        "Åpne **Bankkontoer** (gruppen **Penger**) og klikk **Importer kontoutskrift**, i kontolisten eller på en kontoside.",
+        "**Fil:** dra kontoutskriften inn eller velg den. Velg banken din i listen **Bank** eller la **Gjenkjenn automatisk** stå.",
+        "**Kolonner:** for en CSV-fil kontrollerer du hvilken kolonne som er hva (en gjenkjent bank er allerede fylt ut). Andre formater hopper over dette trinnet.",
+        "**Forhåndsvisning og kategorier:** kontroller datoer, beløp og kategorier, og kategoriser radene reglene lot stå åpne.",
+        "**Ferdig:** oppsummeringen viser hva som ble importert. For å angre åpner du kontoens **Importhistorikk** og klikker **Angre import**."
+      ],
+      "balanceNote": "En import endrer aldri saldoen på en konto. Hvis kontoutskriften oppgir en sluttsaldo, tilbyr siste trinn **Sett kontosaldoen til …**.",
+      "formatsTitle": "Hvilke filer som fungerer",
+      "formats": [
+        "**CSV og TXT** med 16 forhåndsinnstillinger for banker, gjenkjent fra overskriftsraden: Revolut, Wise, N26, Sparkasse, DKB, ING (Tyskland), britiske banker (kolonnene Debit / Credit), Chase (USA) og, i Tsjekkia, Fio banka, Česká spořitelna, Komerční banka, Air Bank, ČSOB, MONETA Money Bank, mBank og Raiffeisenbank (med deres tsjekkiske eksportformater). Forhåndsinnstillingene for DKB, ING, Komerční banka, Air Bank, ČSOB, MONETA, mBank og Raiffeisenbank er ennå ikke bekreftet med en ekte eksport: hvis en av dem kobler feil, retter du tilordningen for hånd.",
+        "**CAMT.053** (XML), **MT940**, **OFX/QFX** og **QIF** fra hvilken som helst bank, uten kolonnetilordning. Moony viser hvilken konto kontoutskriften tilhører, og kontrollerer at betalingene går opp når filen oppgir begge saldoene."
+      ],
+      "csvTitle": "En CSV fra en annen bank",
+      "csvIntro": "Alle CSV-filer med en dato og et beløp fungerer. I trinnet **Kolonner**:",
+      "csv": [
+        "Velg datokolonnen og beløpskolonnen, eller en debet- og en kredittkolonne hvis banken deler beløpet. Du kan eventuelt legge til beskrivelse, motpart, motpartens kontonummer eller IBAN, valuta, saldo og transaksjons-ID.",
+        "Moony gjenkjenner skilletegn, tekstkoding, desimaltegn og datorekkefølge. Endre dem hvis **Tolket forhåndsvisning** ser feil ut: ødelagte aksenter betyr feil tekstkoding, ombyttede dager og måneder feil datorekkefølge. **Overskriftsrad** er linjen med kolonnenavnene; linjene over den ignoreres.",
+        "Utgifter må bli negative og inntekter positive. Sjekk noen rader du kjenner, før du importerer."
+      ],
+      "missingTitle": "Hvis banken din ikke står på listen",
+      "missing": [
+        "Se i nettbanken etter CAMT.053, MT940, OFX, QFX eller QIF: de trenger ingen tilordning.",
+        "Ellers tilordner du CSV-kolonnene som beskrevet over; det tar et minutt.",
+        "Eller legg til transaksjoner for hånd (**Legg til transaksjon** på kontosiden), eller la den valgfrie AI-assistenten lese en kontoutskrift for deg og kontrollere hva den leste før den lagrer noe ([AI-assistent](ai)).",
+        "Ønsker du en forhåndsinnstilling for banken din? [Opprett en sak (EN)](issues) med bare overskriftsraden, aldri ekte transaksjoner. En forhåndsinnstilling er én liten JSON-fil; [veiledningen for bidragsytere (EN)](contributing) viser hvordan."
+      ],
+      "brokerTitle": "Handler hos meglere",
+      "brokerIntro": "Moony importerer ikke handler fra en kontoutskrift fra banken; bruk meglerimporten. Åpne **Aksjer** (gruppen **Investeringer**) og klikk **Importer CSV**, og velg deretter hvor eksporten kommer fra. Hver kilde viser hvordan du får tak i filen, og tilbyr et eksempel:",
+      "brokers": [
+        "**XTB:** Account history → Cash operations → Export as CSV, for en periode fra den første handelen din. Bare kjøp og salg av aksjer og ETF-er importeres, ikke innskudd, utbytte eller gebyrer.",
+        "**Trading 212:** History → eksportikonet, huk av Orders. Én eksport dekker høyst 12 måneder, så last opp flere filer; duplikater gjenkjennes. Gebyrer importeres også.",
+        "**Degiro:** Activity → Transactions → Export → CSV. Ikke kontoutskriften. Gebyrer importeres også.",
+        "**Interactive Brokers:** en Flex Query (Client Portal → Performance & Reports → Flex Queries) av typen Activity med delen Trades og feltene Symbol, ISIN, TradeDate, Buy/Sell, Quantity, TradePrice, CurrencyPrimary, AssetClass og TradeID, som CSV.",
+        "**Din egen tabell eller en annen megler:** last ned Moony-malen eller tilordne kolonnene selv (dato, kjøp eller salg, symbol eller ISIN, antall, pris per aksje, valuta, og eventuelt et gebyr). Moony kan huske tilordningen til neste gang. Lagre Excel-filer som CSV først."
+      ],
+      "brokerOutro": "Trinnet Gjennomgang viser hva som blir importert, og hvilke rader som er duplikater, hoppet over eller feil. Det kontrollerer også verdipapirene hos Yahoo Finance; det oppslaget sender filens symboler og ISIN-er og ingenting annet ([Personvern (EN)](privacy)). For å ta en import tilbake bruker du **Angre** under Siste importer eller **Importhistorikk** på Aksjer-siden."
+    },
+    "backup": {
+      "title": "Sikkerhetskopi, gjenoppretting og ny datamaskin",
+      "makeTitle": "Ta en sikkerhetskopi",
+      "make": [
+        "Åpne **Innstillinger → Data og sikkerhetskopier** og klikk **Ta sikkerhetskopi nå**. Velg hvor ZIP-filen skal lagres (Moony foreslår `moony-backup-YYYY-MM-DD.zip`).",
+        "Den inneholder krypterte kopier av postene og vedleggene dine pluss nøkkelfilene `salt`, `key.enc` og `recovery.enc`, og forblir kryptert: bare passordet som gjaldt da den ble laget, eller gjenopprettingsnøkkelen fra den tiden, åpner den.",
+        "Oppbevar en kopi borte fra denne datamaskinen, på en ekstern disk eller i din egen skylagring. Moony laster aldri opp noe; Oversikten minner deg på det når siste sikkerhetskopi er gammel. Ta sikkerhetskopi før en oppdatering og etter en stor import."
+      ],
+      "restoreTitle": "Gjenopprett en sikkerhetskopi",
+      "restoreIntro": "Begynn i **Innstillinger → Data og sikkerhetskopier → Gjenopprett fra sikkerhetskopi…**, på låseskjermen (**Har du en sikkerhetskopi? Gjenopprett fra sikkerhetskopi…**) eller i første trinn av oppsettsveiviseren (**Gjenopprett fra en sikkerhetskopi**). Deretter:",
+      "restoreSteps": [
+        "Velg ZIP-filen. Moony viser datoen, Moony-versjonen, antall vedlegg og størrelsen.",
+        "Bekreft. Eksisterende data slettes ikke: Moony flytter dem først til en mappe `pre-restore-<time>` inne i datamappen.",
+        "Moony låser seg. Lås opp med passordet som var i bruk da sikkerhetskopien ble laget, eller klikk **Glemt passordet?** og bruk gjenopprettingsnøkkelen fra den tiden."
+      ],
+      "restoreNote": "En sikkerhetskopi laget av en nyere Moony kan ikke gjenopprettes av en eldre, så oppdater først. Sikkerhetskopier fra eldre versjoner gjenopprettes uten problemer.",
+      "moveTitle": "Flytt til en ny datamaskin",
+      "moveSteps": [
+        "Klikk **Ta sikkerhetskopi nå** på den gamle datamaskinen og kopier ZIP-filen til den nye (USB-disk eller din egen skylagring).",
+        "Installer den samme eller en nyere Moony på den nye datamaskinen ([Last ned](download)).",
+        "Velg **Gjenopprett fra en sikkerhetskopi** i første trinn av veiviseren, velg ZIP-filen og bekreft.",
+        "Lås opp med passordet fra tidspunktet for sikkerhetskopien."
+      ],
+      "moveOutro": "Moony synkroniserer ikke mellom datamaskiner, så den gamle og den nye kopien glir fra hverandre så snart du bruker begge, og endringer gjort etter sikkerhetskopien er ikke med i den. Når den nye datamaskinen fungerer, fjerner du dataene fra den gamle ([slik](uninstall)).",
+      "notBackup": "**Eksporter JSON** på samme side skriver hver tabell til en ukryptert JSON-fil uten vedlegg. Det er ikke en sikkerhetskopi; behandle den som en kontoutskrift. **Kontroller databasen** sjekker integriteten til databasen din."
+    },
+    "updates": {
+      "title": "Oppdateringer, datamappe og avinstallering",
+      "updatesTitle": "Oppdateringer",
+      "updates": [
+        "Når du har låst opp Moony, spør appen GitHub om det finnes en nyere versjon og tilbyr **Oppdater og start på nytt**. Nedlastingen verifiseres mot prosjektets offentlige nøkkel; Moony starter på nytt, og du låser opp igjen. Dataene dine blir der de er, og forespørselen sender ingen av dem.",
+        "Se etter oppdateringer for hånd eller slå av den automatiske sjekken i **Innstillinger → Sikkerhet → Oppdateringer** (gjelder bare denne datamaskinen).",
+        "Før en oppdatering som endrer databasen, kopierer Moony den ved siden av databasen (`moony.db.bak-<time>`; de tre nyeste beholdes). Det er en sikring, ikke en garanti: en tidligere versjon kan ikke åpne en database som en nyere har migrert, så ta sikkerhetskopi først. For å gå tilbake gjenoppretter du en sikkerhetskopi laget med den tidligere versjonen.",
+        "Kommer du fra 0.10.0 eller eldre? Datamappen fikk nytt navn i 0.11.0: les [Hvor dataene dine ligger (EN)](privacyData) før første oppstart."
+      ],
+      "dataTitle": "Hvor dataene dine ligger",
+      "dataIntro": "Alt ligger i én mappe per bruker:",
+      "dataHead": [
+        "System",
+        "Mappe"
+      ],
+      "dataWinAlt": "vanligvis `C:\\Users\\<you>\\AppData\\Roaming\\com.moonyfinance.desktop\\`",
+      "dataLinuxAlt": "eller `$XDG_DATA_HOME/com.moonyfinance.desktop/` hvis du har satt den variabelen",
+      "dataNote": "**Innstillinger → Data og sikkerhetskopier** viser den nøyaktige stien og en knapp **Åpne mappe**.",
+      "dataFiles": "Den inneholder `moony.db` og `attachments.db` (postene dine og bildene og dokumentene dine, kryptert), nøkkelfilene `salt`, `key.enc` og `recovery.enc`, `.bak-<time>`-kopier laget før en databaseoppdatering og `pre-restore-<time>`-mapper fra gjenopprettinger.",
+      "dataOutro": "Bruk **Ta sikkerhetskopi nå** i stedet for å kopiere filer for hånd; Moony flytter aldri mappen selv. Hva som er og ikke er kryptert, står på [personvernsiden (EN)](privacy).",
+      "uninstallTitle": "Avinstallering",
+      "uninstall": [
+        "Avinstallering fjerner appen, men som standard ikke dataene dine, som blir liggende i datamappen. macOS: avslutt Moony og dra appen til papirkurven. Windows: avinstaller den i Innstillinger → Apper. Linux: slett AppImage-filen eller fjern pakken `.deb` eller `.rpm` med pakkebehandleren.",
+        "For å fjerne dataene også må du gjøre det før du avinstallerer: **Innstillinger → Konto → Slett data…**, og skriv deretter `SLETT`. Dette fjerner databasene, nøkkelfilene og vedleggene og kan ikke angres, så ta en sikkerhetskopi først hvis du kan ønske dem tilbake.",
+        "Mapper som `pre-restore-<time>`, sikkerhetskopier og eksporter du har lagret, og loggene blir liggende; slett dem for hånd, eller slett hele datamappen. Det er ingenting å slette på en server, for Moony har ingen."
+      ]
+    },
+    "ai": {
+      "title": "AI-assistent (MCP)",
+      "text": "Moony kan gi en AI-assistent som Claude tilgang til dataene dine gjennom en liten server som er bygget inn i appen. Den er av som standard, lytter bare på `127.0.0.1` og krever at Moony er opplåst og at du har et personlig tilgangstoken. Assistenten kan lese dataene dine og, med noen verktøy, endre dem, og den behandler det den leser, vanligvis i leverandørens sky: slå den bare på for klienter du stoler på. Du trenger den ikke for å bruke Moony.",
+      "text2": "Slå den på under **Innstillinger → AI-assistent → AI-assistent (MCP-server)**. Tilkoblingskommandoen, klientoppsettene og detaljene står på siden [AI-integrasjon](aiPage)."
+    },
+    "more": {
+      "title": "Står du fortsatt fast?",
+      "text": "Spør i [GitHub Discussions (EN)](discussions) eller, for en feil, [opprett en sak (EN)](issues). Lim aldri inn saldoer eller kontoutskrifter der. Sikkerhetsproblemer går gjennom [sikkerhetspolicyen (EN)](security), ikke en offentlig sak."
+    }
+  }
+}

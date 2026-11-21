@@ -1,0 +1,564 @@
+{
+  "site": {
+    "name": "Moony",
+    "tagline": "Ihre Finanzen, an einem Ort.",
+    "description": "Moony ist eine kostenlose Desktop-App, mit der Sie Konten, Geldanlagen und Kredite im Blick behalten. Ihre Finanzdaten bleiben auf Ihrem Computer. Für macOS, Windows und Linux."
+  },
+  "nav": {
+    "label": "Hauptnavigation",
+    "tracks": "Erste Schritte",
+    "privacy": "Datenschutz",
+    "features": "Funktionen",
+    "download": "Download",
+    "faq": "FAQ",
+    "github": "GitHub",
+    "home": "Moony-Startseite",
+    "language": "Sprache"
+  },
+  "footer": {
+    "blurb": "Ein klarerer Blick auf Ihre Finanzen. Direkt auf Ihrem Computer.",
+    "product": "Produkt",
+    "download": "Download",
+    "help": "Hilfe",
+    "support": "Support",
+    "changelog": "Änderungen",
+    "trust": "Vertrauen",
+    "privacy": "Datenschutz",
+    "security": "Sicherheit und Meldungen",
+    "licence": "Lizenz",
+    "sitePrivacy": "Diese Website",
+    "community": "Community",
+    "github": "GitHub",
+    "discussions": "Diskussionen",
+    "translate": "Moony übersetzen",
+    "disclaimer": "Moony ist keine Finanz-, Steuer- oder Anlageberatung. Die Zahlen beruhen auf Daten Dritter und können ungenau sein.",
+    "nocookies": "Diese Website setzt keine Cookies und verwendet keine Analyse-Tools.",
+    "copyright": "© 2026 Filip Král"
+  },
+  "repoPage": {
+    "provenance": "Diese Seite zeigt die Datei aus dem Moony-Repository in der Fassung des unten genannten Tags; nur der Titel und relative Links sind angepasst. Die Quelle ist"
+  },
+  "hero": {
+    "eyebrow": "Persönliche Finanzen für Ihren Desktop",
+    "lead": "Behalten Sie Konten, Geldanlagen und Kredite im Blick. Moony bewahrt Ihre Finanzdaten direkt auf Ihrem Computer auf.",
+    "ctaDefault": "Herunterladen",
+    "ctaMac": "Für macOS herunterladen",
+    "ctaWin": "Für Windows herunterladen",
+    "ctaLinux": "Für Linux herunterladen",
+    "noteStrong": "Kostenlos und Open Source",
+    "noteRest": "Version {version}",
+    "caption": "Die echte App, mit Beispieldaten",
+    "alt": "Übersicht mit dem Nettovermögen, seinem Verlauf und den Summen eines Beispielprofils",
+    "facts": {
+      "noAccount": "Ohne Anmeldung",
+      "local": "Daten bleiben bei Ihnen",
+      "offline": "Funktioniert offline"
+    },
+    "ctaPreview": "Einen Blick hineinwerfen"
+  },
+  "features": {
+    "overview": {
+      "title": "Sehen Sie, wo Sie stehen.",
+      "text": "Kontostände, Geldanlagen und die Schulden, die noch offen sind. Eine Übersicht, ausgerichtet auf das, was Sie verfolgen möchten.",
+      "bullets": [
+        "Vermögen und Schulden zusammen",
+        "Einnahmen und Ausgaben im Zusammenhang",
+        "Geldanlagen im Zeitverlauf"
+      ],
+      "alt": "Die Summen aus Vermögen, Verbindlichkeiten und freiem Geld eines Beispielprofils, mit den nächsten Fristen und Erinnerungen"
+    },
+    "import": {
+      "title": "Beginnen Sie mit einem Kontoauszug.",
+      "text": "Importieren Sie einen Kontoauszug, um zu sehen, wohin Ihr Geld fließt und wie viel übrig bleibt. Ordnen Sie Transaktionen Kategorien zu und legen Sie Regeln für das nächste Mal fest.",
+      "bullets": [
+        "Einnahmen und Ausgaben, Monat für Monat",
+        "Doppelte Transaktionen werden übersprungen",
+        "Einen Import können Sie rückgängig machen"
+      ],
+      "alt": "Seite eines Bankkontos mit dem Kontostand, einem Diagramm der Ein- und Ausgänge über 12 Monate und dem Anfang der Transaktionsliste",
+      "formatsTitle": "Unterstützte Formate",
+      "formats": "CSV mit Spaltenerkennung, CAMT.053, MT940, OFX/QFX und QIF. Direkte Bankverbindungen sind noch nicht verfügbar."
+    },
+    "investments": {
+      "title": "Verfolgen Sie Ihre Geldanlagen im Zeitverlauf.",
+      "text": "Sehen Sie, was Sie eingezahlt haben und was Ihre Anlagen erwirtschaftet haben. Verfolgen Sie Aktien, ETFs und Krypto und beobachten Sie den Wert Ihres Portfolios.",
+      "bullets": [
+        "Renditen und erhaltene Dividenden",
+        "Aktuelle Aktien- und Kryptokurse",
+        "Import von XTB, Trading 212, Degiro und IBKR"
+      ],
+      "alt": "Aktienanalyse mit zeit- und geldgewichteter Rendite, einem nach Regionen aufgeteilten Renditediagramm und einem Drawdown-Bereich"
+    },
+    "otherInstruments": {
+      "title": "Auch Immobilien, Versicherungen und Kredite",
+      "text": "Nehmen Sie Immobilien, Versicherungspolicen und Kredite in Ihre Übersicht auf. Halten Sie Werte, Zahlungen und wichtige Termine an einem Ort fest.",
+      "bullets": [
+        "Immobilien: Bewertungen, Miete und Kosten",
+        "Versicherungen: Zahlungen, Termine und Dokumente",
+        "Kredite: Tilgungen und Restschuld"
+      ],
+      "alt": "Kreditübersicht mit offenen Restschulden, Zinssätzen und einem Diagramm der Schulden im Zeitverlauf"
+    }
+  },
+  "tracks": {
+    "title": "Was lässt sich noch verfolgen?",
+    "items": {
+      "bank": {
+        "name": "Bankkonten",
+        "line": "Kontoauszüge, Regeln"
+      },
+      "cashflow": {
+        "name": "Cashflow",
+        "line": "Bericht, Planung, Limits"
+      },
+      "spendingPlans": {
+        "name": "Ausgabenpläne",
+        "line": "Urlaub, Renovierung, Geschenke"
+      },
+      "stocks": {
+        "name": "Aktien und ETFs",
+        "line": "Renditen, Dividenden, Beobachtungsliste"
+      },
+      "crypto": {
+        "name": "Krypto",
+        "line": "Bestände, Verlauf"
+      },
+      "realEstate": {
+        "name": "Immobilien",
+        "line": "Werte, Miete, Kosten"
+      },
+      "assets": {
+        "name": "Anleihen und sonstiges Vermögen",
+        "line": "Kupons, Fälligkeiten"
+      },
+      "loans": {
+        "name": "Kredite",
+        "line": "Tilgungspläne, Sondertilgungen"
+      },
+      "insurance": {
+        "name": "Versicherungen",
+        "line": "Zahlungskalender"
+      }
+    },
+    "foot": "10 Sprachen · 45 unterstützte Währungen · Heller und dunkler Modus"
+  },
+  "trust": {
+    "title": "Ihre Finanzen bleiben Ihre.",
+    "cards": {
+      "requests": {
+        "title": "Kein Tracking",
+        "text": "Keine Analyse-Tools und keine Nutzungsstatistiken. Kurse, Wechselkurse und Updates werden online abgefragt. Kursdienste sehen die Symbole, die Sie verfolgen, nicht Ihre Kontostände."
+      },
+      "disk": {
+        "title": "Verschlüsselte Daten",
+        "text": "Datensätze und Anhänge sind auf Ihrem Computer verschlüsselt. Exportierte Dateien und gespeicherte Kopien sind unverschlüsselt. Bewahren Sie sie deshalb sicher auf."
+      },
+      "keys": {
+        "title": "Backups in Ihrer Hand",
+        "text": "Sichern Sie Ihre Daten in eine Datei oder exportieren Sie sie. Speichern Sie bei der Einrichtung Ihren Wiederherstellungsschlüssel, damit Sie ein vergessenes Passwort zurücksetzen können."
+      }
+    },
+    "link": "Die Datenschutzdetails lesen →"
+  },
+  "assistant": {
+    "title": "Verbinden Sie einen KI-Assistenten mit Ihren Finanzen",
+    "text": "Claude oder ein anderer MCP-Client kann Ihre Daten über einen lokalen Server lesen und ändern. Der Client verarbeitet sie, meist in der Cloud seines Anbieters.",
+    "badge": "Standardmäßig aus",
+    "link": "KI-Integration",
+    "metaTitle": "KI-Integration · Moony",
+    "back": "Zurück zu Moony",
+    "detail": "Eine optionale Funktion für fortgeschrittene Nutzer. Prüfen Sie vor dem Aktivieren, wie der von Ihnen gewählte KI-Client mit Daten umgeht. Sie brauchen keinen KI-Assistenten, um Moony zu nutzen.",
+    "setupTitle": "Die Integration einrichten",
+    "setupSteps": [
+      "Öffnen Sie in Moony Einstellungen → KI-Assistent und aktivieren Sie dort „KI-Assistent (MCP-Server)“.",
+      "Kopieren Sie den Verbindungsbefehl aus den Einstellungen. Er enthält Ihr persönliches Zugriffstoken; halten Sie es geheim.",
+      "Lassen Sie Moony geöffnet und entsperrt, solange Sie die Integration nutzen."
+    ],
+    "guide": "Vollständige Einrichtungsanleitung auf GitHub →"
+  },
+  "download": {
+    "title": "Moony kostenlos herunterladen.",
+    "meta": "Version {version} · veröffentlicht am {date}",
+    "changes": "Was sich geändert hat →",
+    "mac": {
+      "arm": "Apple Silicon",
+      "intel": "Intel",
+      "note": "Von Apple signiert und notarisiert."
+    },
+    "win": {
+      "exe": "Installer",
+      "note": "Für den Installer gibt es noch kein Windows-Codesignatur-Zertifikat."
+    },
+    "linux": {
+      "appimage": "AppImage (x86_64)",
+      "deb": "Debian/Ubuntu (x86_64)",
+      "rpm": "Fedora/openSUSE (x86_64)",
+      "appimageArm": "AppImage (ARM64)",
+      "debArm": "Debian/Ubuntu (ARM64)",
+      "rpmArm": "Fedora/openSUSE (ARM64)",
+      "note": "{archs}; AppImage benötigt unter Umständen libfuse2.",
+      "archs": "x86_64",
+      "archsArm": "x86_64 und ARM64"
+    },
+    "all": "Anderes System wählen →",
+    "intro": "Kostenlos für macOS, Windows und Linux. Ohne Anmeldung, ohne Testzeitraum.",
+    "notice": "Windows zeigt beim ersten Start möglicherweise eine Sicherheitswarnung an, weil der Installer noch nicht signiert ist. Lesen Sie die Installationshinweise, bevor Sie ihn herunterladen."
+  },
+  "downloadPage": {
+    "metaTitle": "Moony {version} für macOS, Windows und Linux herunterladen",
+    "description": "Installer von Moony {version} für macOS, Windows und Linux, die Schritte beim ersten Start für jedes System, Systemanforderungen und wie Updates funktionieren.",
+    "title": "Moony {version} herunterladen",
+    "released": "Veröffentlicht am {date}",
+    "allReleases": "Alle Releases →",
+    "filesTitle": "Installer nach Betriebssystem",
+    "macHint": "Apple Silicon steht für einen M1-Chip oder neuer. Sie wissen nicht, welchen Mac Sie haben? Apple-Menü → **Über diesen Mac**: In der Zeile „Chip“ oder „Prozessor“ steht Apple M… oder Intel.",
+    "install": {
+      "title": "Installation und erster Start",
+      "unsigned": "Die Mac-App ist von Apple signiert und notarisiert und lässt sich wie jede andere App öffnen. Für den Windows-Installer gibt es noch kein Codesignatur-Zertifikat, daher zeigt Windows beim ersten Start möglicherweise eine Sicherheitswarnung an; die Schritte stehen unten. In-App-Updates werden mit dem Signaturschlüssel des Projekts geprüft.",
+      "mac": {
+        "open": "Öffnen Sie die `.dmg` und ziehen Sie **Moony** in den Ordner **Programme**.",
+        "launch": "Öffnen Sie Moony aus dem Ordner **Programme**. macOS prüft die Notarisierung von Apple und öffnet die App ohne Warnung."
+      },
+      "win": {
+        "keep": "Laden Sie den Installer herunter. Meldet der Browser, die Datei werde nicht häufig heruntergeladen, behalten Sie sie (in Edge: **⋯ → Keep → Show more → Keep anyway**).",
+        "run": "Führen Sie ihn aus. Windows SmartScreen zeigt möglicherweise „Windows protected your PC“ an. Klicken Sie auf **Weitere Informationen** und dann auf **Trotzdem ausführen**."
+      },
+      "linux": {
+        "arch": "Builds gibt es für {archs}. Die Befehle unten verwenden die x86_64-Dateien.",
+        "fuse": "Einige Distributionen benötigen für AppImages das Paket `libfuse2`.",
+        "armFiles": "Verwenden Sie auf ARM (`uname -m` gibt `aarch64` aus) stattdessen `{appimage}`, `{deb}` oder `{rpm}`."
+      }
+    },
+    "first": {
+      "title": "Erster Start",
+      "intro": "Der Einrichtungsassistent führt Sie durch:",
+      "steps": [
+        "Ihre Hauptwährung und Ihr Land.",
+        "Einen Namen und ein Passwort.",
+        "Ihren **Wiederherstellungsschlüssel**. Speichern Sie ihn: Er ist der einzige Weg, ein vergessenes Passwort zurückzusetzen, und er funktioniert nur zusammen mit den Schlüsseldateien im Datenordner. Sichern Sie daher auch Ihre Daten (**Einstellungen → Daten und Sicherungen**).",
+        "Was Sie erfassen möchten.",
+        "Das Angebot, Ihr erstes Konto anzulegen und einen Kontoauszug zu importieren."
+      ],
+      "outro": "Danach zeigt die Übersicht eine Checkliste „Erste Schritte“. Wechseln Sie zu einem neuen Computer? Wählen Sie dann auf dem ersten Bildschirm des Assistenten „Aus einem Backup wiederherstellen“, statt ein neues Profil anzulegen.",
+      "help": "Neu bei Moony? Die [Hilfe](help) erklärt, [was Sie bei einem vergessenen Passwort tun können](recovery), [wie Sie Ihre Daten sichern und wiederherstellen](backup) und [wie Sie Kontoauszüge importieren](import)."
+    },
+    "updating": {
+      "title": "Aktualisieren",
+      "text": "Nachdem Sie Moony entsperrt haben, fragt es bei GitHub nach, ob es eine neuere Version gibt, und bietet ein Update mit einem Klick an. Der Download wird vor der Installation mit dem öffentlichen Schlüssel des Projekts geprüft. Die automatische Prüfung können Sie in den **Einstellungen** ausschalten; was dabei gesendet wird, steht auf der [Datenschutzseite (EN)](privacy)."
+    },
+    "requirements": {
+      "title": "Systemanforderungen",
+      "mac": "macOS 10.15 (Catalina) oder neuer, auf Macs mit Apple Silicon und Intel.",
+      "win": "Windows 10 und 11, 64 Bit. Moony benötigt die Microsoft Edge WebView2-Runtime, die auf beiden vorinstalliert ist; der Installer lädt sie nach, falls sie fehlt.",
+      "linux": "{archs}: ein AppImage, eine `.deb` für Debian und Ubuntu und eine `.rpm` für Fedora und openSUSE. Auf Ubuntu 24.04 gebaut; älteren Distributionen fehlt unter Umständen eine Systembibliothek."
+    },
+    "intro": "Wählen Sie Ihr System. Richten Sie Moony nach der Installation ein, ohne Online-Konto.",
+    "recommended": "Ihr System",
+    "installLink": "Installationsanleitung →"
+  },
+  "sitePrivacy": {
+    "metaTitle": "Datenschutz dieser Website · Moony",
+    "description": "Die Moony-Website verwendet keine Cookies und keine Analyse-Tools. Hier erfahren Sie mehr über Inhalte, das Hosting bei Cloudflare und die Downloads der App.",
+    "title": "Datenschutz dieser Website",
+    "intro": "Diese Seite betrifft moonyfinance.com. Was die Moony-App speichert und sendet, steht auf der [Datenschutzseite (EN)](privacy).",
+    "items": {
+      "cookies": {
+        "title": "Keine Cookies, keine Analyse-Tools",
+        "text": "Diese Website setzt keine Cookies und hat weder Analyse-Tools noch Zähler oder Tracking-Pixel."
+      },
+      "origin": {
+        "title": "Inhalte von der eigenen Domain",
+        "text": "Schriften, Stylesheets, Skripte und Bilder werden von der eigenen Domain dieser Website geladen. Ein strenger Content-Security-Policy-Header beschränkt die Inhalte der Seiten. Der Hosting-Anbieter kann zusätzlich die unten beschriebene Netzwerkdiagnose nutzen."
+      },
+      "language": {
+        "title": "Sprache",
+        "text": "Die Website öffnet sich in der ersten Sprache aus der Sprachliste Ihres Browsers, in der sie verfügbar ist, sonst auf Englisch. Die Auswahl trifft Ihr Browser. Wenn Sie selbst eine Sprache wählen, merkt sich Ihr Browser sie in seinem lokalen Speicher unter dem Namen moony-lang; das ist kein Cookie, und es wird nirgendwohin gesendet."
+      },
+      "hosting": {
+        "title": "Hosting",
+        "text": "Cloudflare hostet diese Website. Beim Ausliefern der Seiten verarbeitet es übliche Anfragedaten, etwa Ihre IP-Adresse und Ihren User-Agent, gemäß seiner [Datenschutzerklärung (EN)](https://www.cloudflare.com/privacypolicy/). Sein [Dienst Network Error Logging (EN)](https://developers.cloudflare.com/network-error-logging/) kann Meldungen über Netzwerkfehler von Ihrem Browser erhalten. Die Besucheranalyse von Cloudflare ist auf dieser Website nicht aktiviert."
+      },
+      "downloads": {
+        "title": "Downloads",
+        "text": "Die Download-Links führen zu Releases auf GitHub, das die Dateien bereitstellt."
+      },
+      "operator": {
+        "title": "Betreiber und Kontakt",
+        "text": "Betreiber ist Filip Král. Schreiben Sie an [{email}](email) oder fragen Sie in den [GitHub Discussions (EN)](https://github.com/fiiles/Moony/discussions)."
+      }
+    }
+  },
+  "support": {
+    "metaTitle": "Support · Moony",
+    "description": "So bekommen Sie Hilfe zu Moony: die Hilfeseiten, eine Kontakt-E-Mail und wo Sie einen Fehler oder ein Sicherheitsproblem melden.",
+    "title": "Support",
+    "intro": "Moony ist ein unabhängiges Open-Source-Projekt. Hier finden Sie eine Antwort und erfahren, wie Sie den Autor erreichen.",
+    "items": {
+      "email": {
+        "title": "Schreiben Sie uns",
+        "text": "Senden Sie eine E-Mail an [{email}](email). Hilfreich ist die Angabe, welche Version von Moony Sie auf welchem System nutzen und was passiert ist. Senden Sie weder Ihr Passwort noch Ihren Wiederherstellungsschlüssel noch Ihre Datendatei."
+      },
+      "help": {
+        "title": "Eine Antwort finden",
+        "text": "Die [Hilfe](help) behandelt den ersten Start, [ein vergessenes Passwort](recovery), [Backups und den Umzug auf einen anderen Computer](backup) und den [Import von Kontoauszügen](import)."
+      },
+      "bug": {
+        "title": "Einen Fehler melden",
+        "text": "Fehler werden offen auf GitHub verfolgt: [Issue eröffnen (EN)](issues). Lassen Sie alles Persönliche weg; ein Screenshot mit Beispieldaten genügt."
+      },
+      "security": {
+        "title": "Ein Sicherheitsproblem melden",
+        "text": "Bitte melden Sie eine Schwachstelle nicht in einem öffentlichen Issue. Der private Kanal ist auf der [Sicherheitsseite (EN)](security) beschrieben."
+      },
+      "ideas": {
+        "title": "Ideen und Fragen",
+        "text": "Ideen für Funktionen und allgemeine Fragen sind in den [GitHub Discussions (EN)](discussions) willkommen."
+      }
+    }
+  },
+  "faq": {
+    "eyebrow": "Bevor Sie loslegen",
+    "title": "Häufig gestellte Fragen",
+    "items": {
+      "free": {
+        "q": "Ist es wirklich kostenlos?",
+        "a": "Ja: Moony ist Open Source unter der Lizenz AGPL-3.0, ohne Testzeitraum und ohne Konto."
+      },
+      "warning": {
+        "q": "Warum warnt mich Windows beim Öffnen?",
+        "a": "Für den Windows-Installer gibt es noch kein Codesignatur-Zertifikat, daher zeigt Windows beim ersten Start möglicherweise eine Sicherheitswarnung an; die Schritte stehen auf der Download-Seite. Die Mac-App ist von Apple signiert und notarisiert und öffnet sich ohne Warnung. In-App-Updates werden mit dem Signaturschlüssel des Projekts geprüft."
+      },
+      "data": {
+        "q": "Sammelt Moony Daten über mich?",
+        "a": "Nein: Die App hat keine Analyse-Tools, keine Absturzberichte und keine Nutzungsstatistiken. Die einzigen Anfragen der App betreffen Kurse, Wechselkurse und die Update-Prüfung; sie sind auf der Datenschutzseite vollständig aufgeführt."
+      },
+      "password": {
+        "q": "Was, wenn ich mein Passwort vergesse?",
+        "a": "Verwenden Sie den 24-stelligen Wiederherstellungsschlüssel, den Moony Ihnen bei der Einrichtung angezeigt hat; er ist der einzige Weg, ein Passwort zurückzusetzen. Wenn Sie beides verlieren, kann niemand Ihre Daten öffnen. Legen Sie deshalb ein Backup an (Einstellungen → Daten und Sicherungen)."
+      },
+      "devices": {
+        "q": "Kann ich Moony auf meinem Smartphone oder einem anderen Computer nutzen?",
+        "a": "Moony läuft heute unter macOS, Windows und Linux, mit einem Profil pro Computer und ohne Synchronisierung. Ihre Daten können Sie mit einer Backup-Datei auf einen anderen Computer übertragen."
+      },
+      "bank": {
+        "q": "Verbindet es sich mit meiner Bank?",
+        "a": "Nicht direkt: Importieren Sie Kontoauszüge, die Sie bei Ihrer Bank als CSV, CAMT.053, MT940, OFX/QFX oder QIF exportiert haben."
+      }
+    }
+  },
+  "gettingStarted": {
+    "title": "Sie können mit einem Konto beginnen.",
+    "text": "Sie müssen nicht alles auf einmal anlegen. Nehmen Sie weitere Konten und Geldanlagen auf, wann immer Sie so weit sind.",
+    "steps": [
+      {
+        "title": "Profil erstellen",
+        "text": "Wählen Sie Ihre Währung und ein Passwort. Speichern Sie Ihren Wiederherstellungsschlüssel."
+      },
+      {
+        "title": "Erstes Konto hinzufügen",
+        "text": "Geben Sie einen Kontostand ein oder importieren Sie einen Kontoauszug."
+      },
+      {
+        "title": "Moony anpassen",
+        "text": "Fügen Sie nach und nach mehr von dem hinzu, was Sie verfolgen möchten."
+      }
+    ]
+  },
+  "about": {
+    "title": "Ein unabhängiges Open-Source-Projekt",
+    "text": "Ihnen fehlt eine Funktion oder Ihnen ist etwas aufgefallen, das besser funktionieren könnte? Diskutieren Sie auf GitHub mit und helfen Sie, Moony zu verbessern.",
+    "link": "Feedback geben →"
+  },
+  "assistantPreview": {
+    "title": "Fragen Sie einen KI-Agenten zu Ihren Finanzen",
+    "text": "Verbinden Sie Moony über MCP mit Ihrem KI-Agenten. Geben Sie ihm Kontext für Analysen und Vorschläge, die auf Ihrer Situation beruhen.",
+    "examplesTitle": "Sie könnten zum Beispiel fragen",
+    "examples": [
+      "Welcher Anteil meines Portfolios entfällt auf meine drei größten Geldanlagen?",
+      "Schätzen Sie den Wert meiner Wohnung anhand ihrer Angaben in Moony und aktueller Inserate."
+    ],
+    "marketNote": "Für eine Immobilienschätzung braucht der Agent außerdem aktuelle Marktinformationen.",
+    "privacyNote": "Die Integration ist standardmäßig aus. Wenn Sie sie aktivieren, erhält der von Ihnen gewählte KI-Client Zugriff auf Ihre Daten und kann sie in der Cloud seines Anbieters verarbeiten.",
+    "link": "So richten Sie sie ein →",
+    "diagram": {
+      "caption": "Verbinden Sie die in Moony gespeicherten Finanzen über MCP mit Ihrem KI-Agenten und geben Sie ihm Kontext für persönliche Analysen und Vorschläge.",
+      "dataTitle": "Ihre Finanzen in Moony",
+      "dataText": "Konten, Geldanlagen, Immobilien und Schulden.",
+      "agentTitle": "Ihr KI-Agent",
+      "agentText": "Claude oder ein anderer Client, der MCP unterstützt.",
+      "resultTitle": "Analysen und Vorschläge",
+      "resultText": "Auf Grundlage Ihrer Daten und Ihrer Situation.",
+      "analysis": "Analyse"
+    }
+  },
+  "help": {
+    "metaTitle": "Hilfe · Moony",
+    "description": "Erster Start, vergessene Passwörter, Import von Kontoauszügen, Backups, Updates und Deinstallation von Moony.",
+    "title": "Hilfe zu Moony",
+    "intro": "Kurze Antworten auf die Fragen, die Menschen zuerst stellen. Alles hier beschreibt, wie Moony heute funktioniert; die Menünamen entsprechen der deutschen Oberfläche der App.",
+    "tocLabel": "In dieser Hilfe",
+    "first": {
+      "title": "Erster Start",
+      "lead": "Moony braucht kein Konto. Installieren und öffnen Sie es, dann legt der Einrichtungsassistent Ihre verschlüsselte Datenbank auf diesem Computer an.",
+      "installTitle": "Installation",
+      "install": "Die Mac-App ist von Apple signiert und notarisiert und öffnet sich normal. Der Windows-Installer ist noch nicht signiert, daher warnt Windows Sie beim ersten Mal; die App ist nicht beschädigt. Die Schritte für jedes System stehen auf der Download-Seite: [macOS](dlMac), [Windows](dlWin), [Linux](dlLinux).",
+      "keysTitle": "Passwort und Wiederherstellungsschlüssel",
+      "keys": [
+        "**Passwort.** Öffnet Moony jedes Mal. Mindestens 8 Zeichen; eine längere Passphrase ist besser. Moony kann es Ihnen nicht anzeigen.",
+        "**Wiederherstellungsschlüssel.** 24 Zeichen in sechs Vierergruppen, einmal bei der Einrichtung angezeigt. Er ist für Notfälle gedacht: Mit ihm wählen Sie ein neues Passwort, wenn Sie das jetzige vergessen ([so geht es](recovery)). Bewahren Sie ihn getrennt von diesem Computer auf, in einem Passwortmanager oder auf Papier. **In Datei speichern…** schreibt eine reine Textdatei, `moony-recovery-key.txt`; legen Sie sie auf einem externen Laufwerk ab, nicht neben Ihren Daten.",
+        "**Touch ID oder Windows Hello (optional).** Auf einem Mac oder einem Windows-PC bietet Moony einmal an, mit dem Fingerabdruck zu entsperren, nachdem Sie mit Ihrem Passwort entsperrt haben (Windows Hello akzeptiert auch seine PIN). Ein- oder ausschalten können Sie es unter **Einstellungen → Sicherheit**. Das Passwort funktioniert weiterhin, und ein vergessenes Passwort lässt sich nach wie vor nur mit dem Wiederherstellungsschlüssel zurücksetzen."
+      ],
+      "wizardTitle": "Der Einrichtungsassistent",
+      "wizardIntro": "Auf eine Begrüßung, die Sie überspringen können, folgen fünf Schritte:",
+      "wizardSteps": [
+        "**Datenschutz:** Ihre Hauptwährung und das Land Ihrer Bank (das Land bestimmt die Kategorisierungsregeln, und beim Import erscheinen seine Banken zuerst). Sie nutzen Moony schon anderswo? Wählen Sie hier stattdessen **Aus einem Backup wiederherstellen** ([so geht es](backup)).",
+        "**Konto:** Ihr Name, eine E-Mail-Adresse zu Ihrer eigenen Orientierung (wird nirgendwohin gesendet) und das Passwort, zweimal.",
+        "**Schlüssel:** Ihr Wiederherstellungsschlüssel. Speichern Sie ihn, geben Sie die beiden Gruppen ein, nach denen Moony fragt, und klicken Sie dann auf **Verschlüsselte Datenbank erstellen**.",
+        "**Was erfassen:** Konten, Geldanlagen, Immobilien, Kredite und Versicherungen. Ändern Sie das später unter **Einstellungen → Allgemein → Sichtbarkeit im Menü**; ausgeblendete Seiten funktionieren weiter.",
+        "**Erstes Konto:** ein Name, eine Währung und der aktuelle Kontostand, dann importieren Sie einen Kontoauszug oder klicken auf **Vorerst überspringen**. Kontostände geben Sie von Hand ein; Importe ändern sie nicht."
+      ],
+      "wizardOutro": "Danach zeigt die Übersicht eine Checkliste **Erste Schritte**."
+    },
+    "recovery": {
+      "title": "Vergessenes Passwort und Wiederherstellungsschlüssel",
+      "warning": "**Es gibt keine Hintertür.** Moony hat kein Konto und keinen Server, daher kann niemand Ihr Passwort für Sie zurücksetzen, auch der Autor nicht. Das Passwort und der Wiederherstellungsschlüssel sind zwei getrennte Wege zu denselben verschlüsselten Daten. Haben Sie keines von beiden, lässt sich nichts öffnen: weder Ihre Datensätze noch Ihre angehängten Fotos und Dokumente.",
+      "tableHead": [
+        "Wenn Sie …",
+        "Dann …"
+      ],
+      "situations": [
+        "Ihr Passwort kennen",
+        "Ihr Passwort vergessen haben, aber den Wiederherstellungsschlüssel besitzen",
+        "Ihr Passwort kennen, aber den Wiederherstellungsschlüssel verloren haben",
+        "weder das Passwort noch den Wiederherstellungsschlüssel haben"
+      ],
+      "results": [
+        "Entsperren Sie wie gewohnt. Den Schlüssel brauchen Sie nicht.",
+        "Sie kommen hinein und legen ein neues Passwort fest. Ihre Daten bleiben unverändert (Schritte unten).",
+        "Sie können weiterhin entsperren. Moony zeigt den Schlüssel nur einmal an, aber beim Ändern Ihres Passworts entsteht ein neuer: **Einstellungen → Sicherheit → Passwort ändern**. Der alte Schlüssel funktioniert dann nicht mehr.",
+        "Nichts kann Ihre Daten öffnen, weder Sie noch sonst jemand. Nur ein Backup, dessen Passwort oder Wiederherstellungsschlüssel Sie noch kennen, kann Daten zurückbringen."
+      ],
+      "resetTitle": "Ein vergessenes Passwort zurücksetzen",
+      "resetSteps": [
+        "Klicken Sie auf dem Sperrbildschirm auf **Passwort vergessen?**",
+        "Geben Sie den 24-stelligen Wiederherstellungsschlüssel ein. Groß- und Kleinschreibung, Leerzeichen und Bindestriche spielen keine Rolle.",
+        "Wählen Sie ein neues Passwort mit mindestens 8 Zeichen. Die Prüfung des Schlüssels dauert einige Sekunden.",
+        "Moony zeigt einen neuen Wiederherstellungsschlüssel an. Speichern Sie ihn, bevor Sie fortfahren: Der alte funktioniert nicht mehr. Klicken Sie dann auf **Weiter zur App**."
+      ],
+      "cannotTitle": "Was der Wiederherstellungsschlüssel nicht kann",
+      "cannot": [
+        "Er verrät nicht das alte Passwort, sondern lässt Sie nur ein neues festlegen.",
+        "Er funktioniert nur mit den Schlüsseldateien `salt` und `recovery.enc`, die zu Ihren Daten gehören; sie liegen im Datenordner und in jedem Backup-ZIP. Wer allein `moony.db` kopiert, sichert nichts, was sich öffnen lässt; erstellen Sie stattdessen ein Backup ([so geht es](backup)).",
+        "Ein Backup enthält die Schlüsseldateien vom Tag seiner Erstellung. Wenn Sie Ihr Passwort später geändert oder zurückgesetzt haben, öffnet es sich mit dem Passwort oder dem Wiederherstellungsschlüssel, die an jenem Tag galten."
+      ],
+      "keepTitle": "Bewahren Sie beides sicher auf",
+      "keep": "Bewahren Sie den Wiederherstellungsschlüssel in einem Passwortmanager oder auf Papier auf und ein aktuelles Backup-ZIP auf einem externen Laufwerk oder in Ihrem eigenen Cloud-Speicher. Behandeln Sie den Schlüssel wie ein Passwort: Wer ihn zusammen mit Ihrem Backup-ZIP besitzt, kann Ihre Daten öffnen.",
+      "lockedTitle": "Wenn Sie dauerhaft ausgesperrt sind",
+      "locked": "Ohne Passwort, ohne Wiederherstellungsschlüssel und ohne brauchbares Backup sind die alten Daten verloren. Um neu zu beginnen, beenden Sie Moony und benennen den Datenordner ([wo er liegt](data)) um, statt ihn zu löschen, falls das Passwort doch noch auftaucht. Beim nächsten Start zeigt Moony den Einrichtungsassistenten und legt ein leeres Profil an."
+    },
+    "import": {
+      "title": "Kontoauszüge importieren",
+      "lead": "Es wird nichts geschrieben, bevor Sie bestätigen: Sie sehen zuerst eine Vorschau, bereits vorhandene Zeilen werden als Duplikate übersprungen, und jeder Import lässt sich rückgängig machen.",
+      "bankTitle": "Bankkontoauszüge",
+      "bankSteps": [
+        "Öffnen Sie **Bankkonten** (Gruppe **Geld**) und klicken Sie auf **Kontoauszug importieren**, in der Kontoliste oder auf der Seite eines Kontos.",
+        "**Datei:** Ziehen Sie den Kontoauszug hinein oder wählen Sie ihn aus. Wählen Sie Ihre Bank in der Liste **Bank** oder lassen Sie **Automatisch erkennen** stehen.",
+        "**Spalten:** Prüfen Sie bei einer CSV-Datei, welche Spalte welche ist (bei einer erkannten Bank ist das schon ausgefüllt). Andere Formate überspringen diesen Schritt.",
+        "**Vorschau und Kategorien:** Prüfen Sie Datum, Beträge und Kategorien und kategorisieren Sie Zeilen, die die Regeln offen gelassen haben.",
+        "**Fertig:** Die Zusammenfassung zeigt, was importiert wurde. Um den Import rückgängig zu machen, öffnen Sie den **Importverlauf** des Kontos und klicken Sie auf **Import rückgängig machen**."
+      ],
+      "balanceNote": "Ein Import ändert nie den Kontostand eines Kontos. Nennt der Kontoauszug einen Schlusssaldo, bietet der letzte Schritt **Kontostand auf … setzen** an.",
+      "formatsTitle": "Welche Dateien funktionieren",
+      "formats": [
+        "**CSV und TXT** mit 16 Bankvorlagen, erkannt an der Kopfzeile: Revolut, Wise, N26, Sparkasse, DKB, ING (Deutschland), britische Banken (Spalten Debit / Credit), Chase (USA) und, in Tschechien, Fio banka, Česká spořitelna, Komerční banka, Air Bank, ČSOB, MONETA Money Bank, mBank und Raiffeisenbank (deren tschechische Exportformate). Die Vorlagen für DKB, ING, Komerční banka, Air Bank, ČSOB, MONETA, mBank und Raiffeisenbank sind noch nicht mit einem echten Export bestätigt: Wenn eine falsch zuordnet, korrigieren Sie die Zuordnung von Hand.",
+        "**CAMT.053** (XML), **MT940**, **OFX/QFX** und **QIF** von jeder Bank, ohne Spaltenzuordnung. Moony zeigt, zu welchem Konto der Kontoauszug gehört, und prüft, wenn die Datei beide Salden nennt, ob die Zahlungen zusammenpassen."
+      ],
+      "csvTitle": "Eine CSV-Datei von einer anderen Bank",
+      "csvIntro": "Jede CSV-Datei mit einem Datum und einem Betrag funktioniert. Im Schritt **Spalten**:",
+      "csv": [
+        "Wählen Sie die Datumsspalte und die Betragsspalte oder eine Soll- und eine Haben-Spalte, falls Ihre Bank den Betrag aufteilt. Optional fügen Sie Beschreibung, Gegenpartei, deren Kontonummer oder IBAN, Währung, Saldo und Transaktions-ID hinzu.",
+        "Moony erkennt Trennzeichen, Zeichenkodierung, Dezimaltrennzeichen und Datumsreihenfolge. Ändern Sie sie, wenn die **Vorschau der gelesenen Daten** falsch aussieht: Falsch dargestellte Sonderzeichen bedeuten die falsche Kodierung, vertauschte Tage und Monate die falsche Datumsreihenfolge. Die **Kopfzeile** ist die Zeile mit den Spaltennamen; Zeilen darüber werden ignoriert.",
+        "Ausgaben müssen negativ und Einnahmen positiv herauskommen. Prüfen Sie vor dem Import ein paar Zeilen, die Sie kennen."
+      ],
+      "missingTitle": "Wenn Ihre Bank nicht aufgeführt ist",
+      "missing": [
+        "Suchen Sie in Ihrem Online-Banking nach CAMT.053, MT940, OFX, QFX oder QIF: Sie brauchen keine Zuordnung.",
+        "Andernfalls ordnen Sie die CSV-Spalten wie oben zu; das dauert eine Minute.",
+        "Oder fügen Sie Transaktionen von Hand hinzu (**Transaktion hinzufügen** auf der Seite des Kontos) oder lassen Sie den optionalen KI-Assistenten einen Kontoauszug für Sie lesen und prüfen Sie, was er gelesen hat, bevor er etwas speichert ([KI-Assistent](ai)).",
+        "Sie wünschen sich eine Vorlage für Ihre Bank? [Eröffnen Sie ein Issue (EN)](issues) mit nur der Kopfzeile, niemals mit echten Transaktionen. Eine Vorlage ist eine kleine JSON-Datei; der [Leitfaden zum Mitwirken (EN)](contributing) zeigt, wie."
+      ],
+      "brokerTitle": "Broker-Trades",
+      "brokerIntro": "Moony importiert keine Trades aus einem Bankkontoauszug; nutzen Sie den Broker-Import. Öffnen Sie **Aktien** (Gruppe **Geldanlagen**), klicken Sie auf **CSV importieren** und wählen Sie dann, woher der Export stammt. Jede Quelle zeigt, wie Sie die Datei erhalten, und bietet ein Beispiel an:",
+      "brokers": [
+        "**XTB:** Account history → Cash operations → Export as CSV, für einen Zeitraum ab Ihrem ersten Trade. Importiert werden nur Käufe und Verkäufe von Aktien und ETFs, keine Einzahlungen, Dividenden oder Gebühren.",
+        "**Trading 212:** History → Export-Symbol, Orders anhaken. Ein Export deckt höchstens 12 Monate ab, laden Sie also mehrere Dateien hoch; Duplikate werden erkannt. Gebühren werden ebenfalls importiert.",
+        "**Degiro:** Activity → Transactions → Export → CSV. Nicht der Kontoauszug. Gebühren werden ebenfalls importiert.",
+        "**Interactive Brokers:** eine Flex Query (Client Portal → Performance & Reports → Flex Queries) vom Typ Activity mit dem Abschnitt Trades und den Feldern Symbol, ISIN, TradeDate, Buy/Sell, Quantity, TradePrice, CurrencyPrimary, AssetClass und TradeID, als CSV.",
+        "**Ihre eigene Tabelle oder ein anderer Broker:** Laden Sie die Moony-Vorlage herunter oder ordnen Sie die Spalten selbst zu (Datum, Kauf oder Verkauf, Symbol oder ISIN, Menge, Preis pro Aktie, Währung und optional eine Gebühr). Moony kann sich die Zuordnung für das nächste Mal merken. Speichern Sie Excel-Dateien zuerst als CSV."
+      ],
+      "brokerOutro": "Der Schritt Prüfung listet auf, was importiert wird und welche Zeilen Duplikate, übersprungen oder fehlerhaft sind. Außerdem prüft er die Wertpapiere bei Yahoo Finance; diese Abfrage sendet die Symbole und ISINs der Datei und sonst nichts ([Datenschutz (EN)](privacy)). Um einen Import zurückzunehmen, nutzen Sie **Rückgängig** unter Letzte Importe oder den **Importverlauf** auf der Seite Aktien."
+    },
+    "backup": {
+      "title": "Backup, Wiederherstellung und neuer Computer",
+      "makeTitle": "Ein Backup erstellen",
+      "make": [
+        "Öffnen Sie **Einstellungen → Daten und Sicherungen** und klicken Sie auf **Jetzt sichern**. Wählen Sie, wo das ZIP gespeichert wird (Moony schlägt `moony-backup-YYYY-MM-DD.zip` vor).",
+        "Es enthält verschlüsselte Kopien Ihrer Datensätze und Anhänge sowie die Schlüsseldateien `salt`, `key.enc` und `recovery.enc` und bleibt verschlüsselt: Nur das Passwort, das bei der Erstellung galt, oder der Wiederherstellungsschlüssel von damals öffnet es.",
+        "Bewahren Sie eine Kopie getrennt von diesem Computer auf, auf einem externen Laufwerk oder in Ihrem eigenen Cloud-Speicher. Moony lädt nie etwas hoch; die Übersicht erinnert Sie, wenn Ihr letztes Backup alt ist. Erstellen Sie vor einem Update und nach einem großen Import ein Backup."
+      ],
+      "restoreTitle": "Ein Backup wiederherstellen",
+      "restoreIntro": "Beginnen Sie bei **Einstellungen → Daten und Sicherungen → Aus Sicherung wiederherstellen…**, auf dem Sperrbildschirm (**Haben Sie ein Backup? Aus Backup wiederherstellen…**) oder im ersten Schritt des Einrichtungsassistenten (**Aus einem Backup wiederherstellen**). Dann:",
+      "restoreSteps": [
+        "Wählen Sie das ZIP. Moony zeigt Datum, Moony-Version, Anzahl der Anhänge und Größe an.",
+        "Bestätigen Sie. Vorhandene Daten werden nicht gelöscht: Moony verschiebt sie zuerst in einen Ordner `pre-restore-<time>` im Datenordner.",
+        "Moony sperrt sich. Entsperren Sie mit dem Passwort, das bei der Erstellung des Backups galt, oder klicken Sie auf **Passwort vergessen?** und verwenden Sie den Wiederherstellungsschlüssel von damals."
+      ],
+      "restoreNote": "Ein Backup, das eine neuere Moony-Version erstellt hat, lässt sich mit einer älteren nicht wiederherstellen; aktualisieren Sie also zuerst. Backups älterer Versionen lassen sich problemlos wiederherstellen.",
+      "moveTitle": "Auf einen neuen Computer umziehen",
+      "moveSteps": [
+        "Klicken Sie auf dem alten Computer auf **Jetzt sichern** und kopieren Sie das ZIP auf den neuen (USB-Laufwerk oder eigener Cloud-Speicher).",
+        "Installieren Sie auf dem neuen Computer dieselbe oder eine neuere Moony-Version ([Download](download)).",
+        "Wählen Sie im ersten Schritt des Assistenten **Aus einem Backup wiederherstellen**, wählen Sie das ZIP und bestätigen Sie.",
+        "Entsperren Sie mit dem Passwort aus der Zeit des Backups."
+      ],
+      "moveOutro": "Moony synchronisiert nicht zwischen Computern, daher laufen die alte und die neue Kopie auseinander, sobald Sie beide nutzen, und Änderungen nach dem Backup sind darin nicht enthalten. Wenn der neue Computer funktioniert, entfernen Sie die Daten vom alten Computer ([so geht es](uninstall)).",
+      "notBackup": "**JSON exportieren** auf derselben Seite schreibt jede Tabelle ohne Anhänge in eine unverschlüsselte JSON-Datei. Das ist kein Backup; behandeln Sie die Datei wie einen Kontoauszug. **Datenbank prüfen** kontrolliert die Integrität Ihrer Datenbank."
+    },
+    "updates": {
+      "title": "Updates, Datenordner und Deinstallation",
+      "updatesTitle": "Updates",
+      "updates": [
+        "Nachdem Sie Moony entsperrt haben, fragt es bei GitHub nach, ob es eine neuere Version gibt, und bietet **Aktualisieren und neu starten** an. Der Download wird mit dem öffentlichen Schlüssel des Projekts geprüft; Moony startet neu, und Sie entsperren es erneut. Ihre Daten bleiben, wo sie sind, und die Anfrage sendet nichts davon.",
+        "Prüfen Sie von Hand oder schalten Sie die automatische Prüfung unter **Einstellungen → Sicherheit → Updates** aus (das gilt nur für diesen Computer).",
+        "Vor einem Update, das die Datenbank verändert, legt Moony eine Kopie neben der Datenbank ab (`moony.db.bak-<time>`; die neuesten drei bleiben erhalten). Das ist eine Absicherung, keine Garantie: Eine frühere Version kann eine Datenbank nicht öffnen, die eine neuere migriert hat. Erstellen Sie also zuerst ein Backup. Um zurückzugehen, stellen Sie ein mit der früheren Version erstelltes Backup wieder her.",
+        "Sie kommen von 0.10.0 oder älter? Der Datenordner wurde in 0.11.0 umbenannt: Lesen Sie [Wo Ihre Daten liegen (EN)](privacyData), bevor Sie zum ersten Mal starten."
+      ],
+      "dataTitle": "Wo Ihre Daten liegen",
+      "dataIntro": "Alles liegt in einem Ordner pro Benutzer:",
+      "dataHead": [
+        "System",
+        "Ordner"
+      ],
+      "dataWinAlt": "meist `C:\\Users\\<you>\\AppData\\Roaming\\com.moonyfinance.desktop\\`",
+      "dataLinuxAlt": "oder `$XDG_DATA_HOME/com.moonyfinance.desktop/`, wenn Sie diese Variable gesetzt haben",
+      "dataNote": "**Einstellungen → Daten und Sicherungen** zeigt den genauen Pfad und eine Schaltfläche **Ordner öffnen**.",
+      "dataFiles": "Er enthält `moony.db` und `attachments.db` (Ihre Datensätze sowie Ihre Fotos und Dokumente, verschlüsselt), die Schlüsseldateien `salt`, `key.enc` und `recovery.enc`, vor einem Datenbank-Update angelegte `.bak-<time>`-Kopien und `pre-restore-<time>`-Ordner aus Wiederherstellungen.",
+      "dataOutro": "Nutzen Sie **Jetzt sichern**, statt Dateien von Hand zu kopieren; Moony verschiebt den Ordner nie von selbst. Was verschlüsselt ist und was nicht, steht auf der [Datenschutzseite (EN)](privacy).",
+      "uninstallTitle": "Deinstallation",
+      "uninstall": [
+        "Beim Deinstallieren wird die App entfernt, Ihre Daten aber standardmäßig nicht; sie bleiben im Datenordner. macOS: Beenden Sie Moony und ziehen Sie es in den Papierkorb. Windows: Deinstallieren Sie es unter Einstellungen → Apps. Linux: Löschen Sie das AppImage oder entfernen Sie das Paket `.deb` oder `.rpm` mit Ihrer Paketverwaltung.",
+        "Um auch Ihre Daten zu entfernen, tun Sie das vor der Deinstallation: **Einstellungen → Konto → Daten löschen…**, dann geben Sie `LÖSCHEN` ein. Das entfernt die Datenbanken, Schlüsseldateien und Anhänge und lässt sich nicht rückgängig machen; erstellen Sie also zuerst ein Backup, falls Sie die Daten vielleicht zurückhaben möchten.",
+        "Übrig bleiben `pre-restore-<time>`-Ordner, von Ihnen gespeicherte Backups und Exporte sowie die Protokolle; löschen Sie diese von Hand oder löschen Sie den ganzen Datenordner. Auf einem Server gibt es nichts zu löschen, denn Moony hat keinen."
+      ]
+    },
+    "ai": {
+      "title": "KI-Assistent (MCP)",
+      "text": "Moony kann Ihre Daten über einen kleinen, in die App eingebauten Server einem KI-Assistenten wie Claude bereitstellen. Er ist standardmäßig aus, lauscht nur auf `127.0.0.1` und funktioniert nur bei entsperrtem Moony und mit einem persönlichen Zugriffstoken. Der Assistent kann Ihre Daten lesen und mit einigen Werkzeugen ändern, und er verarbeitet, was er liest, meist in der Cloud seines Anbieters: Aktivieren Sie ihn nur für Clients, denen Sie vertrauen. Sie brauchen ihn nicht, um Moony zu nutzen.",
+      "text2": "Schalten Sie ihn unter **Einstellungen → KI-Assistent → KI-Assistent (MCP-Server)** ein. Den Verbindungsbefehl, die Client-Einrichtungen und die Details finden Sie auf der Seite [KI-Integration](aiPage)."
+    },
+    "more": {
+      "title": "Noch nicht weitergekommen?",
+      "text": "Fragen Sie in den [GitHub Discussions (EN)](discussions) oder [eröffnen Sie bei einem Fehler ein Issue (EN)](issues). Fügen Sie dort niemals Kontostände oder Kontoauszüge ein. Sicherheitsprobleme gehen über die [Sicherheitsrichtlinie (EN)](security), nicht über ein öffentliches Issue."
+    }
+  }
+}

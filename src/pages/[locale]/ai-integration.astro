@@ -1,8 +1,9 @@
 ---
 import Base from '../../layouts/Base.astro';
 import AssistantPage from '../../components/AssistantPage.astro';
-import { t } from '../../i18n';
-const locale = 'cs';
+import { localizedPaths, t } from '../../i18n';
+export const getStaticPaths = localizedPaths;
+const { locale } = Astro.params;
 ---
 <Base locale={locale} title={t(locale, 'assistant.metaTitle')} description={t(locale, 'assistant.detail')} path="ai-integration/">
   <AssistantPage locale={locale} />

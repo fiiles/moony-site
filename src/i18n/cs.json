@@ -20,6 +20,7 @@
     "product": "Produkt",
     "download": "Stáhnout",
     "help": "Nápověda",
+    "support": "Podpora",
     "changelog": "Seznam změn",
     "trust": "Důvěra",
     "privacy": "Soukromí",
@@ -169,7 +170,7 @@
     "detail": "Volitelná funkce pro pokročilé uživatele. Než propojení zapnete, seznamte se s tím, jak vybraný AI klient nakládá s daty. Moony pro běžné používání AI asistenta nepotřebuje.",
     "setupTitle": "Jak propojení nastavit",
     "setupSteps": [
-      "V Moony otevřete Nastavení → Integrace a zapněte AI asistenta (MCP server).",
+      "V Moony otevřete Nastavení → AI asistent a zapněte AI Asistent (MCP Server).",
       "Zkopírujte připojovací příkaz z nastavení. Obsahuje váš osobní přístupový token, který nesdílejte.",
       "Moony musí při používání propojení běžet a být odemčené."
     ],
@@ -269,6 +270,10 @@
         "title": "Obsah z vlastní domény",
         "text": "Písma, styly, skripty a obrázky se načítají z vlastní domény webu. Obsah stránky omezuje přísná hlavička Content-Security-Policy. Hosting může samostatně využívat síťovou diagnostiku popsanou níže."
       },
+      "language": {
+        "title": "Jazyk",
+        "text": "Web se otevře v prvním jazyce ze seznamu jazyků vašeho prohlížeče, ve kterém je k dispozici, a jinak anglicky. Výběr se provádí ve vašem prohlížeči. Když si jazyk zvolíte sami, prohlížeč si ho pamatuje v místním úložišti pod názvem moony-lang; není to cookie a nikam se neodesílá."
+      },
       "hosting": {
         "title": "Hosting",
         "text": "Web hostuje Cloudflare. Při poskytování stránek zpracovává běžné údaje o požadavku, například IP adresu a user agent, podle svých [zásad ochrany osobních údajů (EN)](https://www.cloudflare.com/privacypolicy/). Služba [Network Error Logging (EN)](https://developers.cloudflare.com/network-error-logging/) může od prohlížeče přijímat hlášení síťových chyb. Na webu není zapnutá návštěvnická analytika Cloudflare."
@@ -279,7 +284,35 @@
       },
       "operator": {
         "title": "Provozovatel a kontakt",
-        "text": "Provozovatelem je Filip Král. Dotazy patří do [diskuzí na GitHubu (EN)](https://github.com/fiiles/Moony/discussions)."
+        "text": "Provozovatelem je Filip Král. Napište na [{email}](email) nebo se zeptejte v [diskuzích na GitHubu (EN)](https://github.com/fiiles/Moony/discussions)."
+      }
+    }
+  },
+  "support": {
+    "metaTitle": "Podpora · Moony",
+    "description": "Jak získat pomoc s Moony: stránky nápovědy, kontaktní e-mail a kam nahlásit chybu nebo bezpečnostní problém.",
+    "title": "Podpora",
+    "intro": "Moony je nezávislý open-source projekt. Tady najdete, kde hledat odpověď a jak se spojit s jeho autorem.",
+    "items": {
+      "email": {
+        "title": "Napište nám",
+        "text": "Pošlete e-mail na [{email}](email). Pomůže, když uvedete, kterou verzi Moony používáte, na jakém systému a co se stalo. Neposílejte své heslo, obnovovací klíč ani datový soubor."
+      },
+      "help": {
+        "title": "Najděte odpověď",
+        "text": "[Nápověda](help) popisuje první spuštění, [zapomenuté heslo](recovery), [zálohy a přesun na jiný počítač](backup) a [import výpisů](import)."
+      },
+      "bug": {
+        "title": "Nahlaste chybu",
+        "text": "Chyby se evidují veřejně na GitHubu: [otevřete issue (EN)](issues). Nevkládejte nic osobního; stačí snímek obrazovky s ukázkovými daty."
+      },
+      "security": {
+        "title": "Nahlaste bezpečnostní problém",
+        "text": "Zranitelnost prosím nehlaste ve veřejném issue. Soukromý kanál popisuje [stránka Zabezpečení (EN)](security)."
+      },
+      "ideas": {
+        "title": "Nápady a dotazy",
+        "text": "Nápady na funkce a obecné dotazy uvítáme v [diskuzích na GitHubu (EN)](discussions)."
       }
     }
   },
@@ -514,14 +547,14 @@
       "uninstallTitle": "Odinstalace",
       "uninstall": [
         "Odinstalace odstraní aplikaci, ale ve výchozím stavu ne vaše data, která zůstanou ve složce s daty. macOS: ukončete Moony a přetáhněte ho do Koše. Windows: odinstalujte ho v Nastavení → Aplikace. Linux: smažte soubor AppImage nebo odeberte balíček `.deb` či `.rpm` správcem balíčků.",
-        "Chcete-li odstranit i data, udělejte to před odinstalací: **Nastavení → Účet → Smazat data…** a napište `DELETE`. Odstraní se databáze, klíčové soubory a přílohy a nelze to vrátit, takže pokud je možná budete chtít zpět, nejdřív vytvořte zálohu.",
+        "Chcete-li odstranit i data, udělejte to před odinstalací: **Nastavení → Účet → Smazat data…** a napište `SMAZAT`. Odstraní se databáze, klíčové soubory a přílohy a nelze to vrátit, takže pokud je možná budete chtít zpět, nejdřív vytvořte zálohu.",
         "Zůstanou složky `pre-restore-<čas>`, zálohy a exporty, které jste uložili, a logy; smažte je ručně, nebo smažte celou složku s daty. Na žádném serveru není co mazat, protože Moony žádný nemá."
       ]
     },
     "ai": {
       "title": "AI asistent (MCP)",
       "text": "Moony může přes malý server zabudovaný v aplikaci poskytovat vaše data AI asistentovi, například Claudovi. Ve výchozím stavu je vypnuto, naslouchá jen na `127.0.0.1` a vyžaduje odemčené Moony a osobní přístupový token. Asistent může vaše data číst a některými nástroji i měnit a zpracovává, co přečte, obvykle v cloudu svého poskytovatele: zapínejte ho jen pro klienty, kterým důvěřujete. K používání Moony ho nepotřebujete.",
-      "text2": "Zapnete ho v **Nastavení → Integrace → AI Asistent (MCP Server)**. Připojovací příkaz, nastavení klientů a podrobnosti jsou na stránce [AI propojení](aiPage)."
+      "text2": "Zapnete ho v **Nastavení → AI asistent → AI Asistent (MCP Server)**. Připojovací příkaz, nastavení klientů a podrobnosti jsou na stránce [AI propojení](aiPage)."
     },
     "more": {
       "title": "Nenašli jste odpověď?",

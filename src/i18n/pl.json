@@ -1,0 +1,564 @@
+{
+  "site": {
+    "name": "Moony",
+    "tagline": "Twoje finanse w jednym miejscu.",
+    "description": "Moony to darmowa aplikacja na komputer do śledzenia kont, inwestycji i kredytów. Twoje dane finansowe zostają na twoim komputerze. Na macOS, Windows i Linux."
+  },
+  "nav": {
+    "label": "Nawigacja główna",
+    "tracks": "Pierwsze kroki",
+    "privacy": "Prywatność",
+    "features": "Funkcje",
+    "download": "Pobierz",
+    "faq": "FAQ",
+    "github": "GitHub",
+    "home": "Moony – strona główna",
+    "language": "Język"
+  },
+  "footer": {
+    "blurb": "Wyraźniejszy obraz twoich finansów. Prosto na twoim komputerze.",
+    "product": "Produkt",
+    "download": "Pobierz",
+    "help": "Pomoc",
+    "support": "Wsparcie",
+    "changelog": "Lista zmian",
+    "trust": "Zaufanie",
+    "privacy": "Prywatność",
+    "security": "Bezpieczeństwo i zgłoszenia",
+    "licence": "Licencja",
+    "sitePrivacy": "Ta witryna",
+    "community": "Społeczność",
+    "github": "GitHub",
+    "discussions": "Dyskusje",
+    "translate": "Przetłumacz Moony",
+    "disclaimer": "Moony nie jest poradą finansową, podatkową ani inwestycyjną. Podawane wartości zależą od danych stron trzecich i mogą być niedokładne.",
+    "nocookies": "Ta witryna nie ustawia plików cookie i nie korzysta z analityki.",
+    "copyright": "© 2026 Filip Král"
+  },
+  "repoPage": {
+    "provenance": "Ta strona pokazuje plik z repozytorium Moony w wersji opublikowanej pod poniższym tagiem; zmieniono tylko tytuł i linki względne. Źródłem jest"
+  },
+  "hero": {
+    "eyebrow": "Finanse osobiste na twoim komputerze",
+    "lead": "Śledź swoje konta, inwestycje i kredyty. Moony przechowuje dane finansowe prosto na twoim komputerze.",
+    "ctaDefault": "Pobierz",
+    "ctaMac": "Pobierz dla macOS",
+    "ctaWin": "Pobierz dla Windows",
+    "ctaLinux": "Pobierz dla Linuksa",
+    "noteStrong": "Darmowe i open source",
+    "noteRest": "Wersja {version}",
+    "caption": "Prawdziwa aplikacja z przykładowymi danymi",
+    "alt": "Przegląd z majątkiem netto, jego historią i sumami przykładowego profilu",
+    "facts": {
+      "noAccount": "Bez rejestracji",
+      "local": "Dane zostają u ciebie",
+      "offline": "Działa offline"
+    },
+    "ctaPreview": "Zajrzyj do środka"
+  },
+  "features": {
+    "overview": {
+      "title": "Zobacz, na czym stoisz.",
+      "text": "Salda kont, inwestycje i zadłużenie, które zostało do spłaty. Jeden przegląd, zbudowany wokół tego, co chcesz śledzić.",
+      "bullets": [
+        "Aktywa i długi razem",
+        "Przychody i wydatki w kontekście",
+        "Inwestycje w czasie"
+      ],
+      "alt": "Sumy aktywów, zobowiązań i wolnej gotówki przykładowego profilu oraz nadchodzące terminy i przypomnienia"
+    },
+    "import": {
+      "title": "Zacznij od wyciągu bankowego.",
+      "text": "Zaimportuj wyciąg, aby zobaczyć, na co idą twoje pieniądze i ile ci zostaje. Przypisuj transakcje do kategorii i ustaw reguły na przyszłość.",
+      "bullets": [
+        "Przychody i wydatki, miesiąc po miesiącu",
+        "Zduplikowane transakcje są pomijane",
+        "W razie potrzeby cofniesz import"
+      ],
+      "alt": "Strona konta bankowego z saldem, 12-miesięcznym wykresem wpływów i wydatków oraz początkiem rejestru transakcji",
+      "formatsTitle": "Obsługiwane formaty",
+      "formats": "CSV z wykrywaniem kolumn, CAMT.053, MT940, OFX/QFX i QIF. Bezpośrednie połączenia z bankami nie są jeszcze dostępne."
+    },
+    "investments": {
+      "title": "Śledź swoje inwestycje w czasie.",
+      "text": "Zobacz, ile wpłacasz i ile zarabiają twoje inwestycje. Śledź akcje, ETF-y i kryptowaluty oraz wartość swojego portfela.",
+      "bullets": [
+        "Zwroty i otrzymane dywidendy",
+        "Aktualne ceny akcji i kryptowalut",
+        "Import z XTB, Trading 212, Degiro i IBKR"
+      ],
+      "alt": "Analiza akcji ze stopą zwrotu ważoną czasem i ważoną kapitałem, wykresem zwrotu w podziale na regiony i panelem spadku od szczytu"
+    },
+    "otherInstruments": {
+      "title": "Także nieruchomości, ubezpieczenia i kredyty",
+      "text": "Dodaj do przeglądu nieruchomości, polisy ubezpieczeniowe i kredyty. Miej ich wartości, płatności i ważne terminy w jednym miejscu.",
+      "bullets": [
+        "Nieruchomości: wyceny, czynsz i koszty",
+        "Ubezpieczenia: płatności, terminy i dokumenty",
+        "Kredyty: spłaty i pozostałe zadłużenie"
+      ],
+      "alt": "Przegląd kredytów z pozostałymi saldami, oprocentowaniem i wykresem zadłużenia w czasie"
+    }
+  },
+  "tracks": {
+    "title": "Co jeszcze możesz śledzić?",
+    "items": {
+      "bank": {
+        "name": "Konta bankowe",
+        "line": "Wyciągi, reguły"
+      },
+      "cashflow": {
+        "name": "Przepływy pieniężne",
+        "line": "Raport, plan, limity"
+      },
+      "spendingPlans": {
+        "name": "Plany wydatków",
+        "line": "Wakacje, remonty, prezenty"
+      },
+      "stocks": {
+        "name": "Akcje i ETF-y",
+        "line": "Zwroty, dywidendy, lista obserwowanych"
+      },
+      "crypto": {
+        "name": "Kryptowaluty",
+        "line": "Pozycje, historia"
+      },
+      "realEstate": {
+        "name": "Nieruchomości",
+        "line": "Wartości, czynsz, koszty"
+      },
+      "assets": {
+        "name": "Obligacje i inne aktywa",
+        "line": "Kupony, terminy zapadalności"
+      },
+      "loans": {
+        "name": "Kredyty",
+        "line": "Harmonogramy, nadpłaty"
+      },
+      "insurance": {
+        "name": "Ubezpieczenia",
+        "line": "Kalendarz płatności"
+      }
+    },
+    "foot": "10 języków · 45 obsługiwanych walut · Tryb jasny i ciemny"
+  },
+  "trust": {
+    "title": "Twoje finanse zostają twoje.",
+    "cards": {
+      "requests": {
+        "title": "Bez śledzenia",
+        "text": "Bez analityki i statystyk użycia. Ceny, kursy walut i aktualizacje są sprawdzane online. Serwisy z cenami widzą symbole, które śledzisz, ale nie twoje salda."
+      },
+      "disk": {
+        "title": "Zaszyfrowane dane",
+        "text": "Wpisy i załączniki są szyfrowane na twoim komputerze. Eksportowane pliki i zapisane kopie nie są szyfrowane, więc trzymaj je w bezpiecznym miejscu."
+      },
+      "keys": {
+        "title": "Kopie zapasowe pod twoją kontrolą",
+        "text": "Zrób kopię zapasową danych do pliku albo je wyeksportuj. Zapisz klucz odzyskiwania podczas konfiguracji, aby móc zresetować zapomniane hasło."
+      }
+    },
+    "link": "Przeczytaj szczegóły dotyczące prywatności →"
+  },
+  "assistant": {
+    "title": "Połącz asystenta AI ze swoimi finansami",
+    "text": "Claude lub inny klient MCP może odczytywać i zmieniać twoje dane przez lokalny serwer. Klient je przetwarza, zwykle w chmurze swojego dostawcy.",
+    "badge": "Domyślnie wyłączone",
+    "link": "Integracja z AI",
+    "metaTitle": "Integracja z AI · Moony",
+    "back": "Wróć do Moony",
+    "detail": "Funkcja opcjonalna, dla zaawansowanych użytkowników. Zanim ją włączysz, sprawdź, jak wybrany klient AI obchodzi się z danymi. Do korzystania z Moony nie potrzebujesz asystenta AI.",
+    "setupTitle": "Konfiguracja integracji",
+    "setupSteps": [
+      "W Moony otwórz Ustawienia → Asystent AI i włącz opcję Asystent AI (serwer MCP).",
+      "Skopiuj polecenie połączenia z ustawień. Zawiera twój osobisty token dostępu; zachowaj go w tajemnicy.",
+      "Podczas korzystania z integracji pozostaw Moony uruchomione i odblokowane."
+    ],
+    "guide": "Pełna instrukcja konfiguracji na GitHubie →"
+  },
+  "download": {
+    "title": "Pobierz Moony za darmo.",
+    "meta": "Wersja {version} · wydana {date}",
+    "changes": "Co się zmieniło →",
+    "mac": {
+      "arm": "Apple Silicon",
+      "intel": "Intel",
+      "note": "Podpisana i notaryzowana przez Apple."
+    },
+    "win": {
+      "exe": "Instalator",
+      "note": "Instalator nie ma jeszcze certyfikatu do podpisywania kodu dla systemu Windows."
+    },
+    "linux": {
+      "appimage": "AppImage (x86_64)",
+      "deb": "Debian/Ubuntu (x86_64)",
+      "rpm": "Fedora/openSUSE (x86_64)",
+      "appimageArm": "AppImage (ARM64)",
+      "debArm": "Debian/Ubuntu (ARM64)",
+      "rpmArm": "Fedora/openSUSE (ARM64)",
+      "note": "{archs}; AppImage może wymagać libfuse2.",
+      "archs": "x86_64",
+      "archsArm": "x86_64 i ARM64"
+    },
+    "all": "Wybierz inny system →",
+    "intro": "Za darmo na macOS, Windows i Linux. Bez rejestracji i okresu próbnego.",
+    "notice": "Przy pierwszym uruchomieniu Windows może pokazać ostrzeżenie bezpieczeństwa, ponieważ instalator nie jest jeszcze podpisany. Przed pobraniem przeczytaj uwagi o instalacji."
+  },
+  "downloadPage": {
+    "metaTitle": "Pobierz Moony {version} na macOS, Windows i Linux",
+    "description": "Instalatory Moony {version} dla macOS, Windows i Linux, kroki pierwszego uruchomienia w każdym systemie, wymagania systemowe i sposób działania aktualizacji.",
+    "title": "Pobierz Moony {version}",
+    "released": "Wydano {date}",
+    "allReleases": "Wszystkie wydania →",
+    "filesTitle": "Instalatory według systemu operacyjnego",
+    "macHint": "Apple Silicon oznacza układ M1 lub nowszy. Nie wiesz, jaki masz komputer Mac? Menu Apple → **About This Mac**: w wierszu Chip lub Procesor zobaczysz Apple M… albo Intel.",
+    "install": {
+      "title": "Instalacja i pierwsze uruchomienie",
+      "unsigned": "Aplikacja na komputery Mac jest podpisana i notaryzowana przez Apple i otwiera się jak każda inna. Instalator dla Windows nie ma jeszcze certyfikatu do podpisywania kodu, więc przy pierwszym uruchomieniu Windows może pokazać ostrzeżenie bezpieczeństwa; kroki są poniżej. Aktualizacje w aplikacji są weryfikowane kluczem podpisującym projektu.",
+      "mac": {
+        "open": "Otwórz plik `.dmg` i przeciągnij **Moony** do folderu **Programy**.",
+        "launch": "Otwórz Moony z folderu **Programy**. macOS sprawdza notaryzację Apple i otwiera aplikację bez ostrzeżenia."
+      },
+      "win": {
+        "keep": "Pobierz instalator. Jeśli przeglądarka pisze, że plik nie jest często pobierany, zachowaj go (w Edge: **⋯ → Keep → Show more → Keep anyway**).",
+        "run": "Uruchom go. Windows SmartScreen może pokazać komunikat „System Windows ochronił ten komputer”. Kliknij **Więcej informacji**, a potem **Uruchom mimo to**."
+      },
+      "linux": {
+        "arch": "Wersje są dostępne dla: {archs}. Poniższe polecenia dotyczą plików x86_64.",
+        "fuse": "Niektóre dystrybucje wymagają pakietu `libfuse2` do obsługi AppImage.",
+        "armFiles": "Na ARM (`uname -m` zwraca `aarch64`) użyj zamiast tego `{appimage}`, `{deb}` lub `{rpm}`."
+      }
+    },
+    "first": {
+      "title": "Pierwsze uruchomienie",
+      "intro": "Kreator konfiguracji poprowadzi cię przez:",
+      "steps": [
+        "Twoją walutę główną i kraj.",
+        "Imię i hasło.",
+        "Twój **klucz odzyskiwania**. Zapisz go: to jedyny sposób na zresetowanie zapomnianego hasła, a działa tylko razem z plikami kluczy w folderze danych, więc zrób też kopię zapasową danych (**Ustawienia → Dane i kopie zapasowe**).",
+        "Wybór tego, co chcesz śledzić.",
+        "Propozycję dodania pierwszego konta i zaimportowania wyciągu bankowego."
+      ],
+      "outro": "Przegląd pokaże wtedy listę kontrolną Pierwsze kroki. Przenosisz się na nowy komputer? Zamiast tworzyć nowy profil, wybierz na pierwszym ekranie kreatora Przywróć z kopii zapasowej.",
+      "help": "Nowy w Moony? [Pomoc](help) wyjaśnia, [co zrobić, gdy nie pamiętasz hasła](recovery), [jak zrobić kopię zapasową i ją przywrócić](backup) oraz [jak importować wyciągi](import)."
+    },
+    "updating": {
+      "title": "Aktualizacje",
+      "text": "Po odblokowaniu Moony pyta GitHub, czy istnieje nowsza wersja, i proponuje aktualizację jednym kliknięciem. Pobrany plik jest weryfikowany kluczem publicznym projektu, zanim zostanie zainstalowany. Automatyczne sprawdzanie możesz wyłączyć w **Ustawieniach**; to, co wysyła, wymienia [strona Prywatność (EN)](privacy)."
+    },
+    "requirements": {
+      "title": "Wymagania systemowe",
+      "mac": "macOS 10.15 (Catalina) lub nowszy, na komputerach Mac z Apple Silicon i Intel.",
+      "win": "Windows 10 i 11 w wersji 64-bitowej. Moony wymaga środowiska Microsoft Edge WebView2 Runtime, które jest fabrycznie zainstalowane w obu systemach; instalator pobiera je, jeśli go brakuje.",
+      "linux": "{archs}: AppImage, pakiet `.deb` dla Debiana i Ubuntu oraz pakiet `.rpm` dla Fedory i openSUSE. Zbudowano w Ubuntu 24.04; starszym dystrybucjom może brakować jakiejś biblioteki systemowej."
+    },
+    "intro": "Wybierz swój system. Po instalacji skonfiguruj Moony bez konta online.",
+    "recommended": "Twój system",
+    "installLink": "Instrukcja instalacji →"
+  },
+  "sitePrivacy": {
+    "metaTitle": "Prywatność tej witryny · Moony",
+    "description": "Witryna Moony nie używa plików cookie ani analityki. Dowiedz się, co zawiera, jak działa jej hosting w Cloudflare i jak wygląda pobieranie aplikacji.",
+    "title": "Prywatność tej witryny",
+    "intro": "Ta strona dotyczy moonyfinance.com. To, co aplikacja Moony przechowuje i wysyła, opisuje [strona Prywatność (EN)](privacy).",
+    "items": {
+      "cookies": {
+        "title": "Bez plików cookie i analityki",
+        "text": "Ta witryna nie ustawia plików cookie i nie ma analityki, liczników ani pikseli śledzących."
+      },
+      "origin": {
+        "title": "Treści z naszej własnej domeny",
+        "text": "Czcionki, style, skrypty i obrazy ładują się z własnej domeny tej witryny. Rygorystyczny nagłówek Content-Security-Policy ogranicza zawartość stron. Dostawca hostingu może osobno korzystać z diagnostyki sieciowej opisanej poniżej."
+      },
+      "language": {
+        "title": "Język",
+        "text": "Witryna otwiera się w pierwszym języku z listy języków twojej przeglądarki, w którym jest dostępna, a w przeciwnym razie po angielsku. Wybór następuje w twojej przeglądarce. Gdy sam wybierzesz język, przeglądarka zapamiętuje go w swojej pamięci lokalnej pod nazwą moony-lang; to nie jest plik cookie i nigdzie nie jest wysyłany."
+      },
+      "hosting": {
+        "title": "Hosting",
+        "text": "Witrynę hostuje Cloudflare. Podczas udostępniania stron przetwarza standardowe dane żądania, takie jak twój adres IP i user agent, zgodnie ze swoją [polityką prywatności (EN)](https://www.cloudflare.com/privacypolicy/). Jego [usługa Network Error Logging (EN)](https://developers.cloudflare.com/network-error-logging/) może otrzymywać z twojej przeglądarki raporty o błędach sieciowych. Analityka odwiedzin Cloudflare nie jest włączona na tej witrynie."
+      },
+      "downloads": {
+        "title": "Pobieranie",
+        "text": "Linki do pobrania prowadzą do wydań na GitHubie, który udostępnia pliki."
+      },
+      "operator": {
+        "title": "Operator i kontakt",
+        "text": "Operatorem jest Filip Král. Napisz na [{email}](email) lub zapytaj w [GitHub Discussions (EN)](https://github.com/fiiles/Moony/discussions)."
+      }
+    }
+  },
+  "support": {
+    "metaTitle": "Wsparcie · Moony",
+    "description": "Jak uzyskać pomoc z Moony: strony pomocy, adres e-mail do kontaktu oraz miejsca zgłaszania błędów i problemów z bezpieczeństwem.",
+    "title": "Wsparcie",
+    "intro": "Moony to niezależny projekt open source. Tu znajdziesz odpowiedź i dowiesz się, jak skontaktować się z jego autorem.",
+    "items": {
+      "email": {
+        "title": "Napisz do nas",
+        "text": "Wyślij e-mail na adres [{email}](email). Pomaga podanie, z jakiej wersji Moony i na jakim systemie korzystasz oraz co się stało. Nie wysyłaj hasła, klucza odzyskiwania ani pliku z danymi."
+      },
+      "help": {
+        "title": "Znajdź odpowiedź",
+        "text": "[Pomoc](help) obejmuje pierwsze uruchomienie, [zapomniane hasło](recovery), [kopie zapasowe i przenoszenie na inny komputer](backup) oraz [importowanie wyciągów](import)."
+      },
+      "bug": {
+        "title": "Zgłoś błąd",
+        "text": "Błędy są śledzone otwarcie na GitHubie: [utwórz zgłoszenie (EN)](issues). Pomiń wszystko, co osobiste; wystarczy zrzut ekranu z przykładowymi danymi."
+      },
+      "security": {
+        "title": "Zgłoś problem z bezpieczeństwem",
+        "text": "Nie zgłaszaj luki w publicznym zgłoszeniu. Prywatny kanał opisuje [strona Bezpieczeństwo (EN)](security)."
+      },
+      "ideas": {
+        "title": "Pomysły i pytania",
+        "text": "Pomysły na funkcje i ogólne pytania są mile widziane w [GitHub Discussions (EN)](discussions)."
+      }
+    }
+  },
+  "faq": {
+    "eyebrow": "Zanim zaczniesz",
+    "title": "Najczęstsze pytania",
+    "items": {
+      "free": {
+        "q": "Czy naprawdę jest za darmo?",
+        "a": "Tak: Moony jest open source na licencji AGPL-3.0, bez okresu próbnego i bez konta."
+      },
+      "warning": {
+        "q": "Dlaczego Windows ostrzega mnie przy otwieraniu?",
+        "a": "Instalator dla Windows nie ma jeszcze certyfikatu do podpisywania kodu, więc przy pierwszym uruchomieniu Windows może pokazać ostrzeżenie bezpieczeństwa; kroki są na stronie pobierania. Aplikacja na komputery Mac jest podpisana i notaryzowana przez Apple i otwiera się bez ostrzeżenia. Aktualizacje w aplikacji są weryfikowane kluczem podpisującym projektu."
+      },
+      "data": {
+        "q": "Czy Moony zbiera jakieś dane o mnie?",
+        "a": "Nie: aplikacja nie ma analityki, raportów o awariach ani statystyk użycia. Jej jedyne zapytania dotyczą cen, kursów walut i sprawdzania aktualizacji, a pełną listę znajdziesz na stronie Prywatność."
+      },
+      "password": {
+        "q": "Co, jeśli zapomnę hasła?",
+        "a": "Użyj 24-znakowego klucza odzyskiwania, który Moony pokazał podczas konfiguracji; to jedyny sposób na zresetowanie hasła. Jeśli stracisz oba, nikt nie otworzy twoich danych, więc rób kopię zapasową (Ustawienia → Dane i kopie zapasowe)."
+      },
+      "devices": {
+        "q": "Czy mogę używać Moony na telefonie lub innym komputerze?",
+        "a": "Moony działa dziś na macOS, Windows i Linux, z jednym profilem na komputer i bez synchronizacji. Dane na inny komputer przeniesiesz plikiem kopii zapasowej."
+      },
+      "bank": {
+        "q": "Czy łączy się z moim bankiem?",
+        "a": "Nie bezpośrednio: importuj wyciągi wyeksportowane z banku jako CSV, CAMT.053, MT940, OFX/QFX lub QIF."
+      }
+    }
+  },
+  "gettingStarted": {
+    "title": "Możesz zacząć od jednego konta.",
+    "text": "Nie trzeba dodawać wszystkiego naraz. Dodawaj kolejne konta i inwestycje, kiedy tylko zechcesz.",
+    "steps": [
+      {
+        "title": "Utwórz swój profil",
+        "text": "Wybierz walutę i hasło. Zapisz klucz odzyskiwania."
+      },
+      {
+        "title": "Dodaj pierwsze konto",
+        "text": "Wpisz saldo albo zaimportuj wyciąg bankowy."
+      },
+      {
+        "title": "Dostosuj do siebie",
+        "text": "Dodawaj kolejne rzeczy do śledzenia w miarę potrzeb."
+      }
+    ]
+  },
+  "about": {
+    "title": "Niezależny projekt open source",
+    "text": "Brakuje ci jakiejś funkcji albo coś mogłoby działać lepiej? Dołącz do rozmowy na GitHubie i pomóż ulepszać Moony.",
+    "link": "Podziel się opinią →"
+  },
+  "assistantPreview": {
+    "title": "Zapytaj agenta AI o swoje finanse",
+    "text": "Połącz Moony ze swoim agentem AI przez MCP. Daj mu kontekst do analiz i sugestii opartych na twojej sytuacji.",
+    "examplesTitle": "Na przykład możesz zapytać",
+    "examples": [
+      "Jaką część mojego portfela stanowią trzy największe inwestycje?",
+      "Oszacuj wartość mojego mieszkania na podstawie jego danych w Moony i aktualnych ogłoszeń."
+    ],
+    "marketNote": "Do wyceny nieruchomości agent potrzebuje też aktualnych informacji rynkowych.",
+    "privacyNote": "Integracja jest domyślnie wyłączona. Jej włączenie daje wybranemu klientowi AI dostęp do twoich danych, które może przetwarzać w chmurze swojego dostawcy.",
+    "link": "Jak ją skonfigurować →",
+    "diagram": {
+      "caption": "Połącz finanse przechowywane w Moony ze swoim agentem AI przez MCP, dając mu kontekst do osobistych analiz i sugestii.",
+      "dataTitle": "Twoje finanse w Moony",
+      "dataText": "Konta, inwestycje, nieruchomości i długi.",
+      "agentTitle": "Twój agent AI",
+      "agentText": "Claude lub inny klient obsługujący MCP.",
+      "resultTitle": "Analizy i sugestie",
+      "resultText": "Na podstawie twoich danych i twojej sytuacji.",
+      "analysis": "Analiza"
+    }
+  },
+  "help": {
+    "metaTitle": "Pomoc · Moony",
+    "description": "Pierwsze kroki, zapomniane hasła, importowanie wyciągów, kopie zapasowe, aktualizacje i odinstalowanie Moony.",
+    "title": "Pomoc do Moony",
+    "intro": "Krótkie odpowiedzi na pytania, które użytkownicy zadają na początku. Wszystko tu opisuje, jak Moony działa dzisiaj; nazwy menu pochodzą z polskiego interfejsu.",
+    "tocLabel": "W tej pomocy",
+    "first": {
+      "title": "Pierwsze uruchomienie",
+      "lead": "Moony nie wymaga konta. Zainstaluj go, otwórz, a kreator konfiguracji utworzy na tym komputerze twoją zaszyfrowaną bazę danych.",
+      "installTitle": "Instalacja",
+      "install": "Aplikacja na komputery Mac jest podpisana i notaryzowana przez Apple i otwiera się normalnie. Instalator dla Windows nie jest jeszcze podpisany, więc Windows ostrzega przy pierwszym uruchomieniu; aplikacja nie jest uszkodzona. Kroki dla każdego systemu są na stronie Pobierz: [macOS](dlMac), [Windows](dlWin), [Linux](dlLinux).",
+      "keysTitle": "Hasło i klucz odzyskiwania",
+      "keys": [
+        "**Hasło.** Otwiera Moony za każdym razem. Co najmniej 8 znaków; lepsza jest dłuższa fraza hasłowa. Moony nie może ci go pokazać.",
+        "**Klucz odzyskiwania.** 24 znaki w sześciu grupach po cztery, pokazane raz podczas konfiguracji. Służy do sytuacji awaryjnych: pozwala wybrać nowe hasło, jeśli zapomnisz obecnego ([jak](recovery)). Zapisz go poza tym komputerem, w menedżerze haseł lub na papierze. **Zapisz do pliku…** tworzy zwykły plik tekstowy `moony-recovery-key.txt`; trzymaj go na dysku zewnętrznym, nie obok swoich danych.",
+        "**Touch ID lub Windows Hello (opcjonalnie).** Na komputerze Mac lub z systemem Windows Moony jednorazowo proponuje odblokowywanie odciskiem palca, gdy odblokujesz je hasłem (Windows Hello akceptuje też swój kod PIN). Włączysz je lub wyłączysz w **Ustawienia → Bezpieczeństwo**. Hasło nadal działa, a zapomniane hasło nadal można zresetować tylko kluczem odzyskiwania."
+      ],
+      "wizardTitle": "Kreator konfiguracji",
+      "wizardIntro": "Po powitaniu, które można pominąć, następuje pięć kroków:",
+      "wizardSteps": [
+        "**Prywatność:** twoja waluta główna i kraj bankowości (kraj określa reguły kategoryzacji, a przy imporcie wyświetla swoje banki na początku listy). Używasz już Moony gdzie indziej? Wybierz tu zamiast tego **Przywróć z kopii zapasowej** ([jak](backup)).",
+        "**Konto:** twoje imię, e-mail na własny użytek (nigdzie nie jest wysyłany) i hasło, dwa razy.",
+        "**Klucz:** twój klucz odzyskiwania. Zapisz go, wpisz dwie grupy, o które prosi Moony, a potem kliknij **Utwórz zaszyfrowaną bazę danych**.",
+        "**Co śledzić:** konta, inwestycje, nieruchomości, kredyty i ubezpieczenia. Zmienisz to później w **Ustawienia → Ogólne → Widoczność menu**; ukryte strony nadal działają.",
+        "**Pierwsze konto:** nazwa, waluta i bieżące saldo, a potem zaimportuj wyciąg albo kliknij **Pomiń na razie**. Salda wprowadza się ręcznie; importy ich nie zmieniają."
+      ],
+      "wizardOutro": "Przegląd pokaże wtedy listę kontrolną **Pierwsze kroki**."
+    },
+    "recovery": {
+      "title": "Zapomniane hasło i klucz odzyskiwania",
+      "warning": "**Nie ma tylnych drzwi.** Moony nie ma konta ani serwera, więc nikt nie zresetuje za ciebie hasła, łącznie z autorem. Hasło i klucz odzyskiwania to dwie osobne drogi do tych samych zaszyfrowanych danych. Jeśli nie masz żadnego z nich, nic nie da się otworzyć: ani twoich wpisów, ani dołączonych zdjęć i dokumentów.",
+      "tableHead": [
+        "Jeśli…",
+        "To…"
+      ],
+      "situations": [
+        "znasz hasło",
+        "nie pamiętasz hasła, ale masz klucz odzyskiwania",
+        "znasz hasło, ale klucz odzyskiwania przepadł",
+        "nie znasz ani hasła, ani klucza odzyskiwania"
+      ],
+      "results": [
+        "Odblokuj jak zwykle. Klucz nie jest potrzebny.",
+        "Wchodzisz i ustawiasz nowe hasło. Twoje dane pozostają bez zmian (kroki poniżej).",
+        "Nadal możesz odblokować aplikację. Moony pokazuje klucz tylko raz, ale zmiana hasła tworzy nowy: **Ustawienia → Bezpieczeństwo → Zmień hasło**. Stary klucz przestaje działać.",
+        "Nic nie otworzy twoich danych, ani ty, ani nikt inny. Dane przywróci tylko kopia zapasowa, której hasło lub klucz odzyskiwania nadal znasz."
+      ],
+      "resetTitle": "Zresetuj zapomniane hasło",
+      "resetSteps": [
+        "Na ekranie blokady kliknij **Nie pamiętasz hasła?**",
+        "Wpisz 24-znakowy klucz odzyskiwania. Wielkie litery, spacje i myślniki nie mają znaczenia.",
+        "Wybierz nowe hasło o długości co najmniej 8 znaków. Sprawdzanie klucza trwa kilka sekund.",
+        "Moony pokaże nowy klucz odzyskiwania. Zapisz go, zanim przejdziesz dalej: stary już nie działa. Potem kliknij **Przejdź do aplikacji**."
+      ],
+      "cannotTitle": "Czego klucz odzyskiwania nie robi",
+      "cannot": [
+        "Nie ujawnia starego hasła, tylko pozwala ustawić nowe.",
+        "Działa tylko z plikami kluczy `salt` i `recovery.enc`, które należą do twoich danych; są w folderze danych i w każdym pliku ZIP z kopią zapasową. Samo skopiowanie `moony.db` nie zachowa niczego, co dałoby się otworzyć; zrób zamiast tego kopię zapasową ([jak](backup)).",
+        "Kopia zapasowa zawiera pliki kluczy z dnia jej utworzenia. Jeśli po jej utworzeniu hasło zostało zmienione lub zresetowane, otworzysz ją hasłem lub kluczem odzyskiwania, które obowiązywały tamtego dnia."
+      ],
+      "keepTitle": "Zadbaj o bezpieczeństwo obu",
+      "keep": "Trzymaj klucz odzyskiwania w menedżerze haseł lub na papierze, a świeży plik ZIP z kopią zapasową na dysku zewnętrznym albo we własnej chmurze. Traktuj klucz jak hasło: każdy, kto ma go razem z twoim plikiem ZIP z kopią, może otworzyć twoje dane.",
+      "lockedTitle": "Jeśli dostęp jest zablokowany na stałe",
+      "locked": "Bez hasła, klucza odzyskiwania i użytecznej kopii zapasowej dawne dane są utracone. Aby zacząć od nowa, zamknij Moony i zmień nazwę folderu danych ([gdzie](data)) zamiast go usuwać, na wypadek, gdyby hasło się znalazło. Przy następnym uruchomieniu Moony pokaże kreator konfiguracji i utworzy pusty profil."
+    },
+    "import": {
+      "title": "Importowanie wyciągów",
+      "lead": "Nic nie zostanie zapisane, dopóki nie potwierdzisz: najpierw widzisz podgląd, wiersze, które już istnieją, są pomijane jako duplikaty, a każdy import można cofnąć.",
+      "bankTitle": "Wyciągi bankowe",
+      "bankSteps": [
+        "Otwórz **Konta bankowe** (grupa **Pieniądze**) i kliknij **Importuj wyciąg** na liście kont lub na stronie konta.",
+        "**Plik:** przeciągnij wyciąg do okna albo wybierz plik. Wskaż swój bank na liście **Bank** lub zostaw **Wykryj automatycznie**.",
+        "**Kolumny:** przy pliku CSV sprawdź, która kolumna co zawiera (rozpoznany bank jest wypełniony automatycznie). Inne formaty pomijają ten krok.",
+        "**Podgląd i kategorie:** sprawdź daty, kwoty i kategorie oraz skategoryzuj wiersze, których nie rozstrzygnęły reguły.",
+        "**Gotowe:** podsumowanie pokazuje, co zaimportowano. Aby to cofnąć, otwórz **Historia importów** na stronie konta i kliknij **Cofnij import**."
+      ],
+      "balanceNote": "Import nigdy nie zmienia salda konta. Jeśli wyciąg podaje saldo końcowe, ostatni krok proponuje **Ustaw saldo konta na …**.",
+      "formatsTitle": "Jakie pliki działają",
+      "formats": [
+        "**CSV i TXT** z 16 gotowymi ustawieniami banków, rozpoznawanymi po wierszu nagłówka: Revolut, Wise, N26, Sparkasse, DKB, ING (Niemcy), banki brytyjskie (kolumny Debit / Credit), Chase (USA) oraz, w Czechach, Fio banka, Česká spořitelna, Komerční banka, Air Bank, ČSOB, MONETA Money Bank, mBank i Raiffeisenbank (ich czeskie formaty eksportu). Ustawienia dla DKB, ING, Komerční banka, Air Bank, ČSOB, MONETA, mBank i Raiffeisenbank nie zostały jeszcze potwierdzone prawdziwym eksportem: jeśli któreś przypisuje kolumny błędnie, popraw przypisanie ręcznie.",
+        "**CAMT.053** (XML), **MT940**, **OFX/QFX** i **QIF** z dowolnego banku, bez przypisywania kolumn. Moony pokazuje, do jakiego konta należy wyciąg, a gdy plik podaje oba salda, sprawdza, czy płatności się sumują."
+      ],
+      "csvTitle": "CSV z innego banku",
+      "csvIntro": "Działa każdy plik CSV z datą i kwotą. W kroku **Kolumny**:",
+      "csv": [
+        "Wskaż kolumnę daty i kolumnę kwoty albo kolumnę obciążeń i uznań, jeśli bank dzieli kwotę. Opcjonalnie dodaj opis, kontrahenta, jego numer konta lub IBAN, walutę, saldo i ID transakcji.",
+        "Moony wykrywa separator, kodowanie tekstu, znak dziesiętny i kolejność elementów daty. Zmień je, jeśli **Podgląd odczytu** wygląda źle: zniekształcone znaki diakrytyczne oznaczają złe kodowanie, zamienione dni i miesiące – złą kolejność daty. **Wiersz nagłówka** to wiersz z nazwami kolumn; wiersze nad nim są ignorowane.",
+        "Wydatki muszą wychodzić ujemne, a przychody dodatnie. Przed importem sprawdź kilka wierszy, które znasz."
+      ],
+      "missingTitle": "Jeśli twojego banku nie ma na liście",
+      "missing": [
+        "Poszukaj w bankowości internetowej formatów CAMT.053, MT940, OFX, QFX lub QIF: nie wymagają przypisywania kolumn.",
+        "W przeciwnym razie przypisz kolumny CSV jak wyżej; zajmuje to minutę.",
+        "Albo dodaj transakcje ręcznie (**Dodaj transakcję** na stronie konta) lub pozwól opcjonalnemu asystentowi AI odczytać wyciąg i sprawdź, co odczytał, zanim cokolwiek zapisze ([asystent AI](ai)).",
+        "Chcesz mieć gotowe ustawienie dla swojego banku? [Utwórz zgłoszenie (EN)](issues) z samym wierszem nagłówka, nigdy z prawdziwymi transakcjami. Takie ustawienie to jeden mały plik JSON; [poradnik dla współtwórców (EN)](contributing) pokazuje, jak to zrobić."
+      ],
+      "brokerTitle": "Transakcje z brokera",
+      "brokerIntro": "Moony nie importuje transakcji z wyciągu bankowego; użyj importu z brokera. Otwórz **Akcje** (grupa **Inwestycje**) i kliknij **Importuj CSV**, a potem wybierz, skąd pochodzi eksport. Każde źródło pokazuje, jak uzyskać plik, i udostępnia przykład:",
+      "brokers": [
+        "**XTB:** Historia konta → Operacje gotówkowe → Eksport jako CSV, za okres od pierwszej transakcji. Importowane są tylko zakupy i sprzedaże akcji i ETF-ów, nie wpłaty, dywidendy ani opłaty.",
+        "**Trading 212:** Historia → ikona eksportu, zaznacz Zlecenia. Jeden eksport obejmuje najwyżej 12 miesięcy, więc wgraj kilka plików; duplikaty są rozpoznawane. Opłaty też są importowane.",
+        "**Degiro:** Aktywność → Transakcje → Eksport → CSV. Nie wyciąg z konta. Opłaty też są importowane.",
+        "**Interactive Brokers:** Flex Query (Client Portal → Performance & Reports → Flex Queries) typu Activity z sekcją Trades i polami Symbol, ISIN, TradeDate, Buy/Sell, Quantity, TradePrice, CurrencyPrimary, AssetClass i TradeID, jako CSV.",
+        "**Własna tabela lub inny broker:** pobierz szablon Moony albo przypisz kolumny samodzielnie (data, kupno lub sprzedaż, symbol lub ISIN, ilość, cena za akcję, waluta i opcjonalnie opłata). Moony może zapamiętać przypisanie na następny raz. Pliki Excela najpierw zapisz jako CSV."
+      ],
+      "brokerOutro": "Krok **Przegląd** wymienia, co zostanie zaimportowane i które wiersze są duplikatami, zostaną pominięte lub są błędne. Sprawdza też papiery wartościowe w Yahoo Finance; to wyszukiwanie wysyła symbole i ISIN-y z pliku i nic więcej ([Prywatność (EN)](privacy)). Aby cofnąć import, użyj **Cofnij** w sekcji Ostatnie importy albo **Historia importów** na stronie Akcje."
+    },
+    "backup": {
+      "title": "Kopia zapasowa, przywracanie i nowy komputer",
+      "makeTitle": "Zrób kopię zapasową",
+      "make": [
+        "Otwórz **Ustawienia → Dane i kopie zapasowe** i kliknij **Zrób kopię teraz**. Wybierz, gdzie zapisać plik ZIP (Moony proponuje `moony-backup-YYYY-MM-DD.zip`).",
+        "Zawiera zaszyfrowane kopie twoich wpisów i załączników oraz pliki kluczy `salt`, `key.enc` i `recovery.enc` i pozostaje zaszyfrowany: otworzy go tylko hasło, które obowiązywało w chwili jego utworzenia, albo klucz odzyskiwania z tamtego czasu.",
+        "Trzymaj kopię poza tym komputerem, na dysku zewnętrznym lub we własnej chmurze. Moony niczego nie wysyła; Przegląd przypomina, gdy ostatnia kopia jest stara. Rób kopię przed aktualizacją i po dużym imporcie."
+      ],
+      "restoreTitle": "Przywróć kopię zapasową",
+      "restoreIntro": "Zacznij od **Ustawienia → Dane i kopie zapasowe → Przywróć z kopii zapasowej…**, z ekranu blokady (**Masz kopię zapasową? Przywróć z kopii zapasowej…**) albo z pierwszego kroku kreatora konfiguracji (**Przywróć z kopii zapasowej**). Potem:",
+      "restoreSteps": [
+        "Wybierz plik ZIP. Moony pokaże jego datę, wersję Moony, liczbę załączników i rozmiar.",
+        "Potwierdź. Istniejące dane nie są usuwane: Moony najpierw przenosi je do folderu `pre-restore-<time>` wewnątrz folderu danych.",
+        "Moony się blokuje. Odblokuj je hasłem, które obowiązywało w chwili tworzenia kopii, albo kliknij **Nie pamiętasz hasła?** i użyj klucza odzyskiwania z tamtego czasu."
+      ],
+      "restoreNote": "Kopii zapasowej wykonanej w nowszej wersji Moony nie można przywrócić w starszej, więc najpierw zaktualizuj. Kopie ze starszych wersji przywracają się bez problemu.",
+      "moveTitle": "Przenieś się na nowy komputer",
+      "moveSteps": [
+        "Na starym komputerze kliknij **Zrób kopię teraz** i skopiuj plik ZIP na nowy (dysk USB lub własna chmura).",
+        "Zainstaluj na nowym komputerze tę samą lub nowszą wersję Moony ([Pobierz](download)).",
+        "W pierwszym kroku kreatora wybierz **Przywróć z kopii zapasowej**, wskaż plik ZIP i potwierdź.",
+        "Odblokuj hasłem z chwili wykonania kopii."
+      ],
+      "moveOutro": "Moony nie synchronizuje danych między komputerami, więc stara i nowa kopia rozchodzą się, gdy tylko zaczniesz używać obu, a zmian wprowadzonych po wykonaniu kopii w niej nie ma. Gdy nowy komputer działa, usuń dane ze starego ([jak](uninstall)).",
+      "notBackup": "**Eksportuj JSON** na tej samej stronie zapisuje każdą tabelę w niezaszyfrowanym pliku JSON bez załączników. To nie jest kopia zapasowa; traktuj go jak wyciąg bankowy. **Sprawdź bazę danych** sprawdza integralność twojej bazy danych."
+    },
+    "updates": {
+      "title": "Aktualizacje, folder danych i odinstalowanie",
+      "updatesTitle": "Aktualizacje",
+      "updates": [
+        "Po odblokowaniu Moony pyta GitHub, czy istnieje nowsza wersja, i proponuje **Zaktualizuj i uruchom ponownie**. Pobrany plik jest weryfikowany kluczem publicznym projektu; Moony uruchamia się ponownie i odblokowujesz je znowu. Twoje dane zostają tam, gdzie są, a zapytanie nie wysyła żadnego z nich.",
+        "Sprawdź ręcznie albo wyłącz automatyczne sprawdzanie w **Ustawienia → Bezpieczeństwo → Aktualizacje** (dotyczy tylko tego komputera).",
+        "Przed aktualizacją, która zmienia bazę danych, Moony kopiuje ją obok oryginału (`moony.db.bak-<time>`; zachowywane są trzy najnowsze). To zabezpieczenie, nie gwarancja: wcześniejsza wersja nie otworzy bazy, którą nowsza wersja już zmigrowała, więc najpierw zrób kopię zapasową. Aby wrócić, przywróć kopię wykonaną we wcześniejszej wersji.",
+        "Przechodzisz z wersji 0.10.0 lub starszej? W 0.11.0 zmieniono nazwę folderu danych: przed pierwszym uruchomieniem przeczytaj [Gdzie są przechowywane twoje dane (EN)](privacyData)."
+      ],
+      "dataTitle": "Gdzie są przechowywane twoje dane",
+      "dataIntro": "Wszystko jest w jednym folderze na użytkownika:",
+      "dataHead": [
+        "System",
+        "Folder"
+      ],
+      "dataWinAlt": "zwykle `C:\\Users\\<użytkownik>\\AppData\\Roaming\\com.moonyfinance.desktop\\`",
+      "dataLinuxAlt": "lub `$XDG_DATA_HOME/com.moonyfinance.desktop/`, jeśli ta zmienna jest ustawiona",
+      "dataNote": "**Ustawienia → Dane i kopie zapasowe** pokazuje dokładną ścieżkę i przycisk **Otwórz folder**.",
+      "dataFiles": "Zawiera `moony.db` i `attachments.db` (twoje wpisy oraz zdjęcia i dokumenty, zaszyfrowane), pliki kluczy `salt`, `key.enc` i `recovery.enc`, kopie `.bak-<time>` wykonywane przed aktualizacją bazy danych oraz foldery `pre-restore-<time>` po przywracaniu.",
+      "dataOutro": "Zamiast kopiować pliki ręcznie, użyj **Zrób kopię teraz**; Moony nigdy sam nie przenosi folderu. Co jest, a co nie jest szyfrowane, opisuje [strona Prywatność (EN)](privacy).",
+      "uninstallTitle": "Odinstalowanie",
+      "uninstall": [
+        "Odinstalowanie usuwa aplikację, ale domyślnie nie twoje dane, które zostają w folderze danych. macOS: zamknij Moony i przeciągnij go do Kosza. Windows: odinstaluj go w Ustawienia → Aplikacje. Linux: usuń plik AppImage albo usuń pakiet `.deb` lub `.rpm` menedżerem pakietów.",
+        "Aby usunąć także dane, zrób to przed odinstalowaniem: **Ustawienia → Konto → Usuń dane…**, a potem wpisz `USUŃ`. To usuwa bazy danych, pliki kluczy i załączniki i nie można tego cofnąć, więc jeśli możesz ich jeszcze potrzebować, najpierw zrób kopię zapasową.",
+        "Zostają foldery `pre-restore-<time>`, zapisane przez ciebie kopie zapasowe i eksporty oraz logi; usuń je ręcznie albo usuń cały folder danych. Na serwerze nie ma niczego do usunięcia, bo Moony go nie ma."
+      ]
+    },
+    "ai": {
+      "title": "Asystent AI (MCP)",
+      "text": "Moony może udostępniać twoje dane asystentowi AI, takiemu jak Claude, przez mały serwer wbudowany w aplikację. Jest domyślnie wyłączony, nasłuchuje tylko na `127.0.0.1` i wymaga odblokowanego Moony oraz osobistego tokenu dostępu. Asystent może odczytywać twoje dane, a za pomocą niektórych narzędzi także je zmieniać, i przetwarza to, co odczyta, zwykle w chmurze swojego dostawcy: włączaj go tylko dla klientów, którym ufasz. Nie potrzebujesz go do korzystania z Moony.",
+      "text2": "Włączysz go w **Ustawienia → Asystent AI → Asystent AI (serwer MCP)**. Polecenie połączenia, konfiguracje klientów i szczegóły są na stronie [Integracja z AI](aiPage)."
+    },
+    "more": {
+      "title": "Wciąż masz problem?",
+      "text": "Zapytaj w [GitHub Discussions (EN)](discussions) lub, w przypadku błędu, [utwórz zgłoszenie (EN)](issues). Nigdy nie wklejaj tam sald ani wyciągów. Problemy z bezpieczeństwem zgłaszaj zgodnie z [polityką bezpieczeństwa (EN)](security), nie w publicznym zgłoszeniu."
+    }
+  }
+}

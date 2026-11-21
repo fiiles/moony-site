@@ -1,0 +1,11 @@
+---
+import Base from '../../layouts/Base.astro';
+import SupportPage from '../../components/SupportPage.astro';
+import { localizedPaths, t } from '../../i18n';
+
+export const getStaticPaths = localizedPaths;
+const { locale } = Astro.params;
+---
+<Base locale={locale} title={t(locale, 'support.metaTitle')} description={t(locale, 'support.description')} path="support/">
+  <SupportPage locale={locale} />
+</Base>

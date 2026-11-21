@@ -1,11 +1,49 @@
-import en from './en.json';
-import cs from './cs.json';
+import registry from '../locales.json';
 
-export type Locale = 'en' | 'cs';
-export const locales: Locale[] = ['en', 'cs'];
-/** Each language written in itself, for the language switch. Typed as a full record so a new locale cannot ship without a name. */
-export const languageNames: Record<Locale, string> = { en: 'English', cs: 'Čeština' };
-const dict: Record<Locale, unknown> = { en, cs };
+/** A locale code from `src/locales.json`, e.g. "en" or "cs". */
+export type Locale = string;
+
+export interface LocaleInfo {
+  code: Locale;
+  /** The language written in itself, for the language switch. */
+  native: string;
+  /** BCP 47 tag for `Intl` (dates, numbers). */
+  intl: string;
+  /** `og:locale` value. */
+  og: string;
+  /** Value of the `lang` attribute and of hreflang. */
+  htmlLang: string;
+  /** The language needs the Latin-extended font subset. */
+  latinExt: boolean;
+}
+
+const infos: LocaleInfo[] = registry;
+/** Every locale, in registry order. */
+export const locales: Locale[] = infos.map((l) => l.code);
+/** The first registry entry; it lives at the site root. */
+export const defaultLocale: Locale = locales[0];
+/** Each language written in itself, for the language switch. */
+export const languageNames: Record<Locale, string> = Object.fromEntries(infos.map((l) => [l.code, l.native]));
+
+export function isLocale(value: unknown): value is Locale {
+  return typeof value === 'string' && locales.includes(value);
+}
+
+export function localeInfo(locale: Locale): LocaleInfo {
+  const info = infos.find((l) => l.code === locale);
+  if (!info) throw new Error(`i18n: unknown locale "${locale}"`);
+  return info;
+}
+
+// One dictionary per registered locale: src/i18n/<code>.json. A registry entry without a file fails the build.
+const files = import.meta.glob<{ default: unknown }>('./*.json', { eager: true });
+const dict: Record<Locale, unknown> = Object.fromEntries(
+  locales.map((code) => {
+    const file = files[`./${code}.json`];
+    if (!file) throw new Error(`i18n: locale "${code}" is in src/locales.json but src/i18n/${code}.json does not exist`);
+    return [code, file.default];
+  }),
+);
 
 /** Where the site is published when Astro has no `site` configured. The one place this address lives. */
 const FALLBACK_SITE = 'https://moonyfinance.com';
@@ -55,16 +93,24 @@ export function siteUrl(site: URL | undefined): URL {
 /** Site-relative URL for a page in a locale, prefixed with the configured base path. */
 export function href(locale: Locale, path: string): string {
   const clean = path.replace(/^\/+/, '');
-  return locale === 'en' ? base() + clean : base() + 'cs/' + clean;
+  return locale === defaultLocale ? base() + clean : `${base()}${locale}/${clean}`;
 }
 
 /** The hreflang set (one entry per available locale, plus x-default) as absolute URLs. A page that exists in only some locales passes just those. */
 export function alternate(site: URL, path: string, available: Locale[] = locales): { lang: string; href: string }[] {
   const abs = (l: Locale) => new URL(href(l, path), site).toString();
   return [
-    ...available.map((l) => ({ lang: l, href: abs(l) })),
-    { lang: 'x-default', href: abs(available.includes('en') ? 'en' : available[0]) },
+    ...available.map((l) => ({ lang: localeInfo(l).htmlLang, href: abs(l) })),
+    { lang: 'x-default', href: abs(available.includes(defaultLocale) ? defaultLocale : available[0]) },
   ];
 }
 
-export function other(locale: Locale): Locale { return locale === 'en' ? 'cs' : 'en'; }
+/** Link to a page that exists in English only (the repository documents). Pages in any other language mark it as English. */
+export function enOnlyLink(locale: Locale, path: string): { href: string; hreflang: 'en' | undefined } {
+  return { href: href('en', path), hreflang: locale === 'en' ? undefined : 'en' };
+}
+
+/** `getStaticPaths` of the pages under `src/pages/[locale]/`: every locale except the default, which lives at the root. */
+export function localizedPaths(): { params: { locale: string } }[] {
+  return locales.filter((l) => l !== defaultLocale).map((locale) => ({ params: { locale } }));
+}

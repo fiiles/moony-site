@@ -1,13 +1,17 @@
 ---
-import { href, t, type Locale } from '../i18n';
+import { enOnlyLink, t, tf, type Locale } from '../i18n';
 import { rich } from '../lib/rich';
+import { supportEmail } from '../config';
 
 interface Props { locale: Locale }
 
 const { locale } = Astro.props;
-// The app's Privacy page is published in English only; Czech pages link to the English one.
-const links = { privacy: { href: href('en', 'privacy/'), hreflang: locale === 'cs' ? 'en' : undefined } };
-const items = ['cookies', 'origin', 'hosting', 'downloads', 'operator'];
+// The app's Privacy page is published in English only; pages in other languages link to the English one.
+const links = { privacy: enOnlyLink(locale, 'privacy/') };
+// The operator text names the contact address; it is filled in from src/config.ts and never typed in a dictionary.
+const operatorLinks = { email: { href: `mailto:${supportEmail}` } };
+const text = (id: string) => (id === 'operator' ? rich(tf(locale, `sitePrivacy.items.${id}.text`, { email: supportEmail }), operatorLinks) : rich(t(locale, `sitePrivacy.items.${id}.text`)));
+const items = ['cookies', 'origin', 'language', 'hosting', 'downloads', 'operator'];
 ---
 <section class="block">
   <div class="wrap prose">
@@ -16,7 +20,7 @@ const items = ['cookies', 'origin', 'hosting', 'downloads', 'operator'];
     {items.map((id) => (
       <>
         <h2>{t(locale, `sitePrivacy.items.${id}.title`)}</h2>
-        <p set:html={rich(t(locale, `sitePrivacy.items.${id}.text`))} />
+        <p set:html={text(id)} />
       </>
     ))}
   </div>

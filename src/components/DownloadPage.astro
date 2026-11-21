@@ -1,6 +1,6 @@
 ---
 import LanguageLink from './LanguageLink.astro';
-import { href, t, tf, tList, type Locale } from '../i18n';
+import { enOnlyLink, href, t, tf, tList, type Locale } from '../i18n';
 import { allReleasesUrl, changelogLink, downloadCards, formatDate, formatSize, linuxArchsKey, linuxArm, release } from '../lib/release';
 import { rich } from '../lib/rich';
 
@@ -12,8 +12,8 @@ const p = (key: string) => t(locale, `downloadPage.${key}`);
 const version = release.version;
 const archs = { archs: t(locale, linuxArchsKey) };
 const changelog = changelogLink(locale);
-// The repository documents are published in English only; Czech pages link to the English Privacy page.
-const links = { privacy: { href: href('en', 'privacy/'), hreflang: changelog.hreflang } };
+// The repository documents are published in English only; pages in other languages link to the English Privacy page.
+const links = { privacy: enOnlyLink(locale, 'privacy/') };
 // The Help is translated, so its links stay in the visitor's language.
 const helpLinks = {
   help: { href: href(locale, 'help/') },

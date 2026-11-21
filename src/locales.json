@@ -1,0 +1,12 @@
+[
+  { "code": "en", "native": "English", "intl": "en-GB", "og": "en_US", "htmlLang": "en", "latinExt": false },
+  { "code": "cs", "native": "Čeština", "intl": "cs-CZ", "og": "cs_CZ", "htmlLang": "cs", "latinExt": true },
+  { "code": "de", "native": "Deutsch", "intl": "de-DE", "og": "de_DE", "htmlLang": "de", "latinExt": false },
+  { "code": "es", "native": "Español", "intl": "es-ES", "og": "es_ES", "htmlLang": "es", "latinExt": false },
+  { "code": "it", "native": "Italiano", "intl": "it-IT", "og": "it_IT", "htmlLang": "it", "latinExt": false },
+  { "code": "nb", "native": "Norsk bokmål", "intl": "nb-NO", "og": "nb_NO", "htmlLang": "nb", "latinExt": false },
+  { "code": "pl", "native": "Polski", "intl": "pl-PL", "og": "pl_PL", "htmlLang": "pl", "latinExt": true },
+  { "code": "sv", "native": "Svenska", "intl": "sv-SE", "og": "sv_SE", "htmlLang": "sv", "latinExt": false },
+  { "code": "ja", "native": "日本語", "intl": "ja-JP", "og": "ja_JP", "htmlLang": "ja", "latinExt": false },
+  { "code": "zh", "native": "简体中文", "intl": "zh-CN", "og": "zh_CN", "htmlLang": "zh-Hans", "latinExt": false }
+]
