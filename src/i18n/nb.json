@@ -147,7 +147,7 @@
     "cards": {
       "requests": {
         "title": "Ingen sporing",
-        "text": "Ingen analyseverktøy eller bruksstatistikk. Kurser, valutakurser og oppdateringer sjekkes på nett. Kurstjenestene ser symbolene du følger, ikke saldoene dine."
+        "text": "Ingen analyseverktøy eller bruksstatistikk. Kurser, valutakurser, selskapslogoer og oppdateringer hentes på nett. Kurs- og logotjenestene ser symbolene du følger, ikke saldoene dine."
       },
       "disk": {
         "title": "Kryptert data",
@@ -330,7 +330,7 @@
       },
       "data": {
         "q": "Samler Moony inn data om meg?",
-        "a": "Nei: appen har ingen analyseverktøy, feilrapporter eller bruksstatistikk. De eneste forespørslene den sender, gjelder kurser, valutakurser og oppdateringssjekken, og de er oppført i sin helhet på personvernsiden."
+        "a": "Nei: appen har ingen analyseverktøy, feilrapporter eller bruksstatistikk. De eneste forespørslene den sender, gjelder kurser, valutakurser, selskapslogoer og oppdateringssjekken, og de er oppført i sin helhet på personvernsiden."
       },
       "password": {
         "q": "Hva om jeg glemmer passordet?",

@@ -147,7 +147,7 @@
     "cards": {
       "requests": {
         "title": "Bez śledzenia",
-        "text": "Bez analityki i statystyk użycia. Ceny, kursy walut i aktualizacje są sprawdzane online. Serwisy z cenami widzą symbole, które śledzisz, ale nie twoje salda."
+        "text": "Bez analityki i statystyk użycia. Ceny, kursy walut, logo spółek i aktualizacje są pobierane online. Serwisy z cenami i logo widzą symbole, które śledzisz, ale nie twoje salda."
       },
       "disk": {
         "title": "Zaszyfrowane dane",
@@ -330,7 +330,7 @@
       },
       "data": {
         "q": "Czy Moony zbiera jakieś dane o mnie?",
-        "a": "Nie: aplikacja nie ma analityki, raportów o awariach ani statystyk użycia. Jej jedyne zapytania dotyczą cen, kursów walut i sprawdzania aktualizacji, a pełną listę znajdziesz na stronie Prywatność."
+        "a": "Nie: aplikacja nie ma analityki, raportów o awariach ani statystyk użycia. Jej jedyne zapytania dotyczą cen, kursów walut, logo spółek i sprawdzania aktualizacji, a pełną listę znajdziesz na stronie Prywatność."
       },
       "password": {
         "q": "Co, jeśli zapomnę hasła?",

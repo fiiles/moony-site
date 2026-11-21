@@ -147,7 +147,7 @@
     "cards": {
       "requests": {
         "title": "Nessun tracciamento",
-        "text": "Nessuna analisi e nessuna statistica d’uso. Prezzi, tassi di cambio e aggiornamenti vengono controllati online. I servizi dei prezzi vedono i simboli che segui, non i tuoi saldi."
+        "text": "Nessuna analisi e nessuna statistica d’uso. Prezzi, tassi di cambio, loghi delle società e aggiornamenti vengono richiesti online. I servizi dei prezzi e dei loghi vedono i simboli che segui, non i tuoi saldi."
       },
       "disk": {
         "title": "Dati cifrati",
@@ -330,7 +330,7 @@
       },
       "data": {
         "q": "Moony raccoglie dati su di me?",
-        "a": "No: l’app non ha analisi, segnalazioni di arresti anomali né statistiche d’uso. Le sue uniche richieste riguardano prezzi, tassi di cambio e il controllo degli aggiornamenti, elencati per intero nella pagina Privacy."
+        "a": "No: l’app non ha analisi, segnalazioni di arresti anomali né statistiche d’uso. Le sue uniche richieste riguardano prezzi, tassi di cambio, loghi delle società e il controllo degli aggiornamenti, elencati per intero nella pagina Privacy."
       },
       "password": {
         "q": "E se dimentico la password?",

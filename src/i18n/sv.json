@@ -147,7 +147,7 @@
     "cards": {
       "requests": {
         "title": "Ingen spårning",
-        "text": "Ingen analys och ingen användningsstatistik. Kurser, växelkurser och uppdateringar hämtas eller kontrolleras online. Kurstjänsterna ser vilka symboler du följer, inte dina saldon."
+        "text": "Ingen analys och ingen användningsstatistik. Kurser, växelkurser, företagslogotyper och uppdateringar hämtas eller kontrolleras online. Kurs- och logotyptjänsterna ser vilka symboler du följer, inte dina saldon."
       },
       "disk": {
         "title": "Krypterade data",
@@ -330,7 +330,7 @@
       },
       "data": {
         "q": "Samlar Moony in några data om mig?",
-        "a": "Nej: appen har ingen analys, inga kraschrapporter och ingen användningsstatistik. Dess enda förfrågningar gäller kurser, växelkurser och uppdateringskontrollen, och de redovisas i sin helhet på integritetssidan."
+        "a": "Nej: appen har ingen analys, inga kraschrapporter och ingen användningsstatistik. Dess enda förfrågningar gäller kurser, växelkurser, företagslogotyper och uppdateringskontrollen, och de redovisas i sin helhet på integritetssidan."
       },
       "password": {
         "q": "Vad gör jag om jag glömmer lösenordet?",

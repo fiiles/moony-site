@@ -147,7 +147,7 @@
     "cards": {
       "requests": {
         "title": "Sin rastreo",
-        "text": "Sin analítica ni estadísticas de uso. Los precios, los tipos de cambio y las actualizaciones se consultan por internet. Los servicios de precios ven los símbolos que sigues, no tus saldos."
+        "text": "Sin analítica ni estadísticas de uso. Los precios, los tipos de cambio, los logotipos de empresas y las actualizaciones se consultan por internet. Los servicios de precios y de logotipos ven los símbolos que sigues, no tus saldos."
       },
       "disk": {
         "title": "Datos cifrados",
@@ -330,7 +330,7 @@
       },
       "data": {
         "q": "¿Recoge Moony algún dato sobre mí?",
-        "a": "No: la app no tiene analítica, informes de fallos ni estadísticas de uso. Sus únicas peticiones son para precios, tipos de cambio y la comprobación de actualizaciones, y se detallan en la página de Privacidad."
+        "a": "No: la app no tiene analítica, informes de fallos ni estadísticas de uso. Sus únicas peticiones son para precios, tipos de cambio, logotipos de empresas y la comprobación de actualizaciones, y se detallan en la página de Privacidad."
       },
       "password": {
         "q": "¿Y si olvido mi contraseña?",

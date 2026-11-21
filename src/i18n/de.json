@@ -147,7 +147,7 @@
     "cards": {
       "requests": {
         "title": "Kein Tracking",
-        "text": "Keine Analyse-Tools und keine Nutzungsstatistiken. Kurse, Wechselkurse und Updates werden online abgefragt. Kursdienste sehen die Symbole, die Sie verfolgen, nicht Ihre Kontostände."
+        "text": "Keine Analyse-Tools und keine Nutzungsstatistiken. Kurse, Wechselkurse, Firmenlogos und Updates werden online abgefragt. Kurs- und Logodienste sehen die Symbole, die Sie verfolgen, nicht Ihre Kontostände."
       },
       "disk": {
         "title": "Verschlüsselte Daten",
@@ -330,7 +330,7 @@
       },
       "data": {
         "q": "Sammelt Moony Daten über mich?",
-        "a": "Nein: Die App hat keine Analyse-Tools, keine Absturzberichte und keine Nutzungsstatistiken. Die einzigen Anfragen der App betreffen Kurse, Wechselkurse und die Update-Prüfung; sie sind auf der Datenschutzseite vollständig aufgeführt."
+        "a": "Nein: Die App hat keine Analyse-Tools, keine Absturzberichte und keine Nutzungsstatistiken. Die einzigen Anfragen der App betreffen Kurse, Wechselkurse, Firmenlogos und die Update-Prüfung; sie sind auf der Datenschutzseite vollständig aufgeführt."
       },
       "password": {
         "q": "Was, wenn ich mein Passwort vergesse?",
