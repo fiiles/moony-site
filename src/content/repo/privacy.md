@@ -1,8 +1,8 @@
 ---
 title: "Privacy"
-sourceUrl: "https://github.com/fiiles/Moony/blob/main/PRIVACY.md"
-tag: "main"
-fetchedAt: "2026-11-22T13:24:13.613Z"
+sourceUrl: "https://github.com/fiiles/Moony/blob/v1.4.1/PRIVACY.md"
+tag: "v1.4.1"
+fetchedAt: "2026-11-22T17:50:41.425Z"
 ---
 
 Moony is a local-first app: **there is no account and no cloud.** Your financial records stay
@@ -281,6 +281,6 @@ server because Moony has none.
 ## Questions and changes
 
 Questions about privacy: open a GitHub Discussion or issue. Vulnerabilities: please follow
-[SECURITY.md](https://github.com/fiiles/Moony/blob/main/SECURITY.md) instead of filing a public issue. This document changes together
+[SECURITY.md](https://github.com/fiiles/Moony/blob/v1.4.1/SECURITY.md) instead of filing a public issue. This document changes together
 with the code; its history is in git, and notable changes are listed in
-[CHANGELOG.md](https://github.com/fiiles/Moony/blob/main/CHANGELOG.md).
+[CHANGELOG.md](https://github.com/fiiles/Moony/blob/v1.4.1/CHANGELOG.md).
