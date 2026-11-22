@@ -14,9 +14,14 @@ npm ci && npm run build
 
 The output lands in `dist/`. `npm run build` also runs the token check before the build and `scripts/check-dist.mjs` after it. The checks fail the build when a page would break the site's promises: a request to another host, an inline script or style (the Content-Security-Policy allows none), a missing canonical or hreflang link, a broken internal link or asset, an exclamation mark in an h1 to h3, an over-budget group of files (English root HTML over 320 KB, the HTML of one locale folder over 160 KB, or shared CSS, JS and fonts over 192 KB; screenshots and social images excluded), a locale without its six pages, the App Store placeholder on a page (see below), or a weakened `_headers` file. It also writes the right `Sitemap:` line into `dist/robots.txt`.
 
-### Before this branch is published
+### The iPhone app: hidden until it is in the App Store
 
-The `mobile-sync` branch announces the iPhone app and device sync, so the plain build refuses to pass until the steps below are done (the `release-links` check). `npm run build:prerelease` (sets `MOONY_PRERELEASE=1`) lets the placeholder through for previews only. Before publishing, in this order:
+Device sync is announced since the 1.4.1 desktop release. The iPhone app is not live yet, so commit `1537186` ("site: hide the iPhone app until the App Store has it") takes its sections, buttons and mentions off the pages; the `phone.*` texts stay in the dictionaries. When the app is live:
+
+1. `git revert 1537186` (brings back the iPhone section, the download card, the Help section, the App Store button for iPhone visitors and the wording that names the iPhone).
+2. Put the App Store address into `appStoreUrl` in `src/config.ts`, then follow steps 2, 5, 6 and 7 below.
+
+The plain build refuses to pass while any page carries the App Store placeholder (the `release-links` check). `npm run build:prerelease` (sets `MOONY_PRERELEASE=1`) lets the placeholder through for previews only. The steps, in this order:
 
 1. The desktop release that ships sync is published on GitHub (the site takes its version and download links from it).
 2. The iPhone app is live in the App Store. Put its address into `appStoreUrl` in `src/config.ts`, in the form `https://apps.apple.com/app/<name>/id<digits>`. The check fails on any `apps.apple.com` link that does not look like that.
