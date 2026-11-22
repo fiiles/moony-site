@@ -2,7 +2,7 @@
   "site": {
     "name": "Moony",
     "tagline": "Ihre Finanzen, an einem Ort.",
-    "description": "Moony ist eine kostenlose Desktop-App, mit der Sie Konten, Geldanlagen und Kredite im Blick behalten. Ihre Finanzdaten bleiben auf Ihrem Computer. Für macOS, Windows und Linux."
+    "description": "Moony ist eine kostenlose App, um Konten, Geldanlagen und Kredite im Blick zu behalten. Ihre Finanzdaten bleiben auf Ihren eigenen Geräten. Für macOS, Windows, Linux und iPhone."
   },
   "nav": {
     "label": "Hauptnavigation",
@@ -16,7 +16,7 @@
     "language": "Sprache"
   },
   "footer": {
-    "blurb": "Ein klarerer Blick auf Ihre Finanzen. Direkt auf Ihrem Computer.",
+    "blurb": "Ein klareres Bild Ihrer Finanzen. Auf Ihren eigenen Geräten.",
     "product": "Produkt",
     "download": "Download",
     "help": "Hilfe",
@@ -39,12 +39,13 @@
     "provenance": "Diese Seite zeigt die Datei aus dem Moony-Repository in der Fassung des unten genannten Tags; nur der Titel und relative Links sind angepasst. Die Quelle ist"
   },
   "hero": {
-    "eyebrow": "Persönliche Finanzen für Ihren Desktop",
-    "lead": "Behalten Sie Konten, Geldanlagen und Kredite im Blick. Moony bewahrt Ihre Finanzdaten direkt auf Ihrem Computer auf.",
+    "eyebrow": "Persönliche Finanzen für Computer und iPhone",
+    "lead": "Behalten Sie Konten, Geldanlagen und Kredite im Blick. Moony hält Ihre Finanzdaten auf Ihren eigenen Geräten.",
     "ctaDefault": "Herunterladen",
     "ctaMac": "Für macOS herunterladen",
     "ctaWin": "Für Windows herunterladen",
     "ctaLinux": "Für Linux herunterladen",
+    "ctaIos": "Laden im App Store",
     "noteStrong": "Kostenlos und Open Source",
     "noteRest": "Version {version}",
     "caption": "Die echte App, mit Beispieldaten",
@@ -54,7 +55,8 @@
       "local": "Daten bleiben bei Ihnen",
       "offline": "Funktioniert offline"
     },
-    "ctaPreview": "Einen Blick hineinwerfen"
+    "ctaPreview": "Einen Blick hineinwerfen",
+    "ctaPhone": "Auch für iPhone"
   },
   "features": {
     "overview": {
@@ -99,6 +101,21 @@
       ],
       "alt": "Kreditübersicht mit offenen Restschulden, Zinssätzen und einem Diagramm der Schulden im Zeitverlauf"
     }
+  },
+  "phone": {
+    "title": "Moony auf Ihrem iPhone.",
+    "text": "Die iPhone-App arbeitet eigenständig, mit eigenen verschlüsselten Daten. Prüfen Sie Ihr Nettovermögen, importieren Sie einen Kontoauszug über das Teilen-Menü und fotografieren Sie einen Vertrag, wo immer Sie sind.",
+    "bullets": [
+      "Nettovermögen, Cashflow und Budgets",
+      "Kontoauszug-Import über das Teilen-Menü",
+      "Entsperren mit Face ID"
+    ],
+    "cta": "Laden im App Store",
+    "note": "Kostenlos. Für iPhone mit iOS 15 oder neuer.",
+    "transfer": "Sie nutzen Moony schon auf einem Computer? Stellen Sie auf dem Telefon eine Sicherung wieder her oder halten Sie beide per Synchronisierung auf dem gleichen Stand.",
+    "android": "Android",
+    "soon": "Demnächst",
+    "alt": "Die Übersicht eines Beispielprofils in Moony auf einem iPhone"
   },
   "tracks": {
     "title": "Was lässt sich noch verfolgen?",
@@ -147,11 +164,11 @@
     "cards": {
       "requests": {
         "title": "Kein Tracking",
-        "text": "Keine Analyse-Tools und keine Nutzungsstatistiken. Kurse, Wechselkurse, Firmenlogos und Updates werden online abgefragt. Kurs- und Logodienste sehen die Symbole, die Sie verfolgen, nicht Ihre Kontostände."
+        "text": "Keine Analyse-Tools und keine Nutzungsstatistiken. Kurse, Wechselkurse, Firmenlogos und Updates werden online abgefragt, und die Synchronisierung, falls Sie sie einrichten, kommuniziert mit Ihrem eigenen Synchronisierungsserver. Kurs- und Logodienste sehen die Symbole, die Sie verfolgen, nicht Ihre Kontostände."
       },
       "disk": {
         "title": "Verschlüsselte Daten",
-        "text": "Datensätze und Anhänge sind auf Ihrem Computer verschlüsselt. Exportierte Dateien und gespeicherte Kopien sind unverschlüsselt. Bewahren Sie sie deshalb sicher auf."
+        "text": "Einträge und Anhänge sind auf Ihrem Gerät verschlüsselt. Exportierte Dateien und gespeicherte Kopien sind unverschlüsselt, bewahren Sie sie deshalb sicher auf."
       },
       "keys": {
         "title": "Backups in Ihrer Hand",
@@ -159,6 +176,24 @@
       }
     },
     "link": "Die Datenschutzdetails lesen →"
+  },
+  "sync": {
+    "title": "Ihre Geräte auf dem gleichen Stand.",
+    "badge": "Experimentell",
+    "text": "Die Synchronisierung hält auf Ihren Computern und Ihrem iPhone dieselben Daten vor. Sie ist optional und bleibt aus, bis Sie sie einrichten. Ihre Daten werden auf Ihrem Gerät verschlüsselt, bevor sie es verlassen, und der Server, der sie weiterreicht, hat keinen Schlüssel, um sie zu lesen.",
+    "own": {
+      "title": "Ihr eigener Server",
+      "text": "Die Synchronisierung läuft über einen kleinen Server, den Sie oder jemand, dem Sie vertrauen, betreiben: zu Hause, auf einem NAS oder auf einem gemieteten Rechner. Er ist Open Source.",
+      "link": "Moony-Synchronisierungsserver auf GitHub →"
+    },
+    "cloud": {
+      "title": "Moony Cloud",
+      "badge": "Demnächst",
+      "text": "Ein gehosteter Server, der vom Projekt betrieben wird, für alle, die lieber keinen eigenen betreiben möchten."
+    },
+    "note": "Die Synchronisierung ist neu und experimentell. Machen Sie weiterhin Backups: Die Synchronisierung überträgt jede Änderung, auch Löschungen, auf Ihre anderen Geräte.",
+    "seen": "Der Server speichert nur verschlüsselte Daten. Wer ihn betreibt, kann sehen, wann und wie viel Sie synchronisieren, aber nicht was.",
+    "link": "So richten Sie sie ein →"
   },
   "assistant": {
     "title": "Verbinden Sie einen KI-Assistenten mit Ihren Finanzen",
@@ -201,17 +236,30 @@
       "archsArm": "x86_64 und ARM64"
     },
     "all": "Anderes System wählen →",
-    "intro": "Kostenlos für macOS, Windows und Linux. Ohne Anmeldung, ohne Testzeitraum.",
+    "intro": "Kostenlos für macOS, Windows, Linux und iPhone. Ohne Anmeldung, ohne Testzeitraum.",
     "notice": "Windows zeigt beim ersten Start möglicherweise eine Sicherheitswarnung an, weil der Installer noch nicht signiert ist. Lesen Sie die Installationshinweise, bevor Sie ihn herunterladen."
   },
   "downloadPage": {
     "metaTitle": "Moony {version} für macOS, Windows und Linux herunterladen",
-    "description": "Installer von Moony {version} für macOS, Windows und Linux, die Schritte beim ersten Start für jedes System, Systemanforderungen und wie Updates funktionieren.",
+    "description": "Installer für Moony {version} für macOS, Windows und Linux, Bezugsquelle der iPhone-App, die Schritte beim ersten Start je System, Systemanforderungen und die Funktionsweise der Updates.",
     "title": "Moony {version} herunterladen",
     "released": "Veröffentlicht am {date}",
     "allReleases": "Alle Releases →",
     "filesTitle": "Installer nach Betriebssystem",
     "macHint": "Apple Silicon steht für einen M1-Chip oder neuer. Sie wissen nicht, welchen Mac Sie haben? Apple-Menü → **Über diesen Mac**: In der Zeile „Chip“ oder „Prozessor“ steht Apple M… oder Intel.",
+    "phone": {
+      "title": "iPhone und Android",
+      "iphone": {
+        "title": "iPhone",
+        "text": "Kostenlos im App Store. Erfordert iOS 15 oder neuer.",
+        "cta": "Laden im App Store"
+      },
+      "android": {
+        "title": "Android",
+        "text": "Demnächst."
+      },
+      "sync": "Die Synchronisierung zwischen Ihren Geräten ist experimentell und läuft über einen Server, den Sie selbst oder jemand, dem Sie vertrauen, betreiben. Der Server und seine Einrichtungsanleitung liegen auf [GitHub (EN)](syncRepo)."
+    },
     "install": {
       "title": "Installation und erster Start",
       "unsigned": "Die Mac-App ist von Apple signiert und notarisiert und lässt sich wie jede andere App öffnen. Für den Windows-Installer gibt es noch kein Codesignatur-Zertifikat, daher zeigt Windows beim ersten Start möglicherweise eine Sicherheitswarnung an; die Schritte stehen unten. In-App-Updates werden mit dem Signaturschlüssel des Projekts geprüft.",
@@ -250,7 +298,8 @@
       "title": "Systemanforderungen",
       "mac": "macOS 10.15 (Catalina) oder neuer, auf Macs mit Apple Silicon und Intel.",
       "win": "Windows 10 und 11, 64 Bit. Moony benötigt die Microsoft Edge WebView2-Runtime, die auf beiden vorinstalliert ist; der Installer lädt sie nach, falls sie fehlt.",
-      "linux": "{archs}: ein AppImage, eine `.deb` für Debian und Ubuntu und eine `.rpm` für Fedora und openSUSE. Auf Ubuntu 24.04 gebaut; älteren Distributionen fehlt unter Umständen eine Systembibliothek."
+      "linux": "{archs}: ein AppImage, eine `.deb` für Debian und Ubuntu und eine `.rpm` für Fedora und openSUSE. Auf Ubuntu 24.04 gebaut; älteren Distributionen fehlt unter Umständen eine Systembibliothek.",
+      "iphone": "iPhone mit iOS 15.0 oder neuer."
     },
     "intro": "Wählen Sie Ihr System. Richten Sie Moony nach der Installation ein, ohne Online-Konto.",
     "recommended": "Ihr System",
@@ -280,7 +329,7 @@
       },
       "downloads": {
         "title": "Downloads",
-        "text": "Die Download-Links führen zu Releases auf GitHub, das die Dateien bereitstellt."
+        "text": "Die Download-Links führen zu Releases auf GitHub, das die Dateien ausliefert. Der Link zur iPhone-App führt zum App Store von Apple."
       },
       "operator": {
         "title": "Betreiber und Kontakt",
@@ -300,11 +349,11 @@
       },
       "help": {
         "title": "Eine Antwort finden",
-        "text": "Die [Hilfe](help) behandelt den ersten Start, [ein vergessenes Passwort](recovery), [Backups und den Umzug auf einen anderen Computer](backup) und den [Import von Kontoauszügen](import)."
+        "text": "Die [Hilfe](help) behandelt den ersten Start, [ein vergessenes Passwort](recovery), [Backups und den Umzug auf einen anderen Computer](backup), den [Import von Kontoauszügen](import) und die [Synchronisierung](sync)."
       },
       "bug": {
         "title": "Einen Fehler melden",
-        "text": "Fehler werden offen auf GitHub verfolgt: [Issue eröffnen (EN)](issues). Lassen Sie alles Persönliche weg; ein Screenshot mit Beispieldaten genügt."
+        "text": "Bugs werden offen auf GitHub verfolgt: [Issue eröffnen (EN)](issues). Lassen Sie Persönliches weg; ein Screenshot mit Beispieldaten genügt. Der Synchronisierungsserver hat [einen eigenen Tracker (EN)](syncIssues)."
       },
       "security": {
         "title": "Ein Sicherheitsproblem melden",
@@ -330,7 +379,7 @@
       },
       "data": {
         "q": "Sammelt Moony Daten über mich?",
-        "a": "Nein: Die App hat keine Analyse-Tools, keine Absturzberichte und keine Nutzungsstatistiken. Die einzigen Anfragen der App betreffen Kurse, Wechselkurse, Firmenlogos und die Update-Prüfung; sie sind auf der Datenschutzseite vollständig aufgeführt."
+        "a": "Nein: Die App hat keine Analysefunktionen, Absturzberichte oder Nutzungsstatistiken. Sie sendet Anfragen nur für Kurse, Wechselkurse und Firmenlogos, für die Update-Prüfung auf einem Computer und, wenn Sie die Synchronisierung einrichten, an Ihren eigenen Synchronisierungsserver. Alles ist auf der Datenschutzseite aufgeführt."
       },
       "password": {
         "q": "Was, wenn ich mein Passwort vergesse?",
@@ -338,7 +387,15 @@
       },
       "devices": {
         "q": "Kann ich Moony auf meinem Smartphone oder einem anderen Computer nutzen?",
-        "a": "Moony läuft heute unter macOS, Windows und Linux, mit einem Profil pro Computer und ohne Synchronisierung. Ihre Daten können Sie mit einer Backup-Datei auf einen anderen Computer übertragen."
+        "a": "Ja. Moony läuft auf macOS, Windows, Linux und iPhone, und jedes Gerät arbeitet eigenständig. Damit überall dieselben Daten vorliegen, richten Sie die Synchronisierung ein, die experimentell ist, oder übertragen Sie Ihre Daten mit einer Backup-Datei. Eine Android-App folgt demnächst."
+      },
+      "sync": {
+        "q": "Wie funktioniert die Synchronisierung, und wer kann meine Daten lesen?",
+        "a": "Die Synchronisierung ist optional und experimentell. Ihre Geräte verschlüsseln alles, bevor sie es an einen Synchronisierungsserver senden, den Sie oder jemand, dem Sie vertrauen, betreibt; der Server hat keinen Schlüssel und speichert nur verschlüsselte Daten. Wer ihn betreibt, kann sehen, wann und wie viel Sie synchronisieren. Machen Sie weiterhin Backups."
+      },
+      "cloud": {
+        "q": "Was ist Moony Cloud?",
+        "a": "Ein gehosteter Synchronisierungsserver, der vom Projekt betrieben wird, für alle, die lieber keinen eigenen betreiben möchten. Er ist noch nicht verfügbar. Heute funktioniert die Synchronisierung mit einem Server, den Sie selbst oder jemand, dem Sie vertrauen, betreiben."
       },
       "bank": {
         "q": "Verbindet es sich mit meiner Bank?",
@@ -421,7 +478,7 @@
     },
     "recovery": {
       "title": "Vergessenes Passwort und Wiederherstellungsschlüssel",
-      "warning": "**Es gibt keine Hintertür.** Moony hat kein Konto und keinen Server, daher kann niemand Ihr Passwort für Sie zurücksetzen, auch der Autor nicht. Das Passwort und der Wiederherstellungsschlüssel sind zwei getrennte Wege zu denselben verschlüsselten Daten. Haben Sie keines von beiden, lässt sich nichts öffnen: weder Ihre Datensätze noch Ihre angehängten Fotos und Dokumente.",
+      "warning": "**Es gibt keine Hintertür.** Moony hat kein Konto, und niemand sonst besitzt einen Schlüssel zu Ihren Daten, daher kann niemand Ihr Passwort für Sie zurücksetzen, auch der Autor nicht. Das Passwort und der Wiederherstellungsschlüssel sind zwei getrennte Wege zu denselben verschlüsselten Daten. Haben Sie keines von beiden, lässt sich auf diesem Gerät nichts öffnen: weder Ihre Datensätze noch Ihre angehängten Fotos und Dokumente. Wenn Sie die Synchronisierung nutzen, ist das Wiederherstellungs-Kit ein separater Weg zu den synchronisierten Daten.",
       "tableHead": [
         "Wenn Sie …",
         "Dann …"
@@ -504,7 +561,7 @@
       "make": [
         "Öffnen Sie **Einstellungen → Daten und Sicherungen** und klicken Sie auf **Jetzt sichern**. Wählen Sie, wo das ZIP gespeichert wird (Moony schlägt `moony-backup-YYYY-MM-DD.zip` vor).",
         "Es enthält verschlüsselte Kopien Ihrer Datensätze und Anhänge sowie die Schlüsseldateien `salt`, `key.enc` und `recovery.enc` und bleibt verschlüsselt: Nur das Passwort, das bei der Erstellung galt, oder der Wiederherstellungsschlüssel von damals öffnet es.",
-        "Bewahren Sie eine Kopie getrennt von diesem Computer auf, auf einem externen Laufwerk oder in Ihrem eigenen Cloud-Speicher. Moony lädt nie etwas hoch; die Übersicht erinnert Sie, wenn Ihr letztes Backup alt ist. Erstellen Sie vor einem Update und nach einem großen Import ein Backup."
+        "Bewahren Sie eine Kopie getrennt von diesem Computer auf, auf einem externen Laufwerk oder in Ihrem eigenen Cloud-Speicher. Moony lädt Ihre Backups nicht hoch; die Übersicht erinnert Sie, wenn Ihr letztes Backup alt ist. Erstellen Sie vor einem Update und nach einem großen Import ein Backup."
       ],
       "restoreTitle": "Ein Backup wiederherstellen",
       "restoreIntro": "Beginnen Sie bei **Einstellungen → Daten und Sicherungen → Aus Sicherung wiederherstellen…**, auf dem Sperrbildschirm (**Haben Sie ein Backup? Aus Backup wiederherstellen…**) oder im ersten Schritt des Einrichtungsassistenten (**Aus einem Backup wiederherstellen**). Dann:",
@@ -521,8 +578,25 @@
         "Wählen Sie im ersten Schritt des Assistenten **Aus einem Backup wiederherstellen**, wählen Sie das ZIP und bestätigen Sie.",
         "Entsperren Sie mit dem Passwort aus der Zeit des Backups."
       ],
-      "moveOutro": "Moony synchronisiert nicht zwischen Computern, daher laufen die alte und die neue Kopie auseinander, sobald Sie beide nutzen, und Änderungen nach dem Backup sind darin nicht enthalten. Wenn der neue Computer funktioniert, entfernen Sie die Daten vom alten Computer ([so geht es](uninstall)).",
+      "moveOutro": "Ein Backup ist eine einmalige Kopie: Der alte und der neue Computer laufen auseinander, sobald Sie beide benutzen, und Änderungen nach dem Backup sind darin nicht enthalten. Um mehrere Geräte auf dem gleichen Stand zu halten, nutzen Sie die [Synchronisierung](sync), die experimentell ist. Ansonsten entfernen Sie die Daten vom alten Computer ([so geht’s](uninstall)), sobald der neue funktioniert.",
       "notBackup": "**JSON exportieren** auf derselben Seite schreibt jede Tabelle ohne Anhänge in eine unverschlüsselte JSON-Datei. Das ist kein Backup; behandeln Sie die Datei wie einen Kontoauszug. **Datenbank prüfen** kontrolliert die Integrität Ihrer Datenbank."
+    },
+    "phone": {
+      "title": "Moony auf dem iPhone",
+      "text": "Die iPhone-App ist eine eigenständige App: Sie speichert eigene verschlüsselte Daten und braucht keinen Computer. Laden Sie sie im [App Store](appStore). Um mit den Daten Ihres Computers zu beginnen, speichern Sie dort ein Backup und stellen es auf dem Telefon wieder her (**Einstellungen → Sicherung und Übertragung**), oder verbinden Sie das Telefon per [Synchronisierung](sync).",
+      "differences": "Die Telefon-App hat keine KI-Integration und keine eigene Update-Prüfung; Updates kommen über den App Store."
+    },
+    "sync": {
+      "title": "Synchronisierung zwischen Geräten (experimentell)",
+      "intro": "Die Synchronisierung hält auf Ihren Computern und Ihrem iPhone dieselben Daten vor. Sie ist optional, aus, bis Sie sie einrichten, und noch experimentell: Machen Sie vor dem Start ein Backup und machen Sie weiterhin welche.",
+      "steps": [
+        "Sie brauchen einen Synchronisierungsserver. Betreiben Sie selbst einen mit dem [Moony-Synchronisierungsserver (EN)](syncRepo) oder bitten Sie jemanden, der einen für Sie betreibt, um einen **Verbindungscode**.",
+        "Öffnen Sie auf dem ersten Gerät **Einstellungen → Synchronisierung**, starten Sie die Einrichtung, wählen Sie **Eigener Server** und geben Sie den Verbindungscode ein.",
+        "Speichern Sie das **Wiederherstellungs-Kit**, das Moony Ihnen anzeigt, getrennt von Ihren Geräten. Wenn Sie alle Geräte auf einmal verlieren, ist es der einzige Weg zurück zu Ihren synchronisierten Daten.",
+        "Um ein weiteres Gerät hinzuzufügen, wählen Sie auf einem Gerät, das bereits synchronisiert, **Gerät hinzufügen** und folgen Sie auf dem neuen Gerät unter **Einstellungen → Synchronisierung** den Schritten. Ein Gerät, das beitritt, übernimmt die synchronisierten Daten; Moony speichert zuvor ein Backup der bisherigen Daten dieses Geräts."
+      ],
+      "seen": "Der Server speichert nur verschlüsselte Daten und hat keinen Schlüssel. Wer ihn betreibt, kann sehen, wann und wie viel Sie synchronisieren. Was gesendet und gespeichert wird, steht auf der [Datenschutzseite (EN)](privacy).",
+      "cloud": "Moony Cloud, ein gehosteter Server, der vom Projekt betrieben wird, ist noch nicht verfügbar."
     },
     "updates": {
       "title": "Updates, Datenordner und Deinstallation",
@@ -548,7 +622,7 @@
       "uninstall": [
         "Beim Deinstallieren wird die App entfernt, Ihre Daten aber standardmäßig nicht; sie bleiben im Datenordner. macOS: Beenden Sie Moony und ziehen Sie es in den Papierkorb. Windows: Deinstallieren Sie es unter Einstellungen → Apps. Linux: Löschen Sie das AppImage oder entfernen Sie das Paket `.deb` oder `.rpm` mit Ihrer Paketverwaltung.",
         "Um auch Ihre Daten zu entfernen, tun Sie das vor der Deinstallation: **Einstellungen → Konto → Daten löschen…**, dann geben Sie `LÖSCHEN` ein. Das entfernt die Datenbanken, Schlüsseldateien und Anhänge und lässt sich nicht rückgängig machen; erstellen Sie also zuerst ein Backup, falls Sie die Daten vielleicht zurückhaben möchten.",
-        "Übrig bleiben `pre-restore-<time>`-Ordner, von Ihnen gespeicherte Backups und Exporte sowie die Protokolle; löschen Sie diese von Hand oder löschen Sie den ganzen Datenordner. Auf einem Server gibt es nichts zu löschen, denn Moony hat keinen."
+        "Übrig bleiben `pre-restore-<time>`-Ordner, von Ihnen gespeicherte Backups und Exporte sowie die Protokolle; löschen Sie diese von Hand oder löschen Sie den ganzen Datenordner. Wenn Sie die Synchronisierung nutzen, liegt außerdem eine verschlüsselte Kopie Ihrer Daten auf Ihrem Synchronisierungsserver. Löschen Sie sie unter **Einstellungen → Synchronisierung** (**Synchronisierte Daten auf dem Server löschen**), bevor Sie die lokalen Daten löschen. Dadurch werden die synchronisierten Daten auf dem Synchronisierungsserver für alle Geräte gelöscht. Die lokalen Daten auf jedem Gerät bleiben erhalten."
       ]
     },
     "ai": {

@@ -2,7 +2,7 @@
   "site": {
     "name": "Moony",
     "tagline": "Twoje finanse w jednym miejscu.",
-    "description": "Moony to darmowa aplikacja na komputer do śledzenia kont, inwestycji i kredytów. Twoje dane finansowe zostają na twoim komputerze. Na macOS, Windows i Linux."
+    "description": "Moony to darmowa aplikacja do śledzenia kont, inwestycji i kredytów. Twoje dane finansowe zostają na twoich urządzeniach. Dla macOS, Windows, Linuksa i iPhone’a."
   },
   "nav": {
     "label": "Nawigacja główna",
@@ -16,7 +16,7 @@
     "language": "Język"
   },
   "footer": {
-    "blurb": "Wyraźniejszy obraz twoich finansów. Prosto na twoim komputerze.",
+    "blurb": "Wyraźniejszy obraz twoich finansów. Na twoich urządzeniach.",
     "product": "Produkt",
     "download": "Pobierz",
     "help": "Pomoc",
@@ -39,12 +39,13 @@
     "provenance": "Ta strona pokazuje plik z repozytorium Moony w wersji opublikowanej pod poniższym tagiem; zmieniono tylko tytuł i linki względne. Źródłem jest"
   },
   "hero": {
-    "eyebrow": "Finanse osobiste na twoim komputerze",
-    "lead": "Śledź swoje konta, inwestycje i kredyty. Moony przechowuje dane finansowe prosto na twoim komputerze.",
+    "eyebrow": "Finanse osobiste na komputer i iPhone’a",
+    "lead": "Miej pod kontrolą swoje konta, inwestycje i kredyty. Moony trzyma twoje dane finansowe na twoich urządzeniach.",
     "ctaDefault": "Pobierz",
     "ctaMac": "Pobierz dla macOS",
     "ctaWin": "Pobierz dla Windows",
     "ctaLinux": "Pobierz dla Linuksa",
+    "ctaIos": "Pobierz w App Store",
     "noteStrong": "Darmowe i open source",
     "noteRest": "Wersja {version}",
     "caption": "Prawdziwa aplikacja z przykładowymi danymi",
@@ -54,7 +55,8 @@
       "local": "Dane zostają u ciebie",
       "offline": "Działa offline"
     },
-    "ctaPreview": "Zajrzyj do środka"
+    "ctaPreview": "Zajrzyj do środka",
+    "ctaPhone": "Także na iPhone’a"
   },
   "features": {
     "overview": {
@@ -99,6 +101,21 @@
       ],
       "alt": "Przegląd kredytów z pozostałymi saldami, oprocentowaniem i wykresem zadłużenia w czasie"
     }
+  },
+  "phone": {
+    "title": "Moony na iPhonie.",
+    "text": "Aplikacja na iPhone’a działa samodzielnie, z własnymi zaszyfrowanymi danymi. Sprawdzaj majątek netto, importuj wyciąg z arkusza udostępniania i fotografuj umowy, gdziekolwiek jesteś.",
+    "bullets": [
+      "Majątek netto, cashflow i budżety",
+      "Import wyciągów z arkusza udostępniania",
+      "Odblokowanie przez Face ID"
+    ],
+    "cta": "Pobierz w App Store",
+    "note": "Za darmo. Na iPhone’a z iOS 15 lub nowszym.",
+    "transfer": "Używasz już Moony na komputerze? Przywróć kopię zapasową na telefonie albo utrzymuj oba urządzenia w zgodzie dzięki synchronizacji.",
+    "android": "Android",
+    "soon": "Wkrótce",
+    "alt": "Przegląd przykładowego profilu w Moony na iPhonie"
   },
   "tracks": {
     "title": "Co jeszcze możesz śledzić?",
@@ -147,11 +164,11 @@
     "cards": {
       "requests": {
         "title": "Bez śledzenia",
-        "text": "Bez analityki i statystyk użycia. Ceny, kursy walut, logo spółek i aktualizacje są pobierane online. Serwisy z cenami i logo widzą symbole, które śledzisz, ale nie twoje salda."
+        "text": "Bez analityki i statystyk użycia. Ceny, kursy walut, logo spółek i aktualizacje są sprawdzane online, a synchronizacja, jeśli ją skonfigurujesz, łączy się z twoim własnym serwerem synchronizacji. Serwisy z cenami i logo widzą symbole, które śledzisz, ale nie twoje salda."
       },
       "disk": {
         "title": "Zaszyfrowane dane",
-        "text": "Wpisy i załączniki są szyfrowane na twoim komputerze. Eksportowane pliki i zapisane kopie nie są szyfrowane, więc trzymaj je w bezpiecznym miejscu."
+        "text": "Wpisy i załączniki są szyfrowane na twoim urządzeniu. Wyeksportowane pliki i zapisane kopie nie są szyfrowane, więc trzymaj je w bezpiecznym miejscu."
       },
       "keys": {
         "title": "Kopie zapasowe pod twoją kontrolą",
@@ -159,6 +176,24 @@
       }
     },
     "link": "Przeczytaj szczegóły dotyczące prywatności →"
+  },
+  "sync": {
+    "title": "Utrzymuj swoje urządzenia w zgodzie.",
+    "badge": "Eksperymentalna",
+    "text": "Synchronizacja utrzymuje te same dane na twoich komputerach i telefonie iPhone. Jest opcjonalna i pozostaje wyłączona, dopóki jej nie skonfigurujesz. Dane są szyfrowane na twoim urządzeniu, zanim je opuszczą, a serwer, który przekazuje je dalej, nie ma klucza, by je odczytać.",
+    "own": {
+      "title": "Własny serwer",
+      "text": "Synchronizacja działa przez mały serwer, który prowadzisz ty albo ktoś, komu ufasz: w domu, na NAS-ie lub na wynajętej maszynie. Ma otwarty kod źródłowy.",
+      "link": "Serwer synchronizacji Moony na GitHubie →"
+    },
+    "cloud": {
+      "title": "Moony Cloud",
+      "badge": "Wkrótce",
+      "text": "Serwer hostowany przez projekt, dla osób, które wolałyby nie prowadzić własnego."
+    },
+    "note": "Synchronizacja jest nowa i eksperymentalna. Rób dalej kopie zapasowe: synchronizacja przenosi każdą zmianę, także usunięcia, na twoje pozostałe urządzenia.",
+    "seen": "Serwer przechowuje tylko zaszyfrowane dane. Kto go prowadzi, widzi, kiedy i ile synchronizujesz, ale nie co.",
+    "link": "Jak ją skonfigurować →"
   },
   "assistant": {
     "title": "Połącz asystenta AI ze swoimi finansami",
@@ -201,17 +236,30 @@
       "archsArm": "x86_64 i ARM64"
     },
     "all": "Wybierz inny system →",
-    "intro": "Za darmo na macOS, Windows i Linux. Bez rejestracji i okresu próbnego.",
+    "intro": "Za darmo dla macOS, Windows, Linuksa i iPhone’a. Bez rejestracji i okresu próbnego.",
     "notice": "Przy pierwszym uruchomieniu Windows może pokazać ostrzeżenie bezpieczeństwa, ponieważ instalator nie jest jeszcze podpisany. Przed pobraniem przeczytaj uwagi o instalacji."
   },
   "downloadPage": {
     "metaTitle": "Pobierz Moony {version} na macOS, Windows i Linux",
-    "description": "Instalatory Moony {version} dla macOS, Windows i Linux, kroki pierwszego uruchomienia w każdym systemie, wymagania systemowe i sposób działania aktualizacji.",
+    "description": "Instalatory Moony {version} na macOS, Windows i Linuksa, gdzie pobrać aplikację na iPhone’a, kroki pierwszego uruchomienia w każdym systemie, wymagania systemowe i sposób działania aktualizacji.",
     "title": "Pobierz Moony {version}",
     "released": "Wydano {date}",
     "allReleases": "Wszystkie wydania →",
     "filesTitle": "Instalatory według systemu operacyjnego",
     "macHint": "Apple Silicon oznacza układ M1 lub nowszy. Nie wiesz, jaki masz komputer Mac? Menu Apple → **About This Mac**: w wierszu Chip lub Procesor zobaczysz Apple M… albo Intel.",
+    "phone": {
+      "title": "iPhone i Android",
+      "iphone": {
+        "title": "iPhone",
+        "text": "Za darmo w App Store. Wymaga iOS 15 lub nowszego.",
+        "cta": "Pobierz w App Store"
+      },
+      "android": {
+        "title": "Android",
+        "text": "Wkrótce."
+      },
+      "sync": "Synchronizacja między urządzeniami jest eksperymentalna i działa przez serwer, który prowadzisz ty albo ktoś, komu ufasz. Serwer i instrukcja konfiguracji są na [GitHubie (EN)](syncRepo)."
+    },
     "install": {
       "title": "Instalacja i pierwsze uruchomienie",
       "unsigned": "Aplikacja na komputery Mac jest podpisana i notaryzowana przez Apple i otwiera się jak każda inna. Instalator dla Windows nie ma jeszcze certyfikatu do podpisywania kodu, więc przy pierwszym uruchomieniu Windows może pokazać ostrzeżenie bezpieczeństwa; kroki są poniżej. Aktualizacje w aplikacji są weryfikowane kluczem podpisującym projektu.",
@@ -250,7 +298,8 @@
       "title": "Wymagania systemowe",
       "mac": "macOS 10.15 (Catalina) lub nowszy, na komputerach Mac z Apple Silicon i Intel.",
       "win": "Windows 10 i 11 w wersji 64-bitowej. Moony wymaga środowiska Microsoft Edge WebView2 Runtime, które jest fabrycznie zainstalowane w obu systemach; instalator pobiera je, jeśli go brakuje.",
-      "linux": "{archs}: AppImage, pakiet `.deb` dla Debiana i Ubuntu oraz pakiet `.rpm` dla Fedory i openSUSE. Zbudowano w Ubuntu 24.04; starszym dystrybucjom może brakować jakiejś biblioteki systemowej."
+      "linux": "{archs}: AppImage, pakiet `.deb` dla Debiana i Ubuntu oraz pakiet `.rpm` dla Fedory i openSUSE. Zbudowano w Ubuntu 24.04; starszym dystrybucjom może brakować jakiejś biblioteki systemowej.",
+      "iphone": "iPhone z iOS 15.0 lub nowszym."
     },
     "intro": "Wybierz swój system. Po instalacji skonfiguruj Moony bez konta online.",
     "recommended": "Twój system",
@@ -280,7 +329,7 @@
       },
       "downloads": {
         "title": "Pobieranie",
-        "text": "Linki do pobrania prowadzą do wydań na GitHubie, który udostępnia pliki."
+        "text": "Linki do pobrania prowadzą do wydań na GitHubie, który udostępnia pliki. Link do aplikacji na iPhone’a prowadzi do App Store firmy Apple."
       },
       "operator": {
         "title": "Operator i kontakt",
@@ -300,11 +349,11 @@
       },
       "help": {
         "title": "Znajdź odpowiedź",
-        "text": "[Pomoc](help) obejmuje pierwsze uruchomienie, [zapomniane hasło](recovery), [kopie zapasowe i przenoszenie na inny komputer](backup) oraz [importowanie wyciągów](import)."
+        "text": "[Pomoc](help) obejmuje pierwsze uruchomienie, [zapomniane hasło](recovery), [kopie zapasowe i przenoszenie na inny komputer](backup), [import wyciągów](import) oraz [synchronizację](sync)."
       },
       "bug": {
         "title": "Zgłoś błąd",
-        "text": "Błędy są śledzone otwarcie na GitHubie: [utwórz zgłoszenie (EN)](issues). Pomiń wszystko, co osobiste; wystarczy zrzut ekranu z przykładowymi danymi."
+        "text": "Błędy są śledzone publicznie na GitHubie: [zgłoś problem (EN)](issues). Pomiń wszystko, co osobiste; wystarczy zrzut ekranu z przykładowymi danymi. Serwer synchronizacji ma [własny system zgłoszeń (EN)](syncIssues)."
       },
       "security": {
         "title": "Zgłoś problem z bezpieczeństwem",
@@ -330,7 +379,7 @@
       },
       "data": {
         "q": "Czy Moony zbiera jakieś dane o mnie?",
-        "a": "Nie: aplikacja nie ma analityki, raportów o awariach ani statystyk użycia. Jej jedyne zapytania dotyczą cen, kursów walut, logo spółek i sprawdzania aktualizacji, a pełną listę znajdziesz na stronie Prywatność."
+        "a": "Nie: aplikacja nie ma analityki, raportów o awariach ani statystyk użycia. Jej żądania dotyczą cen, kursów walut i logo spółek, sprawdzania aktualizacji na komputerze oraz, jeśli skonfigurujesz synchronizację, twojego własnego serwera synchronizacji. Wszystkie są wymienione na stronie Prywatność."
       },
       "password": {
         "q": "Co, jeśli zapomnę hasła?",
@@ -338,7 +387,15 @@
       },
       "devices": {
         "q": "Czy mogę używać Moony na telefonie lub innym komputerze?",
-        "a": "Moony działa dziś na macOS, Windows i Linux, z jednym profilem na komputer i bez synchronizacji. Dane na inny komputer przeniesiesz plikiem kopii zapasowej."
+        "a": "Tak. Moony działa na macOS, Windows, Linuksie i telefonie iPhone, a każde urządzenie działa samodzielnie. Aby mieć te same dane wszędzie, skonfiguruj synchronizację, która jest eksperymentalna, albo przenieś dane plikiem kopii zapasowej. Aplikacja na Androida będzie wkrótce."
+      },
+      "sync": {
+        "q": "Jak działa synchronizacja i kto może czytać moje dane?",
+        "a": "Synchronizacja jest opcjonalna i eksperymentalna. Twoje urządzenia szyfrują wszystko przed wysłaniem na serwer synchronizacji, który prowadzisz ty albo ktoś, komu ufasz; serwer nie ma klucza i przechowuje tylko zaszyfrowane dane. Kto go prowadzi, widzi, kiedy i ile synchronizujesz. Rób dalej kopie zapasowe."
+      },
+      "cloud": {
+        "q": "Czym jest Moony Cloud?",
+        "a": "Hostowany serwer synchronizacji prowadzony przez projekt, dla osób, które wolałyby nie prowadzić własnego. Nie jest jeszcze dostępny. Dziś synchronizacja działa z serwerem, który prowadzisz ty albo ktoś, komu ufasz."
       },
       "bank": {
         "q": "Czy łączy się z moim bankiem?",
@@ -421,7 +478,7 @@
     },
     "recovery": {
       "title": "Zapomniane hasło i klucz odzyskiwania",
-      "warning": "**Nie ma tylnych drzwi.** Moony nie ma konta ani serwera, więc nikt nie zresetuje za ciebie hasła, łącznie z autorem. Hasło i klucz odzyskiwania to dwie osobne drogi do tych samych zaszyfrowanych danych. Jeśli nie masz żadnego z nich, nic nie da się otworzyć: ani twoich wpisów, ani dołączonych zdjęć i dokumentów.",
+      "warning": "**Nie ma tylnych drzwi.** Moony nie ma konta ani serwera, który mógłby ci pomóc, więc nikt nie zresetuje za ciebie hasła, łącznie z autorem. Hasło i klucz odzyskiwania to dwie osobne drogi do tych samych zaszyfrowanych danych. Jeśli nie masz żadnego z nich, nic na tym urządzeniu nie da się otworzyć: ani twoich wpisów, ani dołączonych zdjęć i dokumentów. Jeśli korzystasz z synchronizacji, zestaw odzyskiwania to osobna droga do zsynchronizowanych danych.",
       "tableHead": [
         "Jeśli…",
         "To…"
@@ -504,7 +561,7 @@
       "make": [
         "Otwórz **Ustawienia → Dane i kopie zapasowe** i kliknij **Zrób kopię teraz**. Wybierz, gdzie zapisać plik ZIP (Moony proponuje `moony-backup-YYYY-MM-DD.zip`).",
         "Zawiera zaszyfrowane kopie twoich wpisów i załączników oraz pliki kluczy `salt`, `key.enc` i `recovery.enc` i pozostaje zaszyfrowany: otworzy go tylko hasło, które obowiązywało w chwili jego utworzenia, albo klucz odzyskiwania z tamtego czasu.",
-        "Trzymaj kopię poza tym komputerem, na dysku zewnętrznym lub we własnej chmurze. Moony niczego nie wysyła; Przegląd przypomina, gdy ostatnia kopia jest stara. Rób kopię przed aktualizacją i po dużym imporcie."
+        "Trzymaj kopię poza tym komputerem, na dysku zewnętrznym lub we własnej chmurze. Moony nie wysyła twoich kopii zapasowych; Przegląd przypomina, gdy ostatnia kopia jest stara. Rób kopię przed aktualizacją i po dużym imporcie."
       ],
       "restoreTitle": "Przywróć kopię zapasową",
       "restoreIntro": "Zacznij od **Ustawienia → Dane i kopie zapasowe → Przywróć z kopii zapasowej…**, z ekranu blokady (**Masz kopię zapasową? Przywróć z kopii zapasowej…**) albo z pierwszego kroku kreatora konfiguracji (**Przywróć z kopii zapasowej**). Potem:",
@@ -521,8 +578,25 @@
         "W pierwszym kroku kreatora wybierz **Przywróć z kopii zapasowej**, wskaż plik ZIP i potwierdź.",
         "Odblokuj hasłem z chwili wykonania kopii."
       ],
-      "moveOutro": "Moony nie synchronizuje danych między komputerami, więc stara i nowa kopia rozchodzą się, gdy tylko zaczniesz używać obu, a zmian wprowadzonych po wykonaniu kopii w niej nie ma. Gdy nowy komputer działa, usuń dane ze starego ([jak](uninstall)).",
+      "moveOutro": "Kopia zapasowa to jednorazowy zapis: stary i nowy komputer rozjeżdżają się, gdy tylko używasz obu, a zmiany wprowadzone po jej utworzeniu w niej nie ma. Aby utrzymać kilka urządzeń w zgodzie, użyj [synchronizacji](sync), która jest eksperymentalna. W przeciwnym razie, gdy nowy komputer działa, usuń dane ze starego ([jak](uninstall)).",
       "notBackup": "**Eksportuj JSON** na tej samej stronie zapisuje każdą tabelę w niezaszyfrowanym pliku JSON bez załączników. To nie jest kopia zapasowa; traktuj go jak wyciąg bankowy. **Sprawdź bazę danych** sprawdza integralność twojej bazy danych."
+    },
+    "phone": {
+      "title": "Moony na iPhonie",
+      "text": "Aplikacja na iPhone’a jest osobną aplikacją: ma własne zaszyfrowane dane i nie potrzebuje komputera. Pobierz ją z [App Store](appStore). Aby zacząć od danych z komputera, zapisz tam kopię zapasową i przywróć ją na telefonie (**Ustawienia → Kopia zapasowa i przenoszenie**) albo połącz telefon z [synchronizacją](sync).",
+      "differences": "Aplikacja na telefon nie ma integracji z AI ani własnego sprawdzania aktualizacji; aktualizacje przychodzą przez App Store."
+    },
+    "sync": {
+      "title": "Synchronizacja między urządzeniami (eksperymentalna)",
+      "intro": "Synchronizacja utrzymuje te same dane na twoich komputerach i telefonie iPhone. Jest opcjonalna, wyłączona, dopóki jej nie skonfigurujesz, i nadal eksperymentalna: zrób kopię zapasową, zanim zaczniesz, i rób je dalej.",
+      "steps": [
+        "Potrzebujesz serwera synchronizacji. Prowadź własny dzięki [serwerowi synchronizacji Moony (EN)](syncRepo) albo poproś osobę, która prowadzi go dla ciebie, o **kod połączenia**.",
+        "Na pierwszym urządzeniu otwórz **Ustawienia → Synchronizacja**, rozpocznij konfigurację, wybierz **Własny serwer** i wpisz kod połączenia.",
+        "Zapisz **zestaw odzyskiwania**, który pokaże Moony, z dala od swoich urządzeń. Jeśli stracisz wszystkie urządzenia naraz, to jedyna droga powrotu do zsynchronizowanych danych.",
+        "Aby dodać kolejne urządzenie, wybierz **Dodaj urządzenie** na tym, które już synchronizuje, i postępuj według kroków na nowym w **Ustawienia → Synchronizacja**. Urządzenie, które się dołącza, przejmuje zsynchronizowane dane; Moony najpierw zapisuje kopię zapasową tego, co ono miało."
+      ],
+      "seen": "Serwer przechowuje tylko zaszyfrowane dane i nie ma klucza. Kto go prowadzi, widzi, kiedy i ile synchronizujesz. To, co jest wysyłane i przechowywane, wymienia [strona Prywatność (EN)](privacy).",
+      "cloud": "Moony Cloud, hostowany serwer prowadzony przez projekt, nie jest jeszcze dostępny."
     },
     "updates": {
       "title": "Aktualizacje, folder danych i odinstalowanie",
@@ -548,7 +622,7 @@
       "uninstall": [
         "Odinstalowanie usuwa aplikację, ale domyślnie nie twoje dane, które zostają w folderze danych. macOS: zamknij Moony i przeciągnij go do Kosza. Windows: odinstaluj go w Ustawienia → Aplikacje. Linux: usuń plik AppImage albo usuń pakiet `.deb` lub `.rpm` menedżerem pakietów.",
         "Aby usunąć także dane, zrób to przed odinstalowaniem: **Ustawienia → Konto → Usuń dane…**, a potem wpisz `USUŃ`. To usuwa bazy danych, pliki kluczy i załączniki i nie można tego cofnąć, więc jeśli możesz ich jeszcze potrzebować, najpierw zrób kopię zapasową.",
-        "Zostają foldery `pre-restore-<time>`, zapisane przez ciebie kopie zapasowe i eksporty oraz logi; usuń je ręcznie albo usuń cały folder danych. Na serwerze nie ma niczego do usunięcia, bo Moony go nie ma."
+        "Zostają foldery `pre-restore-<time>`, zapisane przez ciebie kopie zapasowe i eksporty oraz logi; usuń je ręcznie albo usuń cały folder danych. Jeśli korzystasz z synchronizacji, zaszyfrowana kopia twoich danych jest też na serwerze synchronizacji. Usuń ją w **Ustawienia → Synchronizacja** (**Usuń zsynchronizowane dane na serwerze**), zanim usuniesz dane lokalne. To usuwa zsynchronizowane dane z serwera synchronizacji dla wszystkich urządzeń. Dane lokalne na każdym urządzeniu zostają."
       ]
     },
     "ai": {

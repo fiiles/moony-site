@@ -2,7 +2,7 @@
   "site": {
     "name": "Moony",
     "tagline": "Økonomien din, samlet på ett sted.",
-    "description": "Moony er en gratis skrivebordsapp for å holde oversikt over kontoer, investeringer og lån. Økonomidataene dine blir på datamaskinen din. For macOS, Windows og Linux."
+    "description": "Moony er en gratis app for å holde oversikt over kontoer, investeringer og lån. De økonomiske dataene dine blir værende på dine egne enheter. For macOS, Windows, Linux og iPhone."
   },
   "nav": {
     "label": "Hovedmeny",
@@ -16,7 +16,7 @@
     "language": "Språk"
   },
   "footer": {
-    "blurb": "Et klarere bilde av økonomien din. Rett på datamaskinen din.",
+    "blurb": "Et tydeligere bilde av økonomien din. På dine egne enheter.",
     "product": "Produkt",
     "download": "Last ned",
     "help": "Hjelp",
@@ -39,12 +39,13 @@
     "provenance": "Denne siden viser filen fra Moony-repoet slik den er publisert ved taggen nedenfor; bare tittelen og de relative lenkene er tilpasset. Kilden er"
   },
   "hero": {
-    "eyebrow": "Privatøkonomi for skrivebordet",
-    "lead": "Hold oversikt over kontoer, investeringer og lån. Moony lagrer økonomidataene dine rett på datamaskinen din.",
+    "eyebrow": "Personlig økonomi for datamaskinen og iPhone",
+    "lead": "Hold oversikt over kontoer, investeringer og lån. Moony oppbevarer de økonomiske dataene dine på dine egne enheter.",
     "ctaDefault": "Last ned",
     "ctaMac": "Last ned for macOS",
     "ctaWin": "Last ned for Windows",
     "ctaLinux": "Last ned for Linux",
+    "ctaIos": "Last ned fra App Store",
     "noteStrong": "Gratis og åpen kildekode",
     "noteRest": "Versjon {version}",
     "caption": "Den ekte appen, med eksempeldata",
@@ -54,7 +55,8 @@
       "local": "Dataene blir hos deg",
       "offline": "Fungerer uten nett"
     },
-    "ctaPreview": "Ta en titt inni appen"
+    "ctaPreview": "Ta en titt inni appen",
+    "ctaPhone": "Også for iPhone"
   },
   "features": {
     "overview": {
@@ -99,6 +101,21 @@
       ],
       "alt": "Lånoversikt med restgjeld, renter og et diagram over gjelden over tid"
     }
+  },
+  "phone": {
+    "title": "Moony på iPhone.",
+    "text": "iPhone-appen fungerer på egen hånd, med egne krypterte data. Sjekk nettoformuen din, importer en kontoutskrift fra delingsarket og ta bilde av en avtale, uansett hvor du er.",
+    "bullets": [
+      "Nettoformue, kontantstrøm og budsjetter",
+      "Import av kontoutskrifter fra delingsarket",
+      "Lås opp med Face ID"
+    ],
+    "cta": "Last ned fra App Store",
+    "note": "Gratis. For iPhone med iOS 15 eller nyere.",
+    "transfer": "Bruker du allerede Moony på en datamaskin? Gjenopprett en sikkerhetskopi på telefonen, eller hold begge i takt med synkronisering.",
+    "android": "Android",
+    "soon": "Kommer snart",
+    "alt": "Oversikten for en eksempelprofil i Moony på en iPhone"
   },
   "tracks": {
     "title": "Hva mer kan du følge?",
@@ -147,11 +164,11 @@
     "cards": {
       "requests": {
         "title": "Ingen sporing",
-        "text": "Ingen analyseverktøy eller bruksstatistikk. Kurser, valutakurser, selskapslogoer og oppdateringer hentes på nett. Kurs- og logotjenestene ser symbolene du følger, ikke saldoene dine."
+        "text": "Ingen analyseverktøy eller bruksstatistikk. Kurser, valutakurser, selskapslogoer og oppdateringer sjekkes på nett, og synkronisering, hvis du setter den opp, snakker med din egen synkroniseringsserver. Kurs- og logotjenestene ser symbolene du følger, ikke saldoene dine."
       },
       "disk": {
         "title": "Kryptert data",
-        "text": "Poster og vedlegg er kryptert på datamaskinen din. Eksporterte filer og lagrede kopier er ikke kryptert, så oppbevar dem et trygt sted."
+        "text": "Poster og vedlegg er kryptert på enheten din. Eksporterte filer og lagrede kopier er ikke kryptert, så oppbevar dem et trygt sted."
       },
       "keys": {
         "title": "Sikkerhetskopier du styrer selv",
@@ -159,6 +176,24 @@
       }
     },
     "link": "Les om personvernet i detalj →"
+  },
+  "sync": {
+    "title": "Hold enhetene dine i takt.",
+    "badge": "Eksperimentell",
+    "text": "Synkronisering holder de samme dataene på datamaskinene og iPhonen din. Den er valgfri og forblir av til du setter den opp. Dataene dine krypteres på enheten din før de sendes, og serveren som sender dem videre, har ingen nøkkel til å lese dem.",
+    "own": {
+      "title": "Din egen server",
+      "text": "Synkroniseringen går via en liten server som du, eller noen du stoler på, driver: hjemme, på en NAS eller på en leid maskin. Den er åpen kildekode.",
+      "link": "Moonys synkroniseringsserver på GitHub →"
+    },
+    "cloud": {
+      "title": "Moony Cloud",
+      "badge": "Kommer snart",
+      "text": "En vertsbasert server drevet av prosjektet, for dem som helst ikke vil drive sin egen."
+    },
+    "note": "Synkronisering er ny og eksperimentell. Fortsett å ta sikkerhetskopier: synkroniseringen sender alle endringer, også slettinger, videre til de andre enhetene dine.",
+    "seen": "Serveren lagrer bare krypterte data. Den som driver den, kan se når og hvor mye du synkroniserer, men ikke hva.",
+    "link": "Slik setter du den opp →"
   },
   "assistant": {
     "title": "Koble en AI-assistent til økonomien din",
@@ -201,17 +236,30 @@
       "archsArm": "x86_64 og ARM64"
     },
     "all": "Velg et annet system →",
-    "intro": "Gratis for macOS, Windows og Linux. Ingen registrering eller prøveperiode.",
+    "intro": "Gratis for macOS, Windows, Linux og iPhone. Ingen registrering og ingen prøveperiode.",
     "notice": "Windows kan vise en sikkerhetsadvarsel ved første start fordi installasjonsprogrammet ennå ikke er signert. Les installasjonsmerknadene før du laster ned."
   },
   "downloadPage": {
     "metaTitle": "Last ned Moony {version} for macOS, Windows og Linux",
-    "description": "Installasjonsprogrammer for Moony {version} til macOS, Windows og Linux, trinnene ved første start for hvert system, systemkrav og hvordan oppdateringer fungerer.",
+    "description": "Installasjonsfiler for Moony {version} til macOS, Windows og Linux, hvor du får iPhone-appen, trinnene ved første oppstart for hvert system, systemkrav og hvordan oppdateringer fungerer.",
     "title": "Last ned Moony {version}",
     "released": "Utgitt {date}",
     "allReleases": "Alle utgivelser →",
     "filesTitle": "Installasjonsfiler etter operativsystem",
     "macHint": "Apple Silicon betyr en M1-brikke eller nyere. Usikker på hvilken Mac du har? Apple-menyen → **Om denne Macen**: linjen Brikke eller Prosessor viser Apple M… eller Intel.",
+    "phone": {
+      "title": "iPhone og Android",
+      "iphone": {
+        "title": "iPhone",
+        "text": "Gratis i App Store. Krever iOS 15 eller nyere.",
+        "cta": "Last ned fra App Store"
+      },
+      "android": {
+        "title": "Android",
+        "text": "Kommer snart."
+      },
+      "sync": "Synkronisering mellom enhetene dine er eksperimentell og går via en server som du, eller noen du stoler på, driver. Serveren og oppsettsveiledningen finnes på [GitHub (EN)](syncRepo)."
+    },
     "install": {
       "title": "Installer og start første gang",
       "unsigned": "Mac-appen er signert og notarisert av Apple og åpnes som alle andre apper. Installasjonsprogrammet for Windows har ennå ikke noe kodesigneringssertifikat, så Windows kan vise en sikkerhetsadvarsel ved første start; trinnene står nedenfor. Oppdateringer i appen verifiseres med prosjektets signeringsnøkkel.",
@@ -250,7 +298,8 @@
       "title": "Systemkrav",
       "mac": "macOS 10.15 (Catalina) eller nyere, på Mac med Apple Silicon og Intel.",
       "win": "Windows 10 og 11, 64-bit. Moony trenger kjøretidsmiljøet Microsoft Edge WebView2, som er forhåndsinstallert på begge; installasjonsprogrammet henter det hvis det mangler.",
-      "linux": "{archs}: en AppImage, en `.deb` for Debian og Ubuntu og en `.rpm` for Fedora og openSUSE. Bygget på Ubuntu 24.04; eldre distribusjoner kan mangle et systembibliotek."
+      "linux": "{archs}: en AppImage, en `.deb` for Debian og Ubuntu og en `.rpm` for Fedora og openSUSE. Bygget på Ubuntu 24.04; eldre distribusjoner kan mangle et systembibliotek.",
+      "iphone": "iPhone med iOS 15.0 eller nyere."
     },
     "intro": "Velg systemet ditt. Sett opp Moony etter installasjonen, uten en nettkonto.",
     "recommended": "Ditt system",
@@ -280,7 +329,7 @@
       },
       "downloads": {
         "title": "Nedlastinger",
-        "text": "Nedlastingslenkene fører til utgivelser på GitHub, som leverer filene."
+        "text": "Nedlastingslenkene fører til utgivelser på GitHub, som leverer filene. Lenken til iPhone-appen fører til Apples App Store."
       },
       "operator": {
         "title": "Ansvarlig og kontakt",
@@ -300,11 +349,11 @@
       },
       "help": {
         "title": "Finn et svar",
-        "text": "[Hjelp](help) dekker første oppstart, [et glemt passord](recovery), [sikkerhetskopier og flytting til en annen datamaskin](backup) og [import av kontoutskrifter](import)."
+        "text": "[Hjelp](help) dekker første oppstart, [et glemt passord](recovery), [sikkerhetskopier og flytting til en annen datamaskin](backup), [import av kontoutskrifter](import) og [synkronisering](sync)."
       },
       "bug": {
         "title": "Meld fra om en feil",
-        "text": "Feil følges opp åpent på GitHub: [opprett en sak (EN)](issues). Utelat alt personlig; et skjermbilde med eksempeldata er nok."
+        "text": "Feil følges åpent opp på GitHub: [opprett en sak (EN)](issues). La være å ta med noe personlig; et skjermbilde med eksempeldata er nok. Synkroniseringsserveren har [sin egen sakslogg (EN)](syncIssues)."
       },
       "security": {
         "title": "Meld fra om et sikkerhetsproblem",
@@ -330,7 +379,7 @@
       },
       "data": {
         "q": "Samler Moony inn data om meg?",
-        "a": "Nei: appen har ingen analyseverktøy, feilrapporter eller bruksstatistikk. De eneste forespørslene den sender, gjelder kurser, valutakurser, selskapslogoer og oppdateringssjekken, og de er oppført i sin helhet på personvernsiden."
+        "a": "Nei: appen har ingen analyse, ingen feilrapporter og ingen bruksstatistikk. Forespørslene den sender, gjelder kurser, valutakurser og selskapslogoer, oppdateringssjekken på en datamaskin og, hvis du setter opp synkronisering, din egen synkroniseringsserver. Alt er oppført på personvernsiden."
       },
       "password": {
         "q": "Hva om jeg glemmer passordet?",
@@ -338,7 +387,15 @@
       },
       "devices": {
         "q": "Kan jeg bruke Moony på telefonen eller en annen datamaskin?",
-        "a": "Moony kjører på macOS, Windows og Linux i dag, med én profil per datamaskin og uten synkronisering. Du kan flytte dataene til en annen datamaskin med en sikkerhetskopifil."
+        "a": "Ja. Moony kjører på macOS, Windows, Linux og iPhone, og hver enhet fungerer på egen hånd. Vil du ha de samme dataene overalt, kan du sette opp synkronisering, som er eksperimentell, eller flytte dataene med en sikkerhetskopifil. En Android-app kommer snart."
+      },
+      "sync": {
+        "q": "Hvordan fungerer synkronisering, og hvem kan lese dataene mine?",
+        "a": "Synkronisering er valgfri og eksperimentell. Enhetene dine krypterer alt før det sendes til en synkroniseringsserver som du eller noen du stoler på driver; serveren har ingen nøkkel og lagrer bare krypterte data. Den som driver den, kan se når og hvor mye du synkroniserer. Fortsett å ta sikkerhetskopier."
+      },
+      "cloud": {
+        "q": "Hva er Moony Cloud?",
+        "a": "En vertsbasert synkroniseringsserver drevet av prosjektet, for dem som helst ikke vil drive sin egen. Den er ikke tilgjengelig ennå. I dag fungerer synkronisering med en server som du, eller noen du stoler på, driver."
       },
       "bank": {
         "q": "Kobler den seg til banken min?",
@@ -421,7 +478,7 @@
     },
     "recovery": {
       "title": "Glemt passord og gjenopprettingsnøkkelen",
-      "warning": "**Det finnes ingen bakdør.** Moony har ingen konto og ingen server, så ingen kan tilbakestille passordet ditt for deg, heller ikke utvikleren. Passordet og gjenopprettingsnøkkelen er to adskilte veier inn til de samme krypterte dataene. Hvis du ikke har noen av dem, kan ingenting åpnes: verken postene dine eller de vedlagte bildene og dokumentene.",
+      "warning": "**Det finnes ingen bakdør.** Moony har ingen konto, og ingen andre har en nøkkel til dataene dine, så ingen kan tilbakestille passordet ditt for deg, heller ikke utvikleren. Passordet og gjenopprettingsnøkkelen er to adskilte veier inn til de samme krypterte dataene. Hvis du ikke har noen av dem, kan ingenting på denne enheten åpnes: verken postene dine eller de vedlagte bildene og dokumentene. Hvis du bruker synkronisering, er gjenopprettingssettet en egen vei inn til de synkroniserte dataene.",
       "tableHead": [
         "Hvis du …",
         "Da …"
@@ -504,7 +561,7 @@
       "make": [
         "Åpne **Innstillinger → Data og sikkerhetskopier** og klikk **Ta sikkerhetskopi nå**. Velg hvor ZIP-filen skal lagres (Moony foreslår `moony-backup-YYYY-MM-DD.zip`).",
         "Den inneholder krypterte kopier av postene og vedleggene dine pluss nøkkelfilene `salt`, `key.enc` og `recovery.enc`, og forblir kryptert: bare passordet som gjaldt da den ble laget, eller gjenopprettingsnøkkelen fra den tiden, åpner den.",
-        "Oppbevar en kopi borte fra denne datamaskinen, på en ekstern disk eller i din egen skylagring. Moony laster aldri opp noe; Oversikten minner deg på det når siste sikkerhetskopi er gammel. Ta sikkerhetskopi før en oppdatering og etter en stor import."
+        "Oppbevar en kopi borte fra denne datamaskinen, på en ekstern disk eller i din egen skylagring. Moony laster ikke opp sikkerhetskopiene dine; Oversikten minner deg på det når siste sikkerhetskopi er gammel. Ta sikkerhetskopi før en oppdatering og etter en stor import."
       ],
       "restoreTitle": "Gjenopprett en sikkerhetskopi",
       "restoreIntro": "Begynn i **Innstillinger → Data og sikkerhetskopier → Gjenopprett fra sikkerhetskopi…**, på låseskjermen (**Har du en sikkerhetskopi? Gjenopprett fra sikkerhetskopi…**) eller i første trinn av oppsettsveiviseren (**Gjenopprett fra en sikkerhetskopi**). Deretter:",
@@ -521,8 +578,25 @@
         "Velg **Gjenopprett fra en sikkerhetskopi** i første trinn av veiviseren, velg ZIP-filen og bekreft.",
         "Lås opp med passordet fra tidspunktet for sikkerhetskopien."
       ],
-      "moveOutro": "Moony synkroniserer ikke mellom datamaskiner, så den gamle og den nye kopien glir fra hverandre så snart du bruker begge, og endringer gjort etter sikkerhetskopien er ikke med i den. Når den nye datamaskinen fungerer, fjerner du dataene fra den gamle ([slik](uninstall)).",
+      "moveOutro": "En sikkerhetskopi er en engangskopi: den gamle og den nye datamaskinen glir fra hverandre så snart du bruker begge, og endringer gjort etter sikkerhetskopien er ikke med i den. For å holde flere enheter i takt kan du bruke [synkronisering](sync), som er eksperimentell. Ellers, når den nye datamaskinen fungerer, fjerner du dataene fra den gamle ([slik](uninstall)).",
       "notBackup": "**Eksporter JSON** på samme side skriver hver tabell til en ukryptert JSON-fil uten vedlegg. Det er ikke en sikkerhetskopi; behandle den som en kontoutskrift. **Kontroller databasen** sjekker integriteten til databasen din."
+    },
+    "phone": {
+      "title": "Moony på iPhone",
+      "text": "iPhone-appen er en app for seg: den har sine egne krypterte data og trenger ingen datamaskin. Du får den i [App Store](appStore). For å starte med dataene fra datamaskinen din lagrer du en sikkerhetskopi der og gjenoppretter den på telefonen (**Innstillinger → Sikkerhetskopi og overføring**), eller du kobler telefonen til [synkronisering](sync).",
+      "differences": "Telefonappen har ingen AI-integrasjon og ingen egen oppdateringssjekk; oppdateringer kommer via App Store."
+    },
+    "sync": {
+      "title": "Synkronisering mellom enheter (eksperimentell)",
+      "intro": "Synkronisering holder de samme dataene på datamaskinene og iPhonen din. Den er valgfri, av til du setter den opp, og fortsatt eksperimentell: ta en sikkerhetskopi før du begynner, og fortsett å ta dem.",
+      "steps": [
+        "Du trenger en synkroniseringsserver. Driv din egen med [Moonys synkroniseringsserver (EN)](syncRepo), eller spør den som driver en for deg, om en **tilkoblingskode**.",
+        "På den første enheten åpner du **Innstillinger → Synkronisering**, starter oppsettet, velger **Egen server** og skriver inn tilkoblingskoden.",
+        "Lagre **gjenopprettingssettet** som Moony viser deg, atskilt fra enhetene dine. Hvis du mister alle enhetene samtidig, er det den eneste veien tilbake til de synkroniserte dataene dine.",
+        "For å legge til en enhet til velger du **Legg til en enhet** på en som allerede synkroniserer, og følger trinnene på den nye under **Innstillinger → Synkronisering**. En enhet som kobles til, overtar de synkroniserte dataene; Moony lagrer først en sikkerhetskopi av det den hadde."
+      ],
+      "seen": "Serveren lagrer bare krypterte data og har ingen nøkkel. Den som driver den, kan se når og hvor mye du synkroniserer. Hva som sendes og lagres, står på [personvernsiden (EN)](privacy).",
+      "cloud": "Moony Cloud, en vertsbasert server drevet av prosjektet, er ikke tilgjengelig ennå."
     },
     "updates": {
       "title": "Oppdateringer, datamappe og avinstallering",
@@ -548,7 +622,7 @@
       "uninstall": [
         "Avinstallering fjerner appen, men som standard ikke dataene dine, som blir liggende i datamappen. macOS: avslutt Moony og dra appen til papirkurven. Windows: avinstaller den i Innstillinger → Apper. Linux: slett AppImage-filen eller fjern pakken `.deb` eller `.rpm` med pakkebehandleren.",
         "For å fjerne dataene også må du gjøre det før du avinstallerer: **Innstillinger → Konto → Slett data…**, og skriv deretter `SLETT`. Dette fjerner databasene, nøkkelfilene og vedleggene og kan ikke angres, så ta en sikkerhetskopi først hvis du kan ønske dem tilbake.",
-        "Mapper som `pre-restore-<time>`, sikkerhetskopier og eksporter du har lagret, og loggene blir liggende; slett dem for hånd, eller slett hele datamappen. Det er ingenting å slette på en server, for Moony har ingen."
+        "Mapper som `pre-restore-<time>`, sikkerhetskopier og eksporter du har lagret, og loggene blir liggende; slett dem for hånd, eller slett hele datamappen. Hvis du bruker synkronisering, ligger det også en kryptert kopi av dataene dine på synkroniseringsserveren. Slett den under **Innstillinger → Synkronisering** (**Slett synkroniserte data på serveren**) før du sletter de lokale dataene. Dette sletter de synkroniserte dataene på synkroniseringsserveren for alle enheter. De lokale dataene på hver enhet blir værende."
       ]
     },
     "ai": {

@@ -1,0 +1,31 @@
+---
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
+import Shot from './Shot.astro';
+import { appStoreUrl } from '../../config';
+import { t, tList, type Locale } from '../../i18n';
+
+interface Props { locale: Locale }
+
+const { locale } = Astro.props;
+// The picture is optional: without public/screenshots/phone-overview.png the section is text only.
+const hasPicture = existsSync(join(process.cwd(), 'public', 'screenshots', 'phone-overview.png'));
+---
+<section class:list={['block', 'phone', { 'phone--picture': hasPicture }]} id="iphone">
+  <div class="wrap phone__grid">
+    <div class="phone__copy">
+      <h2 class="title">{t(locale, 'phone.title')}</h2>
+      <p class="phone__text">{t(locale, 'phone.text')}</p>
+      <ul class="ticks">
+        {tList(locale, 'phone.bullets').map(b => <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>{b}</li>)}
+      </ul>
+      <div class="cta">
+        <a class="btn btn--primary btn--lg" href={appStoreUrl}><svg class="ic" aria-hidden="true"><use href="#i-download"/></svg><span>{t(locale, 'phone.cta')}</span></a>
+      </div>
+      <p class="cta-note">{t(locale, 'phone.note')}</p>
+      <p class="phone__transfer">{t(locale, 'phone.transfer')}</p>
+      <p class="phone__android"><b>{t(locale, 'phone.android')}</b> <span class="badge">{t(locale, 'phone.soon')}</span></p>
+    </div>
+    {hasPicture && <figure class="shot phone__media"><Shot locale={locale} name="phone-overview" alt={t(locale, 'phone.alt')} /></figure>}
+  </div>
+</section>

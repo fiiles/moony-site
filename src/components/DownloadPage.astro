@@ -3,6 +3,7 @@ import LanguageLink from './LanguageLink.astro';
 import { enOnlyLink, href, t, tf, tList, type Locale } from '../i18n';
 import { allReleasesUrl, changelogLink, downloadCards, formatDate, formatSize, linuxArchsKey, linuxArm, release } from '../lib/release';
 import { rich } from '../lib/rich';
+import { appStoreUrl, syncRepoUrl } from '../config';
 
 interface Props { locale: Locale }
 
@@ -13,7 +14,7 @@ const version = release.version;
 const archs = { archs: t(locale, linuxArchsKey) };
 const changelog = changelogLink(locale);
 // The repository documents are published in English only; pages in other languages link to the English Privacy page.
-const links = { privacy: enOnlyLink(locale, 'privacy/') };
+const links = { privacy: enOnlyLink(locale, 'privacy/'), syncRepo: { href: syncRepoUrl, hreflang: locale === 'en' ? undefined : 'en' } };
 // The Help is translated, so its links stay in the visitor's language.
 const helpLinks = {
   help: { href: href(locale, 'help/') },
@@ -52,6 +53,26 @@ const linuxArmNote = linuxArm && tf(locale, 'downloadPage.install.linux.armFiles
         </div>
       ))}
     </div>
+  </div>
+</section>
+
+<section class="block" id="phone">
+  <div class="wrap">
+    <div class="block-head">
+      <h2 class="title">{p('phone.title')}</h2>
+    </div>
+    <div class="dl-grid dl-grid--two">
+      <div class="card dl">
+        <div class="dl__os"><h3>{p('phone.iphone.title')}</h3></div>
+        <p class="dl__warning">{p('phone.iphone.text')}</p>
+        <div class="dl__files"><a href={appStoreUrl}><span>{p('phone.iphone.cta')}</span></a></div>
+      </div>
+      <div class="card dl">
+        <div class="dl__os"><h3>{p('phone.android.title')}</h3></div>
+        <p class="dl__warning">{p('phone.android.text')}</p>
+      </div>
+    </div>
+    <p class="phone-sync" set:html={rich(p('phone.sync'), links)} />
   </div>
 </section>
 
@@ -117,13 +138,17 @@ const linuxArmNote = linuxArm && tf(locale, 'downloadPage.install.linux.armFiles
     <div class="block-head">
       <h2 class="title">{p('requirements.title')}</h2>
     </div>
-    <div class="dl-grid">
+    <div class="dl-grid dl-grid--two">
       {downloadCards.map((c) => (
         <div class="card card--flat req">
           <h3>{c.os}</h3>
           <p set:html={rich(tf(locale, `downloadPage.requirements.${c.id}`, archs))} />
         </div>
       ))}
+      <div class="card card--flat req">
+        <h3>iPhone</h3>
+        <p>{p('requirements.iphone')}</p>
+      </div>
     </div>
   </div>
 </section>

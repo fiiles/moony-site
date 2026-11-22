@@ -76,14 +76,15 @@ test('cs and pl keep one-letter words tied to the next word with a no-break spac
   const letters = { cs: 'ksvzouaiKSVZOUAI', pl: 'aiouwzAIOUWZ' };
   for (const [code, set] of Object.entries(letters)) {
     if (!codes.includes(code)) continue;
-    const orphan = new RegExp(`(?<![\\p{L}\\p{N}])[${set}] \\S`, 'u');
+    // A letter after an apostrophe is an ending of the word before it (Polish „iPhone’a”), not a one-letter word.
+    const orphan = new RegExp(`(?<![\\p{L}\\p{N}’'])[${set}] \\S`, 'u');
     const offending = flatten(load(code)).filter(([, v]) => orphan.test(v)).map(([k]) => k);
     assert.deepEqual(offending, [], `${code} strings with a plain space after a one-letter word (use U+00A0 so the line never ends on it): ${offending.join(', ')}`);
   }
 });
 
 test('links to English-only pages are marked (EN) in every non-English dictionary, and nothing else is', () => {
-  const englishOnly = new Set(['privacy', 'privacyData', 'security', 'issues', 'contributing', 'discussions']);
+  const englishOnly = new Set(['privacy', 'privacyData', 'security', 'issues', 'contributing', 'discussions', 'syncRepo', 'syncIssues']);
   const links = (v) => [...String(v).matchAll(/\[([^\]]*)\]\(([^)]*)\)/g)].map((m) => ({ label: m[1], target: m[2] }));
   const problems = [];
   for (const code of others) {

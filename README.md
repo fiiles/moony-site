@@ -12,12 +12,26 @@ The `.npmrc` in this repository pins the npm registry to https://registry.npmjs.
 npm ci && npm run build
 ```
 
-The output lands in `dist/`. `npm run build` also runs the token check before the build and `scripts/check-dist.mjs` after it. The checks fail the build when a page would break the site's promises: a request to another host, an inline script or style (the Content-Security-Policy allows none), a missing canonical or hreflang link, a broken internal link or asset, an exclamation mark in an h1 to h3, an over-budget group of files (English root HTML over 288 KB, the HTML of one locale folder over 128 KB, or shared CSS, JS and fonts over 192 KB; screenshots and social images excluded), a locale without its five pages, or a weakened `_headers` file. It also writes the right `Sitemap:` line into `dist/robots.txt`.
+The output lands in `dist/`. `npm run build` also runs the token check before the build and `scripts/check-dist.mjs` after it. The checks fail the build when a page would break the site's promises: a request to another host, an inline script or style (the Content-Security-Policy allows none), a missing canonical or hreflang link, a broken internal link or asset, an exclamation mark in an h1 to h3, an over-budget group of files (English root HTML over 320 KB, the HTML of one locale folder over 160 KB, or shared CSS, JS and fonts over 192 KB; screenshots and social images excluded), a locale without its six pages, the App Store placeholder on a page (see below), or a weakened `_headers` file. It also writes the right `Sitemap:` line into `dist/robots.txt`.
+
+### Before this branch is published
+
+The `mobile-sync` branch announces the iPhone app and device sync, so the plain build refuses to pass until the steps below are done (the `release-links` check). `npm run build:prerelease` (sets `MOONY_PRERELEASE=1`) lets the placeholder through for previews only. Before publishing, in this order:
+
+1. The desktop release that ships sync is published on GitHub (the site takes its version and download links from it).
+2. The iPhone app is live in the App Store. Put its address into `appStoreUrl` in `src/config.ts`, in the form `https://apps.apple.com/app/<name>/id<digits>`. The check fails on any `apps.apple.com` link that does not look like that.
+3. `https://github.com/fiiles/moony-sync` is public.
+4. Run `npm run content:sync` against that release. The Privacy, Security and Changelog pages are copied from the app repository; the guard fails while the Privacy page still says "no sync".
+5. Phone screenshot: add `public/screenshots/phone-overview.png` (sample data only, English interface, portrait), run `npm run shots:optimize` (it writes the 720 px copy and the WebP files), and check the iPhone section on the landing page.
+6. Check the menu names quoted in the Help against the released app, in English and in Czech: "Settings → Sync", "Own server", "Add a device", "Delete synced data on the server", "Settings → Backup and transfer".
+7. `env -u MOONY_PRERELEASE npm test && env -u MOONY_PRERELEASE npm run build` must pass (the plain build, with the variable unset).
+8. Cloudflare: the build command stays `npm run build`. A preview deployment of this branch fails by design until the steps above are done.
 
 ## Scripts
 
 - `npm run tokens:sync` - copy the app's design tokens into the site (`npm run tokens:check` fails on drift)
 - `npm run content:sync` - fetch the app's privacy, security and changelog text and the latest release data as snapshots
+- `npm run build:prerelease` - the build with the App Store placeholder allowed
 - `npm test` - run the script tests (`node --test "scripts/*.test.mjs"`), among them the proof that every `check-dist` check fires on a bad page
 
 ## Environment variables
@@ -40,7 +54,7 @@ The output lands in `dist/`. `npm run build` also runs the token check before th
 
 The landing page uses four screenshots: dashboard, account detail, investment analysis and loans. Each has same-origin WebP sources with PNG fallback; the dashboard also has a 740 × 520 close-up for screens up to 600 px wide. Recheck the crop in `scripts/optimize-shots.mjs` if the app layout changes. A short AI integration section on the home page shows example questions and explains the optional data sharing. Full setup instructions live at `/ai-integration/` and `/<code>/ai-integration/`, linked from the footer.
 
-The Help lives at `/help/` and `/<code>/help/`, linked from the footer and the download page. It is one page per language with six anchored sections (first start, forgotten password, importing statements, backup and a new computer, updates and uninstalling, AI assistant), built by `src/components/HelpPage.astro` from the `help.*` strings of the dictionaries. It is one page rather than six because every page costs about 8 KB of layout against the size budget. Every menu name in it comes from the app's own interface strings for that language (each dictionary uses the app's translation); recheck them when the app renames a setting.
+The Help lives at `/help/` and `/<code>/help/`, linked from the footer and the download page. It is one page per language with nine anchored sections (first start, forgotten password, importing statements, backup and a new computer, iPhone, sync, updates and uninstalling, AI assistant, more help), built by `src/components/HelpPage.astro` from the `help.*` strings of the dictionaries. It is one page rather than six because every page costs about 8 KB of layout against the size budget. Every menu name in it comes from the app's own interface strings for that language (each dictionary uses the app's translation); recheck them when the app renames a setting.
 
 ## Adding a language
 
@@ -58,7 +72,7 @@ The registry `src/locales.json` lists the ten languages (`en, cs, de, es, it, nb
    A language whose script the Inter font files do not cover (as Japanese and Chinese) also needs its system fonts in the font stack in `public/styles/site.css`.
 3. Links to pages that exist only in English (Privacy, Security, Changelog, the GitHub pages) end their label with `(EN)` in every non-English dictionary, and no other link does. The parity test checks this.
 4. Run `npm test` and `npm run build`. The tests check that the dictionary has the same keys, placeholders, link targets and list lengths as `en.json`, no empty strings and no exclamation marks, and that Czech and Polish keep one-letter words tied to the next word with a no-break space. The build fails when a registered language has no dictionary, lacks one of its six pages, or has a wrong `lang`, canonical or hreflang.
-5. Mind the size budgets, which `scripts/check-dist.mjs` enforces and prints: English HTML 288 KB, each other language's HTML 128 KB (per folder), and shared CSS, JS and fonts 192 KB. Do not raise a budget to fit a language; shorten the text or look at what makes the pages large (scripts written in CJK characters take three bytes each in UTF-8).
+5. Mind the size budgets, which `scripts/check-dist.mjs` enforces and prints: English HTML 320 KB, each other language's HTML 160 KB (per folder), and shared CSS, JS and fonts 192 KB. Do not raise a budget to fit a language; shorten the text or look at what makes the pages large (scripts written in CJK characters take three bytes each in UTF-8).
 
 Fonts: Inter stays first; the fallbacks in `public/styles/site.css` carry Japanese and Simplified Chinese from the system (for `zh-Hans` the Chinese fonts come before the Japanese ones). Do not add font files for a new script without checking the shared budget.
 
