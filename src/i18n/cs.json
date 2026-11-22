@@ -2,7 +2,7 @@
   "site": {
     "name": "Moony",
     "tagline": "Vaše finance na jednom místě.",
-    "description": "Moony je bezplatná aplikace pro přehled o účtech, investicích a půjčkách. Vaše finanční data zůstávají na vašich zařízeních. Pro macOS, Windows, Linux a iPhone."
+    "description": "Moony je bezplatná aplikace pro přehled o účtech, investicích a půjčkách. Vaše finanční data zůstávají ve vašem počítači. Pro macOS, Windows a Linux."
   },
   "nav": {
     "label": "Hlavní",
@@ -39,7 +39,7 @@
     "provenance": "Tato stránka zobrazuje soubor z repozitáře Moony tak, jak byl vydán v uvedeném tagu; upraven je jen nadpis a relativní odkazy. Zdroj:"
   },
   "hero": {
-    "eyebrow": "Osobní finance pro váš počítač a iPhone",
+    "eyebrow": "Osobní finance pro váš počítač",
     "lead": "Mějte přehled o účtech, investicích i půjčkách. Moony ukládá vaše finanční data na vašich zařízeních.",
     "ctaDefault": "Stáhnout",
     "ctaMac": "Stáhnout pro macOS",
@@ -180,7 +180,7 @@
   "sync": {
     "title": "Mějte svá zařízení ve shodě.",
     "badge": "Experimentální",
-    "text": "Synchronizace udržuje stejná data v počítačích i v iPhonu. Je volitelná a zůstává vypnutá, dokud ji nenastavíte. Data se šifrují na vašem zařízení dřív, než odejdou, a server, který je předává dál, nemá klíč, jímž by je přečetl.",
+    "text": "Synchronizace udržuje stejná data ve vašich počítačích. Je volitelná a zůstává vypnutá, dokud ji nenastavíte. Data se šifrují na vašem zařízení dřív, než odejdou, a server, který je předává dál, nemá klíč, jímž by je přečetl.",
     "own": {
       "title": "Váš vlastní server",
       "text": "Synchronizace běží přes malý server, který provozujete vy nebo někdo, komu důvěřujete: doma, na NAS nebo na pronajatém stroji. Je open source.",
@@ -236,12 +236,12 @@
       "archsArm": "x86_64 a ARM64"
     },
     "all": "Vybrat jiný systém →",
-    "intro": "Zdarma pro macOS, Windows, Linux a iPhone. Bez registrace a zkušební doby.",
+    "intro": "Pro macOS, Windows a Linux. Bez registrace a bez zkušební doby.",
     "notice": "Windows může při prvním spuštění zobrazit bezpečnostní upozornění, protože instalátor zatím není podepsaný. Před stažením si přečtěte postup instalace."
   },
   "downloadPage": {
     "metaTitle": "Stáhnout Moony {version} pro macOS, Windows a Linux",
-    "description": "Instalátory Moony {version} pro macOS, Windows a Linux, kde získat aplikaci pro iPhone, postup prvního spuštění pro každý systém, systémové požadavky a způsob aktualizací.",
+    "description": "Instalátory Moony {version} pro macOS, Windows a Linux, postup prvního spuštění pro každý systém, systémové požadavky a způsob aktualizací.",
     "title": "Stáhnout Moony {version}",
     "released": "Vydáno {date}",
     "allReleases": "Všechna vydání →",
@@ -329,7 +329,7 @@
       },
       "downloads": {
         "title": "Stahování",
-        "text": "Odkazy ke stažení vedou na vydání na GitHubu, který soubory poskytuje. Odkaz na aplikaci pro iPhone vede do App Store společnosti Apple."
+        "text": "Odkazy ke stažení vedou na vydání na GitHubu, který soubory poskytuje."
       },
       "operator": {
         "title": "Provozovatel a kontakt",
@@ -387,7 +387,7 @@
       },
       "devices": {
         "q": "Funguje Moony i na telefonu nebo více počítačích?",
-        "a": "Ano. Moony běží na macOS, Windows, Linuxu a iPhonu a každé zařízení funguje samostatně. Chcete-li mít všude stejná data, nastavte synchronizaci, která je experimentální, nebo data přeneste záložním souborem. Aplikace pro Android se připravuje."
+        "a": "Ano. Moony běží na macOS, Windows a Linuxu a každý počítač funguje samostatně. Chcete-li mít stejná data na více počítačích, nastavte synchronizaci, která je experimentální, nebo data přeneste záložním souborem. Aplikace pro iPhone a Android se připravují."
       },
       "sync": {
         "q": "Jak funguje synchronizace a kdo může číst moje data?",
@@ -588,7 +588,7 @@
     },
     "sync": {
       "title": "Synchronizace mezi zařízeními (experimentální)",
-      "intro": "Synchronizace udržuje stejná data v počítačích i v iPhonu. Je volitelná, zůstává vypnutá, dokud ji nenastavíte, a stále je experimentální: před zahájením vytvořte zálohu a zálohujte dál.",
+      "intro": "Synchronizace udržuje stejná data ve vašich počítačích. Je volitelná, zůstává vypnutá, dokud ji nenastavíte, a stále je experimentální: před zahájením vytvořte zálohu a zálohujte dál.",
       "steps": [
         "Potřebujete synchronizační server. Provozujte vlastní pomocí [synchronizačního serveru Moony (EN)](syncRepo), nebo požádejte toho, kdo ho provozuje za vás, o **připojovací kód**.",
         "Na prvním zařízení otevřete **Nastavení → Synchronizace**, spusťte nastavení, zvolte **Vlastní server** a zadejte připojovací kód.",

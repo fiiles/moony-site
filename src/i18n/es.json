@@ -2,7 +2,7 @@
   "site": {
     "name": "Moony",
     "tagline": "Tus finanzas, todas juntas.",
-    "description": "Moony es una app gratuita para llevar el control de tus cuentas, inversiones y préstamos. Tus datos financieros se quedan en tus propios dispositivos. Para macOS, Windows, Linux y iPhone."
+    "description": "Moony es una aplicación de escritorio gratuita para llevar el control de tus cuentas, inversiones y préstamos. Tus datos financieros se quedan en tu ordenador. Para macOS, Windows y Linux."
   },
   "nav": {
     "label": "Principal",
@@ -39,7 +39,7 @@
     "provenance": "Esta página muestra el archivo del repositorio de Moony tal como se publicó en la etiqueta que figura abajo; solo se adaptan el título y los enlaces relativos. La fuente es"
   },
   "hero": {
-    "eyebrow": "Finanzas personales para tu ordenador y tu iPhone",
+    "eyebrow": "Finanzas personales para tu escritorio",
     "lead": "Lleva el control de tus cuentas, inversiones y préstamos. Moony guarda tus datos financieros en tus propios dispositivos.",
     "ctaDefault": "Descargar",
     "ctaMac": "Descargar para macOS",
@@ -180,7 +180,7 @@
   "sync": {
     "title": "Mantén tus dispositivos al día.",
     "badge": "Experimental",
-    "text": "La sincronización mantiene los mismos datos en tus ordenadores y en tu iPhone. Es opcional y sigue desactivada hasta que la configures. Tus datos se cifran en tu dispositivo antes de salir, y el servidor que los transmite no tiene ninguna clave para leerlos.",
+    "text": "La sincronización mantiene los mismos datos en tus ordenadores. Es opcional y sigue desactivada hasta que la configures. Tus datos se cifran en tu dispositivo antes de salir, y el servidor que los transmite no tiene ninguna clave para leerlos.",
     "own": {
       "title": "Tu propio servidor",
       "text": "La sincronización funciona a través de un pequeño servidor que gestionas tú o alguien de confianza: en casa, en un NAS o en una máquina alquilada. Es de código abierto.",
@@ -236,12 +236,12 @@
       "archsArm": "x86_64 y ARM64"
     },
     "all": "Elegir otro sistema →",
-    "intro": "Gratis para macOS, Windows, Linux y iPhone. Sin registro ni periodo de prueba.",
+    "intro": "Gratis para macOS, Windows y Linux. Sin registro ni periodo de prueba.",
     "notice": "Es posible que Windows muestre una advertencia de seguridad la primera vez que la abras, porque el instalador aún no está firmado. Lee las notas de instalación antes de descargar."
   },
   "downloadPage": {
     "metaTitle": "Descargar Moony {version} para macOS, Windows y Linux",
-    "description": "Instaladores de Moony {version} para macOS, Windows y Linux, dónde conseguir la app para iPhone, los primeros pasos en cada sistema, los requisitos del sistema y cómo funcionan las actualizaciones.",
+    "description": "Instaladores de Moony {version} para macOS, Windows y Linux, los pasos del primer inicio en cada sistema, los requisitos del sistema y cómo funcionan las actualizaciones.",
     "title": "Descargar Moony {version}",
     "released": "Publicada el {date}",
     "allReleases": "Todas las versiones →",
@@ -329,7 +329,7 @@
       },
       "downloads": {
         "title": "Descargas",
-        "text": "Los enlaces de descarga llevan a las versiones publicadas en GitHub, que sirve los archivos. El enlace de la app para iPhone lleva al App Store de Apple."
+        "text": "Los enlaces de descarga llevan a las versiones publicadas en GitHub, que es quien sirve los archivos."
       },
       "operator": {
         "title": "Responsable y contacto",
@@ -387,7 +387,7 @@
       },
       "devices": {
         "q": "¿Puedo usar Moony en el móvil o en otro ordenador?",
-        "a": "Sí. Moony funciona en macOS, Windows, Linux y iPhone, y cada dispositivo funciona por sí solo. Para tener los mismos datos en todas partes, configura la sincronización, que es experimental, o traslada tus datos con un archivo de copia de seguridad. Una app para Android estará disponible próximamente."
+        "a": "Sí. Moony funciona en macOS, Windows y Linux, y cada ordenador funciona por sí solo. Para tener los mismos datos en varios ordenadores, configura la sincronización, que es experimental, o traslada tus datos con un archivo de copia de seguridad. Las apps para iPhone y Android estarán disponibles próximamente."
       },
       "sync": {
         "q": "¿Cómo funciona la sincronización y quién puede leer mis datos?",
@@ -588,7 +588,7 @@
     },
     "sync": {
       "title": "Sincronización entre dispositivos (experimental)",
-      "intro": "La sincronización mantiene los mismos datos en tus ordenadores y en tu iPhone. Es opcional, está desactivada hasta que la configures y sigue siendo experimental: haz una copia de seguridad antes de empezar y sigue haciéndolas.",
+      "intro": "La sincronización mantiene los mismos datos en tus ordenadores. Es opcional, está desactivada hasta que la configures y sigue siendo experimental: haz una copia de seguridad antes de empezar y sigue haciéndolas.",
       "steps": [
         "Necesitas un servidor de sincronización. Gestiona el tuyo con el [servidor de sincronización de Moony (EN)](syncRepo) o pide un **código de conexión** a quien gestione uno para ti.",
         "En el primer dispositivo abre **Ajustes → Sincronización**, inicia la configuración, elige **Servidor propio** e introduce el código de conexión.",

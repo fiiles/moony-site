@@ -1,7 +1,7 @@
 ---
 import { enOnlyLink, href, t, tList, type Locale } from '../i18n';
 import { rich, type RichLink } from '../lib/rich';
-import { appStoreUrl, syncRepoUrl } from '../config';
+import { syncRepoUrl } from '../config';
 
 interface Props { locale: Locale }
 
@@ -26,9 +26,7 @@ const links: Record<string, RichLink> = {
   updates: { href: '#updates' },
   data: { href: '#data-folder' },
   uninstall: { href: '#uninstall' },
-  phone: { href: '#iphone' },
   sync: { href: '#sync' },
-  appStore: { href: appStoreUrl },
   syncRepo: { href: syncRepoUrl, hreflang: locale === 'en' ? undefined : 'en' },
   ai: { href: '#ai-assistant' },
   discussions: { href: 'https://github.com/fiiles/Moony/discussions' },
@@ -43,7 +41,6 @@ const sections = [
   { id: 'forgotten-password', key: 'recovery' },
   { id: 'import', key: 'import' },
   { id: 'backup', key: 'backup' },
-  { id: 'iphone', key: 'phone' },
   { id: 'sync', key: 'sync' },
   { id: 'updates-data', key: 'updates' },
   { id: 'ai-assistant', key: 'ai' },
@@ -131,12 +128,6 @@ const folders = [
       <ol>{items('backup.moveSteps').map((s) => <li set:html={s} />)}</ol>
       <p set:html={text('backup.moveOutro')} />
       <p set:html={text('backup.notBackup')} />
-    </section>
-
-    <section class="help-sec" aria-labelledby="iphone">
-      <h2 id="iphone">{h('phone.title')}</h2>
-      <p set:html={text('phone.text')} />
-      <p set:html={text('phone.differences')} />
     </section>
 
     <section class="help-sec" aria-labelledby="sync">

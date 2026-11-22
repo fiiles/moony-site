@@ -2,7 +2,7 @@
   "site": {
     "name": "Moony",
     "tagline": "Din ekonomi, samlad på ett ställe.",
-    "description": "Moony är en gratisapp för att hålla koll på dina konton, investeringar och lån. Dina ekonomiska data stannar på dina egna enheter. För macOS, Windows, Linux och iPhone."
+    "description": "Moony är en gratis skrivbordsapp för att hålla koll på dina konton, investeringar och lån. Dina finansiella data stannar på din dator. För macOS, Windows och Linux."
   },
   "nav": {
     "label": "Huvudmeny",
@@ -39,7 +39,7 @@
     "provenance": "Den här sidan visar filen från Moonys repository så som den är publicerad vid taggen nedan; bara rubriken och de relativa länkarna är anpassade. Källan är"
   },
   "hero": {
-    "eyebrow": "Privatekonomi för din dator och din iPhone",
+    "eyebrow": "Privatekonomi för din skrivbordsdator",
     "lead": "Håll koll på dina konton, investeringar och lån. Moony förvarar dina ekonomiska data på dina egna enheter.",
     "ctaDefault": "Ladda ner",
     "ctaMac": "Ladda ner för macOS",
@@ -180,7 +180,7 @@
   "sync": {
     "title": "Håll dina enheter i takt.",
     "badge": "Experimentell",
-    "text": "Synkronisering håller samma data på dina datorer och din iPhone. Den är valfri och förblir avstängd tills du ställer in den. Dina data krypteras på din enhet innan de lämnar den, och servern som för dem vidare har ingen nyckel för att läsa dem.",
+    "text": "Synkronisering håller samma data på dina datorer. Den är valfri och förblir avstängd tills du ställer in den. Dina data krypteras på din enhet innan de lämnar den, och servern som för dem vidare har ingen nyckel för att läsa dem.",
     "own": {
       "title": "Din egen server",
       "text": "Synkroniseringen går via en liten server som du, eller någon du litar på, driver: hemma, på en NAS eller på en hyrd maskin. Den har öppen källkod.",
@@ -236,12 +236,12 @@
       "archsArm": "x86_64 och ARM64"
     },
     "all": "Välj ett annat system →",
-    "intro": "Gratis för macOS, Windows, Linux och iPhone. Ingen registrering eller provperiod.",
+    "intro": "Gratis för macOS, Windows och Linux. Ingen registrering och ingen provperiod.",
     "notice": "Windows kan visa en säkerhetsvarning vid första start, eftersom installationsprogrammet ännu inte är signerat. Läs installationsanvisningarna innan du laddar ner."
   },
   "downloadPage": {
     "metaTitle": "Ladda ner Moony {version} för macOS, Windows och Linux",
-    "description": "Installationsprogram för Moony {version} till macOS, Windows och Linux, var du hämtar iPhone-appen, stegen vid första start för varje system, systemkrav och hur uppdateringar fungerar.",
+    "description": "Installationsprogram för Moony {version} för macOS, Windows och Linux, stegen vid första start för varje system, systemkrav och hur uppdateringar fungerar.",
     "title": "Ladda ner Moony {version}",
     "released": "Utgiven {date}",
     "allReleases": "Alla utgåvor →",
@@ -329,7 +329,7 @@
       },
       "downloads": {
         "title": "Nedladdningar",
-        "text": "Nedladdningslänkarna leder till utgåvor på GitHub, som levererar filerna. Länken till iPhone-appen leder till Apples App Store."
+        "text": "Nedladdningslänkarna leder till utgåvor på GitHub, som levererar filerna."
       },
       "operator": {
         "title": "Ansvarig och kontakt",
@@ -387,7 +387,7 @@
       },
       "devices": {
         "q": "Kan jag använda Moony på telefonen eller en annan dator?",
-        "a": "Ja. Moony fungerar på macOS, Windows, Linux och iPhone, och varje enhet fungerar fristående. För att ha samma data överallt kan du ställa in synkronisering, som är experimentell, eller flytta dina data med en säkerhetskopia. En Android-app kommer snart."
+        "a": "Ja. Moony fungerar på macOS, Windows och Linux, och varje dator fungerar fristående. För att ha samma data på flera datorer kan du ställa in synkronisering, som är experimentell, eller flytta dina data med en säkerhetskopia. Appar för iPhone och Android kommer snart."
       },
       "sync": {
         "q": "Hur fungerar synkroniseringen, och vem kan läsa mina data?",
@@ -588,7 +588,7 @@
     },
     "sync": {
       "title": "Synkronisering mellan enheter (experimentell)",
-      "intro": "Synkronisering håller samma data på dina datorer och din iPhone. Den är valfri, avstängd tills du ställer in den och fortfarande experimentell: gör en säkerhetskopia innan du börjar och fortsätt att säkerhetskopiera.",
+      "intro": "Synkronisering håller samma data på dina datorer. Den är valfri, avstängd tills du ställer in den och fortfarande experimentell: gör en säkerhetskopia innan du börjar och fortsätt att säkerhetskopiera.",
       "steps": [
         "Du behöver en synkroniseringsserver. Driv en egen med [Moonys synkroniseringsserver (EN)](syncRepo), eller be den som driver en åt dig om en **anslutningskod**.",
         "Öppna **Inställningar → Synkronisering** på den första enheten, starta inställningen, välj **Egen server** och ange anslutningskoden.",

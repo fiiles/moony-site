@@ -2,7 +2,7 @@
   "site": {
     "name": "Moony",
     "tagline": "Your finances, all together.",
-    "description": "Moony is a free app for keeping track of your accounts, investments and loans. Your financial data stays on your own devices. For macOS, Windows, Linux and iPhone."
+    "description": "Moony is a free desktop app for keeping track of your accounts, investments and loans. Your financial data stays on your computer. For macOS, Windows and Linux."
   },
   "nav": {
     "label": "Main",
@@ -39,7 +39,7 @@
     "provenance": "This page shows the file from the Moony repository as published at the tag below; only the title and relative links are adapted. The source is"
   },
   "hero": {
-    "eyebrow": "Personal finance for your computer and iPhone",
+    "eyebrow": "Personal finance for your desktop",
     "lead": "Keep track of your accounts, investments and loans. Moony keeps your financial data on your own devices.",
     "ctaDefault": "Download",
     "ctaMac": "Download for macOS",
@@ -180,7 +180,7 @@
   "sync": {
     "title": "Keep your devices in step.",
     "badge": "Experimental",
-    "text": "Sync keeps the same data on your computers and your iPhone. It is optional and stays off until you set it up. Your data is encrypted on your device before it leaves, and the server that passes it on has no key to read it.",
+    "text": "Sync keeps the same data on your computers. It is optional and stays off until you set it up. Your data is encrypted on your device before it leaves, and the server that passes it on has no key to read it.",
     "own": {
       "title": "Your own server",
       "text": "Sync runs through a small server that you, or someone you trust, run: at home, on a NAS or on a rented machine. It is open source.",
@@ -236,12 +236,12 @@
       "archsArm": "x86_64 and ARM64"
     },
     "all": "Choose another system →",
-    "intro": "Free for macOS, Windows, Linux and iPhone. No sign-up or trial period.",
+    "intro": "Free for macOS, Windows and Linux. No sign-up or trial period.",
     "notice": "Windows may show a security warning on first launch because the installer is not signed yet. Read the installation notes before downloading."
   },
   "downloadPage": {
     "metaTitle": "Download Moony {version} for macOS, Windows and Linux",
-    "description": "Moony {version} installers for macOS, Windows and Linux, where to get the iPhone app, the first-launch steps for each system, system requirements and how updates work.",
+    "description": "Moony {version} installers for macOS, Windows and Linux, the first-launch steps for each system, system requirements and how updates work.",
     "title": "Download Moony {version}",
     "released": "Released {date}",
     "allReleases": "All releases →",
@@ -329,7 +329,7 @@
       },
       "downloads": {
         "title": "Downloads",
-        "text": "The download links lead to releases on GitHub, which serves the files. The iPhone app link leads to Apple’s App Store."
+        "text": "The download links lead to releases on GitHub, which serves the files."
       },
       "operator": {
         "title": "Operator and contact",
@@ -387,7 +387,7 @@
       },
       "devices": {
         "q": "Can I use Moony on my phone or another computer?",
-        "a": "Yes. Moony runs on macOS, Windows, Linux and iPhone, and each device works on its own. To have the same data everywhere, set up sync, which is experimental, or move your data with a backup file. An Android app is coming soon."
+        "a": "Yes. Moony runs on macOS, Windows and Linux, and each computer works on its own. To have the same data on several computers, set up sync, which is experimental, or move your data with a backup file. Apps for iPhone and Android are coming soon."
       },
       "sync": {
         "q": "How does sync work, and who can read my data?",
@@ -588,7 +588,7 @@
     },
     "sync": {
       "title": "Sync between devices (experimental)",
-      "intro": "Sync keeps the same data on your computers and your iPhone. It is optional, off until you set it up, and still experimental: make a backup before you start and keep making them.",
+      "intro": "Sync keeps the same data on your computers. It is optional, off until you set it up, and still experimental: make a backup before you start and keep making them.",
       "steps": [
         "You need a sync server. Run your own with the [Moony sync server](syncRepo), or ask whoever runs one for you for a **connection code**.",
         "On the first device open **Settings → Sync**, start the setup, choose **Own server** and enter the connection code.",
